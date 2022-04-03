@@ -1,7 +1,7 @@
 #ifndef __TEST_H__
 
 
-void increment(char* pd);
+static int test ( int* nb );
 
 
 #endif
