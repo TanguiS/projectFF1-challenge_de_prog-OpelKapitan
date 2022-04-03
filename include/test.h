@@ -1,9 +1,9 @@
 #ifndef __TEST_H__
 #define __TEST_H__
 
-static int test ( int* test );
-static int autretest ( int* test );
+/* je fais un test */
 
+static int test ( int* test );
 
 
 #endif /* __TEST_H__ */
