@@ -2,6 +2,8 @@
 #define __TEST_H__
 
 static int test ( int* test );
-char surgit ();
+static int autretest ( int* test );
+
+
 
 #endif /* __TEST_H__ */
