@@ -9,8 +9,8 @@
  */
 
 /**
- * @file readMap.c
- * @brief This file is the functions to read a map.
+ * @file main.c
+ * @brief This file the main function to test a program.
  */
 
 /**
@@ -20,3 +20,9 @@
  */
 
 #include "readMap.h"
+
+int main ()
+{
+    
+    return 1;
+}
