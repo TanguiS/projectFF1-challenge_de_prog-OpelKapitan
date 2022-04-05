@@ -19,3 +19,26 @@
  * @date 05 avril 2022
  */
 
+#ifndef __READMAP_HH__
+#define __READMAP_HH__
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+typedef struct _dataMap {
+    short xSize;
+    short ySize;
+    short gasLvl;
+    char** map;
+} _dataMap;
+typedef struct _dataMap DATA_MAP;
+
+DATA_MAP createMap ( short newXSize, short newYSize, short newgasLvl );
+
+DATA_MAP readDataMap ();
+
+void destroyDataMap ( DATA_MAP map );
+
+
+#endif /* __READMAP_HH__ */
