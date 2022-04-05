@@ -84,5 +84,6 @@ int main ()
             *p = 0;
         }
     }
+    destroyDataMap ( map );
     return EXIT_SUCCESS;
 }

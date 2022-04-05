@@ -99,3 +99,14 @@ static void display ( DATA_MAP map )
         fprintf ( stderr, "\n" );
     }
 }
+
+void destroyMAdj ( DATA_MAP map )
+{
+    int i;
+
+    for ( i = 0; i < map.ySize; i++ ) {
+        free ( map.map[i] );
+        map.map[i] = NULL;
+    }
+    free ( map.map );
+}
