@@ -15,16 +15,38 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.1
  * @date 05 avril 2022
  */
 
 #include "readMap.h"
+#include "debugMode.h"
 
 #define MAX_LINE_LENGTH 1024
 
+/**
+ * @brief Initialize the map with the data provided in argument 
+ * 
+ * @param map : The DATA_MAP object to initialize
+ * @param newXSize  : The width to initialize in the DATA_MAP object
+ * @param newYSize  : The height to initialize in the DATA_MAP object
+ * @param newGasLvl  : The gas level to initialize in the DATA_MAP object
+ * @return DATA_MAP : the initialized object
+ */
 static DATA_MAP initDataMap  ( DATA_MAP map, short newXSize, short newYSize, short newGasLvl );
+/**
+ * @brief Writes the data provided from the arguments in the matrix of the map
+ * 
+ * @param map : The DATA_MAP to initialize with the data provided
+ * @param data : A line of data that need to be written int the map's matrix
+ * @param row : the column to which this line of data belongs
+ */
 static void putDataToMap ( DATA_MAP* map, char* data, int row );
+/**
+ * @brief Only for Debugging purposes
+ * 
+ * @param map 
+ */
 static void display ( DATA_MAP map );
 
 DATA_MAP createMap ( short newXSize, short newYSize, short newGasLvl )
@@ -39,7 +61,6 @@ DATA_MAP createMap ( short newXSize, short newYSize, short newGasLvl )
         assert ( map.map[i] );
     }
     map.map[0][0] = '0';
-    fprintf ( stderr, "DS CREATE MAP : %c\n", map.map[0][0] );
     return map;
 }
 
@@ -71,13 +92,17 @@ DATA_MAP readDataMap ()
     fgets ( buf, MAX_LINE_LENGTH, stdin );
     sscanf ( buf, "%hd %hd %hd", &xSize, &ySize, &gasLvl );
 
-    fprintf  ( stderr, " ON A %hd %hd %hd\n", xSize, ySize, gasLvl );
+    DEBUG_CHAR ( "=== > Lecture des Data < ===", ' ' );
+    DEBUG_INT ( "Valeur de xSize : ", (int) xSize ); 
+    DEBUG_INT ( "Valeur de ySize : ", (int) ySize ); 
+    DEBUG_INT ( "Valeur de gasLvl : ", (int) gasLvl );
 
     map = createMap ( xSize, ySize, gasLvl );
 
-    fprintf ( stderr, "=== > Map From readDataMap < ===\n" );
-    fprintf ( stderr, "Size %d x %d\n", map.xSize, map.ySize );
-    fprintf ( stderr, "Gas at start %d \n\n", map.gasLvl );
+    DEBUG_CHAR ( "=== > Map From readDataMap < ===", ' ' );
+    DEBUG_INT ( "Verification des données de la matrice : xSize : ", map.xSize );
+    DEBUG_INT ( "Verification des données de la matrice : ySize : ", map.ySize );
+    DEBUG_INT ( "Verification du niveau de gaz : ", map.gasLvl );
 
     for ( i = 0; i < map.ySize; i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
@@ -91,16 +116,16 @@ DATA_MAP readDataMap ()
 static void display ( DATA_MAP map )
 {
     int i, j;
-    fprintf ( stderr, "Display Map : \n\n" );
+    DEBUG_CHAR ( "\nAffichage de la map : ", ' ' );
     for ( i = 0; i < map.ySize; i++ ) {
         for ( j = 0; j < map.xSize; j++ ) {
-            fprintf ( stderr, "%c", map.map[j][i] );
+            DEBUG_ONLY_CHAR ( map.map[j][i] );
         }
-        fprintf ( stderr, "\n" );
+        DEBUG_ONLY_CHAR ( '\n' );
     }
 }
 
-void destroyMAdj ( DATA_MAP map )
+boolean destroyDataMap ( DATA_MAP map )
 {
     int i;
 
@@ -109,4 +134,5 @@ void destroyMAdj ( DATA_MAP map )
         map.map[i] = NULL;
     }
     free ( map.map );
+    return true;
 }

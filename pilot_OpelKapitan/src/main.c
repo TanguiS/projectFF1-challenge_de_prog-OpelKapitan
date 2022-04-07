@@ -84,6 +84,8 @@ int main ()
             *p = 0;
         }
     }
-    destroyDataMap ( map );
+    if ( !destroyDataMap ( map ) ) {
+        fprintf ( stderr, "Erreur fermeture\n" );
+    }
     return EXIT_SUCCESS;
 }

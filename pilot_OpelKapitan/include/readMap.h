@@ -25,20 +25,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include "util.h"
+#include "dataPilot.h"
 
+/**
+ * @brief It is an object that represents the map
+ */
 typedef struct _dataMap {
-    short xSize;
-    short ySize;
-    short gasLvl;
-    char** map;
+    /*@{*/
+    short xSize; /**< the width of the map */
+    short ySize; /**< the height of the map */
+    short gasLvl; /** ne va pas rester ici @TODO */
+    char** map; /**< the matrix that represents the map */
+    /*@}*/
 } _dataMap;
+/**
+ * @brief The DATA_MAP object from the _dataMap struct
+ */
 typedef struct _dataMap DATA_MAP;
 
+/**
+ * @brief Create a Map object
+ * 
+ * @param newXSize : the width of the map
+ * @param newYSize  : the height of the map
+ * @param newgasLvl : Fuel available at the beginning of the race
+ * @return DATA_MAP 
+ */
 DATA_MAP createMap ( short newXSize, short newYSize, short newgasLvl );
 
+/**
+ * @brief Reads the data provided by the GDP and provides it to the object DATA_MAP
+ * 
+ * @return DATA_MAP : The DATA_MAP initialized and filled from the data provided by the GDP
+ */
 DATA_MAP readDataMap ();
 
-void destroyDataMap ( DATA_MAP map );
-
+/**
+ * @brief Destroy a DATA_MAP object
+ * 
+ * @param map : the map to destroy
+ * @return boolean : If everything went well 
+ */
+boolean destroyDataMap ( DATA_MAP map );
 
 #endif /* __READMAP_HH__ */

@@ -1,0 +1,399 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Apr  6 18:10:32 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/tangui-stei/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
+# makefile
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/92
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"46c2c285347814a2356333ceb4dff7cd.fr","_translationsConfigFile":"/home/tangui-stei/.config/Code/clp/46c2c285347814a2356333ceb4dff7cd.fr/tcf.json","_cacheRoot":"/home/tangui-stei/.config/Code/clp/46c2c285347814a2356333ceb4dff7cd.fr","_resolvedLanguagePackCoreLocation":"/home/tangui-stei/.config/Code/clp/46c2c285347814a2356333ceb4dff7cd.fr/e18005f0f1b33c29e81d732535d8c0e47cafb0b5","_corruptedFile":"/home/tangui-stei/.config/Code/clp/46c2c285347814a2356333ceb4dff7cd.fr/corrupted.info","_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:35343
+# makefile (from 'Makefile', line 10)
+CFLAGS = -Wall -Wextra -ansi -pedantic -g
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+USERNAME = tangui-stei
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 14)
+SANITIZE = off
+# environment
+_ = /snap/code/92/usr/share/code/code
+# makefile (from 'Makefile', line 6)
+BIN_PATH = ../drivers
+# makefile (from 'Makefile', line 11)
+CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
+# environment
+MANAGERPID = 1319
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/tangui-stei
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/92/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1547,unix/tanguistei:/tmp/.ICE-unix/1547
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/tangui-stei/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/92
+# makefile (from 'Makefile', line 3)
+SRC_PATH = ./src
+# environment
+SNAP_VERSION = e18005f0
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+DISABLE_WAYLAND = 1
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 88331ea6b96643fdb8fb9a31ad1fabc0
+# makefile (from 'Makefile', line 12)
+LDFLAGS = 
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/92/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3606
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from 'Makefile', line 22)
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o 
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/tangui-stei/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1492
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/tangui-stei
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/tangui-stei/.config/Code/CachedData/e18005f0f1b33c29e81d732535d8c0e47cafb0b5
+# environment
+LOGNAME = tangui-stei
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = gXto1HJ5DY436SuvVjORWqLwl52u7qkSi1UTHV0anbNhC7RiUM8B
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/tangui-stei/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# environment
+SNAP_REAL_HOME = /home/tangui-stei
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/tangui-stei/snap/code/92
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 9)
+CC = gcc
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e152d0e9-fa0b-4892-b4f3-1a621c15aaf5.sock
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = tangui-stei
+# environment
+SNAP_REVISION = 92
+# makefile
+.DEFAULT_GOAL := install
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 5)
+OBJ_PATH = ./obj
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-b1d59732-1.66.0-main.sock
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 7)
+LIB_PATH = ./lib
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = gXto1HJ5DY436SuvVjORWqLwl52u7qkSi1UTHV0anbNhC7RiUM8B
+# automatic
+<F = $(notdir $<)
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 1)
+PILOT_NAME = OpelKapitan
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 4)
+INC_PATH = ./include
+# environment
+LANG = C
+# environment
+VSCODE_PID = 3655
+# variable set hash-table stats:
+# Load=132/1024=13%, Rehash=0, Collisions=27/173=16%
+
+ 
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2053, inode 3806278): 9 files, no impossibilities.
+
+# 9 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+obj/readMap.o: src/readMap.c include/readMap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 33):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+obj/main.o: src/main.c include/readMap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-06 18:10:22.651604684
+#  File has been updated.
+#  Successfully updated.
+
+../drivers/OpelKapitan: obj/main.o obj/readMap.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
+
+# Not a target:
+include/readMap.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/readMap.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+try: install
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+	cd .. ; ./GrandPrix
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean: obj
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 40):
+	rm $</*.o
+
+install: ../drivers/OpelKapitan
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=14/1024=1%, Rehash=0, Collisions=0/34=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 23 / storage = 216 B / avg = 9 B
+# current buf: size = 8162 B / used = 216 B / count = 23 / avg = 9 B
+
+# strcache performance: lookups = 39 / hit rate = 41%
+# hash-table stats:
+# Load=23/8192=0%, Rehash=0, Collisions=1/39=3%
+# Finished Make data base on Wed Apr  6 18:10:32 2022
+
+ 
