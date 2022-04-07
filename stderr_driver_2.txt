@@ -1,10 +1,10 @@
 === > Lecture des Data < ===  
-Valeur de xSize :  80
-Valeur de ySize :  40
+Valeur de width :  80
+Valeur de height :  40
 Valeur de gasLvl :  300
 === > Map From readDataMap < ===  
-Verification des données de la matrice : xSize :  80
-Verification des données de la matrice : ySize :  40
+Verification des données de la matrice : width :  80
+Verification des données de la matrice : height :  40
 Verification du niveau de gaz :  300
 
 Affichage de la map :   
@@ -51,13 +51,13 @@ Affichage de la map :
 
 === Race start ===
 === ROUND 1
-    Positions: Me(43,3)  A(43,5), B(43,1)
+    Positions: Me(43,3)  A(43,5), B(44,1)
     Action: 1 0   Gas remaining: 0
 === ROUND 2
-    Positions: Me(44,3)  A(43,5), B(46,1)
+    Positions: Me(44,3)  A(43,5), B(44,1)
     Action: 1 0   Gas remaining: 0
 === ROUND 3
-    Positions: Me(46,3)  A(43,5), B(46,1)
+    Positions: Me(46,3)  A(43,5), B(49,1)
     Action: 1 0   Gas remaining: 0
 === ROUND 4
     Positions: Me(49,3)  A(43,5), B(49,1)
@@ -66,7 +66,7 @@ Affichage de la map :
     Positions: Me(53,3)  A(43,5), B(53,1)
     Action: 1 0   Gas remaining: 0
 === ROUND 6
-    Positions: Me(58,3)  A(43,5), B(54,1)
+    Positions: Me(58,3)  A(43,5), B(53,1)
     Action: 1 0   Gas remaining: 0
 === ROUND 7
     Positions: Me(58,3)  A(43,5), B(54,1)

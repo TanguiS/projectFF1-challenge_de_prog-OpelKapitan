@@ -1,2 +1,2 @@
 compil command for debug :
-$ make SANITIZE=on install
+$ make SANITIZE=on DEBUG=on install

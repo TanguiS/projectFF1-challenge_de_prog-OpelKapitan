@@ -45,28 +45,28 @@ Gas at start 300
 
 === Race start ===
 === ROUND 1
-    Positions: Me(43,1)  A(44,3), B(43,5)
+    Positions: Me(43,1)  A(43,3), B(43,5)
     Action: 1 0   Gas remaining: 299
 === ROUND 2
-    Positions: Me(44,1)  A(44,3), B(43,5)
+    Positions: Me(44,1)  A(46,3), B(43,5)
     Action: 1 0   Gas remaining: 297
 === ROUND 3
-    Positions: Me(46,1)  A(49,3), B(43,5)
+    Positions: Me(46,1)  A(46,3), B(43,5)
     Action: 1 0   Gas remaining: 293
 === ROUND 4
     Positions: Me(49,1)  A(53,3), B(43,5)
     Action: 1 0   Gas remaining: 288
 === ROUND 5
-    Positions: Me(53,1)  A(53,3), B(43,5)
+    Positions: Me(53,1)  A(58,3), B(43,5)
     Action: 1 0   Gas remaining: 281
 === ROUND 6
     Positions: Me(53,1)  A(58,3), B(43,5)
     Action: 1 0   Gas remaining: 273
 === ROUND 7
-    Positions: Me(54,1)  A(58,3), B(43,5)
+    Positions: Me(54,1)  A(59,3), B(43,5)
     Action: 1 0   Gas remaining: 263
 === ROUND 8
-    Positions: Me(54,1)  A(59,3), B(43,5)
+    Positions: Me(54,1)  A(61,3), B(43,5)
     Action: 1 0   Gas remaining: 252
 === ROUND 9
     Positions: Me(54,1)  A(61,3), B(43,5)

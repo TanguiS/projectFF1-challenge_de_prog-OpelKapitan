@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.1
  * @date 05 avril 2022
  */
 
@@ -26,16 +26,15 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "util.h"
-#include "dataPilot.h"
+#include "pilotManagement.h"
 
 /**
  * @brief It is an object that represents the map
  */
 typedef struct _dataMap {
     /*@{*/
-    short xSize; /**< the width of the map */
-    short ySize; /**< the height of the map */
-    short gasLvl; /** ne va pas rester ici @TODO */
+    short width; /**< the width of the map */
+    short height; /**< the height of the map */
     char** map; /**< the matrix that represents the map */
     /*@}*/
 } _dataMap;
@@ -44,22 +43,27 @@ typedef struct _dataMap {
  */
 typedef struct _dataMap DATA_MAP;
 
+short getWidthMap ( DATA_MAP map );
+
+short getHeightMap ( DATA_MAP map );
+
+short getMapElement ( DATA_MAP map, int x, int y );
+
 /**
  * @brief Create a Map object
  * 
  * @param newXSize : the width of the map
  * @param newYSize  : the height of the map
- * @param newgasLvl : Fuel available at the beginning of the race
  * @return DATA_MAP 
  */
-DATA_MAP createMap ( short newXSize, short newYSize, short newgasLvl );
+DATA_MAP createMap ( short newXSize, short newYSize );
 
 /**
  * @brief Reads the data provided by the GDP and provides it to the object DATA_MAP
  * 
  * @return DATA_MAP : The DATA_MAP initialized and filled from the data provided by the GDP
  */
-DATA_MAP readDataMap ();
+DATA_MAP readDataMap ( PILOT* myPilot );
 
 /**
  * @brief Destroy a DATA_MAP object

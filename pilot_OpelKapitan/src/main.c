@@ -20,6 +20,7 @@
  */
 
 #include "readMap.h"
+#include "pilotManagement.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -38,6 +39,7 @@ int main ()
     char action[100];
     char line_buffer[MAX_LINE_LENGTH];
     DATA_MAP map;
+    PILOT myPilot;
 
     boosts = boosts;                       /* Prevent warning "unused variable" */
 
@@ -54,7 +56,7 @@ int main ()
     fflush(stderr);
     */
 
-    map = readDataMap ();
+    map = readDataMap ( &myPilot );
 
     fprintf(stderr, "\n=== Race start ===\n");
     while (!feof(stdin)) {

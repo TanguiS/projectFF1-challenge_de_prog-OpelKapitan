@@ -22,18 +22,19 @@
 #include "readMap.h"
 #include "debugMode.h"
 
-#define MAX_LINE_LENGTH 1024
+static void putWidthMap ( DATA_MAP* map, short newWidth );
+
+static void putHeightMap ( DATA_MAP* map, short newHeight );
 
 /**
  * @brief Initialize the map with the data provided in argument 
  * 
  * @param map : The DATA_MAP object to initialize
- * @param newXSize  : The width to initialize in the DATA_MAP object
- * @param newYSize  : The height to initialize in the DATA_MAP object
- * @param newGasLvl  : The gas level to initialize in the DATA_MAP object
+ * @param newWidth  : The width to initialize in the DATA_MAP object
+ * @param newHeight  : The height to initialize in the DATA_MAP object
  * @return DATA_MAP : the initialized object
  */
-static DATA_MAP initDataMap  ( DATA_MAP map, short newXSize, short newYSize, short newGasLvl );
+static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight );
 /**
  * @brief Writes the data provided from the arguments in the matrix of the map
  * 
@@ -49,62 +50,86 @@ static void putDataToMap ( DATA_MAP* map, char* data, int row );
  */
 static void display ( DATA_MAP map );
 
-DATA_MAP createMap ( short newXSize, short newYSize, short newGasLvl )
-{
-    DATA_MAP map;
-    int i;
-    map = initDataMap ( map, newXSize, newYSize , newGasLvl);
-    map.map = ( char** ) malloc ( map.xSize * sizeof ( char* ) );
-    assert ( map.map );
-    for ( i = 0; i < map.xSize; i++ ) {
-        map.map[i] = ( char* ) malloc ( map.ySize * sizeof ( char ) );
-        assert ( map.map[i] );
-    }
-    map.map[0][0] = '0';
-    return map;
-}
-
-static DATA_MAP initDataMap  ( DATA_MAP map, short newXSize, short newYSize, short newGasLvl )
-{
-    map.xSize = newXSize;
-    map.ySize = newYSize;
-    map.gasLvl = newGasLvl;
-    map.map = NULL;
-    return map;
-}
-
 static void putDataToMap ( DATA_MAP* map, char* data, int row )
 {
     int i;
     
-    for ( i = 0; i < map->xSize; i++ ) {
+    for ( i = 0; i < getWidthMap ( *map ); i++ ) {
         map->map[i][row] = data[i];
     }
 }
 
-DATA_MAP readDataMap ()
+static void putWidthMap ( DATA_MAP* map, short newWidth )
+{
+    map->width = newWidth;
+}
+
+static void putHeightMap ( DATA_MAP* map, short newHeight )
+{
+    map->height = newHeight;
+}
+
+static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight )
+{
+    putWidthMap ( &map, newWidth );
+    putHeightMap ( &map, newHeight );
+    map.map = NULL;
+    return map;
+}
+
+static void display ( DATA_MAP map )
+{
+    int i, j;
+    DEBUG_CHAR ( "\nAffichage de la map : ", ' ' );
+    for ( i = 0; i < getHeightMap ( map ); i++ ) {
+        for ( j = 0; j < getWidthMap ( map ); j++ ) {
+            DEBUG_ONLY_CHAR ( getMapElement ( map, j, i ) );
+        }
+        DEBUG_ONLY_CHAR ( '\n' );
+    }
+}
+
+
+
+DATA_MAP createMap ( short newWidth, short newHeight )
 {
     DATA_MAP map;
     int i;
-    short xSize, ySize, gasLvl;
+    map = initDataMap ( map, newWidth, newHeight );
+    map.map = ( char** ) malloc ( map.width * sizeof ( char* ) );
+    assert ( map.map );
+    for ( i = 0; i < map.width; i++ ) {
+        map.map[i] = ( char* ) malloc ( map.height * sizeof ( char ) );
+        assert ( map.map[i] );
+    }
+    return map;
+}
+
+DATA_MAP readDataMap ( PILOT* myPilot )
+{
+    DATA_MAP map;
+    int i;
+    short width, height, gasLvl;
     char buf[MAX_LINE_LENGTH];
 
     fgets ( buf, MAX_LINE_LENGTH, stdin );
-    sscanf ( buf, "%hd %hd %hd", &xSize, &ySize, &gasLvl );
+    sscanf ( buf, "%hd %hd %hd", &width, &height, &gasLvl );
+
+    myPilot->GasLvl = gasLvl;
 
     DEBUG_CHAR ( "=== > Lecture des Data < ===", ' ' );
-    DEBUG_INT ( "Valeur de xSize : ", (int) xSize ); 
-    DEBUG_INT ( "Valeur de ySize : ", (int) ySize ); 
+    DEBUG_INT ( "Valeur de width : ", (int) width ); 
+    DEBUG_INT ( "Valeur de height : ", (int) height ); 
     DEBUG_INT ( "Valeur de gasLvl : ", (int) gasLvl );
 
-    map = createMap ( xSize, ySize, gasLvl );
+    map = createMap ( width, height );
 
     DEBUG_CHAR ( "=== > Map From readDataMap < ===", ' ' );
-    DEBUG_INT ( "Verification des données de la matrice : xSize : ", map.xSize );
-    DEBUG_INT ( "Verification des données de la matrice : ySize : ", map.ySize );
-    DEBUG_INT ( "Verification du niveau de gaz : ", map.gasLvl );
+    DEBUG_INT ( "Verification des données de la matrice : width : ", getWidthMap ( map ) );
+    DEBUG_INT ( "Verification des données de la matrice : height : ", getHeightMap ( map ) );
+    DEBUG_INT ( "Verification du niveau de gaz : ", myPilot->GasLvl ); 
 
-    for ( i = 0; i < map.ySize; i++ ) {
+    for ( i = 0; i < getHeightMap ( map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
         putDataToMap ( &map, buf, i );
     }
@@ -113,23 +138,26 @@ DATA_MAP readDataMap ()
     return map;
 }
 
-static void display ( DATA_MAP map )
+short getWidthMap ( DATA_MAP map )
 {
-    int i, j;
-    DEBUG_CHAR ( "\nAffichage de la map : ", ' ' );
-    for ( i = 0; i < map.ySize; i++ ) {
-        for ( j = 0; j < map.xSize; j++ ) {
-            DEBUG_ONLY_CHAR ( map.map[j][i] );
-        }
-        DEBUG_ONLY_CHAR ( '\n' );
-    }
+    return map.width;
+}
+
+short getHeightMap ( DATA_MAP map )
+{
+    return map.height;
+}
+
+short getMapElement ( DATA_MAP map, int x, int y )
+{
+    return map.map[x][y];
 }
 
 boolean destroyDataMap ( DATA_MAP map )
 {
     int i;
 
-    for ( i = 0; i < map.ySize; i++ ) {
+    for ( i = 0; i < getHeightMap ( map ); i++ ) {
         free ( map.map[i] );
         map.map[i] = NULL;
     }

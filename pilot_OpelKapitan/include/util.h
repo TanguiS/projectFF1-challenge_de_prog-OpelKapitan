@@ -22,6 +22,8 @@
 #ifndef __UTIL_HH__
 #define __UTIL_HH__
 
+#define MAX_LINE_LENGTH 1024
+
 /**
  * @brief Enumeration of a boolean type
  */
