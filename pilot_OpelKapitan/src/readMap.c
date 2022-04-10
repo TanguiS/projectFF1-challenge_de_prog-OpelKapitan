@@ -43,12 +43,14 @@ static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight );
  * @param row : the column to which this line of data belongs
  */
 static void putDataToMap ( DATA_MAP* map, char* data, int row );
+#ifndef DEBUG
 /**
  * @brief Only for Debugging purposes
  * 
  * @param map 
  */
 static void display ( DATA_MAP map );
+#endif
 
 static void putDataToMap ( DATA_MAP* map, char* data, int row )
 {
@@ -77,6 +79,7 @@ static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight )
     return map;
 }
 
+#ifndef DEBUG
 static void display ( DATA_MAP map )
 {
     int i, j;
@@ -88,8 +91,7 @@ static void display ( DATA_MAP map )
         DEBUG_ONLY_CHAR ( '\n' );
     }
 }
-
-
+#endif
 
 DATA_MAP createMap ( short newWidth, short newHeight )
 {
@@ -115,7 +117,7 @@ DATA_MAP readDataMap ( PILOT* myPilot )
     fgets ( buf, MAX_LINE_LENGTH, stdin );
     sscanf ( buf, "%hd %hd %hd", &width, &height, &gasLvl );
 
-    myPilot->GasLvl = gasLvl;
+    myPilot->gasLvl = gasLvl;
 
     DEBUG_CHAR ( "=== > Lecture des Data < ===", ' ' );
     DEBUG_INT ( "Valeur de width : ", (int) width ); 
@@ -127,14 +129,16 @@ DATA_MAP readDataMap ( PILOT* myPilot )
     DEBUG_CHAR ( "=== > Map From readDataMap < ===", ' ' );
     DEBUG_INT ( "Verification des données de la matrice : width : ", getWidthMap ( map ) );
     DEBUG_INT ( "Verification des données de la matrice : height : ", getHeightMap ( map ) );
-    DEBUG_INT ( "Verification du niveau de gaz : ", myPilot->GasLvl ); 
+    DEBUG_INT ( "Verification du niveau de gaz : ", getGasLvlPilot ( *myPilot ) ); 
 
     for ( i = 0; i < getHeightMap ( map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
         putDataToMap ( &map, buf, i );
     }
     fflush ( stderr );
-    display ( map );
+    #ifndef DEBUG
+        display ( map );
+    #endif
     return map;
 }
 

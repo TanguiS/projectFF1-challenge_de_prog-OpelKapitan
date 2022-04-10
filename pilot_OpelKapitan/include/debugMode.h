@@ -22,17 +22,21 @@
 #ifndef __DEBUG_MODE_HH__
 #define __DEBUG_MODE_HH__
 
+#include <stdio.h>
+
 #ifndef DEBUG
 
-#define DEBUG_INT(string, value) { fprintf ( stderr, "%s %d\n", string, value ); }
-#define DEBUG_CHAR(string, value) { fprintf ( stderr, "%s %c\n", string, value ); }
-#define DEBUG_ONLY_CHAR(value) { fprintf ( stderr, "%c", value ); } 
+#define DEBUG_INT(string, value) { fprintf ( stderr, "%s %d\n", string, value ); fflush ( stderr ); }
+#define DEBUG_CHAR(string, value) { fprintf ( stderr, "%s %c\n", string, value ); fflush ( stderr ); }
+#define DEBUG_STRING(string, value) { fprintf ( stderr, "%s %s\n", string, value ); fflush ( stderr ); }
+#define DEBUG_ONLY_CHAR(value) { fprintf ( stderr, "%c", value ); fflush ( stderr ); } 
 
 #else
 
 #define DEBUG_INT(string, value)
 #define DEBUG_CHAR(string, value)
 #define DEBUG_ONLY_CHAR(value)
+#define DEBUG_STRING(string, value)
 
 #endif /* DEBUG */
 

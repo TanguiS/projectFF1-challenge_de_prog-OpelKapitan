@@ -23,18 +23,21 @@
 #define __PILOT_MANAGEMENT_HH__
 
 #include "util.h"
+#include "debugMode.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <math.h>
 
 #define SIZE_ACTION 4
 
 typedef struct _dataPilot {
     short xPosition;
     short yPosition;
-    short GasLvl;
-    char action[SIZE_ACTION];
+    short xAcc;
+    short yAcc;
+    short gasLvl;
 } _dataPilot;
 typedef struct _dataPilot PILOT;
 
@@ -44,9 +47,11 @@ short getYPositionPilot ( PILOT pilot );
 
 short getGasLvlPilot ( PILOT pilot );
 
-char* getActionPilot ( PILOT pilot );
+short getXAccPilot ( PILOT pilot );
 
-PILOT createpilot ();
+short getYAccPilot ( PILOT pilot );
+
+PILOT createPilot ();
 
 void readPilotsPosition ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot );
 

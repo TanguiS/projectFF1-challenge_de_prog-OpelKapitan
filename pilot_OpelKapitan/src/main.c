@@ -39,7 +39,8 @@ int main ()
     char action[100];
     char line_buffer[MAX_LINE_LENGTH];
     DATA_MAP map;
-    PILOT myPilot;
+    PILOT myPilot, autre2, autre3;
+    myPilot = createPilot();
 
     boosts = boosts;                       /* Prevent warning "unused variable" */
 
@@ -64,21 +65,35 @@ int main ()
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
-        fgets(line_buffer, MAX_LINE_LENGTH, stdin);   /* Read positions of pilots */
+        /*
+        fgets(line_buffer, MAX_LINE_LENGTH, stdin);  
+        
         sscanf(line_buffer, "%d %d %d %d %d %d",
                 &myX, &myY, &secondX, &secondY, &thirdX, &thirdY);
         fprintf(stderr, "    Positions: Me(%d,%d)  A(%d,%d), B(%d,%d)\n",
                 myX, myY, secondX, secondY, thirdX, thirdY);
         fflush(stderr);
+        */
+       readPilotsPosition ( &myPilot, &autre2, &autre3 );
+
+
+        fprintf ( stderr, "%s", "==> test line buffer\n" );
+        fprintf ( stderr, "%s", line_buffer );
+        fflush ( stderr );
         /* Gas consumption cannot be accurate here. */
-        speedX += accelerationX;
-        speedY += accelerationY;
+
         /* Write the acceleration request to the race manager (stdout). */
-        sprintf(action, "%d %d", accelerationX, accelerationY);
+        if ( round == 1 ) {
+            sprintf(action, "%d %d", 1, 0);
+        } else if ( round == 2 ) {
+            sprintf(action, "%d %d", 1, 0);
+        } else if ( round == 4 ){
+            sprintf(action, "%d %d", 2, 0);
+        } else {
+            sprintf(action, "%d %d", 0, 0);
+        }
         fprintf(stdout, "%s", action);
         fflush(stdout);                           /* CAUTION : This is necessary  */
-        fprintf(stderr, "    Action: %s   Gas remaining: %d\n", action, gasLevel);
-        fflush(stderr);
         if (0 && round > 4) { /* (DISABLED) Force a segfault for testing purpose */
             int * p = NULL;
             fprintf(stderr, "Good Bye!\n");

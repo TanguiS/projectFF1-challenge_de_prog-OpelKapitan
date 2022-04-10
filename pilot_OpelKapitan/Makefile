@@ -9,7 +9,7 @@ LIB_PATH = ./lib
 CC = gcc
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
-LDFLAGS = 
+LDFLAGS = -lm
 
 SANITIZE=off
 ifeq ($(SANITIZE),on)
