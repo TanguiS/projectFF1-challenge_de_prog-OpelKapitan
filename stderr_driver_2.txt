@@ -28,6 +28,10 @@ Affichage de la map :
 === Race start ===
 === ROUND 1
 ====> update action :  en mode default (1 0)
+Nombre boost :  5
+ICI  
+>nb Boost avant test :  5
+>nb Boost apres test :  5
 > fuelConsumption :  speed : (1 0), acc : (1 0)
 > Consommation , norme1:  1
 > Consommation , squareRoot:  1
@@ -35,6 +39,10 @@ Affichage de la map :
 > gas left :  33
 === ROUND 2
 ====> update action :  ne rien faire
+Nombre boost :  5
+ICI  
+>nb Boost avant test :  5
+>nb Boost apres test :  5
 > fuelConsumption :  speed : (2 0), acc : (1 0)
 > Consommation , norme1:  1
 > Consommation , squareRoot:  2
@@ -42,6 +50,10 @@ Affichage de la map :
 > gas left :  30
 === ROUND 3
 ====> update action :  ne pas changer sa direction, ni son acc
+Nombre boost :  5
+ICI  
+>nb Boost avant test :  5
+>nb Boost apres test :  5
 > fuelConsumption :  speed : (2 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  2
@@ -49,6 +61,10 @@ Affichage de la map :
 > gas left :  28
 === ROUND 4
 ====> update action :  Changement d'acc
+Nombre boost :  5
+ICI  
+>nb Boost avant test :  5
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (4 0), acc : (2 0)
 > Consommation , norme1:  4
 > Consommation , squareRoot:  4
@@ -56,6 +72,10 @@ Affichage de la map :
 > gas left :  20
 === ROUND 5
 ====> update action :  ne pas changer sa direction, ni son acc
+Nombre boost :  4
+ICI  
+>nb Boost avant test :  4
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (4 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  4
@@ -63,6 +83,10 @@ Affichage de la map :
 > gas left :  16
 === ROUND 6
 ====> update action :  Changement d'acc
+Nombre boost :  4
+ICI  
+>nb Boost avant test :  4
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (3 0), acc : (-1 0)
 > Consommation , norme1:  1
 > Consommation , squareRoot:  3
@@ -70,6 +94,10 @@ Affichage de la map :
 > gas left :  12
 === ROUND 7
 ====> update action :  ne pas changer sa direction, ni son acc
+Nombre boost :  4
+ICI  
+>nb Boost avant test :  4
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (3 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  3
@@ -77,6 +105,10 @@ Affichage de la map :
 > gas left :  9
 === ROUND 8
 ====> update action :  ne pas changer sa direction, ni son acc
+Nombre boost :  4
+ICI  
+>nb Boost avant test :  4
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (3 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  3
@@ -84,6 +116,10 @@ Affichage de la map :
 > gas left :  6
 === ROUND 9
 ====> update action :  ne pas changer sa direction, ni son acc
+Nombre boost :  4
+ICI  
+>nb Boost avant test :  4
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (3 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  3
@@ -91,6 +127,10 @@ Affichage de la map :
 > gas left :  3
 === ROUND 10
 ====> update action :  ne pas changer sa direction, ni son acc
+Nombre boost :  4
+ICI  
+>nb Boost avant test :  4
+>nb Boost apres test :  4
 > fuelConsumption :  speed : (3 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  3

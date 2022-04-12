@@ -42,8 +42,8 @@ int main ()
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
-
-       updatePilots ( &myPilot, &autre2, &autre3 );
+        
+        updatePilots ( &myPilot, &autre2, &autre3 );
 
         if (0 && round > 4) { /* (DISABLED) Force a segfault for testing purpose */
             int * p = NULL;

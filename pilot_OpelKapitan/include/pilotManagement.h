@@ -40,6 +40,7 @@ typedef struct _dataPilot {
     short xAcc;
     short yAcc;
     short gasLvl;
+    short boostsRemaining;
 } _dataPilot;
 typedef struct _dataPilot PILOT;
 
@@ -56,6 +57,8 @@ short getYSpeedPilot ( PILOT* pilot );
 short getXAccPilot ( PILOT* pilot );
 
 short getYAccPilot ( PILOT* pilot );
+
+short getBoostsRemainingPilot ( PILOT* pilot );
 
 PILOT createPilot ();
 

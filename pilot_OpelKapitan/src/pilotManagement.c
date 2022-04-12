@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.1
+ * @version 1.0.2
  * @date 07 avril 2022
  */
 
@@ -36,6 +36,9 @@ A changer probablement
 #define Y "y"
 #define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, X ) == 0 ) ? 1 : 0
 
+#define ACTION {-1, 0, 1}
+#define BOOSTED_ACTION {-2, 2}
+
 static void putPositionPilot ( PILOT* pilot, short xPosition, short yPosition );
 
 static void putSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed );
@@ -44,17 +47,23 @@ static void putGasLvlPilot ( PILOT* pilot, short newGasLvl );
 
 static void putActionPilot ( PILOT* pilot, short newXAcc, short newYAcc );
 
+static void putBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining );
+
 static void initNewPilot ( PILOT* pilot );
 
 static void updatePositionPilot ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot );
 
 static void updateSpeedPilot ( PILOT* pilot );
 
+static boolean actionIsBoosted ( short xAcc, short yAcc );
+
 static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char* modeChosen );
 
 static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short newYAcc );
 
 static void updateGasPilot ( PILOT* pilot );
+
+static void updateBoostsPilot ( PILOT* pilot );
 
 static void deliverAction ( char* action ); /* action du type : x y */
 
@@ -81,6 +90,11 @@ static void putActionPilot ( PILOT* pilot, short newXAcc, short newYAcc )
     pilot->yAcc = newYAcc;
 }
 
+static void putBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
+{
+    pilot->boostsRemaining = boostsRemaining;
+}
+
 static void initNewPilot ( PILOT* pilot )
 {
     /* 
@@ -89,6 +103,7 @@ static void initNewPilot ( PILOT* pilot )
     putPositionPilot ( pilot, 0, 0 );
     putSpeedPilot ( pilot, 0, 0 );
     putActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
+    putBoostsRemainingPilot ( pilot, BOOSTS_AT_START );
 }
 
 static void updateSpeedPilot ( PILOT* pilot )
@@ -114,6 +129,25 @@ static void updatePositionPilot ( PILOT* myPilot, PILOT* secondPilot, PILOT* thi
     putPositionPilot ( myPilot, myXPosition, myYPosition );
     putPositionPilot ( secondPilot, secondXPosition, secondYPosition);
     putPositionPilot ( thirdPilot, thirdXPosition, thirdYPosition );
+}
+
+static boolean actionIsBoosted ( short xAcc, short yAcc )
+{
+    if ( abs ( xAcc ) == 2 ) {
+        return true;
+    } if ( abs ( yAcc ) == 2 ) {
+        return true;
+    }
+    return false;
+}
+
+static void updateBoostsPilot ( PILOT* pilot )
+{
+    DEBUG_INT ( ">nb Boost avant test : ", getBoostsRemainingPilot ( pilot ) );
+    if ( actionIsBoosted ( getXAccPilot ( pilot ), getYAccPilot ( pilot ) ) ) {
+        putBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
+    }
+    DEBUG_INT ( ">nb Boost apres test : ", getBoostsRemainingPilot ( pilot ) );
 }
 
 static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char* modeChosen )
@@ -207,6 +241,11 @@ short getYAccPilot ( PILOT* pilot )
     return pilot->yAcc;
 }
 
+short getBoostsRemainingPilot ( PILOT* pilot )
+{
+    return pilot->boostsRemaining;
+}
+
 PILOT createPilot ()
 {
     PILOT newPilot;
@@ -245,6 +284,8 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     }
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     updateActionPilot ( myPilot, newXAcc, newYAcc, mode );
+    DEBUG_INT ( "Nombre boost : ", getBoostsRemainingPilot ( myPilot ) );
+    updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
     updateGasPilot ( myPilot );
     updatePositionPilot ( myPilot, secondPilot, thirdPilot );
