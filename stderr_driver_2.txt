@@ -28,39 +28,71 @@ Affichage de la map :
 === Race start ===
 === ROUND 1
 ====> update action :  en mode default (1 0)
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  1
-Valeur acc y =  0
-==> test line buffer
+> fuelConsumption :  speed : (1 0), acc : (1 0)
+> Consommation , norme1:  1
+> Consommation , squareRoot:  1
+> Consommation :  2
+> gas left :  33
 === ROUND 2
 ====> update action :  ne rien faire
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  1
-Valeur acc y =  0
-==> test line buffer
+> fuelConsumption :  speed : (2 0), acc : (1 0)
+> Consommation , norme1:  1
+> Consommation , squareRoot:  2
+> Consommation :  3
+> gas left :  30
 === ROUND 3
 ====> update action :  ne pas changer sa direction, ni son acc
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  0
-Valeur acc y =  0
-==> test line buffer
+> fuelConsumption :  speed : (2 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  2
+> Consommation :  2
+> gas left :  28
 === ROUND 4
 ====> update action :  Changement d'acc
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  2
-Valeur acc y =  0
-==> test line buffer
+> fuelConsumption :  speed : (4 0), acc : (2 0)
+> Consommation , norme1:  4
+> Consommation , squareRoot:  4
+> Consommation :  8
+> gas left :  20
 === ROUND 5
 ====> update action :  ne pas changer sa direction, ni son acc
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  0
-Valeur acc y =  0
-==> test line buffer
+> fuelConsumption :  speed : (4 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  4
+> Consommation :  4
+> gas left :  16
 === ROUND 6
-====> update action :  ne pas changer sa direction, ni son acc
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  0
-Valeur acc y =  0
-==> test line buffer
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (3 0), acc : (-1 0)
+> Consommation , norme1:  1
+> Consommation , squareRoot:  3
+> Consommation :  4
+> gas left :  12
 === ROUND 7
 ====> update action :  ne pas changer sa direction, ni son acc
+> fuelConsumption :  speed : (3 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  3
+> Consommation :  3
+> gas left :  9
+=== ROUND 8
+====> update action :  ne pas changer sa direction, ni son acc
+> fuelConsumption :  speed : (3 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  3
+> Consommation :  3
+> gas left :  6
+=== ROUND 9
+====> update action :  ne pas changer sa direction, ni son acc
+> fuelConsumption :  speed : (3 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  3
+> Consommation :  3
+> gas left :  3
+=== ROUND 10
+====> update action :  ne pas changer sa direction, ni son acc
+> fuelConsumption :  speed : (3 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  3
+> Consommation :  3
+> gas left :  0

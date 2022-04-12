@@ -172,27 +172,34 @@ static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short 
 {
     short norme1;
     short squareRoot;
+    #ifndef DEBUG
+    char buf[100];
+    sprintf ( buf, "speed : (%hd %hd), acc : (%hd %hd)", xSpeed, ySpeed, newXAcc, newYAcc );
+    #endif
 
-    DEBUG_CHAR ( "===> fuelConsumption Test lecture action struct pilot = ", ' ' );
-    DEBUG_INT ( "Valeur acc x = ", (int) newXAcc );
-    DEBUG_INT ( "Valeur acc y = ", (int) newYAcc );
+    DEBUG_STRING ( "> fuelConsumption : " , buf );
 
-    norme1 = ( newXAcc * newYAcc ) + ( newXAcc * newYAcc );
-    squareRoot =  (short) ( sqrt ( ( 3. * ( (double) ( xSpeed * xSpeed ) + (double) ( ySpeed * ySpeed ) ) ) / 2. ) );
+    norme1 = ( newXAcc * newXAcc ) + ( newYAcc * newYAcc );
+    squareRoot =  (short) ( sqrt ( ( 3. * ( (float) ( xSpeed * xSpeed ) + (float) ( ySpeed * ySpeed ) ) ) / 2. ) );
 
+    DEBUG_INT ( "> Consommation , norme1: ", norme1 );
+    DEBUG_INT ( "> Consommation , squareRoot: ", squareRoot );
+
+    DEBUG_INT ( "> Consommation : ", norme1 + squareRoot );
     return ( - ( norme1 + squareRoot ) );
 }
 
 static void updateGasPilot ( PILOT* pilot )
 {
     putGasLvlPilot ( pilot, getGasLvlPilot ( pilot ) 
-                            - 
+                            + 
                             fuelConsumption ( getXSpeedPilot ( pilot ), 
                                               getYSpeedPilot ( pilot ), 
                                               getXAccPilot ( pilot ), 
                                               getYAccPilot ( pilot ) 
                                             ) 
                     );
+    DEBUG_INT ( "> gas left : ", getGasLvlPilot ( pilot ) );
 }
 /*
 static void updatePilot ( PILOT* pilot, short newX, short newY, short newGasLvl, short newXAcc, short newYAcc, char* modeChosen )
@@ -286,9 +293,9 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
         mode = UNCHANGED_ACTION;
     } else if ( round == 4 ) {
         mode = NEW_ACTION;
-    } else if ( round == 8 ) {
+    } else if ( round == 6 ) {
         mode = NEW_ACTION;
-        newXAcc = -1;
+        newXAcc = (-1); /* Permet de ralentir si la vitesse est supérieur à 0 */
         newYAcc = 0;
     } else {
         mode = STRAIGHT_ACTION;
@@ -296,8 +303,8 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     updateActionPilot ( myPilot, newXAcc, newYAcc, mode );
     updateSpeedPilot ( myPilot );
-    updatePositionPilot ( myPilot, secondPilot, thirdPilot ); 
     updateGasPilot ( myPilot );
+    updatePositionPilot ( myPilot, secondPilot, thirdPilot );
     /* 3e etape : on transmet l'action au GDP */
     sprintf ( action, "%hd %hd", getXAccPilot ( myPilot ), getYAccPilot ( myPilot ) );
     deliverAction ( action );

@@ -30,7 +30,7 @@
 #include <assert.h>
 #include <math.h>
 
-#define SIZE_ACTION 4
+#define SIZE_ACTION 10
 
 typedef struct _dataPilot {
     short xPosition;
