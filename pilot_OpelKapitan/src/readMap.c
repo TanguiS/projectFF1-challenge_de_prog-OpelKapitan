@@ -129,7 +129,7 @@ DATA_MAP readDataMap ( PILOT* myPilot )
     DEBUG_CHAR ( "=== > Map From readDataMap < ===", ' ' );
     DEBUG_INT ( "Verification des données de la matrice : width : ", getWidthMap ( map ) );
     DEBUG_INT ( "Verification des données de la matrice : height : ", getHeightMap ( map ) );
-    DEBUG_INT ( "Verification du niveau de gaz : ", getGasLvlPilot ( *myPilot ) ); 
+    DEBUG_INT ( "Verification du niveau de gaz : ", getGasLvlPilot ( myPilot ) ); 
 
     for ( i = 0; i < getHeightMap ( map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );

@@ -35,25 +35,33 @@
 typedef struct _dataPilot {
     short xPosition;
     short yPosition;
+    short xSpeed;
+    short ySpeed;
     short xAcc;
     short yAcc;
     short gasLvl;
 } _dataPilot;
 typedef struct _dataPilot PILOT;
 
-short getXPositionPilot ( PILOT pilot );
+short getXPositionPilot ( PILOT* pilot );
 
-short getYPositionPilot ( PILOT pilot );
+short getYPositionPilot ( PILOT* pilot );
 
-short getGasLvlPilot ( PILOT pilot );
+short getGasLvlPilot ( PILOT* pilot );
 
-short getXAccPilot ( PILOT pilot );
+short getXSpeedPilot ( PILOT* pilot );
 
-short getYAccPilot ( PILOT pilot );
+short getYSpeedPilot ( PILOT* pilot );
+
+short getXAccPilot ( PILOT* pilot );
+
+short getYAccPilot ( PILOT* pilot );
 
 PILOT createPilot ();
 
-void readPilotsPosition ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot );
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot );
+
+/* void readPilotsPosition ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot ); */
 
 
 

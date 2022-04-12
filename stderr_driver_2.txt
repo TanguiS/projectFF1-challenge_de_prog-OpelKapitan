@@ -27,103 +27,40 @@ Affichage de la map :
 
 === Race start ===
 === ROUND 1
-====> lecture Position :   
-Position mon pilot : x =  3
-Position mon pilot : y =  7
-Valeur acc x =  1
-Valeur acc y =  0
-===> Calcul de la vitesse =   
-Valeur nouvelle position x =  3
-Valeur ancienne position x =  3
-Valeur nouvelle position y =  7
-Valeur ancienne position y =  7
+====> update action :  en mode default (1 0)
 ===> fuelConsumption Test lecture action struct pilot =   
 Valeur acc x =  1
 Valeur acc y =  0
-====> Calcul vitesse et fuel :   
-Vitesse mon pilot : x =  0
-Vitesse mon pilot : y =  0
-Delta Fuel mon pilot =  0
-====> update action :  en mode default (1 0)
 ==> test line buffer
 === ROUND 2
-====> lecture Position :   
-Position mon pilot : x =  4
-Position mon pilot : y =  7
-Valeur acc x =  1
-Valeur acc y =  0
-===> Calcul de la vitesse =   
-Valeur nouvelle position x =  4
-Valeur ancienne position x =  3
-Valeur nouvelle position y =  7
-Valeur ancienne position y =  7
+====> update action :  ne rien faire
 ===> fuelConsumption Test lecture action struct pilot =   
 Valeur acc x =  1
 Valeur acc y =  0
-====> Calcul vitesse et fuel :   
-Vitesse mon pilot : x =  1
-Vitesse mon pilot : y =  0
-Delta Fuel mon pilot =  -1
-====> update action :  ne rien faire
 ==> test line buffer
 === ROUND 3
-====> lecture Position :   
-Position mon pilot : x =  6
-Position mon pilot : y =  7
-Valeur acc x =  1
-Valeur acc y =  0
-===> Calcul de la vitesse =   
-Valeur nouvelle position x =  6
-Valeur ancienne position x =  4
-Valeur nouvelle position y =  7
-Valeur ancienne position y =  7
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  1
-Valeur acc y =  0
-====> Calcul vitesse et fuel :   
-Vitesse mon pilot : x =  2
-Vitesse mon pilot : y =  0
-Delta Fuel mon pilot =  -2
 ====> update action :  ne pas changer sa direction, ni son acc
+===> fuelConsumption Test lecture action struct pilot =   
+Valeur acc x =  0
+Valeur acc y =  0
 ==> test line buffer
 === ROUND 4
-====> lecture Position :   
-Position mon pilot : x =  8
-Position mon pilot : y =  7
-Valeur acc x =  0
-Valeur acc y =  0
-===> Calcul de la vitesse =   
-Valeur nouvelle position x =  8
-Valeur ancienne position x =  6
-Valeur nouvelle position y =  7
-Valeur ancienne position y =  7
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  0
-Valeur acc y =  0
-====> Calcul vitesse et fuel :   
-Vitesse mon pilot : x =  2
-Vitesse mon pilot : y =  0
-Delta Fuel mon pilot =  -2
 ====> update action :  Changement d'acc
+===> fuelConsumption Test lecture action struct pilot =   
+Valeur acc x =  2
+Valeur acc y =  0
 ==> test line buffer
 === ROUND 5
-====> lecture Position :   
-Position mon pilot : x =  12
-Position mon pilot : y =  7
-Valeur acc x =  2
-Valeur acc y =  0
-===> Calcul de la vitesse =   
-Valeur nouvelle position x =  12
-Valeur ancienne position x =  8
-Valeur nouvelle position y =  7
-Valeur ancienne position y =  7
-===> fuelConsumption Test lecture action struct pilot =   
-Valeur acc x =  2
-Valeur acc y =  0
-====> Calcul vitesse et fuel :   
-Vitesse mon pilot : x =  4
-Vitesse mon pilot : y =  0
-Delta Fuel mon pilot =  -4
 ====> update action :  ne pas changer sa direction, ni son acc
+===> fuelConsumption Test lecture action struct pilot =   
+Valeur acc x =  0
+Valeur acc y =  0
 ==> test line buffer
 === ROUND 6
+====> update action :  ne pas changer sa direction, ni son acc
+===> fuelConsumption Test lecture action struct pilot =   
+Valeur acc x =  0
+Valeur acc y =  0
+==> test line buffer
+=== ROUND 7
+====> update action :  ne pas changer sa direction, ni son acc

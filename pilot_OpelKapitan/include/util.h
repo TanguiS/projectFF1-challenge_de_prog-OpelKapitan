@@ -23,6 +23,7 @@
 #define __UTIL_HH__
 
 #define MAX_LINE_LENGTH 1024
+#define BOOSTS_AT_START 5
 
 /**
  * @brief Enumeration of a boolean type
