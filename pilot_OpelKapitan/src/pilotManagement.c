@@ -143,11 +143,10 @@ static boolean actionIsBoosted ( short xAcc, short yAcc )
 
 static void updateBoostsPilot ( PILOT* pilot )
 {
-    DEBUG_INT ( ">nb Boost avant test : ", getBoostsRemainingPilot ( pilot ) );
     if ( actionIsBoosted ( getXAccPilot ( pilot ), getYAccPilot ( pilot ) ) ) {
         putBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
     }
-    DEBUG_INT ( ">nb Boost apres test : ", getBoostsRemainingPilot ( pilot ) );
+    DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
 }
 
 static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char* modeChosen )
@@ -284,7 +283,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     }
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     updateActionPilot ( myPilot, newXAcc, newYAcc, mode );
-    DEBUG_INT ( "Nombre boost : ", getBoostsRemainingPilot ( myPilot ) );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
     updateGasPilot ( myPilot );
