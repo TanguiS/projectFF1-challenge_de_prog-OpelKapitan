@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Apr 12 15:29:00 2022
+# Make data base, printed on Fri Apr 15 17:31:11 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ SNAP_DATA = /var/snap/code/93
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"4c452206e4c4c2c75a452aec147848cb.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/4c452206e4c4c2c75a452aec147848cb.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/4c452206e4c4c2c75a452aec147848cb.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/4c452206e4c4c2c75a452aec147848cb.fr/8dfae7a5cd50421d10cd99cb873990460525a898","_corruptedFile":"/home/tangui/.config/Code/clp/4c452206e4c4c2c75a452aec147848cb.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:44015
+JOURNAL_STREAM = 8:36003
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -87,13 +87,14 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 2505
+MANAGERPID = 1295
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
 VSCODE_CWD = /home/tangui
+ 
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/93/usr/share/glib-2.0/schemas
 # default
@@ -103,7 +104,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/st:@/tmp/.ICE-unix/2727,unix/st:/tmp/.ICE-unix/2727
+SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1516,unix/st:/tmp/.ICE-unix/1516
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -123,7 +124,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 9e67c92fad544b5789a0b7143eb869bf
+INVOCATION_ID = bbf8a5c3119942e49f94741650badca6
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -137,7 +138,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3481
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6483
 # automatic
 %F = $(notdir $%)
 # environment
@@ -153,7 +154,7 @@ PWD = /home/tangui/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKap
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2677
+SSH_AGENT_PID = 1466
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -207,7 +208,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e4a40ab8-58c2-44fd-bb35-524f69353596.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-50dd86ea-c2f1-4129-9a05-f37473e9b228.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -279,7 +280,6 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # default
 SUFFIXES := 
 # environment
- 
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
@@ -298,7 +298,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3547
+VSCODE_PID = 6542
 # variable set hash-table stats:
 # Load=143/1024=14%, Rehash=0, Collisions=32/188=17%
 
@@ -308,7 +308,7 @@ VSCODE_PID = 3547
 
 # Directories
 
-# . (device 2053, inode 945122): 9 files, no impossibilities.
+# . (device 2053, inode 803541): 9 files, no impossibilities.
 
 # 9 files, no impossibilities in 1 directories.
 
@@ -349,7 +349,7 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-10 17:19:45.817947874
+#  Last modified 2022-04-12 17:23:43.628248968
 #  File has been updated.
 #  Successfully updated.
 
@@ -374,6 +374,7 @@ src/pilotManagement.c:
 
 # Not a target:
 include/readMap.h:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -435,6 +436,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 44 / hit rate = 40%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=1/44=2%
-# Finished Make data base on Tue Apr 12 15:29:01 2022
+# Finished Make data base on Fri Apr 15 17:31:11 2022
 
  
