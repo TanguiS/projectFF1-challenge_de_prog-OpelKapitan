@@ -35,32 +35,32 @@ Affichage de la map :
 > Consommation :  2
 > gas left :  33
 === ROUND 2
-====> update action :  ne rien faire
+====> update action :  Changement d'acc
 > nombre de Boost restant :  5
-> fuelConsumption :  speed : (2 0), acc : (1 0)
+> fuelConsumption :  speed : (0 0), acc : (-1 0)
 > Consommation , norme1:  1
-> Consommation , squareRoot:  2
-> Consommation :  3
-> gas left :  30
+> Consommation , squareRoot:  0
+> Consommation :  1
+> gas left :  32
 === ROUND 3
 ====> update action :  ne pas changer sa direction, ni son acc
 > nombre de Boost restant :  5
-> fuelConsumption :  speed : (2 0), acc : (0 0)
+> fuelConsumption :  speed : (0 0), acc : (0 0)
 > Consommation , norme1:  0
-> Consommation , squareRoot:  2
-> Consommation :  2
-> gas left :  28
+> Consommation , squareRoot:  0
+> Consommation :  0
+> gas left :  32
 === ROUND 4
-====> update action :  ne rien faire
-> nombre de Boost restant :  5
-> fuelConsumption :  speed : (2 0), acc : (0 0)
-> Consommation , norme1:  0
+====> update action :  Changement d'acc
+> nombre de Boost restant :  4
+> fuelConsumption :  speed : (2 0), acc : (2 0)
+> Consommation , norme1:  4
 > Consommation , squareRoot:  2
-> Consommation :  2
+> Consommation :  6
 > gas left :  26
 === ROUND 5
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (2 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  2
@@ -68,7 +68,7 @@ Affichage de la map :
 > gas left :  24
 === ROUND 6
 ====> update action :  Changement d'acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (-1 0)
 > Consommation , norme1:  1
 > Consommation , squareRoot:  1
@@ -76,7 +76,7 @@ Affichage de la map :
 > gas left :  22
 === ROUND 7
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -84,7 +84,7 @@ Affichage de la map :
 > gas left :  21
 === ROUND 8
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -92,7 +92,7 @@ Affichage de la map :
 > gas left :  20
 === ROUND 9
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -100,7 +100,7 @@ Affichage de la map :
 > gas left :  19
 === ROUND 10
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -108,7 +108,7 @@ Affichage de la map :
 > gas left :  18
 === ROUND 11
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -116,7 +116,7 @@ Affichage de la map :
 > gas left :  17
 === ROUND 12
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -124,7 +124,7 @@ Affichage de la map :
 > gas left :  16
 === ROUND 13
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -132,7 +132,7 @@ Affichage de la map :
 > gas left :  15
 === ROUND 14
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -140,7 +140,7 @@ Affichage de la map :
 > gas left :  14
 === ROUND 15
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -148,7 +148,7 @@ Affichage de la map :
 > gas left :  13
 === ROUND 16
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -156,7 +156,7 @@ Affichage de la map :
 > gas left :  12
 === ROUND 17
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -164,7 +164,7 @@ Affichage de la map :
 > gas left :  11
 === ROUND 18
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -172,7 +172,7 @@ Affichage de la map :
 > gas left :  10
 === ROUND 19
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -180,7 +180,7 @@ Affichage de la map :
 > gas left :  9
 === ROUND 20
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
@@ -188,9 +188,41 @@ Affichage de la map :
 > gas left :  8
 === ROUND 21
 ====> update action :  ne pas changer sa direction, ni son acc
-> nombre de Boost restant :  5
+> nombre de Boost restant :  4
 > fuelConsumption :  speed : (1 0), acc : (0 0)
 > Consommation , norme1:  0
 > Consommation , squareRoot:  1
 > Consommation :  1
 > gas left :  7
+=== ROUND 22
+====> update action :  ne pas changer sa direction, ni son acc
+> nombre de Boost restant :  4
+> fuelConsumption :  speed : (1 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  1
+> Consommation :  1
+> gas left :  6
+=== ROUND 23
+====> update action :  ne pas changer sa direction, ni son acc
+> nombre de Boost restant :  4
+> fuelConsumption :  speed : (1 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  1
+> Consommation :  1
+> gas left :  5
+=== ROUND 24
+====> update action :  ne pas changer sa direction, ni son acc
+> nombre de Boost restant :  4
+> fuelConsumption :  speed : (1 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  1
+> Consommation :  1
+> gas left :  4
+=== ROUND 25
+====> update action :  ne pas changer sa direction, ni son acc
+> nombre de Boost restant :  4
+> fuelConsumption :  speed : (1 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  1
+> Consommation :  1
+> gas left :  3

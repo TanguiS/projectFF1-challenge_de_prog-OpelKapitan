@@ -61,7 +61,7 @@ void goDown(PILOT* pilot);
  * 
  * @param pilot the pilot 
  */ 
-void stop(PILOT* pilot);
+void stop ( PILOT* pilot, short* xAcc, short* yAcc );
 
 /**
  * @brief turn on the diagonal right up

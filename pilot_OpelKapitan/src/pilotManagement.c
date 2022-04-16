@@ -20,6 +20,7 @@
  */
 
 #include "pilotManagement.h"
+#include "pilotDirection.h"
 
 #define UNCHANGED_ACTION "keep_value"
 #define STRAIGHT_ACTION "straight"
@@ -272,9 +273,11 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     if ( round == 1 ) {
         mode = DEFAULT_ACTION;
     } else if ( round == 2 ) {
-        mode = UNCHANGED_ACTION;
+        mode = NEW_ACTION;
+        stop(myPilot, &newXAcc, &newYAcc);
     } else if ( round == 4 ) {
         mode = NEW_ACTION;
+        goDown(myPilot);
     } else if ( round == 6 ) {
         mode = NEW_ACTION;
         newXAcc = (-1); /* Permet de ralentir si la vitesse est supérieur à 0 */

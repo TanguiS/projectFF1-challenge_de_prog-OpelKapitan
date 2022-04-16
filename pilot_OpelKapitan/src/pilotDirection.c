@@ -49,9 +49,9 @@ void goDown ( PILOT* pilot ) {
 }
 
 
-void stop ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed;
-    pilot->yAcc = -pilot->ySpeed;
+void stop ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot);
+    *yAcc = -getYSpeedPilot(pilot);
 }
 
 
