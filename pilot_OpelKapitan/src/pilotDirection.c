@@ -23,18 +23,15 @@
 #include "pilotDirection.h"
 
 
-#define ACTION 1
-#define BOOSTED_ACTION 2
-
 
 void goRight ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +ACTION;
+    *xAcc = -getXSpeedPilot(pilot) +1;
     *yAcc = -getYSpeedPilot(pilot);
 }
 
 
 void goLeft ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -ACTION;
+    *xAcc = -getXSpeedPilot(pilot) -1;
     *yAcc = -getYSpeedPilot(pilot);
 }
 
@@ -42,13 +39,13 @@ void goLeft ( PILOT* pilot, short* xAcc, short* yAcc ) {
 
 void goUp ( PILOT* pilot, short* xAcc, short* yAcc  ) {
     *xAcc = -getXSpeedPilot(pilot);
-    *yAcc = -getYSpeedPilot(pilot) -ACTION;
+    *yAcc = -getYSpeedPilot(pilot) -1;
 }
 
 
 void goDown ( PILOT* pilot, short* xAcc, short* yAcc  ) {
     *xAcc = -getXSpeedPilot(pilot);
-    *yAcc = -getYSpeedPilot(pilot) +ACTION;
+    *yAcc = -getYSpeedPilot(pilot) +1;
 }
 
 
@@ -59,120 +56,122 @@ void stop ( PILOT* pilot, short* xAcc, short* yAcc ) {
 
 
 void goRightUp ( PILOT* pilot, short* xAcc, short* yAcc ) { 
-    *xAcc = -getXSpeedPilot(pilot) +ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -ACTION;
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) -1;
 }
 
 
 void goLeftUp ( PILOT* pilot, short* xAcc, short* yAcc ) {  
-    *xAcc = -getXSpeedPilot(pilot) -ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -ACTION;
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) -1;
 }
 
 
 void goRightDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +ACTION;
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) +1;
 }
 
 
 void goLeftDown ( PILOT* pilot, short* xAcc, short* yAcc ) { 
-    *xAcc = -getXSpeedPilot(pilot) -ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +ACTION;
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) +1;
 }
 
 
 void boostRight ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +BOOSTED_ACTION;
+    *xAcc = -getXSpeedPilot(pilot) +2;
     *yAcc = -getYSpeedPilot(pilot);
 }
 
 void boostLeft ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -BOOSTED_ACTION;
+    *xAcc = -getXSpeedPilot(pilot) -2;
     *yAcc = -getYSpeedPilot(pilot);
 }
 
 
 void boostUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
     *xAcc = -getXSpeedPilot(pilot);
-    *yAcc = -getYSpeedPilot(pilot) -BOOSTED_ACTION;
+    *yAcc = -getYSpeedPilot(pilot) -2;
 }
 
 
 void boostDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
     *xAcc = -getXSpeedPilot(pilot);
-    *yAcc = -getYSpeedPilot(pilot) +BOOSTED_ACTION;
+    *yAcc = -getYSpeedPilot(pilot) +2;
 }
 
 
 void boostRRightUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -BOOSTED_ACTION;  
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) -2;  
 }
 
 
 void boostLLeftUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -BOOSTED_ACTION;    
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) -2;    
 }
 
 
 void boostRRightDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +BOOSTED_ACTION;   
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) +2;   
 }
 
 
 void boostLLeftDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +BOOSTED_ACTION;   
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) +2;   
 }
 
 
 void boostLeftDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +BOOSTED_ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) +2; 
 }
 
 void boostLLeftDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) +1; 
 }
 
 void boostRightDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +BOOSTED_ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) +2; 
 }
 
 void boostRRightDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) +ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) +1; 
 }
 
 void boostLeftUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -BOOSTED_ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) -2; 
 } 
 
 void boostLLeftUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) -BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) -1; 
 }
 
 void boostRightUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -BOOSTED_ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) -2; 
 }
 
 void boostRRightUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
-    *xAcc = -getXSpeedPilot(pilot) +BOOSTED_ACTION;
-    *yAcc = -getYSpeedPilot(pilot) -ACTION; 
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) -1; 
 }
 
 void choiceDirection ( PILOT* pilot, direction choice, short* xAcc, short* yAcc )
 {
-    directionFct* tabDirection[NUMBER_DIRECTION] = {
-                                                    goRight,
-                                                    goLeft
+    directionFct* tabDirection[NUMBER_DIRECTION] = 
+    {
+        goRight, goLeft, goUp, goDown,
+        goRightUp, goRightDown, goLeftUp, goLeftDown
     };
+    tabDirection[choice]( pilot, xAcc, yAcc );
 }
