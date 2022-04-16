@@ -28,6 +28,19 @@
 #include <stdio.h>
 #include "pilotManagement.h"
 
+typedef enum {
+    goRight, 
+    goLeft,
+    goUp,
+    goDown,
+    goRightUp,
+    goRightDown,
+    goLeftUp,
+    goLeftDown
+} direction;
+
+typedef void directionFct ( PILOT*, short*, short* );
+
 /**
  * @brief turn the pilot on the right the next round
  * 

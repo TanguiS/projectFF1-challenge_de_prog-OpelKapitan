@@ -3,6 +3,7 @@ make: Entering directory '/home/tangui/Documents/challenge-prog/projectFF1-chall
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/main.c -o obj/main.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/readMap.c -o obj/readMap.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pilotManagement.c -o obj/pilotManagement.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o -o ../drivers/OpelKapitan -lm
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pilotDirection.c -o obj/pilotDirection.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o -o ../drivers/OpelKapitan -lm
 make: Leaving directory '/home/tangui/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
  
