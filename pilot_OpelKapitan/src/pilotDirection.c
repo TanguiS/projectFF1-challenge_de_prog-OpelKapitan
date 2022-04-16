@@ -24,28 +24,28 @@
 
 
 
-void goRight ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +1;
-    pilot->yAcc = -pilot->ySpeed;
+void goRight ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot);
 }
 
 
-void goLeft ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -1;
-    pilot->yAcc = -pilot->ySpeed;
+void goLeft ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot);
 }
 
 
 
-void goUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed;
-    pilot->yAcc = -pilot->ySpeed + 1;
+void goUp ( PILOT* pilot, short* xAcc, short* yAcc  ) {
+    *xAcc = -getXSpeedPilot(pilot);
+    *yAcc = -getYSpeedPilot(pilot) -1;
 }
 
 
-void goDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed;
-    pilot->yAcc = -pilot->ySpeed - 1;
+void goDown ( PILOT* pilot, short* xAcc, short* yAcc  ) {
+    *xAcc = -getXSpeedPilot(pilot);
+    *yAcc = -getYSpeedPilot(pilot) +1;
 }
 
 

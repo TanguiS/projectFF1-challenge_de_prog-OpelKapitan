@@ -277,11 +277,12 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
         stop(myPilot, &newXAcc, &newYAcc);
     } else if ( round == 4 ) {
         mode = NEW_ACTION;
-        goDown(myPilot);
-    } else if ( round == 6 ) {
+        goDown(myPilot, &newXAcc, &newYAcc);
+    }   else if ( round == 6 ) {
         mode = NEW_ACTION;
-        newXAcc = (-1); /* Permet de ralentir si la vitesse est supérieur à 0 */
-        newYAcc = 0;
+        goRight(myPilot, &newXAcc, &newYAcc);
+        /*newXAcc = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
+        /*newYAcc = 0;*/
     } else {
         mode = STRAIGHT_ACTION;
     }

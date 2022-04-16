@@ -33,28 +33,28 @@
  * 
  * @param pilot the pilot 
  */ 
-void goRight(PILOT* pilot); 
+void goRight ( PILOT* pilot, short* xAcc, short* yAcc ); 
 
 /**
  * @brief turn the pilot on the left the next round
  * 
  * @param pilot the pilot 
  */ 
-void goLeft(PILOT* pilot);
+void goLeft(PILOT* pilot, short* xAcc, short* yAcc );
 
 /**
  * @brief turn up the pilot the next round
  * 
  * @param pilot the pilot 
  */ 
-void goUp(PILOT* pilot);
+void goUp(PILOT* pilot, short* xAcc, short* yAcc );
 
 /**
  * @brief turn down the pilot the next round
  * 
  * @param pilot the pilot 
  */ 
-void goDown(PILOT* pilot);
+void goDown(PILOT* pilot, short* xAcc, short* yAcc );
 
 /**
  * @brief stop the pilot the next round
