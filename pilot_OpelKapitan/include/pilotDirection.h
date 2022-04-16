@@ -31,14 +31,14 @@
 #define NUMBER_DIRECTION 8
 
 typedef enum {
-    goRight, 
-    goLeft,
-    goUp,
-    goDown,
-    goRightUp,
-    goRightDown,
-    goLeftUp,
-    goLeftDown
+    rightDirection, 
+    leftDirection,
+    upDirection,
+    downDirection,
+    rightUpDirection,
+    rightDownDirection,
+    leftUpDirection,
+    leftDownDirection
 } direction;
 
 typedef void directionFct ( PILOT*, short*, short* );
