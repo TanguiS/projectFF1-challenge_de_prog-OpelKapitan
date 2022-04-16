@@ -165,3 +165,11 @@ void boostRRightUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
     *xAcc = -getXSpeedPilot(pilot) +2;
     *yAcc = -getYSpeedPilot(pilot) -1; 
 }
+
+void choiceDirection ( PILOT* pilot, direction choice, short* xAcc, short* yAcc )
+{
+    directionFct* tabDirection[NUMBER_DIRECTION] = {
+                                                    goRight,
+                                                    goLeft
+    };
+}
