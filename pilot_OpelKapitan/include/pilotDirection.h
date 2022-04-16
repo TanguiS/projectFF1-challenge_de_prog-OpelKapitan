@@ -107,35 +107,35 @@ void goRightDown(PILOT* pilot, short* xAcc, short* yAcc);
 void goLeftDown(PILOT* pilot, short* xAcc, short* yAcc);
 
 
-void boostRight(PILOT* pilot);
+void boostRight(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLeft(PILOT* pilot);
+void boostLeft(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostUp(PILOT* pilot);
+void boostUp(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostDown(PILOT* pilot);
+void boostDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostRRightUUp(PILOT* pilot);
+void boostRRightUUp(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLLeftUUp(PILOT* pilot);
+void boostLLeftUUp(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostRRightDDown(PILOT* pilot);
+void boostRRightDDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLLeftDDown(PILOT* pilot);
+void boostLLeftDDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLeftDDown(PILOT* pilot);
+void boostLeftDDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLLeftDown(PILOT* pilot);
+void boostLLeftDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostRightDDown(PILOT* pilot);
+void boostRightDDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostRRightDown(PILOT* pilot);
+void boostRRightDown(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLeftUUp(PILOT* pilot);
+void boostLeftUUp(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostLLeftUp(PILOT* pilot);
+void boostLLeftUp(PILOT* pilot, short* xAcc, short* yAcc);
 
-void boostRightUUp(PILOT* pilot);
+void boostRightUUp(PILOT* pilot, short* xAcc, short* yAcc);
 
 void choiceDirection ( PILOT* pilot, direction choice, short* xAcc, short* yAcc );
 
