@@ -37,8 +37,7 @@ A changer probablement
 #define Y "y"
 #define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, X ) == 0 ) ? 1 : 0
 
-#define ACTION -1, 0, 1
-#define BOOSTED_ACTION -2, 2
+
 
 static void putPositionPilot ( PILOT* pilot, short xPosition, short yPosition );
 
@@ -266,7 +265,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     static int round = 0;
     char* mode;
     char action[SIZE_ACTION];
-    char test[5] = {ACTION};
 
     round++;
     /* 1ere etape : choisir une action */

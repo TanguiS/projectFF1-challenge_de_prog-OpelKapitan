@@ -28,8 +28,6 @@
 #include <stdio.h>
 #include "pilotManagement.h"
 
-<<<<<<< HEAD
-=======
 #define NUMBER_DIRECTION 8
 
 typedef enum {
@@ -45,7 +43,6 @@ typedef enum {
 
 typedef void directionFct ( PILOT*, short*, short* );
 
->>>>>>> ca470d7c9f9dc96ea0612ba34298e421642cfa61
 /**
  * @brief turn the pilot on the right the next round
  * 
