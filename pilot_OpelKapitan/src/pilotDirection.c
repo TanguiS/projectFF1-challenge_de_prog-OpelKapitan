@@ -24,6 +24,10 @@
 
 
 
+#define ACTION 1
+#define BOOSTED_ACTION 2
+
+
 void goRight ( PILOT* pilot, short* xAcc, short* yAcc ) {
     *xAcc = -getXSpeedPilot(pilot) +1;
     *yAcc = -getYSpeedPilot(pilot);
