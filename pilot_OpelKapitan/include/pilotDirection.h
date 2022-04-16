@@ -68,28 +68,28 @@ void stop ( PILOT* pilot, short* xAcc, short* yAcc );
  * 
  * @param pilot the pilot 
  */ 
-void goRightUp(PILOT* pilot);
+void goRightUp ( PILOT* pilot, short* xAcc, short* yAcc );
 
 /**
  * @brief turn on the diagonal left up
  * 
  * @param pilot the pilot 
  */ 
-void goLeftUp(PILOT* pilot);
+void goLeftUp(PILOT* pilot, short* xAcc, short* yAcc);
 
 /**
  * @brief turn on the diagonal right down
  * 
  * @param pilot the pilot 
  */ 
-void goRightDown(PILOT* pilot);
+void goRightDown(PILOT* pilot, short* xAcc, short* yAcc);
 
 /**
  * @brief turn on the diagonal left down
  * 
  * @param pilot the pilot 
  */ 
-void goLeftDown(PILOT* pilot);
+void goLeftDown(PILOT* pilot, short* xAcc, short* yAcc);
 
 
 void boostRight(PILOT* pilot);
