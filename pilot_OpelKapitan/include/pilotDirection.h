@@ -28,6 +28,8 @@
 #include <stdio.h>
 #include "pilotManagement.h"
 
+#define NUMBER_DIRECTION 8
+
 typedef enum {
     goRight, 
     goLeft,
@@ -135,7 +137,7 @@ void boostLLeftUp(PILOT* pilot);
 
 void boostRightUUp(PILOT* pilot);
 
-
+void choiceDirection ( PILOT* pilot, direction choice, short* xAcc, short* yAcc );
 
 
 #endif
