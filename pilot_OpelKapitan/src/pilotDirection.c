@@ -177,3 +177,4 @@ void choiceDirection ( PILOT* pilot, direction choice, short* xAcc, short* yAcc 
                                                     goLeft
     };
 }
+
