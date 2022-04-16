@@ -57,111 +57,111 @@ void stop ( PILOT* pilot, short* xAcc, short* yAcc ) {
 
 void goRightUp ( PILOT* pilot, short* xAcc, short* yAcc ) { 
     *xAcc = -getXSpeedPilot(pilot) +1;
-    *yAcc = -getYSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) -1;
 }
 
 
 void goLeftUp ( PILOT* pilot, short* xAcc, short* yAcc ) {  
     *xAcc = -getXSpeedPilot(pilot) -1;
-    *yAcc = -getYSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) -1;
 }
 
 
 void goRightDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
     *xAcc = -getXSpeedPilot(pilot) +1;
-    *yAcc = -getYSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) +1;
 }
 
 
 void goLeftDown ( PILOT* pilot, short* xAcc, short* yAcc ) { 
     *xAcc = -getXSpeedPilot(pilot) -1;
-    *yAcc = -getYSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) +1;
 }
 
 
-void boostRight ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +2;
-    pilot->yAcc = -pilot->ySpeed;
+void boostRight ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot);
 }
 
-void boostLeft ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -2;
-    pilot->yAcc = -pilot->ySpeed;
-}
-
-
-void boostUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed;
-    pilot->yAcc = -pilot->ySpeed + 2;
+void boostLeft ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot);
 }
 
 
-void boostDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed;
-    pilot->yAcc = -pilot->ySpeed - 2;
+void boostUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot);
+    *yAcc = -getYSpeedPilot(pilot) -2;
 }
 
 
-void boostRRightUUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +2;
-    pilot->yAcc = -pilot->ySpeed +2;   
+void boostDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot);
+    *yAcc = -getYSpeedPilot(pilot) +2;
 }
 
 
-void boostLLeftUUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -2;
-    pilot->yAcc = -pilot->ySpeed +2;   
+void boostRRightUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) -2;  
 }
 
 
-void boostRRightDDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +2;
-    pilot->yAcc = -pilot->ySpeed -2;   
+void boostLLeftUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) -2;    
 }
 
 
-void boostLLeftDDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -2;
-    pilot->yAcc = -pilot->ySpeed -2;   
+void boostRRightDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) +2;   
 }
 
 
-void boostLeftDDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -1;
-    pilot->yAcc = -pilot->ySpeed -2;
+void boostLLeftDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) +2;   
 }
 
-void boostLLeftDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -2;
-    pilot->yAcc = -pilot->ySpeed -1;
+
+void boostLeftDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) +2; 
 }
 
-void boostRightDDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +1;
-    pilot->yAcc = -pilot->ySpeed -2;
+void boostLLeftDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) +1; 
 }
 
-void boostRRightDown ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +2;
-    pilot->yAcc = -pilot->ySpeed -1;
+void boostRightDDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) +2; 
 }
 
-void boostLeftUUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -1;
-    pilot->yAcc = -pilot->ySpeed +2;
+void boostRRightDown ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) +1; 
+}
+
+void boostLeftUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -1;
+    *yAcc = -getYSpeedPilot(pilot) -2; 
 } 
 
-void boostLLeftUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed -2;
-    pilot->yAcc = -pilot->ySpeed +1;
+void boostLLeftUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) -2;
+    *yAcc = -getYSpeedPilot(pilot) -1; 
 }
 
-void boostRightUUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +1;
-    pilot->yAcc = -pilot->ySpeed +2;
+void boostRightUUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +1;
+    *yAcc = -getYSpeedPilot(pilot) -2; 
 }
 
-void boostRRightUp ( PILOT* pilot ) {
-    pilot->xAcc = -pilot->xSpeed +2;
-    pilot->yAcc = -pilot->ySpeed +1;
+void boostRRightUp ( PILOT* pilot, short* xAcc, short* yAcc ) {
+    *xAcc = -getXSpeedPilot(pilot) +2;
+    *yAcc = -getYSpeedPilot(pilot) -1; 
 }
