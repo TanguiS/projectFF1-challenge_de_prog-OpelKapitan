@@ -43,10 +43,30 @@ typedef struct _dataMap {
  */
 typedef struct _dataMap DATA_MAP;
 
+/**
+ * @brief Get the Width Map object
+ * 
+ * @param map : the DATA_MAP objet
+ * @return short : the width of the map
+ */
 short getWidthMap ( DATA_MAP map );
 
+/**
+ * @brief Get the Height Map object
+ * 
+ * @param map : the map object
+ * @return short : the height of the map
+ */
 short getHeightMap ( DATA_MAP map );
 
+/**
+ * @brief Get the Map Element object
+ * 
+ * @param map : the map object
+ * @param x : the x coordinate of the element
+ * @param y : the y coordiante of the element
+ * @return short : the elemets 
+ */
 short getMapElement ( DATA_MAP map, int x, int y );
 
 /**
