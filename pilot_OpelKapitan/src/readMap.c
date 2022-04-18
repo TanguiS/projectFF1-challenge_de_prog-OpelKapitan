@@ -22,8 +22,20 @@
 #include "readMap.h"
 #include "debugMode.h"
 
+/**
+ * @brief Sets the value in the image object
+ * 
+ * @param map : The map object
+ * @param newWidth : the new width of the map
+ */
 static void putWidthMap ( DATA_MAP* map, short newWidth );
 
+/**
+ * @brief Sets the value in the image object
+ * 
+ * @param map : the map object
+ * @param newHeight : the new height of the map
+ */
 static void putHeightMap ( DATA_MAP* map, short newHeight );
 
 /**
