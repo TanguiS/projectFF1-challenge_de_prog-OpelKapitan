@@ -31,7 +31,7 @@
 #include "debugMode.h"
 #endif
 
-#define NUMBER_DIRECTION 25
+#define NUMBER_DIRECTION 9
 
 typedef enum {
     right, 
@@ -39,133 +39,37 @@ typedef enum {
     up,
     down,
 
-    rightUp,
-    rightDown,
-    leftUp,
-    leftDown,
-
     boostRight,
     boostLeft,
     boostUp,
     boostDown,
 
-    boostRightUp,
-    boostRightDown,
-    boostLeftUp,
-    boostLeftDown,
-
-    boostRightBoostUp,
-    boostRightBoostDown,
-    boostLeftBoostUp,
-    boostLeftBoostDown,
-
-    rightBoostUp,
-    rightBoostDown,
-    leftBoostUp,
-    leftBoostDown,
-
-    stopPilot
+    straight
 } direction;
 
-typedef void directionFct ( PILOT*, short*, short* );
+typedef void directionFct ( short*, short* );
 
-/**
- * @brief turn the pilot on the right the next round
- * 
- * @param pilot the pilot 
- */ 
-void goRight ( PILOT* pilot, short* xAcc, short* yAcc ); 
+void goRight ( short* xAcc, short* yAcc ); 
 
-/**
- * @brief turn the pilot on the left the next round
- * 
- * @param pilot the pilot 
- */ 
-void goLeft(PILOT* pilot, short* xAcc, short* yAcc );
+void goLeft ( short* xAcc, short* yAcc );
 
-/**
- * @brief turn up the pilot the next round
- * 
- * @param pilot the pilot 
- */ 
-void goUp(PILOT* pilot, short* xAcc, short* yAcc );
+void goUp ( short* xAcc, short* yAcc );
 
-/**
- * @brief turn down the pilot the next round
- * 
- * @param pilot the pilot 
- */ 
-void goDown(PILOT* pilot, short* xAcc, short* yAcc );
+void goDown ( short* xAcc, short* yAcc );
 
-/**
- * @brief stop the pilot the next round
- * 
- * @param pilot the pilot 
- */ 
-void stop ( PILOT* pilot, short* xAcc, short* yAcc );
+void goStraight ( short* xAcc, short* yAcc );
 
-/**
- * @brief turn on the diagonal right up
- * 
- * @param pilot the pilot 
- */ 
-void goRightUp ( PILOT* pilot, short* xAcc, short* yAcc );
+void goBoostRight ( short* xAcc, short* yAcc );
 
-/**
- * @brief turn on the diagonal left up
- * 
- * @param pilot the pilot 
- */ 
-void goLeftUp(PILOT* pilot, short* xAcc, short* yAcc);
+void goBoostLeft ( short* xAcc, short* yAcc );
 
-/**
- * @brief turn on the diagonal right down
- * 
- * @param pilot the pilot 
- */ 
-void goRightDown(PILOT* pilot, short* xAcc, short* yAcc);
+void goBoostUp ( short* xAcc, short* yAcc );
 
-/**
- * @brief turn on the diagonal left down
- * 
- * @param pilot the pilot 
- */ 
-void goLeftDown(PILOT* pilot, short* xAcc, short* yAcc);
+void goBoostDown ( short* xAcc, short* yAcc );
 
+void slowDown ( PILOT* pilot, short* xAcc, short* yAcc );
 
-void goBoostRight(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostLeft(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostUp(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostRightBoostUp(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostLeftBoostUp(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostRightBoostDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostLeftBoostDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goLeftBoostDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostLeftDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goRightBoostDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostRightDown(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goLeftBoostUp(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostLeftUp(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goRightBoostUp(PILOT* pilot, short* xAcc, short* yAcc);
-
-void goBoostRightUp ( PILOT* pilot, short* xAcc, short* yAcc );
-
-void choiceDirection ( PILOT* pilot, direction choice, short* xAcc, short* yAcc );
+void choiceDirection ( direction choice, short* xAcc, short* yAcc );
 
 
 #endif

@@ -270,18 +270,23 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     /* 1ere etape : choisir une action */
     if ( round == 1 ) {
         mode = NEW_ACTION;
-        choiceDirection ( myPilot, right, &newXAcc, &newYAcc );
+        choiceDirection ( right, &newXAcc, &newYAcc );
     } else if ( round == 3 ) {
         mode = NEW_ACTION;
-        choiceDirection ( myPilot, boostRight, &newXAcc, &newYAcc );
+        choiceDirection ( boostRight, &newXAcc, &newYAcc );
+        choiceDirection ( up, &newXAcc, &newYAcc );
     } else if ( round == 5 ) {
         mode = NEW_ACTION;
-        choiceDirection ( myPilot, up, &newXAcc, &newYAcc );
+        choiceDirection ( down, &newXAcc, &newYAcc );
+        choiceDirection ( right, &newXAcc, &newYAcc );
     } else if ( round == 7 ) {
         mode = NEW_ACTION;
-        choiceDirection ( myPilot, right, &newXAcc, &newYAcc );
+        choiceDirection ( right, &newXAcc, &newYAcc );
         /*newXAcc = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
         /*newYAcc = 0;*/
+    } else if ( round == 6 ) {
+        mode = NEW_ACTION;
+        slowDown ( myPilot, &newXAcc, &newYAcc ); /* on pourrait tester si la vitesse cumulée des deux directions est trop grandes */
     } else {
         mode = STRAIGHT_ACTION;
     }
