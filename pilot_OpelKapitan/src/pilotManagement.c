@@ -154,7 +154,7 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
     if ( ACTION_IS_UNCHANGED ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "ne rien faire" );
     } else if ( ACTION_IS_STRAIGHT ( modeChosen ) ) {
-        DEBUG_STRING ( "====> update action : ", "ne pas changer sa direction, ni son acc" );
+        DEBUG_STRING ( "====> update action : ", "garder sa vitesse actuelle" );
         putActionPilot ( pilot, (short) 0, (short) 0 );
     } else if ( ACTION_IS_DEFAULT ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "en mode default (1 0)" );
@@ -269,16 +269,17 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
     round++;
     /* 1ere etape : choisir une action */
     if ( round == 1 ) {
-        mode = DEFAULT_ACTION;
-    } else if ( round == 2 ) {
         mode = NEW_ACTION;
-        stop(myPilot, &newXAcc, &newYAcc);
-    } else if ( round == 4 ) {
+        choiceDirection ( myPilot, right, &newXAcc, &newYAcc );
+    } else if ( round == 3 ) {
         mode = NEW_ACTION;
-        goDown(myPilot, &newXAcc, &newYAcc);
-    }   else if ( round == 6 ) {
+        choiceDirection ( myPilot, boostRight, &newXAcc, &newYAcc );
+    } else if ( round == 5 ) {
         mode = NEW_ACTION;
-        goRight(myPilot, &newXAcc, &newYAcc);
+        choiceDirection ( myPilot, up, &newXAcc, &newYAcc );
+    } else if ( round == 7 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( myPilot, right, &newXAcc, &newYAcc );
         /*newXAcc = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
         /*newYAcc = 0;*/
     } else {

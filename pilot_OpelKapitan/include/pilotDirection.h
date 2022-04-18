@@ -27,8 +27,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "pilotManagement.h"
+#ifndef DEBUG
+#include "debugMode.h"
+#endif
 
-#define NUMBER_DIRECTION 24
+#define NUMBER_DIRECTION 25
 
 typedef enum {
     right, 
@@ -59,7 +62,9 @@ typedef enum {
     rightBoostUp,
     rightBoostDown,
     leftBoostUp,
-    leftBoostDown
+    leftBoostDown,
+
+    stopPilot
 } direction;
 
 typedef void directionFct ( PILOT*, short*, short* );
