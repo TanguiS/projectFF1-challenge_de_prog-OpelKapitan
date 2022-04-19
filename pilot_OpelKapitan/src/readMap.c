@@ -119,35 +119,27 @@ DATA_MAP createMap ( short newWidth, short newHeight )
     return map;
 }
 
-DATA_MAP readDataMap ( PILOT* myPilot )
+DATA_MAP readDataMap ( short* gasLvl )
 {
     DATA_MAP map;
     int i;
-    short width, height, gasLvl;
+    short width, height;
     char buf[MAX_LINE_LENGTH];
 
     fgets ( buf, MAX_LINE_LENGTH, stdin );
-    sscanf ( buf, "%hd %hd %hd", &width, &height, &gasLvl );
-
-    myPilot->gasLvl = gasLvl;
+    sscanf ( buf, "%hd %hd %hd", &width, &height, gasLvl );
 
     DEBUG_CHAR ( "=== > Lecture des Data < ===", ' ' );
     DEBUG_INT ( "Valeur de width : ", (int) width ); 
     DEBUG_INT ( "Valeur de height : ", (int) height ); 
-    DEBUG_INT ( "Valeur de gasLvl : ", (int) gasLvl );
+    DEBUG_INT ( "Valeur de gasLvl : ", (int) *gasLvl );
 
     map = createMap ( width, height );
-
-    DEBUG_CHAR ( "=== > Map From readDataMap < ===", ' ' );
-    DEBUG_INT ( "Verification des données de la matrice : width : ", getWidthMap ( map ) );
-    DEBUG_INT ( "Verification des données de la matrice : height : ", getHeightMap ( map ) );
-    DEBUG_INT ( "Verification du niveau de gaz : ", getGasLvlPilot ( myPilot ) ); 
 
     for ( i = 0; i < getHeightMap ( map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
         putDataToMap ( &map, buf, i );
     }
-    fflush ( stderr );
     #ifndef DEBUG
         display ( map );
     #endif

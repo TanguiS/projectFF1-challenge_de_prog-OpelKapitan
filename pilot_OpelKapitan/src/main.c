@@ -30,12 +30,13 @@
 int main ()
 {
     int round = 0;
+    short gasLvl;
     DATA_MAP map;
     PILOT myPilot, autre2, autre3;
 
-    myPilot = createPilot();
+    map = readDataMap ( &gasLvl );
+    myPilot = createPilot ( gasLvl );
 
-    map = readDataMap ( &myPilot );
 
     fprintf(stderr, "\n=== Race start ===\n");
     while (!feof(stdin)) {
@@ -43,7 +44,7 @@ int main ()
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
         
-        updatePilots ( &myPilot, &autre2, &autre3 );
+        updatePilots ( &myPilot, &autre2, &autre3, &map );
 
         if (0 && round > 4) { /* (DISABLED) Force a segfault for testing purpose */
             int * p = NULL;

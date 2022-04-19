@@ -245,9 +245,10 @@ short getBoostsRemainingPilot ( PILOT* pilot )
     return pilot->boostsRemaining;
 }
 
-PILOT createPilot ()
+PILOT createPilot ( short gasLvl )
 {
     PILOT newPilot;
+    putGasLvlPilot ( &newPilot, gasLvl );
     initNewPilot ( &newPilot );
 
     return newPilot;
@@ -259,7 +260,7 @@ PILOT createPilot ()
  * @TODO predire l'essence utilise pour eviter de griller nimporte comment
  */
 
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map )
 {
     short newXAcc = 2, newYAcc = 0; /* pour la demonstration du boost */
     static int round = 0;
