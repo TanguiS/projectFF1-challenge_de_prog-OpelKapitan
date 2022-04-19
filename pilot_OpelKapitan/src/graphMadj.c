@@ -78,8 +78,11 @@ GRAPH createGraph ( short width, short height )
     int i;
     initGraph ( &newGraph, width, height );
     newGraph.graph = ( element** ) malloc ( newGraph.width * sizeof ( element* ) );
+    DEBUG_INT ( ">graph width : ", newGraph.width );
+    DEBUG_INT ( ">graph height : ", newGraph.height );
     assert ( newGraph.graph );
     for ( i = 0; i < newGraph.width; i++ ) {
+        DEBUG_INT ( ">graph bug ", i );
         newGraph.graph[i] = ( element* ) malloc ( newGraph.width * sizeof ( element ) );
         assert ( newGraph.graph[i] );
     }

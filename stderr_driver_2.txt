@@ -1,61 +1,152 @@
 === > Lecture des Data < ===  
-Valeur de width :  32
-Valeur de height :  16
-Valeur de gasLvl :  35
+Valeur de width :  95
+Valeur de height :  110
+Valeur de gasLvl :  650
+>graph width :  95
+>graph height :  110
+>graph bug  0
+>graph bug  1
+>graph bug  2
+>graph bug  3
+>graph bug  4
+>graph bug  5
+>graph bug  6
+>graph bug  7
+>graph bug  8
+>graph bug  9
+>graph bug  10
+>graph bug  11
+>graph bug  12
+>graph bug  13
+>graph bug  14
+>graph bug  15
+>graph bug  16
+>graph bug  17
+>graph bug  18
+>graph bug  19
+>graph bug  20
+>graph bug  21
+>graph bug  22
+>graph bug  23
+>graph bug  24
+>graph bug  25
+>graph bug  26
+>graph bug  27
+>graph bug  28
+>graph bug  29
+>graph bug  30
+>graph bug  31
+>graph bug  32
+>graph bug  33
+>graph bug  34
+>graph bug  35
+>graph bug  36
+>graph bug  37
+>graph bug  38
+>graph bug  39
+>graph bug  40
+>graph bug  41
+>graph bug  42
+>graph bug  43
+>graph bug  44
+>graph bug  45
+>graph bug  46
+>graph bug  47
+>graph bug  48
+>graph bug  49
+>graph bug  50
+>graph bug  51
+>graph bug  52
+>graph bug  53
+>graph bug  54
+>graph bug  55
+>graph bug  56
+>graph bug  57
+>graph bug  58
+>graph bug  59
+>graph bug  60
+>graph bug  61
+>graph bug  62
+>graph bug  63
+>graph bug  64
+>graph bug  65
+>graph bug  66
+>graph bug  67
+>graph bug  68
+>graph bug  69
+>graph bug  70
+>graph bug  71
+>graph bug  72
+>graph bug  73
+>graph bug  74
+>graph bug  75
+>graph bug  76
+>graph bug  77
+>graph bug  78
+>graph bug  79
+>graph bug  80
+>graph bug  81
+>graph bug  82
+>graph bug  83
+>graph bug  84
+>graph bug  85
+>graph bug  86
+>graph bug  87
+>graph bug  88
+>graph bug  89
+>graph bug  90
+>graph bug  91
+>graph bug  92
+>graph bug  93
+>graph bug  94
+=================================================================
+==9311==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60800000007f at pc 0x55f9bf7f2d56 bp 0x7ffd23276ba0 sp 0x7ffd23276b90
+WRITE of size 1 at 0x60800000007f thread T0
+    #0 0x55f9bf7f2d55 in setDataToMapGraph src/readMap.c:78
+    #1 0x55f9bf7f3943 in readDataMapGraph src/readMap.c:149
+    #2 0x55f9bf7f265a in main src/main.c:38
+    #3 0x7f4ea184f0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
+    #4 0x55f9bf7f248d in _start (/home/tangui/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKapitan/drivers/OpelKapitan+0x348d)
 
-Affichage de la map :   
-................................
-................................
-................................
-................................
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-..#########################==...
-................................
-................................
-................................
-................................
-................................
+0x60800000007f is located 0 bytes to the right of 95-byte region [0x608000000020,0x60800000007f)
+allocated by thread T0 here:
+    #0 0x7f4ea1c79808 in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cc:144
+    #1 0x55f9bf7f6c52 in createGraph src/graphMadj.c:86
+    #2 0x55f9bf7f38c6 in readDataMapGraph src/readMap.c:145
+    #3 0x55f9bf7f265a in main src/main.c:38
+    #4 0x7f4ea184f0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
 
-Affichage du graph :   
-00000000000000000000000000000000
-00000000000000000000000000000000
-00000000000000000000000000000000
-00000000000000000000000000000000
-00111111111111111111111111111000
-00111111111111111111111111111000
-00111111111111111111111111111000
-00111111111111111111111111111000
-00111111111111111111111111111000
-00111111111111111111111111111000
-00111111111111111111111111111000
-00000000000000000000000000000000
-00000000000000000000000000000000
-00000000000000000000000000000000
-00000000000000000000000000000000
-00000000000000000000000000000000
-
-=== Race start ===
-=== ROUND 1
->Choix de direction :  0
->choix :  1
->choix :  0
-====> update action :  Changement d'acc
-> nombre de Boost restant :  5
-> fuelConsumption :  speed : (1 0), acc : (1 0)
-> Consommation , norme1:  1
-> Consommation , squareRoot:  1
-> Consommation :  2
-> gas left :  33
-=== ROUND 2
-====> update action :  garder sa vitesse actuelle
-> nombre de Boost restant :  5
-> fuelConsumption :  speed : (1 0), acc : (0 0)
-> Consommation , norme1:  0
-> Consommation , squareRoot:  1
-> Consommation :  1
-> gas left :  32
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/readMap.c:78 in setDataToMapGraph
+Shadow bytes around the buggy address:
+  0x0c107fff7fb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c107fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c107fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c107fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c107fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c107fff8000: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00[07]
+  0x0c107fff8010: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 07
+  0x0c107fff8020: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 07
+  0x0c107fff8030: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 07
+  0x0c107fff8040: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 07
+  0x0c107fff8050: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 07
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==9311==ABORTING
