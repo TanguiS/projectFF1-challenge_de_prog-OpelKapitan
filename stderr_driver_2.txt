@@ -21,6 +21,24 @@ Affichage de la map :
 ................................
 ................................
 
+Affichage du graph :   
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
 === Race start ===
 === ROUND 1
 >Choix de direction :  0
@@ -41,74 +59,3 @@ Affichage de la map :
 > Consommation , squareRoot:  1
 > Consommation :  1
 > gas left :  32
-=== ROUND 3
->Choix de direction :  4
->choix :  2
->choix :  0
->Choix de direction :  2
->choix :  2
->choix :  -1
-====> update action :  Changement d'acc
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (3 -1), acc : (2 -1)
-> Consommation , norme1:  5
-> Consommation , squareRoot:  3
-> Consommation :  8
-> gas left :  24
-=== ROUND 4
-====> update action :  garder sa vitesse actuelle
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (3 -1), acc : (0 0)
-> Consommation , norme1:  0
-> Consommation , squareRoot:  3
-> Consommation :  3
-> gas left :  21
-=== ROUND 5
->Choix de direction :  3
->choix :  2
->choix :  1
->Choix de direction :  0
->choix :  1
->choix :  1
-====> update action :  Changement d'acc
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (4 0), acc : (1 1)
-> Consommation , norme1:  2
-> Consommation , squareRoot:  4
-> Consommation :  6
-> gas left :  15
-=== ROUND 6
-====> update action :  Changement d'acc
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (3 0), acc : (-1 0)
-> Consommation , norme1:  1
-> Consommation , squareRoot:  3
-> Consommation :  4
-> gas left :  11
-=== ROUND 7
->Choix de direction :  0
->choix :  1
->choix :  0
-====> update action :  Changement d'acc
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (4 0), acc : (1 0)
-> Consommation , norme1:  1
-> Consommation , squareRoot:  4
-> Consommation :  5
-> gas left :  6
-=== ROUND 8
-====> update action :  garder sa vitesse actuelle
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (4 0), acc : (0 0)
-> Consommation , norme1:  0
-> Consommation , squareRoot:  4
-> Consommation :  4
-> gas left :  2
-=== ROUND 9
-====> update action :  garder sa vitesse actuelle
-> nombre de Boost restant :  4
-> fuelConsumption :  speed : (4 0), acc : (0 0)
-> Consommation , norme1:  0
-> Consommation , squareRoot:  4
-> Consommation :  4
-> gas left :  -2

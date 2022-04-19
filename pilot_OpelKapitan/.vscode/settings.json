@@ -31,7 +31,9 @@
   ],
   "C_Cpp_Runner.makePath": "/usr/bin/make",
   "files.associations": {
-    "pilotmanagement.h": "c"
+    "pilotmanagement.h": "c",
+    "pilotdirection.h": "c",
+    "graphmadj.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

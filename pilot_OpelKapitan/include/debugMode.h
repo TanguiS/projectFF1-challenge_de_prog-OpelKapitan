@@ -29,7 +29,8 @@
 #define DEBUG_INT(string, value) { fprintf ( stderr, "%s %d\n", string, value ); fflush ( stderr ); }
 #define DEBUG_CHAR(string, value) { fprintf ( stderr, "%s %c\n", string, value ); fflush ( stderr ); }
 #define DEBUG_STRING(string, value) { fprintf ( stderr, "%s %s\n", string, value ); fflush ( stderr ); }
-#define DEBUG_ONLY_CHAR(value) { fprintf ( stderr, "%c", value ); fflush ( stderr ); } 
+#define DEBUG_ONLY_CHAR(value) { fprintf ( stderr, "%c", value ); fflush ( stderr ); }
+#define DEBUG_ONLY_INT(value) { fprintf ( stderr, "%d", value ); fflush ( stderr ); } 
 
 #else
 
@@ -37,6 +38,7 @@
 #define DEBUG_CHAR(string, value)
 #define DEBUG_ONLY_CHAR(value)
 #define DEBUG_STRING(string, value)
+#define DEBUG_ONLY_INT(value)
 
 #endif /* DEBUG */
 

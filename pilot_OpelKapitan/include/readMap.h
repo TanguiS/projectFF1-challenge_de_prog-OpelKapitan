@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "util.h"
+#include "graphMadj.h"
 
 typedef enum {
     road = '#',
@@ -89,7 +90,7 @@ DATA_MAP createMap ( short newXSize, short newYSize );
  * 
  * @return DATA_MAP : The DATA_MAP initialized and filled from the data provided by the GDP
  */
-DATA_MAP readDataMap ( short* gasLvl );
+DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph );
 
 /**
  * @brief Destroy a DATA_MAP object

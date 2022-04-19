@@ -33,8 +33,10 @@ int main ()
     short gasLvl;
     DATA_MAP map;
     PILOT myPilot, autre2, autre3;
+    GRAPH graph;
 
-    map = readDataMap ( &gasLvl );
+    map = readDataMapGraph ( &gasLvl, &graph );
+    displayGraph ( &graph );
     myPilot = createPilot ( gasLvl );
 
 

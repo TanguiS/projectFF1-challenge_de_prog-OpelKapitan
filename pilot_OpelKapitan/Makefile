@@ -19,7 +19,7 @@ ifeq ($(DEBUG),off)
 CFLAGS += -D'DEBUG'
 endif
 
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o
 
 install: $(BIN_PATH)/$(PILOT_NAME)
 
@@ -38,6 +38,8 @@ $(OBJ_PATH)/pilotManagement.o: $(SRC_PATH)/pilotManagement.c $(INC_PATH)/pilotMa
 $(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)/pilotDirection.c $(INC_PATH)/pilotDirection.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
+$(OBJ_PATH)/graphMadj.o: $(SRC_PATH)/graphMadj.c $(INC_PATH)/graphMadj.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(BIN_PATH)/$(PILOT_NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)

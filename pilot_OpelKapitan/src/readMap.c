@@ -54,7 +54,7 @@ static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight );
  * @param data : A line of data that need to be written int the map's matrix
  * @param row : the column to which this line of data belongs
  */
-static void setDataToMap ( DATA_MAP* map, char* data, int row );
+static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row );
 #ifndef DEBUG
 /**
  * @brief Only for Debugging purposes
@@ -64,12 +64,19 @@ static void setDataToMap ( DATA_MAP* map, char* data, int row );
 static void display ( DATA_MAP map );
 #endif
 
-static void setDataToMap ( DATA_MAP* map, char* data, int row )
+static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
 {
     int i;
     
     for ( i = 0; i < getWidthMap ( *map ); i++ ) {
         map->map[i][row] = data[i];
+        if ( (data[i] == road) || (data[i] == finishLine) ) {
+            graph->graph[i][row] = 1;
+        } else if ( data[i] == sand ) {
+            graph->graph[i][row] = 6;
+        } else {
+            graph->graph[i][row] = 0;
+        }
     }
 }
 
@@ -119,7 +126,7 @@ DATA_MAP createMap ( short newWidth, short newHeight )
     return map;
 }
 
-DATA_MAP readDataMap ( short* gasLvl )
+DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph )
 {
     DATA_MAP map;
     int i;
@@ -135,10 +142,11 @@ DATA_MAP readDataMap ( short* gasLvl )
     DEBUG_INT ( "Valeur de gasLvl : ", (int) *gasLvl );
 
     map = createMap ( width, height );
+    *graph = createGraph ( width, height );
 
     for ( i = 0; i < getHeightMap ( map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
-        setDataToMap ( &map, buf, i );
+        setDataToMapGraph ( &map, graph, buf, i );
     }
     #ifndef DEBUG
         display ( map );

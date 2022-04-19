@@ -1,14 +1,25 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 4.2.1
-# Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2016 Free Software Foundation, Inc.
-# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-# This is free software: you are free to change and redistribute it.
-# There is NO WARRANTY, to the extent permitted by law.
+make: *** No rule to make target 'all'.  Stop.
 
-# Make data base, printed on Tue Apr 19 11:04:16 2022
+# GNU Make 4.2.1
+ 
+# Built for x86_64-pc-linux-gnu
+ 
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+ 
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
+# This is free software: you are free to change and redistribute it.
+ 
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+ 
+# Make data base, printed on Tue Apr 19 18:13:18 2022
+ 
 
 # Variables
+ 
 
 # 'override' directive
 GNUMAKEFLAGS := 
@@ -51,7 +62,7 @@ SNAP_DATA = /var/snap/code/94
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"f62d0d328ea2a469bad3c39b06263023.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:35217
+JOURNAL_STREAM = 8:36159
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -85,7 +96,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1299
+MANAGERPID = 1301
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -121,7 +132,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 0c64111d70ca46f4bd2bb501214f02f6
+INVOCATION_ID = 074508d424bd4ad5b0c2ec1f8c84015a
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -135,7 +146,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2278
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2198
 # automatic
 %F = $(notdir $%)
 # environment
@@ -143,7 +154,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile', line 22)
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -205,7 +216,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2e5a80b8-902f-4ea3-8c02-33b2e6a9d9a0.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3b57ae0a-1d9d-4608-85ac-d886e04431ad.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -277,9 +288,6 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # default
 SUFFIXES := 
 # environment
- 
-make: *** No rule to make target 'all'.  Stop.
-
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
@@ -289,6 +297,7 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
+ 
 # default
 .RECIPEPREFIX := 
 # makefile (from 'Makefile', line 4)
@@ -298,9 +307,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2352
+VSCODE_PID = 2244
 # variable set hash-table stats:
-# Load=143/1024=14%, Rehash=0, Collisions=32/192=17%
+# Load=143/1024=14%, Rehash=0, Collisions=32/196=16%
 
 # Pattern-specific Variable Values
 
@@ -317,6 +326,18 @@ VSCODE_PID = 2352
 # No implicit rules.
 
 # Files
+
+# Not a target:
+include/graphMadj.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/graphMadj.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 all:
@@ -349,7 +370,7 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-19 10:33:59.506220914
+#  Last modified 2022-04-19 18:12:52.986131098
 #  File has been updated.
 #  Successfully updated.
 
@@ -372,11 +393,11 @@ obj/pilotDirection.o: src/pilotDirection.c include/pilotDirection.h
 #  recipe to execute (from 'Makefile', line 39):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o
+../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 45):
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
 
 # Not a target:
@@ -420,7 +441,7 @@ clean: obj
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 48):
 	rm $</*.o
 
 # Not a target:
@@ -435,25 +456,32 @@ src/pilotDirection.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+obj/graphMadj.o: src/graphMadj.c include/graphMadj.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
 install: ../drivers/OpelKapitan
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/46=0%
+# Load=23/1024=2%, Rehash=0, Collisions=0/52=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 359 B / avg = 12 B
-# current buf: size = 8162 B / used = 359 B / count = 29 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 411 B / avg = 12 B
+# current buf: size = 8162 B / used = 411 B / count = 32 / avg = 12 B
 
-# strcache performance: lookups = 49 / hit rate = 40%
+# strcache performance: lookups = 54 / hit rate = 40%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/49=2%
-# Finished Make data base on Tue Apr 19 11:04:16 2022
+# Load=32/8192=0%, Rehash=0, Collisions=1/54=2%
+# Finished Make data base on Tue Apr 19 18:13:18 2022
 
  
