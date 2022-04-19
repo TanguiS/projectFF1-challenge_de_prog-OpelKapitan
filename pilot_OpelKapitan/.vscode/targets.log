@@ -8,7 +8,11 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
+<<<<<<< HEAD
 # Make data base, printed on Tue Apr 19 10:11:35 2022
+=======
+# Make data base, printed on Mon Apr 18 23:36:47 2022
+>>>>>>> origin/direction2
 
 # Variables
 
@@ -53,7 +57,11 @@ SNAP_DATA = /var/snap/code/94
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"f62d0d328ea2a469bad3c39b06263023.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/corrupted.info","_languagePackSupport":true}
 # environment
+<<<<<<< HEAD
 JOURNAL_STREAM = 8:35217
+=======
+JOURNAL_STREAM = 8:36121
+>>>>>>> origin/direction2
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -87,7 +95,11 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
+<<<<<<< HEAD
 MANAGERPID = 1299
+=======
+MANAGERPID = 1298
+>>>>>>> origin/direction2
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -123,7 +135,11 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
+<<<<<<< HEAD
 INVOCATION_ID = 0c64111d70ca46f4bd2bb501214f02f6
+=======
+INVOCATION_ID = fb0a6e9bd23745f5904e658a3cffe099
+>>>>>>> origin/direction2
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -137,7 +153,11 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
+<<<<<<< HEAD
 GIO_LAUNCHED_DESKTOP_FILE_PID = 2278
+=======
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2276
+>>>>>>> origin/direction2
 # automatic
 %F = $(notdir $%)
 # environment
@@ -145,7 +165,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile', line 22)
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -207,7 +227,11 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
+<<<<<<< HEAD
 VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8f797b2d-0657-4b61-9e4f-e9355e40d537.sock
+=======
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ae7410e1-a010-46c5-92e1-1e9a906b88fe.sock
+>>>>>>> origin/direction2
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -298,9 +322,13 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
+<<<<<<< HEAD
 VSCODE_PID = 2352
+=======
+VSCODE_PID = 2324
+>>>>>>> origin/direction2
 # variable set hash-table stats:
-# Load=143/1024=14%, Rehash=0, Collisions=32/188=17%
+# Load=143/1024=14%, Rehash=0, Collisions=32/192=17%
 
 # Pattern-specific Variable Values
 
@@ -349,7 +377,11 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+<<<<<<< HEAD
 #  Last modified 2022-04-19 09:56:04.175709823
+=======
+#  Last modified 2022-04-16 19:06:38.009825439
+>>>>>>> origin/direction2
 #  File has been updated.
 #  Successfully updated.
 
@@ -365,11 +397,18 @@ src/pilotManagement.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o
+obj/pilotDirection.o: src/pilotDirection.c include/pilotDirection.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
+#  recipe to execute (from 'Makefile', line 39):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 43):
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
 
 # Not a target:
@@ -413,8 +452,20 @@ clean: obj
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
+#  recipe to execute (from 'Makefile', line 46):
 	rm $</*.o
+
+# Not a target:
+include/pilotDirection.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/pilotDirection.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 install: ../drivers/OpelKapitan
 #  Implicit rule search has not been done.
@@ -422,19 +473,24 @@ install: ../drivers/OpelKapitan
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/40=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 292 B / avg = 11 B
-# current buf: size = 8162 B / used = 292 B / count = 26 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 359 B / avg = 12 B
+# current buf: size = 8162 B / used = 359 B / count = 29 / avg = 12 B
 
-# strcache performance: lookups = 44 / hit rate = 40%
+# strcache performance: lookups = 49 / hit rate = 40%
 # hash-table stats:
+<<<<<<< HEAD
 # Load=26/8192=0%, Rehash=0, Collisions=1/44=2%
 # Finished Make data base on Tue Apr 19 10:11:35 2022
+=======
+# Load=29/8192=0%, Rehash=0, Collisions=1/49=2%
+# Finished Make data base on Mon Apr 18 23:36:48 2022
+>>>>>>> origin/direction2
 
  

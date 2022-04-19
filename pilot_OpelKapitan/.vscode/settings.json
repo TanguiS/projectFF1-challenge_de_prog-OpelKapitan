@@ -27,5 +27,8 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "C_Cpp_Runner.makePath": "/usr/bin/make"
+  "C_Cpp_Runner.makePath": "/usr/bin/make",
+  "files.associations": {
+    "pilotmanagement.h": "c"
+  }
 }

@@ -20,6 +20,7 @@
  */
 
 #include "pilotManagement.h"
+#include "pilotDirection.h"
 
 #define UNCHANGED_ACTION "keep_value"
 #define STRAIGHT_ACTION "straight"
@@ -36,8 +37,7 @@ A changer probablement
 #define Y "y"
 #define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, X ) == 0 ) ? 1 : 0
 
-#define ACTION -1, 0, 1
-#define BOOSTED_ACTION -2, 2
+
 
 static void putPositionPilot ( PILOT* pilot, short xPosition, short yPosition );
 
@@ -154,7 +154,7 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
     if ( ACTION_IS_UNCHANGED ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "ne rien faire" );
     } else if ( ACTION_IS_STRAIGHT ( modeChosen ) ) {
-        DEBUG_STRING ( "====> update action : ", "ne pas changer sa direction, ni son acc" );
+        DEBUG_STRING ( "====> update action : ", "garder sa vitesse actuelle" );
         putActionPilot ( pilot, (short) 0, (short) 0 );
     } else if ( ACTION_IS_DEFAULT ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "en mode default (1 0)" );
@@ -266,20 +266,28 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     static int round = 0;
     char* mode;
     char action[SIZE_ACTION];
-    char test[5] = {ACTION};
 
     round++;
     /* 1ere etape : choisir une action */
     if ( round == 1 ) {
-        mode = DEFAULT_ACTION;
-    } else if ( round == 2 ) {
-        mode = UNCHANGED_ACTION;
-    } else if ( round == 4 ) {
         mode = NEW_ACTION;
+        choiceDirection ( right, &newXAcc, &newYAcc );
+    } else if ( round == 3 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( boostRight, &newXAcc, &newYAcc );
+        choiceDirection ( up, &newXAcc, &newYAcc );
+    } else if ( round == 5 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( down, &newXAcc, &newYAcc );
+        choiceDirection ( right, &newXAcc, &newYAcc );
+    } else if ( round == 7 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( right, &newXAcc, &newYAcc );
+        /*newXAcc = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
+        /*newYAcc = 0;*/
     } else if ( round == 6 ) {
         mode = NEW_ACTION;
-        newXAcc = (-1); /* Permet de ralentir si la vitesse est supérieur à 0 */
-        newYAcc = 0;
+        slowDown ( myPilot, &newXAcc, &newYAcc ); /* on pourrait tester si la vitesse cumulée des deux directions est trop grandes */
     } else {
         mode = STRAIGHT_ACTION;
     }
