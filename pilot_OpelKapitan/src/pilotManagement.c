@@ -107,14 +107,14 @@ static boolean actionIsBoosted ( short xAcc, short yAcc );
 
 static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char* modeChosen );
 
-static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short newYAcc );
+static short fuelConsumption ( short xPosition, short yPosition, short xSpeed, short ySpeed, short newXAcc, short newYAcc, DATA_MAP* map );
 
 /**
  * @brief Update the gas remaining of our pilot
  * 
  * @param pilot : the PILOT object
  */
-static void updateGasPilot ( PILOT* pilot );
+static void updateGasPilot ( PILOT* pilot, DATA_MAP* map );
 
 static void updateBoostsPilot ( PILOT* pilot );
 
@@ -223,7 +223,7 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
     }
 }
 
-static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short newYAcc )
+static short fuelConsumption ( short xPosition, short yPosition, short xSpeed, short ySpeed, short newXAcc, short newYAcc, DATA_MAP* map )
 {
     short norme1;
     short squareRoot;
@@ -241,17 +241,23 @@ static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short 
     DEBUG_INT ( "> Consommation , squareRoot: ", squareRoot );
 
     DEBUG_INT ( "> Consommation : ", norme1 + squareRoot );
+    if ( getMapElement ( *map, xPosition, yPosition ) == sand ) {
+        return ( - ( norme1 + squareRoot + 1 ) );
+    }
     return ( - ( norme1 + squareRoot ) );
 }
 
-static void updateGasPilot ( PILOT* pilot )
+static void updateGasPilot ( PILOT* pilot, DATA_MAP* map )
 {
     setGasLvlPilot ( pilot, getGasLvlPilot ( pilot ) 
                             + 
-                            fuelConsumption ( getXSpeedPilot ( pilot ), 
+                            fuelConsumption ( getXPositionPilot ( pilot ),
+                                              getYPositionPilot ( pilot ),
+                                              getXSpeedPilot ( pilot ), 
                                               getYSpeedPilot ( pilot ), 
                                               getXAccPilot ( pilot ), 
-                                              getYAccPilot ( pilot ) 
+                                              getYAccPilot ( pilot ),
+                                              map 
                                             ) 
                     );
     DEBUG_INT ( "> gas left : ", getGasLvlPilot ( pilot ) );
@@ -353,7 +359,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     updateActionPilot ( myPilot, newXAcc, newYAcc, mode );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
-    updateGasPilot ( myPilot );
+    updateGasPilot ( myPilot, map );
     updatePositionPilot ( myPilot, secondPilot, thirdPilot );
     /* 3e etape : on transmet l'action au GDP */
     sprintf ( action, "%hd %hd", getXAccPilot ( myPilot ), getYAccPilot ( myPilot ) );
