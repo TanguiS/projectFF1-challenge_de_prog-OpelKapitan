@@ -26,7 +26,13 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "util.h"
-#include "pilotManagement.h"
+
+typedef enum {
+    road = '#',
+    wall = '.',
+    finishLine = '=',
+    sand = '~'
+} mapValues;
 
 /**
  * @brief It is an object that represents the map
@@ -83,7 +89,7 @@ DATA_MAP createMap ( short newXSize, short newYSize );
  * 
  * @return DATA_MAP : The DATA_MAP initialized and filled from the data provided by the GDP
  */
-DATA_MAP readDataMap ( PILOT* myPilot );
+DATA_MAP readDataMap ( short* gasLvl );
 
 /**
  * @brief Destroy a DATA_MAP object

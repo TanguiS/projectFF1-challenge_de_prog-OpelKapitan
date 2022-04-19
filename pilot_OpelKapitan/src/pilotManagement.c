@@ -20,6 +20,7 @@
  */
 
 #include "pilotManagement.h"
+#include "pilotDirection.h"
 
 #define UNCHANGED_ACTION "keep_value"
 #define STRAIGHT_ACTION "straight"
@@ -36,23 +37,70 @@ A changer probablement
 #define Y "y"
 #define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, X ) == 0 ) ? 1 : 0
 
-#define ACTION -1, 0, 1
-#define BOOSTED_ACTION -2, 2
+/**
+ * @brief Set the Position Pilot object
+ * 
+ * @param pilot : the PILOT object
+ * @param xPosition : the x-axis position
+ * @param yPosition : the y-axis position 
+ */
+static void setPositionPilot ( PILOT* pilot, short xPosition, short yPosition );
 
-static void putPositionPilot ( PILOT* pilot, short xPosition, short yPosition );
+/**
+ * @brief Set the Speed Pilot object
+ * 
+ * @param pilot : the PILOT object
+ * @param xSpeed : the x-axis speed
+ * @param ySpeed : the y-axis speed
+ */
+static void setSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed );
 
-static void putSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed );
+/**
+ * @brief Set the Gas Lvl Pilot object
+ * 
+ * @param pilot : the PILOT object
+ * @param newGasLvl : the gas level
+ */
+static void setGasLvlPilot ( PILOT* pilot, short newGasLvl );
 
-static void putGasLvlPilot ( PILOT* pilot, short newGasLvl );
+/**
+ * @brief Set the Action Pilot object
+ * 
+ * @param pilot : the PILOT object
+ * @param newXAcc : the x-axis acceleration
+ * @param newYAcc : the y-axis acceleration
+ */
+static void setActionPilot ( PILOT* pilot, short newXAcc, short newYAcc );
 
-static void putActionPilot ( PILOT* pilot, short newXAcc, short newYAcc );
+/**
+ * @brief Set the Boosts Remaining Pilot object
+ * 
+ * @param pilot : the PILOT object
+ * @param boostsRemaining : the boosts remaining 
+ */
+static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining );
 
-static void putBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining );
-
+/**
+ * @brief Initialize the pilot object
+ * 
+ * @param pilot : the PILOT object
+ */
 static void initNewPilot ( PILOT* pilot );
 
+/**
+ * @brief Update the position of the three pilot
+ * 
+ * @param myPilot : our pilot
+ * @param secondPilot : the second pilot
+ * @param thirdPilot : the third pilot
+ */
 static void updatePositionPilot ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot );
 
+/**
+ * @brief Update the speed of our pilot
+ * 
+ * @param pilot : the PILOT object
+ */
 static void updateSpeedPilot ( PILOT* pilot );
 
 static boolean actionIsBoosted ( short xAcc, short yAcc );
@@ -61,36 +109,46 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
 
 static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short newYAcc );
 
+/**
+ * @brief Update the gas remaining of our pilot
+ * 
+ * @param pilot : the PILOT object
+ */
 static void updateGasPilot ( PILOT* pilot );
 
 static void updateBoostsPilot ( PILOT* pilot );
 
+/**
+ * @brief Deliver the action to the GDP
+ * 
+ * @param action : the action to deliver
+ */
 static void deliverAction ( char* action ); /* action du type : x y */
 
-static void putPositionPilot ( PILOT* pilot, short xPosition, short yPosition )
+static void setPositionPilot ( PILOT* pilot, short xPosition, short yPosition )
 {
     pilot->xPosition = xPosition;
     pilot->yPosition = yPosition;
 }
 
-static void putSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed )
+static void setSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed )
 {
     pilot->xSpeed = xSpeed;
     pilot->ySpeed = ySpeed;
 }
 
-static void putGasLvlPilot ( PILOT* pilot, short newGasLvl )
+static void setGasLvlPilot ( PILOT* pilot, short newGasLvl )
 {
     pilot->gasLvl = newGasLvl;
 }
 
-static void putActionPilot ( PILOT* pilot, short newXAcc, short newYAcc )
+static void setActionPilot ( PILOT* pilot, short newXAcc, short newYAcc )
 {
     pilot->xAcc = newXAcc;
     pilot->yAcc = newYAcc;
 }
 
-static void putBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
+static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
 {
     pilot->boostsRemaining = boostsRemaining;
 }
@@ -100,15 +158,15 @@ static void initNewPilot ( PILOT* pilot )
     /* 
     on pourrait tenter une fonctions pour partir avec un boost dans la bonne direction directement 
     */
-    putPositionPilot ( pilot, 0, 0 );
-    putSpeedPilot ( pilot, 0, 0 );
-    putActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
-    putBoostsRemainingPilot ( pilot, BOOSTS_AT_START );
+    setPositionPilot ( pilot, 0, 0 );
+    setSpeedPilot ( pilot, 0, 0 );
+    setActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
+    setBoostsRemainingPilot ( pilot, BOOSTS_AT_START );
 }
 
 static void updateSpeedPilot ( PILOT* pilot )
 {
-    putSpeedPilot ( pilot, getXSpeedPilot ( pilot ) + getXAccPilot ( pilot ), 
+    setSpeedPilot ( pilot, getXSpeedPilot ( pilot ) + getXAccPilot ( pilot ), 
                            getYSpeedPilot ( pilot ) + getYAccPilot ( pilot ) );
 }
 
@@ -126,9 +184,9 @@ static void updatePositionPilot ( PILOT* myPilot, PILOT* secondPilot, PILOT* thi
                     &secondXPosition,   &secondYPosition,
                     &thirdXPosition,    &thirdYPosition
             );
-    putPositionPilot ( myPilot, myXPosition, myYPosition );
-    putPositionPilot ( secondPilot, secondXPosition, secondYPosition);
-    putPositionPilot ( thirdPilot, thirdXPosition, thirdYPosition );
+    setPositionPilot ( myPilot, myXPosition, myYPosition );
+    setPositionPilot ( secondPilot, secondXPosition, secondYPosition);
+    setPositionPilot ( thirdPilot, thirdXPosition, thirdYPosition );
 }
 
 static boolean actionIsBoosted ( short xAcc, short yAcc )
@@ -144,7 +202,7 @@ static boolean actionIsBoosted ( short xAcc, short yAcc )
 static void updateBoostsPilot ( PILOT* pilot )
 {
     if ( actionIsBoosted ( getXAccPilot ( pilot ), getYAccPilot ( pilot ) ) ) {
-        putBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
+        setBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
     }
     DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
 }
@@ -154,14 +212,14 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
     if ( ACTION_IS_UNCHANGED ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "ne rien faire" );
     } else if ( ACTION_IS_STRAIGHT ( modeChosen ) ) {
-        DEBUG_STRING ( "====> update action : ", "ne pas changer sa direction, ni son acc" );
-        putActionPilot ( pilot, (short) 0, (short) 0 );
+        DEBUG_STRING ( "====> update action : ", "garder sa vitesse actuelle" );
+        setActionPilot ( pilot, (short) 0, (short) 0 );
     } else if ( ACTION_IS_DEFAULT ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "en mode default (1 0)" );
-        putActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
+        setActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
     } else {
         DEBUG_STRING ( "====> update action : ", "Changement d'acc" );
-        putActionPilot ( pilot, newXAcc, newYAcc );
+        setActionPilot ( pilot, newXAcc, newYAcc );
     }
 }
 
@@ -188,7 +246,7 @@ static short fuelConsumption ( short xSpeed, short ySpeed, short newXAcc, short 
 
 static void updateGasPilot ( PILOT* pilot )
 {
-    putGasLvlPilot ( pilot, getGasLvlPilot ( pilot ) 
+    setGasLvlPilot ( pilot, getGasLvlPilot ( pilot ) 
                             + 
                             fuelConsumption ( getXSpeedPilot ( pilot ), 
                                               getYSpeedPilot ( pilot ), 
@@ -245,9 +303,10 @@ short getBoostsRemainingPilot ( PILOT* pilot )
     return pilot->boostsRemaining;
 }
 
-PILOT createPilot ()
+PILOT createPilot ( short gasLvl )
 {
     PILOT newPilot;
+    setGasLvlPilot ( &newPilot, gasLvl );
     initNewPilot ( &newPilot );
 
     return newPilot;
@@ -259,26 +318,34 @@ PILOT createPilot ()
  * @TODO predire l'essence utilise pour eviter de griller nimporte comment
  */
 
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map )
 {
     short newXAcc = 2, newYAcc = 0; /* pour la demonstration du boost */
     static int round = 0;
     char* mode;
     char action[SIZE_ACTION];
-    char test[5] = {ACTION};
 
     round++;
     /* 1ere etape : choisir une action */
     if ( round == 1 ) {
-        mode = DEFAULT_ACTION;
-    } else if ( round == 2 ) {
-        mode = UNCHANGED_ACTION;
-    } else if ( round == 4 ) {
         mode = NEW_ACTION;
+        choiceDirection ( right, &newXAcc, &newYAcc );
+    } else if ( round == 3 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( boostRight, &newXAcc, &newYAcc );
+        choiceDirection ( up, &newXAcc, &newYAcc );
+    } else if ( round == 5 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( down, &newXAcc, &newYAcc );
+        choiceDirection ( right, &newXAcc, &newYAcc );
+    } else if ( round == 7 ) {
+        mode = NEW_ACTION;
+        choiceDirection ( right, &newXAcc, &newYAcc );
+        /*newXAcc = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
+        /*newYAcc = 0;*/
     } else if ( round == 6 ) {
         mode = NEW_ACTION;
-        newXAcc = (-1); /* Permet de ralentir si la vitesse est supérieur à 0 */
-        newYAcc = 0;
+        slowDown ( myPilot, &newXAcc, &newYAcc ); /* on pourrait tester si la vitesse cumulée des deux directions est trop grandes */
     } else {
         mode = STRAIGHT_ACTION;
     }
