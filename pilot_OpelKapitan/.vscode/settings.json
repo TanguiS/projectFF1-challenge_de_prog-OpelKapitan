@@ -14,7 +14,9 @@
   "C_Cpp_Runner.warningsAsError": false,
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
-  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.includePaths": [
+    "${workspaceFolder}/include"
+  ],
   "C_Cpp_Runner.includeSearch": [
     "*",
     "**/*"
@@ -30,5 +32,6 @@
   "C_Cpp_Runner.makePath": "/usr/bin/make",
   "files.associations": {
     "pilotmanagement.h": "c"
-  }
+  },
+  "C_Cpp.errorSquiggles": "Enabled"
 }

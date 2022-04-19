@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,15 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-<<<<<<< HEAD
-# Make data base, printed on Sat Apr 16 18:58:30 2022
-=======
-<<<<<<< HEAD
-# Make data base, printed on Tue Apr 19 10:11:35 2022
-=======
-# Make data base, printed on Mon Apr 18 23:36:47 2022
->>>>>>> origin/direction2
->>>>>>> origin/readMap
+# Make data base, printed on Tue Apr 19 11:04:16 2022
 
 # Variables
 
@@ -61,15 +51,7 @@ SNAP_DATA = /var/snap/code/94
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"f62d0d328ea2a469bad3c39b06263023.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/corrupted.info","_languagePackSupport":true}
 # environment
-<<<<<<< HEAD
-JOURNAL_STREAM = 8:36910
-=======
-<<<<<<< HEAD
 JOURNAL_STREAM = 8:35217
-=======
-JOURNAL_STREAM = 8:36121
->>>>>>> origin/direction2
->>>>>>> origin/readMap
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -103,15 +85,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-<<<<<<< HEAD
-MANAGERPID = 1319
-=======
-<<<<<<< HEAD
 MANAGERPID = 1299
-=======
-MANAGERPID = 1298
->>>>>>> origin/direction2
->>>>>>> origin/readMap
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -127,11 +101,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-<<<<<<< HEAD
-SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1542,unix/st:/tmp/.ICE-unix/1542
-=======
 SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1524,unix/st:/tmp/.ICE-unix/1524
->>>>>>> origin/readMap
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -151,15 +121,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-<<<<<<< HEAD
-INVOCATION_ID = fcd6d62c98c04cb4ac0a02ea4857592d
-=======
-<<<<<<< HEAD
 INVOCATION_ID = 0c64111d70ca46f4bd2bb501214f02f6
-=======
-INVOCATION_ID = fb0a6e9bd23745f5904e658a3cffe099
->>>>>>> origin/direction2
->>>>>>> origin/readMap
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -173,15 +135,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-<<<<<<< HEAD
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2314
-=======
-<<<<<<< HEAD
 GIO_LAUNCHED_DESKTOP_FILE_PID = 2278
-=======
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2276
->>>>>>> origin/direction2
->>>>>>> origin/readMap
 # automatic
 %F = $(notdir $%)
 # environment
@@ -197,11 +151,7 @@ PWD = /home/tangui/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKap
 # default
 .LOADED := 
 # environment
-<<<<<<< HEAD
-SSH_AGENT_PID = 1492
-=======
 SSH_AGENT_PID = 1474
->>>>>>> origin/readMap
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -255,15 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-<<<<<<< HEAD
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-82856b86-9638-470d-bb15-a3f403300fff.sock
-=======
-<<<<<<< HEAD
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8f797b2d-0657-4b61-9e4f-e9355e40d537.sock
-=======
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ae7410e1-a010-46c5-92e1-1e9a906b88fe.sock
->>>>>>> origin/direction2
->>>>>>> origin/readMap
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2e5a80b8-902f-4ea3-8c02-33b2e6a9d9a0.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -336,6 +278,8 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 SUFFIXES := 
 # environment
  
+make: *** No rule to make target 'all'.  Stop.
+
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
@@ -354,15 +298,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-<<<<<<< HEAD
-VSCODE_PID = 2391
-=======
-<<<<<<< HEAD
 VSCODE_PID = 2352
-=======
-VSCODE_PID = 2324
->>>>>>> origin/direction2
->>>>>>> origin/readMap
 # variable set hash-table stats:
 # Load=143/1024=14%, Rehash=0, Collisions=32/192=17%
 
@@ -413,11 +349,7 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-<<<<<<< HEAD
-#  Last modified 2022-04-19 09:56:04.175709823
-=======
-#  Last modified 2022-04-16 19:06:38.009825439
->>>>>>> origin/direction2
+#  Last modified 2022-04-19 10:33:59.506220914
 #  File has been updated.
 #  Successfully updated.
 
@@ -521,16 +453,7 @@ install: ../drivers/OpelKapitan
 
 # strcache performance: lookups = 49 / hit rate = 40%
 # hash-table stats:
-<<<<<<< HEAD
-# Load=26/8192=0%, Rehash=0, Collisions=1/44=2%
-<<<<<<< HEAD
-# Finished Make data base on Sat Apr 16 18:58:30 2022
-=======
-# Finished Make data base on Tue Apr 19 10:11:35 2022
-=======
 # Load=29/8192=0%, Rehash=0, Collisions=1/49=2%
-# Finished Make data base on Mon Apr 18 23:36:48 2022
->>>>>>> origin/direction2
->>>>>>> origin/readMap
+# Finished Make data base on Tue Apr 19 11:04:16 2022
 
  
