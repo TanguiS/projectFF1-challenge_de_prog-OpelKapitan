@@ -28,7 +28,7 @@
  * @param map : The map object
  * @param newWidth : the new width of the map
  */
-static void putWidthMap ( DATA_MAP* map, short newWidth );
+static void setWidthMap ( DATA_MAP* map, short newWidth );
 
 /**
  * @brief Sets the value in the image object
@@ -36,7 +36,7 @@ static void putWidthMap ( DATA_MAP* map, short newWidth );
  * @param map : the map object
  * @param newHeight : the new height of the map
  */
-static void putHeightMap ( DATA_MAP* map, short newHeight );
+static void setHeightMap ( DATA_MAP* map, short newHeight );
 
 /**
  * @brief Initialize the map with the data provided in argument 
@@ -54,7 +54,7 @@ static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight );
  * @param data : A line of data that need to be written int the map's matrix
  * @param row : the column to which this line of data belongs
  */
-static void putDataToMap ( DATA_MAP* map, char* data, int row );
+static void setDataToMap ( DATA_MAP* map, char* data, int row );
 #ifndef DEBUG
 /**
  * @brief Only for Debugging purposes
@@ -64,7 +64,7 @@ static void putDataToMap ( DATA_MAP* map, char* data, int row );
 static void display ( DATA_MAP map );
 #endif
 
-static void putDataToMap ( DATA_MAP* map, char* data, int row )
+static void setDataToMap ( DATA_MAP* map, char* data, int row )
 {
     int i;
     
@@ -73,20 +73,20 @@ static void putDataToMap ( DATA_MAP* map, char* data, int row )
     }
 }
 
-static void putWidthMap ( DATA_MAP* map, short newWidth )
+static void setWidthMap ( DATA_MAP* map, short newWidth )
 {
     map->width = newWidth;
 }
 
-static void putHeightMap ( DATA_MAP* map, short newHeight )
+static void setHeightMap ( DATA_MAP* map, short newHeight )
 {
     map->height = newHeight;
 }
 
 static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight )
 {
-    putWidthMap ( &map, newWidth );
-    putHeightMap ( &map, newHeight );
+    setWidthMap ( &map, newWidth );
+    setHeightMap ( &map, newHeight );
     map.map = NULL;
     return map;
 }
@@ -138,7 +138,7 @@ DATA_MAP readDataMap ( short* gasLvl )
 
     for ( i = 0; i < getHeightMap ( map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
-        putDataToMap ( &map, buf, i );
+        setDataToMap ( &map, buf, i );
     }
     #ifndef DEBUG
         display ( map );
