@@ -75,6 +75,8 @@ static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row
         } else if ( data[i] == sand ) {
             graph->graph[i][row] = 6;
         } else {
+            DEBUG_INT ( "i = ", i );
+            DEBUG_INT ( "row = ", row );
             graph->graph[i][row] = 0;
         }
     }

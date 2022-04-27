@@ -2,24 +2,15 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
- 
 # Built for x86_64-pc-linux-gnu
- 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Tue Apr 19 18:13:18 2022
- 
+# Make data base, printed on Wed Apr 27 20:47:05 2022
 
 # Variables
- 
 
 # 'override' directive
 GNUMAKEFLAGS := 
@@ -27,8 +18,6 @@ GNUMAKEFLAGS :=
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-PAPERSIZE = a4
 # environment
 DESKTOP_SESSION = ubuntu
 # default
@@ -54,7 +43,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/tangui/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
+CURDIR := /home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
 # makefile
 SHELL = /bin/sh
 # environment
@@ -62,7 +51,7 @@ SNAP_DATA = /var/snap/code/94
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"f62d0d328ea2a469bad3c39b06263023.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:36159
+JOURNAL_STREAM = 8:37294
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -96,7 +85,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1301
+MANAGERPID = 1364
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -112,7 +101,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1524,unix/st:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1607,unix/st:/tmp/.ICE-unix/1607
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -132,7 +121,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 074508d424bd4ad5b0c2ec1f8c84015a
+INVOCATION_ID = 5d0d5a15103448eeb6c1e8919fb48135
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -146,7 +135,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2198
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2072
 # automatic
 %F = $(notdir $%)
 # environment
@@ -158,11 +147,11 @@ OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/tangui/Documents/challenge-prog/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
+PWD = /home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1474
+SSH_AGENT_PID = 1537
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -184,7 +173,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
-SNAP_CONTEXT = w72FsuZCX3jbY7vezjK2z5FCbyiPRYBnEi-rjdCm3mD7g6vpcWzq
+SNAP_CONTEXT = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # automatic
 +F = $(notdir $+)
 # environment
@@ -216,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3b57ae0a-1d9d-4608-85ac-d886e04431ad.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-88a19c8a-420e-4740-95cb-b52b05fa01aa.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -242,8 +231,6 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = en_GB:en
-# environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-ea33c1ff-1.66.2-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
@@ -268,7 +255,7 @@ QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
 # environment
-SNAP_COOKIE = w72FsuZCX3jbY7vezjK2z5FCbyiPRYBnEi-rjdCm3mD7g6vpcWzq
+SNAP_COOKIE = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # environment
 LC_NUMERIC = fr_FR.UTF-8
 # automatic
@@ -297,7 +284,6 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
- 
 # default
 .RECIPEPREFIX := 
 # makefile (from 'Makefile', line 4)
@@ -307,9 +293,9 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2244
+VSCODE_PID = 2119
 # variable set hash-table stats:
-# Load=143/1024=14%, Rehash=0, Collisions=32/196=16%
+# Load=141/1024=14%, Rehash=0, Collisions=32/194=16%
 
 # Pattern-specific Variable Values
 
@@ -317,7 +303,8 @@ VSCODE_PID = 2244
 
 # Directories
 
-# . (device 2053, inode 803541): 9 files, no impossibilities.
+ 
+# . (device 2053, inode 917563): 9 files, no impossibilities.
 
 # 9 files, no impossibilities in 1 directories.
 
@@ -370,7 +357,7 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-19 18:12:52.986131098
+#  Last modified 2022-04-22 17:53:04.875974989
 #  File has been updated.
 #  Successfully updated.
 
@@ -482,6 +469,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 54 / hit rate = 40%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=1/54=2%
-# Finished Make data base on Tue Apr 19 18:13:18 2022
+# Finished Make data base on Wed Apr 27 20:47:05 2022
 
  
