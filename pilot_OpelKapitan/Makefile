@@ -46,3 +46,6 @@ $(BIN_PATH)/$(PILOT_NAME): $(OBJS)
 
 clean: $(OBJ_PATH) #Détruire les fichiers temporaires
 	rm $</*.o
+distclean: $(BIN_PATH)
+	make clean
+	rm $(BIN_PATH)/$(PILOT_NAME)

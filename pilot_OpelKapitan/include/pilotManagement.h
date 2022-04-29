@@ -130,6 +130,6 @@ PILOT createPilot ( short gasLvl );
  * @param thirdPilot : the third pilot
  * @param map : the race circuit
  */
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map );
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph );
 
 #endif /* __PILOT_MANAGEMENT_HH__ */

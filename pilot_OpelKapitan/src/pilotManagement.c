@@ -324,14 +324,31 @@ PILOT createPilot ( short gasLvl )
  * @TODO predire l'essence utilise pour eviter de griller nimporte comment
  */
 
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map )
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph )
 {
     short newXAcc = 2, newYAcc = 0; /* pour la demonstration du boost */
     static int round = 0;
     char* mode;
     char action[SIZE_ACTION];
+    coord myCar;
+    coord secoundCar;
+    coord thirdCar;
 
     round++;
+
+    /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
+
+    updatePositionPilot ( myPilot, secondPilot, thirdPilot );
+
+    myCar[0] = getXPositionPilot ( myPilot );
+    myCar[1] = getYPositionPilot ( myPilot );
+    secoundCar[0] = getXPositionPilot ( secondPilot );
+    secoundCar[1] = getYPositionPilot ( secondPilot );
+    thirdCar[0] = getXPositionPilot ( thirdPilot );
+    thirdCar[1] = getYPositionPilot ( thirdPilot );
+
+    updateGraph ( graph, myCar, secoundCar, thirdCar );
+
     /* 1ere etape : choisir une action */
     if ( round == 1 ) {
         mode = NEW_ACTION;
@@ -360,7 +377,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
     updateGasPilot ( myPilot, map );
-    updatePositionPilot ( myPilot, secondPilot, thirdPilot );
     /* 3e etape : on transmet l'action au GDP */
     sprintf ( action, "%hd %hd", getXAccPilot ( myPilot ), getYAccPilot ( myPilot ) );
     deliverAction ( action );

@@ -19,15 +19,12 @@
  * @date 05 avril 2022
  */
 
-#include "readMap.h"
-#include "pilotManagement.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "readMap.h"
+#include "pilotManagement.h"
 
-#define MAX_LINE_LENGTH 1024
-#define BOOSTS_AT_START 5
-
-int main ()
+int main ( void )
 {
     int round = 0;
     short gasLvl;
@@ -36,24 +33,16 @@ int main ()
     GRAPH graph;
 
     map = readDataMapGraph ( &gasLvl, &graph );
-    displayGraph ( &graph );
     myPilot = createPilot ( gasLvl );
 
-
     fprintf(stderr, "\n=== Race start ===\n");
+    
     while (!feof(stdin)) {
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
-        
-        updatePilots ( &myPilot, &autre2, &autre3, &map );
-
-        if (0 && round > 4) { /* (DISABLED) Force a segfault for testing purpose */
-            int * p = NULL;
-            fprintf(stderr, "Good Bye!\n");
-            fflush(stderr);
-            *p = 0;
-        }
+        updatePilots ( &myPilot, &autre2, &autre3, &map, &graph );
+        displayGraph ( &graph );
     }
     if ( !destroyDataMap ( map ) ) {
         fprintf ( stderr, "Erreur fermeture\n" );

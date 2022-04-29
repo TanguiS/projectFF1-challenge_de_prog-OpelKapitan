@@ -55,6 +55,14 @@ static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight );
  * @param row : the column to which this line of data belongs
  */
 static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row );
+
+static void setElementToGraph ( GRAPH* graph, element value, int x, int y );
+
+static void setElementToGraph ( GRAPH* graph, element value, int x, int y )
+{
+    graph->graph[x][y] = value;
+}
+
 #ifndef DEBUG
 /**
  * @brief Only for Debugging purposes
@@ -67,17 +75,22 @@ static void display ( DATA_MAP map );
 static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
 {
     int i;
+    coord coordFinishLine;
     
     for ( i = 0; i < getWidthMap ( *map ); i++ ) {
         map->map[i][row] = data[i];
-        if ( (data[i] == road) || (data[i] == finishLine) ) {
-            graph->graph[i][row] = 1;
+        if ( data[i] == wall ) {
+            setElementToGraph ( graph, wallGraph, i, row );
+        } else if ( data[i] == road ) {
+            setElementToGraph ( graph, roadGraph, i, row );
         } else if ( data[i] == sand ) {
-            graph->graph[i][row] = 6;
-        } else {
-            DEBUG_INT ( "i = ", i );
-            DEBUG_INT ( "row = ", row );
-            graph->graph[i][row] = 0;
+            setElementToGraph ( graph, sandGraph, i, row );
+        } else if ( data[i] == finishLine ) {
+            setElementToGraph ( graph, finishLineGraph, i, row );
+            coordFinishLine[0] = i;
+            coordFinishLine[1] = row;
+            updateCoordFinishLine ( graph, coordFinishLine, getSizeFinishLine ( graph ) );
+
         }
     }
 }
