@@ -1,10 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/main.c -o obj/main.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/readMap.c -o obj/readMap.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pilotManagement.c -o obj/pilotManagement.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pilotDirection.c -o obj/pilotDirection.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/graphMadj.c -o obj/graphMadj.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o -o ../drivers/OpelKapitan -lm
+make: Nothing to be done for 'install'.
 make: Leaving directory '/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
  

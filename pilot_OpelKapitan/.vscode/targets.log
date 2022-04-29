@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Apr 29 13:17:38 2022
+# Make data base, printed on Fri Apr 29 14:23:37 2022
 
 # Variables
 
@@ -177,6 +177,7 @@ SNAP_CONTEXT = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # automatic
 +F = $(notdir $+)
 # environment
+ 
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 SNAP_USER_COMMON = /home/tangui/snap/code/common
@@ -281,7 +282,6 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
 # default
- 
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
@@ -296,6 +296,7 @@ LANG = C
 # environment
 VSCODE_PID = 3102
 # variable set hash-table stats:
+ 
 # Load=141/1024=14%, Rehash=0, Collisions=33/195=17%
 
 # Pattern-specific Variable Values
@@ -365,7 +366,8 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-28 19:46:08.469969509
+ 
+#  Last modified 2022-04-29 14:22:30.204671253
 #  File has been updated.
 #  Successfully updated.
 
@@ -432,6 +434,7 @@ try: install
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 clean: obj
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -482,7 +485,8 @@ install: ../drivers/OpelKapitan
 
 # strcache performance: lookups = 57 / hit rate = 40%
 # hash-table stats:
+ 
 # Load=34/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Fri Apr 29 13:17:38 2022
+# Finished Make data base on Fri Apr 29 14:23:37 2022
 
  

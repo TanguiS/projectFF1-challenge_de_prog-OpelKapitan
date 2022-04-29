@@ -21,6 +21,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "readMap.h"
 #include "pilotManagement.h"
 
@@ -31,18 +32,30 @@ int main ( void )
     DATA_MAP map;
     PILOT myPilot, autre2, autre3;
     GRAPH graph;
+    float time;
+    float initTime;
+    clock_t t1, t2;
 
+    t1 = clock();
     map = readDataMapGraph ( &gasLvl, &graph );
     myPilot = createPilot ( gasLvl );
+    t2 = clock();
+    initTime = (float)(t2-t1)/CLOCKS_PER_SEC;
 
     fprintf(stderr, "\n=== Race start ===\n");
     
     while (!feof(stdin)) {
+        t1 = clock();
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
         updatePilots ( &myPilot, &autre2, &autre3, &map, &graph );
+        #ifndef DEBUG
         displayGraph ( &graph );
+        #endif
+        t2 = clock();
+        time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;
+        fprintf ( stderr, "===> temps exec = %f\n", time );
     }
     if ( !destroyDataMap ( map ) ) {
         fprintf ( stderr, "Erreur fermeture\n" );
