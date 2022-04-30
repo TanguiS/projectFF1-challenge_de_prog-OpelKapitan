@@ -24,16 +24,26 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "graphMadj.h"
 #include "pilotManagement.h"
 #include "pilotDirection.h"
 #include "util.h"
 
+typedef char element;
+
 typedef struct dijkstra {
     short vertices;
     coord* shortestPath;
-    
-}
+
+};
+
+typedef struct _matrix {
+    short width;
+    short height;
+    element** matrix;
+} _matrix;
+typedef struct _matrix MATRIX; 
 
 
 #endif /* DIJKSTRA_ALGO_HH__ */

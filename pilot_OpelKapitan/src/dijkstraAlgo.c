@@ -21,5 +21,11 @@
 
 #include "../include/dijkstraAlgo.h"
 
+static MATRIX initMatrix ( coord start, short vertices );
 
-
+static MATRIX initMatrix ( coord start, short vertices )
+{
+    MATRIX matrix;
+    int i, j;
+    matrix = ( element** ) malloc ( )
+}
