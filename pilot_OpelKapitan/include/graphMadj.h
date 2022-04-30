@@ -30,13 +30,9 @@
 #include "util.h"
 #include "debugMode.h"
 
-#define SIZE_COORD 2
-
 #define SIZE_TAB_FINISH_LINE 100
 
 typedef char element;
-
-typedef short coord[SIZE_COORD];
 
 typedef enum {
     roadGraph = 1,

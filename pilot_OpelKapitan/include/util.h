@@ -23,11 +23,14 @@
 #define __UTIL_HH__
 
 #define MAX_LINE_LENGTH 1024
+#define SIZE_COORD 2
 #define BOOSTS_AT_START 5
 
 /**
  * @brief Enumeration of a boolean type
  */
 typedef enum {false, true} boolean;
+
+typedef short coord[SIZE_COORD];
 
 #endif /* __UTIL_HH__ */

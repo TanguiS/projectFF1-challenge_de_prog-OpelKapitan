@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Apr 29 14:23:37 2022
+# Make data base, printed on Sat Apr 30 13:19:40 2022
 
 # Variables
 
@@ -177,7 +175,6 @@ SNAP_CONTEXT = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # automatic
 +F = $(notdir $+)
 # environment
- 
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 SNAP_USER_COMMON = /home/tangui/snap/code/common
@@ -206,7 +203,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1157afad-9063-476d-9e81-847b6d7b2652.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b49bb71b-8a65-4640-9abb-f7550e73be08.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -284,6 +281,9 @@ WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
@@ -296,7 +296,6 @@ LANG = C
 # environment
 VSCODE_PID = 3102
 # variable set hash-table stats:
- 
 # Load=141/1024=14%, Rehash=0, Collisions=33/195=17%
 
 # Pattern-specific Variable Values
@@ -305,9 +304,9 @@ VSCODE_PID = 3102
 
 # Directories
 
-# . (device 2053, inode 917563): 9 files, no impossibilities.
+# . (device 2053, inode 917563): 10 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -366,7 +365,6 @@ obj/main.o: src/main.c include/readMap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-04-29 14:22:30.204671253
 #  File has been updated.
 #  Successfully updated.
@@ -434,7 +432,6 @@ try: install
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 clean: obj
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -480,13 +477,12 @@ install: ../drivers/OpelKapitan
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 432 B / avg = 12 B
-# current buf: size = 8162 B / used = 432 B / count = 34 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 447 B / avg = 12 B
+# current buf: size = 8162 B / used = 447 B / count = 35 / avg = 12 B
 
-# strcache performance: lookups = 57 / hit rate = 40%
+# strcache performance: lookups = 58 / hit rate = 39%
 # hash-table stats:
- 
-# Load=34/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Fri Apr 29 14:23:37 2022
+# Load=35/8192=0%, Rehash=0, Collisions=1/58=2%
+# Finished Make data base on Sat Apr 30 13:19:40 2022
 
  
