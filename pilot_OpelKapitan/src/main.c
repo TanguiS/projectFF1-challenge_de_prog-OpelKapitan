@@ -60,5 +60,6 @@ int main ( void )
     if ( !destroyDataMap ( map ) ) {
         fprintf ( stderr, "Erreur fermeture\n" );
     }
+    destroyGraph(graph);
     return EXIT_SUCCESS;
 }

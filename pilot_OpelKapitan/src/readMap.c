@@ -188,7 +188,7 @@ boolean destroyDataMap ( DATA_MAP map )
 {
     int i;
 
-    for ( i = 0; i < getHeightMap ( map ); i++ ) {
+    for ( i = 0; i < getWidthMap ( map ); i++ ) {
         free ( map.map[i] );
         map.map[i] = NULL;
     }

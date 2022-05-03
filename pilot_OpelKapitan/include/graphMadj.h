@@ -77,7 +77,7 @@ void displayGraph ( GRAPH* graph );
 
 
 
-boolean destroyGraph ( GRAPH graphToDestoy );
+void destroyGraph (GRAPH graphToDestoy );
 
 
 

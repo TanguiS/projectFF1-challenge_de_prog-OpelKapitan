@@ -195,3 +195,14 @@ void updateGraph ( GRAPH* graph, coord myPilot, coord secoundPilot, coord thirdP
         }
     }
 }
+
+
+
+void destroyGraph(GRAPH graph) {
+    int i;
+
+    for (i=0; i<graph.width; i++) {
+        free(graph.graph[i]);
+    }
+    free(graph.graph);
+}
