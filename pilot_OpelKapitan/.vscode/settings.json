@@ -34,7 +34,8 @@
     "pilotmanagement.h": "c",
     "pilotdirection.h": "c",
     "graphmadj.h": "c",
-    "util.h": "c"
+    "util.h": "c",
+    "dijkstraalgo.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

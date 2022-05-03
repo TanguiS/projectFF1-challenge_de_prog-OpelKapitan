@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Apr 30 13:19:40 2022
+# Make data base, printed on Tue May  3 23:04:55 2022
 
 # Variables
 
@@ -49,7 +51,7 @@ SNAP_DATA = /var/snap/code/94
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"f62d0d328ea2a469bad3c39b06263023.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:37381
+JOURNAL_STREAM = 8:39916
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -83,7 +85,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1393
+MANAGERPID = 1405
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -99,7 +101,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1636,unix/st:/tmp/.ICE-unix/1636
+SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1653,unix/st:/tmp/.ICE-unix/1653
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -119,7 +121,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 3f56000410bc4fdeb48f88dada580d74
+INVOCATION_ID = 02ede8e440ee483fb48b69c4e131c920
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -133,7 +135,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3057
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2199
 # automatic
 %F = $(notdir $%)
 # environment
@@ -149,7 +151,7 @@ PWD = /home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_Opel
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1566
+SSH_AGENT_PID = 1583
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -203,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b49bb71b-8a65-4640-9abb-f7550e73be08.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e0c873b4-df65-4f2e-ac53-cc87da972a49.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -277,36 +279,60 @@ SNAP_REEXEC =
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
+ 
 WINDOWPATH = 2
+ 
 # default
+ 
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+ 
 # environment
  
-make: *** No rule to make target 'all'.  Stop.
-
 GJS_DEBUG_OUTPUT = stderr
+ 
 # default
+ 
 .RECIPEPREFIX := 
+ 
 # makefile (from 'Makefile', line 4)
+ 
 INC_PATH = ./include
+ 
 # environment
+ 
 LC_ADDRESS = fr_FR.UTF-8
+ 
 # environment
+ 
 LANG = C
+ 
 # environment
-VSCODE_PID = 3102
+ 
+VSCODE_PID = 2285
+ 
 # variable set hash-table stats:
+ 
 # Load=141/1024=14%, Rehash=0, Collisions=33/195=17%
+ 
 
+ 
 # Pattern-specific Variable Values
+ 
 
+ 
 # No pattern-specific variable values.
+ 
 
 # Directories
+ 
 
-# . (device 2053, inode 917563): 10 files, no impossibilities.
+ 
+# . (device 2053, inode 917563): 9 files, no impossibilities.
+ 
 
-# 10 files, no impossibilities in 1 directories.
+ 
+# 9 files, no impossibilities in 1 directories.
+ 
 
 # Implicit Rules
 
@@ -477,12 +503,12 @@ install: ../drivers/OpelKapitan
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 35 / storage = 447 B / avg = 12 B
-# current buf: size = 8162 B / used = 447 B / count = 35 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 432 B / avg = 12 B
+# current buf: size = 8162 B / used = 432 B / count = 34 / avg = 12 B
 
-# strcache performance: lookups = 58 / hit rate = 39%
+# strcache performance: lookups = 57 / hit rate = 40%
 # hash-table stats:
-# Load=35/8192=0%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Sat Apr 30 13:19:40 2022
+# Load=34/8192=0%, Rehash=0, Collisions=1/57=2%
+# Finished Make data base on Tue May  3 23:04:55 2022
 
  
