@@ -56,6 +56,7 @@ const short coordEnd[SIZE_COORD] = { 7, 6 };
 
 int main ( void )
 {
-
+    printf ( "depart value  : %d\n", graph[coordStart[0]][coordStart[1]] );
+    printf ( "end value     : %d\n", graph[coordEnd[0]][coordEnd[1]] );
     return EXIT_SUCCESS;
 }

@@ -21,7 +21,7 @@ $(OBJ_PATH)/main_dijstra.o: ./main_dijkstra.c $(INC_PATH)/dijkstraAlgo.h
 
 
 $(BIN_PATH)/dijstra.out: $(OBJS)
-	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
+	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/dijstra.out $(LDFLAGS)
 
 
 clean: $(OBJ_PATH) #Détruire les fichiers temporaires
