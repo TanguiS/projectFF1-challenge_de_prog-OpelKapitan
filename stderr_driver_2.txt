@@ -1,9 +1,7 @@
-=== > Lecture des Data < ===  
-Valeur de width :  32
-Valeur de height :  16
-Valeur de gasLvl :  35
+=== >Map< ===
+Size 32 x 16
+Gas at start 35 
 
-Affichage de la map :   
 ................................
 ................................
 ................................
@@ -23,6 +21,7 @@ Affichage de la map :
 
 === Race start ===
 === ROUND 1
+<<<<<<< HEAD
 >Debug longueur competitor :  585
 >Debug longueur competitor :  634
 >Debug longueur competitor :  580
@@ -416,4 +415,35 @@ Affichage coord ligne d'arrivée :
 >Coord le plus proche de notre voiture :   
 [27,5]
 ===> temps exec = 0.000747
+=======
+    Positions: Me(3,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: 34
+=== ROUND 2
+    Positions: Me(4,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: 32
+=== ROUND 3
+    Positions: Me(6,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: 28
+=== ROUND 4
+    Positions: Me(9,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: 23
+=== ROUND 5
+    Positions: Me(13,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: 16
+=== ROUND 6
+    Positions: Me(18,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: 8
+=== ROUND 7
+    Positions: Me(18,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: -2
+=== ROUND 8
+    Positions: Me(19,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: -13
+>>>>>>> e304401f786564845e62c12de653d6e59ceda8a1
 === ROUND 9
+    Positions: Me(21,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: -26
+=== ROUND 10
+    Positions: Me(24,7)  A(3,9), B(3,5)
+    Action: 1 0   Gas remaining: -40
+=== ROUND 11

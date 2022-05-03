@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May  3 23:04:55 2022
+# Make data base, printed on Tue May  3 23:12:42 2022
 
 # Variables
 
@@ -280,59 +278,35 @@ SNAP_REEXEC =
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
  
+make: *** No rule to make target 'all'.  Stop.
+
 WINDOWPATH = 2
- 
 # default
- 
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
- 
 # environment
- 
 GJS_DEBUG_OUTPUT = stderr
- 
 # default
- 
 .RECIPEPREFIX := 
- 
 # makefile (from 'Makefile', line 4)
- 
 INC_PATH = ./include
- 
 # environment
- 
 LC_ADDRESS = fr_FR.UTF-8
- 
 # environment
- 
 LANG = C
- 
 # environment
- 
 VSCODE_PID = 2285
- 
 # variable set hash-table stats:
- 
 # Load=141/1024=14%, Rehash=0, Collisions=33/195=17%
- 
 
- 
 # Pattern-specific Variable Values
- 
 
- 
 # No pattern-specific variable values.
- 
 
 # Directories
- 
 
- 
 # . (device 2053, inode 917563): 9 files, no impossibilities.
- 
 
- 
 # 9 files, no impossibilities in 1 directories.
- 
 
 # Implicit Rules
 
@@ -509,6 +483,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 57 / hit rate = 40%
 # hash-table stats:
 # Load=34/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Tue May  3 23:04:55 2022
+# Finished Make data base on Tue May  3 23:12:42 2022
 
  

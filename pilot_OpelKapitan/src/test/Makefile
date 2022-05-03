@@ -13,8 +13,6 @@ install: $(BIN_PATH)/dijstra.out
 OBJS = $(OBJ_PATH)/main_dijstra.o
 
 try: install
-	mkdir $(OBJ_PATH)
-	mkdir $(BIN_PATH)
 	$(install)
 
 $(OBJ_PATH)/main_dijstra.o: ./main_dijkstra.c $(INC_PATH)/dijkstraAlgo.h
