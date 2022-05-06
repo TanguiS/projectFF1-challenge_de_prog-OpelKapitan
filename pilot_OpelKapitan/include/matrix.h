@@ -24,6 +24,7 @@
 
 #include "matrix.h"
 #include "util.h"
+#include "debugMode.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -43,6 +44,8 @@ element getElementMatrix ( MATRIX* matrix, short x, short y );
 void setElementMatrix ( MATRIX* matrix, short x, short y, element value );
 
 MATRIX createMatrix ( short width, short height );
+
+void destroyMatrix ( MATRIX matrixToDestroy );
 
 
 

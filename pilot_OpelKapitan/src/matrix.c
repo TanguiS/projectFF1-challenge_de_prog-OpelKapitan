@@ -79,3 +79,12 @@ MATRIX createMatrix ( short width, short height )
     }
     return newMatrix;
 }
+
+void destroyMatrix ( MATRIX matrixToDestroy )
+{
+    int i;
+    for ( i = 0; i < getWidthMatrix ( &matrixToDestroy ); i++ ) {
+        free ( matrixToDestroy.matrix[i] );
+    }
+    free ( matrixToDestroy.matrix );
+}

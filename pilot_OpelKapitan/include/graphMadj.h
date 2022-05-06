@@ -27,6 +27,7 @@
 #include <assert.h>
 #include <limits.h>
 #include <math.h>
+#include "matrix.h"
 #include "util.h"
 #include "debugMode.h"
 
@@ -41,12 +42,10 @@ typedef enum {
 } graphValues;
 
 typedef struct _mAdj {
-    short width;
-    short height;
     char sizeFinishLine;
     coord finishLineCoord[SIZE_TAB_FINISH_LINE];
     coord closestFinishLine;
-    element** graph;
+    MATRIX graph;
 } _mAdj;
 typedef struct _mAdj GRAPH;
 

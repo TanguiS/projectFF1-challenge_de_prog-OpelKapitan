@@ -23,13 +23,9 @@
 
 #define INIT_SIZE 0
 
-static void setWidthGraph ( GRAPH* graph, short width );
-
-static void setHeightGraph ( GRAPH* graph, short height );
-
 static void setSizeFinishLine ( GRAPH* graph, char size );
 
-static void initGraph ( GRAPH* graph , short width, short height );
+static void initGraph ( GRAPH* graph );
 
 static void addCoordFinishline ( GRAPH* graph, coord newCoord, int index );
 
@@ -43,7 +39,7 @@ static void setElementToGraph ( GRAPH* graph, element value, int x, int y );
 
 static void setElementToGraph ( GRAPH* graph, element value, int x, int y )
 {
-    graph->graph[x][y] = value;
+    setElementMatrix ( &(graph->graph), x, y, value );
 }
 
 static int length ( coord first, coord secound )
@@ -74,26 +70,15 @@ static void setClosestFinishLine ( GRAPH* graph, coord closestFinishLine )
     graph->closestFinishLine[1] = closestFinishLine[1];
 }
 
-static void setWidthGraph ( GRAPH* graph, short width )
-{
-    graph->width = width;
-}
-
-static void setHeightGraph ( GRAPH* graph, short height )
-{
-    graph->height = height;
-}
 static void addCoordFinishline ( GRAPH* graph, coord newCoord, int index )
 {
     graph->finishLineCoord[index][0] = newCoord[0];
     graph->finishLineCoord[index][1] = newCoord[1];
 }
 
-static void initGraph ( GRAPH* graph, short width, short height )
+static void initGraph ( GRAPH* graph )
 {
     coord init = {SHRT_MAX, SHRT_MAX};
-    setWidthGraph ( graph, width );
-    setHeightGraph ( graph, height );
     setSizeFinishLine ( graph, INIT_SIZE );
     setClosestFinishLine ( graph, init );
 }
@@ -104,6 +89,8 @@ void displayGraph ( GRAPH* graph )
     int i, j;
     coord line;
     DEBUG_CHAR ( "\nAffichage du graph : ", ' ' );
+    DEBUG_INT ( "width graph : ", getWidthGraph ( graph ) );
+    DEBUG_INT ( "height graph : ", getHeightGraph ( graph ) );
     for ( i = 0; i < getHeightGraph ( graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( graph ); j++ ) {
             DEBUG_ONLY_INT ( getElementGraph ( graph, j, i ) );
@@ -134,12 +121,12 @@ void displayGraph ( GRAPH* graph )
 
 short getWidthGraph ( GRAPH* graph )
 {
-    return graph->width;
+    return getWidthMatrix ( &(graph->graph) );
 }
 
 short getHeightGraph ( GRAPH* graph )
 {
-    return graph->height;
+    return getHeightMatrix ( &(graph->graph) );
 }
 
 char getSizeFinishLine ( GRAPH* graph )
@@ -161,18 +148,14 @@ void getClosestFinishLine ( GRAPH* graph, coord* result )
 
 element getElementGraph ( GRAPH* graph, short x, short y )
 {
-    return graph->graph[x][y];
+    return getElementMatrix ( &(graph->graph), x, y );
 }
 
 GRAPH createGraph ( short width, short height )
 {
     GRAPH newGraph;
-    int i;
-    initGraph ( &newGraph, width, height );
-    newGraph.graph = ( element** ) malloc ( newGraph.width * sizeof ( element* ) );
-    for ( i = 0; i < newGraph.width; i++ ) {
-        newGraph.graph[i] = ( element* ) malloc ( newGraph.height * sizeof ( element ) );
-    }
+    initGraph ( &newGraph );
+    newGraph.graph = createMatrix ( width, height );
     return newGraph;   
 }
 
@@ -199,10 +182,5 @@ void updateGraph ( GRAPH* graph, coord myPilot, coord secoundPilot, coord thirdP
 
 
 void destroyGraph(GRAPH graph) {
-    int i;
-
-    for (i=0; i<graph.width; i++) {
-        free(graph.graph[i]);
-    }
-    free(graph.graph);
+    destroyMatrix ( graph.graph );
 }
