@@ -241,7 +241,7 @@ static short fuelConsumption ( short xPosition, short yPosition, short xSpeed, s
     DEBUG_INT ( "> Consommation , squareRoot: ", squareRoot );
 
     DEBUG_INT ( "> Consommation : ", norme1 + squareRoot );
-    if ( getMapElement ( map, xPosition, yPosition ) == sand ) {
+    if ( getElementMap ( map, xPosition, yPosition ) == sand ) {
         return ( - ( norme1 + squareRoot + 1 ) );
     }
     return ( - ( norme1 + squareRoot ) );

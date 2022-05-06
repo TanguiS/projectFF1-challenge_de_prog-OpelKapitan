@@ -29,14 +29,7 @@
  * @param data : A line of data that need to be written int the map's matrix
  * @param row : the column to which this line of data belongs
  */
-static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row );
-
-static void setElementToGraph ( GRAPH* graph, element value, int x, int y );
-
-static void setElementToGraph ( GRAPH* graph, element value, int x, int y )
-{
-    setElementMatrix ( &(graph->graph), x, y, value );
-}
+static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row );
 
 #ifndef DEBUG
 /**
@@ -44,10 +37,10 @@ static void setElementToGraph ( GRAPH* graph, element value, int x, int y )
  * 
  * @param map 
  */
-static void display ( DATA_MAP map );
+static void displayMap ( DATA_MAP map );
 #endif
 
-static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
+static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
 {
     int i;
     coord coordFinishLine;
@@ -55,13 +48,13 @@ static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row
     for ( i = 0; i < getWidthMap ( map ); i++ ) {
         setElementMatrix ( map, i, row, data[i] );
         if ( data[i] == wall ) {
-            setElementToGraph ( graph, wallGraph, i, row );
+            setElementGraph ( graph, wallGraph, i, row );
         } else if ( data[i] == road ) {
-            setElementToGraph ( graph, roadGraph, i, row );
+            setElementGraph ( graph, roadGraph, i, row );
         } else if ( data[i] == sand ) {
-            setElementToGraph ( graph, sandGraph, i, row );
+            setElementGraph ( graph, sandGraph, i, row );
         } else if ( data[i] == finishLine ) {
-            setElementToGraph ( graph, finishLineGraph, i, row );
+            setElementGraph ( graph, finishLineGraph, i, row );
             coordFinishLine[0] = i;
             coordFinishLine[1] = row;
             updateCoordFinishLine ( graph, coordFinishLine, getSizeFinishLine ( graph ) );
@@ -71,13 +64,13 @@ static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row
 }
 
 #ifndef DEBUG
-static void display ( DATA_MAP map )
+static void displayMap ( DATA_MAP map )
 {
     int i, j;
     DEBUG_CHAR ( "\nAffichage de la map avec matrix: ", ' ' );
     for ( i = 0; i < getHeightMap ( &map ); i++ ) {
         for ( j = 0; j < getWidthMap ( &map ); j++ ) {
-            DEBUG_ONLY_CHAR ( getMapElement ( &map, j, i ) );
+            DEBUG_ONLY_CHAR ( getElementMap ( &map, j, i ) );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }
@@ -111,10 +104,10 @@ DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph )
 
     for ( i = 0; i < getHeightMap ( &map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
-        setDataToMapGraph ( &map, graph, buf, i );
+        setDataMapGraph ( &map, graph, buf, i );
     }
     #ifndef DEBUG
-        display ( map );
+        displayMap ( map );
     #endif
     return map;
 }
@@ -129,12 +122,12 @@ short getHeightMap ( DATA_MAP* map )
    return getHeightMatrix ( map );
 }
 
-short getMapElement ( DATA_MAP* map, int x, int y )
+short getElementMap ( DATA_MAP* map, int x, int y )
 {
    return getElementMatrix ( map, x, y );
 }
 
-boolean destroyDataMap ( DATA_MAP map )
+boolean destroyMap ( DATA_MAP map )
 {
     destroyMatrix ( map );
     return true;

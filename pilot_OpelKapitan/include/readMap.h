@@ -29,11 +29,14 @@
 #include "graphMadj.h"
 #include "matrix.h"
 
+/**
+ * @brief Enumeration of the values of a map 
+ */
 typedef enum {
-    road = '#',
-    wall = '.',
-    finishLine = '=',
-    sand = '~'
+    road = '#',             /**< the road value */
+    wall = '.',             /**< the wall value */
+    finishLine = '=',       /**< the finishLine value */
+    sand = '~'              /**< the sand value */
 } mapValues;
 
 /**
@@ -65,7 +68,7 @@ short getHeightMap ( DATA_MAP* map );
  * @param y : the y coordiante of the element
  * @return short : the elemets 
  */
-short getMapElement ( DATA_MAP* map, int x, int y );
+short getElementMap ( DATA_MAP* map, int x, int y );
 
 /**
  * @brief Create a Map object
@@ -89,6 +92,6 @@ DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph );
  * @param map : the map to destroy
  * @return boolean : If everything went well 
  */
-boolean destroyDataMap ( DATA_MAP map );
+boolean destroyMap ( DATA_MAP map );
 
 #endif /* __READMAP_HH__ */

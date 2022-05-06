@@ -35,13 +35,6 @@ static boolean competitorIsClosest ( GRAPH* graph, coord pilot, coord competitor
 
 static int length ( coord first, coord secound );
 
-static void setElementToGraph ( GRAPH* graph, element value, int x, int y );
-
-static void setElementToGraph ( GRAPH* graph, element value, int x, int y )
-{
-    setElementMatrix ( &(graph->graph), x, y, value );
-}
-
 static int length ( coord first, coord secound )
 {
     return ( ( ( first[0] - secound[0] ) * ( first[0] - secound[0] ) ) + ( ( first[1] - secound[1] ) * ( first[1] - secound[1] ) ) );
@@ -151,6 +144,11 @@ element getElementGraph ( GRAPH* graph, short x, short y )
     return getElementMatrix ( &(graph->graph), x, y );
 }
 
+void setElementGraph ( GRAPH* graph, element value, int x, int y )
+{
+    setElementMatrix ( &(graph->graph), x, y, value );
+}
+
 GRAPH createGraph ( short width, short height )
 {
     GRAPH newGraph;
@@ -169,8 +167,8 @@ void updateGraph ( GRAPH* graph, coord myPilot, coord secoundPilot, coord thirdP
 {
     int i;
     coord competitor;
-    setElementToGraph ( graph, carGraph, secoundPilot[0], secoundPilot[1] );
-    setElementToGraph ( graph, carGraph, thirdPilot[0], thirdPilot[1] );
+    setElementGraph ( graph, carGraph, secoundPilot[0], secoundPilot[1] );
+    setElementGraph ( graph, carGraph, thirdPilot[0], thirdPilot[1] );
     for ( i = 0; i < getSizeFinishLine ( graph); i++ ) {
         getCoordFinishLine ( graph, i, &competitor );
         if ( competitorIsClosest ( graph, myPilot, competitor ) ) {

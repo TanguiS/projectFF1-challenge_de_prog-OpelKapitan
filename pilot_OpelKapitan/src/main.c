@@ -57,7 +57,7 @@ int main ( void )
         time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;
         fprintf ( stderr, "===> temps exec = %f\n", time );
     }
-    if ( !destroyDataMap ( map ) ) {
+    if ( !destroyMap ( map ) ) {
         fprintf ( stderr, "Erreur fermeture\n" );
     }
     destroyGraph(graph);

@@ -61,6 +61,8 @@ void getClosestFinishLine ( GRAPH* graph, coord* result );
 
 element getElementGraph ( GRAPH* graph, short x, short y );
 
+void setElementGraph ( GRAPH* graph, element value, int x, int y );
+
 GRAPH createGraph ( short width, short height );
 
 void updateGraph ( GRAPH* graph, coord myPilot, coord secoundPilot, coord thirdPilot );
