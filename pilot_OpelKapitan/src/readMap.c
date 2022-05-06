@@ -77,8 +77,10 @@ static void setDataToMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row
     int i;
     coord coordFinishLine;
     
-    for ( i = 0; i < getWidthMap ( *map ); i++ ) {
-        map->map[i][row] = data[i];
+    for ( i = 0; i < getWidthMap ( map ); i++ ) {
+        /* map->map[i][row] = data[i]; */
+        /* map->matrix[i][row] = data[i]; */
+        setElementMatrix ( map, i, row, data[i] );
         if ( data[i] == wall ) {
             setElementToGraph ( graph, wallGraph, i, row );
         } else if ( data[i] == road ) {
@@ -107,9 +109,11 @@ static void setHeightMap ( DATA_MAP* map, short newHeight )
 
 static DATA_MAP initDataMap  ( DATA_MAP map, short newWidth, short newHeight )
 {
+    /*
     setWidthMap ( &map, newWidth );
     setHeightMap ( &map, newHeight );
     map.map = NULL;
+    */
     return map;
 }
 
@@ -118,9 +122,9 @@ static void display ( DATA_MAP map )
 {
     int i, j;
     DEBUG_CHAR ( "\nAffichage de la map : ", ' ' );
-    for ( i = 0; i < getHeightMap ( map ); i++ ) {
-        for ( j = 0; j < getWidthMap ( map ); j++ ) {
-            DEBUG_ONLY_CHAR ( getMapElement ( map, j, i ) );
+    for ( i = 0; i < getHeightMap ( &map ); i++ ) {
+        for ( j = 0; j < getWidthMap ( &map ); j++ ) {
+            DEBUG_ONLY_CHAR ( getMapElement ( &map, j, i ) );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }
@@ -131,13 +135,16 @@ DATA_MAP createMap ( short newWidth, short newHeight )
 {
     DATA_MAP map;
     int i;
+    /*
     map = initDataMap ( map, newWidth, newHeight );
     map.map = ( char** ) malloc ( map.width * sizeof ( char* ) );
     assert ( map.map );
     for ( i = 0; i < map.width; i++ ) {
         map.map[i] = ( char* ) malloc ( map.height * sizeof ( char ) );
         assert ( map.map[i] );
-    }
+    } 
+    */
+    map = createMatrix ( newWidth, newHeight );
     return map;
 }
 
@@ -159,7 +166,7 @@ DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph )
     map = createMap ( width, height );
     *graph = createGraph ( width, height );
 
-    for ( i = 0; i < getHeightMap ( map ); i++ ) {
+    for ( i = 0; i < getHeightMap ( &map ); i++ ) {
         fgets ( buf, MAX_LINE_LENGTH, stdin );
         setDataToMapGraph ( &map, graph, buf, i );
     }
@@ -169,29 +176,38 @@ DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph )
     return map;
 }
 
-short getWidthMap ( DATA_MAP map )
+short getWidthMap ( DATA_MAP* map )
 {
+    /*
     return map.width;
+    */
+    return getWidthMatrix ( map );
 }
 
-short getHeightMap ( DATA_MAP map )
+short getHeightMap ( DATA_MAP* map )
 {
+    /*
     return map.height;
+    */
+   return getHeightMatrix ( map );
 }
 
-short getMapElement ( DATA_MAP map, int x, int y )
+short getMapElement ( DATA_MAP* map, int x, int y )
 {
+    /*
     return map.map[x][y];
+    */
+   return getElementMatrix ( map, x, y );
 }
 
 boolean destroyDataMap ( DATA_MAP map )
 {
     int i;
 
-    for ( i = 0; i < getWidthMap ( map ); i++ ) {
-        free ( map.map[i] );
-        map.map[i] = NULL;
+    for ( i = 0; i < getWidthMap ( &map ); i++ ) {
+        free ( map.matrix[i] );
+        map.matrix[i] = NULL;
     }
-    free ( map.map );
+    free ( map.matrix );
     return true;
 }

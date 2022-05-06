@@ -27,6 +27,7 @@
 #include <assert.h>
 #include "util.h"
 #include "graphMadj.h"
+#include "matrix.h"
 
 typedef enum {
     road = '#',
@@ -38,17 +39,7 @@ typedef enum {
 /**
  * @brief It is an object that represents the map
  */
-typedef struct _dataMap {
-    /*@{*/
-    short width; /**< the width of the map */
-    short height; /**< the height of the map */
-    char** map; /**< the matrix that represents the map */
-    /*@}*/
-} _dataMap;
-/**
- * @brief The DATA_MAP object from the _dataMap struct
- */
-typedef struct _dataMap DATA_MAP;
+typedef struct _matrix DATA_MAP;
 
 /**
  * @brief Get the Width Map object
@@ -56,7 +47,7 @@ typedef struct _dataMap DATA_MAP;
  * @param map : the DATA_MAP objet
  * @return short : the width of the map
  */
-short getWidthMap ( DATA_MAP map );
+short getWidthMap ( DATA_MAP* map );
 
 /**
  * @brief Get the Height Map object
@@ -64,7 +55,7 @@ short getWidthMap ( DATA_MAP map );
  * @param map : the map object
  * @return short : the height of the map
  */
-short getHeightMap ( DATA_MAP map );
+short getHeightMap ( DATA_MAP* map );
 
 /**
  * @brief Get the Map Element object
@@ -74,7 +65,7 @@ short getHeightMap ( DATA_MAP map );
  * @param y : the y coordiante of the element
  * @return short : the elemets 
  */
-short getMapElement ( DATA_MAP map, int x, int y );
+short getMapElement ( DATA_MAP* map, int x, int y );
 
 /**
  * @brief Create a Map object

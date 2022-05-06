@@ -33,4 +33,6 @@ typedef enum {false, true} boolean;
 
 typedef short coord[SIZE_COORD];
 
+typedef char element;
+
 #endif /* __UTIL_HH__ */

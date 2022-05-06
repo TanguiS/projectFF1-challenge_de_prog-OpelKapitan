@@ -32,8 +32,6 @@
 
 #define SIZE_TAB_FINISH_LINE 100
 
-typedef char element;
-
 typedef enum {
     roadGraph = 1,
     wallGraph = 0,

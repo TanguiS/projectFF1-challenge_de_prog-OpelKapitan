@@ -35,7 +35,8 @@
     "pilotdirection.h": "c",
     "graphmadj.h": "c",
     "util.h": "c",
-    "dijkstraalgo.h": "c"
+    "dijkstraalgo.h": "c",
+    "main_matrix.C": "cpp"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }
