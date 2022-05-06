@@ -22,17 +22,26 @@
 #ifndef __UTIL_HH__
 #define __UTIL_HH__
 
-#define MAX_LINE_LENGTH 1024
-#define SIZE_COORD 2
-#define BOOSTS_AT_START 5
+#define MAX_LINE_LENGTH 1024    /**< the maximum length of a line */
+#define SIZE_COORD 2            /**< the dimension of the coordinate */
+#define BOOSTS_AT_START 5       /**< the number of boosts at start */
 
 /**
  * @brief Enumeration of a boolean type
  */
-typedef enum {false, true} boolean;
+typedef enum {
+    false,                      /**< false boolean */
+    true                        /**< true boolean */
+} boolean;
 
+/**
+ * @brief Coordinate type declaration
+ */
 typedef short coord[SIZE_COORD];
 
+/**
+ * @brief Element type declaration 
+ */
 typedef char element;
 
 #endif /* __UTIL_HH__ */
