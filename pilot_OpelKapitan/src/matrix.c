@@ -21,10 +21,29 @@
 
 #include "matrix.h"
 
+/**
+ * @brief Initialise a Matrix object
+ * 
+ * @param matrix : the matrix to initialise
+ * @param width : the new width of the matrix
+ * @param height : the new height of the matrix
+ */
 static void initMatrix ( MATRIX* matrix, short width, short height );
 
+/**
+ * @brief Set the Width Matrix object
+ * 
+ * @param matrix 
+ * @param width : the new width of the matrix
+ */
 static void setWidthMatrix ( MATRIX* matrix, short width );
 
+/**
+ * @brief Set the Height Matrix object
+ * 
+ * @param matrix 
+ * @param height : the new height of the matrix
+ */
 static void setHeightMatrix ( MATRIX* matrix, short height );
 
 static void setWidthMatrix ( MATRIX* matrix, short width )
@@ -43,10 +62,6 @@ static void initMatrix ( MATRIX* matrix, short width, short height )
     setHeightMatrix ( matrix, height );
     matrix->matrix = NULL;
 }
-
-
-
-
 
 short getWidthMatrix ( MATRIX* matrix )
 {
