@@ -22,7 +22,6 @@
 #include "../include/graphMadj.h"
 
 #define INIT_SIZE 0
-#define NUMBER_CASES_AROUND 8
 
 static void setSizeFinishLine ( GRAPH* graph, char size );
 
