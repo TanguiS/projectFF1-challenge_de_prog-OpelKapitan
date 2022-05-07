@@ -25,7 +25,7 @@
 #define MAX_LINE_LENGTH 1024    /**< the maximum length of a line */
 #define SIZE_COORD 2            /**< the dimension of the coordinate */
 #define BOOSTS_AT_START 5       /**< the number of boosts at start */
-#define NUMBER_CASES_AROUND 8
+#define NUMBER_CASES_AROUND 8   /**< The number of cases around a case */
 
 
 /**
