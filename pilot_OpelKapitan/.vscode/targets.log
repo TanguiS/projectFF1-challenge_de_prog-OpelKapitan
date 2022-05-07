@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May  6 22:25:29 2022
+# Make data base, printed on Sat May  7 23:09:12 2022
 
 # Variables
 
@@ -47,7 +49,7 @@ SHELL = /bin/sh
 # environment
 SNAP_DATA = /var/snap/code/95
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"f62d0d328ea2a469bad3c39b06263023.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/57fd6d0195bb9b9d1b49f6da5db789060795de47","_corruptedFile":"/home/tangui/.config/Code/clp/f62d0d328ea2a469bad3c39b06263023.fr/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"50ccac6e9bb708a41bfd03dcbba396d8.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr/57fd6d0195bb9b9d1b49f6da5db789060795de47","_corruptedFile":"/home/tangui/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr/corrupted.info","_languagePackSupport":true}
 # environment
 JOURNAL_STREAM = 8:38284
 # makefile (from 'Makefile', line 10)
@@ -133,7 +135,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 40185
+GIO_LAUNCHED_DESKTOP_FILE_PID = 47844
 # automatic
 %F = $(notdir $%)
 # environment
@@ -203,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0cfa1fca-6ab2-4f45-bf56-57f4171a44c5.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-80203da0-08fe-4672-b76f-3bd1b43b2bbb.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -277,13 +279,11 @@ SNAP_REEXEC =
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
- 
-make: *** No rule to make target 'all'.  Stop.
-
 WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
+ 
 GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
@@ -294,7 +294,7 @@ LC_ADDRESS = fr_FR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 40235
+VSCODE_PID = 47890
 # variable set hash-table stats:
 # Load=141/1024=14%, Rehash=0, Collisions=33/199=17%
 
@@ -502,6 +502,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 62 / hit rate = 40%
 # hash-table stats:
 # Load=37/8192=0%, Rehash=0, Collisions=1/62=2%
-# Finished Make data base on Fri May  6 22:25:29 2022
+# Finished Make data base on Sat May  7 23:09:12 2022
 
  

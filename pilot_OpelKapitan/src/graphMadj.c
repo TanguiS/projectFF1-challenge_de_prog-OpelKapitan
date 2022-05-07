@@ -22,6 +22,7 @@
 #include "../include/graphMadj.h"
 
 #define INIT_SIZE 0
+#define NUMBER_CASES_AROUND 8
 
 static void setSizeFinishLine ( GRAPH* graph, char size );
 
@@ -142,6 +143,59 @@ void getClosestFinishLine ( GRAPH* graph, coord* result )
 element getElementGraph ( GRAPH* graph, short x, short y )
 {
     return getElementMatrix ( &(graph->graph), x, y );
+}
+
+static boolean isInGraph ( GRAPH* graph, short x, short y )
+{
+    if ( x >= getWidthGraph ( graph ) ) {
+        return false;
+    }
+    if ( y >= getHeightGraph ( graph ) ) {
+        return false;
+    }
+    if ( x < 0 ) {
+        return false;
+    }
+    if ( y < 0 ) {
+        return false;
+    }
+    return true;
+}
+
+static boolean areNotEqualsZero ( short x, short y )
+{
+    if ( x == 0 && y == 0 ) {
+        if ( x == y ) {
+            return false;
+        }
+    }
+    return true;
+}
+
+coord* getSuccessorGraph ( GRAPH* graph, short x, short y )
+{
+    coord* successor;
+    int count = 0;
+    int tab[3] = {-1, 0, 1};
+    int i, j;
+    successor = (coord*) malloc ( NUMBER_CASES_AROUND * sizeof ( coord ) );
+    for ( i = 0; i < 3; i++ ) {
+        for ( j = 0; j < 3; j++ ) {
+            if ( isInGraph ( graph, x + tab[j], y + tab[i] ) && areNotEqualsZero ( tab[j], tab[i] ) ) {
+                if ( getElementGraph ( graph, x + tab[j], y + tab[i] ) != wallGraph ) {
+                    successor[count][0] = x + tab[j];
+                    successor[count][1] = y + tab[i];
+                    count++;                    
+                }
+            }
+        }
+    }
+    if ( count == NUMBER_CASES_AROUND ) {
+        return successor;
+    }
+    successor[count][0] = -1;
+    successor[count][1] = -1;
+    return successor;
 }
 
 void setElementGraph ( GRAPH* graph, element value, int x, int y )

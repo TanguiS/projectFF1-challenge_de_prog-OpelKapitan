@@ -59,6 +59,8 @@ void getCoordFinishLine ( GRAPH* graph, short indice, coord* result );
 
 void getClosestFinishLine ( GRAPH* graph, coord* result );
 
+coord* getSuccessorGraph ( GRAPH* graph, short x, short y );
+
 element getElementGraph ( GRAPH* graph, short x, short y );
 
 void setElementGraph ( GRAPH* graph, element value, int x, int y );
