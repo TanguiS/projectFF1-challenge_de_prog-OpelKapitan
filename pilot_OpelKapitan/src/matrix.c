@@ -88,9 +88,9 @@ MATRIX createMatrix ( short width, short height )
     MATRIX newMatrix;
     int i;
     initMatrix ( &newMatrix, width, height );
-    newMatrix.matrix = (element**) malloc ( height * sizeof ( element* ) );
-    for ( i = 0; i < height; i++ ) {
-        newMatrix.matrix[i] = (element*) malloc ( width * sizeof ( element ) );
+    newMatrix.matrix = (element**) malloc ( width * sizeof ( element* ) );
+    for ( i = 0; i < width; i++ ) {
+        newMatrix.matrix[i] = (element*) malloc ( height * sizeof ( element ) );
     }
     return newMatrix;
 }
@@ -98,7 +98,7 @@ MATRIX createMatrix ( short width, short height )
 void destroyMatrix ( MATRIX matrixToDestroy )
 {
     int i;
-    for ( i = 0; i < getHeightMatrix ( &matrixToDestroy ); i++ ) {
+    for ( i = 0; i < getWidthMatrix ( &matrixToDestroy ); i++ ) {
         free ( matrixToDestroy.matrix[i] );
     }
     free ( matrixToDestroy.matrix );

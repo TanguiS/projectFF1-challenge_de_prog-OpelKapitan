@@ -35,12 +35,17 @@ int main ( void )
     float time;
     float initTime;
     clock_t t1, t2;
+    coord* test;
 
     t1 = clock();
     map = readDataMapGraph ( &gasLvl, &graph );
     myPilot = createPilot ( gasLvl );
     t2 = clock();
     initTime = (float)(t2-t1)/CLOCKS_PER_SEC;
+
+    test = getSuccessorGraph ( &graph, 2, 4 );
+
+    fprintf ( stderr, "%d\n", getElementGraph ( &graph, 2, 4 ) );
 
     fprintf(stderr, "\n=== Race start ===\n");
     
