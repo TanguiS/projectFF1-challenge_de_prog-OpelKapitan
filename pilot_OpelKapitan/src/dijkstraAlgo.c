@@ -59,7 +59,7 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet) {
         distance = (short) getElementGraph(graph, x, y);
         if ( distance < min) {
             min = distance;
-            mixeCoord(succ[i], sommet);
+            mixeCoord(&(succ[i]), sommet);
         }
     }
 }

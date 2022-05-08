@@ -174,10 +174,10 @@ static boolean areNotEqualsZero ( short x, short y )
 coord* getSuccessorGraph ( GRAPH* graph, short x, short y )
 {
     coord* successor;
-    int count = 0;
+    int count = 1;
     int tab[3] = {-1, 0, 1};
     int i, j;
-    successor = (coord*) malloc ( NUMBER_CASES_AROUND * sizeof ( coord ) );
+    successor = (coord*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( coord ) );
     for ( i = 0; i < 3; i++ ) {
         for ( j = 0; j < 3; j++ ) {
             if ( isInGraph ( graph, x + tab[j], y + tab[i] ) && areNotEqualsZero ( tab[j], tab[i] ) ) {
@@ -189,11 +189,7 @@ coord* getSuccessorGraph ( GRAPH* graph, short x, short y )
             }
         }
     }
-    if ( count == NUMBER_CASES_AROUND ) {
-        return successor;
-    }
-    successor[count][0] = -1;
-    successor[count][1] = -1;
+    successor[0][0] = count;
     return successor;
 }
 
