@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 22:35:17 2022
+# Make data base, printed on Sun May  8 23:52:08 2022
 
 # Variables
 
@@ -49,9 +49,9 @@ SHELL = /bin/sh
 # environment
 SNAP_DATA = /var/snap/code/95
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"50ccac6e9bb708a41bfd03dcbba396d8.fr","_translationsConfigFile":"/home/kylian/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr/tcf.json","_cacheRoot":"/home/kylian/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr","_resolvedLanguagePackCoreLocation":"/home/kylian/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr/57fd6d0195bb9b9d1b49f6da5db789060795de47","_corruptedFile":"/home/kylian/.config/Code/clp/50ccac6e9bb708a41bfd03dcbba396d8.fr/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:38892
+JOURNAL_STREAM = 8:46800
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -g
 # environment
@@ -83,7 +83,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1487
+MANAGERPID = 1500
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -97,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/kylian-Nitro-AN515-52:@/tmp/.ICE-unix/1710,unix/kylian-Nitro-AN515-52:/tmp/.ICE-unix/1710
+SESSION_MANAGER = local/kylian-Nitro-AN515-52:@/tmp/.ICE-unix/1719,unix/kylian-Nitro-AN515-52:/tmp/.ICE-unix/1719
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -117,7 +117,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 4dbf769c1ac8482d89dbf24fa3eaa74e
+INVOCATION_ID = a4c27501740f433bb3c6075a941a2001
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2529
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4456
 # automatic
 %F = $(notdir $%)
 # environment
@@ -147,7 +147,7 @@ PWD = /home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1670
+SSH_AGENT_PID = 1681
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -165,7 +165,7 @@ VSCODE_CODE_CACHE_PATH = /home/kylian/.config/Code/CachedData/57fd6d0195bb9b9d1b
 # environment
 LOGNAME = kylian
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -199,7 +199,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-73b7d8bb-1778-455c-b7d3-942df40c515d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-72a9c7df-fd34-4772-844c-38341f4880a6.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -220,6 +220,7 @@ MAKE_COMMAND := make
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
+ 
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-f8d2fa7a-1.67.0-main.sock
 # environment
@@ -275,7 +276,7 @@ INC_PATH = ./include
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2628
+VSCODE_PID = 4510
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=28/202=14%
 
@@ -311,7 +312,6 @@ obj/lifo.o: src/lifo.c include/lifo.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 45):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
@@ -365,6 +365,7 @@ obj/readMap.o: src/readMap.c include/readMap.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'Makefile', line 33):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
@@ -478,7 +479,6 @@ try: install
 
 clean: obj
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 60):
@@ -541,7 +541,8 @@ install: ../drivers/OpelKapitan
 
 # strcache performance: lookups = 77 / hit rate = 40%
 # hash-table stats:
+ 
 # Load=46/8192=1%, Rehash=0, Collisions=1/77=1%
-# Finished Make data base on Sun May  8 22:35:17 2022
+# Finished Make data base on Sun May  8 23:52:08 2022
 
  
