@@ -109,3 +109,9 @@ void choiceDirection ( direction choice, short* xAcc, short* yAcc )
     DEBUG_INT ( ">choix : ", *xAcc );
     DEBUG_INT ( ">choix : ", *yAcc );
 }
+
+
+void nextStep(short* xAcc, short* yAcc) {
+    LIFO stack; 
+    
+}

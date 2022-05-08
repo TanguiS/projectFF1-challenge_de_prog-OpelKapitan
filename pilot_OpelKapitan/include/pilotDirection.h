@@ -27,6 +27,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "pilotManagement.h"
+#include "dijkstraAlgo.h"
+#include "lifo.h"
 #ifndef DEBUG
 #include "debugMode.h"
 #endif
