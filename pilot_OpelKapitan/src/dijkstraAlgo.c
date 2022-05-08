@@ -63,6 +63,7 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
         }
     }
     flag[*(sommet)[1] * getWidthGraph(graph) + *(sommet)[0]] = true;
+    free ( succ );
 }
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2) {
@@ -103,6 +104,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord f
             updateDistance(dijkstra, graph, sommet, succ[i]);
         }
         countTrue++;
+        free ( succ );
     }
 
     
