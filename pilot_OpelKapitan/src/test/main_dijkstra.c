@@ -24,6 +24,7 @@
 #include "../../include/dijkstraAlgo.h"
 #include "../../include/dijkstraMatrix.h"
 #include "../../include/graphMadj.h"
+#include "../../include/lifo.h"
 
 #define X 10
 #define Y 12
@@ -61,6 +62,8 @@ int main ( void )
     int i, j;
     GRAPH graph = createGraph ( Y, X );
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
+    LIFO stack;
+
     printf ( "depart value  : %d\n", graphNSand[coordStart[0]][coordStart[1]] );
     printf ( "end value     : %d\n", graphNSand[coordEnd[0]][coordEnd[1]] );
 
@@ -74,9 +77,14 @@ int main ( void )
     displayGraph ( &graph );
     printf ( "end value vue du graph : %d, %d\n", graph.closestFinishLine[0], graph.closestFinishLine[1] );
 
-    initDijkstraLenght ( &dij, coordStart[0], coordStart[1] );
+    stack = givePath ( &dij, &graph, coordEnd[1], coordEnd[0], coordStart[1], coordStart[0] );
+
 
     displayDijkstraMatrix ( &dij );
+
+
+
+
     destroyDijkstraMatrix ( dij );
     destroyGraph ( graph );
     return EXIT_SUCCESS;

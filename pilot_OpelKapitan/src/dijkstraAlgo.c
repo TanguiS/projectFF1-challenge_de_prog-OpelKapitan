@@ -24,8 +24,8 @@
 
 
 void mixeCoord (coord* reference, coord* result ) {
-    *(result)[0] = *(reference)[0];
-    *(result)[1] = *(reference)[1];   
+    result[0][0] = reference[0][0];
+    result[0][1] = reference[0][1];   
 }
 
 boolean sameCoord(coord sommet1, coord sommet2) {
@@ -58,9 +58,9 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
     int distance;
 
     sommet[0][0] = -1;
-    *(sommet)[1] = -1;   
+    sommet[0][1] = -1;   
     succ = getSuccessorGraph(graph, x, y);
-    sizeSucc = *(succ)[0];
+    sizeSucc = succ[0][0];
 
     for (i=1; i<sizeSucc; i++) { 
         distance = (short) getElementGraph(graph, succ[i][0], succ[i][1]);
@@ -69,7 +69,7 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
             mixeCoord(&(succ[i]), sommet);
         }
     }
-    flag[*(sommet)[1] * getWidthGraph(graph) + *(sommet)[0]] = true;
+    flag[sommet[0][1] * getWidthGraph(graph) + sommet[0][0]] = true;
     free ( succ );
 }
 
@@ -107,7 +107,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     while (countTrue != getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra)) {
         findMin(graph, sommet[0], sommet[1], &sommet, flag);
         succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
-        sizeSucc = *(succ)[0];
+        sizeSucc = succ[0][0];
         for (i=1; i<sizeSucc; i++) {
             updateDistance(dijkstra, graph, sommet, succ[i]);
         }
@@ -117,10 +117,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     free(flag);
 } 
 
-
-
-
-LIFO givePath(dijkstraMatrix* dijkstra, short finalx, short finaly, short firstx, short firsty) {
+LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short finalx, short finaly, short firstx, short firsty) {
     coord sommet;
     LIFO stack;
     coord firstSommet;
@@ -130,6 +127,7 @@ LIFO givePath(dijkstraMatrix* dijkstra, short finalx, short finaly, short firstx
     firstSommet[1] = firsty;
     finalSommet[0] = finalx;
     finalSommet[1] = finaly;
+    allPathDijkstra ( dijkstra, graph, firstSommet );
     stack = createLifo();
     mixeCoord(&finalSommet, &sommet);
     while( !sameCoord(sommet, firstSommet) ) {

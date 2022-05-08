@@ -46,6 +46,6 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet);
 
-LIFO givePath(dijkstraMatrix* dijkstra, short finalx, short finaly, short firstx, short firsty);
+LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short finalx, short finaly, short firstx, short firsty);
 
 #endif /* DIJKSTRA_ALGO_HH__ */
