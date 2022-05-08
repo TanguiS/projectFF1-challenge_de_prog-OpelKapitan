@@ -105,12 +105,12 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     sommet[1] = firstSommet[1];
 
     while (countTrue != getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra)) {
-        findMin(graph, sommet[0], sommet[1], &sommet, flag);
         succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
         sizeSucc = succ[0][0];
         for (i=1; i<sizeSucc; i++) {
             updateDistance(dijkstra, graph, sommet, succ[i]);
         }
+        findMin(graph, sommet[0], sommet[1], &sommet, flag);
         countTrue++;
         free ( succ );
     }
