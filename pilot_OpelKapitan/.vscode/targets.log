@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 18:09:10 2022
+# Make data base, printed on Sun May  8 18:44:53 2022
 
 # Variables
 
@@ -279,8 +279,8 @@ SNAP_REEXEC =
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
- 
 WINDOWPATH = 2
+ 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -540,6 +540,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 72 / hit rate = 40%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/72=1%
-# Finished Make data base on Sun May  8 18:09:10 2022
+# Finished Make data base on Sun May  8 18:44:53 2022
 
  
