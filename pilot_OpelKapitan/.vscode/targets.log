@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 16:40:07 2022
+# Make data base, printed on Sun May  8 17:31:26 2022
 
 # Variables
 
@@ -203,7 +203,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-80203da0-08fe-4672-b76f-3bd1b43b2bbb.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e15837c0-516c-434a-aec2-cb6b639ab021.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -540,6 +540,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 72 / hit rate = 40%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/72=1%
-# Finished Make data base on Sun May  8 16:40:07 2022
+# Finished Make data base on Sun May  8 17:31:26 2022
 
  
