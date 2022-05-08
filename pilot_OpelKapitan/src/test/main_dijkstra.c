@@ -61,8 +61,6 @@ int main ( void )
     int i, j;
     GRAPH graph = createGraph ( Y, X );
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
-    elementdij test;
-
     printf ( "depart value  : %d\n", graphNSand[coordStart[0]][coordStart[1]] );
     printf ( "end value     : %d\n", graphNSand[coordEnd[0]][coordEnd[1]] );
 
@@ -76,10 +74,7 @@ int main ( void )
     displayGraph ( &graph );
     printf ( "end value vue du graph : %d, %d\n", graph.closestFinishLine[0], graph.closestFinishLine[1] );
 
-    test.pathLength = 18;
-    test.predecessor[0] = 5;
-    test.predecessor[1] = 8;
-    setElementDijkstra ( &dij, 5, 5, test );
+    initDijkstraLenght ( &dij, coordStart[0], coordStart[1] );
 
     displayDijkstraMatrix ( &dij );
     destroyDijkstraMatrix ( dij );

@@ -45,4 +45,4 @@ clean: $(OBJ_PATH) #Détruire les fichiers temporaires
 	rm $</*.o
 distclean: $(BIN_PATH)
 	make clean
-	rm $(install)
+	rm $</*out

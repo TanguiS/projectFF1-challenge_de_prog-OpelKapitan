@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 15:19:25 2022
+# Make data base, printed on Sun May  8 16:40:07 2022
 
 # Variables
 
@@ -278,6 +276,9 @@ SUFFIXES :=
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 # environment
 WINDOWPATH = 2
 # default
@@ -295,7 +296,6 @@ LANG = C
 # environment
 VSCODE_PID = 47890
 # variable set hash-table stats:
- 
 # Load=141/1024=14%, Rehash=0, Collisions=33/207=16%
 
 # Pattern-specific Variable Values
@@ -540,6 +540,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 72 / hit rate = 40%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/72=1%
-# Finished Make data base on Sun May  8 15:19:25 2022
+# Finished Make data base on Sun May  8 16:40:07 2022
 
  

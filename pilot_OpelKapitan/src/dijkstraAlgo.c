@@ -31,10 +31,10 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
     for (i=0; i<getHeigthMatrixDijkstra(dijkstraMatrix); i++) {
         for (j=0; j<getWidthMatrixDijkstra(dijkstraMatrix); j++) {
-            dijkstraMatrix->matrix[i][j].pathLength = SHRT_MAX;
+            setPathLength ( dijkstraMatrix, i, j, SHRT_MAX );
         }
     }
-    dijkstraMatrix->matrix[x][y].pathLength = 0;
+    setPathLength ( dijkstraMatrix, x, y, 0 );
 }
 
 
