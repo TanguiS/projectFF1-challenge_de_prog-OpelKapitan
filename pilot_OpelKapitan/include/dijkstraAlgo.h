@@ -38,7 +38,7 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
 void mixeCoord (coord* reference, coord* result );
 
 
-void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean** flag);
+void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* sommet );
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2);
 

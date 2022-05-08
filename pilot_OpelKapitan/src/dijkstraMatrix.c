@@ -70,13 +70,7 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
     for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
         for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
-            DEBUG_ONLY_CHAR ( '[' );
-            DEBUG_ONLY_INT ( tmp.predecessor[0] );
-            DEBUG_ONLY_CHAR ( ',' );
-            DEBUG_ONLY_INT ( tmp.predecessor[1] );
-            DEBUG_ONLY_CHAR ( ']' );
-            DEBUG_ONLY_INT ( tmp.pathLength );
-            DEBUG_ONLY_CHAR ( ' ' );
+            fprintf ( stderr, "[%d, %d], %d | ", tmp.predecessor[0], tmp.predecessor[1], tmp.flag );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }

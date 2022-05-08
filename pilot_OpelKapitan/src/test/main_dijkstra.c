@@ -32,7 +32,7 @@
 #define Y_SMALL 4
 
 const short smallGraph[X_SMALL][Y_SMALL] = 
-            { { 0, 0, 1, 0 },
+            { { 0, 0, 0, 0 },
               { 1, 1, 1, 1 },
               { 1, 1, 1, 0 },
             };
@@ -69,25 +69,27 @@ const short coordEndSmall[SIZE_COORD] = {3, 1};
 int main ( void )
 {
     int i, j;
-    GRAPH graph = createGraph ( Y_SMALL, X_SMALL );
-    dijkstraMatrix dij = createDijkstraMatrix ( Y_SMALL, X_SMALL );
+    GRAPH graph = createGraph ( Y, X );
+    dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
     LIFO stack;
     lifoElement result;
 
-    printf ( "depart value  : %d\n", smallGraph[coordStartSmall[1]][coordStartSmall[0]] );
-    printf ( "end value     : %d\n", smallGraph[coordEndSmall[1]][coordEndSmall[0]] );
+    printf ( "depart value  : %d\n", graphNSand[coordStart[1]][coordStart[0]] );
+    printf ( "end value     : %d\n", smallGraph[coordEnd[1]][coordEnd[0]] );
 
     for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
-            graph.graph.matrix[j][i] = (element)smallGraph[i][j];
+            graph.graph.matrix[j][i] = (element)graphNSand[i][j];
         }
     }
     graph.closestFinishLine[0] = coordEndSmall[0];
     graph.closestFinishLine[1] = coordEndSmall[1];
+    displayGraph ( &graph );
     displayDijkstraMatrix ( &dij );
-    stack = givePath ( &dij, &graph, coordStartSmall[0], coordStartSmall[1], coordEndSmall[0], coordEndSmall[1] );
+    stack = givePath ( &dij, &graph, coordStart[0], coordStart[1], coordEnd[0], coordEnd[1] );
 
     displayDijkstraMatrix ( &dij );
+    printf ( "\n\n" );
     while ( !isEmpty ( stack ) ) {
         stack = removeElementLifo ( stack, &result );
         printf ( "[%d, %d] ", result[0], result[1] );

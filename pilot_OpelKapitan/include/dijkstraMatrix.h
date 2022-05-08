@@ -37,6 +37,7 @@
 typedef struct _elementDijkstra {
     coord predecessor; 
     short pathLength;
+    boolean flag;
 }elementdij;
 
 typedef struct _dijkstraMatrix {
