@@ -21,11 +21,19 @@
 
 #include "../include/dijkstraAlgo.h"
 
-static MATRIX initMatrix ( coord start, short vertices );
 
-static MATRIX initMatrix ( coord start, short vertices )
-{
-    MATRIX matrix;
-    int i, j;
-    matrix = ( element** ) malloc ( )
+
+
+
+void initDijkstra(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x, short y) {
+    int i;
+    int j;
+
+    for (i=0; i<heigth; i++){
+        for (j=0; j<width; j++) {
+            dijkstraMatrix->matrix[i][j].pathLength = SHRT_MAX;
+        }
+    }
+    dijkstraMatrix->matrix[x][y].pathLength = 0;
 }
+
