@@ -117,7 +117,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     free(flag);
 } 
 
-LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short finalx, short finaly, short firstx, short firsty) {
+LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly) {
     coord sommet;
     LIFO stack;
     coord firstSommet;

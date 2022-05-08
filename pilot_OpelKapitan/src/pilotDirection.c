@@ -21,7 +21,6 @@
 
 
 #include "pilotDirection.h"
-#include "graphMadj.h"
 
 #define ACTION 1
 #define BOOSTED_ACTION 2
@@ -111,7 +110,17 @@ void choiceDirection ( direction choice, short* xAcc, short* yAcc )
 }
 
 
-void nextStep(short* xAcc, short* yAcc) {
+void nextStep(short* xAcc, short* yAcc, GRAPH* graph, short currentx, short currenty, short finalx, short finaly,short xSpeed, short ySpeed) {
     LIFO stack; 
-    
+    dijkstraMatrix dijkstra;
+    coord firstSommet;
+    firstSommet[0] = finalx;
+    firstSommet[1] = finaly;
+
+    dijkstra = createDijkstraMatrix(getWidthGraph(graph), getHeightGraph(graph));
+
+    stack = givePath(&dijkstra, graph, currentx, currenty, finalx, finaly);
+
+
+
 }
