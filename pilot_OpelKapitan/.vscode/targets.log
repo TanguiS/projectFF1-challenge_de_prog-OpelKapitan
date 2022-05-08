@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 17:31:26 2022
+# Make data base, printed on Sun May  8 18:09:10 2022
 
 # Variables
 
@@ -203,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e15837c0-516c-434a-aec2-cb6b639ab021.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c121cbdc-ec71-4836-b307-e14284414a9b.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -276,10 +278,8 @@ SUFFIXES :=
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # environment
+ 
 WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
@@ -540,6 +540,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 72 / hit rate = 40%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/72=1%
-# Finished Make data base on Sun May  8 17:31:26 2022
+# Finished Make data base on Sun May  8 18:09:10 2022
 
  

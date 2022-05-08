@@ -78,5 +78,6 @@ int main ( void )
 
     displayDijkstraMatrix ( &dij );
     destroyDijkstraMatrix ( dij );
+    destroyGraph ( graph );
     return EXIT_SUCCESS;
 }

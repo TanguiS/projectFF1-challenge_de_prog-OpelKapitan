@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.1
  * @date 22 janvier 2022
  */
 
@@ -24,37 +24,74 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <assert.h>
 #include "util.h"
-#include "graphMadj.h"
-#include "pilotManagement.h"
-#include "pilotDirection.h"
-#include "util.h"
-#include "dijkstraMatrix.h"
-#include "../include/dijkstraAlgo.h"
 
-
-/* typedef coord lifoElement; */
-
+/**
+ * @brief lifoElement type declaration 
+ */
 typedef coord lifoElement;
 
+/**
+ * @brief A structure to represent a cell object 
+ */
 typedef struct _cell {
-    lifoElement contents;
-    struct _cell* followingCell;
-} _cell; typedef struct _cell *CELL;
+    lifoElement contents;           /**< the element that the cell contains */
+    struct _cell* followingCell;    /**< the following cell */
+} _cell; 
+/**
+ * @brief Cell object declaration 
+ */
+typedef struct _cell *CELL;
 
+/**
+ * @brief A structure to represent a lifo object 
+ */
 typedef struct _lifo {
-    CELL head;
-} _lifo; typedef struct _lifo LIFO;
+    CELL head;                      /**< the head of the lifo */
+} _lifo; 
+/**
+ * @brief Lifo object declaration 
+ */
+typedef struct _lifo LIFO;
 
+/**
+ * @brief Create a Lifo object
+ * 
+ * @return LIFO 
+ */
 LIFO createLifo ();
 
+/**
+ * @brief If the lifo is empty
+ * 
+ * @param lifo 
+ * @return boolean 
+ */
 boolean isEmpty ( LIFO lifo );
 
+/**
+ * @brief Add a lifo element int the lifo
+ * 
+ * @param file 
+ * @param x : the element to add
+ * @return LIFO 
+ */
 LIFO addElementLifo ( LIFO file, lifoElement x );
 
+/**
+ * @brief Remove a lifo element from the lifo
+ * 
+ * @param file 
+ * @param result : the removed element
+ * @return LIFO 
+ */
 LIFO removeElementLifo ( LIFO file, lifoElement* result );
 
+/**
+ * @brief Destroy a Lifo Object
+ * 
+ * @param file 
+ */
 void destroyLifo ( LIFO file );
 
 #endif /* __FILE_H__ */

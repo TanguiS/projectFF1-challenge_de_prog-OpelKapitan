@@ -60,6 +60,7 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
     return dijkstra;
 }
 
+#ifndef DEBUG
 void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
 {
     int i, j;
@@ -81,6 +82,7 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
         DEBUG_ONLY_CHAR ( '\n' );
     }
 }
+#endif
 
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra) {
     int i;
