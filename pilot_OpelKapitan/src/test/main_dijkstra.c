@@ -28,7 +28,14 @@
 
 #define X 10
 #define Y 12
+#define X_SMALL 3
+#define Y_SMALL 4
 
+const short smallGraph[X_SMALL][Y_SMALL] = 
+            { { 0, 0, 1, 0 },
+              { 1, 1, 1, 1 },
+              { 1, 1, 1, 0 },
+            };
 
 const short graphNSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
                                  { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
@@ -54,33 +61,39 @@ const short graphWSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0 }
                                };
 
-const short coordStart[SIZE_COORD] = { 7, 2 };
-const short coordEnd[SIZE_COORD] = { 7, 6 };
+const short coordStart[SIZE_COORD] = { 2, 7 };
+const short coordEnd[SIZE_COORD] = { 6, 7 };
+const short coordStartSmall[SIZE_COORD] = {0, 2};
+const short coordEndSmall[SIZE_COORD] = {2, 1};
 
 int main ( void )
 {
     int i, j;
-    GRAPH graph = createGraph ( Y, X );
-    dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
+    GRAPH graph = createGraph ( Y_SMALL, X_SMALL );
+    dijkstraMatrix dij = createDijkstraMatrix ( Y_SMALL, X_SMALL );
     LIFO stack;
 
-    printf ( "depart value  : %d\n", graphNSand[coordStart[0]][coordStart[1]] );
-    printf ( "end value     : %d\n", graphNSand[coordEnd[0]][coordEnd[1]] );
+    printf ( "depart value  : %d\n", smallGraph[coordStartSmall[1]][coordStartSmall[0]] );
+    printf ( "end value     : %d\n", smallGraph[coordEndSmall[1]][coordEndSmall[0]] );
 
     for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
-            graph.graph.matrix[j][i] = (element)graphNSand[i][j];
+            graph.graph.matrix[j][i] = (element)smallGraph[i][j];
         }
     }
-    graph.closestFinishLine[0] = coordEnd[1];
-    graph.closestFinishLine[1] = coordEnd[0];
+    graph.closestFinishLine[0] = coordEndSmall[0];
+    graph.closestFinishLine[1] = coordEndSmall[1];
     displayGraph ( &graph );
-    printf ( "end value vue du graph : %d, %d\n", graph.closestFinishLine[0], graph.closestFinishLine[1] );
+    printf ( "end value vue du graph : %d, %d + element : %d\n", graph.closestFinishLine[0], graph.closestFinishLine[1], getElementGraph ( &graph, coordEndSmall[0], coordEndSmall[1] ) );
 
-    stack = givePath ( &dij, &graph, coordEnd[1], coordEnd[0], coordStart[1], coordStart[0] );
+    displayDijkstraMatrix ( &dij );
+
+    stack = givePath ( &dij, &graph, coordEndSmall[0], coordEndSmall[1], coordStartSmall[0], coordStartSmall[1] );
 
 
     displayDijkstraMatrix ( &dij );
+
+    getSuccessorGraph ( &graph, 1, 1 );
 
 
 

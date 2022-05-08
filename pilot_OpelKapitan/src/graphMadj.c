@@ -163,12 +163,13 @@ static boolean isInGraph ( GRAPH* graph, short x, short y )
 
 static boolean areNotEqualsZero ( short x, short y )
 {
-    if ( x == 0 && y == 0 ) {
-        if ( x == y ) {
-            return false;
-        }
+    if ( x != 0 ) {
+        return true;
     }
-    return true;
+    if ( y != 0 ) {
+        return true;
+    }
+    return false;
 }
 
 coord* getSuccessorGraph ( GRAPH* graph, short x, short y )

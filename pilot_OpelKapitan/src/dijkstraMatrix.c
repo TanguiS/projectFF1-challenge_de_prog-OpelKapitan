@@ -52,9 +52,9 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
     dijkstraMatrix dijkstra;
     dijkstra.height = heigth;
     dijkstra.width = width;
-    dijkstra.matrix = (elementdij**)malloc(getHeigthMatrixDijkstra(&dijkstra)*sizeof(elementdij*));
-    for (i=0; i<heigth; i++) {
-        dijkstra.matrix[i] = (elementdij*)malloc(getWidthMatrixDijkstra(&dijkstra)*sizeof(elementdij));
+    dijkstra.matrix = (elementdij**)malloc(width*sizeof(elementdij*));
+    for (i=0; i<width; i++) {
+        dijkstra.matrix[i] = (elementdij*)malloc(heigth*sizeof(elementdij));
     }
     return dijkstra;
 }
@@ -67,8 +67,8 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
     DEBUG_CHAR ( "Affichage de la matrice de dijkstra : ", ' ' );
     DEBUG_INT ( "width graph : ", getWidthMatrixDijkstra ( dijkstra ) );
     DEBUG_INT ( "height graph : ", getHeigthMatrixDijkstra ( dijkstra ) );
-    for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
-        for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
+    for ( i = 0; i < getWidthMatrixDijkstra ( dijkstra ); i++ ) {
+        for ( j = 0; j < getHeigthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, i, j );
             DEBUG_ONLY_CHAR ( '[' );
             DEBUG_ONLY_INT ( tmp.predecessor[0] );
