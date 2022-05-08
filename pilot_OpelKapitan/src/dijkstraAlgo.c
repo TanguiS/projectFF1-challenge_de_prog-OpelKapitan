@@ -43,7 +43,7 @@ void mixeCoord (coord* reference, coord* result ) {
     *(result)[1] = *(reference)[1];   
 }
 
-void findMin(GRAPH* graph, short x, short y, coord* sommet) {
+void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
     short min = SHRT_MAX;
     coord* succ;
     short i;
@@ -56,12 +56,13 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet) {
     sizeSucc = *(succ)[0];
 
     for (i=1; i<sizeSucc; i++) { 
-        distance = (short) getElementGraph(graph, x, y);
-        if ( distance < min) {
+        distance = (short) getElementGraph(graph, succ[i][0], succ[i][1]);
+        if ( distance < min && flag[succ[i][1] * getWidthGraph(graph) + succ[i][0]] == false ) {       /*succ is not visited*/ 
             min = distance;
             mixeCoord(&(succ[i]), sommet);
         }
     }
+    flag[*(sommet)[1] * getWidthGraph(graph) + *(sommet)[0]] = true;
 }
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2) {
@@ -80,9 +81,36 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 }
 
 
- /*
+
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord firstSommet) {
-    initDijkstraLenght(dijkstra,  getHeightGraph(graph), getWidhtGraph(graph), firstSommet[0], firstSommet[1]);
+    boolean* flag;
+    int i;
+    int countTrue = 0;
+    coord sommet;
+    coord* succ;
+    short sizeSucc; 
+
+    flag = (boolean*)calloc(getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra), sizeof(boolean));
+    initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
+    sommet[0] = firstSommet[0];
+    sommet[1] = firstSommet[1];
+
+    while (countTrue != getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra)) {
+        findMin(graph, sommet[0], sommet[1], &sommet, flag);
+        succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
+        sizeSucc = *(succ)[0];
+        for (i=1; i<sizeSucc; i++) {
+            updateDistance(dijkstra, graph, sommet, succ[i]);
+        }
+        countTrue++;
+    }
+
+    
 
 
-} */
+
+
+
+
+    free(flag);
+} 
