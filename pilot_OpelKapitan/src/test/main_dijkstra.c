@@ -88,7 +88,7 @@ int main ( void )
 
     displayDijkstraMatrix ( &dij );
 
-    /* stack = givePath ( &dij, &graph, coordEndSmall[0], coordEndSmall[1], coordStartSmall[0], coordStartSmall[1] ); */
+    stack = givePath ( &dij, &graph, coordEndSmall[0], coordEndSmall[1], coordStartSmall[0], coordStartSmall[1] );
 
 
     displayDijkstraMatrix ( &dij );

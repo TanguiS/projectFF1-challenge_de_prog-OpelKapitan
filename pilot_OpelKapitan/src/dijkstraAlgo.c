@@ -59,7 +59,7 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
 
     sommet[0][0] = -1;
     sommet[0][1] = -1;   
-    succ = getSuccessorGraph(graph, y, x);
+    succ = getSuccessorGraph(graph, x, y);
     sizeSucc = succ[0][0];
 
     for (i=1; i<sizeSucc; i++) { 
@@ -105,7 +105,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     sommet[1] = firstSommet[1];
 
     while (countTrue != getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra)) {
-        succ = getSuccessorGraph(graph, sommet[1], sommet[0]);
+        succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
         sizeSucc = succ[0][0];
         for (i=1; i<sizeSucc; i++) {
             updateDistance(dijkstra, graph, sommet, succ[i]);
