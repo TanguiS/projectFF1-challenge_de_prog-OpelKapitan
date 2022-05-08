@@ -29,7 +29,7 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, int width, int heigth, s
     int i;
     int j;
 
-    for (i=0; i<heigth; i++){
+    for (i=0; i<heigth; i++) {
         for (j=0; j<width; j++) {
             dijkstraMatrix->matrix[i][j].pathLength = SHRT_MAX;
         }
@@ -63,3 +63,21 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet) {
         }
     }
 }
+
+void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2) {
+    short d1;
+    short d2;
+    short arcValue;
+
+    d1 = getPathLength(dijkstra, sommet1[0], sommet1[1]);
+    d2 = getPathLength(dijkstra, sommet2[0], sommet2[2]);
+    arcValue = (short)getElementGraph(graph, sommet2[0], sommet2[1]);
+
+    if ( d2 > (d1 + arcValue) ) {
+        setPathLength(dijkstra, sommet2[0], sommet2[1], (d1 + arcValue));
+        setPredecessor(dijkstra, sommet2[0], sommet2[1], sommet1);
+    }
+}
+
+
+ 

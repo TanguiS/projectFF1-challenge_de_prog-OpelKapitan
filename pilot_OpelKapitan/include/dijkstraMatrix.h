@@ -35,7 +35,7 @@
 
 
 typedef struct _elementDijkstra {
-    coord position; 
+    coord predecessor; 
     short pathLength;
 }elementdij;
 
@@ -54,7 +54,11 @@ short getHeigthMatrixDijkstra(dijkstraMatrix* dijkstra);
 
 elementdij getElementDijkstra(dijkstraMatrix* dijkstra, short x, short y);
 
+short getPathLength(dijkstraMatrix* dijkstra, short x, short y);
+
 void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij values);
+
+void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLength);
 
 dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 

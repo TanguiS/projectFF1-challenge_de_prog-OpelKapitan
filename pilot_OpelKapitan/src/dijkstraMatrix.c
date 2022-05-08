@@ -24,6 +24,24 @@ void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij v
     dijkstra->matrix[x][y] = values;
 }
 
+
+short getPathLength(dijkstraMatrix* dijkstra, short x, short y) {
+    return dijkstra->matrix[x][y].pathLength;
+}
+
+void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLength) {
+    dijkstra->matrix[x][y].pathLength = newPathLength;
+}
+
+short getPredecessor(dijkstraMatrix* dijkstra, short x, short y) {
+    return dijkstra->matrix[x][y].predecessor;
+}
+
+void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor) {
+    dijkstra->matrix[x][y].predecessor[0] = newPredecessor[0];
+    dijkstra->matrix[x][y].predecessor[1] = newPredecessor[1];
+}
+
 dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
     int i;
 
