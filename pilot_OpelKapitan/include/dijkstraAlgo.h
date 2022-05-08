@@ -27,7 +27,6 @@
 #include <limits.h>
 #include "graphMadj.h"
 #include "pilotManagement.h"
-#include "pilotDirection.h"
 #include "util.h"
 #include "dijkstraMatrix.h"
 #include "lifo.h"
@@ -46,6 +45,6 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet);
 
-LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short finalx, short finaly, short firstx, short firsty);
+LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly);
 
 #endif /* DIJKSTRA_ALGO_HH__ */
