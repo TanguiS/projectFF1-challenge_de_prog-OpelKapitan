@@ -15,14 +15,47 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.2
  * @date 22 janvier 2022
  */
 
 #include "lifo.h"
 
+/**
+ * @brief Create a Cell object
+ * 
+ * @param x : the new element 
+ * @return CELL 
+ */
 static CELL createCell ( lifoElement x );
+/**
+ * @brief Destroy a Cell object
+ * 
+ * @param cell : the cell to destroy
+ * @return boolean 
+ */
 static boolean destroyCell ( CELL cell );
+
+static CELL createCell ( lifoElement x)
+{
+    CELL newCell;
+
+    newCell =  ( CELL ) malloc ( sizeof ( _cell ) );
+    newCell->contents[0] = x[0];
+    newCell->contents[1] = x[1];
+    newCell->followingCell = NULL;
+    return newCell;
+}
+
+static boolean destroyCell ( CELL cell )
+{
+    if ( cell != NULL ) {
+        free ( cell );
+        cell = NULL;
+        return true;
+    }
+    return false;
+}
 
 LIFO createLifo () 
 {
@@ -39,17 +72,6 @@ boolean isEmpty ( LIFO lifo )
     return false;
 }
 
-static CELL createCell ( lifoElement x)
-{
-    CELL newCell;
-
-    newCell =  ( CELL ) malloc ( sizeof ( _cell ) );
-    newCell->contents[0] = x[0];
-    newCell->contents[1] = x[1];
-    newCell->followingCell = NULL;
-    return newCell;
-}
-
 LIFO addElementLifo ( LIFO lifo, lifoElement x )
 {
     CELL newCell;
@@ -62,16 +84,6 @@ LIFO addElementLifo ( LIFO lifo, lifoElement x )
     newCell->followingCell = lifo.head;
     lifo.head = newCell;
     return lifo;
-}
-
-static boolean destroyCell ( CELL cell )
-{
-    if ( cell != NULL ) {
-        free ( cell );
-        cell = NULL;
-        return true;
-    }
-    return false;
 }
 
 LIFO removeElementLifo ( LIFO lifo, lifoElement* result )
