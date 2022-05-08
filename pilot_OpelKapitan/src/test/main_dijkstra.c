@@ -72,6 +72,7 @@ int main ( void )
     GRAPH graph = createGraph ( Y_SMALL, X_SMALL );
     dijkstraMatrix dij = createDijkstraMatrix ( Y_SMALL, X_SMALL );
     LIFO stack;
+    lifoElement result;
 
     printf ( "depart value  : %d\n", smallGraph[coordStartSmall[1]][coordStartSmall[0]] );
     printf ( "end value     : %d\n", smallGraph[coordEndSmall[1]][coordEndSmall[0]] );
@@ -87,6 +88,11 @@ int main ( void )
     stack = givePath ( &dij, &graph, coordStartSmall[0], coordStartSmall[1], coordEndSmall[0], coordEndSmall[1] );
 
     displayDijkstraMatrix ( &dij );
+    while ( !isEmpty ( stack ) ) {
+        stack = removeElementLifo ( stack, &result );
+        printf ( "[%d, %d] ", result[0], result[1] );
+    }
+    printf ( "\n" );
 
 
     destroyDijkstraMatrix ( dij );

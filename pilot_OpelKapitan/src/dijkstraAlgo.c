@@ -51,7 +51,7 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
 
 
-void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
+void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean** flag) {
     short min = SHRT_MAX;
     coord* succ;
     short i;
@@ -65,12 +65,12 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
 
     for (i=1; i<sizeSucc; i++) { 
         distance = (short) getElementGraph(graph, succ[i][0], succ[i][1]);
-        if ( distance < min && flag[succ[i][1] * getWidthGraph(graph) + succ[i][0]] == false ) {       /*succ is not visited*/ 
+        if ( distance < min && flag[succ[i][0]][succ[i][1]] == false ) {       /*succ is not visited*/ 
             min = distance;
             mixeCoord(&(succ[i]), sommet);
         }
     }
-    flag[sommet[0][1] * getWidthGraph(graph) + sommet[0][0]] = true;
+    flag[sommet[0][0]][sommet[i][1]] = true;
     free ( succ );
 }
 
@@ -93,7 +93,7 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) {
-    boolean* flag;
+    boolean** flag;
     int i;
     int countTrue = 0;
     coord sommet;
@@ -101,7 +101,10 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     short sizeSucc; 
     
 
-    flag = (boolean*)calloc(getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra), sizeof(boolean));
+    flag = (boolean**)malloc ( getWidthMatrixDijkstra ( dijkstra ) * sizeof ( boolean* ) );
+    for ( i = 0; i < getWidthMatrixDijkstra ( dijkstra ); i++ ) {
+        flag[i] = (boolean*) calloc ( getHeigthMatrixDijkstra ( dijkstra ), sizeof ( boolean ) );
+    }
     initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
     sommet[0] = firstSommet[0];
     sommet[1] = firstSommet[1];
