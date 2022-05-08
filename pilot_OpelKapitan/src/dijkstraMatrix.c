@@ -7,7 +7,6 @@
 
 #include "dijkstraMatrix.h"
 
-void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor);
 
 short getWidthMatrixDijkstra(dijkstraMatrix* dijkstra) {
     return dijkstra->width;

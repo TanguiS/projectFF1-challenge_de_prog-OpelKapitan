@@ -62,6 +62,8 @@ void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLeng
 
 void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor);
 
+void getPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord* result);
+
 dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 
 

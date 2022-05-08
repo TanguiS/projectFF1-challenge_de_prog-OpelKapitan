@@ -29,7 +29,7 @@ void mixeCoord (coord* reference, coord* result ) {
 }
 
 boolean sameCoord(coord sommet1, coord sommet2) {
-    if (sommet1[0] == sommet2[0 && sommet1[1] == sommet2[1]]) {
+    if (sommet1[0] == sommet2[0] && sommet1[1] == sommet2[1]) {
         return true;
     }
     return false;
@@ -90,17 +90,19 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 
 
 
-void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord firstSommet) {
+void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) {
     boolean* flag;
     int i;
     int countTrue = 0;
     coord sommet;
     coord* succ;
     short sizeSucc; 
+    
 
     flag = (boolean*)calloc(getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra), sizeof(boolean));
     initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
-    mixeCoord(&firstSommet, &sommet);
+    sommet[0] = firstSommet[0];
+    sommet[1] = firstSommet[1];
 
     while (countTrue != getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra)) {
         findMin(graph, sommet[0], sommet[1], &sommet, flag);
@@ -118,15 +120,21 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord f
 
 
 
-file givePath(dijkstraMatrix dijkstra, coord finalSommet,  coord firstSommet) {
+LIFO givePath(dijkstraMatrix* dijkstra, short finalx, short finaly, short firstx, short firsty) {
     coord sommet;
-    lifo stack;
+    LIFO stack;
+    coord firstSommet;
+    coord finalSommet;
 
-    stack = createLifo;
+    firstSommet[0] = firstx;
+    firstSommet[1] = firsty;
+    finalSommet[0] = finalx;
+    finalSommet[1] = finaly;
+    stack = createLifo();
     mixeCoord(&finalSommet, &sommet);
     while( !sameCoord(sommet, firstSommet) ) {
         stack = addElementLifo(stack, sommet);
-        getPredecessor(dijkstra, sommet[0], sommet[1], sommet);
+        getPredecessor(dijkstra, sommet[0], sommet[1], &sommet);
     }
     stack = addElementLifo(stack, firstSommet);
     return stack;

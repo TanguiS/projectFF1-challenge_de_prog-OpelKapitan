@@ -30,6 +30,7 @@
 #include "pilotDirection.h"
 #include "util.h"
 #include "dijkstraMatrix.h"
+#include "lifo.h"
 
 
 void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
@@ -43,6 +44,8 @@ void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag);
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2);
 
 
-void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord firstSommet);
+void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet);
+
+LIFO givePath(dijkstraMatrix* dijkstra, short finalx, short finaly, short firstx, short firsty);
 
 #endif /* DIJKSTRA_ALGO_HH__ */
