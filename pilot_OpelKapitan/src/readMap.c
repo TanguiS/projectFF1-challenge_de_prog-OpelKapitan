@@ -45,18 +45,18 @@ static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
     int i;
     coord coordFinishLine;
     
-    for ( i = 0; i < getWidthMap ( map ); i++ ) {
-        setElementMatrix ( map, i, row, data[i] );
+    for ( i = 0; i < getWidthGraph ( map ); i++ ) {
+        setElementMatrix ( map, row, i, data[i] );
         if ( data[i] == wall ) {
-            setElementGraph ( graph, wallGraph, i, row );
+            setElementGraph ( graph, wallGraph, row, i );
         } else if ( data[i] == road ) {
-            setElementGraph ( graph, roadGraph, i, row );
+            setElementGraph ( graph, roadGraph, row, i );
         } else if ( data[i] == sand ) {
-            setElementGraph ( graph, sandGraph, i, row );
+            setElementGraph ( graph, sandGraph, row, i );
         } else if ( data[i] == finishLine ) {
-            setElementGraph ( graph, finishLineGraph, i, row );
-            coordFinishLine[0] = i;
-            coordFinishLine[1] = row;
+            setElementGraph ( graph, finishLineGraph, row, i );
+            coordFinishLine[0] = row;
+            coordFinishLine[1] = i;
             updateCoordFinishLine ( graph, coordFinishLine, getSizeFinishLine ( graph ) );
 
         }
@@ -70,7 +70,7 @@ static void displayMap ( DATA_MAP map )
     DEBUG_CHAR ( "\nAffichage de la map avec matrix: ", ' ' );
     for ( i = 0; i < getHeightMap ( &map ); i++ ) {
         for ( j = 0; j < getWidthMap ( &map ); j++ ) {
-            DEBUG_ONLY_CHAR ( getElementMap ( &map, j, i ) );
+            DEBUG_ONLY_CHAR ( getElementMap ( &map, i, j ) );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }

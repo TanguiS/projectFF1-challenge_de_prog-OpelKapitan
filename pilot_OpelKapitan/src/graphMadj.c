@@ -86,7 +86,7 @@ void displayGraph ( GRAPH* graph )
     DEBUG_INT ( "height graph : ", getHeightGraph ( graph ) );
     for ( i = 0; i < getHeightGraph ( graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( graph ); j++ ) {
-            DEBUG_ONLY_INT ( getElementGraph ( graph, j, i ) );
+            DEBUG_ONLY_INT ( getElementGraph ( graph, i, j ) );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }
@@ -180,10 +180,11 @@ coord* getSuccessorGraph ( GRAPH* graph, short x, short y )
     successor = (coord*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( coord ) );
     for ( i = 0; i < 3; i++ ) {
         for ( j = 0; j < 3; j++ ) {
-            if ( isInGraph ( graph, x + tab[j], y + tab[i] ) && areNotEqualsZero ( tab[j], tab[i] ) ) {
-                if ( getElementGraph ( graph, x + tab[j], y + tab[i] ) != wallGraph ) {
-                    successor[count][0] = x + tab[j];
-                    successor[count][1] = y + tab[i];
+            if ( isInGraph ( graph, x + tab[i], y + tab[j] ) && areNotEqualsZero ( tab[j], tab[i] ) ) {
+                if ( getElementGraph ( graph, x + tab[i], y + tab[j] ) != wallGraph ) {
+                    successor[count][0] = x + tab[i];
+                    successor[count][1] = y + tab[j];
+                    printf ( "[%d, %d]\n", x + tab[i], y + tab[j] );
                     count++;                    
                 }
             }
