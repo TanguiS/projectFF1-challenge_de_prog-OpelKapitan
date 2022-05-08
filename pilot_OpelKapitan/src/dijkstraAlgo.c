@@ -23,6 +23,17 @@
 
 
 
+void mixeCoord (coord* reference, coord* result ) {
+    *(result)[0] = *(reference)[0];
+    *(result)[1] = *(reference)[1];   
+}
+
+boolean sameCoord(coord sommet1, coord sommet2) {
+    if (sommet1[0] == sommet2[0 && sommet1[1] == sommet2[1]]) {
+        return true;
+    }
+    return false;
+}
 
 
 void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
@@ -38,10 +49,6 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 }
 
 
-void mixeCoord (coord* reference, coord* result ) {
-    *(result)[0] = *(reference)[0];
-    *(result)[1] = *(reference)[1];   
-}
 
 void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean* flag) {
     short min = SHRT_MAX;
@@ -92,8 +99,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord f
 
     flag = (boolean*)calloc(getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra), sizeof(boolean));
     initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
-    sommet[0] = firstSommet[0];
-    sommet[1] = firstSommet[1];
+    mixeCoord(&firstSommet, &sommet);
 
     while (countTrue != getWidthMatrixDijkstra(dijkstra) * getHeigthMatrixDijkstra(dijkstra)) {
         findMin(graph, sommet[0], sommet[1], &sommet, flag);
@@ -104,13 +110,22 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord f
         }
         countTrue++;
     }
-
-    
-
-
-
-
-
-
     free(flag);
 } 
+
+
+
+
+file givePath(dijkstraMatrix dijkstra, coord finalSommet,  coord firstSommet) {
+    coord sommet;
+    lifo stack;
+
+    stack = createLifo;
+    mixeCoord(&finalSommet, &sommet);
+    while( !sameCoord(sommet, firstSommet) ) {
+        stack = addElementLifo(stack, sommet);
+        getPredecessor(dijkstra, sommet[0], sommet[1], sommet);
+    }
+    stack = addElementLifo(stack, firstSommet);
+    return stack;
+}
