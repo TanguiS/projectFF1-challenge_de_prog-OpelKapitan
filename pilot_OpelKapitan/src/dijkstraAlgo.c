@@ -25,7 +25,7 @@
 
 
 
-void initDijkstra(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x, short y) {
+void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x, short y) {
     int i;
     int j;
 
@@ -37,3 +37,29 @@ void initDijkstra(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x
     dijkstraMatrix->matrix[x][y].pathLength = 0;
 }
 
+
+void mixeCoord (coord* reference, coord* result ) {
+    *(result)[0] = *(reference)[0];
+    *(result)[1] = *(reference)[1];   
+}
+
+void findMin(GRAPH* graph, short x, short y, coord* sommet) {
+    short min = SHRT_MAX;
+    coord* succ;
+    short i;
+    short sizeSucc;
+    int distance;
+
+    sommet[0][0] = -1;
+    *(sommet)[1] = -1;   
+    succ = getSuccessorGraph(graph, x, y);
+    sizeSucc = *(succ)[0];
+
+    for (i=1; i<sizeSucc; i++) { 
+        distance = (short) getElementGraph(graph, x, y);
+        if ( distance < min) {
+            min = distance;
+            mixeCoord(succ[i], sommet);
+        }
+    }
+}

@@ -32,6 +32,6 @@
 #include "dijkstraMatrix.h"
 
 
-void initDijkstra(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x, short y);
+void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x, short y);
 
 #endif /* DIJKSTRA_ALGO_HH__ */
