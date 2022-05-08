@@ -70,7 +70,11 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
     for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
         for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
-            fprintf ( stderr, "[%d, %d], %d | ", tmp.predecessor[0], tmp.predecessor[1], tmp.flag );
+            if ( tmp.pathLength == SHRT_MAX ) {
+                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],3, 32, tmp.flag );
+            } else {
+                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],3, tmp.pathLength, tmp.flag );
+            }
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }
