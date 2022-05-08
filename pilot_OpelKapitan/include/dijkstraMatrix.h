@@ -58,7 +58,7 @@ void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij v
 
 dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 
-void destroyDijkstraMatrix(dijkstraMatrix* dijkstra);
+void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 
 
 

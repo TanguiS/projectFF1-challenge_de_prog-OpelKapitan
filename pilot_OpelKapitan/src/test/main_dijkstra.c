@@ -22,22 +22,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../../include/dijkstraAlgo.h"
+#include "../../include/dijkstraMatrix.h"
+#include "../../include/graphMadj.h"
 
 #define X 10
 #define Y 12
 
 
-const short graph[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
-                            { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
-                            { 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0 },
-                            { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0 },
-                            { 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
-                            { 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1 },
-                            { 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1 },
-                            { 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1 },
-                            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
-                            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0 }
-                          };
+const short graphNSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
+                                 { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
+                                 { 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0 },
+                                 { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0 },
+                                 { 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
+                                 { 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1 },
+                                 { 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1 },
+                                 { 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1 },
+                                 { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+                                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0 }
+                               };
 
 const short graphWSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
                                  { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
@@ -56,7 +58,27 @@ const short coordEnd[SIZE_COORD] = { 7, 6 };
 
 int main ( void )
 {
-    printf ( "depart value  : %d\n", graph[coordStart[0]][coordStart[1]] );
-    printf ( "end value     : %d\n", graph[coordEnd[0]][coordEnd[1]] );
+    int i, j;
+    GRAPH graph = createGraph ( Y, X );
+    dijkstraMatrix dij = createDijkstraMatrix ( X, Y );
+
+    printf ( "depart value  : %d\n", graphNSand[coordStart[0]][coordStart[1]] );
+    printf ( "end value     : %d\n", graphNSand[coordEnd[0]][coordEnd[1]] );
+
+    for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
+        for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
+            graph.graph.matrix[j][i] = (element)graphNSand[i][j];
+        }
+    }
+    graph.closestFinishLine[0] = coordEnd[1];
+    graph.closestFinishLine[1] = coordEnd[0];
+    displayGraph ( &graph );
+    printf ( "end value vue du graph : %d, %d\n", graph.closestFinishLine[0], graph.closestFinishLine[1] );
+
+    dij.matrix[5][5].pathLength = 5;
+    printf ( " test dij : %d\n", dij.matrix[5][5].pathLength );
+    destroyGraph ( graph );
+    destroyDijkstraMatrix ( dij );
+
     return EXIT_SUCCESS;
 }

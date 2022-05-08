@@ -31,16 +31,16 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
     dijkstraMatrix dijkstra;
     dijkstra.matrix = (elementdij**)malloc(heigth*sizeof(elementdij*));
     for (i=0; i<heigth; i++) {
-        dijkstra.matrix[i] = (elementdij*)calloc(width,sizeof(elementdij));
+        dijkstra.matrix[i] = (elementdij*)malloc(width*sizeof(elementdij));
     }
     return dijkstra;
 }
 
-void destroyDijkstraMatrix(dijkstraMatrix* dijkstra) {
+void destroyDijkstraMatrix(dijkstraMatrix dijkstra) {
     int i;
 
-    for (i=0; i<getHeigthMatrixDijkstra(dijkstra); i++) {
-        free(dijkstra->matrix[i]);
+    for (i=0; i<getHeigthMatrixDijkstra(&dijkstra); i++) {
+        free(dijkstra.matrix[i]);
     }
-    free(dijkstra->matrix);
+    free(dijkstra.matrix);
 }
