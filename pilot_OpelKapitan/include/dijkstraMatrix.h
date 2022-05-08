@@ -64,12 +64,12 @@ void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredece
 
 dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra);
 
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 
-
-
+#ifndef DEBUG
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra);
+#endif
 
 
 #endif 
