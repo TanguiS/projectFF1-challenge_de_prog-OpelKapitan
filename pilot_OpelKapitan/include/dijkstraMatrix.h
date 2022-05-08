@@ -60,7 +60,11 @@ void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij v
 
 void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLength);
 
+void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor);
+
 dijkstraMatrix createDijkstraMatrix(short width, short heigth);
+
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra);
 
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 

@@ -7,6 +7,8 @@
 
 #include "dijkstraMatrix.h"
 
+void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor);
+
 short getWidthMatrixDijkstra(dijkstraMatrix* dijkstra) {
     return dijkstra->width;
 }
@@ -21,7 +23,8 @@ elementdij getElementDijkstra(dijkstraMatrix* dijkstra, short x, short y) {
 }
 
 void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij values) {
-    dijkstra->matrix[x][y] = values;
+    setPathLength ( dijkstra, x, y, values.pathLength );
+    setPredecessor ( dijkstra, x, y, values.predecessor );
 }
 
 
@@ -33,8 +36,9 @@ void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLeng
     dijkstra->matrix[x][y].pathLength = newPathLength;
 }
 
-short getPredecessor(dijkstraMatrix* dijkstra, short x, short y) {
-    return dijkstra->matrix[x][y].predecessor;
+void getPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord* result) {
+    result[0][1] = dijkstra->matrix[x][y].predecessor[1];
+    result[0][0] = dijkstra->matrix[x][y].predecessor[0];
 }
 
 void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor) {
@@ -47,11 +51,35 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
 
 
     dijkstraMatrix dijkstra;
-    dijkstra.matrix = (elementdij**)malloc(heigth*sizeof(elementdij*));
+    dijkstra.height = heigth;
+    dijkstra.width = width;
+    dijkstra.matrix = (elementdij**)malloc(getHeigthMatrixDijkstra(&dijkstra)*sizeof(elementdij*));
     for (i=0; i<heigth; i++) {
-        dijkstra.matrix[i] = (elementdij*)malloc(width*sizeof(elementdij));
+        dijkstra.matrix[i] = (elementdij*)malloc(getWidthMatrixDijkstra(&dijkstra)*sizeof(elementdij));
     }
     return dijkstra;
+}
+
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
+{
+    int i, j;
+    elementdij tmp;
+    DEBUG_CHAR ( "Affichage de la matrice de dijkstra : ", ' ' );
+    DEBUG_INT ( "width graph : ", getWidthMatrixDijkstra ( dijkstra ) );
+    DEBUG_INT ( "height graph : ", getHeigthMatrixDijkstra ( dijkstra ) );
+    for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
+        for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
+            tmp = getElementDijkstra ( dijkstra, i, j );
+            DEBUG_ONLY_CHAR ( '[' );
+            DEBUG_ONLY_INT ( tmp.predecessor[0] );
+            DEBUG_ONLY_CHAR ( ',' );
+            DEBUG_ONLY_INT ( tmp.predecessor[1] );
+            DEBUG_ONLY_CHAR ( ']' );
+            DEBUG_ONLY_INT ( tmp.pathLength );
+            DEBUG_ONLY_CHAR ( ' ' );
+        }
+        DEBUG_ONLY_CHAR ( '\n' );
+    }
 }
 
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra) {
