@@ -64,7 +64,7 @@ const short graphWSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 const short coordStart[SIZE_COORD] = { 2, 7 };
 const short coordEnd[SIZE_COORD] = { 6, 7 };
 const short coordStartSmall[SIZE_COORD] = {0, 2};
-const short coordEndSmall[SIZE_COORD] = {2, 1};
+const short coordEndSmall[SIZE_COORD] = {3, 1};
 
 int main ( void )
 {
@@ -84,21 +84,10 @@ int main ( void )
     }
     graph.closestFinishLine[0] = coordEndSmall[0];
     graph.closestFinishLine[1] = coordEndSmall[1];
-    displayGraph ( &graph );
-    printf ( "end value vue du graph : %d, %d + element : %d\n", graph.closestFinishLine[0], graph.closestFinishLine[1], getElementGraph ( &graph, coordEndSmall[0], coordEndSmall[1] ) );
-
     displayDijkstraMatrix ( &dij );
-
     stack = givePath ( &dij, &graph, coordStartSmall[0], coordStartSmall[1], coordEndSmall[0], coordEndSmall[1] );
 
-    /*while(!isEmpty(stack)){
-    removeElementLifo(stack, &stackValue);
-    printf("\n%d %d\n", stackValue[0], stackValue[1]);
-    }*/
-
     displayDijkstraMatrix ( &dij );
-
-    getSuccessorGraph ( &graph, 1, 1 );
 
 
     destroyDijkstraMatrix ( dij );

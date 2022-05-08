@@ -67,9 +67,9 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
     DEBUG_CHAR ( "Affichage de la matrice de dijkstra : ", ' ' );
     DEBUG_INT ( "width graph : ", getWidthMatrixDijkstra ( dijkstra ) );
     DEBUG_INT ( "height graph : ", getHeigthMatrixDijkstra ( dijkstra ) );
-    for ( i = 0; i < getWidthMatrixDijkstra ( dijkstra ); i++ ) {
-        for ( j = 0; j < getHeigthMatrixDijkstra ( dijkstra ); j++ ) {
-            tmp = getElementDijkstra ( dijkstra, i, j );
+    for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
+        for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
+            tmp = getElementDijkstra ( dijkstra, j, i );
             DEBUG_ONLY_CHAR ( '[' );
             DEBUG_ONLY_INT ( tmp.predecessor[0] );
             DEBUG_ONLY_CHAR ( ',' );

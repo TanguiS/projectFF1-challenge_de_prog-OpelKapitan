@@ -42,10 +42,11 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
     for (i=0; i<getHeigthMatrixDijkstra(dijkstraMatrix); i++) {
         for (j=0; j<getWidthMatrixDijkstra(dijkstraMatrix); j++) {
-            setPathLength ( dijkstraMatrix, i, j, SHRT_MAX );
+            setPathLength ( dijkstraMatrix, j, i, SHRT_MAX );
         }
     }
     setPathLength ( dijkstraMatrix, x, y, 0 );
+    displayDijkstraMatrix ( dijkstraMatrix );
 }
 
 
@@ -86,6 +87,7 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
         setPathLength(dijkstra, sommet2[0], sommet2[1], (d1 + arcValue));
         setPredecessor(dijkstra, sommet2[0], sommet2[1], sommet1);
     }
+    displayDijkstraMatrix ( dijkstra );
 }
 
 
