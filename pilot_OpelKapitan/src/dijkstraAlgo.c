@@ -25,12 +25,12 @@
 
 
 
-void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, int width, int heigth, short x, short y) {
+void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
     int i;
     int j;
 
-    for (i=0; i<heigth; i++) {
-        for (j=0; j<width; j++) {
+    for (i=0; i<getHeigthMatrixDijkstra(dijkstraMatrix); i++) {
+        for (j=0; j<getWidthMatrixDijkstra(dijkstraMatrix); j++) {
             dijkstraMatrix->matrix[i][j].pathLength = SHRT_MAX;
         }
     }
@@ -80,4 +80,9 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 }
 
 
- 
+ /*
+void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph,short scale, coord firstSommet) {
+    initDijkstraLenght(dijkstra,  getHeightGraph(graph), getWidhtGraph(graph), firstSommet[0], firstSommet[1]);
+
+
+} */
