@@ -80,7 +80,7 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
     short arcValue;
 
     d1 = getPathLength(dijkstra, sommet1[0], sommet1[1]);
-    d2 = getPathLength(dijkstra, sommet2[0], sommet2[2]);
+    d2 = getPathLength(dijkstra, sommet2[0], sommet2[1]);
     arcValue = (short)getElementGraph(graph, sommet2[0], sommet2[1]);
 
     if ( d2 > (d1 + arcValue) ) {
@@ -105,6 +105,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     for ( i = 0; i < getWidthMatrixDijkstra ( dijkstra ); i++ ) {
         flag[i] = (boolean*) calloc ( getHeigthMatrixDijkstra ( dijkstra ), sizeof ( boolean ) );
     }
+    flag[firstSommet[0]][firstSommet[1]] = true;
     initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
     sommet[0] = firstSommet[0];
     sommet[1] = firstSommet[1];
