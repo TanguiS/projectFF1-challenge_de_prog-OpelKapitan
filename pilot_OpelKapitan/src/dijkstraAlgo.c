@@ -48,21 +48,19 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
     }
     setPathLength ( dijkstraMatrix, x, y, 0 );
     dijkstraMatrix->matrix[x][y].flag = true;
-    displayDijkstraMatrix ( dijkstraMatrix );
+    displayDijkstraMatrix ( dijkstraMatrix, -1, -1 );
 }
 
 
 
-void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* sommet ) {
+void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* sommet, coord* succ ) {
     short min = SHRT_MAX;
-    coord* succ;
     short i;
     short sizeSucc;
     int distance;
 
     sommet[0][0] = -1;
     sommet[0][1] = -1;   
-    succ = getSuccessorGraph(graph, x, y);
     sizeSucc = succ[0][0];
 
     for (i=1; i<sizeSucc; i++) { 
@@ -76,7 +74,7 @@ void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* so
         return;
     }
     dijkstra->matrix[sommet[0][0]][sommet[0][1]].flag = true;
-    free ( succ );
+    displayDijkstraMatrix ( dijkstra, sommet[0][0], sommet[0][1] );
 }
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2) {
@@ -91,8 +89,11 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
     if ( d2 > (d1 + arcValue) ) {
         setPathLength(dijkstra, sommet2[0], sommet2[1], (d1 + arcValue));
         setPredecessor(dijkstra, sommet2[0], sommet2[1], sommet1);
+        displayDijkstraMatrix ( dijkstra, sommet2[0], sommet2[1] );
+        return;
     }
-    displayDijkstraMatrix ( dijkstra );
+    displayDijkstraMatrix ( dijkstra, sommet1[0], sommet1[1] );
+
 }
 
 
@@ -118,7 +119,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
             } */
             updateDistance(dijkstra, graph, sommet, succ[i]);
         }
-        findMin(dijkstra, graph, sommet[0], sommet[1], &sommet);
+        findMin(dijkstra, graph, sommet[0], sommet[1], &sommet, succ );
         countTrue++;
         free ( succ );
     }
@@ -135,8 +136,7 @@ LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty
     finalSommet[0] = finalx;
     finalSommet[1] = finaly;
     allPathDijkstra ( dijkstra, graph, firstSommet );
-    displayDijkstraMatrix ( dijkstra );
-    exit(-1);
+    displayDijkstraMatrix ( dijkstra, -1, -1 );
     stack = createLifo();
     mixeCoord(&finalSommet, &sommet);
     while( !sameCoord(sommet, firstSommet) ) {

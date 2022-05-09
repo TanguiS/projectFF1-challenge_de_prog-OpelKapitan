@@ -60,7 +60,7 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
 }
 
 #ifndef DEBUG
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y)
 {
     int i, j;
     elementdij tmp;
@@ -71,9 +71,11 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
         for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
             if ( tmp.pathLength == SHRT_MAX ) {
-                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],3, 32, tmp.flag );
+                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],3, -9, tmp.flag );
+            } else if ( j == x && i == y ) {
+                fprintf ( stderr, "\033[33m[%d, %d],% *d %d | \033[00m", tmp.predecessor[0], tmp.predecessor[1],3, tmp.pathLength, tmp.flag );
             } else {
-                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],3, tmp.pathLength, tmp.flag );
+                fprintf ( stderr, "\033[31m[%d, %d],% *d %d | \033[00m", tmp.predecessor[0], tmp.predecessor[1],3, tmp.pathLength, tmp.flag );
             }
         }
         DEBUG_ONLY_CHAR ( '\n' );

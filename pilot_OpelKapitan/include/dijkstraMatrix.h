@@ -71,7 +71,7 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 
 #ifndef DEBUG
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra);
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y );
 #endif
 
 
