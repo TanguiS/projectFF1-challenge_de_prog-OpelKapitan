@@ -87,7 +87,9 @@ int main ( void )
     displayDijkstraMatrix ( &dij );
     stack = givePath ( &dij, &graph, coordStartSmall[0], coordStartSmall[1], coordEndSmall[0], coordEndSmall[1] );
 
-    displayDijkstraMatrix ( &dij );
+    displayDijkstraMatrix ( &dij, -1, -1 );
+    printf ( "\n\n" );
+    
     while ( !isEmpty ( stack ) ) {
         stack = removeElementLifo ( stack, &result );
         printf ( "[%d, %d] ", result[0], result[1] );
