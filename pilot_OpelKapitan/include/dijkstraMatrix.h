@@ -37,6 +37,7 @@
 typedef struct _elementDijkstra {
     coord predecessor; 
     short pathLength;
+    boolean flag;
 }elementdij;
 
 typedef struct _dijkstraMatrix {
@@ -70,7 +71,8 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 
 #ifndef DEBUG
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra);
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y );
+void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, coord* path);
 #endif
 
 

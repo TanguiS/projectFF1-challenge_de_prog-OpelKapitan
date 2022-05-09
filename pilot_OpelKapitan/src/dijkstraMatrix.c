@@ -60,7 +60,7 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
 }
 
 #ifndef DEBUG
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
+void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y)
 {
     int i, j;
     elementdij tmp;
@@ -70,13 +70,44 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra)
     for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
         for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
-            DEBUG_ONLY_CHAR ( '[' );
-            DEBUG_ONLY_INT ( tmp.predecessor[0] );
-            DEBUG_ONLY_CHAR ( ',' );
-            DEBUG_ONLY_INT ( tmp.predecessor[1] );
-            DEBUG_ONLY_CHAR ( ']' );
-            DEBUG_ONLY_INT ( tmp.pathLength );
-            DEBUG_ONLY_CHAR ( ' ' );
+            if ( tmp.pathLength == SHRT_MAX ) {
+                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],3, -9, tmp.flag );
+            } else if ( j == x && i == y ) {
+                fprintf ( stderr, "\033[33m[%d, %d],% *d %d | \033[00m", tmp.predecessor[0], tmp.predecessor[1],3, tmp.pathLength, tmp.flag );
+            } else {
+                fprintf ( stderr, "\033[31m[%d, %d],% *d %d | \033[00m", tmp.predecessor[0], tmp.predecessor[1],3, tmp.pathLength, tmp.flag );
+            }
+        }
+        DEBUG_ONLY_CHAR ( '\n' );
+    }
+}
+#endif
+
+#ifndef DEBUG
+void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, coord* path)
+{
+    int i, j, h;
+    elementdij tmp;
+    boolean flag;
+    DEBUG_CHAR ( "Affichage de la matrice de dijkstra : ", ' ' );
+    DEBUG_INT ( "width graph : ", getWidthMatrixDijkstra ( dijkstra ) );
+    DEBUG_INT ( "height graph : ", getHeigthMatrixDijkstra ( dijkstra ) );
+    for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
+        for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
+            tmp = getElementDijkstra ( dijkstra, j, i );
+            flag = false;
+            if ( tmp.pathLength == SHRT_MAX ) {
+                fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor[0], tmp.predecessor[1],4, -9, tmp.flag );
+            }
+            for ( h = 0; h < count; h++ ) {
+                if ( j == path[h][0] && i == path[h][1] ) {
+                    flag = true;
+                    fprintf ( stderr, "\033[33m[%d, %d],% *d %d | \033[00m", tmp.predecessor[0], tmp.predecessor[1],4, tmp.pathLength, tmp.flag );
+                }
+            }
+            if ( !flag && tmp.pathLength != SHRT_MAX ) {
+                fprintf ( stderr, "\033[31m[%d, %d],% *d %d | \033[00m", tmp.predecessor[0], tmp.predecessor[1],4, tmp.pathLength, tmp.flag );
+            }
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }

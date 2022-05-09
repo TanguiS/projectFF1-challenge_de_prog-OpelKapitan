@@ -43,35 +43,38 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
     for (i=0; i<getHeigthMatrixDijkstra(dijkstraMatrix); i++) {
         for (j=0; j<getWidthMatrixDijkstra(dijkstraMatrix); j++) {
             setPathLength ( dijkstraMatrix, j, i, SHRT_MAX );
+            dijkstraMatrix->matrix[j][i].flag = false;
         }
     }
     setPathLength ( dijkstraMatrix, x, y, 0 );
-    displayDijkstraMatrix ( dijkstraMatrix );
+    dijkstraMatrix->matrix[x][y].flag = true;
+    displayDijkstraMatrix ( dijkstraMatrix, -1, -1 );
 }
 
 
 
-void findMin(GRAPH* graph, short x, short y, coord* sommet, boolean** flag) {
+void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* sommet, coord* succ ) {
     short min = SHRT_MAX;
-    coord* succ;
     short i;
     short sizeSucc;
     int distance;
 
     sommet[0][0] = -1;
     sommet[0][1] = -1;   
-    succ = getSuccessorGraph(graph, x, y);
     sizeSucc = succ[0][0];
 
     for (i=1; i<sizeSucc; i++) { 
         distance = (short) getElementGraph(graph, succ[i][0], succ[i][1]);
-        if ( distance < min && flag[succ[i][0]][succ[i][1]] == false ) {       /*succ is not visited*/ 
+        if ( distance < min && dijkstra->matrix[succ[i][0]][succ[i][1]].flag == false ) {       /*succ is not visited*/ 
             min = distance;
             mixeCoord(&(succ[i]), sommet);
         }
     }
-    flag[sommet[0][0]][sommet[i][1]] = true;
-    free ( succ );
+    if ( sommet[0][1] == -1 ) {
+        return;
+    }
+    dijkstra->matrix[sommet[0][0]][sommet[0][1]].flag = true;
+    displayDijkstraMatrix ( dijkstra, sommet[0][0], sommet[0][1] );
 }
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2) {
@@ -86,14 +89,16 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
     if ( d2 > (d1 + arcValue) ) {
         setPathLength(dijkstra, sommet2[0], sommet2[1], (d1 + arcValue));
         setPredecessor(dijkstra, sommet2[0], sommet2[1], sommet1);
+        displayDijkstraMatrix ( dijkstra, sommet2[0], sommet2[1] );
+        return;
     }
-    displayDijkstraMatrix ( dijkstra );
+    displayDijkstraMatrix ( dijkstra, sommet1[0], sommet1[1] );
+
 }
 
 
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) {
-    boolean** flag;
     int i;
     int countTrue = 0;
     coord sommet;
@@ -101,11 +106,6 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     short sizeSucc; 
     
 
-    flag = (boolean**)malloc ( getWidthMatrixDijkstra ( dijkstra ) * sizeof ( boolean* ) );
-    for ( i = 0; i < getWidthMatrixDijkstra ( dijkstra ); i++ ) {
-        flag[i] = (boolean*) calloc ( getHeigthMatrixDijkstra ( dijkstra ), sizeof ( boolean ) );
-    }
-    flag[firstSommet[0]][firstSommet[1]] = true;
     initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
     sommet[0] = firstSommet[0];
     sommet[1] = firstSommet[1];
@@ -114,13 +114,15 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
         succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
         sizeSucc = succ[0][0];
         for (i=1; i<sizeSucc; i++) {
+            /* if ( dijkstra->matrix[succ[i][0]][succ[i][1]].flag == false ) {
+                updateDistance(dijkstra, graph, sommet, succ[i]);
+            } */
             updateDistance(dijkstra, graph, sommet, succ[i]);
         }
-        findMin(graph, sommet[0], sommet[1], &sommet, flag);
+        findMin(dijkstra, graph, sommet[0], sommet[1], &sommet, succ );
         countTrue++;
         free ( succ );
     }
-    free(flag);
 } 
 
 LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly) {
@@ -134,6 +136,7 @@ LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty
     finalSommet[0] = finalx;
     finalSommet[1] = finaly;
     allPathDijkstra ( dijkstra, graph, firstSommet );
+    displayDijkstraMatrix ( dijkstra, -1, -1 );
     stack = createLifo();
     mixeCoord(&finalSommet, &sommet);
     while( !sameCoord(sommet, firstSommet) ) {
