@@ -72,6 +72,7 @@ void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 
 #ifndef DEBUG
 void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y );
+void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, coord* path);
 #endif
 
 

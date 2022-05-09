@@ -83,6 +83,8 @@ const short coordEndMid[SIZE_COORD] = {1, 5};
 
 int main ( void )
 {
+    coord path[1000];
+    int count = 0;
 /*     int i, j;
     GRAPH graph = createGraph ( Y_MID, X_MID );
     dijkstraMatrix dij = createDijkstraMatrix ( Y_MID, X_MID );
@@ -119,7 +121,7 @@ int main ( void )
      * @brief Gran graph sans sable : 
      */
 
-    int i, j;
+/*     int i, j;
     GRAPH graph = createGraph ( Y, X );
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
     LIFO stack;
@@ -146,6 +148,46 @@ int main ( void )
         printf ( "[%d, %d] ", result[0], result[1] );
     }
     printf ( "\n" );
+
+
+    destroyDijkstraMatrix ( dij );
+    destroyGraph ( graph ); */
+
+        /**
+     * @brief Gran graph sans sable : 
+     */
+
+    int i, j;
+    GRAPH graph = createGraph ( Y, X );
+    dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
+    LIFO stack;
+    lifoElement result;
+
+    printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
+    printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
+
+    for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
+        for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
+            graph.graph.matrix[j][i] = (element)graphWSand[i][j];
+        }
+    }
+    graph.closestFinishLine[0] = coordEndSmall[0];
+    graph.closestFinishLine[1] = coordEndSmall[1];
+    displayGraph ( &graph );
+    displayDijkstraMatrix ( &dij, -1, -1 );
+    stack = givePath ( &dij, &graph, coordStart[0], coordStart[1], coordEnd[0], coordEnd[1] );
+
+    displayDijkstraMatrix ( &dij, -1, -1 );
+    printf ( "\n\n" );
+    while ( !isEmpty ( stack ) ) {
+        stack = removeElementLifo ( stack, &result );
+        printf ( "[%d, %d] ", result[0], result[1] );
+        path[count][0] = result[0];
+        path[count][1] = result[1];
+        count++;
+    }
+    printf ( "\n" );
+    displayDijkstraMatrixPath ( &dij, count, path );
 
 
     destroyDijkstraMatrix ( dij );

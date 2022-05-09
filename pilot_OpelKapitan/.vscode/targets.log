@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May  9 14:17:00 2022
+# Make data base, printed on Mon May  9 15:24:11 2022
 
 # Variables
 
@@ -205,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-09f1136b-1426-4558-ad2e-491f4db0a7b6.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3786953d-7570-4a42-9697-0a9c07431a26.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -283,6 +283,7 @@ WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
+ 
 GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
@@ -295,7 +296,6 @@ LANG = C
 # environment
 VSCODE_PID = 2123
 # variable set hash-table stats:
- 
 # Load=141/1024=14%, Rehash=0, Collisions=33/211=16%
 
 # Pattern-specific Variable Values
@@ -559,6 +559,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 77 / hit rate = 40%
 # hash-table stats:
 # Load=46/8192=1%, Rehash=0, Collisions=1/77=1%
-# Finished Make data base on Mon May  9 14:17:00 2022
+# Finished Make data base on Mon May  9 15:24:11 2022
 
  
