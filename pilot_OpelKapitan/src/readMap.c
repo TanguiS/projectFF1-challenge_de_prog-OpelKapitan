@@ -86,7 +86,7 @@ DATA_MAP createMap ( short newWidth, short newHeight )
     return map;
 }
 
-DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph )
+DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph )
 {
     DATA_MAP map;
     int i;

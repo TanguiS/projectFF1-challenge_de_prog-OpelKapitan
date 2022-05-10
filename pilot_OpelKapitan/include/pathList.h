@@ -27,15 +27,15 @@
 #include "util.h"
 
 /**
- * @brief pathListElement type declaration 
+ * @brief path_list_element type declaration 
  */
-typedef POSITION pathListElement;
+typedef POSITION path_list_element;
 
 /**
  * @brief A structure to represent a cell object 
  */
 typedef struct _cell {
-    pathListElement contents;           /**< the element that the cell contains */
+    path_list_element contents;           /**< the element that the cell contains */
     struct _cell* followingCell;        /**< the following cell */
 } _cell; 
 /**
@@ -77,20 +77,20 @@ boolean isEmptyPathList ( PATH_LIST lifo );
  * @param value : the element to add
  * @return PATH_LIST 
  */
-PATH_LIST addHeadElementPathList ( PATH_LIST list, pathListElement value );
+PATH_LIST addHeadElementPathList ( PATH_LIST list, path_list_element value );
 
 /**
- * @brief Remove a pathListElement from the list
+ * @brief Remove a path_list_element from the list
  * 
  * @param list 
  * @param result : the removed element
  * @return PATH_LIST 
  */
-PATH_LIST removeHeadElementPathList ( PATH_LIST list, pathListElement* result );
+PATH_LIST removeHeadElementPathList ( PATH_LIST list, path_list_element* result );
 
 PATH_LIST resetCurrentPathList ( PATH_LIST list );
 
-PATH_LIST nextElementPathList ( PATH_LIST list, pathListElement* result );
+PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result );
 
 /**
  * @brief Destroy a PathList object

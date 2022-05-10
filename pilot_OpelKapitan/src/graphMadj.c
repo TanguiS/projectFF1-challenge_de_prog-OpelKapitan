@@ -63,7 +63,7 @@ static void setClosestFinishLine ( GRAPH* graph, POSITION closestFinishLine );
  * @param competitor 
  * @return boolean 
  */
-static boolean competitorIsClosest ( GRAPH* graph, POSITION pilot, POSITION competitor );
+static boolean competitorIsClosestToFinish ( GRAPH* graph, POSITION pilot, POSITION competitor );
 
 /**
  * @brief 
@@ -79,7 +79,7 @@ static int length ( POSITION first, POSITION secound )
     return ( ( ( first.X - secound.X ) * ( first.X - secound.X ) ) + ( ( first.Y - secound.Y ) * ( first.Y - secound.Y ) ) );
 }
 
-static boolean competitorIsClosest ( GRAPH* graph, POSITION pilot, POSITION competitor )
+static boolean competitorIsClosestToFinish ( GRAPH* graph, POSITION pilot, POSITION competitor )
 {
     POSITION closest;
     int lengthClosest;
@@ -270,7 +270,7 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
     setElementGraph ( graph, carGraph, thirdPilot.X, thirdPilot.Y );
     for ( i = 0; i < getSizeFinishLine ( graph); i++ ) {
         getCoordFinishLine ( graph, i, &competitor );
-        if ( competitorIsClosest ( graph, myPilot, competitor ) ) {
+        if ( competitorIsClosestToFinish ( graph, myPilot, competitor ) ) {
             setClosestFinishLine ( graph, competitor );
         }
     }

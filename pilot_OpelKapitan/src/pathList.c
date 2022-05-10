@@ -27,7 +27,7 @@
  * @param value : the new element 
  * @return CELL 
  */
-static CELL createCell ( pathListElement value );
+static CELL createCell ( path_list_element value );
 /**
  * @brief Destroy a Cell object
  * 
@@ -36,7 +36,7 @@ static CELL createCell ( pathListElement value );
  */
 static boolean destroyCell ( CELL cell );
 
-static CELL createCell ( pathListElement value )
+static CELL createCell ( path_list_element value )
 {
     CELL newCell;
 
@@ -73,7 +73,7 @@ boolean isEmptyPathList ( PATH_LIST lifo )
     return false;
 }
 
-PATH_LIST addElementPathList ( PATH_LIST lifo, pathListElement value )
+PATH_LIST addElementPathList ( PATH_LIST lifo, path_list_element value )
 {
     CELL newCell;
 
@@ -88,7 +88,7 @@ PATH_LIST addElementPathList ( PATH_LIST lifo, pathListElement value )
     return lifo;
 }
 
-PATH_LIST removeHeadElementPathList ( PATH_LIST lifo, pathListElement* result )
+PATH_LIST removeHeadElementPathList ( PATH_LIST lifo, path_list_element* result )
 {
     CELL previousHead;
     
@@ -109,7 +109,7 @@ PATH_LIST resetCurrentPathList ( PATH_LIST list )
     return list;
 }
 
-PATH_LIST nextElementPathList ( PATH_LIST list, pathListElement* result )
+PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result )
 {
     if ( list.current == NULL ) {
         list = resetCurrentPathList ( list );
@@ -124,7 +124,7 @@ PATH_LIST nextElementPathList ( PATH_LIST list, pathListElement* result )
 
 void destroyPathList ( PATH_LIST lifo )
 {
-    pathListElement* trash = NULL;
+    path_list_element* trash = NULL;
     while ( !isEmptyPathList ( lifo ) ) {
         lifo = removeHeadElementPathList ( lifo, trash );
     }

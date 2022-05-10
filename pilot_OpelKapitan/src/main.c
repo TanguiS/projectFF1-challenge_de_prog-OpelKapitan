@@ -38,7 +38,7 @@ int main ( void )
     int i;
 
     t1 = clock();
-    map = readDataMapGraph ( &gasLvl, &graph );
+    map = readDataFromGDC ( &gasLvl, &graph );
     myPilot = createPilot ( gasLvl );
     t2 = clock();
     initTime = (float)(t2-t1)/CLOCKS_PER_SEC;

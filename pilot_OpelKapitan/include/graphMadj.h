@@ -53,7 +53,7 @@ typedef struct _mAdj GRAPH;
  * @brief Get the Width Graph object
  * 
  * @param graph 
- * @return short 
+ * @return short : the width of a Graph object
  */
 short getWidthGraph ( GRAPH* graph );
 
@@ -61,7 +61,7 @@ short getWidthGraph ( GRAPH* graph );
  * @brief Get the Height Graph object
  * 
  * @param graph 
- * @return short 
+ * @return short : the height of a Graph object
  */
 short getHeightGraph ( GRAPH* graph );
 
@@ -69,7 +69,7 @@ short getHeightGraph ( GRAPH* graph );
  * @brief Get the Size Finish Line object
  * 
  * @param graph 
- * @return char 
+ * @return char : the number of finish line in the Graph object
  */
 char getSizeFinishLine ( GRAPH* graph );
 
@@ -77,32 +77,38 @@ char getSizeFinishLine ( GRAPH* graph );
  * @brief Get the Coord Finish Line object
  * 
  * @param graph 
- * @param indice 
- * @param result 
+ * @param index : the index of the finish line wanted
+ * @param result : the position of the finish line
  */
-void getCoordFinishLine ( GRAPH* graph, short indice, POSITION* result );
+void getCoordFinishLine ( GRAPH* graph, short index, POSITION* result );
 
 /**
  * @brief Get the Closest Finish Line object
  * 
  * @param graph 
- * @param result 
+ * @param result : The position of the closest finish line 
  */
 void getClosestFinishLine ( GRAPH* graph, POSITION* result );
 /* 
 coord* getSuccessorGraph ( GRAPH* graph, POSITION );
  */
 
-
+/**
+ * @brief Get the Element Graph object
+ * 
+ * @param graph 
+ * @param coord : the position of the element wanted
+ * @return element 
+ */
 element getElementGraph ( GRAPH* graph, POSITION coord );
 
 /**
  * @brief Set the Element Graph object
  * 
  * @param graph 
- * @param value 
- * @param x 
- * @param y 
+ * @param value : the value to insert
+ * @param x : the x-axis coordinate
+ * @param y  : the y-axis coordinate
  */
 void setElementGraph ( GRAPH* graph, element value, short x, short y );
 
@@ -116,7 +122,7 @@ void setElementGraph ( GRAPH* graph, element value, short x, short y );
 GRAPH createGraph ( short width, short height );
 
 /**
- * @brief Update a Graph object
+ * @brief Update the cases of the opposite cars
  * 
  * @param graph 
  * @param myPilot 

@@ -80,13 +80,13 @@ short getElementMap ( DATA_MAP* map, POSITION coord );
 DATA_MAP createMap ( short width, short height );
 
 /**
- * @brief Reads the data provided by the GDP and provides it to the object DATA_MAP
+ * @brief Read the data sent by the GDC
  * 
- * @param gasLvl : the gas level that the GDP provide
- * @param graph : the graph that will be created at the same time
- * @return DATA_MAP : The DATA_MAP initialized and filled from the data provided by the GDP
+ * @param gasLvl : the gas level sent by the GDC
+ * @param graph : the Graph object initialized
+ * @return DATA_MAP ; the Map object initialized
  */
-DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph );
+DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph );
 
 /**
  * @brief Destroy a DATA_MAP object
