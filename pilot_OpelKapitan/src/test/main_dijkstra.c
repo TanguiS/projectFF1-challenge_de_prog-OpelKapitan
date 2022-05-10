@@ -25,6 +25,7 @@
 #include "../../include/dijkstraMatrix.h"
 #include "../../include/graphMadj.h"
 #include "../../include/lifo.h"
+#include "../../include/list.h"
 
 #define X 10
 #define Y 12

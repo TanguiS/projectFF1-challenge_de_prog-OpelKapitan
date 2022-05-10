@@ -27,42 +27,42 @@
 #include "util.h"
 
 /**
- * @brief listeElement type declaration 
+ * @brief listElement type declaration 
  */
-typedef coord listeElement;
+typedef coord listElement;
 
 /**
  * @brief A structure to represent a cell object 
  */
-typedef struct _liste_cell {
-    listeElement contents;           /**< the element that the cell contains */
-    struct _liste_cell* followingCell;    /**< the following cell */
-} _liste_cell; 
+typedef struct _list_cell {
+    listElement contents;           /**< the element that the cell contains */
+    struct _list_cell* followingCell;    /**< the following cell */
+} _list_cell; 
 /**
  * @brief Cell object declaration 
  */
-typedef struct _liste_cell *LISTE_CELL;
+typedef struct _list_cell *LIST_CELL;
 
 /**
  * @brief A structure to represent a lifo object 
  */
-typedef struct _liste {
-    LISTE_CELL head;                      /**< the head of the liste */
-    LISTE_CELL tail;                      /**< the tail of the liste */
-    /*int size;*/                             /**< the size of the liste */
+typedef struct _list {
+    LIST_CELL head;                      /**< the head of the list */
+    LIST_CELL tail;                      /**< the tail of the list */
+    /*int size;*/                             /**< the size of the list */
 } _lifo; 
 /**
  * @brief Lifo object declaration 
  */
-typedef struct _liste LISTE;
+typedef struct _list LIST;
 
 
 /**
  * @brief Create a Lifo object
  * 
- * @return LISTE 
+ * @return LIST 
  */
-LISTE createListe ();
+LIST createList ();
 
 /**
  * @brief If the lifo is empty
@@ -70,20 +70,23 @@ LISTE createListe ();
  * @param lifo 
  * @return boolean 
  */
-boolean isEmptyListe ( LISTE liste );
+boolean isEmptyList ( LIST list );
+
+
+boolean compareElement(listElement* element1, listElement* element2);
 
 /**
  * @brief Add a lifo element int the lifo
  * 
  * @param file 
  * @param x : the element to add
- * @return LISTE 
+ * @return LIST 
  */
-LISTE addElementListe ( LISTE liste, listeElement x );
+LIST addElementList ( LIST list, listElement x );
 
 
 
-LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord* removeCoord);
+LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoord);
 
 
 /**
@@ -91,22 +94,26 @@ LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord* remov
  * 
  * @param file 
  * @param result : the removed element
- * @return LISTE 
+ * @return LIST 
  */
-LISTE removeElementListe ( LISTE liste, listeElement* result );
+LIST removeElementList ( LIST list, listElement* result );
 
 /**
  * @brief Destroy a Lifo Object
  * 
  * @param file 
  */
-void destroyListe ( LISTE liste );
+void destroyList ( LIST list );
 
 
 
 
-boolean getElementListe ( LISTE liste, listeElement* result, int position);
+boolean getElementList ( LIST list, listElement* result, int position);
 
-boolean getNextElementListe ( LISTE liste, listeElement* result, listeElement* refElement);
+boolean getNextElementList ( LIST list, listElement* result, listElement* refElement);
+
+#ifndef DEBUG
+void displaylist (LIST list);
+#endif
 
 #endif /* __FILE_H__ */
