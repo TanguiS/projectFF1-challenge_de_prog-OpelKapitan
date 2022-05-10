@@ -57,6 +57,13 @@ static boolean destroyCell ( LISTE_CELL cell )
     return false;
 }
 
+boolean comparElement(listeElement* element1, listeElement* element2) {
+    if (element1[0] == element2[0] && element1[1] == element2[1]) {
+        return true;
+    }
+    return false;
+}
+
 LISTE createListe () 
 {
     LISTE newListe;
@@ -65,7 +72,7 @@ LISTE createListe ()
     return newListe;
 }
 
-boolean isEmpty ( LISTE liste )
+boolean isEmptyListe ( LISTE liste )
 {
     if ( liste.head == NULL ) {
         return true;
@@ -73,12 +80,12 @@ boolean isEmpty ( LISTE liste )
     return false;
 }
 
-LISTE addElementLifo ( LISTE liste, listeElement x )
+LISTE addElementListe ( LISTE liste, listeElement x )
 {
     LISTE_CELL newCell;
 
     newCell = createCell ( x );
-    if ( isEmpty ( liste ) ) {
+    if ( isEmptyListe( liste ) ) {
         liste.head = newCell;
         liste.tail = newCell;
         return liste;
@@ -89,16 +96,16 @@ LISTE addElementLifo ( LISTE liste, listeElement x )
     return liste;
 }
 
-LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord removeCoord)
+LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord* removeCoord)
 {
     LISTE_CELL previousHead;
     LISTE_CELL current;
     
-    if ( isEmpty ( liste ) ) {
+    if ( isEmptyListe( liste ) ) {
         return liste;
     }
     current = liste.head;
-    while (removeCoord != current->contents && current != NULL) {
+    while (!comparElement(removeCoord, &(current->contents)) && current != NULL) {
         previousHead = current;
         current = current->followingCell;
     }
@@ -124,7 +131,7 @@ LISTE removeElementListe ( LISTE liste, listeElement* result )
 {
     LISTE_CELL previousHead;
     
-    if ( isEmpty ( liste ) ) {
+    if ( isEmptyListe( liste ) ) {
         return liste;
     }
     result[0][0] = liste.head->contents[0]; 
@@ -139,7 +146,46 @@ LISTE removeElementListe ( LISTE liste, listeElement* result )
 void destroyListe ( LISTE liste )
 {
     coord trash;
-    while ( !isEmpty ( liste ) ) {
+    while ( !isEmptyListe( liste ) ) {
         liste = removeElementListe ( liste, &trash );
     }
+}
+
+
+
+boolean getElementListe ( LISTE liste, listeElement* result, int position) {
+    LISTE_CELL current;
+    int i = 1;
+
+    if (isEmptyListe(liste)) {
+        return false;
+    }
+    current = liste.head;
+    while (i<position && current!= NULL) {
+        current = current->followingCell;
+        i++;
+    } if (current == NULL) {
+        return false;
+    }
+    result[0][0] = current->contents[0]; 
+    result[0][1] = current->contents[1];
+    return true;
+}
+
+boolean getNextElementListe ( LISTE liste, listeElement* result, listeElement* refElement) {
+    LISTE_CELL current;
+
+    if (isEmptyListe(liste)) {
+        return false;
+    }
+
+    current = liste.head;
+    while (!comparElement(refElement, &(current->contents)) && current!= NULL) {
+        current = current->followingCell;
+    } if (current == NULL) {
+        return false;
+    }
+    result[0][0] = current->contents[0]; 
+    result[0][1] = current->contents[1];
+    return true;
 }

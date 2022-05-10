@@ -70,7 +70,7 @@ LISTE createListe ();
  * @param lifo 
  * @return boolean 
  */
-boolean isEmpty ( LISTE lifo );
+boolean isEmptyListe ( LISTE liste );
 
 /**
  * @brief Add a lifo element int the lifo
@@ -79,11 +79,11 @@ boolean isEmpty ( LISTE lifo );
  * @param x : the element to add
  * @return LISTE 
  */
-LISTE addElementLifo ( LISTE file, listeElement x );
+LISTE addElementListe ( LISTE liste, listeElement x );
 
 
 
-LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord removeCoord);
+LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord* removeCoord);
 
 
 /**
@@ -93,13 +93,20 @@ LISTE removeElementListeCoord ( LISTE liste, listeElement* result , coord remove
  * @param result : the removed element
  * @return LISTE 
  */
-LISTE removeElementLifo ( LISTE file, listeElement* result );
+LISTE removeElementListe ( LISTE liste, listeElement* result );
 
 /**
  * @brief Destroy a Lifo Object
  * 
  * @param file 
  */
-void destroyLifo ( LISTE file );
+void destroyListe ( LISTE liste );
+
+
+
+
+boolean getElementListe ( LISTE liste, listeElement* result, int position);
+
+boolean getNextElementListe ( LISTE liste, listeElement* result, listeElement* refElement);
 
 #endif /* __FILE_H__ */
