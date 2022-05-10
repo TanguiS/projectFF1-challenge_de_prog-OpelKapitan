@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 10 18:44:11 2022
+# Make data base, printed on Tue May 10 20:39:26 2022
 
 # Variables
 
@@ -141,7 +143,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile', line 22)
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/matrixDij.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/pathList.o 
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o 
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -203,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d51d2f57-028d-4a0d-9af3-28bc4677478c.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9a82a6fe-10a7-4c1d-85e3-0ebde1a64a25.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -276,9 +278,6 @@ SUFFIXES :=
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # environment
 WINDOWPATH = 2
 # default
@@ -291,12 +290,13 @@ GJS_DEBUG_OUTPUT = stderr
 INC_PATH = ./include
 # environment
 LC_ADDRESS = fr_FR.UTF-8
+ 
 # environment
 LANG = C
 # environment
 VSCODE_PID = 2123
 # variable set hash-table stats:
-# Load=141/1024=14%, Rehash=0, Collisions=33/211=16%
+# Load=141/1024=14%, Rehash=0, Collisions=33/209=16%
 
 # Pattern-specific Variable Values
 
@@ -408,7 +408,7 @@ obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-10 18:44:00.6452821
+#  Last modified 2022-05-10 20:39:18.407988423
 #  File has been updated.
 #  Successfully updated.
 
@@ -431,7 +431,7 @@ obj/pilotDirection.o: src/pilotDirection.c include/pilotDirection.h
 #  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/matrixDij.o obj/dijkstraAlgo.o obj/pathList.o
+../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -546,7 +546,8 @@ install: ../drivers/OpelKapitan
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=37/1024=4%, Rehash=0, Collisions=0/79=0%
+ 
+# Load=37/1024=4%, Rehash=0, Collisions=0/77=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -556,10 +557,9 @@ install: ../drivers/OpelKapitan
 # strcache buffers: 1 (0) / strings = 46 / storage = 647 B / avg = 14 B
 # current buf: size = 8162 B / used = 647 B / count = 46 / avg = 14 B
 
-# strcache performance: lookups = 77 / hit rate = 40%
+# strcache performance: lookups = 75 / hit rate = 38%
 # hash-table stats:
-# Load=46/8192=1%, Rehash=0, Collisions=1/77=1%
-# Finished Make data base on Tue May 10 18:44:11 2022
- 
+# Load=46/8192=1%, Rehash=0, Collisions=1/75=1%
+# Finished Make data base on Tue May 10 20:39:26 2022
 
  

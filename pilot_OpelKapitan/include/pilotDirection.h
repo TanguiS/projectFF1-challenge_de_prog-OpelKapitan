@@ -27,8 +27,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "pilotManagement.h"
-#include "dijkstraMatrix.h"
-#include "dijkstraAlgo.h"
+/* #include "dijkstraMatrix.h"
+#include "dijkstraAlgo.h" */
 #include "pathList.h"
 #include "graphMadj.h"
 #ifndef DEBUG

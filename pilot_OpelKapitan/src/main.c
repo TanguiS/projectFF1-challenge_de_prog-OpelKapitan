@@ -35,7 +35,6 @@ int main ( void )
     float time;
     float initTime;
     clock_t t1, t2;
-    coord* test;
     int i;
 
     t1 = clock();
@@ -43,13 +42,6 @@ int main ( void )
     myPilot = createPilot ( gasLvl );
     t2 = clock();
     initTime = (float)(t2-t1)/CLOCKS_PER_SEC;
-
-    test = getSuccessorGraph ( &graph, 5, 4 );
-    for ( i = 1; i < test[0][0]; i++ ) {
-        fprintf ( stderr, "[%d, %d]\n", test[i][0], test[i][1] );
-    }
-
-    fprintf ( stderr, "%d\n", getElementGraph ( &graph, 2, 4 ) );
 
     fprintf(stderr, "\n=== Race start ===\n");
     

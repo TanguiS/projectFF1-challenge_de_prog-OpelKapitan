@@ -80,7 +80,7 @@ char getSizeFinishLine ( GRAPH* graph );
  * @param indice 
  * @param result 
  */
-void getCoordFinishLine ( GRAPH* graph, short indice, POSITION result );
+void getCoordFinishLine ( GRAPH* graph, short indice, POSITION* result );
 
 /**
  * @brief Get the Closest Finish Line object

@@ -35,7 +35,7 @@ A changer probablement
 */
 #define Xs "x"
 #define Ys "y"
-#define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, X ) == 0 ) ? 1 : 0
+#define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, Xs ) == 0 ) ? 1 : 0
 
 /**
  * @brief Set the Position Pilot object
@@ -104,7 +104,7 @@ static boolean actionIsBoosted ( ACCELERATION action );
 
 static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeChosen );
 
-static short fuelConsumption ( POSITION POSITION, SPEED speed, ACCELERATION action, DATA_MAP* map );
+static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map );
 
 /**
  * @brief Update the gas remaining of our pilot
@@ -205,7 +205,7 @@ static void updateBoostsPilot ( PILOT* pilot )
     DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
 }
 
-static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char* modeChosen )
+static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeChosen )
 {
     if ( ACTION_IS_UNCHANGED ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "ne rien faire" );
@@ -217,44 +217,41 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
         setActionPilot ( pilot, VALUE_DEFAULT_ACTION(Xs), VALUE_DEFAULT_ACTION(Ys) );
     } else {
         DEBUG_STRING ( "====> update action : ", "Changement d'acc" );
-        setActionPilot ( pilot, newXAcc, newYAcc );
+        setActionPilot ( pilot, action.X, action.Y );
     }
 }
 
-static short fuelConsumption ( short xPosition, short yPosition, short xSpeed, short ySpeed, short newXAcc, short newYAcc, DATA_MAP* map )
+static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map )
 {
     short norme1;
     short squareRoot;
     #ifndef DEBUG
     char buf[100];
-    sprintf ( buf, "speed : (%hd %hd), acc : (%hd %hd)", xSpeed, ySpeed, newXAcc, newYAcc );
+    sprintf ( buf, "speed : (%hd %hd), acc : (%hd %hd)", speed.X, speed.Y, action.X, action.Y );
     #endif
 
     DEBUG_STRING ( "> fuelConsumption : " , buf );
 
-    norme1 = ( newXAcc * newXAcc ) + ( newYAcc * newYAcc );
-    squareRoot =  (short) ( sqrt ( ( 3. * ( (float) ( xSpeed * xSpeed ) + (float) ( ySpeed * ySpeed ) ) ) / 2. ) );
+    norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
+    squareRoot =  (short) ( sqrt ( ( 3. * ( (float) ( speed.X * speed.X ) + (float) ( speed.Y * speed.Y ) ) ) / 2. ) );
 
     DEBUG_INT ( "> Consommation , norme1: ", norme1 );
     DEBUG_INT ( "> Consommation , squareRoot: ", squareRoot );
 
     DEBUG_INT ( "> Consommation : ", norme1 + squareRoot );
-    if ( getElementMap ( map, xPosition, yPosition ) == sand ) {
+    if ( getElementMap ( map, position ) == sand ) {
         return ( - ( norme1 + squareRoot + 1 ) );
     }
-    return ( - ( norme1 + squareRoot ) );
+    return ( norme1 + squareRoot );
 }
 
 static void updateGasPilot ( PILOT* pilot, DATA_MAP* map )
 {
     setGasLvlPilot ( pilot, getGasLvlPilot ( pilot ) 
-                            + 
-                            fuelConsumption ( getXPositionPilot ( pilot ),
-                                              getYPositionPilot ( pilot ),
-                                              getXSpeedPilot ( pilot ), 
-                                              getYSpeedPilot ( pilot ), 
-                                              getXAccPilot ( pilot ), 
-                                              getYAccPilot ( pilot ),
+                            - 
+                            fuelConsumption ( getPositionPilot ( pilot ),
+                                              getSpeedPilot ( pilot ),
+                                              getAccelerationPilot ( pilot ),
                                               map 
                                             ) 
                     );
@@ -310,13 +307,11 @@ PILOT createPilot ( short gasLvl )
 
 void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph )
 {
-    short newXAcc = 2, newYAcc = 0; /* pour la demonstration du boost */
     static int round = 0;
     char* mode;
     char action[SIZE_ACTION];
-    coord myCar;
-    coord secoundCar;
-    coord thirdCar;
+    POSITION myCar, secoundCar, thirdCar;
+    ACCELERATION nextAction;
 
     round++;
 
@@ -324,44 +319,44 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
 
     updatePositionPilot ( myPilot, secondPilot, thirdPilot );
 
-    myCar[0] = getXPositionPilot ( myPilot );
-    myCar[1] = getYPositionPilot ( myPilot );
-    secoundCar[0] = getXPositionPilot ( secondPilot );
-    secoundCar[1] = getYPositionPilot ( secondPilot );
-    thirdCar[0] = getXPositionPilot ( thirdPilot );
-    thirdCar[1] = getYPositionPilot ( thirdPilot );
+    myCar = getPositionPilot ( myPilot );
+    secoundCar = getPositionPilot ( secondPilot );
+    thirdCar = getPositionPilot ( thirdPilot );
+
+    nextAction = getAccelerationPilot ( myPilot );
 
     updateGraph ( graph, myCar, secoundCar, thirdCar );
 
     /* 1ere etape : choisir une action */
     if ( round == 1 ) {
         mode = NEW_ACTION;
-        choiceDirection ( right, &newXAcc, &newYAcc );
+        choiceDirection ( right, &nextAction.X, &nextAction.Y );
     } else if ( round == 3 ) {
         mode = NEW_ACTION;
-        choiceDirection ( boostRight, &newXAcc, &newYAcc );
-        choiceDirection ( up, &newXAcc, &newYAcc );
+        choiceDirection ( boostRight, &nextAction.X, &nextAction.Y );
+        choiceDirection ( up, &nextAction.X, &nextAction.Y );
     } else if ( round == 5 ) {
         mode = NEW_ACTION;
-        choiceDirection ( down, &newXAcc, &newYAcc );
-        choiceDirection ( right, &newXAcc, &newYAcc );
+        choiceDirection ( down, &nextAction.X, &nextAction.Y );
+        choiceDirection ( right, &nextAction.X, &nextAction.Y );
     } else if ( round == 7 ) {
         mode = NEW_ACTION;
-        choiceDirection ( right, &newXAcc, &newYAcc );
-        /*newXAcc = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
-        /*newYAcc = 0;*/
+        choiceDirection ( right, &nextAction.X, &nextAction.Y );
+        /*nextAction.X = (-1);*/ /* Permet de ralentir si la vitesse est supérieur à 0 */
+        /*nextAction.Y = 0;*/
     } else if ( round == 6 ) {
         mode = NEW_ACTION;
-        slowDown ( myPilot, &newXAcc, &newYAcc ); /* on pourrait tester si la vitesse cumulée des deux directions est trop grandes */
+        slowDown ( myPilot, &nextAction.X, &nextAction.Y ); /* on pourrait tester si la vitesse cumulée des deux directions est trop grandes */
     } else {
-        mode = STRAIGHT_ACTION;
+        mode = NEW_ACTION;
+        choiceDirection ( straight, &nextAction.X, &nextAction.Y );
     }
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
-    updateActionPilot ( myPilot, newXAcc, newYAcc, mode );
+    updateActionPilot ( myPilot, nextAction, mode );
+    updateGasPilot ( myPilot, map );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
-    updateGasPilot ( myPilot, map );
     /* 3e etape : on transmet l'action au GDP */
-    sprintf ( action, "%hd %hd", getXAccPilot ( myPilot ), getYAccPilot ( myPilot ) );
+    sprintf ( action, "%hd %hd", nextAction.X, nextAction.Y );
     deliverAction ( action );
 }

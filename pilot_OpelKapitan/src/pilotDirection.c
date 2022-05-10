@@ -80,15 +80,16 @@ void goBoostDown ( short* xAcc, short* yAcc ) {
 
 void slowDown ( PILOT* pilot, short* xAcc, short* yAcc )
 {
+    SPEED speed = getSpeedPilot ( pilot );
     goStraight ( xAcc, yAcc );
-    if ( getXSpeedPilot ( pilot ) > 0 ) {
+    if ( speed.X > 0 ) {
         *xAcc = - ACTION;
-    } else if ( getXSpeedPilot ( pilot ) < 0 ) {
+    } else if ( speed.X < 0 ) {
         *xAcc = - ACTION;
     }
-    if ( getYSpeedPilot ( pilot ) > 0 ) {
+    if ( speed.Y > 0 ) {
         *yAcc = + ACTION;
-    } else if ( getYSpeedPilot ( pilot ) < 0 ) {
+    } else if ( speed.Y < 0 ) {
         *yAcc = + ACTION;
     } 
 }
@@ -110,7 +111,7 @@ void choiceDirection ( direction choice, short* xAcc, short* yAcc )
 }
 
 
-void nextStep(short* xAcc, short* yAcc, GRAPH* graph, short currentx, short currenty, short finalx, short finaly,short xSpeed, short ySpeed) {
+/* void nextStep(short* xAcc, short* yAcc, GRAPH* graph, short currentx, short currenty, short finalx, short finaly,short xSpeed, short ySpeed) {
     LIFO stack; 
     dijkstraMatrix dijkstra;
     coord firstSommet;
@@ -120,7 +121,4 @@ void nextStep(short* xAcc, short* yAcc, GRAPH* graph, short currentx, short curr
     dijkstra = createDijkstraMatrix(getWidthGraph(graph), getHeightGraph(graph));
 
     stack = givePath(&dijkstra, graph, currentx, currenty, finalx, finaly);
-
-
-
-}
+} */

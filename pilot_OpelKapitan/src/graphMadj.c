@@ -138,7 +138,7 @@ void displayGraph ( GRAPH* graph )
     DEBUG_INT ( ">Taille ligne : ", getSizeFinishLine ( graph ) );
     for ( i = 0; i < getSizeFinishLine ( graph ); i++ ) {
         DEBUG_ONLY_CHAR ( '[' );
-        getPOSITIONFinishLine ( graph, i, &line );
+        getCoordFinishLine ( graph, i, &line );
         DEBUG_ONLY_INT ( line.X );
         DEBUG_ONLY_CHAR ( ',' );
         DEBUG_ONLY_INT ( line.Y );
@@ -171,7 +171,7 @@ char getSizeFinishLine ( GRAPH* graph )
     return graph->sizeFinishLine;
 }
 
-void getPOSITIONFinishLine ( GRAPH* graph, short index, POSITION* result )
+void getCoordFinishLine ( GRAPH* graph, short index, POSITION* result )
 {
     result->X = graph->finishLineCoord[index].X;
     result->Y = graph->finishLineCoord[index].Y;
@@ -238,7 +238,12 @@ POSITION* getSuccessorGraph ( GRAPH* graph, short x, short y )
     return successor;
 }
  */
-void setElementGraph ( GRAPH* graph, element value, int x, int y )
+
+
+
+
+
+void setElementGraph ( GRAPH* graph, element value, short x, short y )
 {
     setElementMatrix ( &(graph->graph), x, y, value );
 }
@@ -251,7 +256,7 @@ GRAPH createGraph ( short width, short height )
     return newGraph;   
 }
 
-void updatePOSITIONFinishLine ( GRAPH* graph, POSITION newFinishLine, int index )
+void updateCoordFinishLine ( GRAPH* graph, POSITION newFinishLine, int index )
 {
     setSizeFinishLine ( graph, getSizeFinishLine ( graph ) + 1 );
     addCoordFinishline ( graph, newFinishLine, index );
@@ -264,7 +269,7 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
     setElementGraph ( graph, carGraph, secoundPilot.X, secoundPilot.Y );
     setElementGraph ( graph, carGraph, thirdPilot.X, thirdPilot.Y );
     for ( i = 0; i < getSizeFinishLine ( graph); i++ ) {
-        getPOSITIONFinishLine ( graph, i, &competitor );
+        getCoordFinishLine ( graph, i, &competitor );
         if ( competitorIsClosest ( graph, myPilot, competitor ) ) {
             setClosestFinishLine ( graph, competitor );
         }

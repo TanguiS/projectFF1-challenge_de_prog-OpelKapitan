@@ -124,7 +124,7 @@ PATH_LIST nextElementPathList ( PATH_LIST list, pathListElement* result )
 
 void destroyPathList ( PATH_LIST lifo )
 {
-    pathListElement* trash;
+    pathListElement* trash = NULL;
     while ( !isEmptyPathList ( lifo ) ) {
         lifo = removeHeadElementPathList ( lifo, trash );
     }

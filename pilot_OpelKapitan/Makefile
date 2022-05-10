@@ -19,7 +19,7 @@ ifeq ($(DEBUG),off)
 CFLAGS += -D'DEBUG'
 endif
 
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/matrixDij.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/pathList.o 
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o 
 
 install: $(BIN_PATH)/$(PILOT_NAME)
 

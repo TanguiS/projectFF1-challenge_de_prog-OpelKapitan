@@ -20,12 +20,6 @@ Affichage de la map avec matrix:
 ................................
 ................................
 ................................
-[4, 4]
-[6, 4]
-[4, 5]
-[5, 5]
-[6, 5]
-1
 
 === Race start ===
 === ROUND 1
@@ -47,12 +41,12 @@ Affichage de la map avec matrix:
 >choix :  1
 >choix :  0
 ====> update action :  Changement d'acc
-> nombre de Boost restant :  5
-> fuelConsumption :  speed : (1 0), acc : (1 0)
+> fuelConsumption :  speed : (0 0), acc : (1 0)
 > Consommation , norme1:  1
-> Consommation , squareRoot:  1
-> Consommation :  2
-> gas left :  33
+> Consommation , squareRoot:  0
+> Consommation :  1
+> gas left :  34
+> nombre de Boost restant :  5
 
 Affichage du graph :   
 width graph :  32
@@ -74,10 +68,377 @@ height graph :  16
 00000000000000000000000000000000
 00000000000000000000000000000000
 
-Affichage coord ligne d'arrivée :   
+Affichage POSITION ligne d'arrivée :   
 >Taille ligne :  14
 [27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
->Coord le plus proche de notre voiture :   
+>POSITION le plus proche de notre voiture :   
 [27,7]
-===> temps exec = 0.001386
+===> temps exec = 0.001291
 === ROUND 2
+>Debug longueur competitor :  538
+>Debug longueur competitor :  585
+>Debug longueur competitor :  533
+>Debug longueur competitor :  580
+>Debug longueur competitor :  530
+>Debug longueur competitor :  577
+>Debug longueur competitor :  529
+>Debug longueur competitor :  576
+>Debug longueur competitor :  530
+>Debug longueur competitor :  577
+>Debug longueur competitor :  533
+>Debug longueur competitor :  580
+>Debug longueur competitor :  538
+>Debug longueur competitor :  585
+>Choix de direction :  8
+>choix :  0
+>choix :  0
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (1 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  1
+> Consommation :  1
+> gas left :  33
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,7]
+===> temps exec = 0.001390
+=== ROUND 3
+>Debug longueur competitor :  493
+>Debug longueur competitor :  538
+>Debug longueur competitor :  488
+>Debug longueur competitor :  533
+>Debug longueur competitor :  485
+>Debug longueur competitor :  530
+>Debug longueur competitor :  484
+>Debug longueur competitor :  529
+>Debug longueur competitor :  485
+>Debug longueur competitor :  530
+>Debug longueur competitor :  488
+>Debug longueur competitor :  533
+>Debug longueur competitor :  493
+>Debug longueur competitor :  538
+>Choix de direction :  4
+>choix :  2
+>choix :  0
+>Choix de direction :  2
+>choix :  2
+>choix :  -1
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (1 0), acc : (2 -1)
+> Consommation , norme1:  5
+> Consommation , squareRoot:  1
+> Consommation :  6
+> gas left :  27
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,7]
+===> temps exec = 0.001449
+=== ROUND 4
+>Debug longueur competitor :  365
+>Debug longueur competitor :  404
+>Debug longueur competitor :  362
+>Debug longueur competitor :  401
+>Debug longueur competitor :  361
+>Debug longueur competitor :  400
+>Debug longueur competitor :  362
+>Debug longueur competitor :  401
+>Debug longueur competitor :  365
+>Debug longueur competitor :  404
+>Debug longueur competitor :  370
+>Debug longueur competitor :  409
+>Debug longueur competitor :  377
+>Debug longueur competitor :  416
+>Choix de direction :  8
+>choix :  0
+>choix :  0
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (3 -1), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  3
+> Consommation :  3
+> gas left :  24
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,6]
+===> temps exec = 0.001374
+=== ROUND 5
+>Debug longueur competitor :  257
+>Debug longueur competitor :  290
+>Debug longueur competitor :  256
+>Debug longueur competitor :  289
+>Debug longueur competitor :  257
+>Debug longueur competitor :  290
+>Debug longueur competitor :  260
+>Debug longueur competitor :  293
+>Debug longueur competitor :  265
+>Debug longueur competitor :  298
+>Debug longueur competitor :  272
+>Debug longueur competitor :  305
+>Debug longueur competitor :  281
+>Debug longueur competitor :  314
+>Choix de direction :  3
+>choix :  0
+>choix :  1
+>Choix de direction :  0
+>choix :  1
+>choix :  1
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (3 -1), acc : (1 1)
+> Consommation , norme1:  2
+> Consommation , squareRoot:  3
+> Consommation :  5
+> gas left :  19
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,5]
+===> temps exec = 0.001565
+=== ROUND 6
+>Debug longueur competitor :  145
+>Debug longueur competitor :  170
+>Debug longueur competitor :  144
+>Debug longueur competitor :  169
+>Debug longueur competitor :  145
+>Debug longueur competitor :  170
+>Debug longueur competitor :  148
+>Debug longueur competitor :  173
+>Debug longueur competitor :  153
+>Debug longueur competitor :  178
+>Debug longueur competitor :  160
+>Debug longueur competitor :  185
+>Debug longueur competitor :  169
+>Debug longueur competitor :  194
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (4 0), acc : (-1 0)
+> Consommation , norme1:  1
+> Consommation , squareRoot:  4
+> Consommation :  5
+> gas left :  14
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,5]
+===> temps exec = 0.001251
+=== ROUND 7
+>Debug longueur competitor :  82
+>Debug longueur competitor :  101
+>Debug longueur competitor :  81
+>Debug longueur competitor :  100
+>Debug longueur competitor :  82
+>Debug longueur competitor :  101
+>Debug longueur competitor :  85
+>Debug longueur competitor :  104
+>Debug longueur competitor :  90
+>Debug longueur competitor :  109
+>Debug longueur competitor :  97
+>Debug longueur competitor :  116
+>Debug longueur competitor :  106
+>Debug longueur competitor :  125
+>Choix de direction :  0
+>choix :  1
+>choix :  0
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (3 0), acc : (1 0)
+> Consommation , norme1:  1
+> Consommation , squareRoot:  3
+> Consommation :  4
+> gas left :  10
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,5]
+===> temps exec = 0.001334
+=== ROUND 8
+>Debug longueur competitor :  26
+>Debug longueur competitor :  37
+>Debug longueur competitor :  25
+>Debug longueur competitor :  36
+>Debug longueur competitor :  26
+>Debug longueur competitor :  37
+>Debug longueur competitor :  29
+>Debug longueur competitor :  40
+>Debug longueur competitor :  34
+>Debug longueur competitor :  45
+>Debug longueur competitor :  41
+>Debug longueur competitor :  52
+>Debug longueur competitor :  50
+>Debug longueur competitor :  61
+>Choix de direction :  8
+>choix :  0
+>choix :  0
+====> update action :  Changement d'acc
+> fuelConsumption :  speed : (4 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  4
+> Consommation :  4
+> gas left :  6
+> nombre de Boost restant :  5
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage POSITION ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>POSITION le plus proche de notre voiture :   
+[27,5]
+===> temps exec = 0.001292
+=== ROUND 9
