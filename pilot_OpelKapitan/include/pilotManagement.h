@@ -26,7 +26,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "util.h"
 #include <math.h>
 #include "util.h"
 #include "readMap.h"
@@ -38,32 +37,37 @@
 #define SIZE_ACTION 10
 
 typedef struct _dataPilot {
-    short xPosition;
-    short yPosition;
-    short xSpeed;
-    short ySpeed;
-    short xAcc;
-    short yAcc;
+    POSITION position;
+    SPEED speed;
+    ACCELERATION acceleration;
     short gasLvl;
     short boostsRemaining;
 } _dataPilot;
 typedef struct _dataPilot PILOT;
 
 /**
- * @brief get the x coordinate position of a pilot
+ * @brief Get the Position Pilot object
  * 
- * @param pilot : the PILOT object
- * @return short : the coordinate
+ * @param pilot 
+ * @return POSITION 
  */
-short getXPositionPilot ( PILOT* pilot );
+POSITION getPositionPilot ( PILOT* pilot );
 
 /**
- * @brief get the y coordinate position of a pilot
+ * @brief Get the Speed Pilot object
  * 
- * @param pilot : the PILOT object
- * @return short : the coordinate
+ * @param pilot 
+ * @return SPEED 
  */
-short getYPositionPilot ( PILOT* pilot );
+SPEED getSpeedPilot ( PILOT* pilot );
+
+/**
+ * @brief Get the Acceleration Pilot object
+ * 
+ * @param pilot 
+ * @return ACCELERATION 
+ */
+ACCELERATION getAccelerationPilot ( PILOT* pilot );
 
 /**
  * @brief Get the Gas Lvl of a Pilot object
@@ -74,45 +78,12 @@ short getYPositionPilot ( PILOT* pilot );
 short getGasLvlPilot ( PILOT* pilot );
 
 /**
- * @brief Get the x-axis speed of a pilot
- * 
- * @param pilot : the PILOT object
- * @return short : the speed
- */
-short getXSpeedPilot ( PILOT* pilot );
-
-/**
- * @brief Get the y-axis speed of a pilot 
- * 
- * @param pilot : the PILOT object
- * @return short : the speed
- */
-short getYSpeedPilot ( PILOT* pilot );
-
-/**
- * @brief Get the x-axis acceleration of a pilot
- * 
- * @param pilot : the PILOT object
- * @return short : the acceleration
- */
-short getXAccPilot ( PILOT* pilot );
-
-/**
- * @brief Get the y-axis acceleration of a pilot 
- * 
- * @param pilot : the PILOT object
- * @return short : the acceleraion
- */
-short getYAccPilot ( PILOT* pilot );
-
-/**
  * @brief Get the Boosts Remaining of a pilot 
  * 
  * @param pilot : the PILOT object
  * @return short : the boosts remaining
  */
 short getBoostsRemainingPilot ( PILOT* pilot );
-
 
 /**
  * @brief Create a Pilot object

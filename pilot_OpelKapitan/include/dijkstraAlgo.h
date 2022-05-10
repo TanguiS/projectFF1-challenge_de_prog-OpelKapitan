@@ -29,8 +29,7 @@
 #include "pilotManagement.h"
 #include "util.h"
 #include "dijkstraMatrix.h"
-#include "lifo.h"
-
+#include "pathList.h"
 
 void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
 

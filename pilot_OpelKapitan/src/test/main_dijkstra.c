@@ -88,7 +88,7 @@ int main ( void )
 /*     int i, j;
     GRAPH graph = createGraph ( Y_MID, X_MID );
     dijkstraMatrix dij = createDijkstraMatrix ( Y_MID, X_MID );
-    LIFO stack;
+    PATH_LIST stack;
     lifoElement result;
 
     printf ( "depart value  : %d\n", midGraph[coordStartMid[1]][coordStartMid[0]] );
@@ -124,7 +124,7 @@ int main ( void )
 /*     int i, j;
     GRAPH graph = createGraph ( Y, X );
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
-    LIFO stack;
+    PATH_LIST stack;
     lifoElement result;
 
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
@@ -160,7 +160,7 @@ int main ( void )
     int i, j;
     GRAPH graph = createGraph ( Y, X );
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
-    LIFO stack;
+    PATH_LIST stack;
     lifoElement result;
 
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );

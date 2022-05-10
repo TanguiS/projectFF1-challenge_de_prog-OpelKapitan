@@ -29,7 +29,7 @@
 #include "pilotManagement.h"
 #include "dijkstraMatrix.h"
 #include "dijkstraAlgo.h"
-#include "lifo.h"
+#include "pathList.h"
 #include "graphMadj.h"
 #ifndef DEBUG
 #include "debugMode.h"

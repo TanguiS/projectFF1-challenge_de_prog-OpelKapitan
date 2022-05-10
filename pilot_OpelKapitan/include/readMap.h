@@ -33,10 +33,10 @@
  * @brief Enumeration of the values of a map 
  */
 typedef enum {
-    road = '#',             /**< the road value */
-    wall = '.',             /**< the wall value */
-    finishLine = '=',       /**< the finishLine value */
-    sand = '~'              /**< the sand value */
+    road        = '#',      /**< the road value */
+    wall        = '.',      /**< the wall value */
+    finishLine  = '=',      /**< the finishLine value */
+    sand        = '~'       /**< the sand value */
 } mapValues;
 
 /**
@@ -60,28 +60,30 @@ short getWidthMap ( DATA_MAP* map );
  */
 short getHeightMap ( DATA_MAP* map );
 
+
 /**
- * @brief Get the Map Element object
+ * @brief Get the Element Map object
  * 
- * @param map : the map object
- * @param x : the x coordinate of the element
- * @param y : the y coordiante of the element
- * @return short : the elemets 
+ * @param map 
+ * @param coord : the coordinate of the wanted element
+ * @return short : the element
  */
-short getElementMap ( DATA_MAP* map, int x, int y );
+short getElementMap ( DATA_MAP* map, POSITION coord );
 
 /**
  * @brief Create a Map object
  * 
- * @param newXSize : the width of the map
- * @param newYSize  : the height of the map
+ * @param width : the width of the map
+ * @param height  : the height of the map
  * @return DATA_MAP 
  */
-DATA_MAP createMap ( short newXSize, short newYSize );
+DATA_MAP createMap ( short width, short height );
 
 /**
  * @brief Reads the data provided by the GDP and provides it to the object DATA_MAP
  * 
+ * @param gasLvl : the gas level that the GDP provide
+ * @param graph : the graph that will be created at the same time
  * @return DATA_MAP : The DATA_MAP initialized and filled from the data provided by the GDP
  */
 DATA_MAP readDataMapGraph ( short* gasLvl, GRAPH* graph );

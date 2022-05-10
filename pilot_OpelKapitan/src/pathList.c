@@ -19,15 +19,15 @@
  * @date 22 janvier 2022
  */
 
-#include "lifo.h"
+#include "pathList.h"
 
 /**
  * @brief Create a Cell object
  * 
- * @param x : the new element 
+ * @param value : the new element 
  * @return CELL 
  */
-static CELL createCell ( lifoElement x );
+static CELL createCell ( pathListElement value );
 /**
  * @brief Destroy a Cell object
  * 
@@ -36,13 +36,13 @@ static CELL createCell ( lifoElement x );
  */
 static boolean destroyCell ( CELL cell );
 
-static CELL createCell ( lifoElement x)
+static CELL createCell ( pathListElement value )
 {
     CELL newCell;
 
     newCell =  ( CELL ) malloc ( sizeof ( _cell ) );
-    newCell->contents[0] = x[0];
-    newCell->contents[1] = x[1];
+    newCell->contents.X = value.X;
+    newCell->contents.Y = value.Y;
     newCell->followingCell = NULL;
     return newCell;
 }
@@ -57,14 +57,15 @@ static boolean destroyCell ( CELL cell )
     return false;
 }
 
-LIFO createLifo () 
+PATH_LIST createPathList () 
 {
-    LIFO newLifo;
+    PATH_LIST newLifo;
     newLifo.head = NULL;
+    newLifo.current = NULL;
     return newLifo;
 }
 
-boolean isEmpty ( LIFO lifo )
+boolean isEmptyPathList ( PATH_LIST lifo )
 {
     if ( lifo.head == NULL ) {
         return true;
@@ -72,13 +73,14 @@ boolean isEmpty ( LIFO lifo )
     return false;
 }
 
-LIFO addElementLifo ( LIFO lifo, lifoElement x )
+PATH_LIST addElementPathList ( PATH_LIST lifo, pathListElement value )
 {
     CELL newCell;
 
-    newCell = createCell ( x );
-    if ( isEmpty ( lifo ) ) {
+    newCell = createCell ( value );
+    if ( isEmptyPathList ( lifo ) ) {
         lifo.head = newCell;
+        lifo.current = lifo.head;
         return lifo;
     }
     newCell->followingCell = lifo.head;
@@ -86,25 +88,44 @@ LIFO addElementLifo ( LIFO lifo, lifoElement x )
     return lifo;
 }
 
-LIFO removeElementLifo ( LIFO lifo, lifoElement* result )
+PATH_LIST removeHeadElementPathList ( PATH_LIST lifo, pathListElement* result )
 {
     CELL previousHead;
     
-    if ( isEmpty ( lifo ) ) {
+    if ( isEmptyPathList ( lifo ) ) {
         return lifo;
     }
-    result[0][0] = lifo.head->contents[0]; 
-    result[0][1] = lifo.head->contents[1];
+    result->X = lifo.head->contents.X;
+    result->Y = lifo.head->contents.Y;
     previousHead = lifo.head;
     lifo.head = lifo.head->followingCell;
     destroyCell ( previousHead );
     return lifo;
 }
 
-void destroyLifo ( LIFO lifo )
+PATH_LIST resetCurrentPathList ( PATH_LIST list )
 {
-    coord trash;
-    while ( !isEmpty ( lifo ) ) {
-        lifo = removeElementLifo ( lifo, &trash );
+    list.current = list.head;
+    return list;
+}
+
+PATH_LIST nextElementPathList ( PATH_LIST list, pathListElement* result )
+{
+    if ( list.current == NULL ) {
+        list = resetCurrentPathList ( list );
+        result->X = list.current->contents.X;
+        result->Y = list.current->contents.Y;
+        return list;
+    }
+    result->X = list.current->followingCell->contents.X;
+    result->Y = list.current->followingCell->contents.Y;
+    return list;
+}
+
+void destroyPathList ( PATH_LIST lifo )
+{
+    pathListElement* trash;
+    while ( !isEmptyPathList ( lifo ) ) {
+        lifo = removeHeadElementPathList ( lifo, trash );
     }
 }

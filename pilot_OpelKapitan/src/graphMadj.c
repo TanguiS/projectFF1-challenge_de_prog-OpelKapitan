@@ -23,26 +23,65 @@
 
 #define INIT_SIZE 0
 
+/**
+ * @brief Set the Size Finish Line object
+ * 
+ * @param graph 
+ * @param size 
+ */
 static void setSizeFinishLine ( GRAPH* graph, char size );
 
+/**
+ * @brief Initialize the graph
+ * 
+ * @param graph 
+ */
 static void initGraph ( GRAPH* graph );
 
-static void addCoordFinishline ( GRAPH* graph, coord newCoord, int index );
+/**
+ * @brief Add a position to the finish lines
+ * 
+ * @param graph 
+ * @param coord 
+ * @param index 
+ */
+static void addCoordFinishline ( GRAPH* graph, POSITION coord, int index );
 
-static void setClosestFinishLine ( GRAPH* graph, coord closestFinishLine );
+/**
+ * @brief Set the Closest Finish Line object
+ * 
+ * @param graph 
+ * @param closestFinishLine 
+ */
+static void setClosestFinishLine ( GRAPH* graph, POSITION closestFinishLine );
 
-static boolean competitorIsClosest ( GRAPH* graph, coord pilot, coord competitor );
+/**
+ * @brief 
+ * 
+ * @param graph 
+ * @param pilot 
+ * @param competitor 
+ * @return boolean 
+ */
+static boolean competitorIsClosest ( GRAPH* graph, POSITION pilot, POSITION competitor );
 
-static int length ( coord first, coord secound );
+/**
+ * @brief 
+ * 
+ * @param first 
+ * @param secound 
+ * @return int 
+ */
+static int length ( POSITION first, POSITION secound );
 
-static int length ( coord first, coord secound )
+static int length ( POSITION first, POSITION secound )
 {
-    return ( ( ( first[0] - secound[0] ) * ( first[0] - secound[0] ) ) + ( ( first[1] - secound[1] ) * ( first[1] - secound[1] ) ) );
+    return ( ( ( first.X - secound.X ) * ( first.X - secound.X ) ) + ( ( first.Y - secound.Y ) * ( first.Y - secound.Y ) ) );
 }
 
-static boolean competitorIsClosest ( GRAPH* graph, coord pilot, coord competitor )
+static boolean competitorIsClosest ( GRAPH* graph, POSITION pilot, POSITION competitor )
 {
-    coord closest;
+    POSITION closest;
     int lengthClosest;
     int lengthCompetitor;
     getClosestFinishLine ( graph, &closest );
@@ -57,21 +96,23 @@ static void setSizeFinishLine ( GRAPH* graph, char size )
     graph->sizeFinishLine = size;
 }
 
-static void setClosestFinishLine ( GRAPH* graph, coord closestFinishLine )
+static void setClosestFinishLine ( GRAPH* graph, POSITION closestFinishLine )
 {
-    graph->closestFinishLine[0] = closestFinishLine[0];
-    graph->closestFinishLine[1] = closestFinishLine[1];
+    graph->closestFinishLine.X = closestFinishLine.X;
+    graph->closestFinishLine.Y = closestFinishLine.Y;
 }
 
-static void addCoordFinishline ( GRAPH* graph, coord newCoord, int index )
+static void addCoordFinishline ( GRAPH* graph, POSITION coord, int index )
 {
-    graph->finishLineCoord[index][0] = newCoord[0];
-    graph->finishLineCoord[index][1] = newCoord[1];
+    graph->finishLineCoord[index].X = coord.X;
+    graph->finishLineCoord[index].Y = coord.Y;
 }
 
 static void initGraph ( GRAPH* graph )
 {
-    coord init = {SHRT_MAX, SHRT_MAX};
+    POSITION init;
+    init.X = SHRT_MAX;
+    init.Y = SHRT_MAX;
     setSizeFinishLine ( graph, INIT_SIZE );
     setClosestFinishLine ( graph, init );
 }
@@ -80,33 +121,36 @@ static void initGraph ( GRAPH* graph )
 void displayGraph ( GRAPH* graph )
 {
     int i, j;
-    coord line;
+    POSITION line;
+    POSITION tmp;
     DEBUG_CHAR ( "\nAffichage du graph : ", ' ' );
     DEBUG_INT ( "width graph : ", getWidthGraph ( graph ) );
     DEBUG_INT ( "height graph : ", getHeightGraph ( graph ) );
     for ( i = 0; i < getHeightGraph ( graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( graph ); j++ ) {
-            DEBUG_ONLY_INT ( getElementGraph ( graph, j, i ) );
+            tmp.X = j;
+            tmp.Y = i;
+            DEBUG_ONLY_INT ( getElementGraph ( graph, tmp ) );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }
-    DEBUG_CHAR ( "\nAffichage coord ligne d'arrivée : ", ' ' );
+    DEBUG_CHAR ( "\nAffichage POSITION ligne d'arrivée : ", ' ' );
     DEBUG_INT ( ">Taille ligne : ", getSizeFinishLine ( graph ) );
     for ( i = 0; i < getSizeFinishLine ( graph ); i++ ) {
         DEBUG_ONLY_CHAR ( '[' );
-        getCoordFinishLine ( graph, i, &line );
-        DEBUG_ONLY_INT ( line[0] );
+        getPOSITIONFinishLine ( graph, i, &line );
+        DEBUG_ONLY_INT ( line.X );
         DEBUG_ONLY_CHAR ( ',' );
-        DEBUG_ONLY_INT ( line[1] );
+        DEBUG_ONLY_INT ( line.Y );
         DEBUG_ONLY_CHAR ( ']' );
     }
     DEBUG_ONLY_CHAR ( '\n' );
-    DEBUG_CHAR ( ">Coord le plus proche de notre voiture : ", ' ' );
+    DEBUG_CHAR ( ">POSITION le plus proche de notre voiture : ", ' ' );
     DEBUG_ONLY_CHAR ( '[' );
     getClosestFinishLine ( graph, &line );
-    DEBUG_ONLY_INT ( line[0] );
+    DEBUG_ONLY_INT ( line.X );
     DEBUG_ONLY_CHAR ( ',' );
-    DEBUG_ONLY_INT ( line[1] );
+    DEBUG_ONLY_INT ( line.Y );
     DEBUG_ONLY_CHAR ( ']' );
     DEBUG_ONLY_CHAR ( '\n' );
 }
@@ -127,21 +171,21 @@ char getSizeFinishLine ( GRAPH* graph )
     return graph->sizeFinishLine;
 }
 
-void getCoordFinishLine ( GRAPH* graph, short index, coord* result )
+void getPOSITIONFinishLine ( GRAPH* graph, short index, POSITION* result )
 {
-    result[0][0] = graph->finishLineCoord[index][0];
-    result[0][1] = graph->finishLineCoord[index][1];
+    result->X = graph->finishLineCoord[index].X;
+    result->Y = graph->finishLineCoord[index].Y;
 }
 
-void getClosestFinishLine ( GRAPH* graph, coord* result )
+void getClosestFinishLine ( GRAPH* graph, POSITION* result )
 {
-    result[0][0] = graph->closestFinishLine[0];
-    result[0][1] = graph->closestFinishLine[1];
+    result->X = graph->closestFinishLine.X;
+    result->Y = graph->closestFinishLine.Y;
 }
 
-element getElementGraph ( GRAPH* graph, short x, short y )
+element getElementGraph ( GRAPH* graph, POSITION coord )
 {
-    return getElementMatrix ( &(graph->graph), x, y );
+    return getElementMatrix ( &(graph->graph), coord.X, coord.Y );
 }
 
 static boolean isInGraph ( GRAPH* graph, short x, short y )
@@ -171,14 +215,14 @@ static boolean areNotEqualsZero ( short x, short y )
     }
     return false;
 }
-
-coord* getSuccessorGraph ( GRAPH* graph, short x, short y )
+/* 
+POSITION* getSuccessorGraph ( GRAPH* graph, short x, short y )
 {
-    coord* successor;
+    POSITION* successor;
     int count = 1;
     int tab[3] = {-1, 0, 1};
     int i, j;
-    successor = (coord*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( coord ) );
+    successor = (POSITION*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( POSITION ) );
     for ( i = 0; i < 3; i++ ) {
         for ( j = 0; j < 3; j++ ) {
             if ( isInGraph ( graph, x + tab[j], y + tab[i] ) && areNotEqualsZero ( tab[j], tab[i] ) ) {
@@ -193,7 +237,7 @@ coord* getSuccessorGraph ( GRAPH* graph, short x, short y )
     successor[0][0] = count;
     return successor;
 }
-
+ */
 void setElementGraph ( GRAPH* graph, element value, int x, int y )
 {
     setElementMatrix ( &(graph->graph), x, y, value );
@@ -207,20 +251,20 @@ GRAPH createGraph ( short width, short height )
     return newGraph;   
 }
 
-void updateCoordFinishLine ( GRAPH* graph, coord newFinishLine, int index )
+void updatePOSITIONFinishLine ( GRAPH* graph, POSITION newFinishLine, int index )
 {
     setSizeFinishLine ( graph, getSizeFinishLine ( graph ) + 1 );
     addCoordFinishline ( graph, newFinishLine, index );
 }
 
-void updateGraph ( GRAPH* graph, coord myPilot, coord secoundPilot, coord thirdPilot )
+void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot )
 {
     int i;
-    coord competitor;
-    setElementGraph ( graph, carGraph, secoundPilot[0], secoundPilot[1] );
-    setElementGraph ( graph, carGraph, thirdPilot[0], thirdPilot[1] );
+    POSITION competitor;
+    setElementGraph ( graph, carGraph, secoundPilot.X, secoundPilot.Y );
+    setElementGraph ( graph, carGraph, thirdPilot.X, thirdPilot.Y );
     for ( i = 0; i < getSizeFinishLine ( graph); i++ ) {
-        getCoordFinishLine ( graph, i, &competitor );
+        getPOSITIONFinishLine ( graph, i, &competitor );
         if ( competitorIsClosest ( graph, myPilot, competitor ) ) {
             setClosestFinishLine ( graph, competitor );
         }

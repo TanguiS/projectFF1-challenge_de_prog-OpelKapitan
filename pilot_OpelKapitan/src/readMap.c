@@ -43,7 +43,7 @@ static void displayMap ( DATA_MAP map );
 static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
 {
     int i;
-    coord coordFinishLine;
+    POSITION finishLinePosition;
     
     for ( i = 0; i < getWidthMap ( map ); i++ ) {
         setElementMatrix ( map, i, row, data[i] );
@@ -55,10 +55,9 @@ static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
             setElementGraph ( graph, sandGraph, i, row );
         } else if ( data[i] == finishLine ) {
             setElementGraph ( graph, finishLineGraph, i, row );
-            coordFinishLine[0] = i;
-            coordFinishLine[1] = row;
-            updateCoordFinishLine ( graph, coordFinishLine, getSizeFinishLine ( graph ) );
-
+            finishLinePosition.X = i;
+            finishLinePosition.Y = row;
+            updateCoordFinishLine ( graph, finishLinePosition, getSizeFinishLine ( graph ) );
         }
     }
 }
@@ -67,10 +66,13 @@ static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
 static void displayMap ( DATA_MAP map )
 {
     int i, j;
+    POSITION tmp;
     DEBUG_CHAR ( "\nAffichage de la map avec matrix: ", ' ' );
     for ( i = 0; i < getHeightMap ( &map ); i++ ) {
         for ( j = 0; j < getWidthMap ( &map ); j++ ) {
-            DEBUG_ONLY_CHAR ( getElementMap ( &map, j, i ) );
+            tmp.X = j;
+            tmp.Y = i;
+            DEBUG_ONLY_CHAR ( getElementMap ( &map, tmp ) );
         }
         DEBUG_ONLY_CHAR ( '\n' );
     }
@@ -122,9 +124,9 @@ short getHeightMap ( DATA_MAP* map )
    return getHeightMatrix ( map );
 }
 
-short getElementMap ( DATA_MAP* map, int x, int y )
+short getElementMap ( DATA_MAP* map, POSITION coord )
 {
-   return getElementMatrix ( map, x, y );
+   return getElementMatrix ( map, coord.X, coord.Y );
 }
 
 boolean destroyMap ( DATA_MAP map )

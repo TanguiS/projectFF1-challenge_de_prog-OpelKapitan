@@ -23,7 +23,6 @@
 #define __UTIL_HH__
 
 #define MAX_LINE_LENGTH 1024    /**< the maximum length of a line */
-#define SIZE_COORD 2            /**< the dimension of the coordinate */
 #define BOOSTS_AT_START 5       /**< the number of boosts at start */
 #define NUMBER_CASES_AROUND 8   /**< The number of cases around a case */
 
@@ -37,9 +36,41 @@ typedef enum {
 } boolean;
 
 /**
- * @brief Coordinate type declaration
+ * @brief A structure to represent the position 
  */
-typedef short coord[SIZE_COORD];
+typedef struct _position {
+    short X;                    /**< X position */
+    short Y;                    /**< Y position */
+} _position;
+/**
+ * @brief Position object declaration 
+ */
+typedef struct _position POSITION;
+
+/**
+ * @brief A structure to represent the speed 
+ */
+typedef struct _speed {
+    short X;                    /**< X speed */
+    short Y;                    /**< Y speed */
+} _speed;
+/**
+ * @brief Speed object declaration 
+ */
+typedef struct _speed SPEED;
+
+/**
+ * @brief A structure to represent the acceleration 
+ */
+typedef struct _acceleration {
+    short X;                    /**< X acceleration */
+    short Y;                    /**< Y acceleration */
+} _acceleration;
+
+/**
+ * @brief Acceleration object declaration 
+ */
+typedef struct _acceleration ACCELERATION;
 
 /**
  * @brief Element type declaration 

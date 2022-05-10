@@ -8,7 +8,7 @@ gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/graphMadj.c -o o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/matrix.c -o obj/matrix.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/dijkstraMatrix.c -o obj/matrixDij.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/dijkstraAlgo.c -o obj/dijkstraAlgo.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/lifo.c -o obj/lifo.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/matrixDij.o obj/dijkstraAlgo.o obj/lifo.o -o ../drivers/OpelKapitan -lm
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pathList.c -o obj/pathList.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/matrixDij.o obj/dijkstraAlgo.o obj/pathList.o -o ../drivers/OpelKapitan -lm
 make: Leaving directory '/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
  

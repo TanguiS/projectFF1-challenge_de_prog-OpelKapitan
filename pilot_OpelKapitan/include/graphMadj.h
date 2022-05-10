@@ -43,41 +43,106 @@ typedef enum {
 
 typedef struct _mAdj {
     char sizeFinishLine;
-    coord finishLineCoord[SIZE_TAB_FINISH_LINE];
-    coord closestFinishLine;
+    POSITION finishLineCoord[SIZE_TAB_FINISH_LINE];
+    POSITION closestFinishLine;
     MATRIX graph;
 } _mAdj;
 typedef struct _mAdj GRAPH;
 
+/**
+ * @brief Get the Width Graph object
+ * 
+ * @param graph 
+ * @return short 
+ */
 short getWidthGraph ( GRAPH* graph );
 
+/**
+ * @brief Get the Height Graph object
+ * 
+ * @param graph 
+ * @return short 
+ */
 short getHeightGraph ( GRAPH* graph );
 
+/**
+ * @brief Get the Size Finish Line object
+ * 
+ * @param graph 
+ * @return char 
+ */
 char getSizeFinishLine ( GRAPH* graph );
 
-void getCoordFinishLine ( GRAPH* graph, short indice, coord* result );
+/**
+ * @brief Get the Coord Finish Line object
+ * 
+ * @param graph 
+ * @param indice 
+ * @param result 
+ */
+void getCoordFinishLine ( GRAPH* graph, short indice, POSITION result );
 
-void getClosestFinishLine ( GRAPH* graph, coord* result );
+/**
+ * @brief Get the Closest Finish Line object
+ * 
+ * @param graph 
+ * @param result 
+ */
+void getClosestFinishLine ( GRAPH* graph, POSITION* result );
+/* 
+coord* getSuccessorGraph ( GRAPH* graph, POSITION );
+ */
 
-coord* getSuccessorGraph ( GRAPH* graph, short x, short y );
 
-element getElementGraph ( GRAPH* graph, short x, short y );
+element getElementGraph ( GRAPH* graph, POSITION coord );
 
-void setElementGraph ( GRAPH* graph, element value, int x, int y );
+/**
+ * @brief Set the Element Graph object
+ * 
+ * @param graph 
+ * @param value 
+ * @param x 
+ * @param y 
+ */
+void setElementGraph ( GRAPH* graph, element value, short x, short y );
 
+/**
+ * @brief Create a Graph object
+ * 
+ * @param width 
+ * @param height 
+ * @return GRAPH 
+ */
 GRAPH createGraph ( short width, short height );
 
-void updateGraph ( GRAPH* graph, coord myPilot, coord secoundPilot, coord thirdPilot );
+/**
+ * @brief Update a Graph object
+ * 
+ * @param graph 
+ * @param myPilot 
+ * @param secoundPilot 
+ * @param thirdPilot 
+ */
+void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot );
 
-void updateCoordFinishLine ( GRAPH* graph, coord newFinishLine, int index );
+/**
+ * @brief Update the Finish Line object from a graph
+ * 
+ * @param graph 
+ * @param newFinishLine 
+ * @param index 
+ */
+void updateCoordFinishLine ( GRAPH* graph, POSITION newFinishLine, int index );
 
 #ifndef DEBUG
 void displayGraph ( GRAPH* graph );
 #endif
 
-
-
-
+/**
+ * @brief Destroy a Graph object
+ * 
+ * @param graphToDestoy 
+ */
 void destroyGraph (GRAPH graphToDestoy );
 
 

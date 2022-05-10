@@ -33,27 +33,33 @@
 /*
 A changer probablement
 */
-#define X "x"
-#define Y "y"
+#define Xs "x"
+#define Ys "y"
 #define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, X ) == 0 ) ? 1 : 0
 
 /**
  * @brief Set the Position Pilot object
  * 
- * @param pilot : the PILOT object
- * @param xPosition : the x-axis position
- * @param yPosition : the y-axis position 
+ * @param pilot 
+ * @param position 
  */
-static void setPositionPilot ( PILOT* pilot, short xPosition, short yPosition );
+static void setPositionPilot ( PILOT* pilot, short x, short y );
 
 /**
  * @brief Set the Speed Pilot object
  * 
- * @param pilot : the PILOT object
- * @param xSpeed : the x-axis speed
- * @param ySpeed : the y-axis speed
+ * @param pilot 
+ * @param speed 
  */
-static void setSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed );
+static void setSpeedPilot ( PILOT* pilot, short x, short y );
+
+/**
+ * @brief Set the Action Pilot object
+ * 
+ * @param pilot 
+ * @param action 
+ */
+static void setActionPilot ( PILOT* pilot, short x, short y );
 
 /**
  * @brief Set the Gas Lvl Pilot object
@@ -62,15 +68,6 @@ static void setSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed );
  * @param newGasLvl : the gas level
  */
 static void setGasLvlPilot ( PILOT* pilot, short newGasLvl );
-
-/**
- * @brief Set the Action Pilot object
- * 
- * @param pilot : the PILOT object
- * @param newXAcc : the x-axis acceleration
- * @param newYAcc : the y-axis acceleration
- */
-static void setActionPilot ( PILOT* pilot, short newXAcc, short newYAcc );
 
 /**
  * @brief Set the Boosts Remaining Pilot object
@@ -103,11 +100,11 @@ static void updatePositionPilot ( PILOT* myPilot, PILOT* secondPilot, PILOT* thi
  */
 static void updateSpeedPilot ( PILOT* pilot );
 
-static boolean actionIsBoosted ( short xAcc, short yAcc );
+static boolean actionIsBoosted ( ACCELERATION action );
 
-static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char* modeChosen );
+static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeChosen );
 
-static short fuelConsumption ( short xPosition, short yPosition, short xSpeed, short ySpeed, short newXAcc, short newYAcc, DATA_MAP* map );
+static short fuelConsumption ( POSITION POSITION, SPEED speed, ACCELERATION action, DATA_MAP* map );
 
 /**
  * @brief Update the gas remaining of our pilot
@@ -125,27 +122,28 @@ static void updateBoostsPilot ( PILOT* pilot );
  */
 static void deliverAction ( char* action ); /* action du type : x y */
 
-static void setPositionPilot ( PILOT* pilot, short xPosition, short yPosition )
+static void setPositionPilot ( PILOT* pilot, short x, short y )
 {
-    pilot->xPosition = xPosition;
-    pilot->yPosition = yPosition;
+    pilot->position.X = x;
+    pilot->position.Y = y; 
 }
 
-static void setSpeedPilot ( PILOT* pilot, short xSpeed, short ySpeed )
+static void setSpeedPilot ( PILOT* pilot, short x, short y )
 {
-    pilot->xSpeed = xSpeed;
-    pilot->ySpeed = ySpeed;
+    pilot->speed.X = x;
+    pilot->speed.Y = y;
+
+}
+
+static void setActionPilot ( PILOT* pilot, short x, short y )
+{
+    pilot->acceleration.X = x;
+    pilot->acceleration.Y = y;
 }
 
 static void setGasLvlPilot ( PILOT* pilot, short newGasLvl )
 {
     pilot->gasLvl = newGasLvl;
-}
-
-static void setActionPilot ( PILOT* pilot, short newXAcc, short newYAcc )
-{
-    pilot->xAcc = newXAcc;
-    pilot->yAcc = newYAcc;
 }
 
 static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
@@ -160,48 +158,48 @@ static void initNewPilot ( PILOT* pilot )
     */
     setPositionPilot ( pilot, 0, 0 );
     setSpeedPilot ( pilot, 0, 0 );
-    setActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
+    setActionPilot ( pilot, 0, 0 );
     setBoostsRemainingPilot ( pilot, BOOSTS_AT_START );
 }
 
 static void updateSpeedPilot ( PILOT* pilot )
 {
-    setSpeedPilot ( pilot, getXSpeedPilot ( pilot ) + getXAccPilot ( pilot ), 
-                           getYSpeedPilot ( pilot ) + getYAccPilot ( pilot ) );
+    SPEED speed = getSpeedPilot ( pilot );
+    ACCELERATION acc = getAccelerationPilot ( pilot );
+    setSpeedPilot ( pilot, speed.X + acc.X, 
+                           speed.Y + acc.Y );
 }
 
 static void updatePositionPilot ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
 {
     char buf[MAX_LINE_LENGTH];
-    short myXPosition, myYPosition;
-    short secondXPosition, secondYPosition;
-    short thirdXPosition, thirdYPosition;
+    POSITION myPosition, secoundPosition, thirdPosition;
 
     fgets ( buf, MAX_LINE_LENGTH, stdin );
     fflush ( stdin );
     sscanf ( buf, "%hd %hd %hd %hd %hd %hd",
-                    &myXPosition,       &myYPosition,
-                    &secondXPosition,   &secondYPosition,
-                    &thirdXPosition,    &thirdYPosition
+                    &myPosition.X,      &myPosition.Y,
+                    &secoundPosition.X, &secoundPosition.Y,
+                    &thirdPosition.X,   &thirdPosition.Y
             );
-    setPositionPilot ( myPilot, myXPosition, myYPosition );
-    setPositionPilot ( secondPilot, secondXPosition, secondYPosition);
-    setPositionPilot ( thirdPilot, thirdXPosition, thirdYPosition );
+    setPositionPilot ( myPilot, myPosition.X, myPosition.Y );
+    setPositionPilot ( secondPilot, secoundPosition.X, secoundPosition.Y);
+    setPositionPilot ( thirdPilot, thirdPosition.X, thirdPosition.Y );
 }
 
-static boolean actionIsBoosted ( short xAcc, short yAcc )
+static boolean actionIsBoosted ( ACCELERATION action )
 {
-    if ( abs ( xAcc ) == 2 ) {
-        return true;
-    } if ( abs ( yAcc ) == 2 ) {
-        return true;
+    if ( abs ( action.X ) != 2 ) {
+        return false;
+    } if ( abs ( action.Y ) != 2 ) {
+        return false;
     }
-    return false;
+    return true;
 }
 
 static void updateBoostsPilot ( PILOT* pilot )
 {
-    if ( actionIsBoosted ( getXAccPilot ( pilot ), getYAccPilot ( pilot ) ) ) {
+    if ( actionIsBoosted ( getAccelerationPilot ( pilot ) ) ) {
         setBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
     }
     DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
@@ -216,7 +214,7 @@ static void updateActionPilot ( PILOT* pilot, short newXAcc, short newYAcc, char
         setActionPilot ( pilot, (short) 0, (short) 0 );
     } else if ( ACTION_IS_DEFAULT ( modeChosen ) ) {
         DEBUG_STRING ( "====> update action : ", "en mode default (1 0)" );
-        setActionPilot ( pilot, VALUE_DEFAULT_ACTION(X), VALUE_DEFAULT_ACTION(Y) );
+        setActionPilot ( pilot, VALUE_DEFAULT_ACTION(Xs), VALUE_DEFAULT_ACTION(Ys) );
     } else {
         DEBUG_STRING ( "====> update action : ", "Changement d'acc" );
         setActionPilot ( pilot, newXAcc, newYAcc );
@@ -269,39 +267,25 @@ static void deliverAction ( char action[SIZE_ACTION] )
     fflush ( stdout );                /* CAUTION : This is necessary  */
 }
 
-short getXPositionPilot ( PILOT* pilot )
+POSITION getPositionPilot ( PILOT* pilot )
 {
-    return pilot->xPosition;
+    return pilot->position;
 }
 
-short getYPositionPilot ( PILOT* pilot )
+SPEED getSpeedPilot ( PILOT* pilot )
 {
-    return pilot->yPosition;
+    return pilot->speed;
 }
 
-short getXSpeedPilot ( PILOT* pilot )
+ACCELERATION getAccelerationPilot ( PILOT* pilot )
 {
-    return pilot->xSpeed;
+    return pilot->acceleration;
 }
 
-short getYSpeedPilot ( PILOT* pilot )
-{
-    return pilot->ySpeed;
-}
 
 short getGasLvlPilot ( PILOT* pilot )
 {
     return pilot->gasLvl;
-}
-
-short getXAccPilot ( PILOT* pilot )
-{
-    return pilot->xAcc;
-}
-
-short getYAccPilot ( PILOT* pilot )
-{
-    return pilot->yAcc;
 }
 
 short getBoostsRemainingPilot ( PILOT* pilot )
