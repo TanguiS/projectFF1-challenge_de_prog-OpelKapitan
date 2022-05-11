@@ -53,21 +53,22 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
 
 
-void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* sommet, LIST list ) {
-    short min = SHRT_MAX;
+void findMin(dijkstraMatrix* dijkstra, coord* sommet, LIST list ) {
+    /*short min = SHRT_MAX;*/
     short i;
-    short sizeSucc;
-    int distance;
-    coord* minTemp;
+    /*short sizeSucc;
+    int distance;*/
+    coord minTemp;
 
     i = getElementList(list, sommet, 0);
+    mixeCoord(sommet, &minTemp);
     while (i) {
-        i = getNextElementList(list, minTemp, minTemp);
-        if (getPathLength(dijkstra, sommet[0][0], sommet[0][1]) > getPathLength(dijkstra, minTemp[0][0], minTemp[0][1])) {
-            mixeCoord(minTemp, sommet);
+        i = getNextElementList(list, &minTemp, &minTemp);
+        if (getPathLength(dijkstra, sommet[0][0], sommet[0][1]) > getPathLength(dijkstra, minTemp[0], minTemp[1])) {
+            mixeCoord(&minTemp, sommet);
         }
     }
-    list = removeElementList(list, sommet);
+    
     /*
     sommet[0][0] = -1;
     sommet[0][1] = -1;   
@@ -75,7 +76,7 @@ void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* so
 
     for (i=1; i<sizeSucc; i++) { 
         distance = (short) getElementGraph(graph, succ[i][0], succ[i][1]);
-        if ( distance < min && dijkstra->matrix[succ[i][0]][succ[i][1]].flag == false ) {       /*succ is not visited 
+        if ( distance < min && dijkstra->matrix[succ[i][0]][succ[i][1]].flag == false ) {       succ is not visited 
             min = distance;
             mixeCoord(&(succ[i]), sommet);
         }
@@ -107,15 +108,15 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord
 }
 
 
-void addSuccessorListe(LIST list, coord* succ, short sizeSucc, dijkstraMatrix* dijkstra, GRAPH* graph) {
-    coord sommet;
+void addSuccessorListe(LIST* list, coord* succ, coord sommet,  short sizeSucc, dijkstraMatrix* dijkstra, GRAPH* graph) {
     int j;
 
     for (j=1; j<sizeSucc; j++) {
         if ( dijkstra->matrix[succ[j][0]][succ[j][1]].flag == white ) {
             updateDistance(dijkstra, graph, sommet, succ[j]);
-            list = addElementList(list, succ[j]);
+            *(list) = addElementList(*(list), succ[j]);
             dijkstra->matrix[succ[j][0]][succ[j][1]].flag = gray;
+            printf("\n\n%d   %d" ,succ[j][0], succ[j][1]);
         }
         
     }
@@ -124,9 +125,7 @@ void addSuccessorListe(LIST list, coord* succ, short sizeSucc, dijkstraMatrix* d
 
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) {
-    int j;
     int i;
-    int countTrue = 0;
     coord sommet;
     coord* succ;
     short sizeSucc;
@@ -138,7 +137,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     sommet[1] = firstSommet[1];
     succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
     sizeSucc = succ[0][0];
-    addSuccessorListe(list, succ, sizeSucc, dijkstra, graph);
+    addSuccessorListe(&list, succ, sommet, sizeSucc, dijkstra, graph);
     
 
     while (!isEmptyList(list)) {
@@ -147,13 +146,13 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
         for (i=1; i<sizeSucc; i++) {
             if ( dijkstra->matrix[succ[i][0]][succ[i][1]].flag == white ) {
                 updateDistance(dijkstra, graph, sommet, succ[i]);
-                list = addElementList(list, succ[i]);
+                list = addElementList(list, sommet);
                 dijkstra->matrix[succ[i][0]][succ[i][1]].flag = gray;
             } 
             /*updateDistance(dijkstra, graph, sommet, succ[i]);*/
         }
-        findMin(dijkstra, graph, sommet[0], sommet[1], &sommet, list);
-        countTrue++;
+        findMin(dijkstra, &sommet, list);
+        list = removeElementList(list, &sommet);
         free ( succ );
     }
     destroyList(list);

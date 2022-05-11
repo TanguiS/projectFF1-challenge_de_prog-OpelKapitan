@@ -105,7 +105,7 @@ LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoor
         return list; 
     }
     current = list.head;
-    while (!compareElement(removeCoord, &(current->contents)) && current != NULL) {
+    while ( current != NULL && !compareElement(removeCoord, &(current->contents)) ) {
         previousHead = current;
         current = current->followingCell;
     }
@@ -183,10 +183,10 @@ boolean getNextElementList ( LIST list,  listElement* result, listElement* refEl
     while (!compareElement(refElement, &(current->contents)) && current!= NULL) {
         current = current->followingCell;
     }
-    current = current->followingCell;
     if (current == NULL) {
         return false;
     }
+    current = current->followingCell;
     result[0][0] = current->contents[0]; 
     result[0][1] = current->contents[1];
     if (current == list.tail) {
