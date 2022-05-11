@@ -136,9 +136,11 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
     sommet[0] = firstSommet[0];
     sommet[1] = firstSommet[1];
+    list = addElementList(list, sommet);
+    /*
     succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
     sizeSucc = succ[0][0];
-    addSuccessorListe(&list, succ, sommet, sizeSucc, dijkstra, graph);
+    addSuccessorListe(&list, succ, sommet, sizeSucc, dijkstra, graph);*/
     
 
     while (!isEmptyList(list)) {
@@ -146,12 +148,12 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
         sizeSucc = succ[0][0];
         for (i=1; i<sizeSucc; i++) {
             if ( dijkstra->matrix[succ[i][0]][succ[i][1]].flag == white ) {
-                updateDistance(dijkstra, graph, sommet, succ[i]);
+                /*updateDistance(dijkstra, graph, sommet, succ[i]);*/
                 list = addElementList(list, succ[i]);
                 dijkstra->matrix[succ[i][0]][succ[i][1]].flag = gray;
                 displayDijkstraMatrix(dijkstra, sommet[0], sommet[1]);
             } 
-            /*updateDistance(dijkstra, graph, sommet, succ[i]);*/
+            updateDistance(dijkstra, graph, sommet, succ[i]);
         }
         list = removeElementList(list, &sommet);
         findMin(dijkstra, &sommet, list);

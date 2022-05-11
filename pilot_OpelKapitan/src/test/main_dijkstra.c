@@ -162,7 +162,7 @@ int main ( void )
 
     for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
-            graph.graph.matrix[j][i] = (element)graphWSand[i][j];
+            graph.graph.matrix[j][i] = (element)graphNSand[i][j];
         }
     }
     graph.closestFinishLine[0] = coordEndSmall[0];
