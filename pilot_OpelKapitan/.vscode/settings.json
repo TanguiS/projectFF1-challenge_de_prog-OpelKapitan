@@ -28,6 +28,8 @@
     "**/.vscode/**"
   ],
   "files.associations": {
-    "util.h": "c"
+    "util.h": "c",
+    "dijkstraalgo.h": "c",
+    "lifo.h": "c"
   }
 }

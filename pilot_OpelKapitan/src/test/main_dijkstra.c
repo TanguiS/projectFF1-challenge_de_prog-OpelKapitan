@@ -153,6 +153,7 @@ int main ( void )
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
     LIFO stack;
     lifoElement result;
+    LIST list;
 
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
     printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
@@ -180,6 +181,8 @@ int main ( void )
     }
     printf ( "\n" );
     displayDijkstraMatrixPath ( &dij, count, path );
+
+    printf("\n\ntests de la liste\n");
 
 
     destroyDijkstraMatrix ( dij );

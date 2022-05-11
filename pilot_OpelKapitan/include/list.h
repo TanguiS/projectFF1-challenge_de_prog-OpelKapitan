@@ -35,7 +35,7 @@ typedef coord listElement;
  * @brief A structure to represent a cell object 
  */
 typedef struct _list_cell {
-    listElement contents;           /**< the element that the cell contains */
+    listElement contents;                 /**< the element that the cell contains */
     struct _list_cell* followingCell;    /**< the following cell */
 } _list_cell; 
 /**
