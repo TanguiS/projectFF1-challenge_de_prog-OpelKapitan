@@ -3,14 +3,14 @@
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
  *
- * This lifo is owned by ENSICAEN students.
+ * This list is owned by ENSICAEN students.
  * No portion of this document may be reproduced, copied
  * or revised without written permission of the authors.
  */
 
 /**
- * @lifo lifo.c
- * @brief This lifo contains all the functions of the lifo algo.
+ * @list list.c
+ * @brief This list contains all the functions of the list algo.
  */
 
 /**
@@ -65,42 +65,42 @@ PATH_LIST createPathList ()
     return newLifo;
 }
 
-boolean isEmptyPathList ( PATH_LIST lifo )
+boolean isEmptyPathList ( PATH_LIST list )
 {
-    if ( lifo.head == NULL ) {
+    if ( list.head == NULL ) {
         return true;
     }
     return false;
 }
 
-PATH_LIST addElementPathList ( PATH_LIST lifo, path_list_element value )
+PATH_LIST addHeadElementPathList ( PATH_LIST list, path_list_element value )
 {
     CELL newCell;
 
     newCell = createCell ( value );
-    if ( isEmptyPathList ( lifo ) ) {
-        lifo.head = newCell;
-        lifo.current = lifo.head;
-        return lifo;
+    if ( isEmptyPathList ( list ) ) {
+        list.head = newCell;
+        list.current = list.head;
+        return list;
     }
-    newCell->followingCell = lifo.head;
-    lifo.head = newCell;
-    return lifo;
+    newCell->followingCell = list.head;
+    list.head = newCell;
+    return list;
 }
 
-PATH_LIST removeHeadElementPathList ( PATH_LIST lifo, path_list_element* result )
+PATH_LIST removeHeadElementPathList ( PATH_LIST list, path_list_element* result )
 {
     CELL previousHead;
     
-    if ( isEmptyPathList ( lifo ) ) {
-        return lifo;
+    if ( isEmptyPathList ( list ) ) {
+        return list;
     }
-    result->X = lifo.head->contents.X;
-    result->Y = lifo.head->contents.Y;
-    previousHead = lifo.head;
-    lifo.head = lifo.head->followingCell;
+    result->X = list.head->contents.X;
+    result->Y = list.head->contents.Y;
+    previousHead = list.head;
+    list.head = list.head->followingCell;
     destroyCell ( previousHead );
-    return lifo;
+    return list;
 }
 
 PATH_LIST resetCurrentPathList ( PATH_LIST list )
@@ -111,21 +111,29 @@ PATH_LIST resetCurrentPathList ( PATH_LIST list )
 
 PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result )
 {
-    if ( list.current == NULL ) {
+/*     if ( list.current == NULL ) {
         list = resetCurrentPathList ( list );
-        result->X = list.current->contents.X;
-        result->Y = list.current->contents.Y;
+        result = &(list.head->contents);
         return list;
-    }
-    result->X = list.current->followingCell->contents.X;
-    result->Y = list.current->followingCell->contents.Y;
+    } */
+    result = &(list.current->followingCell->contents);
     return list;
 }
 
-void destroyPathList ( PATH_LIST lifo )
+boolean currentEqualsHead ( PATH_LIST list )
+{
+    return list.current == list.head;
+}
+
+path_list_element* getCurrentPathList ( PATH_LIST list )
+{
+    return &(list.current->contents);
+}
+
+void destroyPathList ( PATH_LIST list )
 {
     path_list_element* trash = NULL;
-    while ( !isEmptyPathList ( lifo ) ) {
-        lifo = removeHeadElementPathList ( lifo, trash );
+    while ( !isEmptyPathList ( list ) ) {
+        list = removeHeadElementPathList ( list, trash );
     }
 }

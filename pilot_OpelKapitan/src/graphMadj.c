@@ -87,7 +87,6 @@ static boolean competitorIsClosestToFinish ( GRAPH* graph, POSITION pilot, POSIT
     getClosestFinishLine ( graph, &closest );
     lengthClosest = length ( pilot, closest );
     lengthCompetitor = length ( pilot, competitor );
-    DEBUG_INT ( ">Debug longueur competitor : ", lengthCompetitor );
     return ( lengthClosest > lengthCompetitor );
 }
 

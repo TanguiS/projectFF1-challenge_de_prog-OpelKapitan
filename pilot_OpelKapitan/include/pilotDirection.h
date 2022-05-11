@@ -26,7 +26,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "pilotManagement.h"
+#include "util.h"
 /* #include "dijkstraMatrix.h"
 #include "dijkstraAlgo.h" */
 #include "pathList.h"
@@ -35,7 +37,8 @@
 #include "debugMode.h"
 #endif
 
-#define NUMBER_DIRECTION 9
+#define NUMBER_DIRECTION 8
+#define NUMBER_PEDAL 2
 
 typedef enum {
     right, 
@@ -46,34 +49,48 @@ typedef enum {
     boostRight,
     boostLeft,
     boostUp,
-    boostDown,
+    boostDown
 
-    straight
+    /* straight */
 } direction;
 
-typedef void directionFct ( short*, short* );
+typedef enum {
+    slower,
+    faster
+} pedal;
 
-void goRight ( short* xAcc, short* yAcc ); 
+typedef void directionFct ( ACCELERATION* action );
 
-void goLeft ( short* xAcc, short* yAcc );
+void goRight ( ACCELERATION* action ); 
 
-void goUp ( short* xAcc, short* yAcc );
+void goLeft ( ACCELERATION* action );
 
-void goDown ( short* xAcc, short* yAcc );
+void goUp ( ACCELERATION* action );
 
-void goStraight ( short* xAcc, short* yAcc );
+void goDown ( ACCELERATION* action );
 
-void goBoostRight ( short* xAcc, short* yAcc );
+void goBoostRight ( ACCELERATION* action );
 
-void goBoostLeft ( short* xAcc, short* yAcc );
+void goBoostLeft ( ACCELERATION* action );
 
-void goBoostUp ( short* xAcc, short* yAcc );
+void goBoostUp ( ACCELERATION* action );
 
-void goBoostDown ( short* xAcc, short* yAcc );
+void goBoostDown ( ACCELERATION* action );
 
-void slowDown ( PILOT* pilot, short* xAcc, short* yAcc );
+void goStraight ( ACCELERATION* action );
 
-void choiceDirection ( direction choice, short* xAcc, short* yAcc );
+void slowDown ( SPEED speedPilot, ACCELERATION* action );
+
+void accelerate ( SPEED speedPilot, ACCELERATION* action );
+
+void choiceDirection ( direction choice, ACCELERATION* action );
+
+
+
+PATH_LIST nextActionBasic ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
+
+PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* count );
+
 
 
 #endif

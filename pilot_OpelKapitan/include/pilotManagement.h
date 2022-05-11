@@ -29,6 +29,7 @@
 #include <math.h>
 #include "util.h"
 #include "readMap.h"
+#include "pathList.h"
 
 #ifndef DEBUG
 #include "debugMode.h"

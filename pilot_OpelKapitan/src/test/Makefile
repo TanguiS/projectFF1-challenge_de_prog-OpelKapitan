@@ -11,9 +11,11 @@ LDFLAGS = -lm
 
 install: $(BIN_PATH)/dijkstra.out
 matrix: $(BIN_PATH)/matrix.out
+dir: $(BIN_PATH)/dir.out
 
-OBJS = $(OBJ_PATH)/main_dijstra.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/lifo.o
+OBJS = $(OBJ_PATH)/main_dijstra.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o
 OBJS_MATRIX = $(OBJ_PATH)/main_matrix.o $(OBJ_PATH)/matrix.o
+OBJS_DIR = $(OBJ_PATH)/main_direction.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/pathList.o
 
 try: install
 	$(install)
@@ -28,13 +30,16 @@ $(OBJ_PATH)/graphMadj.o: $(SRC_PATH)/graphMadj.c $(INC_PATH)/graphMadj.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 $(OBJ_PATH)/matrix.o: $(SRC_PATH)/matrix.c $(INC_PATH)/matrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-$(OBJ_PATH)/lifo.o: $(SRC_PATH)/lifo.c $(INC_PATH)/lifo.h
+$(OBJ_PATH)/pathList.o: $(SRC_PATH)/pathList.c $(INC_PATH)/pathList.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+$(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)/pilotDirection.c $(INC_PATH)/pilotDirection.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 
 $(OBJ_PATH)/main_matrix.o: ./main_matrix.c $(INC_PATH)/matrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-$(OBJ_PATH)/matrix.o: ../matrix.c $(INC_PATH)/matrix.h
+
+$(OBJ_PATH)/main_direction.o: ./main_direction.c 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 
@@ -43,6 +48,9 @@ $(BIN_PATH)/dijkstra.out: $(OBJS)
 
 $(BIN_PATH)/matrix.out: $(OBJS_MATRIX)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/matrix.out $(LDFLAGS)
+
+$(BIN_PATH)/dir.out: $(OBJS_DIR)
+	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/dir.out $(LDFLAGS)
 
 clean: $(OBJ_PATH) #Détruire les fichiers temporaires
 	rm $</*.o

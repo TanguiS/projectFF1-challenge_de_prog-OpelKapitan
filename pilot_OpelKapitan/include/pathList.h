@@ -92,6 +92,10 @@ PATH_LIST resetCurrentPathList ( PATH_LIST list );
 
 PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result );
 
+boolean currentEqualsHead ( PATH_LIST list );
+
+path_list_element* getCurrentPathList ( PATH_LIST list );
+
 /**
  * @brief Destroy a PathList object
  * 
