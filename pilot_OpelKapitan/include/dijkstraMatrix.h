@@ -34,10 +34,15 @@
 #include <stdlib.h>
 
 
+typedef enum {white,
+  gray,
+  black
+  } dijBoolean;  
+
 typedef struct _elementDijkstra {
     coord predecessor; 
     short pathLength;
-    boolean flag;
+    dijBoolean flag;
 }elementdij;
 
 typedef struct _dijkstraMatrix {

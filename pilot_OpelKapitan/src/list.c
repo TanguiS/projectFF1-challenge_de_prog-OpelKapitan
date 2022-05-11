@@ -58,7 +58,7 @@ static boolean destroyCell ( LIST_CELL cell )
 }
 
 boolean compareElement(listElement* element1, listElement* element2) {
-    if (element1[0] == element2[0] && element1[1] == element2[1]) {
+    if (element1[0][0] == element2[0][0] && element1[0][1] == element2[0][1]) {
         return true;
     }
     return false;
@@ -91,7 +91,7 @@ LIST addElementList ( LIST list, listElement x )
         return list; 
     }
 
-    newCell->followingCell = list.tail;
+    list.tail->followingCell = newCell;
     list.tail = newCell;
     return list; 
 }
@@ -182,19 +182,24 @@ boolean getNextElementList ( LIST list,  listElement* result, listElement* refEl
     current = list.head;
     while (!compareElement(refElement, &(current->contents)) && current!= NULL) {
         current = current->followingCell;
-    } if (current == NULL) {
+    }
+    current = current->followingCell;
+    if (current == NULL) {
         return false;
     }
     result[0][0] = current->contents[0]; 
     result[0][1] = current->contents[1];
+    if (current == list.tail) {
+        return false;
+    }
     return true;
 }
 
 #ifndef DEBUG
-
 void displaylist (LIST list) {
     coord sommet;
     boolean i;
+
     printf("\n\nLa liste\n");
     if (!isEmptyList(list)) {
         i = getElementList(list,&sommet, 0);
@@ -205,19 +210,12 @@ void displaylist (LIST list) {
         i = getNextElementList(list, &sommet, &sommet);
         printf("%d  %d\n",sommet[0], sommet[1]);
     }
+
     printf("\nles remove\n");
-    while ( isEmptyList(list))
+    while ( !isEmptyList(list))
     {
         list = removeElementList(list, &sommet);
         printf("%d  %d\n",sommet[0], sommet[1]);
     }
-    
-    
 }
-
-
-
-
-
-
 #endif

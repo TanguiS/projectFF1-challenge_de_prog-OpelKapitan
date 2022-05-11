@@ -12,7 +12,7 @@ LDFLAGS = -lm
 install: $(BIN_PATH)/dijkstra.out
 matrix: $(BIN_PATH)/matrix.out
 
-OBJS = $(OBJ_PATH)/main_dijstra.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/lifo.o
+OBJS = $(OBJ_PATH)/main_dijstra.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/lifo.o $(OBJ_PATH)/list.o
 OBJS_MATRIX = $(OBJ_PATH)/main_matrix.o $(OBJ_PATH)/matrix.o
 
 try: install
@@ -29,6 +29,9 @@ $(OBJ_PATH)/graphMadj.o: $(SRC_PATH)/graphMadj.c $(INC_PATH)/graphMadj.h
 $(OBJ_PATH)/matrix.o: $(SRC_PATH)/matrix.c $(INC_PATH)/matrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 $(OBJ_PATH)/lifo.o: $(SRC_PATH)/lifo.c $(INC_PATH)/lifo.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH)/list.o: $(SRC_PATH)/list.c $(INC_PATH)/list.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 
