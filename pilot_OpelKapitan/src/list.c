@@ -175,7 +175,7 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
 boolean getNextElementList ( LIST list,  listElement* result, listElement* refElement) {
     LIST_CELL current;
 
-    if (isEmptyList(list)) {
+    if (isEmptyList(list) || list.head == list.tail) {
         return false;
     }
 

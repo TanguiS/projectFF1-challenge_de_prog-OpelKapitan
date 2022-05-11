@@ -116,10 +116,11 @@ void addSuccessorListe(LIST* list, coord* succ, coord sommet,  short sizeSucc, d
             updateDistance(dijkstra, graph, sommet, succ[j]);
             *(list) = addElementList(*(list), succ[j]);
             dijkstra->matrix[succ[j][0]][succ[j][1]].flag = gray;
-            printf("\n\n%d   %d" ,succ[j][0], succ[j][1]);
+            displayDijkstraMatrix(dijkstra, succ[j][0], succ[j][1]);
         }
         
     }
+    
 
 }
 
@@ -146,13 +147,15 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
         for (i=1; i<sizeSucc; i++) {
             if ( dijkstra->matrix[succ[i][0]][succ[i][1]].flag == white ) {
                 updateDistance(dijkstra, graph, sommet, succ[i]);
-                list = addElementList(list, sommet);
+                list = addElementList(list, succ[i]);
                 dijkstra->matrix[succ[i][0]][succ[i][1]].flag = gray;
+                displayDijkstraMatrix(dijkstra, sommet[0], sommet[1]);
             } 
             /*updateDistance(dijkstra, graph, sommet, succ[i]);*/
         }
-        findMin(dijkstra, &sommet, list);
         list = removeElementList(list, &sommet);
+        findMin(dijkstra, &sommet, list);
+        
         free ( succ );
     }
     destroyList(list);
