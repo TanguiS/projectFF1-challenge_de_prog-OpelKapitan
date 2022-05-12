@@ -30,6 +30,7 @@
   "files.associations": {
     "util.h": "c",
     "dijkstraalgo.h": "c",
-    "lifo.h": "c"
+    "lifo.h": "c",
+    "graphmadj.h": "c"
   }
 }
