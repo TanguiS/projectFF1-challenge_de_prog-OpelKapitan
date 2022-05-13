@@ -24,6 +24,7 @@
 #include "pilotDirection.h"
 #include "pathList.h"
 
+#define SIZE 14
 
 int main ( void )
 {
@@ -33,49 +34,50 @@ int main ( void )
     SPEED speed;
     ACCELERATION acc;
     int i;
+    int trash;
+    POSITION tmp;
+/*     
     int x[35] = {0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 14, 13, 12, 12, 12, 12, 12, 12};
     int y[35] = {4, 3, 2, 1, 0, 0, 0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 5,  5,  5,  5,  5,  5,  5,  4,  3,  2,  1,  0,  0,  0,  1,  2,  3,  4,  5};
+ */
 
-    for ( i = 0; i < 35; i++ ) {
-        value.X = x[34-i];
-        value.Y = y[34-i];
+    int x[SIZE] = {1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7};
+    int y[SIZE] = {0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7};
+
+
+    for ( i = 0; i < SIZE; i++ ) {
+        value.X = x[SIZE - 1 -i];
+        value.Y = y[SIZE - 1 -i] + 5;
         list = addHeadElementPathList ( list, value );
     }
+    list = resetCurrentPathList ( list );
 
     init.X = 0;
     init.Y = 5;
     speed.X = 0;
     speed.Y = 0;
 
-/*     while ( value.X != 8 && value.Y != 5 ) {
-        if ( value.X % 8 == 0 ) {
-            value.Y--;
-        }
-        if ( value.Y == 1 && value.X % 8 == 0 ) { 
-            value.Y--;
-            value.X++;
-        }
-        if ( value.Y % 10 == 0 ) {
-            value.X++;
-        }
-        if ( value.Y == 9 && value.X % 3 == 0 ) {
-            value.X++;
-            value.Y++;
-        }
-        if ( value.X % 4 == 0 && value.X % 8 != 0 ) {
-            value.Y++;
-        }
-    } */
 
-    while ( !isEmptyPathList ( list ) ) {
+/*     while ( !isEmptyPathList ( list ) ) {
         list = nextActionBasic ( list, init, speed, &acc );
         speed.X += acc.X;
         speed.Y += acc.Y;
         init.X += speed.X;
         init.Y += speed.Y;
         printf ( "[%d, %d]\n", init.X, init.Y );
-    }
+    } */
 
+
+    while ( !isEmptyPathList ( list ) ) {
+        list = nextActionLigne ( list, init, speed, &acc, &trash );
+        speed.X += acc.X;
+        speed.Y += acc.Y;
+        init.X += speed.X;
+        init.Y += speed.Y;
+        printf ( "acceleration : [%d, %d]\n", acc.X, acc.Y );
+        printf ( "speed        : [%d, %d]\n", speed.X, speed.Y );
+        printf ( "Position     : [%d, %d]\n", init.X, init.Y );
+    }
     
 
 

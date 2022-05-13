@@ -79,9 +79,9 @@ void goBoostDown ( ACCELERATION* action );
 
 void goStraight ( ACCELERATION* action );
 
-void slowDown ( SPEED speedPilot, ACCELERATION* action );
+void slowDown ( POSITION goalPosition, SPEED speed, ACCELERATION* action );
 
-void accelerate ( SPEED speedPilot, ACCELERATION* action );
+void accelerate ( POSITION goalPosition, SPEED speed, ACCELERATION* action );
 
 void choiceDirection ( direction choice, ACCELERATION* action );
 
@@ -89,7 +89,9 @@ void choiceDirection ( direction choice, ACCELERATION* action );
 
 PATH_LIST nextActionBasic ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
 
-PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* count );
+PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* midLength );
+
+PATH_LIST nextAction2 ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction );
 
 
 

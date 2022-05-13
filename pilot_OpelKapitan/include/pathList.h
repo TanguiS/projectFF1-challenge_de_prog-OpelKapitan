@@ -88,13 +88,46 @@ PATH_LIST addHeadElementPathList ( PATH_LIST list, path_list_element value );
  */
 PATH_LIST removeHeadElementPathList ( PATH_LIST list, path_list_element* result );
 
+/**
+ * @brief reset
+ * 
+ * @param list 
+ * @return PATH_LIST 
+ */
 PATH_LIST resetCurrentPathList ( PATH_LIST list );
 
+/**
+ * @brief next element
+ * 
+ * @param list 
+ * @param result 
+ * @return PATH_LIST 
+ */
 PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result );
 
+/**
+ * @brief if current equal head
+ * 
+ * @param list 
+ * @return boolean 
+ */
 boolean currentEqualsHead ( PATH_LIST list );
 
-path_list_element* getCurrentPathList ( PATH_LIST list );
+/**
+ * @brief Get the Current Path List object
+ * 
+ * @param list 
+ * @return path_list_element* 
+ */
+path_list_element getCurrentPathList ( PATH_LIST list );
+
+PATH_LIST moveCurrentPathList ( PATH_LIST list );
+
+path_list_element examineHeadPathList ( PATH_LIST list );
+
+boolean nextCurrentEqualsHead ( PATH_LIST list );
+
+path_list_element getNextCurrentPathList ( PATH_LIST list );
 
 /**
  * @brief Destroy a PathList object

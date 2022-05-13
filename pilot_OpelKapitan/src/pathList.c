@@ -116,8 +116,18 @@ PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result )
         result = &(list.head->contents);
         return list;
     } */
-    result = &(list.current->followingCell->contents);
+    /* result = &(list.current->followingCell->contents); */
+    if ( list.current == NULL ) {
+        result->X = -1;
+    }
+    result->X = list.current->followingCell->contents.X;
+    result->Y = list.current->followingCell->contents.Y;
     return list;
+}
+
+path_list_element getNextCurrentPathList ( PATH_LIST list )
+{
+    return list.current->followingCell->contents;
 }
 
 boolean currentEqualsHead ( PATH_LIST list )
@@ -125,9 +135,25 @@ boolean currentEqualsHead ( PATH_LIST list )
     return list.current == list.head;
 }
 
-path_list_element* getCurrentPathList ( PATH_LIST list )
+boolean nextCurrentEqualsHead ( PATH_LIST list )
 {
-    return &(list.current->contents);
+    return list.current->followingCell == list.head;
+}
+
+path_list_element examineHeadPathList ( PATH_LIST list )
+{
+    return list.head->contents;
+}
+
+PATH_LIST moveCurrentPathList ( PATH_LIST list )
+{
+    list.current = list.current->followingCell;
+    return list;
+}
+
+path_list_element getCurrentPathList ( PATH_LIST list )
+{
+    return list.current->contents;
 }
 
 void destroyPathList ( PATH_LIST list )
