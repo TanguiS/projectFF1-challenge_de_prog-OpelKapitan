@@ -79,5 +79,54 @@ Affichage coord ligne d'arrivée :
 [27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
 >Coord le plus proche de notre voiture :   
 [27,7]
-===> temps exec = 0.001386
+===> temps exec = 0.003956
 === ROUND 2
+>Debug longueur competitor :  538
+>Debug longueur competitor :  585
+>Debug longueur competitor :  533
+>Debug longueur competitor :  580
+>Debug longueur competitor :  530
+>Debug longueur competitor :  577
+>Debug longueur competitor :  529
+>Debug longueur competitor :  576
+>Debug longueur competitor :  530
+>Debug longueur competitor :  577
+>Debug longueur competitor :  533
+>Debug longueur competitor :  580
+>Debug longueur competitor :  538
+>Debug longueur competitor :  585
+====> update action :  garder sa vitesse actuelle
+> nombre de Boost restant :  5
+> fuelConsumption :  speed : (1 0), acc : (0 0)
+> Consommation , norme1:  0
+> Consommation , squareRoot:  1
+> Consommation :  1
+> gas left :  32
+
+Affichage du graph :   
+width graph :  32
+height graph :  16
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00111111111111111111111111111000
+00101111111111111111111111111000
+00111111111111111111111111111000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+00000000000000000000000000000000
+
+Affichage coord ligne d'arrivée :   
+>Taille ligne :  14
+[27,4][28,4][27,5][28,5][27,6][28,6][27,7][28,7][27,8][28,8][27,9][28,9][27,10][28,10]
+>Coord le plus proche de notre voiture :   
+[27,7]
+===> temps exec = 0.003827
+=== ROUND 3

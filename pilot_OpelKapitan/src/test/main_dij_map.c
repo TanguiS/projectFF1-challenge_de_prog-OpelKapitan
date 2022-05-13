@@ -27,7 +27,7 @@ void main(int argc, char* argv[]) {
     FILE* map;
     int i;
     int j;
-    int z =0;
+    int countFinish =0;
     char path[] = "../../../tracks/";
     char* fileName;
     int heigth;
