@@ -23,13 +23,13 @@
 
 
 
-void mixeCoord (coord* reference, coord* result ) {
-    result[0][0] = reference[0][0];
-    result[0][1] = reference[0][1];   
+void mixePOSITION (POSITION* reference, POSITION* result ) {
+    result->X = reference->X;
+    result->Y = reference->Y;   
 }
 
-boolean sameCoord(coord sommet1, coord sommet2) {
-    if (sommet1[0] == sommet2[0] && sommet1[1] == sommet2[1]) {
+boolean samePOSITION(POSITION sommet1, POSITION sommet2) {
+    if (sommet1.X == sommet2.X && sommet1.Y == sommet2.Y) {
         return true;
     }
     return false;
@@ -53,66 +53,66 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
 
 
-void findMin(dijkstraMatrix* dijkstra, coord* sommet, LIST list ) {
+void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
     short i;
-    coord minTemp;
+    POSITION minTemp;
 
     i = getElementList(list, sommet, 0);
-    mixeCoord(sommet, &minTemp);
+    mixePOSITION(sommet, &minTemp);
     while (i) {
         i = getNextElementList(list, &minTemp, &minTemp);
-        if (getPathLength(dijkstra, sommet[0][0], sommet[0][1]) > getPathLength(dijkstra, minTemp[0], minTemp[1])) {
-            mixeCoord(&minTemp, sommet);
+        if (getPathLength(dijkstra, sommet->X, sommet->Y) > getPathLength(dijkstra, minTemp.X, minTemp.Y)) {
+            mixePOSITION(&minTemp, sommet);
         }
     }
-    dijkstra->matrix[sommet[0][0]][sommet[0][1]].flag = black;
-    displayDijkstraMatrix ( dijkstra, sommet[0][0], sommet[0][1] );
+    dijkstra->matrix[sommet->X][sommet->Y].flag = black;
+    displayDijkstraMatrix ( dijkstra, sommet->X, sommet->Y );
 }
 
-void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2) {
+void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2) {
     short d1;
     short d2;
     short arcValue;
 
-    d1 = getPathLength(dijkstra, sommet1[0], sommet1[1]);
-    d2 = getPathLength(dijkstra, sommet2[0], sommet2[1]);
-    arcValue = (short)getElementGraph(graph, sommet2[0], sommet2[1]);
+    d1 = getPathLength(dijkstra, sommet1.X, sommet1.Y);
+    d2 = getPathLength(dijkstra, sommet2.X, sommet2.Y);
+    arcValue = (short)getElementGraph(graph, sommet2);
 
     if ( d2 > (d1 + arcValue) ) {
-        setPathLength(dijkstra, sommet2[0], sommet2[1], (d1 + arcValue));
-        setPredecessor(dijkstra, sommet2[0], sommet2[1], sommet1);
-        displayDijkstraMatrix ( dijkstra, sommet2[0], sommet2[1] );
+        setPathLength(dijkstra, sommet2.X, sommet2.Y, (d1 + arcValue));
+        setPredecessor(dijkstra, sommet2.X, sommet2.Y, sommet1);
+        displayDijkstraMatrix ( dijkstra, sommet2.X, sommet2.Y );
         return;
     }
-    displayDijkstraMatrix ( dijkstra, sommet1[0], sommet1[1] );
+    displayDijkstraMatrix ( dijkstra, sommet1.X, sommet1.Y );
 
 }
 
 
 
-void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) {
+void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSommet) {
     int i;
-    coord sommet;
-    coord* succ;
+    POSITION sommet;
+    POSITION* succ;
     short sizeSucc;
     LIST list;
     
     list = createList();
-    initDijkstraLenght(dijkstra, firstSommet[0], firstSommet[1]);
-    sommet[0] = firstSommet[0];
-    sommet[1] = firstSommet[1];
+    initDijkstraLenght(dijkstra, firstSommet.X, firstSommet.Y);
+    sommet.X = firstSommet.X;
+    sommet.Y = firstSommet.Y;
     list = addElementList(list, sommet);
     
 
     while (!isEmptyList(list)) {
         findMin(dijkstra, &sommet, list);
-        succ = getSuccessorGraph(graph, sommet[0], sommet[1]);
-        sizeSucc = succ[0][0];
+        succ = getSuccessorGraph(graph, sommet);
+        sizeSucc = succ[0].X;
         for (i=1; i<sizeSucc; i++) {
-            if ( dijkstra->matrix[succ[i][0]][succ[i][1]].flag == white ) {
+            if ( dijkstra->matrix[succ[i].X][succ[i].Y].flag == white ) {
                 list = addElementList(list, succ[i]);
-                dijkstra->matrix[succ[i][0]][succ[i][1]].flag = gray;
-                displayDijkstraMatrix(dijkstra, sommet[0], sommet[1]);
+                dijkstra->matrix[succ[i].X][succ[i].Y].flag = gray;
+                displayDijkstraMatrix(dijkstra, sommet.X, sommet.Y);
             } 
             updateDistance(dijkstra, graph, sommet, succ[i]);
         }
@@ -122,24 +122,24 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet) 
     destroyList(list);
 } 
 
-LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly) {
-    coord sommet;
-    LIFO stack;
-    coord firstSommet;
-    coord finalSommet;
+PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly) {
+    POSITION sommet;
+    PATH_LIST stack;
+    POSITION firstSommet;
+    POSITION finalSommet;
 
-    firstSommet[0] = firstx;
-    firstSommet[1] = firsty;
-    finalSommet[0] = finalx;
-    finalSommet[1] = finaly;
+    firstSommet.X = firstx;
+    firstSommet.Y = firsty;
+    finalSommet.X = finalx;
+    finalSommet.Y = finaly;
     allPathDijkstra ( dijkstra, graph, firstSommet );
     displayDijkstraMatrix ( dijkstra, -1, -1 );
-    stack = createLifo();
-    mixeCoord(&finalSommet, &sommet);
-    while( !sameCoord(sommet, firstSommet) ) {
-        stack = addElementLifo(stack, sommet);
-        getPredecessor(dijkstra, sommet[0], sommet[1], &sommet);
+    stack = createPathList();
+    mixePOSITION(&finalSommet, &sommet);
+    while( !samePOSITION(sommet, firstSommet) ) {
+        stack = addHeadElementPathList(stack, sommet);
+        getPredecessor(dijkstra, sommet.X, sommet.Y, &sommet);
     }
-    stack = addElementLifo(stack, firstSommet);
+    stack = addHeadElementPathList(stack, firstSommet);
     return stack;
 }

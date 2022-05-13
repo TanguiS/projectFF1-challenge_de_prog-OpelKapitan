@@ -11,7 +11,7 @@
 #include "../../include/dijkstraAlgo.h"
 #include "../../include/dijkstraMatrix.h"
 #include "../../include/graphMadj.h"
-#include "../../include/lifo.h"
+#include "../../include/pathList.h"
 #include "../../include/list.h"
 
 
@@ -56,8 +56,9 @@ void main(int argc, char* argv[]) {
         for ( j = 0; j < width; j++ ) {
             fscanf(map, "%c", &mapValue);
             if (mapValue == '=') {
-                graph.closestFinishLine[0] = j;
-                graph.closestFinishLine[1] = i;
+                graph.finishLineCoord[countFinish].X = j;
+                graph.finishLineCoord[countFinish].Y = i;
+                countFinish++;
             }
             graph.graph.matrix[j][i] = mapValue;
         }

@@ -89,9 +89,9 @@ void getCoordFinishLine ( GRAPH* graph, short index, POSITION* result );
  * @param result : The position of the closest finish line 
  */
 void getClosestFinishLine ( GRAPH* graph, POSITION* result );
-/* 
-coord* getSuccessorGraph ( GRAPH* graph, POSITION );
- */
+
+POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent);
+
 
 /**
  * @brief Get the Element Graph object

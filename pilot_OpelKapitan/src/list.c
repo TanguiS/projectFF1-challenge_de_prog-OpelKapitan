@@ -41,8 +41,8 @@ static LIST_CELL createCell ( listElement x)
     LIST_CELL newCell;
 
     newCell =  ( LIST_CELL ) malloc ( sizeof ( _list_cell ) );
-    newCell->contents[0] = x[0];
-    newCell->contents[1] = x[1];
+    newCell->contents.X = x.X;
+    newCell->contents.Y = x.Y;
     newCell->followingCell = NULL;
     return newCell;
 }
@@ -58,7 +58,7 @@ static boolean destroyCell ( LIST_CELL cell )
 }
 
 boolean compareElement(listElement* element1, listElement* element2) {
-    if (element1[0][0] == element2[0][0] && element1[0][1] == element2[0][1]) {
+    if (element1->X == element2->X && element1->Y == element2->Y) {
         return true;
     }
     return false;
@@ -96,7 +96,7 @@ LIST addElementList ( LIST list, listElement x )
     return list; 
 }
 
-LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoord)
+LIST removeElementListCoord ( LIST list, listElement* result , POSITION* removeCoord)
 {
     LIST_CELL previousHead;
     LIST_CELL current;
@@ -112,8 +112,8 @@ LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoor
     if (current == NULL) {
         return list; 
     }
-    result[0][0] = current->contents[0]; 
-    result[0][1] = current->contents[1];
+    result->X = current->contents.X; 
+    result->Y = current->contents.Y;
     if (current == list. head) {
         list.head = current->followingCell;
     } else if ( current == list. tail) {
@@ -134,8 +134,8 @@ LIST removeElementList ( LIST list,  listElement* result )
     if ( isEmptyList( list  ) ) {
         return list; 
     }
-    result[0][0] = list.head->contents[0]; 
-    result[0][1] = list.head->contents[1];
+    result->X = list.head->contents.X; 
+    result->Y = list.head->contents.Y;
     previousHead = list.head;
     list.head = list.head->followingCell;
     destroyCell ( previousHead );
@@ -145,7 +145,7 @@ LIST removeElementList ( LIST list,  listElement* result )
 
 void destroyList ( LIST list)
 {
-    coord trash;
+    POSITION trash;
     while ( !isEmptyList( list  ) ) {
         list = removeElementList ( list, &trash );
     }
@@ -167,8 +167,8 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
     } if (current == NULL) {
         return false;
     }
-    result[0][0] = current->contents[0]; 
-    result[0][1] = current->contents[1];
+    result->X = current->contents.X; 
+    result->Y = current->contents.Y;
     return true;
 }
 
@@ -187,8 +187,8 @@ boolean getNextElementList ( LIST list,  listElement* result, listElement* refEl
         return false;
     }
     current = current->followingCell;
-    result[0][0] = current->contents[0]; 
-    result[0][1] = current->contents[1];
+    result->X = current->contents.X; 
+    result->Y = current->contents.Y;
     if (current == list.tail) {
         return false;
     }
@@ -197,25 +197,25 @@ boolean getNextElementList ( LIST list,  listElement* result, listElement* refEl
 
 #ifndef DEBUG
 void displaylist (LIST list) {
-    coord sommet;
+    POSITION sommet;
     boolean i;
 
     printf("\n\nLa liste\n");
     if (!isEmptyList(list)) {
         i = getElementList(list,&sommet, 0);
     }
-    printf("%d  %d\n",sommet[0], sommet[1]);
+    printf("%d  %d\n",sommet.X, sommet.Y);
     while (i)
     {
         i = getNextElementList(list, &sommet, &sommet);
-        printf("%d  %d\n",sommet[0], sommet[1]);
+        printf("%d  %d\n",sommet.X, sommet.Y);
     }
 
     printf("\nles remove\n");
     while ( !isEmptyList(list))
     {
         list = removeElementList(list, &sommet);
-        printf("%d  %d\n",sommet[0], sommet[1]);
+        printf("%d  %d\n",sommet.X, sommet.Y);
     }
 }
 #endif

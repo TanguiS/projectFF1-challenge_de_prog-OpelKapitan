@@ -214,8 +214,9 @@ static boolean areNotEqualsZero ( short x, short y )
     }
     return false;
 }
-/* 
-POSITION* getSuccessorGraph ( GRAPH* graph, short x, short y )
+
+
+POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent )
 {
     POSITION* successor;
     int count = 1;
@@ -224,19 +225,19 @@ POSITION* getSuccessorGraph ( GRAPH* graph, short x, short y )
     successor = (POSITION*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( POSITION ) );
     for ( i = 0; i < 3; i++ ) {
         for ( j = 0; j < 3; j++ ) {
-            if ( isInGraph ( graph, x + tab[j], y + tab[i] ) && areNotEqualsZero ( tab[j], tab[i] ) ) {
-                if ( getElementGraph ( graph, x + tab[j], y + tab[i] ) != wallGraph ) {
-                    successor[count][0] = x + tab[j];
-                    successor[count][1] = y + tab[i];
+            if ( isInGraph ( graph, parent.X + tab[j], parent.Y + tab[i] ) ) {
+                    successor[count].X = parent.X + tab[j];
+                    successor[count].Y = parent.Y + tab[i];
+                if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
                     count++;                    
                 }
             }
         }
     }
-    successor[0][0] = count;
+    successor[0].X = count;
     return successor;
 }
- */
+ 
 
 
 

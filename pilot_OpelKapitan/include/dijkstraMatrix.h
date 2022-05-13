@@ -40,7 +40,7 @@ typedef enum {white,
   } dijBoolean;  
 
 typedef struct _elementDijkstra {
-    coord predecessor; 
+    POSITION predecessor; 
     short pathLength;
     dijBoolean flag;
 }elementdij;
@@ -66,9 +66,9 @@ void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij v
 
 void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLength);
 
-void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord newPredecessor);
+void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION newPredecessor);
 
-void getPredecessor(dijkstraMatrix* dijkstra, short x, short y, coord* result);
+void getPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION* result);
 
 dijkstraMatrix createDijkstraMatrix(short width, short heigth);
 
@@ -77,7 +77,7 @@ void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 
 #ifndef DEBUG
 void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y );
-void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, coord* path);
+void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* path);
 #endif
 
 

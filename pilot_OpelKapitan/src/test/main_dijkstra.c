@@ -24,11 +24,11 @@
 #include "../../include/dijkstraAlgo.h"
 #include "../../include/dijkstraMatrix.h"
 #include "../../include/graphMadj.h"
-#include "../../include/lifo.h"
+#include "../../include/pathList.h"
 #include "../../include/list.h"
 
-#define X 10
-#define Y 12
+#define X_GIANT 10
+#define Y_GIANT 12
 #define X_SMALL 3
 #define Y_SMALL 4
 #define X_MID 7
@@ -51,7 +51,7 @@ const short midGraph[X_MID][Y_MID] =
                 { 0, 0, 0, 0, 0, 1, 1, 1 }
             };
 
-const short graphNSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
+const short graphNSand[X_GIANT][Y_GIANT] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
                                  { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
                                  { 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0 },
                                  { 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0 },
@@ -63,7 +63,7 @@ const short graphNSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0 }
                                };
 
-const short graphWSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
+const short graphWSand[X_GIANT][Y_GIANT] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
                                  { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0 },
                                  { 0, 0, 0, 1, 0, 1, 1, 2, 2, 2, 0, 0 },
                                  { 0, 0, 1, 1, 0, 0, 1, 1, 1, 2, 1, 0 },
@@ -75,16 +75,16 @@ const short graphWSand[X][Y] = { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                                  { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0 }
                                };
 
-const short coordStart[SIZE_COORD] = { 2, 7 };
-const short coordEnd[SIZE_COORD] = { 6, 7 };
-const short coordStartSmall[SIZE_COORD] = {0, 2};
-const short coordEndSmall[SIZE_COORD] = {3, 1};
-const short coordStartMid[SIZE_COORD] = {1, 2};
-const short coordEndMid[SIZE_COORD] = {1, 5};
+const short coordStart[] = { 2, 7 };
+const short coordEnd[] = { 6, 7 };
+const short coordStartSmall[] = {0, 2};
+const short coordEndSmall[] = {3, 1};
+const short coordStartMid[] = {1, 2};
+const short coordEndMid[] = {1, 5};
 
 int main ( void )
 {
-    coord path[1000];
+    POSITION path[1000];
     int count = 0;
 /*     int i, j;
     GRAPH graph = createGraph ( Y_MID, X_MID );
@@ -149,14 +149,15 @@ int main ( void )
      */
 
     int i, j;
-    GRAPH graph = createGraph ( Y, X );
-    dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
+    GRAPH graph = createGraph ( Y_GIANT, X_GIANT );
+    dijkstraMatrix dij = createDijkstraMatrix ( Y_GIANT, X_GIANT     );
     PATH_LIST stack;
-    lifoElement result;
+    /*lifoElement result;*/
     LIST list;
-    coord sommetTest;
+    POSITION sommetTest;
     list = createList();
     
+    /*
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
     printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
 
@@ -182,21 +183,21 @@ int main ( void )
         count++;
     }
     printf ( "\n" );
-    displayDijkstraMatrixPath ( &dij, count, path );
-    /*
+    displayDijkstraMatrixPath ( &dij, count, path );*/
+    
     printf("\n\ntests de la liste\n");
-    sommetTest[0] = 2;
-    sommetTest[1] = 3;
+    sommetTest.X = 2;
+    sommetTest.Y = 3;
     list = addElementList(list, sommetTest);
-    sommetTest[0] = 4;
-    sommetTest[1] = 6;
+    sommetTest.X = 4;
+    sommetTest.Y = 6;
     list = addElementList(list, sommetTest);
-    sommetTest[0] = 8;
-    sommetTest[1] = 9;
+    sommetTest.X = 8;
+    sommetTest.Y = 9;
     list = addElementList(list, sommetTest);
 
     displaylist(list);
-    */
+    
 
 
     destroyDijkstraMatrix ( dij );

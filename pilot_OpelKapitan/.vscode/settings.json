@@ -32,7 +32,8 @@
     "dijkstraalgo.h": "c",
     "main_matrix.C": "cpp",
     "stdio.h": "c",
-    "dijkstramatrix.h": "c"
+    "dijkstramatrix.h": "c",
+    "graphmadj.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }
