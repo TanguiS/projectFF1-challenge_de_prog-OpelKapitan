@@ -333,8 +333,8 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     if ( round == 1 ) {
         list = createPathList();
         for ( i = 0; i < 27; i++ ) {
-            value.X = x[26-i] + 4;
-            value.Y = y[26-i] + 4;
+            value.X = x[26-i] + 33;
+            value.Y = y[26-i] + 19-5;
             list = addHeadElementPathList ( list, value );
         }
     }
@@ -364,7 +364,9 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 1ere etape : choisir une action */
 
 
-    list = nextActionBasic ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction );
+ /*    list = nextActionBasic ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
+
+    list = nextAction2 ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction );
 
 
 

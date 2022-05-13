@@ -24,7 +24,7 @@
 #include "pilotDirection.h"
 #include "pathList.h"
 
-#define SIZE 14
+#define SIZE 31
 
 int main ( void )
 {
@@ -41,8 +41,8 @@ int main ( void )
     int y[35] = {4, 3, 2, 1, 0, 0, 0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 5,  5,  5,  5,  5,  5,  5,  4,  3,  2,  1,  0,  0,  0,  1,  2,  3,  4,  5};
  */
 
-    int x[SIZE] = {1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7};
-    int y[SIZE] = {0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7};
+    int x[SIZE] = {1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    int y[SIZE] = {0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9,  9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 18, 18};
 
 
     for ( i = 0; i < SIZE; i++ ) {
@@ -69,7 +69,8 @@ int main ( void )
 
 
     while ( !isEmptyPathList ( list ) ) {
-        list = nextActionLigne ( list, init, speed, &acc, &trash );
+        /* list = nextActionLigne ( list, init, speed, &acc, &trash ); */
+        list = nextAction2 ( list, init, speed, &acc );
         speed.X += acc.X;
         speed.Y += acc.Y;
         init.X += speed.X;

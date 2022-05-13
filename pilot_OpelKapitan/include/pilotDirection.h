@@ -61,6 +61,8 @@ typedef enum {
 
 typedef void directionFct ( ACCELERATION* action );
 
+typedef PATH_LIST actionDeterminator ( PATH_LIST , POSITION , SPEED , ACCELERATION* );
+
 void goRight ( ACCELERATION* action ); 
 
 void goLeft ( ACCELERATION* action );
@@ -86,6 +88,8 @@ void accelerate ( POSITION goalPosition, SPEED speed, ACCELERATION* action );
 void choiceDirection ( direction choice, ACCELERATION* action );
 
 
+
+boolean nextActionRedirector ( PATH_LIST* path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, boolean* flag );
 
 
 

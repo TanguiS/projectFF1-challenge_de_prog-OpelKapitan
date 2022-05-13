@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 13 11:55:03 2022
+# Make data base, printed on Fri May 13 15:23:00 2022
 
 # Variables
 
@@ -143,7 +143,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile', line 22)
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/matrixDij.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/list.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -169,7 +169,7 @@ VSCODE_CODE_CACHE_PATH = /home/tangui/.config/Code/CachedData/da15b6fd3ef856477b
 # environment
 LOGNAME = tangui
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -205,7 +205,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3ec512cd-7141-4dca-8bda-d53dda858b96.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0faf9775-5d2e-434d-8a24-e66e5daaee01.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -255,7 +255,6 @@ QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
 # environment
- 
 SNAP_COOKIE = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # environment
 LC_NUMERIC = fr_FR.UTF-8
@@ -296,7 +295,7 @@ LANG = C
 # environment
 VSCODE_PID = 1985
 # variable set hash-table stats:
-# Load=141/1024=14%, Rehash=0, Collisions=33/215=15%
+# Load=141/1024=14%, Rehash=0, Collisions=33/212=16%
 
 # Pattern-specific Variable Values
 
@@ -333,6 +332,7 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
+ 
 obj/pilotManagement.o: src/pilotManagement.c include/pilotManagement.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -415,7 +415,7 @@ obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-13 11:52:37.876892328
+#  Last modified 2022-05-13 15:22:33.38506971
 #  File has been updated.
 #  Successfully updated.
 
@@ -450,7 +450,7 @@ obj/pilotDirection.o: src/pilotDirection.c include/pilotDirection.h
 #  recipe to execute (from 'Makefile', line 54):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/matrixDij.o obj/dijkstraAlgo.o obj/pathList.o obj/list.o
+../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -560,13 +560,12 @@ obj/matrix.o: src/matrix.c include/matrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 install: ../drivers/OpelKapitan
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=40/1024=4%, Rehash=0, Collisions=0/85=0%
+# Load=40/1024=4%, Rehash=0, Collisions=0/82=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -576,9 +575,9 @@ install: ../drivers/OpelKapitan
 # strcache buffers: 1 (0) / strings = 49 / storage = 684 B / avg = 13 B
 # current buf: size = 8162 B / used = 684 B / count = 49 / avg = 13 B
 
-# strcache performance: lookups = 82 / hit rate = 40%
+# strcache performance: lookups = 79 / hit rate = 37%
 # hash-table stats:
-# Load=49/8192=1%, Rehash=0, Collisions=1/82=1%
-# Finished Make data base on Fri May 13 11:55:03 2022
+# Load=49/8192=1%, Rehash=0, Collisions=1/79=1%
+# Finished Make data base on Fri May 13 15:23:00 2022
 
  
