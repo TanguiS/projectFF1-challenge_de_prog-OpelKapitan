@@ -58,7 +58,7 @@ static boolean destroyCell ( LIST_CELL cell )
 }
 
 boolean compareElement(listElement* element1, listElement* element2) {
-    if (element1[0] == element2[0] && element1[1] == element2[1]) {
+    if (element1[0][0] == element2[0][0] && element1[0][1] == element2[0][1]) {
         return true;
     }
     return false;
@@ -91,7 +91,7 @@ LIST addElementList ( LIST list, listElement x )
         return list; 
     }
 
-    newCell->followingCell = list.tail;
+    list.tail->followingCell = newCell;
     list.tail = newCell;
     return list; 
 }
@@ -105,7 +105,7 @@ LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoor
         return list; 
     }
     current = list.head;
-    while (!compareElement(removeCoord, &(current->contents)) && current != NULL) {
+    while ( current != NULL && !compareElement(removeCoord, &(current->contents)) ) {
         previousHead = current;
         current = current->followingCell;
     }
@@ -175,26 +175,31 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
 boolean getNextElementList ( LIST list,  listElement* result, listElement* refElement) {
     LIST_CELL current;
 
-    if (isEmptyList(list)) {
+    if (isEmptyList(list) || list.head == list.tail) {
         return false;
     }
 
     current = list.head;
     while (!compareElement(refElement, &(current->contents)) && current!= NULL) {
         current = current->followingCell;
-    } if (current == NULL) {
+    }
+    if (current == NULL) {
         return false;
     }
+    current = current->followingCell;
     result[0][0] = current->contents[0]; 
     result[0][1] = current->contents[1];
+    if (current == list.tail) {
+        return false;
+    }
     return true;
 }
 
 #ifndef DEBUG
-
 void displaylist (LIST list) {
     coord sommet;
     boolean i;
+
     printf("\n\nLa liste\n");
     if (!isEmptyList(list)) {
         i = getElementList(list,&sommet, 0);
@@ -205,19 +210,12 @@ void displaylist (LIST list) {
         i = getNextElementList(list, &sommet, &sommet);
         printf("%d  %d\n",sommet[0], sommet[1]);
     }
+
     printf("\nles remove\n");
-    while ( isEmptyList(list))
+    while ( !isEmptyList(list))
     {
         list = removeElementList(list, &sommet);
         printf("%d  %d\n",sommet[0], sommet[1]);
     }
-    
-    
 }
-
-
-
-
-
-
 #endif

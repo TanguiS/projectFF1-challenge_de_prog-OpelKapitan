@@ -19,8 +19,8 @@
  * @date 22 janvier 2022
  */
 
-#ifndef __FILE_H__
-#define __FILE_H__
+#ifndef __LIST_H__
+#define __LIST_H__
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -50,7 +50,7 @@ typedef struct _list {
     LIST_CELL head;                      /**< the head of the list */
     LIST_CELL tail;                      /**< the tail of the list */
     /*int size;*/                             /**< the size of the list */
-} _lifo; 
+} _list; 
 /**
  * @brief Lifo object declaration 
  */
@@ -98,6 +98,7 @@ LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoor
  */
 LIST removeElementList ( LIST list, listElement* result );
 
+
 /**
  * @brief Destroy a Lifo Object
  * 
@@ -116,4 +117,4 @@ boolean getNextElementList ( LIST list, listElement* result, listElement* refEle
 void displaylist (LIST list);
 #endif
 
-#endif /* __FILE_H__ */
+#endif /* __LISTE_H__ */

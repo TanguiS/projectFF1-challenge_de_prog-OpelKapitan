@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 13 11:51:46 2022
+# Make data base, printed on Fri May 13 11:55:03 2022
 
 # Variables
 
@@ -255,6 +255,7 @@ QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
 # environment
+ 
 SNAP_COOKIE = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # environment
 LC_NUMERIC = fr_FR.UTF-8
@@ -282,7 +283,6 @@ CHROME_DESKTOP = code-url-handler.desktop
 WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
- 
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # default
@@ -415,7 +415,7 @@ obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-13 11:51:35.205869972
+#  Last modified 2022-05-13 11:52:37.876892328
 #  File has been updated.
 #  Successfully updated.
 
@@ -527,7 +527,6 @@ src/pilotDirection.c:
 
 # Not a target:
 ../drivers:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -561,6 +560,7 @@ obj/matrix.o: src/matrix.c include/matrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 install: ../drivers/OpelKapitan
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -579,6 +579,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 82 / hit rate = 40%
 # hash-table stats:
 # Load=49/8192=1%, Rehash=0, Collisions=1/82=1%
-# Finished Make data base on Fri May 13 11:51:46 2022
+# Finished Make data base on Fri May 13 11:55:03 2022
 
  

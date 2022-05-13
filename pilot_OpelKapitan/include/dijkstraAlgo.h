@@ -30,6 +30,8 @@
 #include "util.h"
 #include "dijkstraMatrix.h"
 #include "pathList.h"
+#include "list.h"
+
 
 void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
 
@@ -37,10 +39,12 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
 void mixeCoord (coord* reference, coord* result );
 
 
-void findMin(dijkstraMatrix* dijkstra, GRAPH* graph, short x, short y, coord* sommet, coord* succ );
+void findMin(dijkstraMatrix* dijkstra, coord* sommet, LIST list );
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2);
 
+
+void addSuccessorListe(LIST* list, coord* succ, coord sommet,  short sizeSucc, dijkstraMatrix* dijkstra, GRAPH* graph);
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet);
 

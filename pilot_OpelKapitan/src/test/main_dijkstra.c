@@ -154,13 +154,15 @@ int main ( void )
     PATH_LIST stack;
     lifoElement result;
     LIST list;
-
+    coord sommetTest;
+    list = createList();
+    
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
     printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
 
     for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
-            graph.graph.matrix[j][i] = (element)graphWSand[i][j];
+            graph.graph.matrix[j][i] = (element)graphNSand[i][j];
         }
     }
     graph.closestFinishLine[0] = coordEndSmall[0];
@@ -181,8 +183,20 @@ int main ( void )
     }
     printf ( "\n" );
     displayDijkstraMatrixPath ( &dij, count, path );
-
+    /*
     printf("\n\ntests de la liste\n");
+    sommetTest[0] = 2;
+    sommetTest[1] = 3;
+    list = addElementList(list, sommetTest);
+    sommetTest[0] = 4;
+    sommetTest[1] = 6;
+    list = addElementList(list, sommetTest);
+    sommetTest[0] = 8;
+    sommetTest[1] = 9;
+    list = addElementList(list, sommetTest);
+
+    displaylist(list);
+    */
 
 
     destroyDijkstraMatrix ( dij );
