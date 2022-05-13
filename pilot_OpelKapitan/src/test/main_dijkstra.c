@@ -152,12 +152,15 @@ int main ( void )
     GRAPH graph = createGraph ( Y_GIANT, X_GIANT );
     dijkstraMatrix dij = createDijkstraMatrix ( Y_GIANT, X_GIANT     );
     PATH_LIST stack;
-    /*lifoElement result;*/
+    path_list_element result;
     LIST list;
     POSITION sommetTest;
+    POSITION firstCoord;
     list = createList();
+    firstCoord.X = coordStart[0];
+    firstCoord.Y = coordStart[1];
     
-    /*
+    
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
     printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
 
@@ -166,25 +169,26 @@ int main ( void )
             graph.graph.matrix[j][i] = (element)graphNSand[i][j];
         }
     }
-    graph.closestFinishLine[0] = coordEndSmall[0];
-    graph.closestFinishLine[1] = coordEndSmall[1];
+    graph.finishLineCoord[0].X = coordEnd[0];
+    graph.finishLineCoord[0].Y = coordEnd[1];
     displayGraph ( &graph );
     displayDijkstraMatrix ( &dij, -1, -1 );
-    stack = givePath ( &dij, &graph, coordStart[0], coordStart[1], coordEnd[0], coordEnd[1] );
+    stack = givePath ( &dij, &graph, firstCoord);
 
     displayDijkstraMatrix ( &dij, -1, -1 );
     printf ( "\n\n" );
     
-    while ( !isEmpty ( stack ) ) {
-        stack = removeElementLifo ( stack, &result );
-        printf ( "[%d, %d] ", result[0], result[1] );
-        path[count][0] = result[0];
-        path[count][1] = result[1];
+    while ( !isEmptyPathList ( stack ) ) {
+        stack = removeHeadElementPathList ( stack, &result );
+        printf ( "[%d, %d] ", result.X, result.Y );
+        path[count].X = result.X;
+        path[count].Y = result.Y;
         count++;
     }
     printf ( "\n" );
-    displayDijkstraMatrixPath ( &dij, count, path );*/
+    displayDijkstraMatrixPath ( &dij, count, path );
     
+    /*
     printf("\n\ntests de la liste\n");
     sommetTest.X = 2;
     sommetTest.Y = 3;
@@ -197,7 +201,7 @@ int main ( void )
     list = addElementList(list, sommetTest);
 
     displaylist(list);
-    
+    */
 
 
     destroyDijkstraMatrix ( dij );

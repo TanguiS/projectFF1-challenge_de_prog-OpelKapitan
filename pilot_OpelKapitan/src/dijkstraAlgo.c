@@ -122,17 +122,32 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSomme
     destroyList(list);
 } 
 
-PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly) {
+PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
     POSITION sommet;
     PATH_LIST stack;
     POSITION firstSommet;
     POSITION finalSommet;
+    POSITION competitor;
+    int i;
+    int length;
+    int minLength;
 
-    firstSommet.X = firstx;
-    firstSommet.Y = firsty;
-    finalSommet.X = finalx;
-    finalSommet.Y = finaly;
+    firstSommet.X = first.X;
+    firstSommet.Y = first.Y;
     allPathDijkstra ( dijkstra, graph, firstSommet );
+    getCoordFinishLine ( graph, 0, &competitor );
+    minLength = getPathLength(dijkstra, competitor.X, competitor.Y);
+    graph->closestFinishLine.X = competitor.X;
+    graph->closestFinishLine.Y = competitor.Y;
+    for ( i = 1; i < getSizeFinishLine ( graph); i++ ) {
+        getCoordFinishLine ( graph, i, &competitor );
+        length = getPathLength(dijkstra, competitor.X, competitor.Y);
+        if ( length <minLength ) {
+            graph->closestFinishLine.X = competitor.X;
+            graph->closestFinishLine.Y = competitor.Y;
+        }
+    }
+    getClosestFinishLine(graph, &finalSommet);
     displayDijkstraMatrix ( dijkstra, -1, -1 );
     stack = createPathList();
     mixePOSITION(&finalSommet, &sommet);
