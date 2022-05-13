@@ -442,6 +442,7 @@ static boolean updatePathIfstraightLine ( PATH_LIST* path )
     while ( goalPosition.X != -1 && areAligned ( nextPosition, nextNextPosition, goalPosition ) ) {
         *path = moveCurrentPathList ( *path );
         prevGoalPosition = goalPosition;
+        fprintf ( stderr, ">>>GOALLLLLLLLLL : %d %d\n", prevGoalPosition.X, prevGoalPosition.Y );
         goalPosition = getNextCurrentPathList ( *path );
     }
     return areAligned ( nextPosition, nextNextPosition, prevGoalPosition );
@@ -464,6 +465,50 @@ static POSITION diffPosition ( POSITION p1, POSITION p2 )
     p1.Y = p1.Y - p2.Y;
     return p1;
 }
+
+static short min ( short x, short y )
+{
+    if ( x >= y ) {
+        return y;
+    }
+    return x;
+}
+
+boolean floorDistance ( short length, short* indexFloor )
+{
+    static short floor[] = {1, 4, 9, 16, 25};
+    return ( length - floor[( *indexFloor = (( min ( length, MAX_SPEED * MAX_SPEED ) - 1 ) % 4) )] ) == 0;
+}
+
+void classicAction ( short indexFloor )
+{
+    int i;
+    for ( i = 0; i < indexFloor + 1; i++ ) {
+        printf ( "%d ", 1 );
+    }
+    for ( i = 1; i < indexFloor + 1; i++ ) {
+        printf ( "%d ", -1 );
+    }
+    printf ( "\n" );
+}
+
+void betweenClassicalAction ( short indexFloor )
+{
+    
+}
+
+PATH_LIST updateAction ( PATH_LIST path )
+{
+    short indexFloor;
+    short length = 15;
+
+    if ( !floorDistance ( length, &indexFloor ) ) {
+
+    }
+
+    return path;
+}
+
 
 PATH_LIST nextAction2 ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction )
 {

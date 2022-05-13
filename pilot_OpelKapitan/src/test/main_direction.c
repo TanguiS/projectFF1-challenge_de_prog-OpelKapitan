@@ -67,6 +67,9 @@ int main ( void )
         printf ( "[%d, %d]\n", init.X, init.Y );
     } */
 
+    trash = floorDistance ( 16, &i );
+    classicAction ( 3 );
+
 
     while ( !isEmptyPathList ( list ) ) {
         /* list = nextActionLigne ( list, init, speed, &acc, &trash ); */

@@ -93,6 +93,11 @@ boolean nextActionRedirector ( PATH_LIST* path, POSITION positionPilot, SPEED sp
 
 
 
+boolean floorDistance ( short length, short* indexFloor );
+void classicAction ( short indexFloor );
+
+
+
 PATH_LIST nextActionBasic ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
 
 PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* midLength );

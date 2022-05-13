@@ -334,7 +334,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
         list = createPathList();
         for ( i = 0; i < 27; i++ ) {
             value.X = x[26-i] + 33;
-            value.Y = y[26-i] + 19-5;
+            value.Y = y[26-i] + 13;
             list = addHeadElementPathList ( list, value );
         }
     }
