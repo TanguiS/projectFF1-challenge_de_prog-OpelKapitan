@@ -5,7 +5,7 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [],
+      "args": ["../tracks/starter_droit_au_but.txt"],
       "stopAtEntry": false,
       "cwd": "/home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan/",
       "environment": [],

@@ -218,7 +218,44 @@ static boolean areNotEqualsZero ( short x, short y )
 
 POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent )
 {
+    /*
     POSITION* successor;
+    int count = 1;
+    int tab[3] = {-1, 0, 1};
+    int tabd[2] = {-1, 1};
+    int i, j;
+    successor = (POSITION*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( POSITION ) );
+    for ( i = 0; i < 3; i++ ) {
+        if ( isInGraph ( graph, parent.X, parent.Y + tab[i] ) ) {
+                successor[count].X = parent.X ;
+                successor[count].Y = parent.Y + tab[i];
+            if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
+                count++;                    
+            }
+        }
+        if ( isInGraph ( graph, parent.X + tab[i], parent.Y ) ) {
+                successor[count].X = parent.X + tab[i];
+                successor[count].Y = parent.Y;
+            if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
+                count++;                    
+            }
+        }
+    }
+    for ( i = 0; i < 2; i++ ) {
+        for ( j = 0; j < 2; j++ ) {
+            if ( isInGraph ( graph, parent.X + tabd[j], parent.Y + tabd[i] ) ) {
+                    successor[count].X = parent.X + tabd[j];
+                    successor[count].Y = parent.Y + tabd[i];
+                if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
+                    count++;                    
+                }
+            }
+        }
+    }
+    successor[0].X = count;
+    return successor;
+    */
+   POSITION* successor;
     int count = 1;
     int tab[3] = {-1, 0, 1};
     int i, j;
