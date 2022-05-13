@@ -87,6 +87,8 @@ void choiceDirection ( direction choice, ACCELERATION* action );
 
 
 
+
+
 PATH_LIST nextActionBasic ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
 
 PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* midLength );
