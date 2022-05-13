@@ -29,7 +29,7 @@
 /**
  * @brief listElement type declaration 
  */
-typedef coord listElement;
+typedef POSITION listElement;
 
 /**
  * @brief A structure to represent a cell object 
@@ -86,7 +86,7 @@ LIST addElementList ( LIST list, listElement x );
 
 
 
-LIST removeElementListCoord ( LIST list, listElement* result , coord* removeCoord);
+LIST removeElementListCoord ( LIST list, listElement* result , POSITION* removeCoord);
 
 
 /**

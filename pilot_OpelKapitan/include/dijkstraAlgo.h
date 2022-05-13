@@ -36,18 +36,18 @@
 void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
 
 
-void mixeCoord (coord* reference, coord* result );
+void mixePOSITION (POSITION* reference, POSITION* result );
 
 
-void findMin(dijkstraMatrix* dijkstra, coord* sommet, LIST list );
+void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list );
 
-void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, coord sommet1, coord sommet2);
+void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2);
 
 
-void addSuccessorListe(LIST* list, coord* succ, coord sommet,  short sizeSucc, dijkstraMatrix* dijkstra, GRAPH* graph);
+void addSuccessorListe(LIST* list, POSITION* succ, POSITION sommet,  short sizeSucc, dijkstraMatrix* dijkstra, GRAPH* graph);
 
-void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, coord firstSommet);
+void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSommet);
 
-LIFO givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly);
+PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly);
 
 #endif /* DIJKSTRA_ALGO_HH__ */
