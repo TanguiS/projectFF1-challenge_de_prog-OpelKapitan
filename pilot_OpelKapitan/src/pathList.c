@@ -127,6 +127,10 @@ PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result )
 
 path_list_element getNextCurrentPathList ( PATH_LIST list )
 {
+    static path_list_element tmp = {-1, -1};
+    if ( list.current->followingCell == NULL ) {
+        return tmp;
+    }
     return list.current->followingCell->contents;
 }
 
@@ -153,6 +157,10 @@ PATH_LIST moveCurrentPathList ( PATH_LIST list )
 
 path_list_element getCurrentPathList ( PATH_LIST list )
 {
+    static path_list_element tmp = {-1, -1};
+    if ( list.current == NULL ) {
+        return tmp;
+    }
     return list.current->contents;
 }
 
