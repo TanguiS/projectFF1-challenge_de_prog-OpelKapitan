@@ -25,6 +25,7 @@
 #include "../../include/dijkstraMatrix.h"
 #include "../../include/graphMadj.h"
 #include "../../include/lifo.h"
+#include "../../include/list.h"
 
 #define X 10
 #define Y 12
@@ -90,10 +91,8 @@ int main ( void )
     dijkstraMatrix dij = createDijkstraMatrix ( Y_MID, X_MID );
     PATH_LIST stack;
     lifoElement result;
-
     printf ( "depart value  : %d\n", midGraph[coordStartMid[1]][coordStartMid[0]] );
     printf ( "end value     : %d\n", midGraph[coordEndMid[1]][coordEndMid[0]] );
-
     for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
             graph.graph.matrix[j][i] = (element)midGraph[i][j];
@@ -104,7 +103,6 @@ int main ( void )
     displayGraph ( &graph );
     displayDijkstraMatrix ( &dij, -1, -1 );
     stack = givePath ( &dij, &graph, coordStartMid[0], coordStartMid[1], coordEndMid[0], coordEndMid[1] );
-
     displayDijkstraMatrix ( &dij, -1, -1 );
     printf ( "\n\n" );
     while ( !isEmpty ( stack ) ) {
@@ -112,8 +110,6 @@ int main ( void )
         printf ( "[%d, %d] ", result[0], result[1] );
     }
     printf ( "\n" );
-
-
     destroyDijkstraMatrix ( dij );
     destroyGraph ( graph ); */
 
@@ -126,10 +122,8 @@ int main ( void )
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
     PATH_LIST stack;
     lifoElement result;
-
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
     printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
-
     for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
         for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
             graph.graph.matrix[j][i] = (element)graphNSand[i][j];
@@ -140,7 +134,6 @@ int main ( void )
     displayGraph ( &graph );
     displayDijkstraMatrix ( &dij, -1, -1 );
     stack = givePath ( &dij, &graph, coordStart[0], coordStart[1], coordEnd[0], coordEnd[1] );
-
     displayDijkstraMatrix ( &dij, -1, -1 );
     printf ( "\n\n" );
     while ( !isEmpty ( stack ) ) {
@@ -148,8 +141,6 @@ int main ( void )
         printf ( "[%d, %d] ", result[0], result[1] );
     }
     printf ( "\n" );
-
-
     destroyDijkstraMatrix ( dij );
     destroyGraph ( graph ); */
 
@@ -162,6 +153,7 @@ int main ( void )
     dijkstraMatrix dij = createDijkstraMatrix ( Y, X );
     PATH_LIST stack;
     lifoElement result;
+    LIST list;
 
     printf ( "depart value  : %d\n", midGraph[coordStart[1]][coordStart[0]] );
     printf ( "end value     : %d\n", midGraph[coordEnd[1]][coordEnd[0]] );
@@ -189,6 +181,8 @@ int main ( void )
     }
     printf ( "\n" );
     displayDijkstraMatrixPath ( &dij, count, path );
+
+    printf("\n\ntests de la liste\n");
 
 
     destroyDijkstraMatrix ( dij );
