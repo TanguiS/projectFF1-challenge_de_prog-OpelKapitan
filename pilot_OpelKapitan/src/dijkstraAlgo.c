@@ -196,7 +196,6 @@ PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
         }
     }
     getClosestFinishLine(graph, &finalSommet);
-    /*displayDijkstraMatrix ( dijkstra, -1, -1 );*/
     stack = createPathList();
     mixePOSITION(&finalSommet, &sommet);
     while( !samePOSITION(sommet, firstSommet) ) {
