@@ -48,9 +48,6 @@ int main(int argc, char* argv[]) {
         printf("problème d'argument\n");
         return EXIT_FAILURE;
     }
-    fileName = (char*)malloc( (strlen(path) + strlen(argv[1]) ) * sizeof(char));
-    strcpy(fileName, path);
-    strcat(fileName, argv[1]);
 
     map = fopen(argv[1], "r");
     output = fopen("../test.txt", "w");
@@ -58,7 +55,7 @@ int main(int argc, char* argv[]) {
 		printf("Impossible d'ouvrir le fichier en read\n");
 		return EXIT_FAILURE;
 	}
-    fgets(buff, 100, map);
+    fgets(buff, 255, map);
     sscanf(buff, "%d %d %d", &width, &heigth, & fuel);
     
     t1=clock();
@@ -67,7 +64,7 @@ int main(int argc, char* argv[]) {
     dijkstra = createDijkstraMatrix(width, heigth);
 
     for ( j = 0; j < heigth; j++ ) {
-        fgets(buff, 100, map);
+        fgets(buff, 255, map);
         for ( i = 0; i < width; i++ ) {
             if ( buff[i] == wall ) {
                 setElementGraph ( &graph, wallGraph, i, j );
@@ -92,8 +89,6 @@ int main(int argc, char* argv[]) {
     graph.sizeFinishLine = countFinish;
     stack = givePath(&dijkstra, &graph, first);
 
-    displayDijkstraMatrix(&dijkstra, first.X, first.Y);
-
     while ( !isEmptyPathList ( stack ) ) {
         stack = removeHeadElementPathList ( stack, &result );
         printf ( "[%d, %d] ", result.X, result.Y );
@@ -104,7 +99,6 @@ int main(int argc, char* argv[]) {
     destroyDijkstraMatrix(dijkstra);
     destroyGraph(graph);
     destroyPathList (stack);
-    free(fileName);
     fclose(output);
     fclose(map); 
 
