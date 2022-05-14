@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
         fprintf(output, "%d  %d\n", result.X, result.Y);
     }
     t2 = clock();
-    printf("\ntimer : %f",(float)(t2-t1)/CLOCKS_PER_SEC);
+    printf("\ntimer : %f\n\n",(float)(t2-t1)/CLOCKS_PER_SEC);
     destroyDijkstraMatrix(dijkstra);
     destroyGraph(graph);
     destroyPathList (stack);
