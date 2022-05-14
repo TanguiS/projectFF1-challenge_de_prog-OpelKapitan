@@ -65,7 +65,7 @@ typedef enum {
     diagonal
 } goalDirection;
 
-typedef void directionFct ( ACCELERATION* action );
+typedef void directionFunction ( ACCELERATION* action );
 
 typedef PATH_LIST actionDeterminator ( PATH_LIST , POSITION , SPEED , ACCELERATION* );
 
