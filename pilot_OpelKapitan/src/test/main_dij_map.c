@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     PATH_LIST stack;
     int count = 0;
     POSITION result;
-    char buff[100];
+    char buff[500];
     clock_t t1,t2;
 
     if (argc != 2) {
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
 		printf("Impossible d'ouvrir le fichier en read\n");
 		return EXIT_FAILURE;
 	}
-    fgets(buff, 100, map);
+    fgets(buff, 500, map);
     sscanf(buff, "%d %d %d", &width, &heigth, & fuel);
     
     t1=clock();
