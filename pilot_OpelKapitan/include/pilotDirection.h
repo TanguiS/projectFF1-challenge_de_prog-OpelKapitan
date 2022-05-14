@@ -59,6 +59,12 @@ typedef enum {
     faster
 } pedal;
 
+typedef enum {
+    towardsX,
+    towardsY,
+    diagonal
+} goalDirection;
+
 typedef void directionFct ( ACCELERATION* action );
 
 typedef PATH_LIST actionDeterminator ( PATH_LIST , POSITION , SPEED , ACCELERATION* );
@@ -81,28 +87,16 @@ void goBoostDown ( ACCELERATION* action );
 
 void goStraight ( ACCELERATION* action );
 
-void slowDown ( POSITION goalPosition, SPEED speed, ACCELERATION* action );
+void slowDown ( POSITION goalPosition, ACCELERATION* action );
 
-void accelerate ( POSITION goalPosition, SPEED speed, ACCELERATION* action );
+void accelerate ( POSITION goalPosition, ACCELERATION* action );
 
 void choiceDirection ( direction choice, ACCELERATION* action );
 
 
 
-boolean nextActionRedirector ( PATH_LIST* path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, boolean* flag );
+PATH_LIST choiceNextAction ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
 
-
-
-boolean floorDistance ( short length, short* indexFloor );
-void classicAction ( short indexFloor );
-
-
-
-PATH_LIST nextActionBasic ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
-
-PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* midLength );
-
-PATH_LIST nextAction2 ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction );
 
 
 

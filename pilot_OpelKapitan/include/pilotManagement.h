@@ -30,6 +30,7 @@
 #include "util.h"
 #include "readMap.h"
 #include "pathList.h"
+#include "list.h"
 
 #ifndef DEBUG
 #include "debugMode.h"

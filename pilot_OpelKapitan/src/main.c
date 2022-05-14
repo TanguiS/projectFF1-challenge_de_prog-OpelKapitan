@@ -50,10 +50,10 @@ int main ( void )
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
-        updatePilots ( &myPilot, &autre2, &autre3, &map, &graph );
         #ifndef DEBUG
         displayGraph ( &graph );
         #endif
+        updatePilots ( &myPilot, &autre2, &autre3, &map, &graph );
         t2 = clock();
         time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;
         fprintf ( stderr, "===> temps exec = %f\n", time );

@@ -15,7 +15,7 @@ dir: $(BIN_PATH)/dir.out
 
 OBJS = $(OBJ_PATH)/main_dijstra.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/list.o
 OBJS_MATRIX = $(OBJ_PATH)/main_matrix.o $(OBJ_PATH)/matrix.o
-OBJS_DIR = $(OBJ_PATH)/main_direction.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/pathList.o
+OBJS_DIR = $(OBJ_PATH)/main_direction.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/list.o
 
 try: install
 	$(install)

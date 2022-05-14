@@ -24,28 +24,24 @@
 
 #define ACTION 1
 #define BOOSTED_ACTION 2
-#define MAX_SPEED 5
+#define MAX_SPEED 3
 
 
 void goRight ( ACCELERATION* action ) {
     action->X = 0 + ACTION;
 }
 
-
 void goLeft ( ACCELERATION* action ) {
     action->X = 0 - ACTION;
 }
-
 
 void goUp ( ACCELERATION* action  ) {
     action->Y = 0 - ACTION;
 }
 
-
 void goDown ( ACCELERATION* action  ) {
     action->Y = 0 + ACTION;
 }
-
 
 void goStraight ( ACCELERATION* action ) {
     action->X = 0;
@@ -72,13 +68,11 @@ void goBoostUp ( ACCELERATION* action ) {
     action->Y = 0 - BOOSTED_ACTION;
 }
 
-
 void goBoostDown ( ACCELERATION* action ) {
     action->Y = 0 + BOOSTED_ACTION;
 }
 
-
-void slowDown ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
+void slowDown ( POSITION goalPosition, ACCELERATION* action )
 {
     if ( goalPosition.X > 0 ) {
         goLeft ( action );
@@ -96,29 +90,25 @@ void slowDown ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
     }
 }
 
-void slowDownX ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
+void slowDownX ( SPEED speed, ACCELERATION* action )
 {
-    if ( goalPosition.X > 0 ) {
+    if ( speed.X > 0 ) {
         goLeft ( action );
-    } else if ( goalPosition.X == 0 ) {
-        action->X = 0;
     }  else {
         goRight ( action );
     }
 }
 
-void slowDownY ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
+void slowDownY ( SPEED speed, ACCELERATION* action )
 {
-    if ( goalPosition.Y > 0 ) {
+    if ( speed.Y > 0 ) {
         goUp ( action );
-    } else if ( goalPosition.Y == 0 ) {
-        action->Y = 0;
-    }  else {
+    } else {
         goDown ( action );
     }
 }
 
-void accelerate ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
+void accelerate ( POSITION goalPosition, ACCELERATION* action )
 {
     if ( goalPosition.X > 0 ) {
         goRight ( action );
@@ -136,30 +126,6 @@ void accelerate ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
     } 
 }
 
-void accelerateX ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
-{
-    if ( goalPosition.X > 0 ) {
-        goRight ( action );
-    } else if ( goalPosition.X == 0 ) {
-        action->X = 0;
-    } else {
-        goLeft ( action );
-    }
-}
-
-void accelerateY ( POSITION goalPosition, SPEED speed, ACCELERATION* action )
-{
-    if ( goalPosition.Y > 0 ) {
-        goDown ( action );
-    } else if ( goalPosition.Y == 0 ) {
-        action->Y = 0;
-    } else {
-        goUp ( action );
-    }     
-}
-
-
-
 void choiceDirection ( direction choice, ACCELERATION* action )
 {
     static directionFct* tabDirection[NUMBER_DIRECTION] = 
@@ -170,23 +136,8 @@ void choiceDirection ( direction choice, ACCELERATION* action )
     tabDirection[choice]( action );
 }
 
-
-/* void nextStep(ACCELERATION* action, GRAPH* graph, short currentx, short currenty, short finalx, short finaly,short xSpeed, short ySpeed) {
-    LIFO stack; 
-    dijkstraMatrix dijkstra;
-    coord firstSommet;
-    firstSommet[0] = finalx;
-    firstSommet[1] = finaly;
-
-    dijkstra = createDijkstraMatrix(getWidthGraph(graph), getHeightGraph(graph));
-
-    stack = givePath(&dijkstra, graph, currentx, currenty, finalx, finaly);
-} */
-
-
 static void basicNextAction ( POSITION diffPosition, ACCELERATION* nextAction )
 {
-
     if ( diffPosition.X > 0 ) {
         choiceDirection ( right, nextAction );
     } else if ( diffPosition.X == 0 ) {
@@ -202,19 +153,6 @@ static void basicNextAction ( POSITION diffPosition, ACCELERATION* nextAction )
         choiceDirection ( up, nextAction );
     }
 }
-
-/* avec un flag en statique pour pas qu'il soit mis à jour a chaque fois mais qu'une seul fois */
-boolean nextActionRedirector ( PATH_LIST* path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, boolean* flag )
-{
-    static actionDeterminator* redirectTab[2] = 
-            {
-                nextActionBasic,
-                nextAction2
-            };
-    *path = redirectTab[*flag](*path, positionPilot, speedPilot, nextAction );
-    return true; /* la nouvelle valeur du flag */
-}
-
 
 /* static boolean 
  */
@@ -237,35 +175,25 @@ static void boostNextAction ( POSITION diffPosition, ACCELERATION* nextAction )
     }
 }
 
+static POSITION hypotheticalNextPosition ( POSITION nextPosition, POSITION currentPosition, SPEED speed )
+{
+    nextPosition.X =  nextPosition.X - currentPosition.X - speed.X;
+    nextPosition.Y =  nextPosition.Y - currentPosition.Y - speed.Y;
+    return nextPosition;
+}
 
-PATH_LIST nextActionBasic ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction )
+PATH_LIST nextActionForNextPosition ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction )
 {
     path_list_element nextPosition;
     POSITION diffPosition;
-
+    if ( currentEqualsHead ( path ) ) {
+        path = moveCurrentPathList ( path );
+    }
     path = removeHeadElementPathList ( path, &nextPosition );
-    diffPosition.X = nextPosition.X - positionPilot.X - speedPilot.X;
-    diffPosition.Y = nextPosition.Y - positionPilot.Y - speedPilot.Y;
     fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
-
-    /* faire une fonction de cette merde pour l'utiliser en bas */
+    diffPosition = hypotheticalNextPosition ( nextPosition, positionPilot, speedPilot );
     /* version boost et non boosted */
-    if ( diffPosition.X > 0 ) {
-        choiceDirection ( right, nextAction );
-    } else if ( diffPosition.X == 0 ) {
-        nextAction->X = 0; /* faire une fonction straight X */
-    } else {
-        choiceDirection ( left, nextAction );
-    }
-    if ( diffPosition.Y > 0 ) {
-        choiceDirection ( down, nextAction );
-    } else if ( diffPosition.Y == 0 ) {
-        nextAction->Y = 0;
-    } else {
-        choiceDirection ( up, nextAction );
-    }
-
-
+    basicNextAction ( diffPosition, nextAction );
     return path;
 }
 
@@ -274,323 +202,239 @@ static boolean areAligned ( POSITION pos1, POSITION pos2, POSITION pos3 )
     return  (pos3.Y - pos1.Y) * (pos2.X - pos1.X) - (pos2.Y - pos1.Y) * (pos3.X - pos1.X ) == 0; 
 }
 
-static int length ( POSITION first, POSITION secound )
-{
-    printf ( "LONGUEUR = %d\n", ( ( ( first.X - secound.X ) * ( first.X - secound.X ) ) + ( ( first.Y - secound.Y ) * ( first.Y - secound.Y ) ) ) );
-    return ( ( ( first.X - secound.X ) * ( first.X - secound.X ) ) + ( ( first.Y - secound.Y ) * ( first.Y - secound.Y ) ) );
-}
-
-static POSITION midlePosition ( POSITION first, POSITION secound )
-{
-
-    first.X = ceil ( fabs ( (double) ( first.X - secound.X ) / 2. ) );
-    first.Y = ceil ( fabs ( (double) ( first.Y - secound.Y ) / 2. ) );
-    return first;
-}
-
-static boolean isMaxSpeed ( SPEED speed )
-{
-    return ( speed.X == MAX_SPEED || speed.Y == MAX_SPEED );
-}
-
-static boolean areSamePosition ( POSITION pos1, POSITION pos2 )
-{
-    return ( pos1.X == pos2.X && pos1.Y == pos2.Y );
-}
-
-static POSITION diffPositionSpeed ( POSITION nextPosition, POSITION currentPosition, SPEED speed )
-{
-    nextPosition.X =  nextPosition.X - currentPosition.X - speed.X;
-    nextPosition.Y =  nextPosition.Y - currentPosition.Y - speed.Y;
-    return nextPosition;
-}
-
-static int norme1 ( POSITION position )
-{
-    return position.X * position.X + position.Y * position.Y;
-}
-
-PATH_LIST nextActionLigne ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, int* midLenght ) /* -1 */
-{
-    int internCount = 0;
-    int remainingLength = 0;
-    POSITION nextPosition;
-    POSITION tmp;
-    POSITION nextNextPosition;
-    POSITION goalPosition;
-
-/*     if ( internCount >= *count ) {
-
-    } */
-
-
-
-
-    /* si le courrant c'est pas la tete c'est qu'on est pas arrive a la fin de la ligne droite */
-    if ( !currentEqualsHead ( path ) ) {
-        goalPosition = getCurrentPathList ( path );
-        /* mettre à jour la tete suivant le chemin parcouru, potentiellement plusieurs points en même temps */
-        /* tant que la future position n'est pas la prochaine à celle actuel */
-
-        if ( areSamePosition ( goalPosition, positionPilot ) ) {
-            do {
-                path = removeHeadElementPathList ( path, &nextPosition );
-            } while ( !nextCurrentEqualsHead ( path ) );
-        }
-
-
-
-
-
-        /* on test si la longueur entre la position du pilot et la position du milieu estimé est toujours supérieur à 0 */
-        if ( ( length ( positionPilot, goalPosition ) > *midLenght ) ) {
-
-
-            /* on peut pas aller plus vite mec */
-            if ( isMaxSpeed ( speedPilot ) ) {
-                goStraight ( nextAction );
-                return path;
-            }
-            accelerate ( diffPositionSpeed ( goalPosition, positionPilot, speedPilot ), speedPilot, nextAction );
-            return path;
-        }
-        /* on ralenti si on a depassé le mid */
-        if ( isMaxSpeed ( speedPilot ) || nextAction->X == 1 || nextAction->Y == 1 ) {
-            goStraight ( nextAction );
-            return path;
-        }
-        slowDown ( diffPositionSpeed ( goalPosition, positionPilot, speedPilot ), speedPilot, nextAction );
-        return path;
-
-    }
-    path = resetCurrentPathList ( path );
-    nextPosition = getCurrentPathList ( path );
-    path = moveCurrentPathList ( path );
-    nextNextPosition = getCurrentPathList ( path );
-    if ( nextNextPosition.X == -1 ) {
-        /* der element */
-        /* avance classique */
-        basicNextAction ( diffPositionSpeed ( nextPosition, positionPilot, speedPilot ), nextAction );
-        return path;
-    }
-    internCount++;
-    path = moveCurrentPathList ( path );
-    goalPosition = getCurrentPathList ( path );
-    if ( goalPosition.X == -1 ) {
-        /* au prochain tour sera le der element */
-        /* Boost de fin */
-        boostNextAction ( diffPositionSpeed ( nextPosition, positionPilot, speedPilot ), nextAction );
-        return path;
-    }
-    internCount++;
-/*     while ( areAligned ( nextPosition, nextNextPosition, goalPosition ) ) {
-        path = moveCurrentPathList ( path );
-        goalPosition = getCurrentPathList ( path );
-        internCount++;
-    } */
-
-    tmp = goalPosition;
-    while ( areAligned ( nextPosition, nextNextPosition, tmp ) ) {
-        goalPosition = tmp;
-        path = moveCurrentPathList ( path );
-        tmp = getNextCurrentPathList ( path );
-        internCount++;  
-    }
-
-    if ( internCount == 2 ) {
-        internCount = 0;
-        /* avance classique */
-    }
-    *midLenght = ceil ( (double) length ( goalPosition, positionPilot ) / 2. );
-    path = nextActionLigne ( path, positionPilot, speedPilot, nextAction, midLenght );
-
-
-
-
-
-
-
-
-
-    return path;
-}
-
-
-static boolean updatePathIfstraightLine ( PATH_LIST* path )
+static boolean updatePathListIfstraightLine ( PATH_LIST* path, POSITION currentPosition )
 {
     POSITION nextPosition;
-    POSITION nextNextPosition;
     POSITION goalPosition;
     POSITION prevGoalPosition;
 
     *path = resetCurrentPathList ( *path );
-    nextPosition = getCurrentPathList ( *path );
-    *path = moveCurrentPathList ( *path );
-    nextNextPosition = getCurrentPathList ( *path );
-    if ( nextNextPosition.X == -1 ) {
-        /* der element */
-        /* avance classique */
+    nextPosition = getCurrentPathList ( *path ); /* get head ca marche aussi */
+    if ( nextPosition.X == -1 ) {
         return false;
     }
-    *path = moveCurrentPathList ( *path );
-    goalPosition = getCurrentPathList ( *path );
+    goalPosition = getNextCurrentPathList ( *path );
     if ( goalPosition.X == -1 ) {
-        /* au prochain tour sera le der element */
-        /* Boost de fin */
         return false;
     }
-    while ( goalPosition.X != -1 && areAligned ( nextPosition, nextNextPosition, goalPosition ) ) {
+    prevGoalPosition = goalPosition;
+    while ( goalPosition.X != -1 && areAligned ( currentPosition, nextPosition, goalPosition ) ) {
         *path = moveCurrentPathList ( *path );
         prevGoalPosition = goalPosition;
         fprintf ( stderr, ">>>GOALLLLLLLLLL : %d %d\n", prevGoalPosition.X, prevGoalPosition.Y );
         goalPosition = getNextCurrentPathList ( *path );
     }
-    return areAligned ( nextPosition, nextNextPosition, prevGoalPosition );
+    return areAligned ( currentPosition, nextPosition, prevGoalPosition );
 }
 
-/* true si signe positif */
-static boolean symbol ( int x )
-{
-    return x > 0;
-}
-
-static boolean isEqualSymbol ( int x1, int x2 )
-{
-    return symbol ( x1 ) == symbol ( x2 );
-}
-
-static POSITION diffPosition ( POSITION p1, POSITION p2 )
+static POSITION positionVector ( POSITION p1, POSITION p2 )
 {
     p1.X = p1.X - p2.X;
     p1.Y = p1.Y - p2.Y;
     return p1;
 }
 
-static short min ( short x, short y )
-{
-    if ( x >= y ) {
-        return y;
-    }
-    return x;
-}
-
-boolean floorDistance ( short length, short* indexFloor )
-{
-    static short floor[] = {1, 4, 9, 16, 25};
-    return ( length - floor[( *indexFloor = (( min ( length, MAX_SPEED * MAX_SPEED ) - 1 ) % 4) )] ) == 0;
-}
-
-void classicAction ( short indexFloor )
+void addActionToGroup ( short length, short speedInit, short count, POSITION start, POSITION goal, ACCELERATION* action )
 {
     int i;
-    for ( i = 0; i < indexFloor + 1; i++ ) {
-        printf ( "%d ", 1 );
+    short decelerationPosition = 0; /* ATTENTION SI BOOST */
+    short hypoteticalPosition = 0;
+    short hypoteticalSpeed = abs ( speedInit );
+
+    short remainingDistance;
+    short numberStraightAction;
+
+    while ( decelerationPosition + hypoteticalPosition + hypoteticalSpeed < length - ( hypoteticalPosition + decelerationPosition + hypoteticalSpeed ) ) {
+        hypoteticalSpeed++;
+        hypoteticalPosition += hypoteticalSpeed;
+        decelerationPosition += hypoteticalSpeed - 1;
+        accelerate ( positionVector ( goal, start ), &action[count] );
+        count++;
+        fprintf ( stderr, "1 " );
+        if ( hypoteticalSpeed == MAX_SPEED ) {
+            break;
+        }
     }
-    for ( i = 1; i < indexFloor + 1; i++ ) {
-        printf ( "%d ", -1 );
+    remainingDistance = length - ( hypoteticalPosition + decelerationPosition );
+
+    if ( remainingDistance >= hypoteticalSpeed ) {
+        numberStraightAction = (short) ( (float) ( remainingDistance ) / (float)(hypoteticalSpeed) );
+        for ( i = 0; i < numberStraightAction; i++ ) {
+            goStraight ( &action[count] );
+            count++;
+            fprintf ( stderr, "0 " );
+        }
+        remainingDistance -= hypoteticalSpeed * numberStraightAction;
+        hypoteticalPosition += hypoteticalSpeed * numberStraightAction;
     }
-    printf ( "\n" );
+    for ( i = 1; i < hypoteticalSpeed; i++ ) {
+        if ( remainingDistance == hypoteticalSpeed - i ) {
+            hypoteticalPosition += 2 * (hypoteticalSpeed - i);
+            fprintf ( stderr, "-1 0 " );
+            slowDown ( positionVector ( goal, start ), &action[count] );
+            count++;
+            goStraight ( &action[count] );
+            count++;
+        } else {
+            fprintf ( stderr, "-1 " );
+            slowDown ( positionVector ( goal, start ), &action[count] );
+            count++;
+            hypoteticalPosition += hypoteticalSpeed - i;
+
+        }
+    }
+    fprintf ( stderr, "\n                                                  --> longueur parcouru : %d\n", hypoteticalPosition );
+    action[0].X = count;
 }
 
-void betweenClassicalAction ( short indexFloor )
+goalDirection lineToFollow ( POSITION start, POSITION goal )
 {
-    
+    POSITION line;
+    line = positionVector ( goal, start );
+    if ( line.X == 0 ) {
+        return towardsY;
+    }
+    if ( line.Y == 0 ) {
+        return towardsX;
+    }
+    return diagonal;
 }
 
-PATH_LIST updateAction ( PATH_LIST path )
+boolean areEqualPosition ( POSITION pos1, POSITION pos2 )
 {
-    short indexFloor;
-    short length = 15;
+    return pos1.X == pos2.X && pos1.Y == pos2.Y;
+}
 
-    if ( !floorDistance ( length, &indexFloor ) ) {
-
+PATH_LIST updatePathToGoalPosition ( PATH_LIST path, POSITION goal )
+{
+    POSITION trash = {-1, -1};
+    if ( areEqualPosition ( examineHeadPathList ( path ), goal ) ) {
+        path = removeHeadElementPathList ( path, &trash );
+        return path;
     }
-
+    do {
+        path = removeHeadElementPathList ( path, &trash );
+    } while ( !areEqualPosition ( trash, goal ) );
     return path;
 }
 
 
-PATH_LIST nextAction2 ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction )
+PATH_LIST equilibrateSpeedForStraightLine ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction )
 {
-    POSITION nextTheoreticalPosition;
-    POSITION goalPosition;
-    POSITION nextSpeed;
-    POSITION diffGoalTheoretical;
-    POSITION diffStartTheoretical;
-    if ( !updatePathIfstraightLine ( &path ) ) {
-        path = nextActionBasic ( path, pilotPosition, pilotSpeed, nextAction );
-        return path;
+    path_list_element nextPosition;
+    POSITION diffPosition;
+    if ( currentEqualsHead ( path ) ) {
+        path = moveCurrentPathList ( path );
     }
+    path = removeHeadElementPathList ( path, &nextPosition );
+    fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
+    diffPosition = hypotheticalNextPosition ( nextPosition, positionPilot, speedPilot );
+    if ( positionPilot.X + speedPilot.X != nextPosition.X ) {
+        if ( diffPosition.X > 0 ) {
+            choiceDirection ( right, nextAction );
+        } else if ( diffPosition.X == 0 ) {
+            nextAction->X = 0; /* faire une fonction straight X */
+        } else {
+            choiceDirection ( left, nextAction );
+        }
+    } else {
+        goStraightX ( nextAction );
+    }
+    if ( positionPilot.Y + speedPilot.Y != nextPosition.Y ) {
+        if ( diffPosition.Y > 0 ) {
+            choiceDirection ( down, nextAction );
+        } else if ( diffPosition.Y == 0 ) {
+            nextAction->Y = 0;
+        } else {
+            choiceDirection ( up, nextAction );
+        }
+    } else {
+        goStraightY ( nextAction );
+    }
+    return path;
+}
 
-    goalPosition = getCurrentPathList ( path );
 
+PATH_LIST groupNextAction ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction )
+{
+    POSITION positionGoal;
+    goalDirection directionLine;
+    int i;
 
+    positionGoal = getCurrentPathList ( path );
+    directionLine = lineToFollow ( positionPilot, positionGoal );
+    if ( directionLine == towardsX ) {
+        addActionToGroup ( abs ( positionVector ( positionGoal, positionPilot ).X ), speedPilot.X, 1, positionPilot, positionGoal, nextAction );
+        if ( speedPilot.Y != 0 ) {
+            slowDownY ( speedPilot, &nextAction[1] );
+        }
+    } else if ( directionLine == towardsY ) {
+        addActionToGroup ( abs ( positionVector ( positionGoal, positionPilot ).Y ), speedPilot.Y, 1, positionPilot, positionGoal, nextAction );
+        if ( speedPilot.X != 0 ) {
+            slowDownX ( speedPilot, &nextAction[1] );
+        }
+    } else { /* c'est une diagonale */
+        fprintf ( stderr, "diagonal\n" );
+        /* etape 1 : on se met sur la diagonale */
+        path = nextActionForNextPosition ( path, positionPilot, speedPilot, &nextAction[1] );
+        fprintf ( stderr, ">>>diag : action n°1 : %d %d\n", nextAction[1].X, nextAction[1].Y );
+        /* etape 2 : equilibrer les deux actions */
+        speedPilot.X += nextAction[1].X;
+        speedPilot.Y += nextAction[1].Y;
+        positionPilot.X += speedPilot.X;
+        positionPilot.Y += speedPilot.Y;
+        path = equilibrateSpeedForStraightLine ( path, positionPilot, speedPilot, &nextAction[2] );
+        fprintf ( stderr, ">>>diag : action n°2 : %d %d\n", nextAction[2].X, nextAction[2].Y );
+        /* etape 3 on calcul le reste du chemin a faire en diagnoal */
+        speedPilot.X += nextAction[2].X;
+        speedPilot.Y += nextAction[2].Y;
+        positionPilot.X += speedPilot.X;
+        positionPilot.Y += speedPilot.Y;
+        addActionToGroup ( abs ( positionVector ( positionGoal, positionPilot ).X ), speedPilot.X, 3, positionPilot, positionGoal, nextAction );
+    }
+    for ( i = 1; i < nextAction[0].X; i++ ) {
+        fprintf ( stderr, "Action recupered : %d %d\n", nextAction[i].X, nextAction[i].Y );
+    }
     if ( !currentEqualsHead ( path ) ) {
-        /* mettre à jour la tete suivant le chemin parcouru, potentiellement plusieurs points en même temps */
-        /* tant que la future position n'est pas la prochaine à celle actuel */
-        if ( areSamePosition ( goalPosition, pilotPosition ) ) {
-            do {
-                path = removeHeadElementPathList ( path, &nextTheoreticalPosition );
-            } while ( !areSamePosition ( pilotPosition, nextTheoreticalPosition ) );
-            if ( isEmptyPathList ( path ) ) {
-                return path;
-            }
-            path = nextActionBasic ( path, pilotPosition, pilotSpeed, nextAction );
-            return path;
-        }
+        path = updatePathToGoalPosition ( path, positionGoal );
     }
+    return path;
+}
 
 
-    nextTheoreticalPosition.X = pilotPosition.X + pilotSpeed.X;
-    nextTheoreticalPosition.Y = pilotPosition.Y + pilotSpeed.Y;
 
-    diffGoalTheoretical = diffPosition ( goalPosition, nextTheoreticalPosition );
-    diffStartTheoretical = diffPosition ( goalPosition, pilotPosition );
 
-    if ( isEqualSymbol ( diffGoalTheoretical.X, diffStartTheoretical.X )
-        && 
-         isEqualSymbol ( diffGoalTheoretical.Y, diffStartTheoretical.Y ) ) {
-
-        if ( pilotSpeed.X == 2 || pilotSpeed.Y == 2 ) {
-            if ( areSamePosition ( goalPosition, nextTheoreticalPosition ) ) {
-                slowDown ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
-                return path;                
-            }
-            goStraight ( nextAction );
+/* avec un flag en statique pour pas qu'il soit mis à jour a chaque fois mais qu'une seul fois */
+PATH_LIST choiceNextAction ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction )
+{
+    static ACCELERATION* actionTab = NULL;
+    static short countAction = 0;
+    static boolean flag = false;
+    static actionDeterminator* redirectTab[2] = 
+            {
+                nextActionForNextPosition,
+                groupNextAction
+            };
+    if ( actionTab == NULL ) {
+        actionTab = ( ACCELERATION* ) malloc ( 30 * sizeof ( ACCELERATION ) );
+    }
+    if ( !flag ) {
+        flag = updatePathListIfstraightLine ( &path, positionPilot ); /* savoir si c'est une ligne droite */
+        path = redirectTab[flag](path, positionPilot, speedPilot, actionTab ); /* savoir si c'est un groupe d'action */
+    }
+    if ( flag ) {
+        countAction++;
+        if ( countAction == actionTab[0].X ) {
+            countAction = 0;
+            flag = false;
+            path = choiceNextAction ( path, positionPilot, speedPilot, nextAction );
             return path;
         }
-        diffStartTheoretical = diffPosition ( goalPosition, examineHeadPathList ( path ) );
-        if ( diffStartTheoretical.X == diffStartTheoretical.Y ) {
-            if ( abs ( pilotSpeed.X ) > abs ( pilotSpeed.Y ) ) {
-                accelerateY ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
-                goStraightX ( nextAction );
-                return path;
-            }
-            if ( abs ( pilotSpeed.X ) < abs ( pilotSpeed.Y ) ) {
-                accelerateX ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
-                goStraightY ( nextAction );
-                return path;
-            }
-        }
-        accelerate ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
+        nextAction->X = actionTab[countAction].X;   
+        nextAction->Y = actionTab[countAction].Y;   
         return path;
     }
-    if ( pilotSpeed.X == 2 || pilotSpeed.Y == 2 ) {
-        slowDown ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
-        return path;
-    }
-    goStraight ( nextAction );
-
-
-
-/*         if ( areSamePosition ( goalPosition, nextTheoreticalPosition ) && ( pilotSpeed.X == 2 || pilotSpeed.Y == 2 ) ) {
-            slowDown ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
-            return path;
-        }
-        if ( pilotSpeed.X == 1 || pilotSpeed.Y == 1 ) {
-            accelerate ( diffPosition ( goalPosition, pilotPosition ), pilotSpeed, nextAction );
-        }
-    } */
-
+    nextAction->X = actionTab->X;
+    nextAction->Y = actionTab->Y;
     return path;
 }

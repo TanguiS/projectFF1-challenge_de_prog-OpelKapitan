@@ -324,17 +324,18 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     SPEED speed;
     static PATH_LIST list;
     int i;
-    int x[27] = {0, 0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4, 4, 5, 6, 6,  6,  6,  6,  5,  5, 5, 5, 5, 5, 5, 5};
-    int y[27] = {5, 4, 3, 2, 1, 0, 0, 0, 1, 2, 3, 4, 5, 5, 5, 4,  3,  2,  1,  0,  0,  0,  1,  2,  3,  4,  5};
+    int x[30] = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2};
+    int y[30] = { 9, 9, 9, 9, 9, 9, 9,  9,  9,  9,  8,  7,  6,  5,  4,  3,  2, 1, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 
     round++;
 
     if ( round == 1 ) {
         list = createPathList();
-        for ( i = 0; i < 27; i++ ) {
-            value.X = x[26-i] + 33;
-            value.Y = y[26-i] + 13;
+        for ( i = 0; i < 30; i++ ) {
+            value.X = x[30-i-1] + 5;
+            value.Y = y[30-i-1] + 1; /* 8, 10 */
+            fprintf ( stderr, "%d %d\n", value.X, value.Y );
             list = addHeadElementPathList ( list, value );
         }
     }
@@ -364,9 +365,10 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 1ere etape : choisir une action */
 
 
- /*    list = nextActionBasic ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
-
-    list = nextAction2 ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction );
+ /*    list = nextActionForNextPosition ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
+    fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
+    list = choiceNextAction ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction );
+    fprintf ( stderr, "\n>>> FIN <<<\n\n" );
 
 
 
@@ -382,5 +384,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     fprintf ( stderr, ">UPDATE PILOT : Position : (%d, %d); Speed : (%d, %d); Acc : (%d, %d)\n", myCar.X, myCar.Y, speed.X, speed.Y, nextAction.X, nextAction.Y );
     /* 3e etape : on transmet l'action au GDP */
     sprintf ( action, "%hd %hd", nextAction.X, nextAction.Y );
+    fprintf ( stderr, "\n>>>NEXT ACTION après la mise en STRING : %s\n\n", action );
     deliverAction ( action );
 }
