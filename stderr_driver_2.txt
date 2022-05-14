@@ -112,7 +112,7 @@ Action recupered : -1 0
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.000845
+===> temps exec = 0.000902
 === ROUND 2
 
 Affichage du graph :   
@@ -156,7 +156,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.000710
+===> temps exec = 0.000853
 === ROUND 3
 
 Affichage du graph :   
@@ -200,7 +200,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000888
+===> temps exec = 0.000780
 === ROUND 4
 
 Affichage du graph :   
@@ -244,7 +244,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000741
+===> temps exec = 0.000721
 === ROUND 5
 
 Affichage du graph :   
@@ -288,7 +288,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.001043
+===> temps exec = 0.000855
 === ROUND 6
 
 Affichage du graph :   
@@ -332,7 +332,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.002333
+===> temps exec = 0.000791
 === ROUND 7
 
 Affichage du graph :   
@@ -386,7 +386,7 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.001120
+===> temps exec = 0.000933
 === ROUND 8
 
 Affichage du graph :   
@@ -430,7 +430,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000916
+===> temps exec = 0.001188
 === ROUND 9
 
 Affichage du graph :   
@@ -475,7 +475,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.001341
+===> temps exec = 0.000965
 === ROUND 10
 
 Affichage du graph :   
@@ -536,7 +536,7 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.001366
+===> temps exec = 0.000950
 === ROUND 11
 
 Affichage du graph :   
@@ -580,7 +580,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000975
+===> temps exec = 0.000809
 === ROUND 12
 
 Affichage du graph :   
@@ -624,7 +624,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 -1
 
-===> temps exec = 0.000918
+===> temps exec = 0.000910
 === ROUND 13
 
 Affichage du graph :   
@@ -668,7 +668,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 1 1
 
-===> temps exec = 0.000843
+===> temps exec = 0.000834
 === ROUND 14
 
 Affichage du graph :   
@@ -712,7 +712,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000726
+===> temps exec = 0.000853
 === ROUND 15
 
 Affichage du graph :   
@@ -761,7 +761,7 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.000794
+===> temps exec = 0.003442
 === ROUND 16
 
 Affichage du graph :   
@@ -805,7 +805,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000790
+===> temps exec = 0.000839
 === ROUND 17
 
 Affichage du graph :   
@@ -866,7 +866,7 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.000902
+===> temps exec = 0.001497
 === ROUND 18
 
 Affichage du graph :   
@@ -910,7 +910,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000948
+===> temps exec = 0.000978
 === ROUND 19
 
 Affichage du graph :   
@@ -954,7 +954,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 1
 
-===> temps exec = 0.000980
+===> temps exec = 0.000885
 === ROUND 20
 
 Affichage du graph :   
@@ -998,7 +998,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 1 -1
 
-===> temps exec = 0.000844
+===> temps exec = 0.000877
 === ROUND 21
 
 Affichage du graph :   
@@ -1042,7 +1042,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000711
+===> temps exec = 0.000798
 === ROUND 22
 
 Affichage du graph :   
@@ -1087,7 +1087,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.000860
+===> temps exec = 0.000810
 === ROUND 23
 
 Affichage du graph :   
@@ -1141,7 +1141,7 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.000928
+===> temps exec = 0.000764
 === ROUND 24
 
 Affichage du graph :   
@@ -1185,7 +1185,7 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.000872
+===> temps exec = 0.000733
 === ROUND 25
 
 Affichage du graph :   
@@ -1218,18 +1218,18 @@ Affichage POSITION ligne d'arrivée :
 >>>APPEL choix de l'action suivante
 AddressSanitizer:DEADLYSIGNAL
 =================================================================
-==8692==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x55ae16343336 bp 0x7ffe0b5f32c0 sp 0x7ffe0b5f3240 T0)
-==8692==The signal is caused by a READ memory access.
-==8692==Hint: address points to the zero page.
-    #0 0x55ae16343335 in moveCurrentPathList src/pathList.c:154
-    #1 0x55ae1633c5aa in nextActionForNextPosition src/pilotDirection.c:187
-    #2 0x55ae1633eb18 in choiceNextAction src/pilotDirection.c:429
-    #3 0x55ae1633ebc8 in choiceNextAction src/pilotDirection.c:436
-    #4 0x55ae1633aaf1 in updatePilots src/pilotManagement.c:370
-    #5 0x55ae163368eb in main src/main.c:56
-    #6 0x7f7cb9cf10b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
-    #7 0x55ae1633652d in _start (/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/drivers/OpelKapitan+0x352d)
+==8947==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x55b5e9ca4336 bp 0x7ffcf655fb30 sp 0x7ffcf655fab0 T0)
+==8947==The signal is caused by a READ memory access.
+==8947==Hint: address points to the zero page.
+    #0 0x55b5e9ca4335 in moveCurrentPathList src/pathList.c:154
+    #1 0x55b5e9c9d5aa in nextActionForNextPosition src/pilotDirection.c:187
+    #2 0x55b5e9c9fb18 in choiceNextAction src/pilotDirection.c:426
+    #3 0x55b5e9c9fbc8 in choiceNextAction src/pilotDirection.c:433
+    #4 0x55b5e9c9baf1 in updatePilots src/pilotManagement.c:370
+    #5 0x55b5e9c978eb in main src/main.c:56
+    #6 0x7f1e927970b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x240b2)
+    #7 0x55b5e9c9752d in _start (/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/drivers/OpelKapitan+0x352d)
 
 AddressSanitizer can not provide additional info.
 SUMMARY: AddressSanitizer: SEGV src/pathList.c:154 in moveCurrentPathList
-==8692==ABORTING
+==8947==ABORTING
