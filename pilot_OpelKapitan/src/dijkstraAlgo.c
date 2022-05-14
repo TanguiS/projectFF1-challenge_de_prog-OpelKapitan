@@ -183,6 +183,7 @@ PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
     firstSommet.X = first.X;
     firstSommet.Y = first.Y;
     allPathDijkstra ( dijkstra, graph, firstSommet );
+    getClosestFinishLine ( graph, &finalSommet );
     getCoordFinishLine ( graph, 0, &competitor );
     minLength = getPathLength(dijkstra, competitor.X, competitor.Y);
     graph->closestFinishLine.X = competitor.X;
@@ -202,6 +203,5 @@ PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
         stack = addHeadElementPathList(stack, sommet);
         getPredecessor(dijkstra, sommet.X, sommet.Y, &sommet);
     }
-    stack = addHeadElementPathList(stack, firstSommet);
     return stack;
 }

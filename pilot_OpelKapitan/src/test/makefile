@@ -13,7 +13,7 @@ install: $(BIN_PATH)/dijkstra_map.out
 matrix: $(BIN_PATH)/matrix.out
 dir: $(BIN_PATH)/dir.out
 
-OBJS = $(OBJ_PATH)/main_dij_map.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/list.o
+OBJS = $(OBJ_PATH)/main_dij_map.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/list.o $(OBJ_PATH)/pilotDirection.o
 OBJS_MATRIX = $(OBJ_PATH)/main_matrix.o $(OBJ_PATH)/matrix.o
 OBJS_DIR = $(OBJ_PATH)/main_direction.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/pathList.o
 
@@ -34,7 +34,8 @@ $(OBJ_PATH)/pathList.o: $(SRC_PATH)/pathList.c $(INC_PATH)/pathList.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 $(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)/pilotDirection.c $(INC_PATH)/pilotDirection.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
+$(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)/pilotDirection.c $(INC_PATH)/pilotDirection.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 $(OBJ_PATH)/list.o: $(SRC_PATH)/list.c $(INC_PATH)/list.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
