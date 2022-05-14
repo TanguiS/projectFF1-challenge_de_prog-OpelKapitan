@@ -30,6 +30,7 @@
 #include "matrix.h"
 #include "util.h"
 #include "debugMode.h"
+#include "list.h"
 
 #define SIZE_TAB_FINISH_LINE 100
 

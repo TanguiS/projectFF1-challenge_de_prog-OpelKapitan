@@ -36,6 +36,23 @@ boolean samePOSITION(POSITION sommet1, POSITION sommet2) {
 }
 
 
+static boolean isInGraph ( GRAPH* graph, short x, short y )
+{
+    if ( x >= getWidthGraph ( graph ) ) {
+        return false;
+    }
+    if ( y >= getHeightGraph ( graph ) ) {
+        return false;
+    }
+    if ( x < 0 ) {
+        return false;
+    }
+    if ( y < 0 ) {
+        return false;
+    }
+    return true;
+}
+
 void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
     int i;
     int j;
@@ -48,7 +65,7 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
     }
     setPathLength ( dijkstraMatrix, x, y, 0 );
     dijkstraMatrix->matrix[x][y].flag = gray;
-    displayDijkstraMatrix ( dijkstraMatrix, -1, -1 );
+    /*displayDijkstraMatrix ( dijkstraMatrix, -1, -1 );*/
 }
 
 
@@ -66,7 +83,7 @@ void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
         }
     }
     dijkstra->matrix[sommet->X][sommet->Y].flag = black;
-    displayDijkstraMatrix ( dijkstra, sommet->X, sommet->Y );
+    /*displayDijkstraMatrix ( dijkstra, sommet->X, sommet->Y );*/
 }
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2) {
@@ -77,24 +94,54 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, PO
     d1 = getPathLength(dijkstra, sommet1.X, sommet1.Y);
     d2 = getPathLength(dijkstra, sommet2.X, sommet2.Y);
     arcValue = (short)getElementGraph(graph, sommet2);
-
+    arcValue += abs((sommet1.X - sommet2.X)) + abs((sommet1.Y - sommet2.Y)) - 1 ;
     if ( d2 > (d1 + arcValue) ) {
         setPathLength(dijkstra, sommet2.X, sommet2.Y, (d1 + arcValue));
         setPredecessor(dijkstra, sommet2.X, sommet2.Y, sommet1);
-        displayDijkstraMatrix ( dijkstra, sommet2.X, sommet2.Y );
+        /*displayDijkstraMatrix ( dijkstra, sommet2.X, sommet2.Y );*/
         return;
     }
-    displayDijkstraMatrix ( dijkstra, sommet1.X, sommet1.Y );
+   /* displayDijkstraMatrix ( dijkstra, sommet1.X, sommet1.Y );*/
 
 }
 
 
 
+
+
+void listGraphSucc(GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+    POSITION successor;
+    
+    int tab[3] = {-1, 0, 1};
+    int i,j;
+
+    for (i=0; i<3; i++) {
+        successor.Y = parent.Y + tab[i];
+        for (j=0; j<3; j++){
+            if ( isInGraph ( graph, parent.X + tab[j], parent.Y + tab[i] ) ) {
+                    successor.X = parent.X + tab[j];
+                if ( getElementGraph ( graph, successor ) != wallGraph) {
+                    if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
+                        *list = addElementList(*list, successor);
+                        dijkstra->matrix[successor.X][successor.Y].flag = gray;
+                        /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
+                        updateDistance(dijkstra, graph, parent, successor);
+                    }
+                }
+            }
+                
+        }
+        
+    }
+}
+
+
+
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSommet) {
-    int i;
+    /*int i;*/
     POSITION sommet;
-    POSITION* succ;
-    short sizeSucc;
+    /*POSITION* succ;
+    short sizeSucc;*/
     LIST list;
     
     list = createList();
@@ -106,7 +153,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSomme
 
     while (!isEmptyList(list)) {
         findMin(dijkstra, &sommet, list);
-        succ = getSuccessorGraph(graph, sommet);
+        /*succ = getSuccessorGraph(graph, sommet);
         sizeSucc = succ[0].X;
         for (i=1; i<sizeSucc; i++) {
             if ( dijkstra->matrix[succ[i].X][succ[i].Y].flag == white ) {
@@ -115,9 +162,10 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSomme
                 displayDijkstraMatrix(dijkstra, sommet.X, sommet.Y);
             } 
             updateDistance(dijkstra, graph, sommet, succ[i]);
-        }
-        list = removeElementList(list, &sommet);
-        free ( succ );
+        }*/
+        listGraphSucc(graph, dijkstra, &list, sommet);
+        list = removeElementListCoord(list, &sommet, &sommet);
+        /*free ( succ );*/
     }
     destroyList(list);
 } 
@@ -148,7 +196,7 @@ PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
         }
     }
     getClosestFinishLine(graph, &finalSommet);
-    displayDijkstraMatrix ( dijkstra, -1, -1 );
+    /*displayDijkstraMatrix ( dijkstra, -1, -1 );*/
     stack = createPathList();
     mixePOSITION(&finalSommet, &sommet);
     while( !samePOSITION(sommet, firstSommet) ) {

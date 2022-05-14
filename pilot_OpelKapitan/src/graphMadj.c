@@ -255,6 +255,7 @@ POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent )
     successor[0].X = count;
     return successor;
     */
+
    POSITION* successor;
     int count = 1;
     int tab[3] = {-1, 0, 1};
