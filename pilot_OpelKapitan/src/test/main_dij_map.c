@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "../../include/dijkstraAlgo.h"
 #include "../../include/dijkstraMatrix.h"
 #include "../../include/graphMadj.h"
@@ -18,17 +19,16 @@
 
 
 
-void main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
 
-    if (argc != 2) {
-        return EXIT_FAILURE;
-    }
+    
 
     FILE* map;
+    FILE* output;
     int i;
     int j;
     int countFinish =0;
-    char path[] = "../../../tracks/";
+    char path[] = "../../../../tracks/";
     char* fileName;
     int heigth;
     int width;
@@ -36,36 +36,71 @@ void main(int argc, char* argv[]) {
     GRAPH graph;
     dijkstraMatrix dijkstra;
     char mapValue;
+    POSITION first;
+    graphValues valueGraph;
+    PATH_LIST stack;
+    int count = 0;
+    POSITION result;
+    char buff[100];
+    clock_t t1,t2;
 
+    if (argc != 2) {
+        printf("problème d'argument\n");
+        return EXIT_FAILURE;
+    }
 
-    fileName = (char*)malloc( (strlen(path) + strlen(argv[1]) ) * sizeof(char));
-    strcpy(fileName, path);
-    strcat(fileName, argv[1]);
-
-    map = fopen(fileName, "r");
+    map = fopen(argv[1], "r");
+    output = fopen("../test.txt", "w");
     if(map == NULL){
 		printf("Impossible d'ouvrir le fichier en read\n");
 		return EXIT_FAILURE;
 	}
-    fscanf(map, "%d %d %d", &width, &heigth, &fuel);
+    fgets(buff, 255, map);
+    sscanf(buff, "%d %d %d", &width, &heigth, & fuel);
+    
+    t1=clock();
+    
+    graph = createGraph( width, heigth);
+    dijkstra = createDijkstraMatrix(width, heigth);
 
-    graph = createGraph(heigth, width);
-    dijkstra = createDijkstraMatrix(heigth, width);
-
-    for ( i = 0; i < heigth; i++ ) {
-        for ( j = 0; j < width; j++ ) {
-            fscanf(map, "%c", &mapValue);
-            if (mapValue == '=') {
-                graph.finishLineCoord[countFinish].X = j;
-                graph.finishLineCoord[countFinish].Y = i;
+    for ( j = 0; j < heigth; j++ ) {
+        fgets(buff, 255, map);
+        for ( i = 0; i < width; i++ ) {
+            if ( buff[i] == wall ) {
+                setElementGraph ( &graph, wallGraph, i, j );
+            } else if ( buff[i] == road ) {
+                setElementGraph ( &graph, roadGraph, i, j );
+            } else if ( buff[i] == sand ) {
+                setElementGraph ( &graph, sandGraph, i, j );
+            } else if ( buff[i] == finishLine ) {
+                setElementGraph ( &graph, finishLineGraph, i, j);
+                graph.finishLineCoord[countFinish].X = i;
+                graph.finishLineCoord[countFinish].Y = j;
                 countFinish++;
+            } else if (buff[i] == '1' || buff[i] == '2' ||buff[i] == '3') {
+                if (buff[i] == '1') {
+                    first.X = i;
+                    first.Y = j;
+                }
+                setElementGraph(&graph, 1, i, j);
             }
-            graph.graph.matrix[j][i] = mapValue;
         }
     }
+    graph.sizeFinishLine = countFinish;
+    stack = givePath(&dijkstra, &graph, first);
 
-
-
-
+    while ( !isEmptyPathList ( stack ) ) {
+        stack = removeHeadElementPathList ( stack, &result );
+        printf ( "[%d, %d] ", result.X, result.Y );
+        fprintf(output, "%d  %d\n", result.X, result.Y);
+    }
+    t2 = clock();
+    printf("\ntimer : %f",(float)(t2-t1)/CLOCKS_PER_SEC);
+    destroyDijkstraMatrix(dijkstra);
+    destroyGraph(graph);
+    destroyPathList (stack);
+    fclose(output);
     fclose(map); 
+
+    return 1;
 }
