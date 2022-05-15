@@ -5,15 +5,11 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [],
+      "args": ["../tracks/starter_virage_sable.txt"],
       "stopAtEntry": false,
-      "cwd": "/home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan",
+      "cwd": "/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan",
       "environment": [],
-<<<<<<< HEAD
-      "program": "/home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan/build/Debug/outDebug",
-=======
-      "program": "/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan/build/Debug/outDebug",
->>>>>>> e3f271c261645925dac5809d8cfe4a912794556e
+      "program": "/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan/src/test/bin/dijkstra.out",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb",

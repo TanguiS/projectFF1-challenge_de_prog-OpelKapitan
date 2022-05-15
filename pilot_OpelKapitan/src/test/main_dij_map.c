@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 
     path_list_element value;
     POSITION init;
-    SPEED speed = {0, 0};;
+    SPEED speed = {0, 0};
     ACCELERATION acc;
 
     if (argc != 2) {
@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
         }
     }
     graph.sizeFinishLine = countFinish;
-    stack = givePath(&dijkstra, &graph, first);
+    displayGraph ( &graph );
 
 /*     while ( !isEmptyPathList ( stack ) ) {
         stack = removeHeadElementPathList ( stack, &result );
@@ -103,7 +103,10 @@ int main(int argc, char* argv[]) {
 
     init = first;
     do {
+        stack = createPathList();
+        stack = givePath(&dijkstra, &graph, init);
         stack = choiceNextAction ( stack, init, speed, &acc );
+        destroyPathList ( stack );
         speed.X += acc.X;
         speed.Y += acc.Y;
         init.X += speed.X;
@@ -111,11 +114,13 @@ int main(int argc, char* argv[]) {
         printf ( "acceleration : [%d, %d]\n", acc.X, acc.Y );
         printf ( "speed        : [%d, %d]\n", speed.X, speed.Y );
         printf ( "Position     : [%d, %d]\n", init.X, init.Y );
-    } while ( true ); 
+        getClosestFinishLine ( &graph, &result );
+        printf ( "goal Position: [%d, %d]\n", result.X, result.Y );
+    } while ( !areEqualPosition ( init, result ) ); 
 
 
     t2 = clock();
-    printf("\ntimer : %f\n\n",(float)(t2-t1)/CLOCKS_PER_SEC);
+    printf("\n\ntimer : %f\n\n",(float)(t2-t1)/CLOCKS_PER_SEC);
     destroyDijkstraMatrix(dijkstra);
     destroyGraph(graph);
     destroyPathList (stack);

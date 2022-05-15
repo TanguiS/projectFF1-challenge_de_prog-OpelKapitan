@@ -12,7 +12,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 15 16:49:00 2022
+# Make data base, printed on Sun May 15 16:58:52 2022
 
 # Variables
 
@@ -88,7 +88,6 @@ _ = /snap/code/96/usr/share/code/code
 BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
- 
 # environment
 MANAGERPID = 933
 # environment
@@ -104,7 +103,6 @@ MAKE_HOST := x86_64-pc-linux-gnu
 # environment
 PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
- 
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1251,unix/st:/tmp/.ICE-unix/1251
@@ -153,7 +151,6 @@ OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
- 
 PWD = /home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
 # default
 .LOADED := 
@@ -193,7 +190,6 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
- 
 # environment
 LC_TIME = fr_FR.UTF-8
 # environment
@@ -213,7 +209,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3ef9f79e-fd79-4530-854e-503bb24cd81c.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c8039934-a9ab-4a3b-bb0e-bda6bb91d839.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -227,7 +223,6 @@ LC_MONETARY = fr_FR.UTF-8
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # makefile (from 'Makefile', line 5)
- 
 OBJ_PATH = ./obj
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
@@ -249,7 +244,6 @@ MAKEFLAGS = pqrR
 LIB_PATH = ./lib
 # environment
 MFLAGS = -pqrR
- 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # automatic
@@ -268,7 +262,6 @@ MAKEFILES :=
 SNAP_COOKIE = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # environment
 LC_NUMERIC = fr_FR.UTF-8
- 
 # automatic
 <F = $(notdir $<)
 # environment
@@ -289,8 +282,11 @@ SUFFIXES :=
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
+ 
 # environment
+ 
 WINDOWPATH = 2
+ 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -306,6 +302,7 @@ LANG = C
 # environment
 VSCODE_PID = 2777
 # variable set hash-table stats:
+ 
 # Load=141/1024=14%, Rehash=0, Collisions=33/224=15%
 
 # Pattern-specific Variable Values
@@ -406,7 +403,6 @@ obj/readMap.o: src/readMap.c include/readMap.h
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 33):
- 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/main.o: src/main.c include/readMap.h
@@ -486,6 +482,7 @@ src/main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 include/dijkstraAlgo.h:
 #  Implicit rule search has not been done.
@@ -557,7 +554,6 @@ obj/matrixDij.o: src/dijkstraMatrix.c include/dijkstraMatrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/pathList.o: src/pathList.c include/pathList.h
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -597,6 +593,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 94 / hit rate = 46%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/94=1%
-# Finished Make data base on Sun May 15 16:49:00 2022
+# Finished Make data base on Sun May 15 16:58:52 2022
 
  
