@@ -94,13 +94,14 @@ int main(int argc, char* argv[]) {
     }
     graph.sizeFinishLine = countFinish;
     displayGraph ( &graph );
+    stack = givePath(&dijkstra, &graph, first);
 
-/*     while ( !isEmptyPathList ( stack ) ) {
+    while ( !isEmptyPathList ( stack ) ) {
         stack = removeHeadElementPathList ( stack, &result );
         printf ( "[%d, %d] ", result.X, result.Y );
         fprintf(output, "%d  %d\n", result.X, result.Y);
-    } */
-
+    } 
+    /*
     init = first;
     do {
         stack = createPathList();
@@ -117,7 +118,7 @@ int main(int argc, char* argv[]) {
         getClosestFinishLine ( &graph, &result );
         printf ( "goal Position: [%d, %d]\n", result.X, result.Y );
     } while ( !areEqualPosition ( init, result ) ); 
-
+    */
 
     t2 = clock();
     printf("\n\ntimer : %f\n\n",(float)(t2-t1)/CLOCKS_PER_SEC);

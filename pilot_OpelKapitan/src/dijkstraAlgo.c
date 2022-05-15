@@ -147,8 +147,8 @@ void getRoadSucc (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION pa
                             {-1, -1}
     };
     for (i=0; i<8; i++) {
-        successor.X = tab[i].X;
-        successor.Y = tab[i].Y;
+        successor.X = parent.X + tab[i].X;
+        successor.Y = parent.Y + tab[i].Y;
         if ( isInGraph ( graph, successor.X, successor.Y ) ) {
             if ( getElementGraph ( graph, successor ) != wallGraph) {
                 if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
