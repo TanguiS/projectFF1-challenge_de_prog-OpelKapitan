@@ -163,11 +163,8 @@ void getRoadSucc (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION pa
 }
 
 void listGraphSucc(GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
-    POSITION successor;
     
-    int tab[3] = {-1, 0, 1};
-    int i,j;
-    if (getElementGraph(dijkstra, parent) == sandGraph) {
+    if (getElementGraph(graph, parent) == sandGraph) {
         getSuccSand(graph, dijkstra, list, parent);
     } else {
         /*
