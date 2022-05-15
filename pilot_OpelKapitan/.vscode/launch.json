@@ -2,6 +2,26 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "(gdb) Joindre",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "/home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan/src/test/bin/dijkstra.out",
+      "processId": "${command:pickProcess}",
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Activer l'impression en mode Pretty pour gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+              "description":  "Définir la version désassemblage sur Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ]
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
@@ -13,7 +33,7 @@
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb",
-      "console": "integratedTerminal",
+      "console": "",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
