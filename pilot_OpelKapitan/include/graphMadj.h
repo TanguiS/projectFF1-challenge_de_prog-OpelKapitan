@@ -38,8 +38,9 @@ typedef enum {
     roadGraph = 1,
     wallGraph = 0,
     finishLineGraph = 1,
-    sandGraph = 5,
-    carGraph = 0
+    sandGraph = 3,
+    carGraph = 0,
+    aroundCarGraph = 2
 } graphValues;
 
 typedef struct _mAdj {
@@ -131,6 +132,8 @@ GRAPH createGraph ( short width, short height );
  * @param thirdPilot 
  */
 void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot );
+
+void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previousThirdPilot );
 
 /**
  * @brief Update the Finish Line object from a graph

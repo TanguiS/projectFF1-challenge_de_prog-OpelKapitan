@@ -36,9 +36,9 @@ int main ( void )
     GRAPH graph;
     dijkstraMatrix dijkstra;
     float time;
+    float maxTime = 0.;
     float initTime;
     clock_t t1, t2;
-    int i;
 
     t1 = clock();
     map = readDataFromGDC ( &gasLvl, &graph );
@@ -58,6 +58,10 @@ int main ( void )
         t2 = clock();
         time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;
         fprintf ( stderr, "===> temps exec = %f\n", time );
+        if ( time > maxTime ) {
+            maxTime = time;
+        }
+        fprintf ( stderr, "\n\n>>>> CONCLUSION : temps max d'un tour : %f <<<<<<<\n\n", maxTime );
     }
     if ( !destroyMap ( map ) ) {
         fprintf ( stderr, "Erreur fermeture\n" );

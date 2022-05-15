@@ -93,9 +93,11 @@ void accelerate ( POSITION goalPosition, ACCELERATION* action );
 
 void choiceDirection ( direction choice, ACCELERATION* action );
 
-
+boolean areEqualPosition ( POSITION A, POSITION B );
 
 PATH_LIST choiceNextAction ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction );
+
+PATH_LIST nextActionForNextPosition ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction );
 
 
 

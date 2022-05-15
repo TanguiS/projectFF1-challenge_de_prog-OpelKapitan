@@ -304,12 +304,49 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
 {
     int i;
     POSITION competitor;
+    static POSITION rounder[] = {
+                            { 1, 0 },
+                            { -1, 0 },
+                            { 0, 1 },
+                            { 0, -1 }
+    };
+
+    for ( i = 0; i < 4; i++ ) {
+        if ( isInGraph ( graph, secoundPilot.X + rounder[i].X, secoundPilot.Y + rounder[i].Y ) ) {
+            setElementGraph ( graph, aroundCarGraph, secoundPilot.X + rounder[i].X, secoundPilot.Y + rounder[i].Y );
+        }
+        if ( isInGraph ( graph, thirdPilot.X + rounder[i].X, thirdPilot.Y + rounder[i].Y ) ) {
+            setElementGraph ( graph, aroundCarGraph, thirdPilot.X + rounder[i].X, thirdPilot.Y + rounder[i].Y );
+        }
+    }
     setElementGraph ( graph, carGraph, secoundPilot.X, secoundPilot.Y );
     setElementGraph ( graph, carGraph, thirdPilot.X, thirdPilot.Y );
+
     for ( i = 0; i < getSizeFinishLine ( graph); i++ ) {
         getCoordFinishLine ( graph, i, &competitor );
         if ( competitorIsClosestToFinish ( graph, myPilot, competitor ) ) {
             setClosestFinishLine ( graph, competitor );
+        }
+    }
+}
+
+void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previousThirdPilot )
+{
+    int i;
+    static POSITION rounder[] = {
+                            { 1, 0 },
+                            { -1, 0 },
+                            { 0, 1 },
+                            { 0, -1 },
+                            { 0, 0 }
+    };
+
+    for ( i = 0; i < 5; i++ ) {
+        if ( isInGraph ( graph, previousSecoundPilot.X + rounder[i].X, previousSecoundPilot.Y + rounder[i].Y ) ) {
+            setElementGraph ( graph, roadGraph, previousSecoundPilot.X + rounder[i].X, previousSecoundPilot.Y + rounder[i].Y );
+        }
+        if ( isInGraph ( graph, previousThirdPilot.X + rounder[i].X, previousThirdPilot.Y + rounder[i].Y ) ) {
+            setElementGraph ( graph, roadGraph, previousThirdPilot.X + rounder[i].X, previousThirdPilot.Y + rounder[i].Y );
         }
     }
 }
