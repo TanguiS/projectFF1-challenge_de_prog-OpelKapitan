@@ -67,7 +67,7 @@ static void setActionPilot ( PILOT* pilot, short x, short y );
  * @param pilot : the PILOT object
  * @param newGasLvl : the gas level
  */
-static void setGasLvlPilot ( PILOT* pilot, short newGasLvl );
+static void setGasLvlPilot ( PILOT* pilot, double newGasLvl );
 
 /**
  * @brief Set the Boosts Remaining Pilot object
@@ -104,7 +104,7 @@ static boolean actionIsBoosted ( ACCELERATION action );
 
 static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeChosen );
 
-static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map );
+static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map );
 
 /**
  * @brief Update the gas remaining of our pilot
@@ -141,7 +141,7 @@ static void setActionPilot ( PILOT* pilot, short x, short y )
     pilot->acceleration.Y = y;
 }
 
-static void setGasLvlPilot ( PILOT* pilot, short newGasLvl )
+static void setGasLvlPilot ( PILOT* pilot, double newGasLvl )
 {
     pilot->gasLvl = newGasLvl;
 }
@@ -176,6 +176,7 @@ static void updatePositionPilotFromGDC ( PILOT* myPilot, PILOT* secondPilot, PIL
     POSITION myPosition, secoundPosition, thirdPosition;
 
     fgets ( buf, MAX_LINE_LENGTH, stdin );
+    fprintf ( stderr, "\n\nLECTURE TEST BUFFER >>>>>>>>>>>>< : %s\n\n", buf );
     fflush ( stdin );
     sscanf ( buf, "%hd %hd %hd %hd %hd %hd",
                     &myPosition.X,      &myPosition.Y,
@@ -229,32 +230,30 @@ static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeCho
     }
 }
 
-static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map )
+static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map )
 {
-    short norme1;
-    short squareRoot;
-    float squareRootDecimal;
+    double norme1;
+    double squareRoot;
     #ifndef DEBUG
     char buf[100];
     sprintf ( buf, "speed : (%hd %hd), acc : (%hd %hd)", speed.X, speed.Y, action.X, action.Y );
     #endif
 
-    DEBUG_STRING ( "> fuelConsumption : " , buf );
+    DEBUG_STRING ( "> fuelConsumption donnée envoyé : " , buf );
 
     norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
-    squareRoot =  (short) ( sqrt ( ( 3. * ( (float) ( speed.X * speed.X ) + (float) ( speed.Y * speed.Y ) ) ) / 2. ) );
-    squareRootDecimal = ( sqrt ( ( 3. * ( (float) ( speed.X * speed.X ) + (float) ( speed.Y * speed.Y ) ) ) / 2. ) ) - ( float ) squareRoot;
+    squareRoot =  sqrt ( ( 3. * ( (double) ( speed.X * speed.X ) + (double) ( speed.Y * speed.Y ) ) ) / 2. );
 
-    if ( squareRootDecimal > 0.5 ) {
-        squareRoot++;
+    if ( ceil ( squareRoot ) - squareRoot < 0.73 ) {
+        squareRoot = ceil ( squareRoot );
+    } else {
+        squareRoot = floor ( squareRoot );
     }
 
-    DEBUG_INT ( "> Consommation , norme1: ", norme1 );
-    DEBUG_INT ( "> Consommation , squareRoot: ", squareRoot );
+    fprintf ( stderr, ">>> resultat calcul : \n     norme1 = %f,    squareRoot = %f\n", norme1, squareRoot );
 
-    DEBUG_INT ( "> Consommation : ", norme1 + squareRoot );
     if ( getElementMap ( map, position ) == sand ) {
-        return ( - ( norme1 + squareRoot + 1 ) );
+        return ( norme1 + squareRoot + 1. );
     }
     return ( norme1 + squareRoot );
 }
@@ -269,7 +268,7 @@ static void updateGasPilot ( PILOT* pilot, DATA_MAP* map )
                                               map 
                                             ) 
                     );
-    DEBUG_INT ( "> gas left : ", getGasLvlPilot ( pilot ) );
+    fprintf ( stderr, "> gas lvl : %f\n", getGasLvlPilot ( pilot ) );
 }
 
 static void deliverAction ( char action[SIZE_ACTION] )
@@ -294,7 +293,7 @@ ACCELERATION getAccelerationPilot ( PILOT* pilot )
 }
 
 
-short getGasLvlPilot ( PILOT* pilot )
+double getGasLvlPilot ( PILOT* pilot )
 {
     return pilot->gasLvl;
 }
@@ -322,12 +321,10 @@ PILOT createPilot ( short gasLvl )
 void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph, dijkstraMatrix* dijkstra )
 {
     static int round = 0;
-    char* mode;
     char action[SIZE_ACTION];
     POSITION myCar, secoundCar, thirdCar;
     ACCELERATION nextAction;
 
-    POSITION value;
     SPEED speed;
     PATH_LIST path = createPathList();
 
@@ -338,7 +335,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
     reverseGraph ( graph, secoundCar, thirdCar );
-
+    
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( myPilot, secondPilot, thirdPilot );
 
@@ -354,9 +351,12 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 1ere etape : choisir une action */
     path = givePath ( dijkstra, graph, myCar );
 
+    updateGasPilot ( myPilot, map );
+
  /*    list = nextActionForNextPosition ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
     fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
-    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction );
+    /* path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction ); */
+    path = nextActionForNextPosition ( path, myCar, getSpeedPilot ( myPilot ), &nextAction );
     fprintf ( stderr, "\n>>> FIN <<<\n\n" );
     destroyPathList ( path );
 
@@ -365,7 +365,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     /* updateActionPilot ( myPilot, nextAction, mode ); */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
-    updateGasPilot ( myPilot, map );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
 

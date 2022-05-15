@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 15 13:26:48 2022
+# Make data base, printed on Sun May 15 14:35:36 2022
 
 # Variables
 
@@ -167,7 +167,7 @@ VSCODE_CODE_CACHE_PATH = /home/tangui/.config/Code/CachedData/da15b6fd3ef856477b
 # environment
 LOGNAME = tangui
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -278,6 +278,7 @@ SNAP_REEXEC =
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
+# default
  
 Makefile:60: warning: overriding recipe for target 'obj/dijkstraAlgo.o'
 Makefile:42: warning: ignoring old recipe for target 'obj/dijkstraAlgo.o'
@@ -285,7 +286,6 @@ Makefile:66: warning: overriding recipe for target 'obj/list.o'
 Makefile:48: warning: ignoring old recipe for target 'obj/list.o'
 make: *** No rule to make target 'all'.  Stop.
 
-# default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
@@ -419,7 +419,7 @@ obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h src/dijkstraAlgo.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-15 12:59:15.175865854
+#  Last modified 2022-05-15 14:31:48.034846064
 #  File has been updated.
 #  Successfully updated.
 
@@ -571,7 +571,6 @@ obj/matrix.o: src/matrix.c include/matrix.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 install: ../drivers/OpelKapitan
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -587,9 +586,10 @@ install: ../drivers/OpelKapitan
 # strcache buffers: 1 (0) / strings = 50 / storage = 705 B / avg = 14 B
 # current buf: size = 8162 B / used = 705 B / count = 50 / avg = 14 B
 
+ 
 # strcache performance: lookups = 94 / hit rate = 46%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/94=1%
-# Finished Make data base on Sun May 15 13:26:48 2022
+# Finished Make data base on Sun May 15 14:35:36 2022
 
  

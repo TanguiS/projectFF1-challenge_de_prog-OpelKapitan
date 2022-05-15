@@ -44,7 +44,7 @@ typedef struct _dataPilot {
     POSITION position;
     SPEED speed;
     ACCELERATION acceleration;
-    short gasLvl;
+    double gasLvl;
     short boostsRemaining;
 } _dataPilot;
 typedef struct _dataPilot PILOT;
@@ -79,7 +79,7 @@ ACCELERATION getAccelerationPilot ( PILOT* pilot );
  * @param pilot : the PILOT object
  * @return short : the gas level
  */
-short getGasLvlPilot ( PILOT* pilot );
+double getGasLvlPilot ( PILOT* pilot );
 
 /**
  * @brief Get the Boosts Remaining of a pilot 
