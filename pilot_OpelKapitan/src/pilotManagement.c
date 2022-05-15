@@ -311,7 +311,7 @@ PILOT createPilot ( short gasLvl )
  * @TODO predire l'essence utilise pour eviter de griller nimporte comment
  */
 
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph )
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph, dijkstraMatrix* dijkstra )
 {
     static int round = 0;
     char* mode;
@@ -319,54 +319,35 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     POSITION myCar, secoundCar, thirdCar;
     ACCELERATION nextAction;
 
-
     POSITION value;
     SPEED speed;
-    static PATH_LIST list;
-    int i;
-    int x[27] = {0, 0, 0, 0, 0, 1, 2, 3, 4, 4, 4, 4, 4, 5, 6, 6,  6,  6,  6,  5,  5, 5, 5, 5, 5, 5, 5};
-    int y[27] = {5, 4, 3, 2, 1, 0, 0, 0, 1, 2, 3, 4, 5, 5, 5, 4,  3,  2,  1,  0,  0,  0,  1,  2,  3,  4,  5};
-
+    static PATH_LIST path;
 
     round++;
-
-    if ( round == 1 ) {
-        list = createPathList();
-        for ( i = 0; i < 27; i++ ) {
-            value.X = x[26-i] + 33;
-            value.Y = y[26-i] + 13;
-            list = addHeadElementPathList ( list, value );
-        }
-    }
-
-
-
-
-
-
 
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
 
     updatePositionPilot ( myPilot, secondPilot, thirdPilot );
 
-
-
-
-
     myCar = getPositionPilot ( myPilot );
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
-/* 
-    nextAction = getAccelerationPilot ( myPilot );
- */
+
     updateGraph ( graph, myCar, secoundCar, thirdCar );
 
+    displayGraph ( graph );
+
+    if ( round == 1 ) {
+        
+    }
+
     /* 1ere etape : choisir une action */
+    path = givePath ( dijkstra, graph, myCar );
 
-
- /*    list = nextActionBasic ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
-
-    list = nextAction2 ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction );
+ /*    list = nextActionForNextPosition ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
+    fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
+    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction );
+    fprintf ( stderr, "\n>>> FIN <<<\n\n" );
 
 
 
@@ -382,5 +363,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     fprintf ( stderr, ">UPDATE PILOT : Position : (%d, %d); Speed : (%d, %d); Acc : (%d, %d)\n", myCar.X, myCar.Y, speed.X, speed.Y, nextAction.X, nextAction.Y );
     /* 3e etape : on transmet l'action au GDP */
     sprintf ( action, "%hd %hd", nextAction.X, nextAction.Y );
+    fprintf ( stderr, "\n>>>NEXT ACTION après la mise en STRING : %s\n\n", action );
     deliverAction ( action );
 }

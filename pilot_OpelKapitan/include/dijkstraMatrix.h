@@ -34,10 +34,11 @@
 #include <stdlib.h>
 
 
-typedef enum {white,
-  gray,
-  black
-  } dijBoolean;  
+typedef enum {
+    white,
+    gray,
+    black
+} dijBoolean;  
 
 typedef struct _elementDijkstra {
     POSITION predecessor; 

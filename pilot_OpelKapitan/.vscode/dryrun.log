@@ -1,12 +1,27 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
+ 
+Makefile:60: warning: overriding recipe for target 'obj/dijkstraAlgo.o'
+Makefile:42: warning: ignoring old recipe for target 'obj/dijkstraAlgo.o'
+Makefile:66: warning: overriding recipe for target 'obj/list.o'
+Makefile:48: warning: ignoring old recipe for target 'obj/list.o'
+
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/main.c -o obj/main.o
+ 
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/readMap.c -o obj/readMap.o
+ 
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pilotManagement.c -o obj/pilotManagement.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pilotDirection.c -o obj/pilotDirection.o
+ 
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/graphMadj.c -o obj/graphMadj.o
+ 
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/matrix.c -o obj/matrix.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/pathList.c -o obj/pathList.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o -o ../drivers/OpelKapitan -lm
+ 
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/dijkstraAlgo.c -o obj/dijkstraAlgo.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/dijkstraMatrix.c -o obj/dijkstraMatrix.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g -c src/list.c -o obj/list.o
+ 
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -g obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o -o ../drivers/OpelKapitan -lm
 make: Leaving directory '/home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
  

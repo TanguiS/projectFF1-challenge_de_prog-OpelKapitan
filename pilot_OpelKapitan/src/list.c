@@ -200,22 +200,17 @@ void displaylist (LIST list) {
     POSITION sommet;
     boolean i;
 
-    printf("\n\nLa liste\n");
     if (!isEmptyList(list)) {
         i = getElementList(list,&sommet, 0);
     }
-    printf("%d  %d\n",sommet.X, sommet.Y);
     while (i)
     {
         i = getNextElementList(list, &sommet, &sommet);
-        printf("%d  %d\n",sommet.X, sommet.Y);
     }
 
-    printf("\nles remove\n");
     while ( !isEmptyList(list))
     {
         list = removeElementList(list, &sommet);
-        printf("%d  %d\n",sommet.X, sommet.Y);
     }
 }
 #endif

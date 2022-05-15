@@ -30,6 +30,9 @@
 #include "util.h"
 #include "readMap.h"
 #include "pathList.h"
+#include "list.h"
+#include "dijkstraAlgo.h"
+#include "dijkstraMatrix.h"
 
 #ifndef DEBUG
 #include "debugMode.h"
@@ -102,6 +105,6 @@ PILOT createPilot ( short gasLvl );
  * @param thirdPilot : the third pilot
  * @param map : the race circuit
  */
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph );
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph, dijkstraMatrix* dijkstra );
 
 #endif /* __PILOT_MANAGEMENT_HH__ */
