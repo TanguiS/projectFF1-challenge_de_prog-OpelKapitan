@@ -106,32 +106,90 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, PO
 }
 
 
+void getSuccSand (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+    POSITION successor;
+    int i;
+    static POSITION tab[] ={
+                            {1, 0},
+                            {-1, 0},
+                            {0, 1},
+                            {0, -1}
+    };
+    for (i=0; i<4; i++) {
+        successor.X = tab[i].X;
+        successor.Y = tab[i].Y;
+        if ( isInGraph ( graph, successor.X, successor.Y ) ) {
+            if ( getElementGraph ( graph, successor ) != wallGraph) {
+                if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
+                    *list = addElementList(*list, successor);
+                    dijkstra->matrix[successor.X][successor.Y].flag = gray;
+                    /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
+                    updateDistance(dijkstra, graph, parent, successor);
+                }
+            }
+        }
+    }
+}
 
 
 
-void listGraphSucc(GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+void getRoadSucc (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+    POSITION successor;
+    int i;
+    static POSITION tab[] ={
+                            {1, 0},
+                            {-1, 0},
+                            {0, 1},
+                            {0, -1},
+                            {1, 1},
+                            {1, -1},
+                            {-1, 1},
+                            {-1, -1}
+    };
+    for (i=0; i<8; i++) {
+        successor.X = tab[i].X;
+        successor.Y = tab[i].Y;
+        if ( isInGraph ( graph, successor.X, successor.Y ) ) {
+            if ( getElementGraph ( graph, successor ) != wallGraph) {
+                if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
+                    *list = addElementList(*list, successor);
+                    dijkstra->matrix[successor.X][successor.Y].flag = gray;
+                    /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
+                    updateDistance(dijkstra, graph, parent, successor);
+                }
+            }
+        }
+    }
+}
+
+void listGraphSucc(GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
     POSITION successor;
     
     int tab[3] = {-1, 0, 1};
     int i,j;
-
-    for (i=0; i<3; i++) {
-        successor.Y = parent.Y + tab[i];
-        for (j=0; j<3; j++){
-            if ( isInGraph ( graph, parent.X + tab[j], parent.Y + tab[i] ) ) {
-                    successor.X = parent.X + tab[j];
-                if ( getElementGraph ( graph, successor ) != wallGraph) {
-                    if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
-                        *list = addElementList(*list, successor);
-                        dijkstra->matrix[successor.X][successor.Y].flag = gray;
-                        /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
-                        updateDistance(dijkstra, graph, parent, successor);
+    if (getElementGraph(dijkstra, parent) == sandGraph) {
+        getSuccSand(graph, dijkstra, list, parent);
+    } else {
+        /*
+        for (i=0; i<3; i++) {
+            successor.Y = parent.Y + tab[i];
+            for (j=0; j<3; j++){
+                if ( isInGraph ( graph, parent.X + tab[j], parent.Y + tab[i] ) ) {
+                        successor.X = parent.X + tab[j];
+                    if ( getElementGraph ( graph, successor ) != wallGraph) {
+                        if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
+                            *list = addElementList(*list, successor);
+                            dijkstra->matrix[successor.X][successor.Y].flag = gray;
+                            displayDijkstraMatrix(dijkstra, successor.X, successor.Y);
+                            updateDistance(dijkstra, graph, parent, successor);
+                        }
                     }
                 }
+                    
             }
-                
-        }
-        
+            
+        }*/
+        getRoadSucc(graph, dijkstra, list, parent);
     }
 }
 
