@@ -19,7 +19,7 @@ ifeq ($(DEBUG),off)
 CFLAGS += -D'DEBUG'
 endif
 
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o
 
 install: $(BIN_PATH)/$(PILOT_NAME)
 
@@ -54,6 +54,15 @@ $(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)/pilotDirection.c $(INC_PATH)/pilotDire
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/graphMadj.o: $(SRC_PATH)/graphMadj.c $(INC_PATH)/graphMadj.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH)/dijkstraAlgo.o: $(SRC_PATH)/dijkstraAlgo.c $(INC_PATH)/dijkstraAlgo.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH)/dijkstraMatrix.o: $(SRC_PATH)/dijkstraMatrix.c $(INC_PATH)/dijkstraAlgo.h
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH)/list.o: $(SRC_PATH)/list.c $(INC_PATH)/list.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(BIN_PATH)/$(PILOT_NAME): $(OBJS)

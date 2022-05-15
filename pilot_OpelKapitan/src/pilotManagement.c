@@ -311,7 +311,7 @@ PILOT createPilot ( short gasLvl )
  * @TODO predire l'essence utilise pour eviter de griller nimporte comment
  */
 
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph )
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph, dijkstraMatrix* dijkstra )
 {
     static int round = 0;
     char* mode;
@@ -319,55 +319,34 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     POSITION myCar, secoundCar, thirdCar;
     ACCELERATION nextAction;
 
-
     POSITION value;
     SPEED speed;
-    static PATH_LIST list;
-    int i;
-    int x[30] = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2};
-    int y[30] = { 9, 9, 9, 9, 9, 9, 9,  9,  9,  9,  8,  7,  6,  5,  4,  3,  2, 1, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-
+    static PATH_LIST path;
 
     round++;
-
-    if ( round == 1 ) {
-        list = createPathList();
-        for ( i = 0; i < 30; i++ ) {
-            value.X = x[30-i-1] + 5;
-            value.Y = y[30-i-1] + 1; /* 8, 10 */
-            fprintf ( stderr, "%d %d\n", value.X, value.Y );
-            list = addHeadElementPathList ( list, value );
-        }
-    }
-
-
-
-
-
-
 
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
 
     updatePositionPilot ( myPilot, secondPilot, thirdPilot );
 
-
-
-
-
     myCar = getPositionPilot ( myPilot );
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
-/* 
-    nextAction = getAccelerationPilot ( myPilot );
- */
+
     updateGraph ( graph, myCar, secoundCar, thirdCar );
 
-    /* 1ere etape : choisir une action */
+    displayGraph ( graph );
 
+    if ( round == 1 ) {
+        
+    }
+
+    /* 1ere etape : choisir une action */
+    path = givePath ( dijkstra, graph, myCar );
 
  /*    list = nextActionForNextPosition ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
     fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
-    list = choiceNextAction ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction );
+    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction );
     fprintf ( stderr, "\n>>> FIN <<<\n\n" );
 
 

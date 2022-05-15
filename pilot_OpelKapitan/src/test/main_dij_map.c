@@ -14,6 +14,7 @@
 #include "../../include/graphMadj.h"
 #include "../../include/pathList.h"
 #include "../../include/list.h"
+#include "../../include/pilotDirection.h"
 
 
 
@@ -43,6 +44,11 @@ int main(int argc, char* argv[]) {
     POSITION result;
     char buff[100];
     clock_t t1,t2;
+
+    path_list_element value;
+    POSITION init;
+    SPEED speed = {0, 0};;
+    ACCELERATION acc;
 
     if (argc != 2) {
         printf("problème d'argument\n");
@@ -89,11 +95,25 @@ int main(int argc, char* argv[]) {
     graph.sizeFinishLine = countFinish;
     stack = givePath(&dijkstra, &graph, first);
 
-    while ( !isEmptyPathList ( stack ) ) {
+/*     while ( !isEmptyPathList ( stack ) ) {
         stack = removeHeadElementPathList ( stack, &result );
         printf ( "[%d, %d] ", result.X, result.Y );
         fprintf(output, "%d  %d\n", result.X, result.Y);
-    }
+    } */
+
+    init = first;
+    do {
+        stack = choiceNextAction ( stack, init, speed, &acc );
+        speed.X += acc.X;
+        speed.Y += acc.Y;
+        init.X += speed.X;
+        init.Y += speed.Y;
+        printf ( "acceleration : [%d, %d]\n", acc.X, acc.Y );
+        printf ( "speed        : [%d, %d]\n", speed.X, speed.Y );
+        printf ( "Position     : [%d, %d]\n", init.X, init.Y );
+    } while ( true ); 
+
+
     t2 = clock();
     printf("\ntimer : %f",(float)(t2-t1)/CLOCKS_PER_SEC);
     destroyDijkstraMatrix(dijkstra);

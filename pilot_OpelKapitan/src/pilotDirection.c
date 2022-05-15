@@ -24,7 +24,7 @@
 
 #define ACTION 1
 #define BOOSTED_ACTION 2
-#define MAX_SPEED 3
+#define MAX_SPEED 4
 
 
 void goRight ( ACCELERATION* action ) {
@@ -231,7 +231,7 @@ static POSITION positionVector ( POSITION finalPosition, POSITION startPosition 
     return finalPosition;
 }
 
-void addActionToGroup ( short length, short currentSpeed, short startingIndex, POSITION startPosition, POSITION finalPosition, ACCELERATION* actions )
+short addActionToGroup ( short length, short currentSpeed, short startingIndex, POSITION startPosition, POSITION finalPosition, ACCELERATION* actions )
 {
     int i;
     short decelerationPosition = 0; /* ATTENTION SI BOOST */
@@ -282,6 +282,7 @@ void addActionToGroup ( short length, short currentSpeed, short startingIndex, P
     }
     fprintf ( stderr, "\n                                                  --> longueur parcouru : %d\n", hypoteticalPosition );
     actions[0].X = startingIndex;
+    return hypoteticalPosition;
 }
 
 goalDirection lineToFollow ( POSITION startPosition, POSITION goalPosition )
@@ -365,17 +366,18 @@ PATH_LIST groupNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotS
 {
     POSITION goalPosition;
     goalDirection directionLine;
+    short length;
     int i;
 
     goalPosition = getCurrentPathList ( path );
     directionLine = lineToFollow ( pilotPosition, goalPosition );
     if ( directionLine == towardsX ) {
-        addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 1, pilotPosition, goalPosition, nextAction );
+        length = addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 1, pilotPosition, goalPosition, nextAction );
         if ( pilotSpeed.Y != 0 ) {
             slowDownY ( pilotSpeed, &nextAction[1] );
         }
     } else if ( directionLine == towardsY ) {
-        addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).Y ), pilotSpeed.Y, 1, pilotPosition, goalPosition, nextAction );
+        length = addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).Y ), pilotSpeed.Y, 1, pilotPosition, goalPosition, nextAction );
         if ( pilotSpeed.X != 0 ) {
             slowDownX ( pilotSpeed, &nextAction[1] );
         }
@@ -396,12 +398,12 @@ PATH_LIST groupNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotS
         pilotSpeed.Y += nextAction[2].Y;
         pilotPosition.X += pilotSpeed.X;
         pilotPosition.Y += pilotSpeed.Y;
-        addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 3, pilotPosition, goalPosition, nextAction );
+        length = addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 3, pilotPosition, goalPosition, nextAction );
     }
     for ( i = 1; i < nextAction[0].X; i++ ) {
         fprintf ( stderr, "Action recupered : %d %d\n", nextAction[i].X, nextAction[i].Y );
     }
-    if ( !currentEqualsHead ( path ) ) {
+    if ( length > 0 ) {
         path = updatePathToGoalPosition ( path, goalPosition );
     }
     return path;

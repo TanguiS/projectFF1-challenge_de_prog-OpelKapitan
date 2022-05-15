@@ -24,6 +24,8 @@
 #include <time.h>
 #include "readMap.h"
 #include "pilotManagement.h"
+#include "dijkstraAlgo.h"
+#include "dijkstraMatrix.h"
 
 int main ( void )
 {
@@ -32,6 +34,7 @@ int main ( void )
     DATA_MAP map;
     PILOT myPilot, autre2, autre3;
     GRAPH graph;
+    dijkstraMatrix dijkstra;
     float time;
     float initTime;
     clock_t t1, t2;
@@ -40,6 +43,7 @@ int main ( void )
     t1 = clock();
     map = readDataFromGDC ( &gasLvl, &graph );
     myPilot = createPilot ( gasLvl );
+    dijkstra = createDijkstraMatrix ( getWidthGraph ( &graph ), getHeightGraph ( &graph ) );
     t2 = clock();
     initTime = (float)(t2-t1)/CLOCKS_PER_SEC;
 
@@ -50,10 +54,7 @@ int main ( void )
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
-        #ifndef DEBUG
-        displayGraph ( &graph );
-        #endif
-        updatePilots ( &myPilot, &autre2, &autre3, &map, &graph );
+        updatePilots ( &myPilot, &autre2, &autre3, &map, &graph, &dijkstra );
         t2 = clock();
         time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;
         fprintf ( stderr, "===> temps exec = %f\n", time );
@@ -62,5 +63,6 @@ int main ( void )
         fprintf ( stderr, "Erreur fermeture\n" );
     }
     destroyGraph(graph);
+    destroyDijkstraMatrix ( dijkstra );
     return EXIT_SUCCESS;
 }
