@@ -48,6 +48,8 @@ void addSuccessorListe(LIST* list, POSITION* succ, POSITION sommet,  short sizeS
 
 void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSommet);
 
-PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, short firstx, short firsty, short finalx, short finaly);
+void listGraphSucc(GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent);
+
+PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first);
 
 #endif /* DIJKSTRA_ALGO_HH__ */

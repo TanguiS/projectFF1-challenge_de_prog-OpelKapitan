@@ -166,8 +166,8 @@ path_list_element getCurrentPathList ( PATH_LIST list )
 
 void destroyPathList ( PATH_LIST list )
 {
-    path_list_element* trash = NULL;
+    path_list_element trash;
     while ( !isEmptyPathList ( list ) ) {
-        list = removeHeadElementPathList ( list, trash );
+        list = removeHeadElementPathList ( list, &trash );
     }
 }

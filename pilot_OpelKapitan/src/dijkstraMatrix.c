@@ -110,7 +110,7 @@ void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* pa
 void destroyDijkstraMatrix(dijkstraMatrix dijkstra) {
     int i;
 
-    for (i=0; i<getHeigthMatrixDijkstra(&dijkstra); i++) {
+    for (i=0; i<getWidthMatrixDijkstra(&dijkstra); i++) {
         free(dijkstra.matrix[i]);
     }
     free(dijkstra.matrix);

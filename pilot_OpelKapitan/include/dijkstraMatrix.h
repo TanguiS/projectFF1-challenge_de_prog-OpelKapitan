@@ -34,10 +34,11 @@
 #include <stdlib.h>
 
 
-typedef enum {white,
-  gray,
-  black
-  } dijBoolean;  
+typedef enum {
+    white,
+    gray,
+    black
+} dijBoolean;  
 
 typedef struct _elementDijkstra {
     POSITION predecessor; 
@@ -79,6 +80,7 @@ void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
 void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y );
 void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* path);
 #endif
+
 
 
 #endif 
