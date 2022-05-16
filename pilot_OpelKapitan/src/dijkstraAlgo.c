@@ -22,7 +22,6 @@
 #include "../include/dijkstraAlgo.h"
 
 
-
 void mixePOSITION (POSITION* reference, POSITION* result ) {
     result->X = reference->X;
     result->Y = reference->Y;   
@@ -53,7 +52,7 @@ static boolean isInGraph ( GRAPH* graph, short x, short y )
     return true;
 }
 
-static void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
+void initDijkstraLength(dijkstraMatrix* dijkstraMatrix, POSITION first) {
     int i;
     int j;
 
@@ -63,8 +62,8 @@ static void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y)
             dijkstraMatrix->matrix[j][i].flag = white;
         }
     }
-    setPathLength ( dijkstraMatrix, x, y, 0 );
-    dijkstraMatrix->matrix[x][y].flag = gray;
+    setPathLength ( dijkstraMatrix, first.X, first.Y, 0 );
+    dijkstraMatrix->matrix[first.X][first.Y].flag = gray;
     /*displayDijkstraMatrix ( dijkstraMatrix, -1, -1 );*/
 }
 
@@ -197,7 +196,7 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSomme
     LIST list;
     
     list = createList();
-    initDijkstraLenght(dijkstra, firstSommet.X, firstSommet.Y);
+    initDijkstraLength(dijkstra, firstSommet);
     sommet.X = firstSommet.X;
     sommet.Y = firstSommet.Y;
     list = addElementList(list, sommet);
@@ -234,7 +233,7 @@ PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
 
     firstSommet.X = first.X;
     firstSommet.Y = first.Y;
-    allPathDijkstra ( dijkstra, graph, firstSommet );
+    allPathDijkstra ( dijkstra, graph, first );
     getClosestFinishLine ( graph, &finalSommet );
     getCoordFinishLine ( graph, 0, &competitor );
     minLength = getPathLength(dijkstra, competitor.X, competitor.Y);
