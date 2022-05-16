@@ -323,6 +323,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     static int round = 0;
     char action[SIZE_ACTION];
     POSITION myCar, secoundCar, thirdCar;
+    POSITION trash;
     ACCELERATION nextAction;
 
     SPEED speed;
@@ -351,10 +352,13 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 1ere etape : choisir une action */
     path = givePath ( dijkstra, graph, myCar );
 
-    updateGasPilot ( myPilot, map );
 
  /*    list = nextActionForNextPosition ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
     fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
+    if ( areEqualPosition ( examineHeadPathList ( path ), myCar ) ) {
+        fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
+        removeHeadElementPathList ( path, &trash );
+    }
     /* path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction ); */
     path = nextActionForNextPosition ( path, myCar, getSpeedPilot ( myPilot ), &nextAction );
     fprintf ( stderr, "\n>>> FIN <<<\n\n" );
@@ -365,6 +369,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     /* updateActionPilot ( myPilot, nextAction, mode ); */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
+    updateGasPilot ( myPilot, map );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
 

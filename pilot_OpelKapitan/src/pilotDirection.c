@@ -544,21 +544,19 @@ PATH_LIST groupNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotS
         }
     } else { /* c'est une diagonale */
         fprintf ( stderr, "diagonal\n" );
-/*         path = nextActionForNextPosition ( path, pilotPosition, pilotSpeed, &nextAction[1] );
+         path = nextActionForNextPosition ( path, pilotPosition, pilotSpeed, &nextAction[1] );
         fprintf ( stderr, ">>>diag : action n°1 : %d %d\n", nextAction[1].X, nextAction[1].Y );
-        pilotSpeed.X += nextAction[1].X;
+/*         pilotSpeed.X += nextAction[1].X;
         pilotSpeed.Y += nextAction[1].Y;
         pilotPosition.X += pilotSpeed.X;
-        pilotPosition.Y += pilotSpeed.Y; */
+        pilotPosition.Y += pilotSpeed.Y;
         path = equilibrateSpeedForStraightLine ( path, pilotPosition, pilotSpeed, &nextAction[1] );
         fprintf ( stderr, ">>>diag : action n°2 : %d %d\n", nextAction[1].X, nextAction[1].Y );
         pilotSpeed.X += nextAction[1].X;
         pilotSpeed.Y += nextAction[1].Y;
         pilotPosition.X += pilotSpeed.X;
         pilotPosition.Y += pilotSpeed.Y;
-        length = addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 2, pilotPosition, goalPosition, nextAction );
-        /* length = addActionXToGroup ( abs ( positionVector ( goalPosition, pilotPosition).X ), pilotSpeed.X, 1, pilotPosition, goalPosition, nextAction );
-        length = addActionYToGroup ( abs ( positionVector ( goalPosition, pilotPosition).Y ), pilotSpeed.X, 1, pilotPosition, goalPosition, nextAction ); */
+        length = addActionToGroup ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 2, pilotPosition, goalPosition, nextAction ); */
     }
     for ( i = 1; i < nextAction[0].X; i++ ) {
         fprintf ( stderr, "Action recupered : %d %d\n", nextAction[i].X, nextAction[i].Y );

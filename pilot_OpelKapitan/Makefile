@@ -7,7 +7,7 @@ BIN_PATH = ../drivers
 LIB_PATH = ./lib
 
 CC = gcc
-CFLAGS = -Wall -Wextra -ansi -pedantic -g
+CFLAGS = -Wall -Wextra -ansi -pedantic -O3
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 LDFLAGS = -lm
 

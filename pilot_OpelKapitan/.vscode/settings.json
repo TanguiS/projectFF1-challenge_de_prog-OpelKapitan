@@ -34,7 +34,8 @@
     "stdio.h": "c",
     "dijkstramatrix.h": "c",
     "graphmadj.h": "c",
-    "pilotdirection.h": "c"
+    "pilotdirection.h": "c",
+    "pilotmanagement.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }
