@@ -53,7 +53,7 @@ static boolean isInGraph ( GRAPH* graph, short x, short y )
     return true;
 }
 
-void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
+static void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
     int i;
     int j;
 
@@ -70,7 +70,7 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
 
 
-void    findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
+void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
     short i;
     POSITION minTemp;
 
@@ -102,7 +102,6 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, PO
         return;
     }
    /* displayDijkstraMatrix ( dijkstra, sommet1.X, sommet1.Y );*/
-
 }
 
 
@@ -116,8 +115,8 @@ void getSuccSand (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION pa
                             {0, -1}
     };
     for (i=0; i<4; i++) {
-        successor.X = tab[i].X;
-        successor.Y = tab[i].Y;
+        successor.X = parent.X + tab[i].X;
+        successor.Y = parent.Y + tab[i].Y;
         if ( isInGraph ( graph, successor.X, successor.Y ) ) {
             if ( getElementGraph ( graph, successor ) != wallGraph) {
                 if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
@@ -131,9 +130,7 @@ void getSuccSand (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION pa
     }
 }
 
-
-
-void getRoadSucc (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+void getRoadSucc (GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
     POSITION successor;
     int i;
     static POSITION tab[] ={

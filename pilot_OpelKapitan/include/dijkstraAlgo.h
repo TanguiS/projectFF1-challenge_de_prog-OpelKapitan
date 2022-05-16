@@ -33,7 +33,7 @@
 #include "list.h"
 
 
-void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
+/*void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);*/
 
 
 void mixePOSITION (POSITION* reference, POSITION* result );
