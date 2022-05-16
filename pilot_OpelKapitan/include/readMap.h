@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.2
+ * @version 1.0.3
  * @date 05 avril 2022
  */
 
@@ -64,7 +64,7 @@ short getHeightMap ( DATA_MAP* map );
 /**
  * @brief Get the Element Map object
  * 
- * @param map 
+ * @param map : the map object
  * @param coord : the coordinate of the wanted element
  * @return short : the element
  */
@@ -84,7 +84,7 @@ DATA_MAP createMap ( short width, short height );
  * 
  * @param gasLvl : the gas level sent by the GDC
  * @param graph : the Graph object initialized
- * @return DATA_MAP ; the Map object initialized
+ * @return DATA_MAP : the Map object initialized
  */
 DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph );
 

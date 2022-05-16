@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.2
+ * @version 1.0.3
  * @date 05 avril 2022
  */
 
@@ -96,11 +96,6 @@ DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph )
     fgets ( buf, MAX_LINE_LENGTH, stdin );
     sscanf ( buf, "%hd %hd %hd", &width, &height, gasLvl );
 
-    DEBUG_CHAR ( "=== > Lecture des Data < ===", ' ' );
-    DEBUG_INT ( "Valeur de width : ", (int) width ); 
-    DEBUG_INT ( "Valeur de height : ", (int) height ); 
-    DEBUG_INT ( "Valeur de gasLvl : ", (int) *gasLvl );
-
     map = createMap ( width, height );
     *graph = createGraph ( width, height );
 
@@ -108,9 +103,6 @@ DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph )
         fgets ( buf, MAX_LINE_LENGTH, stdin );
         setDataMapGraph ( &map, graph, buf, i );
     }
-    #ifndef DEBUG
-        displayMap ( map );
-    #endif
     return map;
 }
 
