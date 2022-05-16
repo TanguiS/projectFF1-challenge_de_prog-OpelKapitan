@@ -181,40 +181,24 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
     LIST_CELL current;
     int i = 0;
 
-    fprintf(stderr,"1\n");
-    fflush(stderr);
     if (isEmptyList(list)) {
         return false;
     }
-    fprintf(stderr,"2 \n");
-    fflush(stderr);
     if(list.size<=position) {
         return false;
     }
 
     current = list.head;
     while (i<position && current!=NULL) {
-        fprintf(stderr,"2 bis\n");
-        fflush(stderr);
         current = current->followingCell;
         i++;
     } 
-    fprintf(stderr,"3\n");
-    fflush(stderr);
     if(current==NULL) {
         return false;
     }
-    fprintf(stderr,"4 bis 1 %d\n",isEmptyList(list));
-    fflush(stderr);
-
-    fprintf(stderr,"4 bis 2 %d %d\n",current->contents.X, current->contents.Y);
-    fflush(stderr);
 
     result->X = current->contents.X; 
     result->Y = current->contents.Y;
-    fprintf(stderr,"5\n");
-    fflush(stderr);
-
     return true;
 }
 
