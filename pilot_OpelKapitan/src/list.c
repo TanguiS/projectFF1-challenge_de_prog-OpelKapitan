@@ -40,7 +40,7 @@ static LIST_CELL createCell ( listElement x)
 {
     LIST_CELL newCell;
 
-    newCell =  ( LIST_CELL ) malloc ( sizeof ( _list_cell ) );
+    newCell =  (LIST_CELL) malloc ( sizeof ( struct _list_cell) );
     newCell->contents.X = x.X;
     newCell->contents.Y = x.Y;
     newCell->followingCell = NULL;
@@ -50,7 +50,7 @@ static LIST_CELL createCell ( listElement x)
 static boolean destroyCell ( LIST_CELL cell )
 {
     if ( cell != NULL ) {
-        free ( cell );
+        free(cell);
         cell = NULL;
         return true;
     }
@@ -69,6 +69,7 @@ LIST createList ()
     LIST newlist;
     newlist.head = NULL;
     newlist.tail = NULL;
+    newlist.size = 0;
     return newlist;
 }
 
@@ -84,15 +85,19 @@ LIST addElementList ( LIST list, listElement x )
 {
     LIST_CELL newCell;
 
-    newCell = createCell ( x );
-    if ( isEmptyList( list  ) ) {
+    
+
+    newCell = createCell(x);
+    if ( isEmptyList(list) ) {
         list.head = newCell;
         list.tail = newCell;
+        list.size++;
         return list; 
     }
 
     list.tail->followingCell = newCell;
     list.tail = newCell;
+    list.size++;
     return list; 
 }
 
@@ -101,27 +106,37 @@ LIST removeElementListCoord ( LIST list, listElement* result , POSITION* removeC
     LIST_CELL previousHead;
     LIST_CELL current;
     
-    if ( isEmptyList( list  ) ) {
+    if ( isEmptyList(list) ) {
         return list; 
     }
+
     current = list.head;
+    previousHead = NULL;
     while ( current != NULL && !compareElement(removeCoord, &(current->contents)) ) {
         previousHead = current;
         current = current->followingCell;
     }
-    if (current == NULL) {
-        return list; 
+
+    if(current==NULL) {
+        return list;
     }
+
     result->X = current->contents.X; 
     result->Y = current->contents.Y;
-    if (current == list. head) {
+
+    if (current == list.head) {
         list.head = current->followingCell;
-    } else if ( current == list. tail) {
+    }
+    
+    if ( current == list.tail) {
         list.tail = previousHead;
-    } else {
+    }
+    
+    if(previousHead!=NULL) {
         previousHead->followingCell = current->followingCell;
     }
     destroyCell ( current );
+    list.size--;
     return list; 
 }
 
@@ -131,19 +146,28 @@ LIST removeElementList ( LIST list,  listElement* result )
 {
     LIST_CELL previousHead;
     
-    if ( isEmptyList( list  ) ) {
+    if ( isEmptyList(list) ) {
         return list; 
     }
+
     result->X = list.head->contents.X; 
     result->Y = list.head->contents.Y;
+
     previousHead = list.head;
-    list.head = list.head->followingCell;
+    if(list.tail==list.head) {/*if there is only one elmt in the list*/
+        list.head = NULL;
+        list.tail = NULL;
+    } else {
+        list.head = previousHead->followingCell;
+    }
+
     destroyCell ( previousHead );
+    list.size--;
     return list; 
 }
 
 
-void destroyList ( LIST list)
+void destroyList(LIST list)
 {
     POSITION trash;
     while ( !isEmptyList( list  ) ) {
@@ -155,27 +179,49 @@ void destroyList ( LIST list)
 
 boolean getElementList ( LIST list,  listElement* result, int position) {
     LIST_CELL current;
-    int i = 1;
+    int i = 0;
 
+    fprintf(stderr,"1\n");
+    fflush(stderr);
     if (isEmptyList(list)) {
         return false;
     }
-    current = list.head;
-    while (i<position && current!= NULL) {
-        current = current->followingCell;
-        i++;
-    } if (current == NULL) {
+    fprintf(stderr,"2 \n");
+    fflush(stderr);
+    if(list.size<=position) {
         return false;
     }
+
+    current = list.head;
+    while (i<position && current!=NULL) {
+        fprintf(stderr,"2 bis\n");
+        fflush(stderr);
+        current = current->followingCell;
+        i++;
+    } 
+    fprintf(stderr,"3\n");
+    fflush(stderr);
+    if(current==NULL) {
+        return false;
+    }
+    fprintf(stderr,"4 bis 1 %d\n",isEmptyList(list));
+    fflush(stderr);
+
+    fprintf(stderr,"4 bis 2 %d %d\n",current->contents.X, current->contents.Y);
+    fflush(stderr);
+
     result->X = current->contents.X; 
     result->Y = current->contents.Y;
+    fprintf(stderr,"5\n");
+    fflush(stderr);
+
     return true;
 }
 
 boolean getNextElementList ( LIST list,  listElement* result, listElement* refElement) {
     LIST_CELL current;
 
-    if (isEmptyList(list) || list.head == list.tail) {
+    if (isEmptyList(list) || list.head == list.tail) {/*if there is only 0 or 1 elmt in the list*/
         return false;
     }
 
@@ -186,12 +232,13 @@ boolean getNextElementList ( LIST list,  listElement* result, listElement* refEl
     if (current == NULL) {
         return false;
     }
+    if (current->followingCell==NULL) {
+        return false;
+    }
     current = current->followingCell;
     result->X = current->contents.X; 
     result->Y = current->contents.Y;
-    if (current == list.tail) {
-        return false;
-    }
+    
     return true;
 }
 
