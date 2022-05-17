@@ -242,10 +242,10 @@ static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION acti
     DEBUG_STRING ( "> fuelConsumption donnée envoyé : " , buf );
 
     norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
-    squareRoot = (short)(sqrt(speed.X * speed.X + speed.Y * speed.Y) * 3.0 / 2.0); 
+    squareRoot = (short)(sqrt((double)speed.X * (double)speed.X + (double)speed.Y * (double)speed.Y) * 3.0 / 2.0); 
 
    
-    fprintf ( stderr, ">>> resultat calcul : \n     norme1 = %f,    squareRoot = %f\n", norme1, squareRoot );
+    fprintf ( stderr, ">>> resultat calcul : \n     norme1 = %d,    squareRoot = %d\n", norme1, squareRoot );
 
     if ( isSand(graph, position) ) {
         return ( norme1 + squareRoot + 1. );
@@ -330,7 +330,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
 
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
-    reverseGraph ( graph, secoundCar, thirdCar );
+    /*reverseGraph ( graph, secoundCar, thirdCar );*/
     
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( myPilot, secondPilot, thirdPilot );
@@ -364,7 +364,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     /* updateActionPilot ( myPilot, nextAction, mode ); */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
-    updateGasPilot ( myPilot, map );
+    updateGasPilot ( myPilot, graph );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
 

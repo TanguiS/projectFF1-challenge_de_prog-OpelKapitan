@@ -332,10 +332,16 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
     };
 
     for ( i = 0; i < 4; i++ ) {
-        if ( isInGraph ( graph, secoundPilot.X + rounder[i].X, secoundPilot.Y + rounder[i].Y ) ) {
-            setElementGraph ( graph, aroundCarGraph, secoundPilot.X + rounder[i].X, secoundPilot.Y + rounder[i].Y );
+        competitor.X = secoundPilot.X + rounder[i].X;
+        competitor.Y = secoundPilot.Y + rounder[i].Y;
+        if ( isInGraph ( graph, competitor.X, competitor.Y ) ) {
+            if (isRoad(graph, competitor)){
+                setElementGraph ( graph, aroundCarGraph, secoundPilot.X + rounder[i].X, secoundPilot.Y + rounder[i].Y );
+            }
         }
-        if ( isInGraph ( graph, thirdPilot.X + rounder[i].X, thirdPilot.Y + rounder[i].Y ) ) {
+        competitor.X = thirdPilot.X + rounder[i].X;
+        competitor.Y = thirdPilot.Y + rounder[i].Y;
+        if ( isInGraph ( graph, competitor.X, competitor.Y + rounder[i].Y ) && isRoad(graph, competitor) ) {
             setElementGraph ( graph, aroundCarGraph, thirdPilot.X + rounder[i].X, thirdPilot.Y + rounder[i].Y );
         }
     }
@@ -357,8 +363,8 @@ void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previo
                             { 1, 0 },
                             { -1, 0 },
                             { 0, 1 },
-                            { 0, -1 },
-                            { 0, 0 }
+                            { 0, -1 }
+                            
     };
 
     for ( i = 0; i < 5; i++ ) {
