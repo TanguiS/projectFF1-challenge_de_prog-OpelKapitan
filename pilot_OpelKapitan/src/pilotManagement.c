@@ -52,7 +52,7 @@ static void setActionPilot ( PILOT* pilot, short x, short y );
  * @param pilot : the PILOT object
  * @param newGasLvl : the gas level
  */
-static void setGasLvlPilot ( PILOT* pilot, double newGasLvl );
+static void setGasLvlPilot ( PILOT* pilot, short newGasLvl );
 
 /**
  * @brief Set the Boosts Remaining Pilot object
@@ -87,14 +87,14 @@ static void updateSpeedPilot ( PILOT* pilot );
 
 static boolean actionIsBoosted ( ACCELERATION action );
 
-static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map );
+static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, GRAPH* graph);
 
 /**
  * @brief Update the gas remaining of our pilot
  * 
  * @param pilot : the PILOT object
  */
-static void updateGasPilot ( PILOT* pilot, DATA_MAP* map );
+static void updateGasPilot ( PILOT* pilot, GRAPH* graph );
 
 static void updateBoostsPilot ( PILOT* pilot );
 
@@ -124,7 +124,7 @@ static void setActionPilot ( PILOT* pilot, short x, short y )
     pilot->acceleration.Y = y;
 }
 
-static void setGasLvlPilot ( PILOT* pilot, double newGasLvl )
+static void setGasLvlPilot ( PILOT* pilot, short newGasLvl )
 {
     pilot->gasLvl = newGasLvl;
 }
@@ -199,10 +199,10 @@ static void updateBoostsPilot ( PILOT* pilot )
     DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
 }
 
-static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map )
+static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action,GRAPH* graph )
 {
-    double norme1;
-    double squareRoot;
+    short norme1;
+    short squareRoot;
     #ifndef DEBUG
     char buf[100];
     sprintf ( buf, "speed : (%hd %hd), acc : (%hd %hd)", speed.X, speed.Y, action.X, action.Y );
@@ -211,33 +211,28 @@ static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION act
     DEBUG_STRING ( "> fuelConsumption donnée envoyé : " , buf );
 
     norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
-    squareRoot =  sqrt ( ( 3. * ( (double) ( speed.X * speed.X ) + (double) ( speed.Y * speed.Y ) ) ) / 2. );
+    squareRoot = (short)(sqrt(speed.X * speed.X + speed.Y * speed.Y) * 3.0 / 2.0); 
 
-    if ( ceil ( squareRoot ) - squareRoot < 0.73 ) {
-        squareRoot = ceil ( squareRoot );
-    } else {
-        squareRoot = floor ( squareRoot );
-    }
-
+   
     fprintf ( stderr, ">>> resultat calcul : \n     norme1 = %f,    squareRoot = %f\n", norme1, squareRoot );
 
-    if ( getElementMap ( map, position ) == sand ) {
+    if ( isSand(graph, position) ) {
         return ( norme1 + squareRoot + 1. );
     }
     return ( norme1 + squareRoot );
 }
 
-static void updateGasPilot ( PILOT* pilot, DATA_MAP* map )
+static void updateGasPilot ( PILOT* pilot, GRAPH* graph )
 {
     setGasLvlPilot ( pilot, getGasLvlPilot ( pilot ) 
                             - 
                             fuelConsumption ( getPositionPilot ( pilot ),
                                               getSpeedPilot ( pilot ),
                                               getAccelerationPilot ( pilot ),
-                                              map 
+                                              graph 
                                             ) 
                     );
-    fprintf ( stderr, "> gas lvl : %f\n", getGasLvlPilot ( pilot ) );
+    fprintf ( stderr, "> gas lvl : %d\n", getGasLvlPilot ( pilot ) );
 }
 
 static void deliverAction ( char action[SIZE_ACTION] )
@@ -262,7 +257,7 @@ ACCELERATION getAccelerationPilot ( PILOT* pilot )
 }
 
 
-double getGasLvlPilot ( PILOT* pilot )
+short getGasLvlPilot ( PILOT* pilot )
 {
     return pilot->gasLvl;
 }
@@ -304,7 +299,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
 
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
-    reverseGraph ( graph, secoundCar, thirdCar );
+    /* reverseGraph ( graph, secoundCar, thirdCar ); */
     
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( myPilot, secondPilot, thirdPilot );
