@@ -41,7 +41,6 @@ void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION newPred
 dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
     int i;
 
-
     dijkstraMatrix dijkstra;
     dijkstra.height = heigth;
     dijkstra.width = width;

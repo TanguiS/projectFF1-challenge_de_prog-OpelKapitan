@@ -33,13 +33,34 @@
 #include "list.h"
 
 
-void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y);
-
-
+/**
+ * @brief Set result's values to reference.
+ * 
+ * @param reference The reference position.
+ * @param result The result position.
+ */
 void mixePOSITION (POSITION* reference, POSITION* result );
 
 
+/**
+ * @brief Initialize the dijkstra matrix. It add the max value for every lenght(to simulate the infinity)
+ * 
+ * @param dijkstraMatrix The dijkstra matrix. Already created. 
+ * @param first Coordinates of the first position.  
+ */
+void initDijkstraLength(dijkstraMatrix* dijkstraMatrix, POSITION first);
+
+
+/**
+ * @brief Find the position with the fewer length for a list of positions. 
+ * 
+ * @param dijkstra The dijkstra matrix. Place where are stocked position's length. 
+ * @param sommet The position where whill be stocked the minimal coordonate. 
+ * @param list list where the successors of already visited coordinates are stored
+ */
 void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list );
+
+
 
 void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2);
 
