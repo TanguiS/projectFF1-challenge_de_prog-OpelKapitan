@@ -22,21 +22,6 @@
 #include "pilotManagement.h"
 #include "pilotDirection.h"
 
-#define UNCHANGED_ACTION "keep_value"
-#define STRAIGHT_ACTION "straight"
-#define DEFAULT_ACTION "default"
-#define NEW_ACTION "new"
-#define DONT_CARE_ACTION 0
-#define ACTION_IS_UNCHANGED(choice) strcmp ( choice, UNCHANGED_ACTION ) == 0 ? true : false
-#define ACTION_IS_STRAIGHT(choice) strcmp ( choice, STRAIGHT_ACTION ) == 0 ? true : false
-#define ACTION_IS_DEFAULT(choice) strcmp ( choice, DEFAULT_ACTION ) == 0 ? true : false
-/*
-A changer probablement
-*/
-#define Xs "x"
-#define Ys "y"
-#define VALUE_DEFAULT_ACTION(i) ( strcmp ( i, Xs ) == 0 ) ? 1 : 0
-
 /**
  * @brief Set the Position Pilot object
  * 
@@ -101,8 +86,6 @@ static void updatePositionPilotFromGDC ( PILOT* myPilot, PILOT* secondPilot, PIL
 static void updateSpeedPilot ( PILOT* pilot );
 
 static boolean actionIsBoosted ( ACCELERATION action );
-
-static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeChosen );
 
 static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map );
 
@@ -173,9 +156,10 @@ static void updateSpeedPilot ( PILOT* pilot )
 static void updatePositionPilotFromGDC ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
 {
     char buf[MAX_LINE_LENGTH];
+    char* trash;
     POSITION myPosition, secoundPosition, thirdPosition;
 
-    fgets ( buf, MAX_LINE_LENGTH, stdin );
+    trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
     fprintf ( stderr, "\n\nLECTURE TEST BUFFER >>>>>>>>>>>>< : %s\n\n", buf );
     fflush ( stdin );
     sscanf ( buf, "%hd %hd %hd %hd %hd %hd",
@@ -186,6 +170,7 @@ static void updatePositionPilotFromGDC ( PILOT* myPilot, PILOT* secondPilot, PIL
     setPositionPilot ( myPilot, myPosition.X, myPosition.Y );
     setPositionPilot ( secondPilot, secoundPosition.X, secoundPosition.Y);
     setPositionPilot ( thirdPilot, thirdPosition.X, thirdPosition.Y );
+    trash = trash;
 }
 
 void updatePositionPilot ( POSITION myPosition, POSITION secoundPosition, POSITION thirdPosition, PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
@@ -212,22 +197,6 @@ static void updateBoostsPilot ( PILOT* pilot )
         setBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
     }
     DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
-}
-
-static void updateActionPilot ( PILOT* pilot, ACCELERATION action, char* modeChosen )
-{
-    if ( ACTION_IS_UNCHANGED ( modeChosen ) ) {
-        DEBUG_STRING ( "====> update action : ", "ne rien faire" );
-    } else if ( ACTION_IS_STRAIGHT ( modeChosen ) ) {
-        DEBUG_STRING ( "====> update action : ", "garder sa vitesse actuelle" );
-        setActionPilot ( pilot, (short) 0, (short) 0 );
-    } else if ( ACTION_IS_DEFAULT ( modeChosen ) ) {
-        DEBUG_STRING ( "====> update action : ", "en mode default (1 0)" );
-        setActionPilot ( pilot, VALUE_DEFAULT_ACTION(Xs), VALUE_DEFAULT_ACTION(Ys) );
-    } else {
-        DEBUG_STRING ( "====> update action : ", "Changement d'acc" );
-        setActionPilot ( pilot, action.X, action.Y );
-    }
 }
 
 static double fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, DATA_MAP* map )
@@ -367,7 +336,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
 
 
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
-    /* updateActionPilot ( myPilot, nextAction, mode ); */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
     updateGasPilot ( myPilot, map );
     updateBoostsPilot ( myPilot );

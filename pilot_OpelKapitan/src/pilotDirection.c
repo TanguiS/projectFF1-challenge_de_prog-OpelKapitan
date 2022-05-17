@@ -293,14 +293,20 @@ static POSITION positionVector ( POSITION finalPosition, POSITION startPosition 
 short addActionToGroup ( short length, short currentSpeed, short startingIndex, POSITION startPosition, POSITION finalPosition, ACCELERATION* actions )
 {
     int i;
-    short decelerationPosition = 0; /* ATTENTION SI BOOST */
-    short nextHypoteticalPosition = abs ( currentSpeed );
+    short decelerationPosition; /* ATTENTION SI BOOST */
+    short nextHypoteticalPosition = 0;
     short hypoteticalSpeed = abs ( currentSpeed );
 
     short remainingDistance;
     short numberStraightAction;
 
-    fprintf ( stderr, ">AddActionToGroup : longueur = %d\n", length );
+    if ( hypoteticalSpeed == 0 ) {
+        decelerationPosition = 0;
+    } else {
+        decelerationPosition = hypoteticalSpeed - 1;
+    }
+
+    fprintf ( stderr, "> addActionToGroup : longueur = %d\n", length );
     fprintf ( stderr, "> HypoteticalPosition = %d\n", decelerationPosition + nextHypoteticalPosition + hypoteticalSpeed );
     while ( (decelerationPosition + nextHypoteticalPosition + hypoteticalSpeed < length - ( nextHypoteticalPosition + decelerationPosition + hypoteticalSpeed )) && ( hypoteticalSpeed != MAX_SPEED ) ) {
         hypoteticalSpeed++;
@@ -310,7 +316,7 @@ short addActionToGroup ( short length, short currentSpeed, short startingIndex, 
         accelerate ( positionVector ( finalPosition, startPosition ), &actions[startingIndex] );
         startingIndex++;
     }
-    remainingDistance = length - ( nextHypoteticalPosition + decelerationPosition );
+    remainingDistance = length - ( nextHypoteticalPosition + decelerationPosition + hypoteticalSpeed );
     fprintf ( stderr, "> Distance restante : %d\n", remainingDistance );
 
     if ( remainingDistance >= hypoteticalSpeed ) {
