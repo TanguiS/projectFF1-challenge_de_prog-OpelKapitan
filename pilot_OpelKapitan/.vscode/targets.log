@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 16 13:56:13 2022
+# Make data base, printed on Tue May 17 18:51:04 2022
 
 # Variables
 
@@ -49,7 +51,7 @@ SNAP_DATA = /var/snap/code/96
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/da15b6fd3ef856477bf6f4fb29ba1b7af717770d","_corruptedFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:41021
+JOURNAL_STREAM = 8:37080
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -O3
 # environment
@@ -81,7 +83,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1368
+MANAGERPID = 1364
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -95,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1603,unix/tanguistei:/tmp/.ICE-unix/1603
+SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1599,unix/tanguistei:/tmp/.ICE-unix/1599
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -115,7 +117,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 5b142e6fb57d449dac052287d3630c65
+INVOCATION_ID = af6a42a4c6f84088bafa4af742550641
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -129,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3042
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3038
 # automatic
 %F = $(notdir $%)
 # environment
@@ -145,7 +147,7 @@ PWD = /home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1540
+SSH_AGENT_PID = 1536
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -197,7 +199,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e728f52d-b175-497f-b29b-79c8f4d4d5dd.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5d87dc67-5713-4850-a499-637420422367.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -273,16 +275,10 @@ INC_PATH = ./include
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3108
+VSCODE_PID = 3116
 # variable set hash-table stats:
-# Load=132/1024=13%, Rehash=0, Collisions=28/215=13%
+# Load=132/1024=13%, Rehash=0, Collisions=28/209=13%
  
-Makefile:60: warning: overriding recipe for target 'obj/dijkstraAlgo.o'
-Makefile:42: warning: ignoring old recipe for target 'obj/dijkstraAlgo.o'
-Makefile:66: warning: overriding recipe for target 'obj/list.o'
-Makefile:48: warning: ignoring old recipe for target 'obj/list.o'
-make: *** No rule to make target 'all'.  Stop.
-
 
 # Pattern-specific Variable Values
 
@@ -323,14 +319,14 @@ obj/pilotManagement.o: src/pilotManagement.c include/pilotManagement.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 51):
+#  recipe to execute (from 'Makefile', line 45):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-obj/list.o: src/list.c include/list.h src/list.c include/list.h
+obj/list.o: src/list.c include/list.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 66):
+#  recipe to execute (from 'Makefile', line 60):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # Not a target:
@@ -355,7 +351,7 @@ distclean: ../drivers
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 74):
+#  recipe to execute (from 'Makefile', line 68):
 	make clean
 	rm $(BIN_PATH)/$(PILOT_NAME)
 
@@ -391,17 +387,17 @@ obj/main.o: src/main.c include/readMap.h
 #  recipe to execute (from 'Makefile', line 30):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h src/dijkstraAlgo.c include/dijkstraAlgo.h
+obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 60):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-16 13:55:31.285836453
+#  Last modified 2022-05-17 18:16:09.085890981
 #  File has been updated.
 #  Successfully updated.
 
@@ -433,14 +429,14 @@ obj/pilotDirection.o: src/pilotDirection.c include/pilotDirection.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 54):
+#  recipe to execute (from 'Makefile', line 48):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 ../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 69):
+#  recipe to execute (from 'Makefile', line 63):
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
 
 # Not a target:
@@ -496,7 +492,7 @@ clean: obj
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 72):
+#  recipe to execute (from 'Makefile', line 66):
 	rm $</*.o
 
 # Not a target:
@@ -521,7 +517,7 @@ obj/graphMadj.o: src/graphMadj.c include/graphMadj.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 57):
+#  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/matrixDij.o: src/dijkstraMatrix.c include/dijkstraMatrix.h
@@ -535,14 +531,14 @@ obj/pathList.o: src/pathList.c include/pathList.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 45):
+#  recipe to execute (from 'Makefile', line 42):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/dijkstraMatrix.o: src/dijkstraMatrix.c include/dijkstraAlgo.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 63):
+#  recipe to execute (from 'Makefile', line 57):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/matrix.o: src/matrix.c include/matrix.h
@@ -558,7 +554,7 @@ install: ../drivers/OpelKapitan
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=41/1024=4%, Rehash=0, Collisions=0/94=0%
+# Load=41/1024=4%, Rehash=0, Collisions=0/88=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -569,9 +565,9 @@ install: ../drivers/OpelKapitan
 # strcache buffers: 1 (0) / strings = 50 / storage = 705 B / avg = 14 B
 # current buf: size = 8162 B / used = 705 B / count = 50 / avg = 14 B
 
-# strcache performance: lookups = 94 / hit rate = 46%
+# strcache performance: lookups = 86 / hit rate = 41%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=1/94=1%
-# Finished Make data base on Mon May 16 13:56:15 2022
+# Load=50/8192=1%, Rehash=0, Collisions=1/86=1%
+# Finished Make data base on Tue May 17 18:51:04 2022
 
  

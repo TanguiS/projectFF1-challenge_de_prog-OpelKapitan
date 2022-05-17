@@ -181,8 +181,6 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
     LIST_CELL current;
     int i = 0;
 
-    fprintf(stderr,"1\n");
-    fflush(stderr);
     if (isEmptyList(list)) {
         return false;
     }
@@ -201,8 +199,6 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
 
     result->X = current->contents.X; 
     result->Y = current->contents.Y;
-    fprintf(stderr,"5\n");
-    fflush(stderr);
 
     return true;
 }

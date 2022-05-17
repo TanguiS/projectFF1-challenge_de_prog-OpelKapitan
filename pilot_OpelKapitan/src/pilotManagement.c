@@ -359,7 +359,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }
-    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction );
+    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction, graph );
     /* path = nextActionForNextPosition ( path, myCar, getSpeedPilot ( myPilot ), &nextAction ); */
     fprintf ( stderr, "\n>>> FIN <<<\n\n" );
     destroyPathList ( path );

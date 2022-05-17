@@ -38,13 +38,7 @@ $(OBJ_PATH)/matrix.o: $(SRC_PATH)/matrix.c $(INC_PATH)/matrix.h
 $(OBJ_PATH)/matrixDij.o: $(SRC_PATH)/dijkstraMatrix.c $(INC_PATH)/dijkstraMatrix.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-$(OBJ_PATH)/dijkstraAlgo.o: $(SRC_PATH)/dijkstraAlgo.c $(INC_PATH)/dijkstraAlgo.h 
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
 $(OBJ_PATH)/pathList.o: $(SRC_PATH)/pathList.c $(INC_PATH)/pathList.h 
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-$(OBJ_PATH)/list.o: $(SRC_PATH)/list.c $(INC_PATH)/list.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/pilotManagement.o: $(SRC_PATH)/pilotManagement.c $(INC_PATH)/pilotManagement.h 
