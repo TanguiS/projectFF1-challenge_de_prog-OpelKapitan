@@ -352,7 +352,6 @@ void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previo
                             { -1, 0 },
                             { 0, 1 },
                             { 0, -1 }
-                            
     };
 
     for ( i = 0; i < 5; i++ ) {

@@ -183,12 +183,10 @@ void updatePositionPilot ( POSITION myPosition, POSITION secoundPosition, POSITI
 
 static boolean actionIsBoosted ( ACCELERATION action )
 {
-    if ( abs ( action.X ) != 2 ) {
-        return false;
-    } if ( abs ( action.Y ) != 2 ) {
-        return false;
+    if ( abs ( action.X ) == 2 || abs ( action.Y ) == 2 ) {
+        return true;
     }
-    return true;
+    return false;
 }
 
 static void updateBoostsPilot ( PILOT* pilot )
@@ -317,15 +315,13 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     path = givePath ( dijkstra, graph, myCar );
 
 
- /*    list = nextActionForNextPosition ( list, getPositionPilot ( myPilot ), getSpeedPilot ( myPilot ), &nextAction ); */
     fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
     if ( areEqualPosition ( examineHeadPathList ( path ), myCar ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }
     path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction, graph );
-    /* path = nextActionForNextPosition ( path, myCar, getSpeedPilot ( myPilot ), &nextAction ); */
-    fprintf ( stderr, "\n>>> FIN <<<\n\n" );
+    fprintf ( stderr, "     action : %hd, %hd\n\n>>> FIN <<<\n\n", nextAction.X, nextAction.Y );
     destroyPathList ( path );
 
 
