@@ -99,10 +99,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.007898
+===> temps exec = 0.010551
 la ligne finale est en  5 32
 
->>>> CONCLUSION : temps max d'un tour : 0.007898 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 2
 
@@ -206,10 +206,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.008790
+===> temps exec = 0.008215
 la ligne finale est en  6 32
 
->>>> CONCLUSION : temps max d'un tour : 0.008790 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 3
 
@@ -313,10 +313,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008487
+===> temps exec = 0.008621
 la ligne finale est en  7 32
 
->>>> CONCLUSION : temps max d'un tour : 0.008790 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 4
 
@@ -420,10 +420,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010140
+===> temps exec = 0.009409
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010140 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 5
 
@@ -527,10 +527,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009208
+===> temps exec = 0.007955
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010140 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 6
 
@@ -634,10 +634,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009742
+===> temps exec = 0.007956
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010140 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 7
 
@@ -741,10 +741,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009814
+===> temps exec = 0.008694
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010140 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010551 <<<<<<<
 
 === ROUND 8
 
@@ -848,10 +848,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010524
+===> temps exec = 0.010833
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010524 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010833 <<<<<<<
 
 === ROUND 9
 
@@ -952,10 +952,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.010121
+===> temps exec = 0.010319
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010524 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010833 <<<<<<<
 
 === ROUND 10
 
@@ -1056,10 +1056,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.010204
+===> temps exec = 0.010481
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010524 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010833 <<<<<<<
 
 === ROUND 11
 
@@ -1160,10 +1160,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.010527
+===> temps exec = 0.008042
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010527 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010833 <<<<<<<
 
 === ROUND 12
 
@@ -1269,10 +1269,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.008386
+===> temps exec = 0.009441
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010527 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010833 <<<<<<<
 
 === ROUND 13
 
@@ -1378,10 +1378,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010183
+===> temps exec = 0.009200
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010527 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010833 <<<<<<<
 
 === ROUND 14
 
@@ -1487,10 +1487,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008615
+===> temps exec = 0.011041
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010527 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011041 <<<<<<<
 
 === ROUND 15
 
@@ -1594,10 +1594,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008841
+===> temps exec = 0.010899
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010527 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011041 <<<<<<<
 
 === ROUND 16
 
@@ -1701,10 +1701,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008172
+===> temps exec = 0.011255
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.010527 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 17
 
@@ -1805,10 +1805,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.011776
+===> temps exec = 0.010051
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 18
 
@@ -1912,10 +1912,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.011023
+===> temps exec = 0.008704
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 19
 
@@ -2022,10 +2022,10 @@ Action recupered : -1 0
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.011114
+===> temps exec = 0.010940
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 20
 
@@ -2126,10 +2126,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010308
+===> temps exec = 0.009093
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 21
 
@@ -2230,10 +2230,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010392
+===> temps exec = 0.009312
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 22
 
@@ -2334,10 +2334,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.008855
+===> temps exec = 0.008524
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 23
 
@@ -2438,10 +2438,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.011288
+===> temps exec = 0.011177
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 24
 
@@ -2549,10 +2549,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.010954
+===> temps exec = 0.009855
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 25
 
@@ -2658,10 +2658,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008927
+===> temps exec = 0.009612
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 26
 
@@ -2767,10 +2767,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008297
+===> temps exec = 0.009940
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011255 <<<<<<<
 
 === ROUND 27
 
@@ -2874,10 +2874,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011125
+===> temps exec = 0.011572
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 28
 
@@ -2981,10 +2981,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011224
+===> temps exec = 0.009766
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 29
 
@@ -3091,10 +3091,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.011208
+===> temps exec = 0.008607
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 30
 
@@ -3195,10 +3195,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011087
+===> temps exec = 0.008203
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 31
 
@@ -3303,10 +3303,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.010689
+===> temps exec = 0.009291
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 32
 
@@ -3410,10 +3410,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008361
+===> temps exec = 0.009988
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 33
 
@@ -3536,10 +3536,10 @@ Action recupered : 0 -1
 
 >>>NEXT ACTION après la mise en STRING : -1 1
 
-===> temps exec = 0.011576
+===> temps exec = 0.008960
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 34
 
@@ -3658,10 +3658,10 @@ Action recupered : 0 -1
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.009136
+===> temps exec = 0.008392
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 35
 
@@ -3776,10 +3776,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009343
+===> temps exec = 0.010614
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 36
 
@@ -3890,10 +3890,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.009559
+===> temps exec = 0.008774
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 37
 
@@ -4000,10 +4000,10 @@ Action recupered : 0 -1
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.009196
+===> temps exec = 0.009926
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 38
 
@@ -4104,10 +4104,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008486
+===> temps exec = 0.009065
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 39
 
@@ -4211,10 +4211,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.007739
+===> temps exec = 0.010175
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 40
 
@@ -4315,10 +4315,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009548
+===> temps exec = 0.011511
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 41
 
@@ -4429,10 +4429,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.007927
+===> temps exec = 0.008767
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.011776 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 42
 
@@ -4541,10 +4541,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.012114
+===> temps exec = 0.009705
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 43
 
@@ -4651,10 +4651,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008606
+===> temps exec = 0.009637
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 44
 
@@ -4755,10 +4755,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008589
+===> temps exec = 0.010587
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 45
 
@@ -4862,10 +4862,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.009273
+===> temps exec = 0.011204
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 46
 
@@ -4974,10 +4974,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.009047
+===> temps exec = 0.010496
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 47
 
@@ -5084,10 +5084,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008981
+===> temps exec = 0.008533
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 48
 
@@ -5188,10 +5188,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009399
+===> temps exec = 0.008429
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 49
 
@@ -5295,10 +5295,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.011020
+===> temps exec = 0.011546
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 50
 
@@ -5399,10 +5399,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008642
+===> temps exec = 0.009061
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011572 <<<<<<<
 
 === ROUND 51
 
@@ -5503,10 +5503,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008700
+===> temps exec = 0.011626
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011626 <<<<<<<
 
 === ROUND 52
 
@@ -5614,10 +5614,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.008905
+===> temps exec = 0.012281
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 53
 
@@ -5723,10 +5723,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009120
+===> temps exec = 0.008767
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 54
 
@@ -5832,10 +5832,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009241
+===> temps exec = 0.010063
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 55
 
@@ -5939,10 +5939,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009932
+===> temps exec = 0.008734
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 56
 
@@ -6046,10 +6046,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009848
+===> temps exec = 0.009604
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 57
 
@@ -6160,10 +6160,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008811
+===> temps exec = 0.011435
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 58
 
@@ -6272,10 +6272,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008959
+===> temps exec = 0.011505
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 59
 
@@ -6382,10 +6382,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010042
+===> temps exec = 0.012130
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012114 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 60
 
@@ -6486,10 +6486,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.012502
+===> temps exec = 0.008338
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 61
 
@@ -6599,10 +6599,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.009136
+===> temps exec = 0.009237
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 62
 
@@ -6710,10 +6710,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009249
+===> temps exec = 0.011856
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 63
 
@@ -6821,10 +6821,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010762
+===> temps exec = 0.011746
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 64
 
@@ -6930,10 +6930,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008763
+===> temps exec = 0.011632
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 65
 
@@ -7039,10 +7039,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008403
+===> temps exec = 0.012169
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 66
 
@@ -7146,10 +7146,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009239
+===> temps exec = 0.010454
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 67
 
@@ -7253,10 +7253,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009812
+===> temps exec = 0.008707
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 68
 
@@ -7363,10 +7363,10 @@ Action recupered : -1 0
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.011657
+===> temps exec = 0.008600
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 69
 
@@ -7467,10 +7467,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008391
+===> temps exec = 0.008612
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 70
 
@@ -7571,10 +7571,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.008560
+===> temps exec = 0.009416
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 71
 
@@ -7687,10 +7687,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : -1 -1
 
-===> temps exec = 0.008107
+===> temps exec = 0.009606
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 72
 
@@ -7799,10 +7799,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.009006
+===> temps exec = 0.011805
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 73
 
@@ -7909,10 +7909,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009342
+===> temps exec = 0.012094
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 74
 
@@ -8013,10 +8013,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008694
+===> temps exec = 0.008740
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 75
 
@@ -8117,10 +8117,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.009419
+===> temps exec = 0.009948
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 76
 
@@ -8221,10 +8221,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008287
+===> temps exec = 0.009562
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 77
 
@@ -8330,10 +8330,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.009428
+===> temps exec = 0.008877
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 78
 
@@ -8439,10 +8439,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009985
+===> temps exec = 0.008857
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 79
 
@@ -8546,10 +8546,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009080
+===> temps exec = 0.009075
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 80
 
@@ -8653,10 +8653,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008907
+===> temps exec = 0.008735
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 81
 
@@ -8765,10 +8765,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.011710
+===> temps exec = 0.009036
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 82
 
@@ -8875,10 +8875,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011595
+===> temps exec = 0.011961
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 83
 
@@ -8979,10 +8979,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011557
+===> temps exec = 0.011580
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 84
 
@@ -9086,10 +9086,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.011265
+===> temps exec = 0.011695
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 85
 
@@ -9190,10 +9190,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010673
+===> temps exec = 0.009885
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 86
 
@@ -9300,10 +9300,10 @@ Action recupered : -1 0
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.008807
+===> temps exec = 0.010618
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 87
 
@@ -9404,10 +9404,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011942
+===> temps exec = 0.009069
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012281 <<<<<<<
 
 === ROUND 88
 
@@ -9519,10 +9519,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.011300
+===> temps exec = 0.012899
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 89
 
@@ -9634,10 +9634,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010697
+===> temps exec = 0.009297
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 90
 
@@ -9747,10 +9747,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011226
+===> temps exec = 0.009366
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 91
 
@@ -9860,10 +9860,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009568
+===> temps exec = 0.009592
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 92
 
@@ -9971,10 +9971,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011587
+===> temps exec = 0.012277
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 93
 
@@ -10082,10 +10082,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008932
+===> temps exec = 0.009444
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 94
 
@@ -10191,10 +10191,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009249
+===> temps exec = 0.009470
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 95
 
@@ -10300,10 +10300,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008432
+===> temps exec = 0.009818
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 96
 
@@ -10407,10 +10407,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008084
+===> temps exec = 0.008591
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 97
 
@@ -10514,10 +10514,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008463
+===> temps exec = 0.010891
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 98
 
@@ -10618,10 +10618,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.009157
+===> temps exec = 0.008395
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 99
 
@@ -10725,10 +10725,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.009665
+===> temps exec = 0.008809
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 100
 
@@ -10835,10 +10835,10 @@ Action recupered : -1 0
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.009830
+===> temps exec = 0.008575
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 101
 
@@ -10939,10 +10939,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008438
+===> temps exec = 0.008504
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 102
 
@@ -11047,10 +11047,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.010533
+===> temps exec = 0.009848
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 103
 
@@ -11154,10 +11154,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011841
+===> temps exec = 0.009828
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 104
 
@@ -11266,10 +11266,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.008675
+===> temps exec = 0.010778
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 105
 
@@ -11376,10 +11376,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009051
+===> temps exec = 0.011461
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 106
 
@@ -11480,10 +11480,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009452
+===> temps exec = 0.011549
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 107
 
@@ -11587,10 +11587,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.009157
+===> temps exec = 0.011863
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 108
 
@@ -11691,10 +11691,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008230
+===> temps exec = 0.012158
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 109
 
@@ -11801,10 +11801,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.010668
+===> temps exec = 0.009574
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 110
 
@@ -11905,10 +11905,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008708
+===> temps exec = 0.009531
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012502 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 111
 
@@ -12020,10 +12020,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.012726
+===> temps exec = 0.008705
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 112
 
@@ -12133,10 +12133,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009083
+===> temps exec = 0.010870
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 113
 
@@ -12246,10 +12246,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010106
+===> temps exec = 0.008405
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 114
 
@@ -12357,10 +12357,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008233
+===> temps exec = 0.008594
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 115
 
@@ -12468,10 +12468,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009420
+===> temps exec = 0.008491
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 116
 
@@ -12577,10 +12577,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008670
+===> temps exec = 0.008867
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 117
 
@@ -12686,10 +12686,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009166
+===> temps exec = 0.011018
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 118
 
@@ -12793,10 +12793,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008694
+===> temps exec = 0.008317
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 119
 
@@ -12900,10 +12900,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009349
+===> temps exec = 0.008646
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 120
 
@@ -13010,10 +13010,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008524
+===> temps exec = 0.008435
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 121
 
@@ -13114,10 +13114,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008855
+===> temps exec = 0.009227
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 122
 
@@ -13221,10 +13221,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.008611
+===> temps exec = 0.008308
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 123
 
@@ -13325,10 +13325,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008197
+===> temps exec = 0.008251
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 124
 
@@ -13440,10 +13440,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.007929
+===> temps exec = 0.012029
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 125
 
@@ -13553,10 +13553,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008259
+===> temps exec = 0.008085
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 126
 
@@ -13666,10 +13666,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009881
+===> temps exec = 0.008180
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 127
 
@@ -13777,10 +13777,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009426
+===> temps exec = 0.010712
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 128
 
@@ -13888,10 +13888,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009488
+===> temps exec = 0.010275
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 129
 
@@ -13997,10 +13997,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.009021
+===> temps exec = 0.009808
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 130
 
@@ -14106,10 +14106,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.007904
+===> temps exec = 0.008462
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 131
 
@@ -14213,10 +14213,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008172
+===> temps exec = 0.008197
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 132
 
@@ -14320,10 +14320,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.007694
+===> temps exec = 0.007864
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 133
 
@@ -14430,10 +14430,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008819
+===> temps exec = 0.007783
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 134
 
@@ -14534,10 +14534,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008092
+===> temps exec = 0.008348
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 135
 
@@ -14638,10 +14638,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.008005
+===> temps exec = 0.009159
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 136
 
@@ -14760,10 +14760,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 1 1
 
-===> temps exec = 0.008840
+===> temps exec = 0.009767
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 137
 
@@ -14878,10 +14878,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008540
+===> temps exec = 0.008324
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 138
 
@@ -14993,10 +14993,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.007981
+===> temps exec = 0.009709
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 139
 
@@ -15105,10 +15105,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.008497
+===> temps exec = 0.008915
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 140
 
@@ -15215,10 +15215,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008626
+===> temps exec = 0.007814
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 141
 
@@ -15319,10 +15319,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008379
+===> temps exec = 0.009190
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 142
 
@@ -15423,10 +15423,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 1 0
 
-===> temps exec = 0.008854
+===> temps exec = 0.010397
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 143
 
@@ -15527,10 +15527,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.008027
+===> temps exec = 0.008048
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 144
 
@@ -15638,10 +15638,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : -1 0
 
-===> temps exec = 0.007438
+===> temps exec = 0.008117
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 145
 
@@ -15747,10 +15747,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011761
+===> temps exec = 0.008040
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 146
 
@@ -15856,10 +15856,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008261
+===> temps exec = 0.008615
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 147
 
@@ -15963,10 +15963,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.007475
+===> temps exec = 0.008091
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 148
 
@@ -16070,10 +16070,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008804
+===> temps exec = 0.008395
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 149
 
@@ -16182,10 +16182,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.007467
+===> temps exec = 0.010625
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 150
 
@@ -16292,10 +16292,10 @@ Action recupered : 0 0
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.007815
+===> temps exec = 0.007993
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 151
 
@@ -16396,10 +16396,10 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.011806
+===> temps exec = 0.008546
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 152
 
@@ -16503,10 +16503,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.007207
+===> temps exec = 0.008782
 la ligne finale est en  9 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 153
 
@@ -16610,10 +16610,10 @@ diagonal
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.010355
+===> temps exec = 0.007978
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 154
 
@@ -16743,10 +16743,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 1 -1
 
-===> temps exec = 0.010799
+===> temps exec = 0.010589
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 155
 
@@ -16872,10 +16872,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 -1
 
-===> temps exec = 0.010049
+===> temps exec = 0.008782
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 156
 
@@ -16996,10 +16996,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008138
+===> temps exec = 0.007597
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 157
 
@@ -17116,10 +17116,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.008668
+===> temps exec = 0.007572
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 158
 
@@ -17232,10 +17232,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 0
 
-===> temps exec = 0.007840
+===> temps exec = 0.008436
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 159
 
@@ -17344,10 +17344,10 @@ Action recupered : 0 1
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.007498
+===> temps exec = 0.008104
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 160
 
@@ -17448,9 +17448,9 @@ Affichage POSITION ligne d'arrivée :
 
 >>>NEXT ACTION après la mise en STRING : 0 1
 
-===> temps exec = 0.009015
+===> temps exec = 0.008783
 la ligne finale est en  8 32
 
->>>> CONCLUSION : temps max d'un tour : 0.012726 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012899 <<<<<<<
 
 === ROUND 161
