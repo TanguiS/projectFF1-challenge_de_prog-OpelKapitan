@@ -61,6 +61,7 @@ int main ( void )
         if ( time > maxTime ) {
             maxTime = time;
         }
+        fprintf( stderr, "la ligne finale est en  %d %d", graph.closestFinishLine.X, graph.closestFinishLine.Y);
         fprintf ( stderr, "\n\n>>>> CONCLUSION : temps max d'un tour : %f <<<<<<<\n\n", maxTime );
     }
     if ( !destroyMap ( map ) ) {

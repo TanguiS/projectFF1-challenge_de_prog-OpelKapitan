@@ -229,7 +229,7 @@ PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
             graph->closestFinishLine.Y = competitor.Y;
         }
     }
-    getClosestFinishLine(graph, &finalSommet);
+    /*getClosestFinishLine(graph, &finalSommet);*/
     stack = createPathList();
     mixePOSITION(&finalSommet, &sommet);
     while( !samePOSITION(sommet, firstSommet) ) {
