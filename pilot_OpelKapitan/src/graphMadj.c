@@ -224,18 +224,6 @@ boolean isInGraph ( GRAPH* graph, short x, short y )
     return true;
 }
 
-static boolean areNotEqualsZero ( short x, short y )
-{
-    if ( x != 0 ) {
-        return true;
-    }
-    if ( y != 0 ) {
-        return true;
-    }
-    return false;
-}
-
-
 POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent )
 {
     /*

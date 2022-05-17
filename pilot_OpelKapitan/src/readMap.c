@@ -31,15 +31,6 @@
  */
 static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row );
 
-#ifndef DEBUG
-/**
- * @brief Only for Debugging purposes
- * 
- * @param map 
- */
-static void displayMap ( DATA_MAP map );
-#endif
-
 static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
 {
     int i;
@@ -62,23 +53,6 @@ static void setDataMapGraph ( DATA_MAP* map, GRAPH* graph, char* data, int row )
     }
 }
 
-#ifndef DEBUG
-static void displayMap ( DATA_MAP map )
-{
-    int i, j;
-    POSITION tmp;
-    DEBUG_CHAR ( "\nAffichage de la map avec matrix: ", ' ' );
-    for ( i = 0; i < getHeightMap ( &map ); i++ ) {
-        for ( j = 0; j < getWidthMap ( &map ); j++ ) {
-            tmp.X = j;
-            tmp.Y = i;
-            DEBUG_ONLY_CHAR ( getElementMap ( &map, tmp ) );
-        }
-        DEBUG_ONLY_CHAR ( '\n' );
-    }
-}
-#endif
-
 DATA_MAP createMap ( short newWidth, short newHeight )
 {
     DATA_MAP map;
@@ -92,17 +66,19 @@ DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph )
     int i;
     short width, height;
     char buf[MAX_LINE_LENGTH];
+    char* trash;
 
-    fgets ( buf, MAX_LINE_LENGTH, stdin );
+    trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
     sscanf ( buf, "%hd %hd %hd", &width, &height, gasLvl );
 
     map = createMap ( width, height );
     *graph = createGraph ( width, height );
 
     for ( i = 0; i < getHeightMap ( &map ); i++ ) {
-        fgets ( buf, MAX_LINE_LENGTH, stdin );
+        trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
         setDataMapGraph ( &map, graph, buf, i );
     }
+    trash = trash;
     return map;
 }
 

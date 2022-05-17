@@ -103,8 +103,7 @@ PILOT createPilot ( short gasLvl );
  * @param myPilot : Our pilot
  * @param secondPilot : the second pilot 
  * @param thirdPilot : the third pilot
- * @param map : the race circuit
  */
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, DATA_MAP* map, GRAPH* graph, dijkstraMatrix* dijkstra );
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, dijkstraMatrix* dijkstra );
 
 #endif /* __PILOT_MANAGEMENT_HH__ */
