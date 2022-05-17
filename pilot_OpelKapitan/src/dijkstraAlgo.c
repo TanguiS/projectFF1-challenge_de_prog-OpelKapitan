@@ -34,24 +34,6 @@ boolean samePOSITION(POSITION sommet1, POSITION sommet2) {
     return false;
 }
 
-
-static boolean isInGraph ( GRAPH* graph, short x, short y )
-{
-    if ( x >= getWidthGraph ( graph ) ) {
-        return false;
-    }
-    if ( y >= getHeightGraph ( graph ) ) {
-        return false;
-    }
-    if ( x < 0 ) {
-        return false;
-    }
-    if ( y < 0 ) {
-        return false;
-    }
-    return true;
-}
-
 void initDijkstraLength(dijkstraMatrix* dijkstraMatrix, POSITION first) {
     int i;
     int j;

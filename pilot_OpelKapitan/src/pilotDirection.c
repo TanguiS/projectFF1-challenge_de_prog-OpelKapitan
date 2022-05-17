@@ -274,8 +274,10 @@ static boolean updatePathListIfstraightLine ( PATH_LIST* path, POSITION currentP
         previousGoalPosition = goalPosition;
         fprintf ( stderr, ">>>GOALLLLLLLLLL : %d %d\n", previousGoalPosition.X, previousGoalPosition.Y );
         goalPosition = getNextCurrentPathList ( *path );
-        if ( isSand ( graph, goalPosition ) ) {
-            break;
+        if ( isInGraph ( graph, goalPosition.X, goalPosition.Y ) ) {
+            if ( isSand ( graph, goalPosition ) ) {
+                break;
+            }
         }
     }
     return areAligned ( currentPosition, nextPosition, previousGoalPosition );
@@ -292,54 +294,51 @@ short addActionToGroup ( short length, short currentSpeed, short startingIndex, 
 {
     int i;
     short decelerationPosition = 0; /* ATTENTION SI BOOST */
-    short hypoteticalPosition = abs ( currentSpeed );
+    short nextHypoteticalPosition = abs ( currentSpeed );
     short hypoteticalSpeed = abs ( currentSpeed );
 
     short remainingDistance;
     short numberStraightAction;
 
-    while ( (decelerationPosition + hypoteticalPosition + hypoteticalSpeed < length - ( hypoteticalPosition + decelerationPosition + hypoteticalSpeed )) && ( hypoteticalSpeed != MAX_SPEED ) ) {
+    fprintf ( stderr, ">AddActionToGroup : longueur = %d\n", length );
+    fprintf ( stderr, "> HypoteticalPosition = %d\n", decelerationPosition + nextHypoteticalPosition + hypoteticalSpeed );
+    while ( (decelerationPosition + nextHypoteticalPosition + hypoteticalSpeed < length - ( nextHypoteticalPosition + decelerationPosition + hypoteticalSpeed )) && ( hypoteticalSpeed != MAX_SPEED ) ) {
         hypoteticalSpeed++;
-        hypoteticalPosition += hypoteticalSpeed;
+        nextHypoteticalPosition += hypoteticalSpeed;
         decelerationPosition += hypoteticalSpeed - 1;
+        fprintf ( stderr, "> HypoteticalPosition dans while = %d\n", decelerationPosition + nextHypoteticalPosition + hypoteticalSpeed );
         accelerate ( positionVector ( finalPosition, startPosition ), &actions[startingIndex] );
         startingIndex++;
-        fprintf ( stderr, "1 " );
-/*         if ( hypoteticalSpeed == MAX_SPEED ) {
-            break;
-        } */
     }
-    remainingDistance = length - ( hypoteticalPosition + decelerationPosition );
+    remainingDistance = length - ( nextHypoteticalPosition + decelerationPosition );
+    fprintf ( stderr, "> Distance restante : %d\n", remainingDistance );
 
     if ( remainingDistance >= hypoteticalSpeed ) {
         numberStraightAction = (short) ( (float) ( remainingDistance ) / (float)(hypoteticalSpeed) );
         for ( i = 0; i < numberStraightAction; i++ ) {
             goStraight ( &actions[startingIndex] );
             startingIndex++;
-            fprintf ( stderr, "0 " );
         }
         remainingDistance -= hypoteticalSpeed * numberStraightAction;
-        hypoteticalPosition += hypoteticalSpeed * numberStraightAction;
+        nextHypoteticalPosition += hypoteticalSpeed * numberStraightAction;
     }
     for ( i = 1; i < hypoteticalSpeed; i++ ) {
         if ( remainingDistance == hypoteticalSpeed - i ) {
-            hypoteticalPosition += 2 * (hypoteticalSpeed - i);
-            fprintf ( stderr, "-1 0 " );
+            nextHypoteticalPosition += 2 * (hypoteticalSpeed - i);
             slowDown ( positionVector ( finalPosition, startPosition ), &actions[startingIndex] );
             startingIndex++;
             goStraight ( &actions[startingIndex] );
             startingIndex++;
         } else {
-            fprintf ( stderr, "-1 " );
             slowDown ( positionVector ( finalPosition, startPosition ), &actions[startingIndex] );
             startingIndex++;
-            hypoteticalPosition += hypoteticalSpeed - i;
+            nextHypoteticalPosition += hypoteticalSpeed - i;
         }
     }
-    fprintf ( stderr, "\n                                                  --> longueur parcouru : %d\n", hypoteticalPosition );
+    fprintf ( stderr, "\n                                                  --> longueur parcouru : %d\n", nextHypoteticalPosition );
     actions[0].X = startingIndex;
     actions[0].Y = 0;
-    return hypoteticalPosition;
+    return nextHypoteticalPosition;
 }
 
 short addActionXToGroup ( short length, short currentSpeed, short startingIndex, POSITION startPosition, POSITION finalPosition, ACCELERATION* actions )
