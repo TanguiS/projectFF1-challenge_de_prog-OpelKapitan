@@ -92,7 +92,15 @@ void getCoordFinishLine ( GRAPH* graph, short index, POSITION* result );
  */
 void getClosestFinishLine ( GRAPH* graph, POSITION* result );
 
-POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent);
+boolean isSand ( GRAPH* graph, POSITION coord );
+
+boolean isRoad ( GRAPH* graph, POSITION coord );
+
+boolean isCar ( GRAPH* graph, POSITION coord );
+
+boolean isWall ( GRAPH* graph, POSITION coord );
+
+boolean isInGraph ( GRAPH* graph, short x, short y );
 
 
 /**
@@ -154,6 +162,7 @@ void displayGraph ( GRAPH* graph );
  * @param graphToDestoy 
  */
 void destroyGraph (GRAPH graphToDestoy );
+
 
 
 

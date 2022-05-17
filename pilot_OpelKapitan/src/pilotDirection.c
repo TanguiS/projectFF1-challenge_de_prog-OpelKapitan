@@ -243,15 +243,25 @@ static boolean areAligned ( POSITION A, POSITION B, POSITION C )
     return  (C.Y - A.Y) * (B.X - A.X) - (B.Y - A.Y) * (C.X - A.X ) == 0; 
 }
 
-static boolean updatePathListIfstraightLine ( PATH_LIST* path, POSITION currentPosition )
+static boolean updatePathListIfstraightLine ( PATH_LIST* path, POSITION currentPosition, GRAPH* graph )
 {
     POSITION nextPosition;
     POSITION goalPosition;
     POSITION previousGoalPosition;
 
+    if ( isSand ( graph, currentPosition ) ) {
+        return false;
+    }
+
     *path = resetCurrentPathList ( *path );
+    fprintf ( stderr, ">Position courante : %d %d\n", currentPosition.X, currentPosition.Y );
     nextPosition = getCurrentPathList ( *path ); /* get head ca marche aussi */
+    fprintf ( stderr, ">Position next : %d %d\n", nextPosition.X, nextPosition.Y );
+    fprintf ( stderr, "> Value du graph : %d\n", getElementGraph ( graph, nextPosition ) );
     if ( nextPosition.X == -1 ) {
+        return false;
+    } else if ( isSand ( graph, nextPosition ) ) {
+        fprintf ( stderr, "> Du sable from nextPosition\n" );
         return false;
     }
     goalPosition = getNextCurrentPathList ( *path );
@@ -264,6 +274,9 @@ static boolean updatePathListIfstraightLine ( PATH_LIST* path, POSITION currentP
         previousGoalPosition = goalPosition;
         fprintf ( stderr, ">>>GOALLLLLLLLLL : %d %d\n", previousGoalPosition.X, previousGoalPosition.Y );
         goalPosition = getNextCurrentPathList ( *path );
+        if ( isSand ( graph, goalPosition ) ) {
+            break;
+        }
     }
     return areAligned ( currentPosition, nextPosition, previousGoalPosition );
 }
@@ -568,7 +581,7 @@ PATH_LIST groupNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotS
 }
 
 /* avec un flag en statique pour pas qu'il soit mis à jour a chaque fois mais qu'une seul fois */
-PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction )
+PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction, GRAPH* graph )
 {
     static ACCELERATION* actionTab = NULL;
     static short countAction = 1;
@@ -581,7 +594,7 @@ PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilot
     if ( actionTab == NULL ) {
         actionTab = ( ACCELERATION* ) malloc ( 255 * sizeof ( ACCELERATION ) );
     }
-    flag = updatePathListIfstraightLine ( &path, pilotPosition ); /* savoir si c'est une ligne droite */
+    flag = updatePathListIfstraightLine ( &path, pilotPosition, graph ); /* savoir si c'est une ligne droite */
     path = redirectTab[flag](path, pilotPosition, pilotSpeed, actionTab ); /* savoir si c'est un groupe d'action */
     if ( flag ) {
         nextAction->X = actionTab[countAction].X;   

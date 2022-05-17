@@ -187,7 +187,27 @@ element getElementGraph ( GRAPH* graph, POSITION coord )
     return getElementMatrix ( &(graph->graph), coord.X, coord.Y );
 }
 
-static boolean isInGraph ( GRAPH* graph, short x, short y )
+boolean isSand ( GRAPH* graph, POSITION coord )
+{
+    return getElementGraph ( graph, coord ) == sandGraph;
+}
+
+boolean isRoad ( GRAPH* graph, POSITION coord )
+{
+    return getElementGraph ( graph, coord ) == roadGraph;
+}
+
+boolean isCar ( GRAPH* graph, POSITION coord )
+{
+    return getElementGraph ( graph, coord ) == carGraph;
+}
+
+boolean isWall ( GRAPH* graph, POSITION coord )
+{
+    return getElementGraph ( graph, coord ) == wallGraph;
+}
+
+boolean isInGraph ( GRAPH* graph, short x, short y )
 {
     if ( x >= getWidthGraph ( graph ) ) {
         return false;
