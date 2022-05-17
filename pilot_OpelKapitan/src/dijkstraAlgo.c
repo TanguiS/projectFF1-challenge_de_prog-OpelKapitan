@@ -70,7 +70,7 @@ void initDijkstraLenght(dijkstraMatrix* dijkstraMatrix, short x, short y) {
 
 
 
-void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
+void    findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
     short i;
     POSITION minTemp;
 

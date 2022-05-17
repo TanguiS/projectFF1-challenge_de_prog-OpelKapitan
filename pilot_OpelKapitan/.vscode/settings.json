@@ -30,12 +30,12 @@
   "files.associations": {
     "util.h": "c",
     "dijkstraalgo.h": "c",
-    "main_matrix.C": "cpp",
+    "main_matrix.c": "c",
     "stdio.h": "c",
     "dijkstramatrix.h": "c",
     "graphmadj.h": "c",
     "pilotdirection.h": "c",
-    "pilotmanagement.h": "c"
+    "list.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

@@ -24,7 +24,7 @@
 
 #define ACTION 1
 #define BOOSTED_ACTION 2
-#define MAX_SPEED 4
+#define MAX_SPEED 5
 
 
 void goRight ( ACCELERATION* action ) {
@@ -527,7 +527,7 @@ PATH_LIST groupNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotS
 {
     POSITION goalPosition;
     goalDirection directionLine;
-    short length;
+    short length = 0;
     int i;
 
     goalPosition = getCurrentPathList ( path );

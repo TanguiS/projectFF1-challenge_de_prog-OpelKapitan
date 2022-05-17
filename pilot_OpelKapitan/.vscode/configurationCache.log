@@ -1,1 +1,1 @@
-{"buildTargets":[],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[]},"fileIndex":[]}}
+{"buildTargets":["clean","distclean","install","obj/dijkstraAlgo.o","obj/dijkstraMatrix.o","obj/graphMadj.o","obj/list.o","obj/main.o","obj/matrix.o","obj/matrixDij.o","obj/pathList.o","obj/pilotDirection.o","obj/pilotManagement.o","obj/readMap.o","try"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[]},"fileIndex":[]}}

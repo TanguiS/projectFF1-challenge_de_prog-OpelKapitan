@@ -84,7 +84,7 @@ int main(int argc, char* argv[]) {
                 graph.finishLineCoord[countFinish].Y = j;
                 countFinish++;
             } else if (buff[i] == '1' || buff[i] == '2' ||buff[i] == '3') {
-                if (buff[i] == '1') {
+                if (buff[i] == '2') {
                     first.X = i;
                     first.Y = j;
                 }
@@ -92,6 +92,8 @@ int main(int argc, char* argv[]) {
             }
         }
     }
+    first.X = 40;
+    first.Y = 24;
     graph.sizeFinishLine = countFinish;
     displayGraph ( &graph );
     stack = givePath(&dijkstra, &graph, first);
