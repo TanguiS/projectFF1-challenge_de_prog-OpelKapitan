@@ -367,7 +367,6 @@ void reverseGraph ( GRAPH* graph, POSITION previousSecound[5], POSITION previous
                             { -1, 0 },
                             { 0, 1 },
                             { 0, -1 }
-                            
     };
 
     for ( i = 0; i < 5; i++ ) {

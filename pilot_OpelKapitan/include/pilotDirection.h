@@ -38,7 +38,6 @@
 #endif
 
 #define NUMBER_DIRECTION 8
-#define NUMBER_PEDAL 2
 
 typedef enum {
     right, 
@@ -51,13 +50,7 @@ typedef enum {
     boostUp,
     boostDown
 
-    /* straight */
 } direction;
-
-typedef enum {
-    slower,
-    faster
-} pedal;
 
 typedef enum {
     towardsX,
