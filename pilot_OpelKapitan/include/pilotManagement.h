@@ -106,4 +106,6 @@ PILOT createPilot ( short gasLvl );
  */
 void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, dijkstraMatrix* dijkstra );
 
+boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPEED pilotSpeed, PATH_LIST path );
+
 #endif /* __PILOT_MANAGEMENT_HH__ */

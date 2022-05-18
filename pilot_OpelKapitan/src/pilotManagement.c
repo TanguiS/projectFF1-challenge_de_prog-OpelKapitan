@@ -22,6 +22,8 @@
 #include "pilotManagement.h"
 #include "pilotDirection.h"
 
+#define FUEL_SAFETY 5
+
 /**
  * @brief Set the Position Pilot object
  * 
@@ -212,11 +214,12 @@ static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION acti
     squareRoot = (short)(sqrt((double)speed.X * (double)speed.X + (double)speed.Y * (double)speed.Y) * 3.0 / 2.0); 
 
    
-    fprintf ( stderr, ">>> resultat calcul : \n     norme1 = %d,    squareRoot = %d\n", norme1, squareRoot );
 
     if ( isSand(graph, position) ) {
+        fprintf ( stderr, ">>> resultat calcul, fuel used, sable : %d\n", norme1 + squareRoot + 1 );
         return ( norme1 + squareRoot + 1. );
     }
+    fprintf ( stderr, ">>> resultat calcul, fuel used : %d\n", norme1 + squareRoot );
     return ( norme1 + squareRoot );
 }
 
@@ -254,7 +257,6 @@ ACCELERATION getAccelerationPilot ( PILOT* pilot )
     return pilot->acceleration;
 }
 
-
 short getGasLvlPilot ( PILOT* pilot )
 {
     return pilot->gasLvl;
@@ -263,6 +265,28 @@ short getGasLvlPilot ( PILOT* pilot )
 short getBoostsRemainingPilot ( PILOT* pilot )
 {
     return pilot->boostsRemaining;
+}
+
+boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPEED pilotSpeed, PATH_LIST path )
+{
+    ACCELERATION tmp;
+    short usedFuel = 0;
+
+    path = resetCurrentPathList ( path );
+    do {
+        path = examineNextPosition ( path, pilotPosition, pilotSpeed, &tmp );
+        usedFuel += fuelConsumption ( pilotPosition, pilotSpeed, tmp, graph );
+        pilotSpeed.X += tmp.X;
+        pilotSpeed.Y += tmp.Y;
+        pilotPosition.X += pilotSpeed.X;
+        pilotPosition.Y += pilotSpeed.Y;
+        fprintf ( stderr, "> Position : %d %d\n", pilotPosition.X, pilotPosition.Y );
+    } while ( !isCurrentNull ( path ) );
+    fprintf ( stderr, ">>Consommation théorique : %d\n", usedFuel );
+    if ( usedFuel + FUEL_SAFETY >= fuelLeft ) {
+        return false;
+    }
+    return true;
 }
 
 PILOT createPilot ( short gasLvl )
@@ -320,7 +344,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }
-    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction, graph );
+    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction, graph, getGasLvlPilot ( myPilot ) );
     fprintf ( stderr, "     action : %hd, %hd\n\n>>> FIN <<<\n\n", nextAction.X, nextAction.Y );
     destroyPathList ( path );
 

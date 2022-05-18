@@ -129,6 +129,8 @@ boolean nextCurrentEqualsHead ( PATH_LIST list );
 
 path_list_element getNextCurrentPathList ( PATH_LIST list );
 
+boolean isCurrentNull ( PATH_LIST list );
+
 /**
  * @brief Destroy a PathList object
  * 

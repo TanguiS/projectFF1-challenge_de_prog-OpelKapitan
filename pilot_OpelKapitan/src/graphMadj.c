@@ -354,7 +354,7 @@ void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previo
                             { 0, -1 }
     };
 
-    for ( i = 0; i < 5; i++ ) {
+    for ( i = 0; i < 4; i++ ) {
         if ( isInGraph ( graph, previousSecoundPilot.X + rounder[i].X, previousSecoundPilot.Y + rounder[i].Y ) ) {
             setElementGraph ( graph, roadGraph, previousSecoundPilot.X + rounder[i].X, previousSecoundPilot.Y + rounder[i].Y );
         }

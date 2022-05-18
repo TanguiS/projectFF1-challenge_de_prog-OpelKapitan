@@ -88,9 +88,11 @@ void choiceDirection ( direction choice, ACCELERATION* action );
 
 boolean areEqualPosition ( POSITION A, POSITION B );
 
-PATH_LIST choiceNextAction ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, GRAPH* graph );
+PATH_LIST choiceNextAction ( PATH_LIST path, POSITION positionPilot, SPEED speedPilot, ACCELERATION* nextAction, GRAPH* graph, short remainingFuel );
 
 PATH_LIST nextActionForNextPosition ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction );
+
+PATH_LIST examineNextPosition ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction );
 
 
 

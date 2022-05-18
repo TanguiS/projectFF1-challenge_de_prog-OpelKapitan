@@ -201,19 +201,35 @@ static void boostNextAction ( POSITION positionToGo, ACCELERATION* nextAction )
 {
     fprintf ( stderr, "> Boost test, position to go : %hd, %hd\n", positionToGo.X, positionToGo.Y );
     if ( positionToGo.X > 0 ) {
-        choiceDirection ( boostRight, nextAction );
+        if ( positionToGo.X == 1 ) {
+            choiceDirection ( right, nextAction );
+        } else {
+            choiceDirection ( boostRight, nextAction );
+        }
     } else if ( positionToGo.X == 0 ) {
         goStraightX ( nextAction );
     } else {
-        choiceDirection ( boostLeft, nextAction );
+        if ( positionToGo.X == -1 ) {
+            choiceDirection ( left, nextAction );
+        } else {
+            choiceDirection ( boostLeft, nextAction );
+        }
     }
     if ( positionToGo.Y > 0 ) {
-        choiceDirection ( boostDown, nextAction );
+        if ( positionToGo.Y == 1 ) {
+            choiceDirection ( down, nextAction );
+        } else {
+            choiceDirection ( boostDown, nextAction );
+        }
     } else if ( positionToGo.Y == 0 ) {
         nextAction->Y = 0;
         goStraightY ( nextAction );
     } else {
-        choiceDirection ( boostUp, nextAction );
+        if ( positionToGo.Y == -1 ) {
+            choiceDirection ( up, nextAction );
+        } else {
+            choiceDirection ( boostUp, nextAction );
+        }
     }
     fprintf ( stderr, "> Action boosted : %hd, %hd\n", nextAction->X, nextAction->Y );
 }
@@ -225,14 +241,23 @@ static POSITION hypotheticalNextPosition ( POSITION nextPosition, POSITION curre
     return nextPosition;
 }
 
+PATH_LIST examineNextPosition ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction )
+{
+    path_list_element nextPosition;
+    POSITION positionToGo;
+    nextPosition = getCurrentPathList ( path );
+    path = moveCurrentPathList ( path );
+    positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
+    basicNextAction ( positionToGo, nextAction );
+    return path;
+}
+
 PATH_LIST nextActionForNextPosition ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction )
 {
     path_list_element nextPosition;
     POSITION positionToGo;
-    if ( currentEqualsHead ( path ) ) {
-        path = moveCurrentPathList ( path );
-    }
     path = removeHeadElementPathList ( path, &nextPosition );
+    path = resetCurrentPathList ( path );
     fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
     positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
     /* version boost et non boosted */
@@ -424,7 +449,7 @@ boolean speedIsNull ( SPEED pilotSpeed )
 }
 
 /* avec un flag en statique pour pas qu'il soit mis à jour a chaque fois mais qu'une seul fois */
-PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction, GRAPH* graph )
+PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction, GRAPH* graph, short remainingFuel )
 {
     static ACCELERATION* actionTab = NULL;
     static short countAction = 1;
@@ -438,15 +463,19 @@ PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilot
     if ( actionTab == NULL ) {
         actionTab = ( ACCELERATION* ) malloc ( 255 * sizeof ( ACCELERATION ) );
     }
-    if ( speedIsNull ( pilotSpeed ) ) {
+    if ( speedIsNull ( pilotSpeed ) && updatePathListIfstraightLine ( &path, pilotPosition, graph ) ) {
         path = redirectTab[2](path, pilotPosition, pilotSpeed, actionTab );
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
         fprintf ( stderr, "> Action boosted : %hd, %hd\n", nextAction->X, nextAction->Y );
         return path;
     } 
-    flag = updatePathListIfstraightLine ( &path, pilotPosition, graph ); /* savoir si c'est une ligne droite */
-    path = redirectTab[flag](path, pilotPosition, pilotSpeed, actionTab ); /* savoir si c'est un groupe d'action */
+    if ( !isEnoughFuel ( graph, remainingFuel, pilotPosition, pilotSpeed, path ) ) {
+        path = redirectTab[flag](path, pilotPosition, pilotSpeed, actionTab ); 
+    } else {
+        flag = updatePathListIfstraightLine ( &path, pilotPosition, graph );
+        path = redirectTab[flag](path, pilotPosition, pilotSpeed, actionTab ); 
+    }
     if ( flag ) {
         nextAction->X = actionTab[countAction].X;   
         nextAction->Y = actionTab[countAction].Y;   

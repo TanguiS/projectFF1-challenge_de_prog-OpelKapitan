@@ -151,8 +151,17 @@ path_list_element examineHeadPathList ( PATH_LIST list )
 
 PATH_LIST moveCurrentPathList ( PATH_LIST list )
 {
+    if ( list.current->followingCell == NULL ) {
+        list.current = NULL;
+        return list;
+    }
     list.current = list.current->followingCell;
     return list;
+}
+
+boolean isCurrentNull ( PATH_LIST list )
+{
+    return list.current == NULL;
 }
 
 path_list_element getCurrentPathList ( PATH_LIST list )
