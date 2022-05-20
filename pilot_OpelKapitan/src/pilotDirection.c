@@ -325,7 +325,7 @@ static PATH_LIST nextActionForNextPosition (
     POSITION positionToGo;
     path = removeHeadElementPathList ( path, &nextPosition );
     path = resetCurrentPathList ( path );
-    fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
+    /* fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y ); */
     positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
     basicNextAction ( positionToGo, nextAction );
     return path;
@@ -354,11 +354,11 @@ static PATH_LIST nextActionBoostedForNextPosition (
     }
     path = removeHeadElementPathList ( path, &nextPosition );
     path = removeHeadElementPathList ( path, &nextPosition );
-    fprintf ( stderr, "> NEXT_ACTION_BOOST, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
+    /* fprintf ( stderr, "> NEXT_ACTION_BOOST, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y ); */
     positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
     /* version boost et non boosted */
     boostNextAction ( positionToGo, nextAction );
-    fprintf ( stderr, "> Action boosted : %hd, %hd\n", nextAction->X, nextAction->Y );
+    /* fprintf ( stderr, "> Action boosted : %hd, %hd\n", nextAction->X, nextAction->Y ); */
     return path;
 }
 
@@ -572,12 +572,12 @@ static PATH_LIST groupNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED
             slowDownX ( pilotSpeed, &nextAction[1] );
         }
     } else { /* c'est une diagonale */
-        fprintf ( stderr, "diagonal\n" );
+        /* fprintf ( stderr, "diagonal\n" ); */
          path = nextActionForNextPosition ( path, pilotPosition, pilotSpeed, &nextAction[1] );
-        fprintf ( stderr, ">>>diag : action n°1 : %d %d\n", nextAction[1].X, nextAction[1].Y );
+        /* fprintf ( stderr, ">>>diag : action n°1 : %d %d\n", nextAction[1].X, nextAction[1].Y ); */
     }
     for ( i = 1; i < nextAction[0].X; i++ ) {
-        fprintf ( stderr, "Action recupered : %d %d\n", nextAction[i].X, nextAction[i].Y );
+        /* fprintf ( stderr, "Action recupered : %d %d\n", nextAction[i].X, nextAction[i].Y ); */
     }
     if ( length > 0 ) {
         path = updatePathToGoalPosition ( path, goalPosition );
@@ -630,7 +630,7 @@ PATH_LIST choiceNextAction ( PATH_LIST path, POSITION pilotPosition, SPEED pilot
         path = redirectTab[2](path, pilotPosition, pilotSpeed, actionTab );
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
-        fprintf ( stderr, "> Action boosted : %hd, %hd\n", nextAction->X, nextAction->Y );
+        /* fprintf ( stderr, "> Action boosted : %hd, %hd\n", nextAction->X, nextAction->Y ); */
         return path;
     } 
     if ( !isEnoughFuel ( graph, remainingFuel, pilotPosition, pilotSpeed, path ) ) {

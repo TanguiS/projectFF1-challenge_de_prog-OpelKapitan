@@ -52,7 +52,7 @@ static void setDataGraph ( GRAPH* graph, char* data, int row )
 }
 
 
-void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph )
+void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph )
 {
     int i;
     short width, height;
@@ -60,7 +60,7 @@ void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph )
     char* trash;
 
     trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
-    sscanf ( buf, "%hd %hd %hd", &width, &height, gasLvl );
+    sscanf ( buf, "%hd %hd %hd", &width, &height, fuelLevel );
 
     *graph = createGraph ( width, height );
     *referenceGraph = createGraph ( width, height);
@@ -79,8 +79,6 @@ void updatePositionPilotFromGDC ( POSITION* myPilot, POSITION* secondPilot, POSI
     char* trash;
 
     trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
-    fprintf ( stderr, "\n\nLECTURE TEST BUFFER >>>>>>>>>>>>< : %s\n\n", buf );
-    fflush ( stdin );
     sscanf ( buf, "%hd %hd %hd %hd %hd %hd",
                     &(myPilot->X),          &(myPilot->Y),
                     &(secondPilot->X),      &(secondPilot->Y),

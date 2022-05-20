@@ -47,8 +47,6 @@ int main ( void )
     t2 = clock();
     initTime = (float)(t2-t1)/CLOCKS_PER_SEC;
 
-    fprintf(stderr, "\n=== Race start ===\n");
-    
     while (!feof(stdin)) {
         t1 = clock();
         round++;
@@ -61,7 +59,6 @@ int main ( void )
         if ( time > maxTime ) {
             maxTime = time;
         }
-        fprintf( stderr, "la ligne finale est en  %d %d", graph.closestFinishLine.X, graph.closestFinishLine.Y);
         fprintf ( stderr, "\n\n>>>> CONCLUSION : temps max d'un tour : %f <<<<<<<\n\n", maxTime );
     }
     destroyGraph(graph);

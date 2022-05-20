@@ -63,7 +63,7 @@ static void setClosestFinishLine ( GRAPH* graph, POSITION closestFinishLine );
  * @param competitor 
  * @return boolean 
  */
-static boolean competitorIsClosestToFinish ( GRAPH* graph, POSITION pilot, POSITION competitor );
+static boolean isCompetitorClosestToFinish ( GRAPH* graph, POSITION pilot, POSITION competitor );
 
 /**
  * @brief 
@@ -79,7 +79,7 @@ static int length ( POSITION first, POSITION secound )
     return ( ( ( first.X - secound.X ) * ( first.X - secound.X ) ) + ( ( first.Y - secound.Y ) * ( first.Y - secound.Y ) ) );
 }
 
-static boolean competitorIsClosestToFinish ( GRAPH* graph, POSITION pilot, POSITION competitor )
+static boolean isCompetitorClosestToFinish ( GRAPH* graph, POSITION pilot, POSITION competitor )
 {
     POSITION closest;
     int lengthClosest;
@@ -87,6 +87,7 @@ static boolean competitorIsClosestToFinish ( GRAPH* graph, POSITION pilot, POSIT
     getClosestFinishLine ( graph, &closest );
     lengthClosest = length ( pilot, closest );
     lengthCompetitor = length ( pilot, competitor );
+    fprintf ( stderr, "    Closest > competitor : %d\n", lengthClosest > lengthCompetitor );
     return ( lengthClosest > lengthCompetitor );
 }
 
@@ -99,7 +100,7 @@ static void setClosestFinishLine ( GRAPH* graph, POSITION closestFinishLine )
 {
     graph->closestFinishLine.X = closestFinishLine.X;
     graph->closestFinishLine.Y = closestFinishLine.Y;
-}
+} 
 
 static void addCoordFinishline ( GRAPH* graph, POSITION coord, int index )
 {
@@ -109,9 +110,7 @@ static void addCoordFinishline ( GRAPH* graph, POSITION coord, int index )
 
 static void initGraph ( GRAPH* graph )
 {
-    POSITION init;
-    init.X = SHRT_MAX;
-    init.Y = SHRT_MAX;
+    POSITION init = {SHRT_MAX, SHRT_MAX};
     setSizeFinishLine ( graph, INIT_SIZE );
     setClosestFinishLine ( graph, init );
 }
@@ -187,44 +186,6 @@ boolean isInGraph ( GRAPH* graph, short x, short y )
 
 POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent )
 {
-    /*
-    POSITION* successor;
-    int count = 1;
-    int tab[3] = {-1, 0, 1};
-    int tabd[2] = {-1, 1};
-    int i, j;
-    successor = (POSITION*) malloc ( ( NUMBER_CASES_AROUND + 1 ) * sizeof ( POSITION ) );
-    for ( i = 0; i < 3; i++ ) {
-        if ( isInGraph ( graph, parent.X, parent.Y + tab[i] ) ) {
-                successor[count].X = parent.X ;
-                successor[count].Y = parent.Y + tab[i];
-            if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
-                count++;                    
-            }
-        }
-        if ( isInGraph ( graph, parent.X + tab[i], parent.Y ) ) {
-                successor[count].X = parent.X + tab[i];
-                successor[count].Y = parent.Y;
-            if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
-                count++;                    
-            }
-        }
-    }
-    for ( i = 0; i < 2; i++ ) {
-        for ( j = 0; j < 2; j++ ) {
-            if ( isInGraph ( graph, parent.X + tabd[j], parent.Y + tabd[i] ) ) {
-                    successor[count].X = parent.X + tabd[j];
-                    successor[count].Y = parent.Y + tabd[i];
-                if ( getElementGraph ( graph, successor[count] ) != wallGraph ) {
-                    count++;                    
-                }
-            }
-        }
-    }
-    successor[0].X = count;
-    return successor;
-    */
-
    POSITION* successor;
     int count = 1;
     int tab[3] = {-1, 0, 1};
@@ -244,11 +205,6 @@ POSITION* getSuccessorGraph ( GRAPH* graph, POSITION parent )
     successor[0].X = count;
     return successor;
 }
- 
-
-
-
-
 
 void setElementGraph ( GRAPH* graph, element value, short x, short y )
 {
@@ -269,7 +225,26 @@ void updateCoordFinishLine ( GRAPH* graph, POSITION newFinishLine, int index )
     addCoordFinishline ( graph, newFinishLine, index );
 }
 
-void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot, POSITION previousSecound[5], POSITION previousThird[5] )
+void updateClosetFinishLine ( GRAPH* graph, POSITION pilotPosition )
+{
+    int i;
+    POSITION competitor;
+    static POSITION tmp = {SHRT_MAX, SHRT_MAX};
+    POSITION trash;
+    setClosestFinishLine ( graph, tmp );
+    for ( i = 0; i < (int) getSizeFinishLine ( graph ); i++ ) {
+        getCoordFinishLine ( graph, i, &competitor );
+        if ( isCompetitorClosestToFinish ( graph, pilotPosition, competitor ) ) {
+            if ( !isCar ( graph, competitor ) ) {
+                setClosestFinishLine ( graph, competitor );
+            }
+        }
+    }
+    getClosestFinishLine ( graph, &trash );
+}
+
+
+void updateGraph ( GRAPH* graph, POSITION secoundPilot, POSITION thirdPilot, POSITION previousSecound[5], POSITION previousThird[5] )
 {
     int i;
     POSITION competitor;
@@ -311,34 +286,10 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
     }
     setElementGraph ( graph, carGraph, secoundPilot.X, secoundPilot.Y );
     setElementGraph ( graph, carGraph, thirdPilot.X, thirdPilot.Y );
-
-    for ( i = 0; i < getSizeFinishLine ( graph); i++ ) {
-        getCoordFinishLine ( graph, i, &competitor );
-        if ( competitorIsClosestToFinish ( graph, myPilot, competitor ) ) {
-            setClosestFinishLine ( graph, competitor );
-        }
-    }
 }
 
 void reverseGraph ( GRAPH* graph,GRAPH* referenceGraph, POSITION previousSecound[5], POSITION previousThird[5] )
 {
-    /*int i;
-    static POSITION rounder[] = {
-                            { 1, 0 },
-                            { -1, 0 },
-                            { 0, 1 },
-                            { 0, -1 }
-    };
-
-    for ( i = 0; i < 4; i++ ) {
-        if ( isInGraph ( graph, previousSecoundPilot.X + rounder[i].X, previousSecoundPilot.Y + rounder[i].Y ) ) {
-            setElementGraph ( graph, roadGraph, previousSecoundPilot.X + rounder[i].X, previousSecoundPilot.Y + rounder[i].Y );
-        }
-        if ( isInGraph ( graph, previousThirdPilot.X + rounder[i].X, previousThirdPilot.Y + rounder[i].Y ) ) {
-            setElementGraph ( graph, roadGraph, previousThirdPilot.X + rounder[i].X, previousThirdPilot.Y + rounder[i].Y );
-        }
-    }
-    */
    int i;
    for (i=0; i<5; i++) {
        if (previousSecound[i].X != -1 && previousSecound[i].Y != -1) {
@@ -349,8 +300,6 @@ void reverseGraph ( GRAPH* graph,GRAPH* referenceGraph, POSITION previousSecound
        }
    }
 }
-
-
 
 void destroyGraph(GRAPH graph) {
     destroyMatrix ( graph.graph );

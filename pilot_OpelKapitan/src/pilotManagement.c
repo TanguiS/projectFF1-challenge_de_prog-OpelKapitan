@@ -22,7 +22,7 @@
 #include "pilotManagement.h"
 #include "pilotDirection.h"
 
-#define FUEL_SAFETY 10
+#define FUEL_SAFETY 10              /**< safety operation */
 
 /**
  * @brief Set the Position Pilot object
@@ -119,7 +119,7 @@ static void setActionPilot ( PILOT* pilot, short x, short y )
 
 static void setGasLvlPilot ( PILOT* pilot, short newGasLvl )
 {
-    pilot->gasLvl = newGasLvl;
+    pilot->fuelLevel = newGasLvl;
 }
 
 static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
@@ -173,15 +173,11 @@ static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION acti
 {
     short norme1;
     short squareRoot;
-    fprintf ( stderr, "> donnees envoye FUEL CONSUMP ! speed : %hd %hd, acc : %hd %hd\n", speed.X, speed.Y, action.X, action.Y );
     norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
     squareRoot = (short)(sqrt((double)speed.X * (double)speed.X + (double)speed.Y * (double)speed.Y) * 3.0 / 2.0); 
-
     if ( isSand(graph, position) ) {
-        fprintf ( stderr, ">>> resultat calcul, fuel used, sable : %d\n", norme1 + squareRoot + 1 );
         return ( norme1 + squareRoot + 1. );
     }
-    fprintf ( stderr, ">>> resultat calcul, fuel used : %d\n", norme1 + squareRoot );
     return ( norme1 + squareRoot );
 }
 
@@ -195,7 +191,6 @@ static void updateGasPilot ( PILOT* pilot, GRAPH* graph )
                                               graph 
                                             ) 
                     );
-    fprintf ( stderr, "> gas lvl : %d\n", getGasLvlPilot ( pilot ) );
 }
 
 static void deliverAction ( char action[SIZE_ACTION] )
@@ -221,7 +216,7 @@ ACCELERATION getAccelerationPilot ( PILOT* pilot )
 
 short getGasLvlPilot ( PILOT* pilot )
 {
-    return pilot->gasLvl;
+    return pilot->fuelLevel;
 }
 
 short getBoostsRemainingPilot ( PILOT* pilot )
@@ -242,19 +237,17 @@ boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPE
         pilotSpeed.Y += tmp.Y;
         pilotPosition.X += pilotSpeed.X;
         pilotPosition.Y += pilotSpeed.Y;
-        fprintf ( stderr, "> Position : %d %d\n", pilotPosition.X, pilotPosition.Y );
     } while ( !isCurrentNull ( path ) );
-    fprintf ( stderr, ">>Consommation théorique : %d\n", usedFuel );
     if ( usedFuel + FUEL_SAFETY >= fuelLeft ) {
         return false;
     }
     return true;
 }
 
-PILOT createPilot ( short gasLvl )
+PILOT createPilot ( short fuelLevel )
 {
     PILOT newPilot;
-    setGasLvlPilot ( &newPilot, gasLvl );
+    setGasLvlPilot ( &newPilot, fuelLevel );
     initNewPilot ( &newPilot );
 
     return newPilot;
@@ -287,20 +280,25 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( &myPosition, &secondPosition, &thirdPosition );
     updatePositionPilot ( myPosition, secondPosition, thirdPosition, myPilot, secondPilot, thirdPilot );
-
-    updateGraph ( graph, myPosition, secondPosition, thirdPosition, previousSecound, previousThird );
+    updateGraph ( graph, secondPosition, thirdPosition, previousSecound, previousThird );
 
     /* 1ere etape : choisir une action */
     path = givePath ( dijkstra, graph, myPosition );
 
+    path = resetCurrentPathList ( path );
+    fprintf ( stderr, "\n" );
+    while ( !isCurrentNull ( path ) ) {
+        fprintf ( stderr, "[%hd, %hd] ", path.current->contents.X, path.current->contents.Y );
+        path = moveCurrentPathList ( path );
+    }
+    resetCurrentPathList ( path );
+    fprintf ( stderr, "\n" );
 
-    fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
     if ( areEqualPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }
     path = choiceNextAction ( path, myPosition, getSpeedPilot ( myPilot ), &nextAction, graph, getGasLvlPilot ( myPilot ) );
-    fprintf ( stderr, "     action : %hd, %hd\n\n>>> FIN <<<\n\n", nextAction.X, nextAction.Y );
     destroyPathList ( path );
 
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */

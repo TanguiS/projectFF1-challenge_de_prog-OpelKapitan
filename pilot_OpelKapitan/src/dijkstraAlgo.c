@@ -22,12 +22,12 @@
 #include "../include/dijkstraAlgo.h"
 
 
-void mixePOSITION (POSITION* reference, POSITION* result ) {
+void mergePosition (POSITION* reference, POSITION* result ) {
     result->X = reference->X;
     result->Y = reference->Y;   
 }
 
-boolean samePOSITION(POSITION sommet1, POSITION sommet2) {
+boolean areEqualsPosition(POSITION sommet1, POSITION sommet2) {
     if (sommet1.X == sommet2.X && sommet1.Y == sommet2.Y) {
         return true;
     }
@@ -56,11 +56,11 @@ void    findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
     POSITION minTemp;
 
     i = getElementList(list, sommet, 0);
-    mixePOSITION(sommet, &minTemp);
+    mergePosition(sommet, &minTemp);
     while (i) {
         i = getNextElementList(list, &minTemp, &minTemp);
         if (getPathLength(dijkstra, sommet->X, sommet->Y) > getPathLength(dijkstra, minTemp.X, minTemp.Y)) {
-            mixePOSITION(&minTemp, sommet);
+            mergePosition(&minTemp, sommet);
         }
     }
     dijkstra->matrix[sommet->X][sommet->Y].flag = black;
@@ -145,25 +145,6 @@ void listGraphSucc(GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION 
     if (getElementGraph(graph, parent) == sandGraph) {
         getSuccSand(graph, dijkstra, list, parent);
     } else {
-        /*
-        for (i=0; i<3; i++) {
-            successor.Y = parent.Y + tab[i];
-            for (j=0; j<3; j++){
-                if ( isInGraph ( graph, parent.X + tab[j], parent.Y + tab[i] ) ) {
-                        successor.X = parent.X + tab[j];
-                    if ( getElementGraph ( graph, successor ) != wallGraph) {
-                        if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
-                            *list = addElementList(*list, successor);
-                            dijkstra->matrix[successor.X][successor.Y].flag = gray;
-                            displayDijkstraMatrix(dijkstra, successor.X, successor.Y);
-                            updateDistance(dijkstra, graph, parent, successor);
-                        }
-                    }
-                }
-                    
-            }
-            
-        }*/
         getRoadSucc(graph, dijkstra, list, parent);
     }
 }
@@ -186,19 +167,8 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSomme
 
     while (!isEmptyList(list)) {
         findMin(dijkstra, &sommet, list);
-        /*succ = getSuccessorGraph(graph, sommet);
-        sizeSucc = succ[0].X;
-        for (i=1; i<sizeSucc; i++) {
-            if ( dijkstra->matrix[succ[i].X][succ[i].Y].flag == white ) {
-                list = addElementList(list, succ[i]);
-                dijkstra->matrix[succ[i].X][succ[i].Y].flag = gray;
-                displayDijkstraMatrix(dijkstra, sommet.X, sommet.Y);
-            } 
-            updateDistance(dijkstra, graph, sommet, succ[i]);
-        }*/
         listGraphSucc(graph, dijkstra, &list, sommet);
         list = removeElementListCoord(list, &sommet, &sommet);
-        /*free ( succ );*/
     }
     destroyList(list);
 } 
@@ -206,33 +176,14 @@ void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSomme
 PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
     POSITION sommet;
     PATH_LIST stack;
-    POSITION firstSommet;
     POSITION finalSommet;
-    POSITION competitor;
-    int i;
-    int length;
-    int minLength;
 
-    firstSommet.X = first.X;
-    firstSommet.Y = first.Y;
     allPathDijkstra ( dijkstra, graph, first );
+    updateClosetFinishLine ( graph, first );
     getClosestFinishLine ( graph, &finalSommet );
-    getCoordFinishLine ( graph, 0, &competitor );
-    minLength = getPathLength(dijkstra, competitor.X, competitor.Y);
-    graph->closestFinishLine.X = competitor.X;
-    graph->closestFinishLine.Y = competitor.Y;
-    for ( i = 1; i < getSizeFinishLine ( graph); i++ ) {
-        getCoordFinishLine ( graph, i, &competitor );
-        length = getPathLength(dijkstra, competitor.X, competitor.Y);
-        if ( length <minLength ) {
-            graph->closestFinishLine.X = competitor.X;
-            graph->closestFinishLine.Y = competitor.Y;
-        }
-    }
-    /*getClosestFinishLine(graph, &finalSommet);*/
     stack = createPathList();
-    mixePOSITION(&finalSommet, &sommet);
-    while( !samePOSITION(sommet, firstSommet) ) {
+    mergePosition(&finalSommet, &sommet);
+    while( !areEqualsPosition(sommet, first) ) {
         stack = addHeadElementPathList(stack, sommet);
         getPredecessor(dijkstra, sommet.X, sommet.Y, &sommet);
     }

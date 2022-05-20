@@ -42,11 +42,11 @@ typedef enum {
 /**
  * @brief Read the data sent by the GDC
  * 
- * @param gasLvl : the gas level sent by the GDC
+ * @param fuelLevel : the gas level sent by the GDC
  * @param graph : the Graph object initialized
  * @return 
  */
-void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph );
+void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph );
 
 /**
  * @brief Update the position of the three pilot

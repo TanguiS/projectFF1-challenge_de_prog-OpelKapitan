@@ -34,15 +34,21 @@
 #include "dijkstraAlgo.h"
 #include "dijkstraMatrix.h"
 
-#define SIZE_ACTION 10
+#define SIZE_ACTION 10                  /**< the size of the delivered action */
 
+/**
+ * @brief Declaration of a structure for a pilot object 
+ */
 typedef struct _dataPilot {
-    POSITION position;
-    SPEED speed;
-    ACCELERATION acceleration;
-    short gasLvl;
-    short boostsRemaining;
+    POSITION position;                  /**< the current position of a pilot */
+    SPEED speed;                        /**< the current speed of a pilot */
+    ACCELERATION acceleration;          /**< the current acceleration of a pilot */
+    short fuelLevel;                    /**< the current fuel level of a pilot */
+    short boostsRemaining;              /**< the boosts remaining of a pilot */
 } _dataPilot;
+/**
+ * @brief Declaration of a PILOT object 
+ */
 typedef struct _dataPilot PILOT;
 
 /**
@@ -88,10 +94,10 @@ short getBoostsRemainingPilot ( PILOT* pilot );
 /**
  * @brief Create a Pilot object
  * 
- * @param gasLvl : the gasLvl at start
+ * @param fuelLevel : the fuelLevel at start
  * @return PILOT : the new pilot
  */
-PILOT createPilot ( short gasLvl );
+PILOT createPilot ( short fuelLevel );
 
 /**
  * @brief Updates the data from the tree pilots
@@ -102,6 +108,16 @@ PILOT createPilot ( short gasLvl );
  */
 void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra );
 
+/**
+ * @brief If there is enough full to finish the race
+ * 
+ * @param graph the graph of the race
+ * @param fuelLeft the fuel left in a pilot
+ * @param pilotPosition the current position of a pilot
+ * @param pilotSpeed the current speed of a pilot
+ * @param path the path to follow
+ * @return boolean  true if there is enough fuel
+ */
 boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPEED pilotSpeed, PATH_LIST path );
 
 #endif /* __PILOT_MANAGEMENT_HH__ */

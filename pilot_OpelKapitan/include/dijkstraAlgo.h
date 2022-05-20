@@ -39,7 +39,7 @@
  * @param reference The reference position.
  * @param result The result position.
  */
-void mixePOSITION (POSITION* reference, POSITION* result );
+void mergePosition (POSITION* reference, POSITION* result );
 
 
 /**
