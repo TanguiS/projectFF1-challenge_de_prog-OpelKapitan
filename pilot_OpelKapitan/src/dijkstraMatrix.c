@@ -1,47 +1,47 @@
 #include "dijkstraMatrix.h"
 
 
-short getWidthMatrixDijkstra(dijkstraMatrix* dijkstra) {
+short getWidthDijkstra(DIJKSTRA* dijkstra) {
     return dijkstra->width;
 }
 
-short getHeigthMatrixDijkstra(dijkstraMatrix* dijkstra) {
+short getHeigthDijkstra(DIJKSTRA* dijkstra) {
     return dijkstra->height;
 }
 
 
-elementdij getElementDijkstra(dijkstraMatrix* dijkstra, short x, short y) {
+elementdij getElementDijkstra(DIJKSTRA* dijkstra, short x, short y) {
     return dijkstra->matrix[x][y];
 }
 
-void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij values) {
+void setElementDijkstra(DIJKSTRA* dijkstra, short x, short y, elementdij values) {
     setPathLength ( dijkstra, x, y, values.pathLength );
     setPredecessor ( dijkstra, x, y, values.predecessor );
 }
 
 
-short getPathLength(dijkstraMatrix* dijkstra, short x, short y) {
+short getPathLength(DIJKSTRA* dijkstra, short x, short y) {
     return dijkstra->matrix[x][y].pathLength;
 }
 
-void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLength) {
+void setPathLength(DIJKSTRA* dijkstra, short x, short y, short newPathLength) {
     dijkstra->matrix[x][y].pathLength = newPathLength;
 }
 
-void getPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION* result) {
+void getPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION* result) {
     result->Y = dijkstra->matrix[x][y].predecessor.Y;
     result->X = dijkstra->matrix[x][y].predecessor.X;
 }
 
-void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION newPredecessor) {
+void setPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION newPredecessor) {
     dijkstra->matrix[x][y].predecessor.X = newPredecessor.X;
     dijkstra->matrix[x][y].predecessor.Y = newPredecessor.Y;
 }
 
-dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
+DIJKSTRA createDijkstraMatrix(short width, short heigth) {
     int i;
 
-    dijkstraMatrix dijkstra;
+    DIJKSTRA dijkstra;
     dijkstra.height = heigth;
     dijkstra.width = width;
     dijkstra.matrix = (elementdij**)malloc(width*sizeof(elementdij*));
@@ -52,13 +52,13 @@ dijkstraMatrix createDijkstraMatrix(short width, short heigth) {
 }
 
 #ifndef DEBUG
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y)
+void displayDijkstraMatrix(DIJKSTRA* dijkstra, short x, short y)
 {
     int i, j;
     elementdij tmp;
-    fprintf ( stderr, "Affichage matrice dijkstra :\nwidth & height : %hd %hd\n", getWidthMatrixDijkstra ( dijkstra ), getHeigthMatrixDijkstra ( dijkstra ) );
-    for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
-        for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
+    fprintf ( stderr, "Affichage matrice dijkstra :\nwidth & height : %hd %hd\n", getWidthDijkstra ( dijkstra ), getHeigthDijkstra ( dijkstra ) );
+    for ( i = 0; i < getHeigthDijkstra ( dijkstra ); i++ ) {
+        for ( j = 0; j < getWidthDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
             if ( tmp.pathLength == SHRT_MAX ) {
                 fprintf ( stderr, "[%d, %d],% *d %d | ", tmp.predecessor.X, tmp.predecessor.Y,3, -9, tmp.flag );
@@ -74,14 +74,14 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y)
 #endif
 
 #ifndef DEBUG
-void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* path)
+void displayDijkstraMatrixPath(DIJKSTRA* dijkstra, int count, POSITION* path)
 {
     int i, j, h;
     elementdij tmp;
     boolean flag;
-    fprintf ( stderr, "Affichage matrice dijkstra :\nwidth & height : %hd %hd\n", getWidthMatrixDijkstra ( dijkstra ), getHeigthMatrixDijkstra ( dijkstra ) );
-    for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
-        for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
+    fprintf ( stderr, "Affichage matrice dijkstra :\nwidth & height : %hd %hd\n", getWidthDijkstra ( dijkstra ), getHeigthDijkstra ( dijkstra ) );
+    for ( i = 0; i < getHeigthDijkstra ( dijkstra ); i++ ) {
+        for ( j = 0; j < getWidthDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
             flag = false;
             if ( tmp.pathLength == SHRT_MAX ) {
@@ -102,10 +102,10 @@ void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* pa
 }
 #endif
 
-void destroyDijkstraMatrix(dijkstraMatrix dijkstra) {
+void destroyDijkstraMatrix(DIJKSTRA dijkstra) {
     int i;
 
-    for (i=0; i<getWidthMatrixDijkstra(&dijkstra); i++) {
+    for (i=0; i<getWidthDijkstra(&dijkstra); i++) {
         free(dijkstra.matrix[i]);
     }
     free(dijkstra.matrix);

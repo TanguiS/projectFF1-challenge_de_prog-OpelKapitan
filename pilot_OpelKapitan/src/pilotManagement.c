@@ -235,7 +235,7 @@ static void updateGasPilot ( PILOT* pilot, GRAPH* graph )
 
 static boolean isErrorFromPilot ( PILOT* pilot, POSITION newPosition )
 {
-    return ( areEqualPosition ( getPositionPilot ( pilot ), newPosition ) );
+    return ( areEqualsPosition ( getPositionPilot ( pilot ), newPosition ) );
 }
 
 static void resetSpeed ( PILOT* pilot ) 
@@ -302,12 +302,13 @@ PILOT createPilot ( short fuelLevel )
 
 void updatePilots ( 
                     PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, 
-                    GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra 
+                    GRAPH* graph, GRAPH* referenceGraph, DIJKSTRA* dijkstra 
                   )
 {
     static int round = 0;
     POSITION myPosition, secondPosition, thirdPosition;
     POSITION trash;
+    POSITION previousPosition;
     ACCELERATION nextAction;
     SPEED speed;
     static POSITION previousSecound[5] = {
@@ -333,6 +334,11 @@ void updatePilots (
     if ( isErrorFromPilot ( myPilot, myPosition ) ) {
         resetSpeed ( myPilot );
     }
+    if ( round == 1 ) {
+        previousPosition = myPosition;
+    } else {
+        previousPosition = getPositionPilot ( myPilot );
+    }
     updatePositionPilot ( 
                             myPosition, secondPosition, thirdPosition, 
                             myPilot, secondPilot, thirdPilot 
@@ -343,9 +349,10 @@ void updatePilots (
                 );
 
     /* 1ere etape : choisir une action */
-    path = givePath ( dijkstra, graph, myPosition );
+    path = pathToFollow ( dijkstra, graph, myPosition, previousPosition );
+    fprintf ( stderr, "Parent de la position courante : %d %d\n\n", previousPosition.X, previousPosition.Y );
 
-    if ( areEqualPosition ( examineHeadPathList ( path ), myPosition ) ) {
+    if ( areEqualsPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }

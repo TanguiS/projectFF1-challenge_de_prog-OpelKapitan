@@ -45,32 +45,34 @@ void mergePosition (POSITION* reference, POSITION* result );
 /**
  * @brief Initialize the dijkstra matrix. It add the max value for every lenght(to simulate the infinity)
  * 
- * @param dijkstraMatrix The dijkstra matrix. Already created. 
- * @param first Coordinates of the first position.  
+ * @param DIJKSTRA The dijkstra matrix. Already created. 
+ * @param firstNode Coordinates of the firstNode position.  
  */
-void initDijkstraLength(dijkstraMatrix* dijkstraMatrix, POSITION first);
+void initDijkstra(DIJKSTRA* DIJKSTRA, POSITION firstNode, POSITION parentNode);
 
 
 /**
- * @brief Find the position with the fewer length for a list of positions. 
+ * @brief Find the position with the fewer length for a successors of positions. 
  * 
  * @param dijkstra The dijkstra matrix. Place where are stocked position's length. 
- * @param sommet The position where whill be stocked the minimal coordonate. 
- * @param list list where the successors of already visited coordinates are stored
+ * @param minimalNode The position where whill be stocked the minimal coordonate. 
+ * @param successors successors where the successors of already visited coordinates are stored
  */
-void findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list );
+void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* minimalNode, LIST successors );
 
 
 
-void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2);
+void updateLengthNodes(DIJKSTRA* dijkstra, GRAPH* graph, POSITION parentNode, POSITION successorNode);
 
 
-void addSuccessorListe(LIST* list, POSITION* succ, POSITION sommet,  short sizeSucc, dijkstraMatrix* dijkstra, GRAPH* graph);
+void addSuccessorToList(LIST* successors, POSITION* successorNode, POSITION minimalNode,  short sizeSuccesor, DIJKSTRA* dijkstra, GRAPH* graph);
 
-void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSommet);
 
-void listGraphSucc(GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent);
+void redirectorToProcessSuccessor(GRAPH*graph, DIJKSTRA* dijkstra ,LIST* successors, POSITION parentNode);
 
-PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first);
+void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode);
+
+
+PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode );
 
 #endif /* DIJKSTRA_ALGO_HH__ */

@@ -34,7 +34,7 @@ int main ( void )
     PILOT myPilot, autre2, autre3;
     GRAPH graph;
     GRAPH referenceGraph; 
-    dijkstraMatrix dijkstra;
+    DIJKSTRA dijkstra;
     float time;
     float maxTime = 0.;
     float initTime;

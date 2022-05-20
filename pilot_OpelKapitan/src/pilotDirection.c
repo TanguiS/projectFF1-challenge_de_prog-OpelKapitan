@@ -556,13 +556,13 @@ static straightDirection lineToFollow (
 static PATH_LIST updatePathToGoalPosition ( PATH_LIST path, POSITION goalPosition )
 {
     POSITION trash;
-    if ( areEqualPosition ( examineHeadPathList ( path ), goalPosition ) ) {
+    if ( areEqualsPosition ( examineHeadPathList ( path ), goalPosition ) ) {
         path = removeHeadElementPathList ( path, &trash );
         return path;
     }
     do {
         path = removeHeadElementPathList ( path, &trash );
-    } while ( !areEqualPosition ( trash, goalPosition ) );
+    } while ( !areEqualsPosition ( trash, goalPosition ) );
     return path;
 }
 
@@ -636,7 +636,7 @@ static boolean speedIsNull ( SPEED pilotSpeed )
     return ( pilotSpeed.X == 0 && pilotSpeed.Y == 0 );
 }
 
-boolean areEqualPosition ( POSITION A, POSITION B )
+boolean areEqualsPosition ( POSITION A, POSITION B )
 {
     return A.X == B.X && A.Y == B.Y;
 }

@@ -90,7 +90,7 @@ typedef PATH_LIST actionDeterminator (
  * @param B another position
  * @return boolean true if are equals
  */
-boolean areEqualPosition ( POSITION A, POSITION B );
+boolean areEqualsPosition ( POSITION A, POSITION B );
 
 /**
  * @brief Finds the theoretical next action for the information it receives.

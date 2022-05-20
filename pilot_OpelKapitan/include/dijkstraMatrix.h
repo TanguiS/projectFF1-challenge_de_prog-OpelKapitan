@@ -37,47 +37,45 @@ typedef enum {
     white,
     gray,
     black
-} dijBoolean;  
+} flagNode;  
 
 typedef struct _elementDijkstra {
     POSITION predecessor; 
     short pathLength;
-    dijBoolean flag;
+    flagNode flag;
 }elementdij;
 
 typedef struct _dijkstraMatrix {
     short width;
     short height;
     elementdij** matrix;
-}dijkstraMatrix;
+}DIJKSTRA;
 
 
 
-short getWidthMatrixDijkstra(dijkstraMatrix* dijkstra);
+short getWidthDijkstra(DIJKSTRA* dijkstra);
 
-short getHeigthMatrixDijkstra(dijkstraMatrix* dijkstra);
+short getHeigthDijkstra(DIJKSTRA* dijkstra);
 
+elementdij getElementDijkstra(DIJKSTRA* dijkstra, short x, short y);
 
-elementdij getElementDijkstra(dijkstraMatrix* dijkstra, short x, short y);
+short getPathLength(DIJKSTRA* dijkstra, short x, short y);
 
-short getPathLength(dijkstraMatrix* dijkstra, short x, short y);
+void setElementDijkstra(DIJKSTRA* dijkstra, short x, short y, elementdij values);
 
-void setElementDijkstra(dijkstraMatrix* dijkstra, short x, short y, elementdij values);
+void setPathLength(DIJKSTRA* dijkstra, short x, short y, short newPathLength);
 
-void setPathLength(dijkstraMatrix* dijkstra, short x, short y, short newPathLength);
+void setPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION newPredecessor);
 
-void setPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION newPredecessor);
+void getPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION* result);
 
-void getPredecessor(dijkstraMatrix* dijkstra, short x, short y, POSITION* result);
+DIJKSTRA createDijkstraMatrix(short width, short heigth);
 
-dijkstraMatrix createDijkstraMatrix(short width, short heigth);
-
-
-void destroyDijkstraMatrix(dijkstraMatrix dijkstra);
+void destroyDijkstraMatrix(DIJKSTRA dijkstra);
 
 #ifndef DEBUG
-void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y );
-void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* path);
+void displayDijkstraMatrix(DIJKSTRA* dijkstra, short x, short y );
+void displayDijkstraMatrixPath(DIJKSTRA* dijkstra, int count, POSITION* path);
 #endif
 
 

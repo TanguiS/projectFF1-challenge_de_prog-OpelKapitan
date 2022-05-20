@@ -20,6 +20,7 @@
  */
 
 #include "../include/dijkstraAlgo.h"
+#include "pilotDirection.h"
 
 
 void mergePosition (POSITION* reference, POSITION* result ) {
@@ -27,31 +28,24 @@ void mergePosition (POSITION* reference, POSITION* result ) {
     result->Y = reference->Y;   
 }
 
-boolean areEqualsPosition(POSITION sommet1, POSITION sommet2) {
-    if (sommet1.X == sommet2.X && sommet1.Y == sommet2.Y) {
-        return true;
-    }
-    return false;
-}
-
-void initDijkstraLength(dijkstraMatrix* dijkstraMatrix, POSITION first) {
+void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode, POSITION parentNode) {
     int i;
     int j;
 
-    for (i=0; i<getHeigthMatrixDijkstra(dijkstraMatrix); i++) {
-        for (j=0; j<getWidthMatrixDijkstra(dijkstraMatrix); j++) {
-            setPathLength ( dijkstraMatrix, j, i, SHRT_MAX );
-            dijkstraMatrix->matrix[j][i].flag = white;
+    for (i=0; i<getHeigthDijkstra(dijkstra); i++) {
+        for (j=0; j<getWidthDijkstra(dijkstra); j++) {
+            setPathLength ( dijkstra, j, i, SHRT_MAX );
+            dijkstra->matrix[j][i].flag = white;
         }
     }
-    setPathLength ( dijkstraMatrix, first.X, first.Y, 0 );
-    dijkstraMatrix->matrix[first.X][first.Y].flag = gray;
-    /*displayDijkstraMatrix ( dijkstraMatrix, -1, -1 );*/
+    setPathLength ( dijkstra, firstNode.X, firstNode.Y, 0 );
+    setPredecessor ( dijkstra, firstNode.X, firstNode.Y, parentNode );
+    dijkstra->matrix[firstNode.X][firstNode.Y].flag = gray;
 }
 
 
 
-void    findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
+void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* sommet, LIST list ) {
     short i;
     POSITION minTemp;
 
@@ -64,10 +58,9 @@ void    findMin(dijkstraMatrix* dijkstra, POSITION* sommet, LIST list ) {
         }
     }
     dijkstra->matrix[sommet->X][sommet->Y].flag = black;
-    /*displayDijkstraMatrix ( dijkstra, sommet->X, sommet->Y );*/
 }
 
-void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2) {
+void updateLengthNodes(DIJKSTRA* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2) {
     short d1;
     short d2;
     short arcValue;
@@ -86,7 +79,7 @@ void updateDistance(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION sommet1, PO
 }
 
 
-void getSuccSand (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION parent) {
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -104,14 +97,14 @@ void getSuccSand (GRAPH*graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION pa
                     *list = addElementList(*list, successor);
                     dijkstra->matrix[successor.X][successor.Y].flag = gray;
                     /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
-                    updateDistance(dijkstra, graph, parent, successor);
+                    updateLengthNodes(dijkstra, graph, parent, successor);
                 }
             }
         }
     }
 }
 
-void getRoadSucc (GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION parent) {
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -132,58 +125,55 @@ void getRoadSucc (GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION p
                 if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
                     *list = addElementList(*list, successor);
                     dijkstra->matrix[successor.X][successor.Y].flag = gray;
-                    /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
-                    updateDistance(dijkstra, graph, parent, successor);
+                    updateLengthNodes(dijkstra, graph, parent, successor);
                 }
             }
         }
     }
 }
 
-void listGraphSucc(GRAPH* graph, dijkstraMatrix* dijkstra ,LIST* list, POSITION parent) {
+void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess) {
     
-    if (getElementGraph(graph, parent) == sandGraph) {
-        getSuccSand(graph, dijkstra, list, parent);
+    if (isSand ( graph, nodeToProcess )) {
+        processSuccessorsSand(graph, dijkstra, list, nodeToProcess);
     } else {
-        getRoadSucc(graph, dijkstra, list, parent);
+        processSuccessorRoad(graph, dijkstra, list, nodeToProcess);
     }
 }
 
 
 
-void allPathDijkstra(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION firstSommet) {
-    /*int i;*/
+void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode) {
     POSITION sommet;
-    /*POSITION* succ;
-    short sizeSucc;*/
     LIST list;
     
     list = createList();
-    initDijkstraLength(dijkstra, firstSommet);
-    sommet.X = firstSommet.X;
-    sommet.Y = firstSommet.Y;
+    initDijkstra(dijkstra, firstNode, parentNode);
+    sommet.X = firstNode.X;
+    sommet.Y = firstNode.Y;
     list = addElementList(list, sommet);
     
 
     while (!isEmptyList(list)) {
-        findMin(dijkstra, &sommet, list);
-        listGraphSucc(graph, dijkstra, &list, sommet);
+        findNodeWithMinimalLength(dijkstra, &sommet, list);
+        redirectorToProcessSuccessor(graph, dijkstra, &list, sommet);
         list = removeElementListCoord(list, &sommet, &sommet);
     }
     destroyList(list);
 } 
 
-PATH_LIST givePath(dijkstraMatrix* dijkstra, GRAPH* graph, POSITION first) {
+PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode ) {
     POSITION sommet;
     PATH_LIST stack;
     POSITION finalSommet;
 
-    allPathDijkstra ( dijkstra, graph, first );
-    updateClosetFinishLine ( graph, first );
+    executeDijkstra ( dijkstra, graph, firstNode, parentNode );
+
+    updateClosetFinishLine ( graph, firstNode );
     getClosestFinishLine ( graph, &finalSommet );
     stack = createPathList();
     mergePosition(&finalSommet, &sommet);
-    while( !areEqualsPosition(sommet, first) ) {
+    while( !areEqualsPosition(sommet, firstNode) ) {
         stack = addHeadElementPathList(stack, sommet);
         getPredecessor(dijkstra, sommet.X, sommet.Y, &sommet);
     }

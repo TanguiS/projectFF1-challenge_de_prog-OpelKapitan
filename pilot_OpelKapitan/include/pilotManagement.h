@@ -107,7 +107,7 @@ PILOT createPilot ( short fuelLevel );
  */
 void updatePilots ( 
                     PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, 
-                    GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra 
+                    GRAPH* graph, GRAPH* referenceGraph, DIJKSTRA* dijkstra 
                    );
 
 /**

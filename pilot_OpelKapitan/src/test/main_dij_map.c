@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     int width;
     int fuel;
     GRAPH graph;
-    dijkstraMatrix dijkstra;
+    DIJKSTRA dijkstra;
     char mapValue;
     POSITION first;
     graphValues valueGraph;
@@ -96,7 +96,7 @@ int main(int argc, char* argv[]) {
     first.Y = 24;
     graph.sizeFinishLine = countFinish;
     displayGraph ( &graph );
-    stack = givePath(&dijkstra, &graph, first);
+    stack = pathToFollow(&dijkstra, &graph, first);
 
     while ( !isEmptyPathList ( stack ) ) {
         stack = removeHeadElementPathList ( stack, &result );
@@ -107,7 +107,7 @@ int main(int argc, char* argv[]) {
     init = first;
     do {
         stack = createPathList();
-        stack = givePath(&dijkstra, &graph, init);
+        stack = pathToFollow(&dijkstra, &graph, init);
         stack = choiceNextAction ( stack, init, speed, &acc );
         destroyPathList ( stack );
         speed.X += acc.X;
@@ -119,7 +119,7 @@ int main(int argc, char* argv[]) {
         printf ( "Position     : [%d, %d]\n", init.X, init.Y );
         getClosestFinishLine ( &graph, &result );
         printf ( "goal Position: [%d, %d]\n", result.X, result.Y );
-    } while ( !areEqualPosition ( init, result ) ); 
+    } while ( !areEqualsPosition ( init, result ) ); 
     */
 
     t2 = clock();
