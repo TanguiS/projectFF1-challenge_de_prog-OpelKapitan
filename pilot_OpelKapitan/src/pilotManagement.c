@@ -313,6 +313,8 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     ACCELERATION nextAction;
 
     SPEED speed;
+    static POSITION previousSecound[5] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}};
+    static POSITION previousThird[5] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}};
     PATH_LIST path = createPathList();
 
     round++;
@@ -321,7 +323,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
 
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
-    /*reverseGraph ( graph, secoundCar, thirdCar );*/
+    reverseGraph ( graph, previousSecound, previousThird );
     
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( myPilot, secondPilot, thirdPilot );
@@ -330,7 +332,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
 
-    updateGraph ( graph, myCar, secoundCar, thirdCar );
+    updateGraph ( graph, myCar, secoundCar, thirdCar, previousSecound, previousThird );
     #ifndef DEBUG
     displayGraph ( graph );
     #endif
@@ -360,7 +362,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     myCar.X += speed.X;
     myCar.Y += speed.Y;
     updatePositionPilot ( myCar, secoundCar, thirdCar, myPilot, secondPilot, thirdPilot );
-    updateGraph ( graph, myCar, secoundCar, thirdCar );
+    updateGraph ( graph, myCar, secoundCar, thirdCar, previousSecound, previousThird );
     myCar = getPositionPilot ( myPilot );
     fprintf ( stderr, ">UPDATE PILOT : Position : (%d, %d); Speed : (%d, %d); Acc : (%d, %d)\n", myCar.X, myCar.Y, speed.X, speed.Y, nextAction.X, nextAction.Y );
     /* 3e etape : on transmet l'action au GDP */

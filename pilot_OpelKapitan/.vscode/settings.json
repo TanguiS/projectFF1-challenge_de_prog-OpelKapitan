@@ -36,7 +36,8 @@
     "graphmadj.h": "c",
     "pilotdirection.h": "c",
     "list.h": "c",
-    "pilotmanagement.h": "c"
+    "pilotmanagement.h": "c",
+    "pathlist.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

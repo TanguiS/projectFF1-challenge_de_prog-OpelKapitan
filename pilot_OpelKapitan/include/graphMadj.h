@@ -139,9 +139,9 @@ GRAPH createGraph ( short width, short height );
  * @param secoundPilot 
  * @param thirdPilot 
  */
-void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot );
+void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot, POSITION previousSecound[5], POSITION previousThird[5] );
 
-void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previousThirdPilot );
+void reverseGraph ( GRAPH* graph, POSITION previousSecound[5], POSITION previousThird[5] );
 
 /**
  * @brief Update the Finish Line object from a graph

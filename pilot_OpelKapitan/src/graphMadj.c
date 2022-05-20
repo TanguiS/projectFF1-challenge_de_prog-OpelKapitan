@@ -308,7 +308,7 @@ void updateCoordFinishLine ( GRAPH* graph, POSITION newFinishLine, int index )
     addCoordFinishline ( graph, newFinishLine, index );
 }
 
-void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot )
+void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITION thirdPilot, POSITION previousSecound[5], POSITION previousThird[5] )
 {
     int i;
     POSITION competitor;
@@ -318,6 +318,11 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
                             { 0, 1 },
                             { 0, -1 }
     };
+    previousSecound[0].X = secoundPilot.X;
+    previousSecound[0].Y = secoundPilot.Y;
+    previousThird[0].Y = thirdPilot.Y;
+    previousThird[0].X = thirdPilot.X;
+
 
     for ( i = 0; i < 4; i++ ) {
         competitor.X = secoundPilot.X + rounder[i].X;
@@ -325,12 +330,22 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
         if ( isInGraph ( graph, competitor.X, competitor.Y ) ) {
             if (isRoad(graph, competitor)){
                 setElementGraph ( graph, aroundCarGraph, secoundPilot.X + rounder[i].X, secoundPilot.Y + rounder[i].Y );
+                previousSecound[i+1].X = competitor.X;
+                previousSecound[i+1].Y = competitor.Y;
+            } else {
+                previousSecound[i+1].X = -1;
+                previousSecound[i+1].Y = -1;
             }
         }
         competitor.X = thirdPilot.X + rounder[i].X;
         competitor.Y = thirdPilot.Y + rounder[i].Y;
         if ( isInGraph ( graph, competitor.X, competitor.Y + rounder[i].Y ) && isRoad(graph, competitor) ) {
             setElementGraph ( graph, aroundCarGraph, thirdPilot.X + rounder[i].X, thirdPilot.Y + rounder[i].Y );
+            previousThird[i+1].X = competitor.X;
+            previousThird[i+1].Y = competitor.Y;
+        } else {
+            previousThird[i+1].X = -1;
+            previousThird[i+1].Y = -1;
         }
     }
     setElementGraph ( graph, carGraph, secoundPilot.X, secoundPilot.Y );
@@ -344,9 +359,9 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
     }
 }
 
-void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previousThirdPilot )
+void reverseGraph ( GRAPH* graph, POSITION previousSecound[5], POSITION previousThird[5] )
 {
-    int i;
+    /*int i;
     static POSITION rounder[] = {
                             { 1, 0 },
                             { -1, 0 },
@@ -362,6 +377,16 @@ void reverseGraph ( GRAPH* graph, POSITION previousSecoundPilot, POSITION previo
             setElementGraph ( graph, roadGraph, previousThirdPilot.X + rounder[i].X, previousThirdPilot.Y + rounder[i].Y );
         }
     }
+    */
+   int i;
+   for (i=0; i<5; i++) {
+       if (previousSecound[i].X != -1 && previousSecound[i].Y != -1) {
+           setElementGraph ( graph, roadGraph, previousSecound[i].X, previousSecound[i].Y );
+       }
+       if (previousThird[i].X != -1 && previousThird[i].Y != -1) {
+           setElementGraph ( graph, roadGraph, previousThird[i].X, previousThird[i].Y );
+       }
+   }
 }
 
 
