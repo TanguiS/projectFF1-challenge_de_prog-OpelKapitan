@@ -9,13 +9,14 @@
  */
 
 /**
- * @list pathList.h
- * @brief This list contains all the prototype of the pathList algo.
+ * @file pathList.h
+ * @brief This file contains all the prototype of the pathList algo.
  */
 
 /**
+ * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.2
+ * @version 2.0.2
  * @date 22 janvier 2022
  */
 
@@ -35,8 +36,8 @@ typedef POSITION path_list_element;
  * @brief A structure to represent a cell object 
  */
 typedef struct _cell {
-    path_list_element contents;           /**< the element that the cell contains */
-    struct _cell* followingCell;        /**< the following cell */
+    path_list_element contents;     /**< the element that the cell contains */
+    struct _cell* followingCell;    /**< the following cell */
 } _cell; 
 /**
  * @brief Cell object declaration 
@@ -58,83 +59,96 @@ typedef struct _pathList PATH_LIST;
 /**
  * @brief Create a pathList object
  * 
- * @return PATH_LIST 
+ * @return PATH_LIST the created list
  */
 PATH_LIST createPathList ();
 
 /**
  * @brief If the list is empty
  * 
- * @param lifo 
- * @return boolean 
+ * @param list the list to test
+ * @return boolean true if the list is empty
  */
-boolean isEmptyPathList ( PATH_LIST lifo );
+boolean isEmptyPathList ( PATH_LIST list );
 
 /**
  * @brief Add an element into the list
  * 
- * @param list 
- * @param value : the element to add
- * @return PATH_LIST 
+ * @param list the list to update
+ * @param value the element to add
+ * @return PATH_LIST the updated list
  */
 PATH_LIST addHeadElementPathList ( PATH_LIST list, path_list_element value );
 
 /**
- * @brief Remove a path_list_element from the list
+ * @brief Remove a path_list_element from a list
  * 
- * @param list 
- * @param result : the removed element
- * @return PATH_LIST 
+ * @param list the list to update
+ * @param result the removed element
+ * @return PATH_LIST the updated list
  */
 PATH_LIST removeHeadElementPathList ( PATH_LIST list, path_list_element* result );
 
 /**
- * @brief reset
+ * @brief Reset the current pointer to the head of the list
  * 
- * @param list 
- * @return PATH_LIST 
+ * @param list the list to update
+ * @return PATH_LIST the updated list
  */
 PATH_LIST resetCurrentPathList ( PATH_LIST list );
 
 /**
- * @brief next element
+ * @brief If the current is equal to the head of a list
  * 
- * @param list 
- * @param result 
- * @return PATH_LIST 
- */
-PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result );
-
-/**
- * @brief if current equal head
- * 
- * @param list 
- * @return boolean 
+ * @param list the list to test
+ * @return boolean true if they are equals
  */
 boolean currentEqualsHead ( PATH_LIST list );
 
 /**
  * @brief Get the Current Path List object
  * 
- * @param list 
- * @return path_list_element* 
+ * @param list the current list
+ * @return path_list_element the current element
  */
-path_list_element getCurrentPathList ( PATH_LIST list );
+path_list_element getCurrentPathListElement ( PATH_LIST list );
 
+/**
+ * @brief Move the current pointer to the next element
+ * 
+ * @param list the list to update
+ * @return PATH_LIST the updated list
+ */
 PATH_LIST moveCurrentPathList ( PATH_LIST list );
 
+/**
+ * @brief Get the head element without poping it
+ * 
+ * @param list the current list
+ * @return path_list_element the head element
+ */
 path_list_element examineHeadPathList ( PATH_LIST list );
 
-boolean nextCurrentEqualsHead ( PATH_LIST list );
-
+/**
+ * @brief Get the Next Current Path List object
+ * 
+ * @param list the current list 
+ * @return path_list_element the next current element of the list
+ */
 path_list_element getNextCurrentPathList ( PATH_LIST list );
 
+/**
+ * @brief If the current is equal to NULL
+ * 
+ * @param list the current list
+ * @return boolean true if the current is NULL
+ */
 boolean isCurrentNull ( PATH_LIST list );
 
 /**
  * @brief Destroy a PathList object
  * 
- * @param list 
+ * @param list the list to destroy
  */
 void destroyPathList ( PATH_LIST list );
 

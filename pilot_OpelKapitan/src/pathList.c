@@ -9,13 +9,14 @@
  */
 
 /**
- * @list list.c
- * @brief This list contains all the functions of the list algo.
+ * @file pathList.c
+ * @brief This file contains all the functions of the path list algo.
  */
 
 /**
+ * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.2
+ * @version 2.0.2
  * @date 22 janvier 2022
  */
 
@@ -28,6 +29,7 @@
  * @return CELL 
  */
 static CELL createCell ( path_list_element value );
+
 /**
  * @brief Destroy a Cell object
  * 
@@ -39,7 +41,6 @@ static boolean destroyCell ( CELL cell );
 static CELL createCell ( path_list_element value )
 {
     CELL newCell;
-
     newCell =  ( CELL ) malloc ( sizeof ( _cell ) );
     newCell->contents.X = value.X;
     newCell->contents.Y = value.Y;
@@ -76,7 +77,6 @@ boolean isEmptyPathList ( PATH_LIST list )
 PATH_LIST addHeadElementPathList ( PATH_LIST list, path_list_element value )
 {
     CELL newCell;
-
     newCell = createCell ( value );
     if ( isEmptyPathList ( list ) ) {
         list.head = newCell;
@@ -91,7 +91,6 @@ PATH_LIST addHeadElementPathList ( PATH_LIST list, path_list_element value )
 PATH_LIST removeHeadElementPathList ( PATH_LIST list, path_list_element* result )
 {
     CELL previousHead;
-    
     if ( isEmptyPathList ( list ) ) {
         return list;
     }
@@ -106,22 +105,6 @@ PATH_LIST removeHeadElementPathList ( PATH_LIST list, path_list_element* result 
 PATH_LIST resetCurrentPathList ( PATH_LIST list )
 {
     list.current = list.head;
-    return list;
-}
-
-PATH_LIST nextElementPathList ( PATH_LIST list, path_list_element* result )
-{
-/*     if ( list.current == NULL ) {
-        list = resetCurrentPathList ( list );
-        result = &(list.head->contents);
-        return list;
-    } */
-    /* result = &(list.current->followingCell->contents); */
-    if ( list.current == NULL ) {
-        result->X = -1;
-    }
-    result->X = list.current->followingCell->contents.X;
-    result->Y = list.current->followingCell->contents.Y;
     return list;
 }
 
@@ -164,7 +147,7 @@ boolean isCurrentNull ( PATH_LIST list )
     return list.current == NULL;
 }
 
-path_list_element getCurrentPathList ( PATH_LIST list )
+path_list_element getCurrentPathListElement ( PATH_LIST list )
 {
     static path_list_element tmp = {-1, -1};
     if ( list.current == NULL ) {

@@ -14,8 +14,9 @@
  */
 
 /**
+ * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.1
  * @date 06 avril 2022
  */
 
@@ -25,7 +26,6 @@
 #define MAX_LINE_LENGTH 1024    /**< the maximum length of a line */
 #define BOOSTS_AT_START 5       /**< the number of boosts at start */
 #define NUMBER_CASES_AROUND 8   /**< The number of cases around a case */
-
 
 /**
  * @brief Enumeration of a boolean type
