@@ -60,7 +60,7 @@ DATA_MAP createMap ( short newWidth, short newHeight )
     return map;
 }
 
-DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph )
+DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph )
 {
     DATA_MAP map;
     int i;
@@ -73,10 +73,12 @@ DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph )
 
     map = createMap ( width, height );
     *graph = createGraph ( width, height );
+    *referenceGraph = createGraph ( width, height);
 
     for ( i = 0; i < getHeightMap ( &map ); i++ ) {
         trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
         setDataMapGraph ( &map, graph, buf, i );
+        setDataMapGraph ( &map, referenceGraph, buf, i);
     }
     trash = trash;
     return map;

@@ -304,7 +304,7 @@ PILOT createPilot ( short gasLvl )
  * @TODO predire l'essence utilise pour eviter de griller nimporte comment
  */
 
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, dijkstraMatrix* dijkstra )
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra )
 {
     static int round = 0;
     char action[SIZE_ACTION];
@@ -323,7 +323,7 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
 
     secoundCar = getPositionPilot ( secondPilot );
     thirdCar = getPositionPilot ( thirdPilot );
-    reverseGraph ( graph, previousSecound, previousThird );
+    reverseGraph ( graph, referenceGraph, previousSecound, previousThird );
     
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( myPilot, secondPilot, thirdPilot );
@@ -361,8 +361,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     speed = getSpeedPilot ( myPilot );
     myCar.X += speed.X;
     myCar.Y += speed.Y;
-    updatePositionPilot ( myCar, secoundCar, thirdCar, myPilot, secondPilot, thirdPilot );
-    updateGraph ( graph, myCar, secoundCar, thirdCar, previousSecound, previousThird );
     myCar = getPositionPilot ( myPilot );
     fprintf ( stderr, ">UPDATE PILOT : Position : (%d, %d); Speed : (%d, %d); Acc : (%d, %d)\n", myCar.X, myCar.Y, speed.X, speed.Y, nextAction.X, nextAction.Y );
     /* 3e etape : on transmet l'action au GDP */

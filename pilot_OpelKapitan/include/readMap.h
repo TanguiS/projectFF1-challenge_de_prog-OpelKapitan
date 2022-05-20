@@ -86,7 +86,7 @@ DATA_MAP createMap ( short width, short height );
  * @param graph : the Graph object initialized
  * @return DATA_MAP : the Map object initialized
  */
-DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph );
+DATA_MAP readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph );
 
 /**
  * @brief Destroy a DATA_MAP object

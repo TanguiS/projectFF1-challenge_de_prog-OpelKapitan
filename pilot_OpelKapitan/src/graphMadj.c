@@ -359,7 +359,7 @@ void updateGraph ( GRAPH* graph, POSITION myPilot, POSITION secoundPilot, POSITI
     }
 }
 
-void reverseGraph ( GRAPH* graph, POSITION previousSecound[5], POSITION previousThird[5] )
+void reverseGraph ( GRAPH* graph,GRAPH* referenceGraph, POSITION previousSecound[5], POSITION previousThird[5] )
 {
     /*int i;
     static POSITION rounder[] = {
@@ -381,10 +381,10 @@ void reverseGraph ( GRAPH* graph, POSITION previousSecound[5], POSITION previous
    int i;
    for (i=0; i<5; i++) {
        if (previousSecound[i].X != -1 && previousSecound[i].Y != -1) {
-           setElementGraph ( graph, roadGraph, previousSecound[i].X, previousSecound[i].Y );
+           setElementGraph ( graph, getElementGraph(referenceGraph, previousSecound[i]), previousSecound[i].X, previousSecound[i].Y );
        }
        if (previousThird[i].X != -1 && previousThird[i].Y != -1) {
-           setElementGraph ( graph, roadGraph, previousThird[i].X, previousThird[i].Y );
+           setElementGraph ( graph, getElementGraph(referenceGraph, previousThird[i]), previousThird[i].X, previousThird[i].Y );
        }
    }
 }
