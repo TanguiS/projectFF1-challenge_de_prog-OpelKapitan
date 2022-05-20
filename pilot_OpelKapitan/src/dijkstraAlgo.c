@@ -68,29 +68,21 @@ short getArcValue ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSI
 {
     POSITION parentNode;
     short arcValue = 0;
-    short classicvalue = ((short)getElementGraph(graph, successorNode) + abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1);
-    static int round = 1;
-
     getPredecessor ( dijkstra, currentNode.X, currentNode.Y, &parentNode );
 
-    fprintf ( stderr, ">- Dans arc value : \n    Courrant = %d %d\n    Parent du courrant = %d %d\n    Successeur du courant = %d %d\n", currentNode.X, currentNode.Y, parentNode.X, parentNode.Y, successorNode.X, successorNode.Y );
-    round++;
 
     if ( isSand ( graph, successorNode ) ) {
-        arcValue += 3;
+        arcValue += 110;
     } else if ( isAroundCar ( graph, successorNode ) ) {
-        arcValue += 2;
+        arcValue += 103;
     } else if ( isRoad ( graph, successorNode ) ) {
-        arcValue += 1;
+        arcValue += 100;
     }
     if ( !areAligned ( parentNode, currentNode, successorNode ) ) {
-        arcValue += 2;
+        arcValue += 102;
     } else if ( lineToFollow ( parentNode, successorNode ) == diagonal ) {
-        arcValue += 1;
+        arcValue += 103;
     }
-    fprintf ( stderr, "        Comparaison des arcValue, opti = %d       classic = %d\n", arcValue, classicvalue );
-
-/*     return (short)getElementGraph(graph, successorNode) + abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1 ; */
     return arcValue;
 }
 
