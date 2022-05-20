@@ -14,6 +14,7 @@
  */
 
 /**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.2
  * @date 07 avril 2022
@@ -78,9 +79,27 @@ static void initNewPilot ( PILOT* pilot );
  */
 static void updateSpeedPilot ( PILOT* pilot );
 
-static boolean actionIsBoosted ( ACCELERATION action );
+/**
+ * @brief If the action is boosted
+ * 
+ * @param action the action to test
+ * @return boolean true if it is boosted
+ */
+static boolean isActionBoosted ( ACCELERATION action );
 
-static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action, GRAPH* graph);
+/**
+ * @brief The fuel consumption according to current speed, current position and the demanded action
+ * 
+ * @param position the current position of a pilot
+ * @param speed the current speed of a pilot
+ * @param action the demanded action
+ * @param graph the graph of the race
+ * @return short the fuel consumption for this round
+ */
+static short fuelConsumption ( 
+                                POSITION position, SPEED speed, 
+                                ACCELERATION action, GRAPH* graph
+                             );
 
 /**
  * @brief Update the gas remaining of our pilot
@@ -89,14 +108,28 @@ static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION acti
  */
 static void updateGasPilot ( PILOT* pilot, GRAPH* graph );
 
-static void updateBoostsPilot ( PILOT* pilot );
+/**
+ * @brief if there is an error of position during the race
+ * 
+ * @param pilot the pilot to test
+ * @param newPosition the next position of teh current round
+ * @return boolean true if there is an error 
+ */
+static boolean isErrorFromPilot ( PILOT* pilot, POSITION newPosition );
 
 /**
- * @brief Deliver the action to the GDP
+ * @brief Put to 0 the speed of our pilot
  * 
- * @param action : the action to deliver
+ * @param pilot the pilot to reset
  */
-static void deliverAction ( char* action ); /* action du type : x y */
+static void resetSpeed ( PILOT* pilot );
+
+/**
+ * @brief Update the remaining boost
+ * 
+ * @param pilot a pilot to update
+ */
+static void updateBoostsPilot ( PILOT* pilot );
 
 static void setPositionPilot ( PILOT* pilot, short x, short y )
 {
@@ -108,7 +141,6 @@ static void setSpeedPilot ( PILOT* pilot, short x, short y )
 {
     pilot->speed.X = x;
     pilot->speed.Y = y;
-
 }
 
 static void setActionPilot ( PILOT* pilot, short x, short y )
@@ -146,7 +178,11 @@ static void updateSpeedPilot ( PILOT* pilot )
                            speed.Y + acc.Y );
 }
 
-void updatePositionPilot ( POSITION myPosition, POSITION secoundPosition, POSITION thirdPosition, PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
+void updatePositionPilot ( 
+                            POSITION myPosition, POSITION secoundPosition, 
+                            POSITION thirdPosition, PILOT* myPilot, 
+                            PILOT* secondPilot, PILOT* thirdPilot 
+                         )
 {
     setPositionPilot ( myPilot, myPosition.X, myPosition.Y );
     setPositionPilot ( secondPilot, secoundPosition.X, secoundPosition.Y);
@@ -154,7 +190,7 @@ void updatePositionPilot ( POSITION myPosition, POSITION secoundPosition, POSITI
 }
 
 
-static boolean actionIsBoosted ( ACCELERATION action )
+static boolean isActionBoosted ( ACCELERATION action )
 {
     if ( abs ( action.X ) == 2 || abs ( action.Y ) == 2 ) {
         return true;
@@ -164,17 +200,21 @@ static boolean actionIsBoosted ( ACCELERATION action )
 
 static void updateBoostsPilot ( PILOT* pilot )
 {
-    if ( actionIsBoosted ( getAccelerationPilot ( pilot ) ) ) {
+    if ( isActionBoosted ( getAccelerationPilot ( pilot ) ) ) {
         setBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
     }
 }
 
-static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action,GRAPH* graph )
+static short fuelConsumption ( 
+                                POSITION position, SPEED speed, 
+                                ACCELERATION action,GRAPH* graph 
+                             )
 {
     short norme1;
     short squareRoot;
     norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
-    squareRoot = (short)(sqrt((double)speed.X * (double)speed.X + (double)speed.Y * (double)speed.Y) * 3.0 / 2.0); 
+    squareRoot = (short)(sqrt((double)speed.X * (double)speed.X 
+                    + (double)speed.Y * (double)speed.Y) * 3.0 / 2.0); 
     if ( isSand(graph, position) ) {
         return ( norme1 + squareRoot + 1. );
     }
@@ -193,10 +233,14 @@ static void updateGasPilot ( PILOT* pilot, GRAPH* graph )
                     );
 }
 
-static void deliverAction ( char action[SIZE_ACTION] )
+static boolean isErrorFromPilot ( PILOT* pilot, POSITION newPosition )
 {
-    fprintf ( stdout, "%s", action );
-    fflush ( stdout );                /* CAUTION : This is necessary  */
+    return ( areEqualPosition ( getPositionPilot ( pilot ), newPosition ) );
+}
+
+static void resetSpeed ( PILOT* pilot ) 
+{
+    setSpeedPilot ( pilot, 0, 0 );
 }
 
 POSITION getPositionPilot ( PILOT* pilot )
@@ -224,7 +268,10 @@ short getBoostsRemainingPilot ( PILOT* pilot )
     return pilot->boostsRemaining;
 }
 
-boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPEED pilotSpeed, PATH_LIST path )
+boolean isEnoughFuel ( 
+                        GRAPH* graph, short fuelLeft, POSITION pilotPosition, 
+                        SPEED pilotSpeed, PATH_LIST path 
+                     )
 {
     ACCELERATION tmp;
     short usedFuel = 0;
@@ -253,22 +300,26 @@ PILOT createPilot ( short fuelLevel )
     return newPilot;
 }
 
-/**
- * @TODO : trouver l'action avant de calculer la vitesse pour trouver la future position pour etre à jour 
- * sur le statut actuel de la course et non un tour en retard
- * @TODO predire l'essence utilise pour eviter de griller nimporte comment
- */
-
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra )
+void updatePilots ( 
+                    PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, 
+                    GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra 
+                  )
 {
     static int round = 0;
-    char action[SIZE_ACTION];
     POSITION myPosition, secondPosition, thirdPosition;
     POSITION trash;
     ACCELERATION nextAction;
     SPEED speed;
-    static POSITION previousSecound[5] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}};
-    static POSITION previousThird[5] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}};
+    static POSITION previousSecound[5] = {
+                                        {-1, -1}, {-1, -1}, 
+                                        {-1, -1}, 
+                                        {-1, -1}, {-1, -1}
+                                         };
+    static POSITION previousThird[5] = {
+                                        {-1, -1}, {-1, -1}, 
+                                        {-1, -1}, 
+                                        {-1, -1}, {-1, -1}
+                                       };
     PATH_LIST path = createPathList();
 
     round++;
@@ -279,26 +330,32 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( &myPosition, &secondPosition, &thirdPosition );
-    updatePositionPilot ( myPosition, secondPosition, thirdPosition, myPilot, secondPilot, thirdPilot );
-    updateGraph ( graph, secondPosition, thirdPosition, previousSecound, previousThird );
+    if ( isErrorFromPilot ( myPilot, myPosition ) ) {
+        resetSpeed ( myPilot );
+    }
+    updatePositionPilot ( 
+                            myPosition, secondPosition, thirdPosition, 
+                            myPilot, secondPilot, thirdPilot 
+                        );
+    updateGraph ( 
+                    graph, secondPosition, thirdPosition, 
+                    previousSecound, previousThird 
+                );
 
     /* 1ere etape : choisir une action */
     path = givePath ( dijkstra, graph, myPosition );
-
-    path = resetCurrentPathList ( path );
-    fprintf ( stderr, "\n" );
-    while ( !isCurrentNull ( path ) ) {
-        fprintf ( stderr, "[%hd, %hd] ", path.current->contents.X, path.current->contents.Y );
-        path = moveCurrentPathList ( path );
-    }
-    resetCurrentPathList ( path );
-    fprintf ( stderr, "\n" );
 
     if ( areEqualPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }
-    path = choiceNextAction ( path, myPosition, getSpeedPilot ( myPilot ), &nextAction, graph, getGasLvlPilot ( myPilot ) );
+    path = choiceNextAction ( 
+                                path, myPosition, 
+                                getSpeedPilot ( myPilot ), 
+                                &nextAction, 
+                                graph, 
+                                getGasLvlPilot ( myPilot ) 
+                            );
     destroyPathList ( path );
 
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
@@ -308,10 +365,8 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     updateSpeedPilot ( myPilot );
 
     speed = getSpeedPilot ( myPilot );
-    myPosition.X += speed.X;
-    myPosition.Y += speed.Y;
-    myPosition = getPositionPilot ( myPilot );
+
+    fprintf ( stderr, "                 Speed venant de updateSpeed : %d %d\n", speed.X, speed.Y );
     /* 3e etape : on transmet l'action au GDP */
-    sprintf ( action, "%hd %hd", nextAction.X, nextAction.Y );
-    deliverAction ( action );
+    deliverAction ( nextAction );
 }

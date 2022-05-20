@@ -10,10 +10,11 @@
 
 /**
  * @file communicatorWithGDC.c
- * @brief This file is the functions to read a map.
+ * @brief This file is used to communicate with the GDC.
  */
 
 /**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.Fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.3
  * @date 05 avril 2022
@@ -46,7 +47,10 @@ static void setDataGraph ( GRAPH* graph, char* data, int row )
             setElementGraph ( graph, finishLineGraph, i, row );
             finishLinePosition.X = i;
             finishLinePosition.Y = row;
-            updateCoordFinishLine ( graph, finishLinePosition, getSizeFinishLine ( graph ) );
+            updateCoordFinishLine ( 
+                                    graph, finishLinePosition, 
+                                    getSizeFinishLine ( graph ) 
+                                  );
         }
     }
 }
@@ -73,7 +77,11 @@ void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph )
     trash = trash;
 }
 
-void updatePositionPilotFromGDC ( POSITION* myPilot, POSITION* secondPilot, POSITION* thirdPilot )
+void updatePositionPilotFromGDC ( 
+                                    POSITION* myPilot, 
+                                    POSITION* secondPilot, 
+                                    POSITION* thirdPilot 
+                                )
 {
     char buf[MAX_LINE_LENGTH];
     char* trash;
@@ -85,4 +93,10 @@ void updatePositionPilotFromGDC ( POSITION* myPilot, POSITION* secondPilot, POSI
                     &(thirdPilot->X),       &(thirdPilot->Y)
             );
     trash = trash;
+}
+
+void deliverAction ( ACCELERATION actionToDeliver )
+{
+    fprintf ( stdout, "%hd %hd", actionToDeliver.X, actionToDeliver.Y );
+    fflush ( stdout );                /* CAUTION : This is necessary  */
 }

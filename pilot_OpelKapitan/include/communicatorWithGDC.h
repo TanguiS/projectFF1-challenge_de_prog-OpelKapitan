@@ -55,6 +55,16 @@ void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph );
  * @param secondPilot : the position of the second pilot
  * @param thirdPilot : the position of the third pilot
  */
-void updatePositionPilotFromGDC ( POSITION* myPilot, POSITION* secondPilot, POSITION* thirdPilot );
+void updatePositionPilotFromGDC ( 
+                                    POSITION* myPilot, POSITION* secondPilot, 
+                                    POSITION* thirdPilot 
+                                );
+
+/**
+ * @brief Deliver the action to the GDP
+ * 
+ * @param actionToDeliver : the action to deliver
+ */
+void deliverAction ( ACCELERATION actionToDeliver ); 
 
 #endif /* __COMMUNICATOR_W_GDC__HH__ */

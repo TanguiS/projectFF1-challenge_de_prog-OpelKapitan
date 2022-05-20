@@ -14,6 +14,7 @@
  */
 
 /**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.1
  * @date 06 avril 2022
@@ -33,8 +34,6 @@
 #include "list.h"
 #include "dijkstraAlgo.h"
 #include "dijkstraMatrix.h"
-
-#define SIZE_ACTION 10                  /**< the size of the delivered action */
 
 /**
  * @brief Declaration of a structure for a pilot object 
@@ -106,7 +105,10 @@ PILOT createPilot ( short fuelLevel );
  * @param secondPilot : the second pilot 
  * @param thirdPilot : the third pilot
  */
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra );
+void updatePilots ( 
+                    PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, 
+                    GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra 
+                   );
 
 /**
  * @brief If there is enough full to finish the race
@@ -118,6 +120,9 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
  * @param path the path to follow
  * @return boolean  true if there is enough fuel
  */
-boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPEED pilotSpeed, PATH_LIST path );
+boolean isEnoughFuel ( 
+                        GRAPH* graph, short fuelLeft, POSITION pilotPosition, 
+                        SPEED pilotSpeed, PATH_LIST path 
+                     );
 
 #endif /* __PILOT_MANAGEMENT_HH__ */

@@ -9,13 +9,14 @@
  */
 
 /**
- * @file graph.h
- * @brief This file contains the prototypes / declarations used to choose the pilot's direction.
+ * @file graphMadj.h
+ * @brief This file contains the prototypes / declarations used to process a graph.
  */
 
 /**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.2
  * @date 19 avril 2022
  */
 
@@ -31,23 +32,32 @@
 #include "util.h"
 #include "list.h"
 
-#define SIZE_TAB_FINISH_LINE 100
+#define SIZE_TAB_FINISH_LINE 100                            /**< the size of the finish line tab */
 
+/**
+ * @brief Declaration of the graph's values enumeration 
+ */
 typedef enum {
-    wallGraph = 0,
-    carGraph = 0,
-    roadGraph = 1,
-    finishLineGraph = 1,
-    aroundCarGraph = 2,
-    sandGraph = 3
+    wallGraph           = 0,                                /**< the value of a wall in the graph */
+    carGraph            = 0,                                /**< the value of a car in the graph */
+    roadGraph           = 1,                                /**< the value of the road in the graph */
+    finishLineGraph     = 1,                                /**< the value of the finish line in the graph */
+    aroundCarGraph      = 2,                                /**< the value around an opposite car in the graph */
+    sandGraph           = 3                                 /**< the value of the sand in the graph */
 } graphValues;
 
+/**
+ * @brief Declaration of a structure for a graph object 
+ */
 typedef struct _mAdj {
-    char sizeFinishLine;
-    POSITION finishLineCoord[SIZE_TAB_FINISH_LINE];
-    POSITION closestFinishLine;
-    MATRIX graph;
+    char sizeFinishLine;                                    /**< the number of finish line */
+    POSITION finishLineCoord[SIZE_TAB_FINISH_LINE];         /**< the finish line tab */
+    POSITION closestFinishLine;                             /**< the closest finish to our driver */
+    MATRIX graph;                                           /**< the matrix of our graph */
 } _mAdj;
+/**
+ * @brief Declaration of the GRAPH object 
+ */
 typedef struct _mAdj GRAPH;
 
 /**
@@ -174,7 +184,11 @@ GRAPH createGraph ( short width, short height );
  * @param previousSecound the table to follow
  * @param previousThird the table to follow
  */
-void updateGraph ( GRAPH* graph, POSITION secoundPilot, POSITION thirdPilot, POSITION previousSecound[5], POSITION previousThird[5] );
+void updateGraph ( 
+                    GRAPH* graph, POSITION secoundPilot, 
+                    POSITION thirdPilot, POSITION previousSecound[5], 
+                    POSITION previousThird[5] 
+                 );
 
 /**
  * @brief Reverse the operation of the updateGraph function
@@ -184,7 +198,10 @@ void updateGraph ( GRAPH* graph, POSITION secoundPilot, POSITION thirdPilot, POS
  * @param previousSecound the table to follow
  * @param previousThird the table to follow
  */
-void reverseGraph ( GRAPH* graph, GRAPH* referenceGraph, POSITION previousSecound[5], POSITION previousThird[5] );
+void reverseGraph ( 
+                    GRAPH* graph, GRAPH* referenceGraph, 
+                    POSITION previousSecound[5], POSITION previousThird[5] 
+                  );
 
 /**
  * @brief Update the Finish Line object from a graph
@@ -195,6 +212,12 @@ void reverseGraph ( GRAPH* graph, GRAPH* referenceGraph, POSITION previousSecoun
  */
 void updateCoordFinishLine ( GRAPH* graph, POSITION newFinishLine, int index );
 
+/**
+ * @brief Update the closest finish line according to out pilot position
+ * 
+ * @param graph the graph of the race
+ * @param pilotPosition the current pilot position
+ */
 void updateClosetFinishLine ( GRAPH* graph, POSITION pilotPosition );
 
 /**
@@ -203,8 +226,5 @@ void updateClosetFinishLine ( GRAPH* graph, POSITION pilotPosition );
  * @param graphToDestoy 
  */
 void destroyGraph (GRAPH graphToDestoy );
-
-
-
 
 #endif /* __GRAPH_M_ADJ_H__ */

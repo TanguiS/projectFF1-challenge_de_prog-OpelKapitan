@@ -76,7 +76,12 @@ typedef void directionFunction ( ACCELERATION* action );
  * @param nextAction the next action to determined
  * @return PATH_LIST the updated path list
  */
-typedef PATH_LIST actionDeterminator ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction );
+typedef PATH_LIST actionDeterminator ( 
+                                        PATH_LIST path, 
+                                        POSITION pilotPosition, 
+                                        SPEED pilotSpeed, 
+                                        ACCELERATION* nextAction 
+                                      );
 
 /**
  * @brief If position A is equal to position B

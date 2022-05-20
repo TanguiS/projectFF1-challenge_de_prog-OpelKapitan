@@ -14,6 +14,7 @@
  */
 
 /**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.0
  * @date 06 mai 2022

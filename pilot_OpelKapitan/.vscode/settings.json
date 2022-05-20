@@ -39,7 +39,8 @@
     "pilotmanagement.h": "c",
     "pathlist.h": "c",
     "readmap.h": "c",
-    "debugmode.h": "c"
+    "debugmode.h": "c",
+    "communicatorwithgdc.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled",
   "C_Cpp_Runner.useMsvc": false
