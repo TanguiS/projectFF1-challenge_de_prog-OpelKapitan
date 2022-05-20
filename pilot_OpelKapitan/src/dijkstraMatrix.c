@@ -56,9 +56,7 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y)
 {
     int i, j;
     elementdij tmp;
-    DEBUG_CHAR ( "Affichage de la matrice de dijkstra : ", ' ' );
-    DEBUG_INT ( "width graph : ", getWidthMatrixDijkstra ( dijkstra ) );
-    DEBUG_INT ( "height graph : ", getHeigthMatrixDijkstra ( dijkstra ) );
+    fprintf ( stderr, "Affichage matrice dijkstra :\nwidth & height : %hd %hd\n", getWidthMatrixDijkstra ( dijkstra ), getHeigthMatrixDijkstra ( dijkstra ) );
     for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
         for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
@@ -70,7 +68,7 @@ void displayDijkstraMatrix(dijkstraMatrix* dijkstra, short x, short y)
                 fprintf ( stderr, "\033[31m[%d, %d],% *d %d | \033[00m", tmp.predecessor.X, tmp.predecessor.Y,3, tmp.pathLength, tmp.flag );
             }
         }
-        DEBUG_ONLY_CHAR ( '\n' );
+        fprintf ( stderr, "\n" );
     }
 }
 #endif
@@ -81,9 +79,7 @@ void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* pa
     int i, j, h;
     elementdij tmp;
     boolean flag;
-    DEBUG_CHAR ( "Affichage de la matrice de dijkstra : ", ' ' );
-    DEBUG_INT ( "width graph : ", getWidthMatrixDijkstra ( dijkstra ) );
-    DEBUG_INT ( "height graph : ", getHeigthMatrixDijkstra ( dijkstra ) );
+    fprintf ( stderr, "Affichage matrice dijkstra :\nwidth & height : %hd %hd\n", getWidthMatrixDijkstra ( dijkstra ), getHeigthMatrixDijkstra ( dijkstra ) );
     for ( i = 0; i < getHeigthMatrixDijkstra ( dijkstra ); i++ ) {
         for ( j = 0; j < getWidthMatrixDijkstra ( dijkstra ); j++ ) {
             tmp = getElementDijkstra ( dijkstra, j, i );
@@ -101,7 +97,7 @@ void displayDijkstraMatrixPath(dijkstraMatrix* dijkstra, int count, POSITION* pa
                 fprintf ( stderr, "\033[31m[%d, %d],% *d %d | \033[00m", tmp.predecessor.X, tmp.predecessor.Y,4, tmp.pathLength, tmp.flag );
             }
         }
-        DEBUG_ONLY_CHAR ( '\n' );
+        fprintf ( stderr, "\n" );
     }
 }
 #endif

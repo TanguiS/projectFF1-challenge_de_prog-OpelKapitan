@@ -100,7 +100,7 @@ PILOT createPilot ( short gasLvl );
  * @param secondPilot : the second pilot 
  * @param thirdPilot : the third pilot
  */
-void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, dijkstraMatrix* dijkstra );
+void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH* graph, GRAPH* referenceGraph, dijkstraMatrix* dijkstra );
 
 boolean isEnoughFuel ( GRAPH* graph, short fuelLeft, POSITION pilotPosition, SPEED pilotSpeed, PATH_LIST path );
 

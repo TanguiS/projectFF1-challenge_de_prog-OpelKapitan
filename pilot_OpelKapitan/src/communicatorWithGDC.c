@@ -52,7 +52,7 @@ static void setDataGraph ( GRAPH* graph, char* data, int row )
 }
 
 
-void readDataFromGDC ( short* gasLvl, GRAPH* graph )
+void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph )
 {
     int i;
     short width, height;
@@ -63,10 +63,12 @@ void readDataFromGDC ( short* gasLvl, GRAPH* graph )
     sscanf ( buf, "%hd %hd %hd", &width, &height, gasLvl );
 
     *graph = createGraph ( width, height );
+    *referenceGraph = createGraph ( width, height);
 
     for ( i = 0; i < getHeightGraph ( graph ); i++ ) {
         trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
         setDataGraph ( graph, buf, i );
+        setDataGraph ( referenceGraph, buf, i );
     }
     trash = trash;
 }

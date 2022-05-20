@@ -37,7 +37,10 @@
     "pilotdirection.h": "c",
     "list.h": "c",
     "pilotmanagement.h": "c",
-    "pathlist.h": "c"
+    "pathlist.h": "c",
+    "readmap.h": "c",
+    "debugmode.h": "c"
   },
-  "C_Cpp.errorSquiggles": "Enabled"
+  "C_Cpp.errorSquiggles": "Enabled",
+  "C_Cpp_Runner.useMsvc": false
 }

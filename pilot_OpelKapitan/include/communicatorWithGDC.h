@@ -47,6 +47,6 @@ typedef enum {
  * @param graph : the Graph object initialized
  * @return 
  */
-void readDataFromGDC ( short* gasLvl, GRAPH* graph );
+void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph );
 
 #endif /* __COMMUNICATOR_W_GDC__HH__ */

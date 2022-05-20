@@ -33,6 +33,7 @@ int main ( void )
     short gasLvl;
     PILOT myPilot, autre2, autre3;
     GRAPH graph;
+    GRAPH referenceGraph; 
     dijkstraMatrix dijkstra;
     float time;
     float maxTime = 0.;
@@ -40,7 +41,7 @@ int main ( void )
     clock_t t1, t2;
 
     t1 = clock();
-    readDataFromGDC ( &gasLvl, &graph );
+    readDataFromGDC ( &gasLvl, &graph, &referenceGraph );
     myPilot = createPilot ( gasLvl );
     dijkstra = createDijkstraMatrix ( getWidthGraph ( &graph ), getHeightGraph ( &graph ) );
     t2 = clock();
@@ -53,7 +54,7 @@ int main ( void )
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
-        updatePilots ( &myPilot, &autre2, &autre3, &graph, &dijkstra );
+        updatePilots ( &myPilot, &autre2, &autre3, &graph, &referenceGraph, &dijkstra );
         t2 = clock();
         time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;
         fprintf ( stderr, "===> temps exec = %f\n", time );
