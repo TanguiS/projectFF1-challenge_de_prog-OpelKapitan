@@ -69,6 +69,14 @@ void setPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION newPredecesso
 
 void getPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION* result);
 
+void setFlag ( DIJKSTRA* dijkstra, POSITION node, flagNode flag );
+
+boolean isNodeWhite ( DIJKSTRA* dijkstra, POSITION nodeToTest );
+
+boolean isNodeBlack ( DIJKSTRA* dijkstra, POSITION nodeToTest );
+
+boolean isNodeGray ( DIJKSTRA* dijkstra, POSITION nodeToTest );
+
 DIJKSTRA createDijkstraMatrix(short width, short heigth);
 
 void destroyDijkstraMatrix(DIJKSTRA dijkstra);

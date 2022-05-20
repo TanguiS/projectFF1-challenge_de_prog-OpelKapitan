@@ -176,6 +176,11 @@ boolean isWall ( GRAPH* graph, POSITION coord )
     return getElementGraph ( graph, coord ) == wallGraph;
 }
 
+boolean isAroundCar ( GRAPH* graph, POSITION coord )
+{
+    return getElementGraph ( graph, coord ) == aroundCarGraph;
+}
+
 boolean isInGraph ( GRAPH* graph, short x, short y )
 {
     if ( x >= getWidthGraph ( graph ) ) {

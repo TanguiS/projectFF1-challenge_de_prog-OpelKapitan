@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 20 16:03:50 2022
+# Make data base, printed on Fri May 20 21:39:55 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ SNAP_DATA = /var/snap/code/97
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:43107
+JOURNAL_STREAM = 8:37345
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -O3
 # environment
@@ -83,7 +83,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1796
+MANAGERPID = 1340
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -97,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/2042,unix/tanguistei:/tmp/.ICE-unix/2042
+SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1573,unix/tanguistei:/tmp/.ICE-unix/1573
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -117,7 +117,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 50bc468f548d4d20810180c6ff524a2a
+INVOCATION_ID = 62f55ff760794142a99e37a9cc6c66b8
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2501
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2446
 # automatic
 %F = $(notdir $%)
 # environment
@@ -147,7 +147,7 @@ PWD = /home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1971
+SSH_AGENT_PID = 1511
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -199,7 +199,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-78d65412-0258-4572-919a-7af0a94a7a39.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e89b9f71-2638-44f3-a9ec-c212b2fe4f86.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -275,9 +275,10 @@ INC_PATH = ./include
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2609
+VSCODE_PID = 2645
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=28/209=13%
+ 
 
 # Pattern-specific Variable Values
 
@@ -286,7 +287,6 @@ VSCODE_PID = 2609
 # Directories
 
 # . (device 2053, inode 4325663): 9 files, no impossibilities.
- 
 
 # 9 files, no impossibilities in 1 directories.
 
@@ -390,7 +390,7 @@ obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-20 15:19:56.488841935
+#  Last modified 2022-05-20 20:15:58.093951164
 #  File has been updated.
 #  Successfully updated.
 
@@ -559,6 +559,7 @@ install: ../drivers/OpelKapitan
 
 # No 'vpath' search paths.
 
+ 
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 50 / storage = 741 B / avg = 14 B
@@ -567,6 +568,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 86 / hit rate = 41%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/86=1%
-# Finished Make data base on Fri May 20 16:03:50 2022
+# Finished Make data base on Fri May 20 21:39:55 2022
 
  

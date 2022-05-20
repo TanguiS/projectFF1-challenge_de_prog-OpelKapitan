@@ -137,6 +137,8 @@ boolean isCar ( GRAPH* graph, POSITION coord );
  */
 boolean isWall ( GRAPH* graph, POSITION coord );
 
+boolean isAroundCar ( GRAPH* graph, POSITION coord );
+
 /**
  * @brief If the coordinate is in the matrix
  * 

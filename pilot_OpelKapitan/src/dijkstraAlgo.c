@@ -31,47 +31,80 @@ void mergePosition (POSITION* reference, POSITION* result ) {
 void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode, POSITION parentNode) {
     int i;
     int j;
+    POSITION tmp;
 
     for (i=0; i<getHeigthDijkstra(dijkstra); i++) {
         for (j=0; j<getWidthDijkstra(dijkstra); j++) {
             setPathLength ( dijkstra, j, i, SHRT_MAX );
-            dijkstra->matrix[j][i].flag = white;
+            tmp.X = j;
+            tmp.Y = i;
+            setFlag ( dijkstra, tmp, white );
         }
     }
     setPathLength ( dijkstra, firstNode.X, firstNode.Y, 0 );
     setPredecessor ( dijkstra, firstNode.X, firstNode.Y, parentNode );
-    dijkstra->matrix[firstNode.X][firstNode.Y].flag = gray;
+    setFlag ( dijkstra, firstNode, gray );
 }
 
 
 
-void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* sommet, LIST list ) {
+
+void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* currentNode, LIST list ) {
     short i;
     POSITION minTemp;
 
-    i = getElementList(list, sommet, 0);
-    mergePosition(sommet, &minTemp);
+    i = getElementList(list, currentNode, 0);
+    mergePosition(currentNode, &minTemp);
     while (i) {
         i = getNextElementList(list, &minTemp, &minTemp);
-        if (getPathLength(dijkstra, sommet->X, sommet->Y) > getPathLength(dijkstra, minTemp.X, minTemp.Y)) {
-            mergePosition(&minTemp, sommet);
+        if (getPathLength(dijkstra, currentNode->X, currentNode->Y) > getPathLength(dijkstra, minTemp.X, minTemp.Y)) {
+            mergePosition(&minTemp, currentNode);
         }
     }
-    dijkstra->matrix[sommet->X][sommet->Y].flag = black;
+    setFlag ( dijkstra, *currentNode, black );
 }
 
-void updateLengthNodes(DIJKSTRA* dijkstra, GRAPH* graph, POSITION sommet1, POSITION sommet2) {
+short getArcValue ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode )
+{
+    POSITION parentNode;
+    short arcValue = 0;
+    short classicvalue = ((short)getElementGraph(graph, successorNode) + abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1);
+    static int round = 1;
+
+    getPredecessor ( dijkstra, currentNode.X, currentNode.Y, &parentNode );
+
+    fprintf ( stderr, ">- Dans arc value : \n    Courrant = %d %d\n    Parent du courrant = %d %d\n    Successeur du courant = %d %d\n", currentNode.X, currentNode.Y, parentNode.X, parentNode.Y, successorNode.X, successorNode.Y );
+    round++;
+
+    if ( isSand ( graph, successorNode ) ) {
+        arcValue += 3;
+    } else if ( isAroundCar ( graph, successorNode ) ) {
+        arcValue += 2;
+    } else if ( isRoad ( graph, successorNode ) ) {
+        arcValue += 1;
+    }
+    if ( !areAligned ( parentNode, currentNode, successorNode ) ) {
+        arcValue += 2;
+    } else if ( lineToFollow ( parentNode, successorNode ) == diagonal ) {
+        arcValue += 1;
+    }
+    fprintf ( stderr, "        Comparaison des arcValue, opti = %d       classic = %d\n", arcValue, classicvalue );
+
+/*     return (short)getElementGraph(graph, successorNode) + abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1 ; */
+    return arcValue;
+}
+
+void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode) {
     short d1;
     short d2;
     short arcValue;
 
-    d1 = getPathLength(dijkstra, sommet1.X, sommet1.Y);
-    d2 = getPathLength(dijkstra, sommet2.X, sommet2.Y);
-    arcValue = (short)getElementGraph(graph, sommet2);
-    arcValue += abs((sommet1.X - sommet2.X)) + abs((sommet1.Y - sommet2.Y)) - 1 ;
+    d1 = getPathLength(dijkstra, currentNode.X, currentNode.Y);
+    d2 = getPathLength(dijkstra, successorNode.X, successorNode.Y);
+    arcValue = getArcValue ( dijkstra, graph, currentNode, successorNode );
     if ( d2 > (d1 + arcValue) ) {
-        setPathLength(dijkstra, sommet2.X, sommet2.Y, (d1 + arcValue));
-        setPredecessor(dijkstra, sommet2.X, sommet2.Y, sommet1);
+        setPathLength(dijkstra, successorNode.X, successorNode.Y, (d1 + arcValue));
+        setPredecessor(dijkstra, successorNode.X, successorNode.Y, currentNode);
         /*displayDijkstraMatrix ( dijkstra, sommet2.X, sommet2.Y );*/
         return;
     }
@@ -79,7 +112,7 @@ void updateLengthNodes(DIJKSTRA* dijkstra, GRAPH* graph, POSITION sommet1, POSIT
 }
 
 
-void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION parent) {
+void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) {
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -89,22 +122,22 @@ void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITIO
                             {0, -1}
     };
     for (i=0; i<4; i++) {
-        successor.X = parent.X + tab[i].X;
-        successor.Y = parent.Y + tab[i].Y;
+        successor.X = currentNode.X + tab[i].X;
+        successor.Y = currentNode.Y + tab[i].Y;
         if ( isInGraph ( graph, successor.X, successor.Y ) ) {
             if ( getElementGraph ( graph, successor ) != wallGraph) {
                 if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
                     *list = addElementList(*list, successor);
                     dijkstra->matrix[successor.X][successor.Y].flag = gray;
                     /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
-                    updateLengthNodes(dijkstra, graph, parent, successor);
+                    updateLengthNode(dijkstra, graph, currentNode, successor);
                 }
             }
         }
     }
 }
 
-void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION parent) {
+void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) {
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -118,46 +151,46 @@ void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITIO
                             {-1, -1}
     };
     for (i=0; i<8; i++) {
-        successor.X = parent.X + tab[i].X;
-        successor.Y = parent.Y + tab[i].Y;
+        successor.X = currentNode.X + tab[i].X;
+        successor.Y = currentNode.Y + tab[i].Y;
         if ( isInGraph ( graph, successor.X, successor.Y ) ) {
-            if ( getElementGraph ( graph, successor ) != wallGraph) {
-                if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
+            if ( !isWall ( graph, successor ) ) {
+                if ( isNodeWhite ( dijkstra, successor ) ) {
                     *list = addElementList(*list, successor);
-                    dijkstra->matrix[successor.X][successor.Y].flag = gray;
-                    updateLengthNodes(dijkstra, graph, parent, successor);
+                    setFlag ( dijkstra, successor, gray );
+                    updateLengthNode(dijkstra, graph, currentNode, successor );
                 }
             }
         }
     }
 }
 
-void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess) {
+void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess ) {
     
     if (isSand ( graph, nodeToProcess )) {
-        processSuccessorsSand(graph, dijkstra, list, nodeToProcess);
+        processSuccessorsSand(graph, dijkstra, list, nodeToProcess );
     } else {
-        processSuccessorRoad(graph, dijkstra, list, nodeToProcess);
+        processSuccessorRoad(graph, dijkstra, list, nodeToProcess );
     }
 }
 
 
 
 void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode) {
-    POSITION sommet;
+    POSITION currentNode;
     LIST list;
     
     list = createList();
     initDijkstra(dijkstra, firstNode, parentNode);
-    sommet.X = firstNode.X;
-    sommet.Y = firstNode.Y;
-    list = addElementList(list, sommet);
+    currentNode.X = firstNode.X;
+    currentNode.Y = firstNode.Y;
+    list = addElementList(list, currentNode);
     
 
     while (!isEmptyList(list)) {
-        findNodeWithMinimalLength(dijkstra, &sommet, list);
-        redirectorToProcessSuccessor(graph, dijkstra, &list, sommet);
-        list = removeElementListCoord(list, &sommet, &sommet);
+        findNodeWithMinimalLength(dijkstra, &currentNode, list);
+        redirectorToProcessSuccessor(graph, dijkstra, &list, currentNode );
+        list = removeElementListCoord(list, &currentNode, &currentNode);
     }
     destroyList(list);
 } 

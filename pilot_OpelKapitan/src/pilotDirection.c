@@ -368,19 +368,6 @@ static PATH_LIST nextActionBoostedForNextPosition (
 }
 
 /**
- * @brief If the positions A, B and C are aligned
- * 
- * @param A a postion
- * @param B another position
- * @param C and another one
- * @return boolean true if are aligned
- */
-static boolean areAligned ( POSITION A, POSITION B, POSITION C ) 
-{
-    return  (C.Y - A.Y) * (B.X - A.X) - (B.Y - A.Y) * (C.X - A.X ) == 0; 
-}
-
-/**
  * @brief Update the path to follow if the path is straight
  * 
  * @param path the path to follow
@@ -524,29 +511,6 @@ static short addActionToGroup (
 }
 
 /**
- * @brief Which direction is the straight line
- * 
- * @param startPosition the current position
- * @param goalPosition the position to arrive
- * @return straightDirection the line that will be followed
- */
-static straightDirection lineToFollow ( 
-                                        POSITION startPosition, 
-                                        POSITION goalPosition 
-                                      )
-{
-    POSITION line;
-    line = positionVector ( goalPosition, startPosition );
-    if ( line.X == 0 ) {
-        return towardsY;
-    }
-    if ( line.Y == 0 ) {
-        return towardsX;
-    }
-    return diagonal;
-}
-
-/**
  * @brief Update the lidt to the current position
  * 
  * @param path the list to update
@@ -634,6 +598,27 @@ static PATH_LIST groupNextAction (
 static boolean speedIsNull ( SPEED pilotSpeed )
 {
     return ( pilotSpeed.X == 0 && pilotSpeed.Y == 0 );
+}
+
+boolean areAligned ( POSITION A, POSITION B, POSITION C ) 
+{
+    return  (C.Y - A.Y) * (B.X - A.X) - (B.Y - A.Y) * (C.X - A.X ) == 0; 
+}
+
+straightDirection lineToFollow ( 
+                                POSITION startPosition, 
+                                POSITION goalPosition 
+                                )
+{
+    POSITION line;
+    line = positionVector ( goalPosition, startPosition );
+    if ( line.X == 0 ) {
+        return towardsY;
+    }
+    if ( line.Y == 0 ) {
+        return towardsX;
+    }
+    return diagonal;
 }
 
 boolean areEqualsPosition ( POSITION A, POSITION B )

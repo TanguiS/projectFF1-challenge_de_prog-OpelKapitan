@@ -38,6 +38,26 @@ void setPredecessor(DIJKSTRA* dijkstra, short x, short y, POSITION newPredecesso
     dijkstra->matrix[x][y].predecessor.Y = newPredecessor.Y;
 }
 
+void setFlag ( DIJKSTRA* dijkstra, POSITION node, flagNode flag )
+{
+    dijkstra->matrix[node.X][node.Y].flag = flag;
+}
+
+boolean isNodeWhite ( DIJKSTRA* dijkstra, POSITION nodeToTest )
+{
+    return dijkstra->matrix[nodeToTest.X][nodeToTest.Y].flag == white;
+}
+
+boolean isNodeBlack ( DIJKSTRA* dijkstra, POSITION nodeToTest )
+{
+    return dijkstra->matrix[nodeToTest.X][nodeToTest.Y].flag == black;
+}
+
+boolean isNodeGray ( DIJKSTRA* dijkstra, POSITION nodeToTest )
+{
+    return dijkstra->matrix[nodeToTest.X][nodeToTest.Y].flag == gray;
+}
+
 DIJKSTRA createDijkstraMatrix(short width, short heigth) {
     int i;
 

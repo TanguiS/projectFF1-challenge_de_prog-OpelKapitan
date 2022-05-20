@@ -62,13 +62,13 @@ void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* minimalNode, LIST s
 
 
 
-void updateLengthNodes(DIJKSTRA* dijkstra, GRAPH* graph, POSITION parentNode, POSITION successorNode);
+void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode );
 
 
 void addSuccessorToList(LIST* successors, POSITION* successorNode, POSITION minimalNode,  short sizeSuccesor, DIJKSTRA* dijkstra, GRAPH* graph);
 
 
-void redirectorToProcessSuccessor(GRAPH*graph, DIJKSTRA* dijkstra ,LIST* successors, POSITION parentNode);
+void redirectorToProcessSuccessor(GRAPH*graph, DIJKSTRA* dijkstra ,LIST* successors, POSITION nodeToProcess );
 
 void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode);
 

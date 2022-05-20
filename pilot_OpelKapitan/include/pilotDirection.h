@@ -84,6 +84,28 @@ typedef PATH_LIST actionDeterminator (
                                       );
 
 /**
+ * @brief If the positions A, B and C are aligned
+ * 
+ * @param A a postion
+ * @param B another position
+ * @param C and another one
+ * @return boolean true if are aligned
+ */
+boolean areAligned ( POSITION A, POSITION B, POSITION C );
+
+/**
+ * @brief Which direction is the straight line
+ * 
+ * @param startPosition the current position
+ * @param goalPosition the position to arrive
+ * @return straightDirection the line that will be followed
+ */
+straightDirection lineToFollow ( 
+                                POSITION startPosition, 
+                                POSITION goalPosition 
+                                );
+
+/**
  * @brief If position A is equal to position B
  * 
  * @param A a position
