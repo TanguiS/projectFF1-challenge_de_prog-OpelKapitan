@@ -116,45 +116,6 @@ static void initGraph ( GRAPH* graph )
     setClosestFinishLine ( graph, init );
 }
 
-#ifndef DEBUG
-void displayGraph ( GRAPH* graph )
-{
-    int i, j;
-    POSITION line;
-    POSITION tmp;
-    DEBUG_CHAR ( "\nAffichage du graph : ", ' ' );
-    DEBUG_INT ( "width graph : ", getWidthGraph ( graph ) );
-    DEBUG_INT ( "height graph : ", getHeightGraph ( graph ) );
-    for ( i = 0; i < getHeightGraph ( graph ); i++ ) {
-        for ( j = 0; j < getWidthGraph ( graph ); j++ ) {
-            tmp.X = j;
-            tmp.Y = i;
-            DEBUG_ONLY_INT ( getElementGraph ( graph, tmp ) );
-        }
-        DEBUG_ONLY_CHAR ( '\n' );
-    }
-    DEBUG_CHAR ( "\nAffichage POSITION ligne d'arrivée : ", ' ' );
-    DEBUG_INT ( ">Taille ligne : ", getSizeFinishLine ( graph ) );
-    for ( i = 0; i < getSizeFinishLine ( graph ); i++ ) {
-        DEBUG_ONLY_CHAR ( '[' );
-        getCoordFinishLine ( graph, i, &line );
-        DEBUG_ONLY_INT ( line.X );
-        DEBUG_ONLY_CHAR ( ',' );
-        DEBUG_ONLY_INT ( line.Y );
-        DEBUG_ONLY_CHAR ( ']' );
-    }
-    DEBUG_ONLY_CHAR ( '\n' );
-    DEBUG_CHAR ( ">POSITION le plus proche de notre voiture : ", ' ' );
-    DEBUG_ONLY_CHAR ( '[' );
-    getClosestFinishLine ( graph, &line );
-    DEBUG_ONLY_INT ( line.X );
-    DEBUG_ONLY_CHAR ( ',' );
-    DEBUG_ONLY_INT ( line.Y );
-    DEBUG_ONLY_CHAR ( ']' );
-    DEBUG_ONLY_CHAR ( '\n' );
-}
-#endif
-
 short getWidthGraph ( GRAPH* graph )
 {
     return getWidthMatrix ( &(graph->graph) );

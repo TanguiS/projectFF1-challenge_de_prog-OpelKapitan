@@ -24,7 +24,6 @@
 
 #include "matrix.h"
 #include "util.h"
-#include "debugMode.h"
 #include <stdio.h>
 #include <stdlib.h>
 

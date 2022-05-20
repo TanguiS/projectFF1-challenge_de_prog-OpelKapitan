@@ -19,17 +19,17 @@ ifeq ($(DEBUG),off)
 CFLAGS += -D'DEBUG'
 endif
 
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o
 
 install: $(BIN_PATH)/$(PILOT_NAME)
 
 try: install
 	cd .. ; ./GrandPrix
 
-$(OBJ_PATH)/main.o: $(SRC_PATH)/main.c $(INC_PATH)/readMap.h
+$(OBJ_PATH)/main.o: $(SRC_PATH)/main.c $(INC_PATH)/communicatorWithGDC.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-$(OBJ_PATH)/readMap.o: $(SRC_PATH)/readMap.c $(INC_PATH)/readMap.h 
+$(OBJ_PATH)/communicatorWithGDC.o: $(SRC_PATH)/communicatorWithGDC.c $(INC_PATH)/communicatorWithGDC.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/matrix.o: $(SRC_PATH)/matrix.c $(INC_PATH)/matrix.h 

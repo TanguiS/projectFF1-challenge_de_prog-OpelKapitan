@@ -22,7 +22,7 @@
 #include "pilotManagement.h"
 #include "pilotDirection.h"
 
-#define FUEL_SAFETY 5
+#define FUEL_SAFETY 10
 
 /**
  * @brief Set the Position Pilot object
@@ -196,24 +196,15 @@ static void updateBoostsPilot ( PILOT* pilot )
     if ( actionIsBoosted ( getAccelerationPilot ( pilot ) ) ) {
         setBoostsRemainingPilot ( pilot, getBoostsRemainingPilot ( pilot ) - 1 );
     }
-    DEBUG_INT ( "> nombre de Boost restant : ", getBoostsRemainingPilot ( pilot ) );
 }
 
 static short fuelConsumption ( POSITION position, SPEED speed, ACCELERATION action,GRAPH* graph )
 {
     short norme1;
     short squareRoot;
-    #ifndef DEBUG
-    char buf[100];
-    sprintf ( buf, "speed : (%hd %hd), acc : (%hd %hd)", speed.X, speed.Y, action.X, action.Y );
-    #endif
-
-    DEBUG_STRING ( "> fuelConsumption donnée envoyé : " , buf );
-
+    fprintf ( stderr, "> donnees envoye FUEL CONSUMP ! speed : %hd %hd, acc : %hd %hd\n", speed.X, speed.Y, action.X, action.Y );
     norme1 = ( action.X * action.X ) + ( action.Y * action.Y );
     squareRoot = (short)(sqrt((double)speed.X * (double)speed.X + (double)speed.Y * (double)speed.Y) * 3.0 / 2.0); 
-
-   
 
     if ( isSand(graph, position) ) {
         fprintf ( stderr, ">>> resultat calcul, fuel used, sable : %d\n", norme1 + squareRoot + 1 );
@@ -333,9 +324,6 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     thirdCar = getPositionPilot ( thirdPilot );
 
     updateGraph ( graph, myCar, secoundCar, thirdCar, previousSecound, previousThird );
-    #ifndef DEBUG
-    displayGraph ( graph );
-    #endif
 
     /* 1ere etape : choisir une action */
     path = givePath ( dijkstra, graph, myCar );

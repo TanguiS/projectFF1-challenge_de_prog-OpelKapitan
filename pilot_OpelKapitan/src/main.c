@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "readMap.h"
+#include "communicatorWithGDC.h"
 #include "pilotManagement.h"
 #include "dijkstraAlgo.h"
 #include "dijkstraMatrix.h"
@@ -31,7 +31,6 @@ int main ( void )
 {
     int round = 0;
     short gasLvl;
-    DATA_MAP map;
     PILOT myPilot, autre2, autre3;
     GRAPH graph;
     dijkstraMatrix dijkstra;
@@ -41,7 +40,7 @@ int main ( void )
     clock_t t1, t2;
 
     t1 = clock();
-    map = readDataFromGDC ( &gasLvl, &graph );
+    readDataFromGDC ( &gasLvl, &graph );
     myPilot = createPilot ( gasLvl );
     dijkstra = createDijkstraMatrix ( getWidthGraph ( &graph ), getHeightGraph ( &graph ) );
     t2 = clock();
@@ -63,9 +62,6 @@ int main ( void )
         }
         fprintf( stderr, "la ligne finale est en  %d %d", graph.closestFinishLine.X, graph.closestFinishLine.Y);
         fprintf ( stderr, "\n\n>>>> CONCLUSION : temps max d'un tour : %f <<<<<<<\n\n", maxTime );
-    }
-    if ( !destroyMap ( map ) ) {
-        fprintf ( stderr, "Erreur fermeture\n" );
     }
     destroyGraph(graph);
     destroyDijkstraMatrix ( dijkstra );

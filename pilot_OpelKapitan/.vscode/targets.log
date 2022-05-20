@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 20 14:15:30 2022
+# Make data base, printed on Fri May 20 15:20:02 2022
 
 # Variables
 
@@ -139,7 +137,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile', line 22)
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/readMap.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graphMadj.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -199,7 +197,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-dbd0216f-9c69-4611-a1ae-536088d25886.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-023babb9-1ab5-46a4-9766-8c34aae3d083.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -279,6 +277,8 @@ VSCODE_PID = 2609
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=28/209=13%
  
+make: *** No rule to make target 'all'.  Stop.
+
 
 # Pattern-specific Variable Values
 
@@ -373,14 +373,7 @@ src/matrix.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/readMap.o: src/readMap.c include/readMap.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
-
-obj/main.o: src/main.c include/readMap.h
+obj/main.o: src/main.c include/communicatorWithGDC.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -397,9 +390,16 @@ obj/dijkstraAlgo.o: src/dijkstraAlgo.c include/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-17 18:16:09.085890981
+#  Last modified 2022-05-20 15:19:56.488841935
 #  File has been updated.
 #  Successfully updated.
+
+obj/communicatorWithGDC.o: src/communicatorWithGDC.c include/communicatorWithGDC.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 33):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # Not a target:
 include/pilotManagement.h:
@@ -432,24 +432,12 @@ obj/pilotDirection.o: src/pilotDirection.c include/pilotDirection.h
 #  recipe to execute (from 'Makefile', line 48):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-../drivers/OpelKapitan: obj/main.o obj/readMap.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o
+../drivers/OpelKapitan: obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graphMadj.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 63):
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
-
-# Not a target:
-include/readMap.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/readMap.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 src/main.c:
@@ -471,6 +459,18 @@ src/dijkstraAlgo.c:
 
 # Not a target:
 obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/communicatorWithGDC.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/communicatorWithGDC.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -516,7 +516,6 @@ src/pilotDirection.c:
 obj/graphMadj.o: src/graphMadj.c include/graphMadj.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
@@ -560,14 +559,15 @@ install: ../drivers/OpelKapitan
 
 # No 'vpath' search paths.
 
+ 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 705 B / avg = 14 B
-# current buf: size = 8162 B / used = 705 B / count = 50 / avg = 14 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 741 B / avg = 14 B
+# current buf: size = 8162 B / used = 741 B / count = 50 / avg = 14 B
 
 # strcache performance: lookups = 86 / hit rate = 41%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/86=1%
-# Finished Make data base on Fri May 20 14:15:30 2022
+# Finished Make data base on Fri May 20 15:20:02 2022
 
  

@@ -28,15 +28,11 @@
 #include <assert.h>
 #include <math.h>
 #include "util.h"
-#include "readMap.h"
+#include "communicatorWithGDC.h"
 #include "pathList.h"
 #include "list.h"
 #include "dijkstraAlgo.h"
 #include "dijkstraMatrix.h"
-
-#ifndef DEBUG
-#include "debugMode.h"
-#endif
 
 #define SIZE_ACTION 10
 
