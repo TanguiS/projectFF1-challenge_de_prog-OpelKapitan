@@ -72,15 +72,6 @@ static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining );
 static void initNewPilot ( PILOT* pilot );
 
 /**
- * @brief Update the position of the three pilot
- * 
- * @param myPilot : our pilot
- * @param secondPilot : the second pilot
- * @param thirdPilot : the third pilot
- */
-static void updatePositionPilotFromGDC ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot );
-
-/**
  * @brief Update the speed of our pilot
  * 
  * @param pilot : the PILOT object
@@ -153,26 +144,6 @@ static void updateSpeedPilot ( PILOT* pilot )
     ACCELERATION acc = getAccelerationPilot ( pilot );
     setSpeedPilot ( pilot, speed.X + acc.X, 
                            speed.Y + acc.Y );
-}
-
-static void updatePositionPilotFromGDC ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
-{
-    char buf[MAX_LINE_LENGTH];
-    char* trash;
-    POSITION myPosition, secoundPosition, thirdPosition;
-
-    trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
-    fprintf ( stderr, "\n\nLECTURE TEST BUFFER >>>>>>>>>>>>< : %s\n\n", buf );
-    fflush ( stdin );
-    sscanf ( buf, "%hd %hd %hd %hd %hd %hd",
-                    &myPosition.X,      &myPosition.Y,
-                    &secoundPosition.X, &secoundPosition.Y,
-                    &thirdPosition.X,   &thirdPosition.Y
-            );
-    setPositionPilot ( myPilot, myPosition.X, myPosition.Y );
-    setPositionPilot ( secondPilot, secoundPosition.X, secoundPosition.Y);
-    setPositionPilot ( thirdPilot, thirdPosition.X, thirdPosition.Y );
-    trash = trash;
 }
 
 void updatePositionPilot ( POSITION myPosition, POSITION secoundPosition, POSITION thirdPosition, PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot )
@@ -299,10 +270,9 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
 {
     static int round = 0;
     char action[SIZE_ACTION];
-    POSITION myCar, secoundCar, thirdCar;
+    POSITION myPosition, secondPosition, thirdPosition;
     POSITION trash;
     ACCELERATION nextAction;
-
     SPEED speed;
     static POSITION previousSecound[5] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}};
     static POSITION previousThird[5] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}};
@@ -312,33 +282,26 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
 
     /* faire un reverse graph pour remettre à un les ancienne position des pilote */
 
-    secoundCar = getPositionPilot ( secondPilot );
-    thirdCar = getPositionPilot ( thirdPilot );
     reverseGraph ( graph, referenceGraph, previousSecound, previousThird );
     
     /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
-    updatePositionPilotFromGDC ( myPilot, secondPilot, thirdPilot );
+    updatePositionPilotFromGDC ( &myPosition, &secondPosition, &thirdPosition );
+    updatePositionPilot ( myPosition, secondPosition, thirdPosition, myPilot, secondPilot, thirdPilot );
 
-    myCar = getPositionPilot ( myPilot );
-    secoundCar = getPositionPilot ( secondPilot );
-    thirdCar = getPositionPilot ( thirdPilot );
-
-    updateGraph ( graph, myCar, secoundCar, thirdCar, previousSecound, previousThird );
+    updateGraph ( graph, myPosition, secondPosition, thirdPosition, previousSecound, previousThird );
 
     /* 1ere etape : choisir une action */
-    path = givePath ( dijkstra, graph, myCar );
+    path = givePath ( dijkstra, graph, myPosition );
 
 
     fprintf ( stderr, "\n\n>>>APPEL choix de l'action suivante\n" );
-    if ( areEqualPosition ( examineHeadPathList ( path ), myCar ) ) {
+    if ( areEqualPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
         removeHeadElementPathList ( path, &trash );
     }
-    path = choiceNextAction ( path, myCar, getSpeedPilot ( myPilot ), &nextAction, graph, getGasLvlPilot ( myPilot ) );
+    path = choiceNextAction ( path, myPosition, getSpeedPilot ( myPilot ), &nextAction, graph, getGasLvlPilot ( myPilot ) );
     fprintf ( stderr, "     action : %hd, %hd\n\n>>> FIN <<<\n\n", nextAction.X, nextAction.Y );
     destroyPathList ( path );
-
-
 
     /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
@@ -347,12 +310,10 @@ void updatePilots ( PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, GRAPH
     updateSpeedPilot ( myPilot );
 
     speed = getSpeedPilot ( myPilot );
-    myCar.X += speed.X;
-    myCar.Y += speed.Y;
-    myCar = getPositionPilot ( myPilot );
-    fprintf ( stderr, ">UPDATE PILOT : Position : (%d, %d); Speed : (%d, %d); Acc : (%d, %d)\n", myCar.X, myCar.Y, speed.X, speed.Y, nextAction.X, nextAction.Y );
+    myPosition.X += speed.X;
+    myPosition.Y += speed.Y;
+    myPosition = getPositionPilot ( myPilot );
     /* 3e etape : on transmet l'action au GDP */
     sprintf ( action, "%hd %hd", nextAction.X, nextAction.Y );
-    fprintf ( stderr, "\n>>>NEXT ACTION après la mise en STRING : %s\n\n", action );
     deliverAction ( action );
 }

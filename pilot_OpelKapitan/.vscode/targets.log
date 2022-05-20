@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 20 15:20:02 2022
+# Make data base, printed on Fri May 20 16:03:50 2022
 
 # Variables
 
@@ -197,7 +199,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-023babb9-1ab5-46a4-9766-8c34aae3d083.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-78d65412-0258-4572-919a-7af0a94a7a39.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -276,9 +278,6 @@ LANG = C
 VSCODE_PID = 2609
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=28/209=13%
- 
-make: *** No rule to make target 'all'.  Stop.
-
 
 # Pattern-specific Variable Values
 
@@ -287,6 +286,7 @@ make: *** No rule to make target 'all'.  Stop.
 # Directories
 
 # . (device 2053, inode 4325663): 9 files, no impossibilities.
+ 
 
 # 9 files, no impossibilities in 1 directories.
 
@@ -559,7 +559,6 @@ install: ../drivers/OpelKapitan
 
 # No 'vpath' search paths.
 
- 
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 50 / storage = 741 B / avg = 14 B
@@ -568,6 +567,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 86 / hit rate = 41%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/86=1%
-# Finished Make data base on Fri May 20 15:20:02 2022
+# Finished Make data base on Fri May 20 16:03:50 2022
 
  

@@ -72,3 +72,19 @@ void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph )
     }
     trash = trash;
 }
+
+void updatePositionPilotFromGDC ( POSITION* myPilot, POSITION* secondPilot, POSITION* thirdPilot )
+{
+    char buf[MAX_LINE_LENGTH];
+    char* trash;
+
+    trash = fgets ( buf, MAX_LINE_LENGTH, stdin );
+    fprintf ( stderr, "\n\nLECTURE TEST BUFFER >>>>>>>>>>>>< : %s\n\n", buf );
+    fflush ( stdin );
+    sscanf ( buf, "%hd %hd %hd %hd %hd %hd",
+                    &(myPilot->X),          &(myPilot->Y),
+                    &(secondPilot->X),      &(secondPilot->Y),
+                    &(thirdPilot->X),       &(thirdPilot->Y)
+            );
+    trash = trash;
+}

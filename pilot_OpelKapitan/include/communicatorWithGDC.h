@@ -28,7 +28,6 @@
 #include <assert.h>
 #include "util.h"
 #include "graphMadj.h"
-#include "pilotManagement.h"
 
 /**
  * @brief Enumeration of the values of a map 
@@ -48,5 +47,14 @@ typedef enum {
  * @return 
  */
 void readDataFromGDC ( short* gasLvl, GRAPH* graph, GRAPH* referenceGraph );
+
+/**
+ * @brief Update the position of the three pilot
+ * 
+ * @param myPilot : the position of our our pilot
+ * @param secondPilot : the position of the second pilot
+ * @param thirdPilot : the position of the third pilot
+ */
+void updatePositionPilotFromGDC ( POSITION* myPilot, POSITION* secondPilot, POSITION* thirdPilot );
 
 #endif /* __COMMUNICATOR_W_GDC__HH__ */
