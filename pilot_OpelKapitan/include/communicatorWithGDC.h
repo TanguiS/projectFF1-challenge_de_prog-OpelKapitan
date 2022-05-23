@@ -27,7 +27,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "util.h"
-#include "graphMadj.h"
+#include "graph.h"
 
 /**
  * @brief Enumeration of the values of a map 

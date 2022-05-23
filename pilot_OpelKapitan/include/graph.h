@@ -42,7 +42,7 @@ typedef enum {
     carGraph            = 0,                                /**< the value of a car in the graph */
     roadGraph           = 1,                                /**< the value of the road in the graph */
     finishLineGraph     = 1,                                /**< the value of the finish line in the graph */
-    aroundCarGraph      = 2,                                /**< the value around an opposite car in the graph */
+    aroundCarGraph      = 1,                                /**< the value around an opposite car in the graph */
     sandGraph           = 3                                 /**< the value of the sand in the graph */
 } graphValues;
 

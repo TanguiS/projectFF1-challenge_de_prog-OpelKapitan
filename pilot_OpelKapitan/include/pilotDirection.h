@@ -29,7 +29,7 @@
 #include "pilotManagement.h"
 #include "util.h"
 #include "pathList.h"
-#include "graphMadj.h"
+#include "graph.h"
 
 #define NUMBER_DIRECTION 8  /**< the number of basic directions */
 

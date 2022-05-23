@@ -308,7 +308,7 @@ void updatePilots (
     static int round = 0;
     POSITION myPosition, secondPosition, thirdPosition;
     POSITION trash;
-    POSITION previousPosition;
+    /*POSITION previousPosition;*/
     ACCELERATION nextAction;
     SPEED speed;
     static POSITION previousSecound[5] = {
@@ -334,11 +334,12 @@ void updatePilots (
     if ( isErrorFromPilot ( myPilot, myPosition ) ) {
         resetSpeed ( myPilot );
     }
+    /*
     if ( round == 1 ) {
         previousPosition = myPosition;
     } else {
         previousPosition = getPositionPilot ( myPilot );
-    }
+    }*/
     updatePositionPilot ( 
                             myPosition, secondPosition, thirdPosition, 
                             myPilot, secondPilot, thirdPilot 
@@ -349,8 +350,8 @@ void updatePilots (
                 );
 
     /* 1ere etape : choisir une action */
-    path = pathToFollow ( dijkstra, graph, myPosition, previousPosition );
-    fprintf ( stderr, "Parent de la position courante : %d %d\n\n", previousPosition.X, previousPosition.Y );
+    path = pathToFollow ( dijkstra, graph, myPosition/*, previousPosition*/ );
+    /*fprintf ( stderr, "Parent de la position courante : %d %d\n\n", previousPosition.X, previousPosition.Y );*/
 
     if ( areEqualsPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
