@@ -426,24 +426,25 @@ boolean isApproachable ( GRAPH* graph, POSITION pilotPosition, POSITION nextPosi
     transition.X = pilotPosition.X;
     transition.Y = pilotPosition.Y;
 
+    fprintf(stderr, "hello1\n");
     while ( transition.X != nextPosition.X && transition.Y != nextPosition.Y ) {
+        fprintf ( stderr, "le boucle while\n");
 
-        if ( transition.X - nextPosition.X < 0 ) {
+        if ( nextPosition.X - transition.X < 0 ) {
             transition.X += -1;
-        } else if ( transition.X - nextPosition.X > 0 ) {
+        } else if ( nextPosition.X - transition.X > 0 ) {
             transition.X += 1;
         } else {
             transition.X += 0;
         }
 
-        if ( transition.Y - nextPosition.Y < 0 ) {
+        if ( nextPosition.Y - transition.Y < 0 ) {
             transition.Y += -1;
-        } else if ( transition.X - nextPosition.X > 0 ) {
+        } else if ( nextPosition.X - transition.Y > 0 ) {
             transition.Y += 1;
         } else {
             transition.Y += 0;
         }
-
         if ( isWall ( graph, transition ) || isSand ( graph, transition )) {
             return false;
         }
