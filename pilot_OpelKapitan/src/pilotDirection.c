@@ -367,6 +367,8 @@ static PATH_LIST nextActionBoostedForNextPosition (
     return path;
 }
 
+
+
 /**
  * @brief Update the path to follow if the path is straight
  * 
@@ -414,6 +416,97 @@ static boolean updatePathListIfstraightLine (
     }
     return areAligned ( currentPosition, nextPosition, previousGoalPosition );
 }
+
+
+
+
+boolean isApproachable ( GRAPH* graph, POSITION pilotPosition, POSITION nextPosition ) 
+{
+    POSITION transition;
+    transition.X = pilotPosition.X;
+    transition.Y = pilotPosition.Y;
+
+    while ( transition.X != nextPosition.X && transition.Y != nextPosition.Y ) {
+
+        if ( transition.X - nextPosition.X < 0 ) {
+            transition.X += -1;
+        } else if ( transition.X - nextPosition.X > 0 ) {
+            transition.X += 1;
+        } else {
+            transition.X += 0;
+        }
+
+        if ( transition.Y - nextPosition.Y < 0 ) {
+            transition.Y += -1;
+        } else if ( transition.X - nextPosition.X > 0 ) {
+            transition.Y += 1;
+        } else {
+            transition.Y += 0;
+        }
+
+        if ( isWall ( graph, transition ) || isSand ( graph, transition )) {
+            return false;
+        }
+    }
+    return true; 
+}
+
+PATH_LIST BetterBoostForNextPosition ( 
+                                        GRAPH* graph,   
+                                        PATH_LIST path,
+                                        POSITION pilotPosition,
+                                        SPEED pilotSpeed,
+                                        ACCELERATION* nextAction
+                                        ) 
+{
+    path_list_element nextPosition;
+    path_list_element previousHead;
+
+    updatePathListIfstraightLine ( &path, pilotPosition, graph);
+    previousHead = getCurrentPathListElement ( path);
+    nextPosition = getNextCurrentPathList ( path );
+    nextAction->X = 0;
+    nextAction->Y = 0;
+
+    while ( isApproachable(graph, pilotPosition, nextPosition ) ) {
+        path = moveCurrentPathList ( path );
+        nextPosition = getNextCurrentPathList ( path);
+    }
+    nextPosition = getCurrentPathListElement( path );
+    if ( (nextPosition.X - pilotPosition.X) * (nextPosition.X - pilotPosition.X) > (nextPosition.Y - pilotPosition.Y) * (nextPosition.Y - pilotPosition.Y)){
+        if ( (nextPosition.X - pilotPosition.X) > 0){
+            nextAction->X = 2;
+        } else {
+            nextAction->X = -2;
+        }
+        if ( (nextPosition.Y - pilotPosition.Y) < 0) {
+            nextAction->Y =-1;
+        } else if ( (nextPosition.Y - pilotPosition.Y) > 0 ) {
+            nextAction->Y = 1;
+        } else {
+            nextAction->Y = 0; 
+        }
+    } else if ( (nextPosition.X - pilotPosition.X) * (nextPosition.X - pilotPosition.X) < (nextPosition.Y - pilotPosition.Y) * (nextPosition.Y - pilotPosition.Y)) {
+        if ( (nextPosition.Y - pilotPosition.Y) > 0){
+            nextAction->Y = 2;
+        } else {
+            nextAction->Y = -2;
+        }
+        if ( (nextPosition.X - pilotPosition.X) < 0) {
+            nextAction->X =-1;
+        } else if ( (nextPosition.X - pilotPosition.X) > 0 ) {
+            nextAction->X = 1;
+        } else {
+            nextAction->X = 0; 
+        }
+    }
+    while ( areEqualsPosition ( nextPosition, previousHead ) ) {
+        path = removeHeadElementPathList ( path, &previousHead );
+    }
+    return path;
+
+}
+
 
 /**
  * @brief vector between two positions
@@ -664,7 +757,7 @@ PATH_LIST choiceNextAction (
     }
     if ( speedIsNull ( pilotSpeed ) 
             && updatePathListIfstraightLine ( &path, pilotPosition, graph ) ) {
-        path = redirectTab[2](path, pilotPosition, pilotSpeed, actionTab );
+        path = /*redirectTab[2]*/BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
         return path;

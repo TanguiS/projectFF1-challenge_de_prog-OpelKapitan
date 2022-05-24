@@ -27,13 +27,11 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
+      "externalConsole": false,
       "cwd": "/home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan",
-      "environment": [],
       "program": "/home/kylian/Documents/chal/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan/build/Debug/outDebug",
-      "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb",
-      "console": "integratedTerminal",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
