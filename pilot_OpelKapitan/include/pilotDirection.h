@@ -30,6 +30,7 @@
 #include "util.h"
 #include "pathList.h"
 #include "graph.h"
+#include "follow_line.h"
 
 #define NUMBER_DIRECTION 8  /**< the number of basic directions */
 

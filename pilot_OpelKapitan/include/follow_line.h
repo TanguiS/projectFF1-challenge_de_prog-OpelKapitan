@@ -1,28 +1,23 @@
+#include "util.h"
+
 #ifndef FOLLOW_LINE_H
 #define FOLLOW_LINE_H
 
-/**
- * Position on a map (integer coordinates)
- */
-typedef struct {
-  int x;
-  int y;
-} Pos2Dint;
 
 /**
  * Position with floating point coordinates
  */
 typedef struct {
-  float x;
-  float y;
+  float X;
+  float Y;
 } Pos2Dfloat;
 
 /**
  * Dicrete line traversal information
  */
 typedef struct {
-  Pos2Dint start;
-  Pos2Dint end;
+  POSITION start;
+  POSITION end;
   Pos2Dfloat currentPosition;
   Pos2Dfloat delta; /*< Shift vector */
   int len;          /*< Length along the main axis */
@@ -43,6 +38,6 @@ void initLine(int x1, int y1, int x2, int y2, InfoLine * infoLine);
  * @return 1 if point is a new point in the line, otherwise -1 (info is
  *         already at the end point)
  */
-int nextPoint(InfoLine * infoLine, Pos2Dint * point, int direction);
+int nextPoint(InfoLine * infoLine, POSITION * point, int direction);
 
 #endif
