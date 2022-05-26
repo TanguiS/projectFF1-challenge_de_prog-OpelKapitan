@@ -44,6 +44,7 @@ typedef enum {
  * 
  * @param fuelLevel : the gas level sent by the GDC
  * @param graph : the Graph object initialized
+ * @param refereceGraph : the Graph object initialized
  * @return 
  */
 void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph );
