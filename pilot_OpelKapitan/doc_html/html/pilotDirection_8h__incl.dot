@@ -36,7 +36,7 @@ digraph "include/pilotDirection.h"
   Node11 [label="limits.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node10 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node12 [label="matrix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix_8h.html",tooltip="This file contains functions to manage a matrix."];
+  Node12 [label="matrix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix_8h.html",tooltip="This file contains prototypes and declarations to manage a matrix."];
   Node12 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node12 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node12 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -62,7 +62,7 @@ digraph "include/pilotDirection.h"
   Node15 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="dijkstraMatrix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dijkstraMatrix_8h_source.html",tooltip=" "];
+  Node16 [label="dijkstraMatrix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dijkstraMatrix_8h.html",tooltip="This file contains prototypes and declarations to manage a Dijkstra's matrix."];
   Node16 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

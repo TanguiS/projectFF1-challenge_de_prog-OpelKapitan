@@ -17,7 +17,7 @@ digraph "src/graph.c"
   Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="math.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="matrix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix_8h.html",tooltip="This file contains functions to manage a matrix."];
+  Node8 [label="matrix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$matrix_8h.html",tooltip="This file contains prototypes and declarations to manage a matrix."];
   Node8 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="util.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$util_8h.html",tooltip="This file is for util type declaration."];

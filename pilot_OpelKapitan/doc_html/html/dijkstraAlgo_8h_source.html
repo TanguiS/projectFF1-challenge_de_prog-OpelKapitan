@@ -70,30 +70,31 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="dijkstraAlgo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef __DIJKSTRA_ALGO_HH__</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define __DIJKSTRA_ALGO_HH__</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;limits.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;graph.h&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pilotManagement_8h.html">pilotManagement.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;dijkstraMatrix.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pathList_8h.html">pathList.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;list.h&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="struct__pathList.html">PATH_LIST</a> <a class="code" href="dijkstraAlgo_8h.html#ab94be4f3947aa90f7ffccd783ce21961">pathToFollow</a>(<a class="code" href="struct__dijkstraMatrix.html">DIJKSTRA</a>* dijkstra, <a class="code" href="struct__mAdj.html">GRAPH</a>* graph, <a class="code" href="struct__position.html">POSITION</a> firstNode );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DIJKSTRA_ALGO_HH__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef __DIJKSTRA_ALGO_HH__</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define __DIJKSTRA_ALGO_HH__</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;limits.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;graph.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pilotManagement_8h.html">pilotManagement.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dijkstraMatrix_8h.html">dijkstraMatrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pathList_8h.html">pathList.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;list.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="struct__pathList.html">PATH_LIST</a> <a class="code" href="dijkstraAlgo_8h.html#ab94be4f3947aa90f7ffccd783ce21961">pathToFollow</a>(<a class="code" href="struct__dijkstraMatrix.html">DIJKSTRA</a>* dijkstra, <a class="code" href="struct__mAdj.html">GRAPH</a>* graph, <a class="code" href="struct__position.html">POSITION</a> firstNode );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DIJKSTRA_ALGO_HH__ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astruct__pathList_html"><div class="ttname"><a href="struct__pathList.html">_pathList</a></div><div class="ttdoc">A structure to represent a pathList object.</div><div class="ttdef"><b>Definition:</b> pathList.h:50</div></div>
-<div class="ttc" id="astruct__dijkstraMatrix_html"><div class="ttname"><a href="struct__dijkstraMatrix.html">_dijkstraMatrix</a></div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.h:48</div></div>
+<div class="ttc" id="astruct__dijkstraMatrix_html"><div class="ttname"><a href="struct__dijkstraMatrix.html">_dijkstraMatrix</a></div><div class="ttdoc">The stucture to represent the dijkstraMatrix object.</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.h:55</div></div>
 <div class="ttc" id="adijkstraAlgo_8h_html_ab94be4f3947aa90f7ffccd783ce21961"><div class="ttname"><a href="dijkstraAlgo_8h.html#ab94be4f3947aa90f7ffccd783ce21961">pathToFollow</a></div><div class="ttdeci">PATH_LIST pathToFollow(DIJKSTRA *dijkstra, GRAPH *graph, POSITION firstNode)</div><div class="ttdoc">Give the shorter path to go on the nearest finish line.</div><div class="ttdef"><b>Definition:</b> dijkstraAlgo.c:269</div></div>
 <div class="ttc" id="apilotManagement_8h_html"><div class="ttname"><a href="pilotManagement_8h.html">pilotManagement.h</a></div><div class="ttdoc">This file contains the functions used to manage a pilot.</div></div>
 <div class="ttc" id="apathList_8h_html"><div class="ttname"><a href="pathList_8h.html">pathList.h</a></div><div class="ttdoc">This file contains all the prototype of the pathList algo.</div></div>
 <div class="ttc" id="astruct__position_html"><div class="ttname"><a href="struct__position.html">_position</a></div><div class="ttdoc">A structure to represent the position.</div><div class="ttdef"><b>Definition:</b> util.h:41</div></div>
 <div class="ttc" id="astruct__mAdj_html"><div class="ttname"><a href="struct__mAdj.html">_mAdj</a></div><div class="ttdoc">Declaration of a structure for a graph object.</div><div class="ttdef"><b>Definition:</b> graph.h:52</div></div>
+<div class="ttc" id="adijkstraMatrix_8h_html"><div class="ttname"><a href="dijkstraMatrix_8h.html">dijkstraMatrix.h</a></div><div class="ttdoc">This file contains prototypes and declarations to manage a Dijkstra's matrix.</div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div><div class="ttdoc">This file is for util type declaration.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

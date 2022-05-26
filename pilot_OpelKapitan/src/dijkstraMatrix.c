@@ -1,3 +1,26 @@
+/**
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ *
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written permission of the authors.
+ */
+
+/**
+ * @file matrix.h
+ * @brief This file contains prototypes and declarations to manage a matrix.
+ */
+
+/**
+ * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
+ * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
+ * @version 1.0.0
+ * @date 06 mai 2022
+ */
+
+
 #include "dijkstraMatrix.h"
 
 
@@ -71,6 +94,15 @@ DIJKSTRA createDijkstraMatrix(short width, short heigth) {
     return dijkstra;
 }
 
+void destroyDijkstraMatrix(DIJKSTRA dijkstra) {
+    int i;
+
+    for (i=0; i<getWidthDijkstra(&dijkstra); i++) {
+        free(dijkstra.matrix[i]);
+    }
+    free(dijkstra.matrix);
+}
+
 #ifndef DEBUG
 void displayDijkstraMatrix(DIJKSTRA* dijkstra, short x, short y)
 {
@@ -121,12 +153,3 @@ void displayDijkstraMatrixPath(DIJKSTRA* dijkstra, int count, POSITION* path)
     }
 }
 #endif
-
-void destroyDijkstraMatrix(DIJKSTRA dijkstra) {
-    int i;
-
-    for (i=0; i<getWidthDijkstra(&dijkstra); i++) {
-        free(dijkstra.matrix[i]);
-    }
-    free(dijkstra.matrix);
-}
