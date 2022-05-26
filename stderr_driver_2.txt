@@ -1,141 +1,869 @@
 === ROUND 1
-                 Speed venant de updateSpeed : -2 -2
-===> temps exec = 0.019239
+                 Speed venant de updateSpeed : 2 -2
+===> temps exec = 0.007923
 
 
->>>> CONCLUSION : temps max d'un tour : 0.019239 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007923 <<<<<<<
 
 === ROUND 2
-                 Speed venant de updateSpeed : -1 -3
-===> temps exec = 0.019309
+                 Speed venant de updateSpeed : 0 -3
+===> temps exec = 0.003795
 
 
->>>> CONCLUSION : temps max d'un tour : 0.019309 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007923 <<<<<<<
 
 === ROUND 3
-                 Speed venant de updateSpeed : 0 -2
-===> temps exec = 0.018899
+                 Speed venant de updateSpeed : 0 -3
+===> temps exec = 0.004844
 
 
->>>> CONCLUSION : temps max d'un tour : 0.019309 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007923 <<<<<<<
 
 === ROUND 4
-                 Speed venant de updateSpeed : 1 -2
-===> temps exec = 0.018819
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.004985
 
 
->>>> CONCLUSION : temps max d'un tour : 0.019309 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007923 <<<<<<<
 
 === ROUND 5
-                 Speed venant de updateSpeed : 0 -3
-===> temps exec = 0.019949
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.007955
 
 
->>>> CONCLUSION : temps max d'un tour : 0.019949 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 6
-                 Speed venant de updateSpeed : 0 -2
-===> temps exec = 0.021426
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.004098
 
 
->>>> CONCLUSION : temps max d'un tour : 0.021426 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 7
                  Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.022022
+===> temps exec = 0.007834
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 8
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.020161
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.007697
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 9
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.020274
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.003847
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 10
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.020461
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.006813
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 11
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.019750
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004108
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 12
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.019505
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004095
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 13
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.019287
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004661
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 14
-                 Speed venant de updateSpeed : -2 0
-===> temps exec = 0.021451
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004825
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 15
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.020874
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004944
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022022 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 16
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.022122
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004869
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022122 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 17
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.020182
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005621
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022122 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 18
-                 Speed venant de updateSpeed : -2 0
-===> temps exec = 0.022304
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004118
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022304 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 19
-                 Speed venant de updateSpeed : -3 0
-===> temps exec = 0.022525
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004088
 
 
->>>> CONCLUSION : temps max d'un tour : 0.022525 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 20
-                 Speed venant de updateSpeed : -3 0
-===> temps exec = 0.025739
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.004140
 
 
->>>> CONCLUSION : temps max d'un tour : 0.025739 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
 
 === ROUND 21
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.005569
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 22
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.004982
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 23
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005060
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 24
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004339
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 25
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004359
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 26
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004333
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 27
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.004224
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 28
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004634
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 29
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.005101
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 30
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.006329
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 31
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004552
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 32
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004189
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 33
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004495
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 34
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004724
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 35
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004672
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 36
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004720
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 37
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.004835
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 38
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.004971
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 39
+                 Speed venant de updateSpeed : 4 0
+===> temps exec = 0.004699
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.007955 <<<<<<<
+
+=== ROUND 40
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.009021
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.009021 <<<<<<<
+
+=== ROUND 41
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.004634
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.009021 <<<<<<<
+
+=== ROUND 42
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.004663
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.009021 <<<<<<<
+
+=== ROUND 43
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.010055
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 44
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004680
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 45
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004582
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 46
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.005010
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 47
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005518
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 48
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.005485
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 49
+                 Speed venant de updateSpeed : 4 0
+===> temps exec = 0.009489
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 50
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.007017
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 51
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.004492
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 52
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.009645
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 53
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004565
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 54
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.004466
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 55
+                 Speed venant de updateSpeed : 0 2
+===> temps exec = 0.004527
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 56
+                 Speed venant de updateSpeed : 0 2
+===> temps exec = 0.005080
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 57
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005849
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 58
+                 Speed venant de updateSpeed : 0 2
+===> temps exec = 0.005731
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 59
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005805
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010055 <<<<<<<
+
+=== ROUND 60
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.010611
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 61
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004860
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 62
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004666
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 63
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.005445
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 64
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.006243
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 65
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.006526
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 66
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.005522
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 67
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005044
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010611 <<<<<<<
+
+=== ROUND 68
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.010816
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 69
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005029
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 70
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004731
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 71
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004802
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 72
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005333
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 73
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006043
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 74
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.010269
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 75
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005093
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 76
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004790
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 77
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005473
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 78
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007960
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 79
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004969
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 80
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004858
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 81
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.010678
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 82
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.004855
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 83
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004861
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 84
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004808
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 85
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004846
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 86
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005400
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 87
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005496
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 88
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.004904
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 89
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005520
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 90
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.006224
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 91
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005427
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 92
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005415
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010816 <<<<<<<
+
+=== ROUND 93
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.010955
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 94
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005077
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 95
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005614
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 96
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006475
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 97
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.010819
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 98
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005078
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 99
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005099
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 100
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005271
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 101
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005942
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 102
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005390
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 103
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005117
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 104
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005403
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 105
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006306
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 106
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005268
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 107
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005052
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 108
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.007153
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 109
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.005906
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 110
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.006027
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 111
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005169
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 112
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005045
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 113
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005237
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 114
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005224
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 115
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.010339
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 116
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005178
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 117
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.004749
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 118
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.005310
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 119
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.006021
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 120
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.004950
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 121
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005899
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 122
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.007099
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 123
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005191
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 124
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.010896
+
+
+>>>> CONCLUSION : temps max d'un tour : 0.010955 <<<<<<<
+
+=== ROUND 125
