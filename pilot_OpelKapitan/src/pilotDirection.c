@@ -411,6 +411,33 @@ static boolean speedIsNull ( SPEED pilotSpeed )
     return ( pilotSpeed.X == 0 && pilotSpeed.Y == 0 );
 }
 
+/**
+ * @brief Correct the action in case off the trajectory is impossible
+ * 
+ * @param graph the graph of the race
+ * @param pilotPosition the current pilot position
+ * @param nextPosition the next position in the path to follow
+ * @param pilotSpeed the current pilot speed
+ * @param nextAction the next action
+ */
+static void trajectoryCorrection ( 
+                                    GRAPH* graph, POSITION pilotPosition, 
+                                    POSITION nextPosition, SPEED pilotSpeed, 
+                                    ACCELERATION* nextAction 
+                                  )
+{
+    POSITION goalPosition;
+    goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
+    goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
+    if ( isWall ( graph, goalPosition ) ) {
+        if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
+            slowDownDecrementY ( pilotSpeed, nextAction);
+        } else {
+            slowDownDecrementX ( pilotSpeed, nextAction);
+        }
+    }
+}
+
 boolean areAligned ( POSITION A, POSITION B, POSITION C ) 
 {
     return  (C.Y - A.Y) * (B.X - A.X) - (B.Y - A.Y) * (C.X - A.X ) == 0; 
@@ -465,28 +492,20 @@ PATH_LIST choiceNextAction (
     static ACCELERATION* actionTab = NULL;
     static short countAction = 1;
     boolean flag = false;
-    POSITION goalPosition;
-    POSITION nextPosition;
     static actionDeterminator* redirectTab[3] = 
             {
                 nextActionForNextPosition,
                 groupNextAction,
                 nextActionBoostedForNextPosition
             };
-    nextPosition = examineHeadPathList ( path );
-    fprintf ( stderr, " la ligne à suivre %d", lineToFollow(pilotPosition, nextPosition));
-
     if ( actionTab == NULL ) {
         actionTab = ( ACCELERATION* ) malloc ( 255 * sizeof ( ACCELERATION ) );
     }
-    if ( speedIsNull ( pilotSpeed ) 
-            /*&& updatePathListIfstraightLine ( &path, pilotPosition, graph )*/ ) {
+    if ( speedIsNull ( pilotSpeed ) ) {
         if ( round == 1 ) {
-            path = /*redirectTab[2]*/BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
-
+            path = BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
         } else {
             path = redirectTab[2]( path, pilotPosition, pilotSpeed, actionTab );
-
         }
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
@@ -502,30 +521,14 @@ PATH_LIST choiceNextAction (
         nextAction->X = actionTab[countAction].X;   
         nextAction->Y = actionTab[countAction].Y;
         if ( round == 2 ) {
-        goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
-        goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
-        if ( isWall ( graph, goalPosition ) ) {
-            if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
-                slowDownDecrementY ( pilotSpeed, nextAction);
-            } else {
-                slowDownDecrementX ( pilotSpeed, nextAction);
-            }
-        }
-    } 
+            trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
+        } 
         return path;
     }
     nextAction->X = actionTab->X;
     nextAction->Y = actionTab->Y;
     if ( round == 2 ) {
-        goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
-        goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
-        if ( isWall ( graph, goalPosition ) ) {
-            if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
-                slowDownDecrementY ( pilotSpeed, nextAction);
-            } else {
-                slowDownDecrementX ( pilotSpeed, nextAction);
-            }
-        }
+        trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
     }
     return path;
 }
