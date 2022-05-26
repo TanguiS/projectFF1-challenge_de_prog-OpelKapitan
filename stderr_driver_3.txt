@@ -1,2141 +1,1128 @@
 === ROUND 1
-> NEXT_ACTION_BOOST, nextPosition : (8, 42)
-     action determined : 0 -2
-         positionToGo : 0 -2
-                 Speed venant de updateSpeed : 0 -2
-===> temps exec = 0.000503
+                 Speed venant de updateSpeed : -2 -2
+===> temps exec = 0.008578
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000503 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 2
-                 Speed venant de updateSpeed : 0 -3
-===> temps exec = 0.000582
+                 Speed venant de updateSpeed : -1 -3
+===> temps exec = 0.008354
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000582 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 3
                  Speed venant de updateSpeed : 0 -4
-===> temps exec = 0.000584
+===> temps exec = 0.005908
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000584 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 4
-                 Speed venant de updateSpeed : 0 -5
-===> temps exec = 0.000603
+                 Speed venant de updateSpeed : 0 -3
+===> temps exec = 0.008332
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000603 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 5
-                 Speed venant de updateSpeed : 0 -5
-===> temps exec = 0.000636
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.008565
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000636 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 6
-                 Speed venant de updateSpeed : 0 -4
-===> temps exec = 0.000605
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.006402
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000636 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 7
-                 Speed venant de updateSpeed : 0 -3
-===> temps exec = 0.000651
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.005931
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000651 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 8
-                 Speed venant de updateSpeed : 0 -2
-===> temps exec = 0.000633
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.004373
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000651 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 9
                  Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000581
+===> temps exec = 0.007605
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000651 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 10
-> NEXT_ACTION_BASIC, nextPosition : (8, 14)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 15
-                 pilot position : 0 -1
                  Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000612
+===> temps exec = 0.006588
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000651 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 11
-> NEXT_ACTION_BASIC, nextPosition : (9, 13)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 8 14
-                 pilot position : 0 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000603
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.006244
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000651 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 12
-> NEXT_ACTION_BASIC, nextPosition : (10, 12)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 9 13
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000656
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.007369
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000656 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 13
-> NEXT_ACTION_BASIC, nextPosition : (11, 11)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 10 12
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000718
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.006159
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 14
-> NEXT_ACTION_BASIC, nextPosition : (12, 10)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 11 11
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000592
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.006505
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 15
-> NEXT_ACTION_BASIC, nextPosition : (13, 9)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 12 10
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000605
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.005349
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 16
-> NEXT_ACTION_BASIC, nextPosition : (14, 8)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 13 9
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000611
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.007735
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.008578 <<<<<<<
 
 === ROUND 17
-> NEXT_ACTION_BASIC, nextPosition : (15, 7)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 14 8
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000642
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.009154
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009154 <<<<<<<
 
 === ROUND 18
-> NEXT_ACTION_BASIC, nextPosition : (16, 6)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 15 7
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000647
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.009381
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 19
-> NEXT_ACTION_BASIC, nextPosition : (17, 5)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 16 6
-                 pilot position : 1 -1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000703
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.006709
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 20
-> NEXT_ACTION_BASIC, nextPosition : (18, 4)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 17 5
-                 pilot position : 1 -1
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000657
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.008330
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 21
-                 Speed venant de updateSpeed : 2 0
-===> temps exec = 0.000655
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005407
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 22
-                 Speed venant de updateSpeed : 3 0
-===> temps exec = 0.000672
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.009223
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 23
-                 Speed venant de updateSpeed : 4 0
-===> temps exec = 0.000698
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.008667
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 24
-                 Speed venant de updateSpeed : 3 0
-===> temps exec = 0.000691
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.004759
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 25
-                 Speed venant de updateSpeed : 2 0
-===> temps exec = 0.000695
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.009025
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000718 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 26
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000761
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.006982
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000761 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 27
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000703
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006953
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000761 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 28
-> NEXT_ACTION_BASIC, nextPosition : (35, 4)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 34 4
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000726
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006964
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000761 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 29
-> NEXT_ACTION_BASIC, nextPosition : (36, 5)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 35 4
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000855
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.008710
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 30
-                 Speed venant de updateSpeed : 0 2
-===> temps exec = 0.000772
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.004892
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 31
-                 Speed venant de updateSpeed : 0 2
-===> temps exec = 0.000740
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005912
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 32
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000760
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007008
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 33
-                 Speed venant de updateSpeed : 0 2
-===> temps exec = 0.000728
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006335
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 34
-> NEXT_ACTION_BASIC, nextPosition : (36, 13)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 36 12
-                 pilot position : 0 2
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000778
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.006684
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.009381 <<<<<<<
 
 === ROUND 35
-> NEXT_ACTION_BASIC, nextPosition : (35, 14)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 36 13
-                 pilot position : 0 1
                  Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000824
+===> temps exec = 0.010064
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 36
-                 Speed venant de updateSpeed : 0 2
-===> temps exec = 0.000772
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006710
 
 
->>>> CONCLUSION : temps max d'un tour : 0.000855 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 37
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.001070
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007400
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 38
-                 Speed venant de updateSpeed : 0 2
-===> temps exec = 0.000801
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.008901
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 39
-> NEXT_ACTION_BASIC, nextPosition : (35, 20)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 35 19
-                 pilot position : 0 2
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000889
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.005844
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 40
-> NEXT_ACTION_BASIC, nextPosition : (36, 21)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 35 20
-                 pilot position : 0 1
-     action determined : 0 -1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000782
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.005806
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 41
-> NEXT_ACTION_BASIC, nextPosition : (37, 22)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 36 21
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000782
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.010004
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 42
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000810
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.007213
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 43
-> NEXT_ACTION_BASIC, nextPosition : (37, 24)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 37 23
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000831
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.005303
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 44
-> NEXT_ACTION_BASIC, nextPosition : (36, 25)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 37 24
-                 pilot position : 0 1
-     action determined : 0 0
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000805
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.007138
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 45
-> NEXT_ACTION_BASIC, nextPosition : (35, 26)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 36 25
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000811
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.005912
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 46
-                 Speed venant de updateSpeed : 0 2
-===> temps exec = 0.000831
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.007336
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 47
-> NEXT_ACTION_BASIC, nextPosition : (35, 29)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 35 28
-                 pilot position : 0 2
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000797
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.008551
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 48
-> NEXT_ACTION_BASIC, nextPosition : (35, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 35 29
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000837
+                 Speed venant de updateSpeed : 0 -3
+===> temps exec = 0.007576
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 49
-> NEXT_ACTION_BASIC, nextPosition : (35, 31)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 35 30
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000873
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.007170
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 50
-> NEXT_ACTION_BASIC, nextPosition : (35, 32)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 35 31
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000841
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.008130
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010064 <<<<<<<
 
 === ROUND 51
-> NEXT_ACTION_BASIC, nextPosition : (36, 33)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 35 32
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000848
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.010208
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010208 <<<<<<<
 
 === ROUND 52
-> NEXT_ACTION_BASIC, nextPosition : (37, 34)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 36 33
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000884
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.005771
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010208 <<<<<<<
 
 === ROUND 53
-> NEXT_ACTION_BASIC, nextPosition : (38, 35)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 37 34
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000913
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.009241
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010208 <<<<<<<
 
 === ROUND 54
-> NEXT_ACTION_BASIC, nextPosition : (39, 35)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 38 35
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000797
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.008834
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010208 <<<<<<<
 
 === ROUND 55
-> NEXT_ACTION_BASIC, nextPosition : (40, 35)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 39 35
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000825
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.010368
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010368 <<<<<<<
 
 === ROUND 56
-> NEXT_ACTION_BASIC, nextPosition : (41, 36)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 40 35
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000869
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.007469
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010368 <<<<<<<
 
 === ROUND 57
-> NEXT_ACTION_BASIC, nextPosition : (42, 36)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 41 36
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000933
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.009081
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010368 <<<<<<<
 
 === ROUND 58
-> NEXT_ACTION_BASIC, nextPosition : (43, 35)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 42 36
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000841
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.008226
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010368 <<<<<<<
 
 === ROUND 59
-> NEXT_ACTION_BASIC, nextPosition : (43, 34)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 43 35
-                 pilot position : 1 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000901
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.009288
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.010368 <<<<<<<
 
 === ROUND 60
-> NEXT_ACTION_BASIC, nextPosition : (43, 33)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 34
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000901
+                 Speed venant de updateSpeed : -1 -1
+===> temps exec = 0.011091
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011091 <<<<<<<
 
 === ROUND 61
-> NEXT_ACTION_BASIC, nextPosition : (43, 32)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 33
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000902
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.008587
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011091 <<<<<<<
 
 === ROUND 62
-> NEXT_ACTION_BASIC, nextPosition : (43, 31)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 32
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000927
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.006352
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011091 <<<<<<<
 
 === ROUND 63
-> NEXT_ACTION_BASIC, nextPosition : (43, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 31
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.001056
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.011107
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011107 <<<<<<<
 
 === ROUND 64
-> NEXT_ACTION_BASIC, nextPosition : (43, 29)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 30
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000953
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.008267
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011107 <<<<<<<
 
 === ROUND 65
-> NEXT_ACTION_BASIC, nextPosition : (43, 28)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 29
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000987
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.006601
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011107 <<<<<<<
 
 === ROUND 66
-> NEXT_ACTION_BASIC, nextPosition : (44, 27)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 43 28
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000946
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.005637
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011107 <<<<<<<
 
 === ROUND 67
-> NEXT_ACTION_BASIC, nextPosition : (44, 26)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 44 27
-                 pilot position : 1 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.001001
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.011179
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 68
-> NEXT_ACTION_BASIC, nextPosition : (44, 25)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 44 26
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.001010
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007903
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 69
-> NEXT_ACTION_BASIC, nextPosition : (44, 24)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 44 25
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000961
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.009227
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 70
-> NEXT_ACTION_BASIC, nextPosition : (45, 23)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 44 24
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000933
+                 Speed venant de updateSpeed : 0 2
+===> temps exec = 0.008192
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 71
-> NEXT_ACTION_BASIC, nextPosition : (46, 22)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 45 23
-                 pilot position : 1 -1
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.001012
+                 Speed venant de updateSpeed : 0 3
+===> temps exec = 0.006171
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 72
-> NEXT_ACTION_BASIC, nextPosition : (47, 21)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 46 22
-                 pilot position : 1 -1
-                 Speed venant de updateSpeed : 1 -1
-===> temps exec = 0.000947
+                 Speed venant de updateSpeed : 0 4
+===> temps exec = 0.007498
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 73
-> NEXT_ACTION_BASIC, nextPosition : (48, 22)
-     action determined : 0 1
-         positionToGo : 0 2
-             pilot position : 47 21
-                 pilot position : 1 -1
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.001024
+                 Speed venant de updateSpeed : 0 3
+===> temps exec = 0.010075
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 74
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000969
+                 Speed venant de updateSpeed : 0 3
+===> temps exec = 0.006872
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 75
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.001021
+                 Speed venant de updateSpeed : 0 2
+===> temps exec = 0.010269
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 76
-> NEXT_ACTION_BASIC, nextPosition : (48, 24)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 48 23
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000993
+                 Speed venant de updateSpeed : 0 2
+===> temps exec = 0.008697
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 77
-> NEXT_ACTION_BASIC, nextPosition : (49, 25)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 48 24
-                 pilot position : 0 1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.001035
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.007165
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 78
-> NEXT_ACTION_BASIC, nextPosition : (50, 26)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 49 25
-                 pilot position : 1 1
-     action determined : 0 0
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000952
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.006759
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 79
-> NEXT_ACTION_BASIC, nextPosition : (51, 27)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 50 26
-                 pilot position : 1 1
                  Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000961
+===> temps exec = 0.008433
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 80
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000985
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.008920
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 81
-> NEXT_ACTION_BASIC, nextPosition : (53, 27)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 52 27
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000929
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.009000
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 82
-> NEXT_ACTION_BASIC, nextPosition : (54, 28)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 53 27
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000950
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005493
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.011179 <<<<<<<
 
 === ROUND 83
-> NEXT_ACTION_BASIC, nextPosition : (55, 28)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 54 28
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000952
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.012310
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 84
-> NEXT_ACTION_BASIC, nextPosition : (56, 29)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 55 28
-                 pilot position : 1 0
-     action determined : 0 -1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000959
+                 Speed venant de updateSpeed : 4 0
+===> temps exec = 0.010385
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 85
-> NEXT_ACTION_BASIC, nextPosition : (57, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 56 29
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000937
+                 Speed venant de updateSpeed : 4 0
+===> temps exec = 0.007268
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 86
-                 Speed venant de updateSpeed : 2 0
-===> temps exec = 0.001024
+                 Speed venant de updateSpeed : 4 0
+===> temps exec = 0.009040
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 87
-> NEXT_ACTION_BASIC, nextPosition : (60, 30)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 59 30
-                 pilot position : 2 0
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000942
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.005997
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 88
-> NEXT_ACTION_BASIC, nextPosition : (61, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 60 30
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 0
-===> temps exec = 0.001031
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.008106
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 89
-> NEXT_ACTION_BASIC, nextPosition : (62, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 61 30
-                 pilot position : 1 0
                  Speed venant de updateSpeed : 1 0
-===> temps exec = 0.001016
+===> temps exec = 0.005400
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001070 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 90
-> NEXT_ACTION_BASIC, nextPosition : (63, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 62 30
-                 pilot position : 1 0
                  Speed venant de updateSpeed : 1 0
-===> temps exec = 0.001074
+===> temps exec = 0.006308
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001074 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 91
-> NEXT_ACTION_BASIC, nextPosition : (64, 30)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 63 30
-                 pilot position : 1 0
                  Speed venant de updateSpeed : 1 0
-===> temps exec = 0.000981
+===> temps exec = 0.005688
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001074 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 92
-> NEXT_ACTION_BASIC, nextPosition : (65, 31)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 64 30
-                 pilot position : 1 0
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000960
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.005372
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001074 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 93
-> NEXT_ACTION_BASIC, nextPosition : (65, 32)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 65 31
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000934
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.005383
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001074 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 94
-> NEXT_ACTION_BASIC, nextPosition : (66, 33)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 65 32
-                 pilot position : 0 1
                  Speed venant de updateSpeed : 1 1
-===> temps exec = 0.001157
+===> temps exec = 0.007003
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 95
-> NEXT_ACTION_BASIC, nextPosition : (66, 34)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 66 33
-                 pilot position : 1 1
                  Speed venant de updateSpeed : 0 1
-===> temps exec = 0.001022
+===> temps exec = 0.006850
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 96
-> NEXT_ACTION_BASIC, nextPosition : (66, 35)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 66 34
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000958
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.005685
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 97
-> NEXT_ACTION_BASIC, nextPosition : (67, 36)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 66 35
-                 pilot position : 0 1
                  Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000940
+===> temps exec = 0.006721
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 98
-> NEXT_ACTION_BASIC, nextPosition : (67, 37)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 67 36
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000977
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.006821
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 99
-> NEXT_ACTION_BASIC, nextPosition : (68, 38)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 67 37
-                 pilot position : 0 1
                  Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000959
+===> temps exec = 0.007950
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 100
-> NEXT_ACTION_BASIC, nextPosition : (68, 39)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 68 38
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.001070
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.006861
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 101
-> NEXT_ACTION_BASIC, nextPosition : (68, 40)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 68 39
-                 pilot position : 0 1
                  Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000878
+===> temps exec = 0.011956
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 102
-> NEXT_ACTION_BASIC, nextPosition : (69, 41)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 68 40
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000955
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007489
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 103
-> NEXT_ACTION_BASIC, nextPosition : (69, 42)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 69 41
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000900
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007828
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 104
-> NEXT_ACTION_BASIC, nextPosition : (69, 43)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 69 42
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000943
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.006747
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 105
-> NEXT_ACTION_BASIC, nextPosition : (70, 44)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 69 43
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000894
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.006390
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 106
-> NEXT_ACTION_BASIC, nextPosition : (70, 45)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 70 44
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000906
+                 Speed venant de updateSpeed : -4 0
+===> temps exec = 0.007547
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 107
-> NEXT_ACTION_BASIC, nextPosition : (71, 46)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 70 45
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 1 1
-===> temps exec = 0.000833
+                 Speed venant de updateSpeed : -5 0
+===> temps exec = 0.006579
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 108
-> NEXT_ACTION_BASIC, nextPosition : (71, 47)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 71 46
-                 pilot position : 1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000847
+                 Speed venant de updateSpeed : -4 0
+===> temps exec = 0.007863
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 109
-> NEXT_ACTION_BASIC, nextPosition : (71, 48)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 71 47
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000847
+                 Speed venant de updateSpeed : -3 0
+===> temps exec = 0.008804
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 110
-> NEXT_ACTION_BASIC, nextPosition : (71, 49)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 71 48
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000866
+                 Speed venant de updateSpeed : -2 0
+===> temps exec = 0.008143
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 111
-> NEXT_ACTION_BASIC, nextPosition : (70, 50)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 71 49
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000899
+                 Speed venant de updateSpeed : -1 0
+===> temps exec = 0.004931
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 112
-> NEXT_ACTION_BASIC, nextPosition : (69, 50)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 70 50
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000838
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.006728
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 113
-> NEXT_ACTION_BASIC, nextPosition : (68, 50)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 69 50
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000809
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005172
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 114
-> NEXT_ACTION_BASIC, nextPosition : (67, 50)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 68 50
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000861
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005717
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 115
-> NEXT_ACTION_BASIC, nextPosition : (66, 50)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 67 50
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000811
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005731
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 116
-> NEXT_ACTION_BASIC, nextPosition : (65, 50)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 66 50
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000868
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.007960
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 117
-> NEXT_ACTION_BASIC, nextPosition : (64, 50)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 65 50
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000839
+                 Speed venant de updateSpeed : -1 1
+===> temps exec = 0.005826
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 118
-> NEXT_ACTION_BASIC, nextPosition : (63, 51)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 64 50
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000831
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.005786
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 119
-> NEXT_ACTION_BASIC, nextPosition : (62, 52)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 63 51
-                 pilot position : -1 1
                  Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000887
+===> temps exec = 0.006042
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 120
-> NEXT_ACTION_BASIC, nextPosition : (61, 53)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 62 52
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000745
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.006150
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 121
-> NEXT_ACTION_BASIC, nextPosition : (60, 54)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 61 53
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000778
+                 Speed venant de updateSpeed : 0 1
+===> temps exec = 0.006772
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 122
-> NEXT_ACTION_BASIC, nextPosition : (59, 55)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 60 54
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000879
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.004984
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 123
-> NEXT_ACTION_BASIC, nextPosition : (58, 56)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 59 55
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000785
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.005299
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 124
-> NEXT_ACTION_BASIC, nextPosition : (58, 57)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 58 56
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000867
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.007130
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 125
-> NEXT_ACTION_BASIC, nextPosition : (58, 58)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 58 57
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000828
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.005129
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 126
-> NEXT_ACTION_BASIC, nextPosition : (58, 59)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 58 58
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000818
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.009962
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 127
-> NEXT_ACTION_BASIC, nextPosition : (58, 60)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 58 59
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000768
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.006929
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 128
-> NEXT_ACTION_BASIC, nextPosition : (58, 61)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 58 60
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000844
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.005345
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 129
-> NEXT_ACTION_BASIC, nextPosition : (58, 62)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 58 61
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000846
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005576
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 130
-> NEXT_ACTION_BASIC, nextPosition : (58, 63)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 58 62
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : 0 1
-===> temps exec = 0.000816
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.005242
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 131
-> NEXT_ACTION_BASIC, nextPosition : (57, 64)
-     action determined : -1 0
-         positionToGo : -1 0
-             pilot position : 58 63
-                 pilot position : 0 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000785
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.005807
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 132
-> NEXT_ACTION_BASIC, nextPosition : (56, 65)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 57 64
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000806
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004931
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 133
-> NEXT_ACTION_BASIC, nextPosition : (55, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 56 65
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000769
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.005792
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 134
-> NEXT_ACTION_BASIC, nextPosition : (54, 66)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 55 66
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000739
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.005760
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 135
-> NEXT_ACTION_BASIC, nextPosition : (53, 67)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 54 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000816
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005816
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 136
-> NEXT_ACTION_BASIC, nextPosition : (52, 67)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 53 67
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000775
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.005217
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 137
-> NEXT_ACTION_BASIC, nextPosition : (51, 67)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 52 67
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000758
+                 Speed venant de updateSpeed : 3 0
+===> temps exec = 0.004564
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 138
-> NEXT_ACTION_BASIC, nextPosition : (50, 67)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 51 67
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000753
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.005173
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 139
-> NEXT_ACTION_BASIC, nextPosition : (49, 67)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 50 67
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000848
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.009182
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 140
-> NEXT_ACTION_BASIC, nextPosition : (48, 67)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 49 67
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000688
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.007281
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 141
-> NEXT_ACTION_BASIC, nextPosition : (47, 68)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 48 67
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000781
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004573
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 142
-> NEXT_ACTION_BASIC, nextPosition : (46, 68)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 47 68
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000748
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.005080
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 143
-> NEXT_ACTION_BASIC, nextPosition : (45, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 46 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000691
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004719
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 144
-> NEXT_ACTION_BASIC, nextPosition : (44, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 45 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000664
+                 Speed venant de updateSpeed : 1 1
+===> temps exec = 0.008935
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 145
-> NEXT_ACTION_BASIC, nextPosition : (43, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 44 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000677
+                 Speed venant de updateSpeed : 2 0
+===> temps exec = 0.004564
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 146
-> NEXT_ACTION_BASIC, nextPosition : (42, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 43 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000670
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.004875
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 147
-> NEXT_ACTION_BASIC, nextPosition : (41, 69)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 42 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000662
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.009006
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 148
-> NEXT_ACTION_BASIC, nextPosition : (40, 69)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 41 69
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000658
+                 Speed venant de updateSpeed : 1 0
+===> temps exec = 0.008892
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 149
-> NEXT_ACTION_BASIC, nextPosition : (39, 69)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 40 69
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000694
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.005311
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 150
-> NEXT_ACTION_BASIC, nextPosition : (38, 69)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 39 69
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000670
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.005307
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 151
-> NEXT_ACTION_BASIC, nextPosition : (37, 70)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 38 69
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 1
-===> temps exec = 0.000663
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.006121
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 152
-> NEXT_ACTION_BASIC, nextPosition : (36, 70)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 37 70
-                 pilot position : -1 1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000681
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.006103
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 153
-> NEXT_ACTION_BASIC, nextPosition : (35, 70)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 36 70
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000661
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.006065
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 154
-> NEXT_ACTION_BASIC, nextPosition : (34, 70)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 35 70
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000683
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004541
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 155
-> NEXT_ACTION_BASIC, nextPosition : (33, 70)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 34 70
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000658
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.004943
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 156
-> NEXT_ACTION_BASIC, nextPosition : (32, 70)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 33 70
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000678
+                 Speed venant de updateSpeed : 0 -3
+===> temps exec = 0.005615
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 157
-> NEXT_ACTION_BASIC, nextPosition : (31, 69)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 32 70
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000602
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.004046
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 158
-> NEXT_ACTION_BASIC, nextPosition : (30, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 31 69
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000628
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.004495
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 159
-> NEXT_ACTION_BASIC, nextPosition : (29, 68)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 30 68
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000715
+                 Speed venant de updateSpeed : 0 -2
+===> temps exec = 0.005793
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 160
-> NEXT_ACTION_BASIC, nextPosition : (28, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 29 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000608
+                 Speed venant de updateSpeed : 0 -1
+===> temps exec = 0.008131
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 161
-> NEXT_ACTION_BASIC, nextPosition : (27, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 28 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000602
+                 Speed venant de updateSpeed : 1 -1
+===> temps exec = 0.004012
 
 
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.012310 <<<<<<<
 
 === ROUND 162
-> NEXT_ACTION_BASIC, nextPosition : (26, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 27 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000614
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 163
-> NEXT_ACTION_BASIC, nextPosition : (25, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 26 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000597
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 164
-> NEXT_ACTION_BASIC, nextPosition : (24, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 25 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000700
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 165
-> NEXT_ACTION_BASIC, nextPosition : (23, 68)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 24 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000556
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 166
-> NEXT_ACTION_BASIC, nextPosition : (22, 67)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 23 68
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000575
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 167
-> NEXT_ACTION_BASIC, nextPosition : (21, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 22 67
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000673
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 168
-> NEXT_ACTION_BASIC, nextPosition : (20, 66)
-     action determined : 0 1
-         positionToGo : 0 1
-             pilot position : 21 66
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000568
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 169
-> NEXT_ACTION_BASIC, nextPosition : (19, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 20 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000594
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 170
-> NEXT_ACTION_BASIC, nextPosition : (18, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 19 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000649
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 171
-> NEXT_ACTION_BASIC, nextPosition : (17, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 18 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000555
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 172
-> NEXT_ACTION_BASIC, nextPosition : (16, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 17 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000538
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 173
-> NEXT_ACTION_BASIC, nextPosition : (15, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 16 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000542
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 174
-> NEXT_ACTION_BASIC, nextPosition : (14, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 15 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000550
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 175
-> NEXT_ACTION_BASIC, nextPosition : (13, 66)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 14 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 0
-===> temps exec = 0.000597
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 176
-> NEXT_ACTION_BASIC, nextPosition : (12, 65)
-     action determined : 0 -1
-         positionToGo : 0 -1
-             pilot position : 13 66
-                 pilot position : -1 0
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000536
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 177
-> NEXT_ACTION_BASIC, nextPosition : (11, 64)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 12 65
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000543
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 178
-> NEXT_ACTION_BASIC, nextPosition : (10, 63)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 11 64
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000528
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 179
-> NEXT_ACTION_BASIC, nextPosition : (9, 62)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 10 63
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000577
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 180
-> NEXT_ACTION_BASIC, nextPosition : (8, 61)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 9 62
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : -1 -1
-===> temps exec = 0.000658
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 181
-> NEXT_ACTION_BASIC, nextPosition : (8, 60)
-     action determined : 1 0
-         positionToGo : 1 0
-             pilot position : 8 61
-                 pilot position : -1 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000578
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 182
-> NEXT_ACTION_BASIC, nextPosition : (8, 59)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 60
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000584
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 183
-> NEXT_ACTION_BASIC, nextPosition : (8, 58)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 59
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000592
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 184
-> NEXT_ACTION_BASIC, nextPosition : (8, 57)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 58
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000523
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 185
-> NEXT_ACTION_BASIC, nextPosition : (8, 56)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 57
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000590
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 186
-> NEXT_ACTION_BASIC, nextPosition : (8, 55)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 56
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000540
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 187
-> NEXT_ACTION_BASIC, nextPosition : (8, 54)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 55
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000571
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 188
-> NEXT_ACTION_BASIC, nextPosition : (8, 53)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 54
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000529
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 189
-> NEXT_ACTION_BASIC, nextPosition : (8, 52)
-     action determined : 0 0
-         positionToGo : 0 0
-             pilot position : 8 53
-                 pilot position : 0 -1
-                 Speed venant de updateSpeed : 0 -1
-===> temps exec = 0.000547
-
-
->>>> CONCLUSION : temps max d'un tour : 0.001157 <<<<<<<
-
-=== ROUND 190
