@@ -166,7 +166,7 @@ static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successo
     return arcValue;
 }
 
-static void updateLengthNode ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode  
+static void updateLengthNode ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode )
 {
     short d1;
     short d2;
