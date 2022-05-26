@@ -503,14 +503,14 @@ PATH_LIST choiceNextAction (
     if ( flag ) {
         nextAction->X = actionTab[countAction].X;   
         nextAction->Y = actionTab[countAction].Y;
-        if ( round == 2 ) {
+        if ( !isEmptyPathList ( path ) ) {
             trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
-        } 
+        }
         return path;
     }
     nextAction->X = actionTab->X;
     nextAction->Y = actionTab->Y;
-    if ( round == 2 ) {
+    if ( !isEmptyPathList ( path ) ) {
         trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
     }
     return path;
