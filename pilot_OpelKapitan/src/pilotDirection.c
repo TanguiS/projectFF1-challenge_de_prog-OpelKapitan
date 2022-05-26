@@ -63,11 +63,6 @@ static PATH_LIST nextActionForNextPosition (
     path = resetCurrentPathList ( path );
     positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
     basicNextAction ( positionToGo, nextAction );
-    fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
-    fprintf ( stderr, "     action determined : %hd %hd\n", nextAction->X, nextAction->Y );
-    fprintf ( stderr, "         positionToGo : %d %d\n", positionToGo.X, positionToGo.Y );
-    fprintf ( stderr, "             pilot position : %d %d\n", pilotPosition.X, pilotPosition.Y );
-    fprintf ( stderr, "                 pilot position : %d %d\n", pilotSpeed.X, pilotSpeed.Y );
     return path;
 }
 
@@ -95,11 +90,7 @@ static PATH_LIST nextActionBoostedForNextPosition (
     path = removeHeadElementPathList ( path, &nextPosition );
     path = removeHeadElementPathList ( path, &nextPosition );
     positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
-    /* version boost et non boosted */
     boostNextAction ( positionToGo, nextAction );
-    fprintf ( stderr, "> NEXT_ACTION_BOOST, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
-    fprintf ( stderr, "     action determined : %hd %hd\n", nextAction->X, nextAction->Y );
-    fprintf ( stderr, "         positionToGo : %d %d\n", positionToGo.X, positionToGo.Y );
     return path;
 }
 
@@ -159,7 +150,6 @@ static boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POS
   InfoLine vline;
   int count = 0;
   initLine(start.X, start.Y, stop.X, stop.Y, &vline);
-  fprintf ( stderr, " hello\n");
   while (nextPoint(&vline, &transition, +1) > 0) {
       
     if (transition.X == start.X && transition.Y == start.Y) {
@@ -170,7 +160,6 @@ static boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POS
     if ( count == 2 ) {
         goalPosition->X = transition.X;
         goalPosition->Y = transition.Y;
-        fprintf ( stderr, " la transition %d %d \n", transition.X, transition.Y);
     }
     
     if ( isWall (graph, transition) || isSand ( graph, transition ) ) {
@@ -187,11 +176,9 @@ void adaptPilot (
                 ACCELERATION* nextAction,
                 SPEED pilotSpeed ) {
     path_list_element nextPosition;
-    fprintf ( stderr, "les positions goal %d %d\n", goalPosition.X, goalPosition.Y );
     if ( !isCar ( graph, goalPosition ) ) {
         return;
     }
-    fprintf ( stderr, "il y a une voiture\n");
     nextPosition = examineHeadPathList ( path );
     pilotSpeed.X += nextAction->X;
     pilotSpeed.Y += nextAction->Y;
@@ -242,12 +229,9 @@ PATH_LIST BetterBoostForNextPosition (
     }
     current = getCurrentPathListElement( path );
     boostNextAction ( hypotheticalNextPosition ( current, pilotPosition, pilotSpeed ), nextAction );
-    fprintf ( stderr, "l'acceleration est de %d %d\n", nextAction->X, nextAction->Y);
     goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
     goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
     adaptPilot ( graph, path, pilotPosition, goalPosition, nextAction, pilotSpeed );
-    fprintf ( stderr, "l'acceleration est de %d %d\n", nextAction->X, nextAction->Y);
-
     return path;
 }
 
@@ -395,7 +379,6 @@ static PATH_LIST groupNextAction (
                                             pilotSpeed, 
                                             &nextAction[1] 
                                           );
-        fprintf ( stderr, "     action determined : %hd %hd\n", nextAction->X, nextAction->Y );
     }
     return path;
 }
