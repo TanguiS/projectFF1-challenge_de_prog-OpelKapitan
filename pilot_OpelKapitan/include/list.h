@@ -36,7 +36,7 @@ typedef POSITION listElement;
  */
 typedef struct _list_cell {
     listElement contents;                 /**< the element that the cell contains */
-    struct _list_cell* followingCell;    /**< the following cell */
+    struct _list_cell* followingCell;     /**< the following cell */
 } *LIST_CELL;
 
 /**
@@ -52,7 +52,6 @@ typedef struct _list {
  * @brief Lifo object declaration 
  */
 typedef struct _list LIST;
-
 
 /**
  * @brief Create a Lifo object

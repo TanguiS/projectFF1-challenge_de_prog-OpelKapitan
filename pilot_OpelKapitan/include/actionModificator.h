@@ -30,6 +30,7 @@
 #define BOOSTED_ACTION 2    /**< the boost Action value */
 #define STRAIGHT_ACTION 0   /**< the straight Action value */
 #define MAX_SPEED 5         /**< the maximum speed that we fixed */
+#define MAX_SPEED_DIA 3     /**< the maximum speed that we fixed for a diagonal */
 
 /**
  * @brief Enumeration of a direction type.
