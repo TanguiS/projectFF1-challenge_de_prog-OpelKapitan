@@ -28,7 +28,7 @@
 
 #include "dijkstraMatrix.h"
 #include "util.h"
-#include "graphMadj.h"
+#include "graph.h"
 #include <stdio.h>
 #include <stdlib.h>
 

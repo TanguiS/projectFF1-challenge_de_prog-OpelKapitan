@@ -22,270 +22,6 @@
 
 #include "pilotDirection.h"
 
-#define ACTION 1            /**< the classic Action value */
-#define BOOSTED_ACTION 2    /**< the boost Action value */
-#define STRAIGHT_ACTION 0   /**< the straight Action value */
-#define MAX_SPEED 5         /**< the maximum speed that we fixed */
-
-/**
- * @brief Set action to right
- * 
- * @param action the action determined
- */
-static void goRight ( ACCELERATION* action ) {
-    action->X = STRAIGHT_ACTION + ACTION;
-}
-
-/**
- * @brief Set action to left
- * 
- * @param action the action determined
- */
-static void goLeft ( ACCELERATION* action ) {
-    action->X = STRAIGHT_ACTION - ACTION;
-}
-
-/**
- * @brief Set action to up
- * 
- * @param action the action determined
- */
-static void goUp ( ACCELERATION* action  ) {
-    action->Y = STRAIGHT_ACTION - ACTION;
-}
-
-/**
- * @brief Set action to down
- * 
- * @param action the action determined
- */
-static void goDown ( ACCELERATION* action  ) {
-    action->Y = STRAIGHT_ACTION + ACTION;
-}
-
-/**
- * @brief Set action to straight
- * 
- * @param action the action determined
- */
-static void goStraight ( ACCELERATION* action ) {
-    action->X = STRAIGHT_ACTION;
-    action->Y = STRAIGHT_ACTION;
-}
-
-/**
- * @brief Set action to straight towards X
- * 
- * @param action the action determined
- */
-static void goStraightX ( ACCELERATION* action ) {
-    action->X = STRAIGHT_ACTION;
-}
-
-/**
- * @brief Set action to straight towards Y
- * 
- * @param action the action determined
- */
-static void goStraightY ( ACCELERATION* action ) {
-    action->Y = STRAIGHT_ACTION;
-}
-
-/**
- * @brief Set action to right with a boost
- * 
- * @param action the action determined
- */
-static void goBoostRight ( ACCELERATION* action ) {
-    action->X = STRAIGHT_ACTION + BOOSTED_ACTION;
-}
-
-/**
- * @brief Set action to left with a boost
- * 
- * @param action the action determined
- */
-static void goBoostLeft ( ACCELERATION* action ) {
-    action->X = STRAIGHT_ACTION - BOOSTED_ACTION;
-}
-
-/**
- * @brief Set action to up with a boost
- * 
- * @param action the action determined
- */
-static void goBoostUp ( ACCELERATION* action ) {
-    action->Y = STRAIGHT_ACTION - BOOSTED_ACTION;
-}
-
-/**
- * @brief Set action to down with a boost
- * 
- * @param action the action determined
- */
-static void goBoostDown ( ACCELERATION* action ) {
-    action->Y = STRAIGHT_ACTION + BOOSTED_ACTION;
-}
-
-/**
- * @brief Determine the correct function to set the action
- * 
- * @param choice the direction wanted
- * @param action the action determined
- */
-static void choiceDirection ( direction choice, ACCELERATION* action )
-{
-    static directionFunction* directionTab[NUMBER_DIRECTION] = 
-    {
-        goRight, goLeft, goUp, goDown,
-        goBoostRight, goBoostLeft, goBoostUp, goBoostDown
-    };
-    directionTab[choice]( action );
-}
-
-/**
- * @brief Set action to slow down but it keeps the direction
- * 
- * @param directionToSlow the direction of the pilot
- * @param action the action determined
- */
-static void slowDown ( POSITION directionToSlow, ACCELERATION* action )
-{
-    if ( directionToSlow.X > STRAIGHT_ACTION ) {
-        goLeft ( action );
-    } else if ( directionToSlow.X == STRAIGHT_ACTION ) {
-        action->X = STRAIGHT_ACTION;
-    }  else {
-        goRight ( action );
-    }
-    if ( directionToSlow.Y > STRAIGHT_ACTION ) {
-        goUp ( action );
-    } else if ( directionToSlow.Y == STRAIGHT_ACTION ) {
-        action->Y = STRAIGHT_ACTION;
-    }  else {
-        goDown ( action );
-    }
-}
-
-/**
- * @brief Set action to slow down towards X
- * 
- * @param speedToSlow the speed of the pilot to remove
- * @param action the action determined
- */
-static void slowDownX ( SPEED speedToSlow, ACCELERATION* action )
-{
-    if ( speedToSlow.X > STRAIGHT_ACTION ) {
-        goLeft ( action );
-    }  else {
-        goRight ( action );
-    }
-}
-
-/**
- * @brief Set action to slow down towards Y
- * 
- * @param speedToSlow the speed of the pilot to remove
- * @param action the action determined
- */
-static void slowDownY ( SPEED speedToSlow, ACCELERATION* action )
-{
-    if ( speedToSlow.Y > STRAIGHT_ACTION ) {
-        goUp ( action );
-    } else {
-        goDown ( action );
-    }
-}
-
-/**
- * @brief Set action to accelerate towards the direction
- * 
- * @param directionToAccelerate the direction of the pilot
- * @param action the action determined
- */
-static void accelerate ( POSITION directionToAccelerate, ACCELERATION* action )
-{
-    if ( directionToAccelerate.X > STRAIGHT_ACTION ) {
-        goRight ( action );
-    } else if ( directionToAccelerate.X == STRAIGHT_ACTION ) {
-        action->X = STRAIGHT_ACTION;
-    } else {
-        goLeft ( action );
-    }
-    if ( directionToAccelerate.Y > STRAIGHT_ACTION ) {
-        goDown ( action );
-    } else if ( directionToAccelerate.Y == STRAIGHT_ACTION ) {
-        action->Y = STRAIGHT_ACTION;
-    } else {
-        goUp ( action );
-    } 
-}
-
-/**
- * @brief Set the correct action to go to the wanted position
- * 
- * @param positionToGo the wanted position
- * @param nextAction the determined action
- */
-static void basicNextAction ( POSITION positionToGo, ACCELERATION* nextAction )
-{
-    if ( positionToGo.X > STRAIGHT_ACTION ) {
-        choiceDirection ( right, nextAction );
-    } else if ( positionToGo.X == STRAIGHT_ACTION ) {
-        goStraightX ( nextAction );
-    } else {
-        choiceDirection ( left, nextAction );
-    }
-    if ( positionToGo.Y > STRAIGHT_ACTION ) {
-        choiceDirection ( down, nextAction );
-    } else if ( positionToGo.Y == STRAIGHT_ACTION ) {
-        goStraightY ( nextAction );
-    } else {
-        choiceDirection ( up, nextAction );
-    }
-}
-
-/**
- * @brief Set the correct action with a boost to go to the wanted position
- * 
- * @param positionToGo the wanted position
- * @param nextAction the determined action
- */
-static void boostNextAction ( POSITION positionToGo, ACCELERATION* nextAction )
-{
-    if ( positionToGo.X > STRAIGHT_ACTION ) {
-        if ( positionToGo.X == ACTION ) {
-            choiceDirection ( right, nextAction );
-        } else {
-            choiceDirection ( boostRight, nextAction );
-        }
-    } else if ( positionToGo.X == STRAIGHT_ACTION ) {
-        goStraightX ( nextAction );
-    } else {
-        if ( positionToGo.X == -ACTION ) {
-            choiceDirection ( left, nextAction );
-        } else {
-            choiceDirection ( boostLeft, nextAction );
-        }
-    }
-    if ( positionToGo.Y > STRAIGHT_ACTION ) {
-        if ( positionToGo.Y == ACTION ) {
-            choiceDirection ( down, nextAction );
-        } else {
-            choiceDirection ( boostDown, nextAction );
-        }
-    } else if ( positionToGo.Y == STRAIGHT_ACTION ) {
-        nextAction->Y = STRAIGHT_ACTION;
-        goStraightY ( nextAction );
-    } else {
-        if ( positionToGo.Y == -ACTION ) {
-            choiceDirection ( up, nextAction );
-        } else {
-            choiceDirection ( boostUp, nextAction );
-        }
-    }
-}
-
 /**
  * @brief Determine the hypotetical next position according to current data
  * 
@@ -367,6 +103,8 @@ static PATH_LIST nextActionBoostedForNextPosition (
     return path;
 }
 
+
+
 /**
  * @brief Update the path to follow if the path is straight
  * 
@@ -415,6 +153,104 @@ static boolean updatePathListIfstraightLine (
     return areAligned ( currentPosition, nextPosition, previousGoalPosition );
 }
 
+static boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POSITION* goalPosition )
+{
+  POSITION transition;
+  InfoLine vline;
+  int count = 0;
+  initLine(start.X, start.Y, stop.X, stop.Y, &vline);
+  fprintf ( stderr, " hello\n");
+  while (nextPoint(&vline, &transition, +1) > 0) {
+      
+    if (transition.X == start.X && transition.Y == start.Y) {
+        
+        continue;
+    }
+    count++;
+    if ( count == 2 ) {
+        goalPosition->X = transition.X;
+        goalPosition->Y = transition.Y;
+        fprintf ( stderr, " la transition %d %d \n", transition.X, transition.Y);
+    }
+    
+    if ( isWall (graph, transition) || isSand ( graph, transition ) ) {
+        return false;
+    }
+  }
+  return true;
+}
+
+void adaptPilot (
+                GRAPH* graph, PATH_LIST path,
+                POSITION pilotPosition,
+                POSITION goalPosition,
+                ACCELERATION* nextAction,
+                SPEED pilotSpeed ) {
+    path_list_element nextPosition;
+    fprintf ( stderr, "les positions goal %d %d\n", goalPosition.X, goalPosition.Y );
+    if ( !isCar ( graph, goalPosition ) ) {
+        return;
+    }
+    fprintf ( stderr, "il y a une voiture\n");
+    nextPosition = examineHeadPathList ( path );
+    pilotSpeed.X += nextAction->X;
+    pilotSpeed.Y += nextAction->Y;
+    if ( lineToFollow ( pilotPosition, nextPosition ) == towardsX ) {
+        if ( pilotSpeed.Y != 0 ) {
+            while ( isCar( graph, goalPosition ) ) {
+            slowDownDecrementY ( pilotSpeed, nextAction );
+            goalPosition.X = pilotPosition.X + nextAction->X;
+            goalPosition.Y = pilotPosition.Y + nextAction->Y;
+            }
+        } else {
+            goStraightY ( nextAction );
+        }
+    } else if ( lineToFollow ( pilotPosition, nextPosition ) == towardsY ) {
+        if ( pilotSpeed.X != 0) {
+            while ( isCar ( graph, goalPosition ) ) {
+                slowDownDecrementX ( pilotSpeed, nextAction ); 
+                goalPosition.X = pilotPosition.X + nextAction->X;
+                goalPosition.Y = pilotPosition.Y + nextAction->Y;
+            }
+        } else {
+            goStraightX ( nextAction );
+        }
+    } else {
+        path = nextActionBoostedForNextPosition ( path, pilotPosition, pilotSpeed, nextAction);
+    }
+}
+
+PATH_LIST BetterBoostForNextPosition ( 
+                                        GRAPH* graph,   
+                                        PATH_LIST path,
+                                        POSITION pilotPosition,
+                                        SPEED pilotSpeed,
+                                        ACCELERATION* nextAction
+                                        ) 
+{
+    path_list_element nextCurrent;
+    path_list_element current;
+    POSITION goalPosition;
+
+    updatePathListIfstraightLine ( &path, pilotPosition, graph);
+    current = getCurrentPathListElement ( path);
+    nextCurrent = getNextCurrentPathList ( path );
+
+    while ( isApprochable ( graph, pilotPosition, nextCurrent, &goalPosition ) ) {
+        path = moveCurrentPathList ( path );
+        nextCurrent = getNextCurrentPathList ( path);
+    }
+    current = getCurrentPathListElement( path );
+    boostNextAction ( hypotheticalNextPosition ( current, pilotPosition, pilotSpeed ), nextAction );
+    fprintf ( stderr, "l'acceleration est de %d %d\n", nextAction->X, nextAction->Y);
+    goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
+    goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
+    adaptPilot ( graph, path, pilotPosition, goalPosition, nextAction, pilotSpeed );
+    fprintf ( stderr, "l'acceleration est de %d %d\n", nextAction->X, nextAction->Y);
+
+    return path;
+}
+
 /**
  * @brief vector between two positions
  * 
@@ -440,7 +276,7 @@ static POSITION positionVector ( POSITION finalPosition, POSITION startPosition 
  * @param actions a group of action to follow
  * @return short the length 
  */
-static short addActionToGroup ( 
+static void addActionToGroup ( 
                             short length, short currentSpeed, 
                             short startingIndex, POSITION startPosition, 
                             POSITION finalPosition, ACCELERATION* actions 
@@ -507,27 +343,6 @@ static short addActionToGroup (
     }
     actions[0].X = startingIndex;
     actions[0].Y = 0;
-    return nextHypoteticalPosition;
-}
-
-/**
- * @brief Update the lidt to the current position
- * 
- * @param path the list to update
- * @param goalPosition the goal position
- * @return PATH_LIST the updated path list
- */
-static PATH_LIST updatePathToGoalPosition ( PATH_LIST path, POSITION goalPosition )
-{
-    POSITION trash;
-    if ( areEqualsPosition ( examineHeadPathList ( path ), goalPosition ) ) {
-        path = removeHeadElementPathList ( path, &trash );
-        return path;
-    }
-    do {
-        path = removeHeadElementPathList ( path, &trash );
-    } while ( !areEqualsPosition ( trash, goalPosition ) );
-    return path;
 }
 
 /**
@@ -546,31 +361,30 @@ static PATH_LIST groupNextAction (
 {
     POSITION goalPosition;
     straightDirection directionLine;
-    short length = 0;
 
     goalPosition = getCurrentPathListElement ( path );
     directionLine = lineToFollow ( pilotPosition, goalPosition );
     if ( directionLine == towardsX ) {
-        length = addActionToGroup ( 
-                                abs ( positionVector ( goalPosition, pilotPosition ).X ), 
-                                pilotSpeed.X, 
-                                1, 
-                                pilotPosition, 
-                                goalPosition, 
-                                nextAction 
-                                  );
+        addActionToGroup ( 
+                        abs ( positionVector ( goalPosition, pilotPosition ).X ), 
+                        pilotSpeed.X, 
+                        1, 
+                        pilotPosition, 
+                        goalPosition, 
+                        nextAction 
+                            );
         if ( pilotSpeed.Y != 0 ) {
             slowDownY ( pilotSpeed, &nextAction[1] );
         }
     } else if ( directionLine == towardsY ) {
-        length = addActionToGroup ( 
-                                abs ( positionVector ( goalPosition, pilotPosition ).Y ), 
-                                pilotSpeed.Y, 
-                                1, 
-                                pilotPosition, 
-                                goalPosition, 
-                                nextAction 
-                                  );
+        addActionToGroup ( 
+                        abs ( positionVector ( goalPosition, pilotPosition ).Y ), 
+                        pilotSpeed.Y, 
+                        1, 
+                        pilotPosition, 
+                        goalPosition, 
+                        nextAction 
+                            );
         if ( pilotSpeed.X != 0 ) {
             slowDownX ( pilotSpeed, &nextAction[1] );
         }
@@ -582,9 +396,6 @@ static PATH_LIST groupNextAction (
                                             &nextAction[1] 
                                           );
         fprintf ( stderr, "     action determined : %hd %hd\n", nextAction->X, nextAction->Y );
-    }
-    if ( length > 0 ) {
-        path = updatePathToGoalPosition ( path, goalPosition );
     }
     return path;
 }
@@ -647,24 +458,36 @@ PATH_LIST examineNextPosition (
 PATH_LIST choiceNextAction ( 
                             PATH_LIST path, POSITION pilotPosition, 
                             SPEED pilotSpeed, ACCELERATION* nextAction, 
-                            GRAPH* graph, short remainingFuel 
+                            GRAPH* graph, short remainingFuel,
+                            int round 
                            )
 {
     static ACCELERATION* actionTab = NULL;
     static short countAction = 1;
     boolean flag = false;
+    POSITION goalPosition;
+    POSITION nextPosition;
     static actionDeterminator* redirectTab[3] = 
             {
                 nextActionForNextPosition,
                 groupNextAction,
                 nextActionBoostedForNextPosition
             };
+    nextPosition = examineHeadPathList ( path );
+    fprintf ( stderr, " la ligne à suivre %d", lineToFollow(pilotPosition, nextPosition));
+
     if ( actionTab == NULL ) {
         actionTab = ( ACCELERATION* ) malloc ( 255 * sizeof ( ACCELERATION ) );
     }
     if ( speedIsNull ( pilotSpeed ) 
-            && updatePathListIfstraightLine ( &path, pilotPosition, graph ) ) {
-        path = redirectTab[2](path, pilotPosition, pilotSpeed, actionTab );
+            /*&& updatePathListIfstraightLine ( &path, pilotPosition, graph )*/ ) {
+        if ( round == 1 ) {
+            path = /*redirectTab[2]*/BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
+
+        } else {
+            path = redirectTab[2]( path, pilotPosition, pilotSpeed, actionTab );
+
+        }
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
         return path;
@@ -677,10 +500,32 @@ PATH_LIST choiceNextAction (
     }
     if ( flag ) {
         nextAction->X = actionTab[countAction].X;   
-        nextAction->Y = actionTab[countAction].Y;   
+        nextAction->Y = actionTab[countAction].Y;
+        if ( round == 2 ) {
+        goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
+        goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
+        if ( isWall ( graph, goalPosition ) ) {
+            if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
+                slowDownDecrementY ( pilotSpeed, nextAction);
+            } else {
+                slowDownDecrementX ( pilotSpeed, nextAction);
+            }
+        }
+    } 
         return path;
     }
     nextAction->X = actionTab->X;
     nextAction->Y = actionTab->Y;
+    if ( round == 2 ) {
+        goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
+        goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
+        if ( isWall ( graph, goalPosition ) ) {
+            if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
+                slowDownDecrementY ( pilotSpeed, nextAction);
+            } else {
+                slowDownDecrementX ( pilotSpeed, nextAction);
+            }
+        }
+    }
     return path;
 }

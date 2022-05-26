@@ -20,7 +20,7 @@
  * @date 19 avril 2022
  */
 
-#include "../include/graphMadj.h"
+#include "../include/graph.h"
 
 #define INIT_SIZE 0     /**< the value to init */
 

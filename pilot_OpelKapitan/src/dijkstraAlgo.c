@@ -28,7 +28,7 @@ void mergePosition (POSITION* reference, POSITION* result ) {
     result->Y = reference->Y;   
 }
 
-void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode, POSITION parentNode) {
+void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode/*, POSITION parentNode*/) {
     int i;
     int j;
     POSITION tmp;
@@ -42,7 +42,7 @@ void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode, POSITION parentNode) {
         }
     }
     setPathLength ( dijkstra, firstNode.X, firstNode.Y, 0 );
-    setPredecessor ( dijkstra, firstNode.X, firstNode.Y, parentNode );
+    /*setPredecessor ( dijkstra, firstNode.X, firstNode.Y, parentNode);*/
     setFlag ( dijkstra, firstNode, gray );
 }
 
@@ -66,23 +66,25 @@ void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* currentNode, LIST l
 
 short getArcValue ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode )
 {
-    POSITION parentNode;
-    short arcValue = 0;
-    getPredecessor ( dijkstra, currentNode.X, currentNode.Y, &parentNode );
+    short arcValue /*= 0*/;
+    /*POSITION parentNode;
+    getPredecessor ( dijkstra, currentNode.X, currentNode.Y, &parentNode );*/
 
-
+    arcValue = (short)getElementGraph ( graph, successorNode);
+    arcValue += abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1 ;
+    /*  
     if ( isSand ( graph, successorNode ) ) {
-        arcValue += 110;
+        arcValue += 4;
     } else if ( isAroundCar ( graph, successorNode ) ) {
-        arcValue += 103;
+        arcValue += 3;
     } else if ( isRoad ( graph, successorNode ) ) {
-        arcValue += 100;
+        arcValue += 1;
     }
     if ( !areAligned ( parentNode, currentNode, successorNode ) ) {
-        arcValue += 102;
+        arcValue += 1;
     } else if ( lineToFollow ( parentNode, successorNode ) == diagonal ) {
-        arcValue += 103;
-    }
+        arcValue += 1;
+    }*/
     return arcValue;
 }
 
@@ -168,12 +170,12 @@ void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, 
 
 
 
-void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode) {
+void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/) {
     POSITION currentNode;
     LIST list;
     
     list = createList();
-    initDijkstra(dijkstra, firstNode, parentNode);
+    initDijkstra(dijkstra, firstNode);
     currentNode.X = firstNode.X;
     currentNode.Y = firstNode.Y;
     list = addElementList(list, currentNode);
@@ -187,12 +189,12 @@ void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSIT
     destroyList(list);
 } 
 
-PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode ) {
+PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/ ) {
     POSITION sommet;
     PATH_LIST stack;
     POSITION finalSommet;
 
-    executeDijkstra ( dijkstra, graph, firstNode, parentNode );
+    executeDijkstra ( dijkstra, graph, firstNode/*, parentNode*/ );
 
     updateClosetFinishLine ( graph, firstNode );
     getClosestFinishLine ( graph, &finalSommet );

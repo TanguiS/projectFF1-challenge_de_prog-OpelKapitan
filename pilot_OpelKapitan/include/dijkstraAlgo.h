@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "graphMadj.h"
+#include "graph.h"
 #include "pilotManagement.h"
 #include "util.h"
 #include "dijkstraMatrix.h"
@@ -48,7 +48,7 @@ void mergePosition (POSITION* reference, POSITION* result );
  * @param DIJKSTRA The dijkstra matrix. Already created. 
  * @param firstNode Coordinates of the firstNode position.  
  */
-void initDijkstra(DIJKSTRA* DIJKSTRA, POSITION firstNode, POSITION parentNode);
+void initDijkstra(DIJKSTRA* DIJKSTRA, POSITION firstNode);
 
 
 /**
@@ -70,9 +70,8 @@ void addSuccessorToList(LIST* successors, POSITION* successorNode, POSITION mini
 
 void redirectorToProcessSuccessor(GRAPH*graph, DIJKSTRA* dijkstra ,LIST* successors, POSITION nodeToProcess );
 
-void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode);
+void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/ );
 
-
-PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode, POSITION parentNode );
+PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/ );
 
 #endif /* DIJKSTRA_ALGO_HH__ */

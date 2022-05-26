@@ -27,26 +27,11 @@
 #include <stdio.h>
 #include <math.h>
 #include "pilotManagement.h"
+#include "actionModificator.h"
 #include "util.h"
 #include "pathList.h"
-#include "graphMadj.h"
-
-#define NUMBER_DIRECTION 8  /**< the number of basic directions */
-
-/**
- * @brief Enumeration of a direction type.
- */
-typedef enum {
-    right,                  /**< the right direction */
-    left,                   /**< the left direction */
-    up,                     /**< the up direction */
-    down,                   /**< the down direction */
-
-    boostRight,             /**< the right direction with a boost */
-    boostLeft,              /**< the left direction with a boost */
-    boostUp,                /**< the up direction with a boost */
-    boostDown               /**< the down direction with a boost */
-} direction;
+#include "graph.h"
+#include "follow_line.h"
 
 /**
  * @brief Enumeration of a straight direction type
@@ -57,14 +42,7 @@ typedef enum {
     diagonal                /**< the straight direction to follow is a diagonal */
 } straightDirection;
 
-/**
- * @brief Declaration of a function pointer to redirect 
- *        to the correct function to calculate the next action
- * 
- * @param action the next determined action 
- * @return void 
- */
-typedef void directionFunction ( ACCELERATION* action );
+
 
 /**
  * @brief Declaration of a function pointer to redirect
@@ -147,7 +125,8 @@ PATH_LIST choiceNextAction (
                             SPEED speedPilot, 
                             ACCELERATION* nextAction, 
                             GRAPH* graph, 
-                            short remainingFuel 
+                            short remainingFuel,
+                            int round
                            );
 
 #endif /* __PILOT_DIERCTION__ */
