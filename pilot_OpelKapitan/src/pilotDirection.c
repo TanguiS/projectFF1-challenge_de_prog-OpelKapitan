@@ -36,6 +36,8 @@ static void goRight ( ACCELERATION* action ) {
     action->X = STRAIGHT_ACTION + ACTION;
 }
 
+
+
 /**
  * @brief Set action to left
  * 
@@ -61,6 +63,22 @@ static void goUp ( ACCELERATION* action  ) {
  */
 static void goDown ( ACCELERATION* action  ) {
     action->Y = STRAIGHT_ACTION + ACTION;
+}
+
+static void addRight ( ACCELERATION* action ) {
+    action->X += STRAIGHT_ACTION + ACTION;
+}
+
+static void addLeft ( ACCELERATION* action ) {
+    action->X += STRAIGHT_ACTION - ACTION;
+}
+
+static void addUp ( ACCELERATION* action  ) {
+    action->Y += STRAIGHT_ACTION - ACTION;
+}
+
+static void addDown ( ACCELERATION* action  ) {
+    action->Y += STRAIGHT_ACTION + ACTION;
 }
 
 /**
@@ -194,6 +212,23 @@ static void slowDownY ( SPEED speedToSlow, ACCELERATION* action )
         goUp ( action );
     } else {
         goDown ( action );
+    }
+}
+
+
+static void slowDownDecrementX ( SPEED speedToSlow, ACCELERATION* action ) {
+    if ( speedToSlow.X > STRAIGHT_ACTION ) {
+        addLeft ( action );
+    }  else {
+        addRight ( action );
+    }
+}
+
+static void slowDownDecrementY ( SPEED speedToSlow, ACCELERATION* action ) {
+    if ( speedToSlow.Y > STRAIGHT_ACTION ) {
+        addUp ( action );
+    } else {
+        addDown ( action );
     }
 }
 
@@ -437,40 +472,6 @@ static PATH_LIST updatePathToGoalPosition ( PATH_LIST path, POSITION goalPositio
     return path;
 }
 
-/*
-boolean isApproachable ( GRAPH* graph, POSITION pilotPosition, POSITION nextPosition ) 
-{
-    POSITION transition;
-    transition.X = pilotPosition.X;
-    transition.Y = pilotPosition.Y;
-
-    fprintf(stderr, "hello1\n");
-    while ( transition.X != nextPosition.X && transition.Y != nextPosition.Y ) {
-        fprintf ( stderr, "le boucle while\n");
-
-        if ( nextPosition.X - transition.X < 0 ) {
-            transition.X += -1;
-        } else if ( nextPosition.X - transition.X > 0 ) {
-            transition.X += 1;
-        } else {
-            transition.X += 0;
-        }
-
-        if ( nextPosition.Y - transition.Y < 0 ) {
-            transition.Y += -1;
-        } else if ( nextPosition.X - transition.Y > 0 ) {
-            transition.Y += 1;
-        } else {
-            transition.Y += 0;
-        }
-        if ( isWall ( graph, transition ) || isSand ( graph, transition )) {
-            return false;
-        }
-    }
-    return true; 
-}
-*/
-
 static boolean traverse ( GRAPH* graph, POSITION start,  POSITION stop, POSITION* goalPosition )
 {
   POSITION transition;
@@ -515,13 +516,13 @@ void AdptPilots (
     pilotSpeed.Y += nextAction->Y;
     if ( lineToFollow ( pilotPosition, nextPosition ) == towardsX ) {
         if ( pilotSpeed.Y != 0 ) {
-            slowDownY ( pilotSpeed, nextAction );
+            slowDownDecrementY ( pilotSpeed, nextAction );
         } else {
             goStraightY ( nextAction );
         }
     } else if ( lineToFollow ( pilotPosition, nextPosition ) == towardsY ) {
         if ( pilotSpeed.X != 0) {
-            slowDownX ( pilotSpeed, nextAction );
+            slowDownDecrementX ( pilotSpeed, nextAction );
         } else {
             goStraightX ( nextAction );
         }
@@ -553,9 +554,11 @@ PATH_LIST BetterBoostForNextPosition (
     }
     current = getCurrentPathListElement( path );
     boostNextAction ( hypotheticalNextPosition ( current, pilotPosition, pilotSpeed ), nextAction );
+    fprintf ( stderr, "l'acceleration est de %d %d\n", nextAction->X, nextAction->Y);
     goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
     goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
     AdptPilots ( graph, path, pilotPosition, goalPosition, nextAction, pilotSpeed );
+    fprintf ( stderr, "l'acceleration est de %d %d\n", nextAction->X, nextAction->Y);
 
     return path;
 }
@@ -776,7 +779,8 @@ PATH_LIST examineNextPosition (
 PATH_LIST choiceNextAction ( 
                             PATH_LIST path, POSITION pilotPosition, 
                             SPEED pilotSpeed, ACCELERATION* nextAction, 
-                            GRAPH* graph, short remainingFuel 
+                            GRAPH* graph, short remainingFuel,
+                            int round 
                            )
 {
     static ACCELERATION* actionTab = NULL;
@@ -793,7 +797,13 @@ PATH_LIST choiceNextAction (
     }
     if ( speedIsNull ( pilotSpeed ) 
             /*&& updatePathListIfstraightLine ( &path, pilotPosition, graph )*/ ) {
-        path = /*redirectTab[2]*/BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
+        if ( round == 1 ) {
+            path = /*redirectTab[2]*/BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
+
+        } else {
+            path = redirectTab[2]( path, pilotPosition, pilotSpeed, actionTab );
+
+        }
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
         return path;

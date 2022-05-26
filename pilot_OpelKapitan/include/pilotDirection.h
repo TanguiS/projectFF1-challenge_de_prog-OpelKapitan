@@ -148,7 +148,8 @@ PATH_LIST choiceNextAction (
                             SPEED speedPilot, 
                             ACCELERATION* nextAction, 
                             GRAPH* graph, 
-                            short remainingFuel 
+                            short remainingFuel,
+                            int round
                            );
 
 #endif /* __PILOT_DIERCTION__ */

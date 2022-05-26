@@ -362,7 +362,8 @@ void updatePilots (
                                 getSpeedPilot ( myPilot ), 
                                 &nextAction, 
                                 graph, 
-                                getGasLvlPilot ( myPilot ) 
+                                getGasLvlPilot ( myPilot ),
+                                round 
                             );
     destroyPathList ( path );
 
