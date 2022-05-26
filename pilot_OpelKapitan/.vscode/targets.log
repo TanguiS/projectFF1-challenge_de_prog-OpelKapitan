@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 20 22:02:02 2022
+# Make data base, printed on Thu May 26 10:44:30 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ SNAP_DATA = /var/snap/code/97
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:39958
+JOURNAL_STREAM = 8:39095
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -O3
 # environment
@@ -83,7 +83,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1327
+MANAGERPID = 1372
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -97,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1560,unix/tanguistei:/tmp/.ICE-unix/1560
+SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1605,unix/tanguistei:/tmp/.ICE-unix/1605
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -117,7 +117,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 10262a1c12fa41088d6f498b3ba5be1c
+INVOCATION_ID = 140be5581bac4e6e9d580b3f8c09b81e
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2304
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2312
 # automatic
 %F = $(notdir $%)
 # environment
@@ -147,7 +147,7 @@ PWD = /home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1498
+SSH_AGENT_PID = 1543
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -199,7 +199,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0a3c58f5-5950-4a79-94ff-794734222239.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e8267d85-be46-4c5a-9819-99bc9ce8c05e.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -275,7 +275,7 @@ INC_PATH = ./include
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2356
+VSCODE_PID = 2487
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=28/209=13%
 
@@ -285,10 +285,10 @@ VSCODE_PID = 2356
 
 # Directories
 
- 
 # . (device 2053, inode 4325663): 9 files, no impossibilities.
 
 # 9 files, no impossibilities in 1 directories.
+ 
 
 # Implicit Rules
 
@@ -448,7 +448,6 @@ src/main.c:
 # Not a target:
 include/dijkstraAlgo.h:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -568,6 +567,6 @@ install: ../drivers/OpelKapitan
 # strcache performance: lookups = 86 / hit rate = 41%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/86=1%
-# Finished Make data base on Fri May 20 22:02:02 2022
+# Finished Make data base on Thu May 26 10:44:30 2022
 
  
