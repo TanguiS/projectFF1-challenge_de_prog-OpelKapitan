@@ -516,13 +516,21 @@ void AdptPilots (
     pilotSpeed.Y += nextAction->Y;
     if ( lineToFollow ( pilotPosition, nextPosition ) == towardsX ) {
         if ( pilotSpeed.Y != 0 ) {
+            while ( isCar( graph, goalPosition ) ) {
             slowDownDecrementY ( pilotSpeed, nextAction );
+            goalPosition.X = pilotPosition.X + nextAction->X;
+            goalPosition.Y = pilotPosition.Y + nextAction->Y;
+            }
         } else {
             goStraightY ( nextAction );
         }
     } else if ( lineToFollow ( pilotPosition, nextPosition ) == towardsY ) {
         if ( pilotSpeed.X != 0) {
-            slowDownDecrementX ( pilotSpeed, nextAction );
+            while ( isCar ( graph, goalPosition ) ) {
+                slowDownDecrementX ( pilotSpeed, nextAction ); 
+                goalPosition.X = pilotPosition.X + nextAction->X;
+                goalPosition.Y = pilotPosition.Y + nextAction->Y;
+            }
         } else {
             goStraightX ( nextAction );
         }
@@ -786,12 +794,17 @@ PATH_LIST choiceNextAction (
     static ACCELERATION* actionTab = NULL;
     static short countAction = 1;
     boolean flag = false;
+    POSITION goalPosition;
+    POSITION nextPosition;
     static actionDeterminator* redirectTab[3] = 
             {
                 nextActionForNextPosition,
                 groupNextAction,
                 nextActionBoostedForNextPosition
             };
+    nextPosition = examineHeadPathList ( path );
+    fprintf ( stderr, " la ligne à suivre %d", lineToFollow(pilotPosition, nextPosition));
+
     if ( actionTab == NULL ) {
         actionTab = ( ACCELERATION* ) malloc ( 255 * sizeof ( ACCELERATION ) );
     }
@@ -816,10 +829,33 @@ PATH_LIST choiceNextAction (
     }
     if ( flag ) {
         nextAction->X = actionTab[countAction].X;   
-        nextAction->Y = actionTab[countAction].Y;   
+        nextAction->Y = actionTab[countAction].Y;
+        if ( round == 2 ) {
+        goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
+        goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
+        if ( isWall ( graph, goalPosition ) ) {
+            if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
+                slowDownDecrementY ( pilotSpeed, nextAction);
+            } else {
+                slowDownDecrementX ( pilotSpeed, nextAction);
+            }
+        }
+    } 
         return path;
     }
     nextAction->X = actionTab->X;
     nextAction->Y = actionTab->Y;
+    if ( round == 2 ) {
+        goalPosition.X = pilotPosition.X + pilotSpeed.X + nextAction->X;
+        goalPosition.Y = pilotPosition.Y + pilotSpeed.Y + nextAction->Y;
+        if ( isWall ( graph, goalPosition ) ) {
+            if ( lineToFollow (pilotPosition, nextPosition ) == towardsX ) {
+                slowDownDecrementY ( pilotSpeed, nextAction);
+            } else {
+                slowDownDecrementX ( pilotSpeed, nextAction);
+            }
+        }
+    }
+    
     return path;
 }
