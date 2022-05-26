@@ -9,8 +9,8 @@
  */
 
 /**
- * @file file.h
- * @brief This file contains all the prototype of the file algo.
+ * @file liste.h
+ * @brief This file contains all the prototype of the liste algo.
  */
 
 /**

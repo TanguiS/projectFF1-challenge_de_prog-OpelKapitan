@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['wall_361',['wall',['../communicatorWithGDC_8h.html#adaccfe3a6d718367e02438e1b2bc9b5ba266a0f2740c53325df0b7424a6c171bf',1,'communicatorWithGDC.h']]],
-  ['white_362',['white',['../dijkstraMatrix_8h.html#a31d558e61809e3b074aa23bfc11a4ad7ade7bfe6c82a2aaaee276f752cdadf3a9',1,'dijkstraMatrix.h']]]
+  ['towardsx_391',['towardsX',['../pilotDirection_8h.html#a0a902c973aaaf5f7f9faf10920672612ac9750de2889a3aebd190338cc8ede815',1,'pilotDirection.h']]],
+  ['towardsy_392',['towardsY',['../pilotDirection_8h.html#a0a902c973aaaf5f7f9faf10920672612a47e8be35d83cb463182c9c0197d18fbb',1,'pilotDirection.h']]],
+  ['true_393',['true',['../util_8h.html#a7c6368b321bd9acd0149b030bb8275eda08f175a5505a10b9ed657defeb050e4b',1,'util.h']]]
 ];

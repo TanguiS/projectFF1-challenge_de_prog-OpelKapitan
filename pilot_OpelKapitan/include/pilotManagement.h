@@ -99,11 +99,14 @@ short getBoostsRemainingPilot ( PILOT* pilot );
 PILOT createPilot ( short fuelLevel );
 
 /**
- * @brief Updates the data from the tree pilots
+ * @brief Updates the data from the tree pilots.
  * 
- * @param myPilot : Our pilot
- * @param secondPilot : the second pilot 
- * @param thirdPilot : the third pilot
+ * @param myPilot : Our pilot.
+ * @param secondPilot : The second pilot. 
+ * @param thirdPilot : The third pilot.
+ * @param graph : The graph of the race.
+ * @param referenceGraph : The graph of the beginnig of the race.
+ * @param dijkstra : The dijkstra matrix.
  */
 void updatePilots ( 
                     PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, 

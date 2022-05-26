@@ -136,10 +136,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aaa79dfa9242e286fb782e822e7852583"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotManagement_8h.html#aaa79dfa9242e286fb782e822e7852583">createPilot</a> (short fuelLevel)</td></tr>
 <tr class="memdesc:aaa79dfa9242e286fb782e822e7852583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Pilot object.  <a href="pilotManagement_8h.html#aaa79dfa9242e286fb782e822e7852583">More...</a><br /></td></tr>
 <tr class="separator:aaa79dfa9242e286fb782e822e7852583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30c48dfc68c0ec5e4d780f3d12107321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotManagement_8h.html#a30c48dfc68c0ec5e4d780f3d12107321">updatePilots</a> (<a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a> *myPilot, <a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a> *secondPilot, <a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a> *thirdPilot, <a class="el" href="struct__mAdj.html">GRAPH</a> *graph, <a class="el" href="struct__mAdj.html">GRAPH</a> *referenceGraph, <a class="el" href="dijkstraMatrix_8h.html#a0f9a920fff3da3a34f0027a1d7b53203">DIJKSTRA</a> *dijkstra)</td></tr>
+<tr class="memitem:a30c48dfc68c0ec5e4d780f3d12107321"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotManagement_8h.html#a30c48dfc68c0ec5e4d780f3d12107321">updatePilots</a> (<a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a> *myPilot, <a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a> *secondPilot, <a class="el" href="pilotManagement_8h.html#a5ce930ba108c901861e0e00fbf5390bf">PILOT</a> *thirdPilot, <a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *referenceGraph, <a class="el" href="dijkstraMatrix_8h.html#a0f9a920fff3da3a34f0027a1d7b53203">DIJKSTRA</a> *dijkstra)</td></tr>
 <tr class="memdesc:a30c48dfc68c0ec5e4d780f3d12107321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the data from the tree pilots.  <a href="pilotManagement_8h.html#a30c48dfc68c0ec5e4d780f3d12107321">More...</a><br /></td></tr>
 <tr class="separator:a30c48dfc68c0ec5e4d780f3d12107321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1a5cc177ea96010217385f493aba6cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotManagement_8h.html#ae1a5cc177ea96010217385f493aba6cc">isEnoughFuel</a> (<a class="el" href="struct__mAdj.html">GRAPH</a> *graph, short fuelLeft, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path)</td></tr>
+<tr class="memitem:ae1a5cc177ea96010217385f493aba6cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotManagement_8h.html#ae1a5cc177ea96010217385f493aba6cc">isEnoughFuel</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, short fuelLeft, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path)</td></tr>
 <tr class="memdesc:ae1a5cc177ea96010217385f493aba6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">If there is enough full to finish the race.  <a href="pilotManagement_8h.html#ae1a5cc177ea96010217385f493aba6cc">More...</a><br /></td></tr>
 <tr class="separator:ae1a5cc177ea96010217385f493aba6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -342,7 +342,7 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
         <tr>
           <td class="memname"><a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a> isEnoughFuel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__mAdj.html">GRAPH</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
@@ -419,13 +419,13 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__mAdj.html">GRAPH</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__mAdj.html">GRAPH</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *&#160;</td>
           <td class="paramname"><em>referenceGraph</em>, </td>
         </tr>
         <tr>
@@ -445,9 +445,12 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Updates the data from the tree pilots. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">myPilot</td><td>: Our pilot </td></tr>
-    <tr><td class="paramname">secondPilot</td><td>: the second pilot </td></tr>
-    <tr><td class="paramname">thirdPilot</td><td>: the third pilot </td></tr>
+    <tr><td class="paramname">myPilot</td><td>: Our pilot. </td></tr>
+    <tr><td class="paramname">secondPilot</td><td>: The second pilot. </td></tr>
+    <tr><td class="paramname">thirdPilot</td><td>: The third pilot. </td></tr>
+    <tr><td class="paramname">graph</td><td>: The graph of the race. </td></tr>
+    <tr><td class="paramname">referenceGraph</td><td>: The graph of the beginnig of the race. </td></tr>
+    <tr><td class="paramname">dijkstra</td><td>: The dijkstra matrix. </td></tr>
   </table>
   </dd>
 </dl>

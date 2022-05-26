@@ -77,7 +77,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dijkstraMatrix_8h.html">dijkstraMatrix.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;graph.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
@@ -128,14 +128,7 @@ $(function() {
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dijkstraMatrix_8h.html#a2ba300c81d78a68e80dfea47a8f27f79">destroyDijkstraMatrix</a>(<a class="code" href="struct__dijkstraMatrix.html">DIJKSTRA</a> dijkstra);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#ifndef DEBUG</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keywordtype">void</span> displayDijkstraMatrix(<a class="code" href="struct__dijkstraMatrix.html">DIJKSTRA</a>* dijkstra, <span class="keywordtype">short</span> x, <span class="keywordtype">short</span> y );</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keywordtype">void</span> displayDijkstraMatrixPath(<a class="code" href="struct__dijkstraMatrix.html">DIJKSTRA</a>* dijkstra, <span class="keywordtype">int</span> count, <a class="code" href="struct__position.html">POSITION</a>* path);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif </span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="adijkstraMatrix_8h_html_aa3a6f07fed296c3b431252b0b0aed4c9"><div class="ttname"><a href="dijkstraMatrix_8h.html#aa3a6f07fed296c3b431252b0b0aed4c9">getElementDijkstra</a></div><div class="ttdeci">elementdij getElementDijkstra(DIJKSTRA *dijkstra, short x, short y)</div><div class="ttdoc">Get the Element Dijkstra object.</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.c:36</div></div>
 <div class="ttc" id="adijkstraMatrix_8h_html_a840a4393a737edd5af3d02fdf3319053"><div class="ttname"><a href="dijkstraMatrix_8h.html#a840a4393a737edd5af3d02fdf3319053">isNodeWhite</a></div><div class="ttdeci">boolean isNodeWhite(DIJKSTRA *dijkstra, POSITION nodeToTest)</div><div class="ttdoc">Tests if the element's flag is white.</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.c:69</div></div>
@@ -160,6 +153,7 @@ $(function() {
 <div class="ttc" id="astruct__elementDijkstra_html_ace4090889ef5122527f8d0dbbd6ead74"><div class="ttname"><a href="struct__elementDijkstra.html#ace4090889ef5122527f8d0dbbd6ead74">_elementDijkstra::predecessor</a></div><div class="ttdeci">POSITION predecessor</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.h:47</div></div>
 <div class="ttc" id="astruct__dijkstraMatrix_html_a7fccea7b31b97e7cb1e084f33779de54"><div class="ttname"><a href="struct__dijkstraMatrix.html#a7fccea7b31b97e7cb1e084f33779de54">_dijkstraMatrix::height</a></div><div class="ttdeci">short height</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.h:57</div></div>
 <div class="ttc" id="adijkstraMatrix_8h_html_a2c0fe3524977e7ef3e80c291d8347214"><div class="ttname"><a href="dijkstraMatrix_8h.html#a2c0fe3524977e7ef3e80c291d8347214">setPredecessor</a></div><div class="ttdeci">void setPredecessor(DIJKSTRA *dijkstra, short x, short y, POSITION newPredecessor)</div><div class="ttdoc">Set the Predecessor object.</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.c:59</div></div>
+<div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div><div class="ttdoc">This file contains the prototypes / declarations used to process a graph.</div></div>
 <div class="ttc" id="adijkstraMatrix_8h_html_a0f9a920fff3da3a34f0027a1d7b53203"><div class="ttname"><a href="dijkstraMatrix_8h.html#a0f9a920fff3da3a34f0027a1d7b53203">DIJKSTRA</a></div><div class="ttdeci">struct _dijkstraMatrix DIJKSTRA</div><div class="ttdoc">The stucture to represent the dijkstraMatrix object.</div></div>
 <div class="ttc" id="astruct__dijkstraMatrix_html_adcb0034504763c8dfad308e2f813a41d"><div class="ttname"><a href="struct__dijkstraMatrix.html#adcb0034504763c8dfad308e2f813a41d">_dijkstraMatrix::matrix</a></div><div class="ttdeci">elementdij ** matrix</div><div class="ttdef"><b>Definition:</b> dijkstraMatrix.h:58</div></div>
 <div class="ttc" id="adijkstraMatrix_8h_html_ae12da7f610e07207208b8e7b28285abd"><div class="ttname"><a href="dijkstraMatrix_8h.html#ae12da7f610e07207208b8e7b28285abd">elementdij</a></div><div class="ttdeci">struct _elementDijkstra elementdij</div><div class="ttdoc">An element of the dijkstra matrix.</div></div>

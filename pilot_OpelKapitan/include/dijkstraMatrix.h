@@ -187,11 +187,4 @@ DIJKSTRA createDijkstraMatrix(short width, short heigth);
  */
 void destroyDijkstraMatrix(DIJKSTRA dijkstra);
 
-#ifndef DEBUG
-void displayDijkstraMatrix(DIJKSTRA* dijkstra, short x, short y );
-void displayDijkstraMatrixPath(DIJKSTRA* dijkstra, int count, POSITION* path);
-#endif
-
-
-
 #endif 

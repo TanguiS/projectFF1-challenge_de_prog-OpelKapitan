@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['towardsx_357',['towardsX',['../pilotDirection_8h.html#a0a902c973aaaf5f7f9faf10920672612ac9750de2889a3aebd190338cc8ede815',1,'pilotDirection.h']]],
-  ['towardsy_358',['towardsY',['../pilotDirection_8h.html#a0a902c973aaaf5f7f9faf10920672612a47e8be35d83cb463182c9c0197d18fbb',1,'pilotDirection.h']]],
-  ['true_359',['true',['../util_8h.html#a7c6368b321bd9acd0149b030bb8275eda08f175a5505a10b9ed657defeb050e4b',1,'util.h']]]
+  ['right_386',['right',['../actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098af763d610923b0c4614e8ecd65212666a',1,'actionModificator.h']]],
+  ['road_387',['road',['../communicatorWithGDC_8h.html#adaccfe3a6d718367e02438e1b2bc9b5bac89a52cf1f8c359f34e5a92c822ad930',1,'communicatorWithGDC.h']]],
+  ['roadgraph_388',['roadGraph',['../graph_8h.html#a98d1c212df9e6410ae61c4dc7599bbbea4c821f3906c52c2cafeb9f82a40aea79',1,'graph.h']]]
 ];

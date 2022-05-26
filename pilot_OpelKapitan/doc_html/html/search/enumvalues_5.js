@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['right_354',['right',['../actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098af763d610923b0c4614e8ecd65212666a',1,'actionModificator.h']]],
-  ['road_355',['road',['../communicatorWithGDC_8h.html#adaccfe3a6d718367e02438e1b2bc9b5bac89a52cf1f8c359f34e5a92c822ad930',1,'communicatorWithGDC.h']]]
+  ['gray_384',['gray',['../dijkstraMatrix_8h.html#a31d558e61809e3b074aa23bfc11a4ad7a91422ad54be7335f93171529dfd21cf5',1,'dijkstraMatrix.h']]]
 ];
