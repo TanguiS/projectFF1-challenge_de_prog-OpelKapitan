@@ -28,6 +28,7 @@
  * @return LISTE_CELL 
  */
 static LIST_CELL createCell ( listElement x );
+
 /**
  * @brief Destroy a Cell object
  * 
@@ -226,23 +227,3 @@ boolean getNextElementList ( LIST list,  listElement* result, listElement* refEl
     
     return true;
 }
-
-#ifndef DEBUG
-void displaylist (LIST list) {
-    POSITION sommet;
-    boolean i;
-
-    if (!isEmptyList(list)) {
-        i = getElementList(list,&sommet, 0);
-    }
-    while (i)
-    {
-        i = getNextElementList(list, &sommet, &sommet);
-    }
-
-    while ( !isEmptyList(list))
-    {
-        list = removeElementList(list, &sommet);
-    }
-}
-#endif
