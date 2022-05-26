@@ -9,7 +9,7 @@
  */
 
 /**
- * @file actionModificator.c
+ * @file actionModificator.h
  * @brief This file contains the prototypes used to modify the action.
  */
 

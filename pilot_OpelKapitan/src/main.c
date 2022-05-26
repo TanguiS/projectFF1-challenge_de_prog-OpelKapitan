@@ -39,6 +39,7 @@ int main ( void )
     float maxTime = 0.;
     float initTime;
     clock_t t1, t2;
+    int i, j;
 
     t1 = clock();
     readDataFromGDC ( &gasLvl, &graph, &referenceGraph );
@@ -52,6 +53,12 @@ int main ( void )
         round++;
         fprintf(stderr, "=== ROUND %d\n", round);
         fflush(stderr);
+        for ( i = 0; i < getHeightGraph ( &graph ); i++ ) {
+            for ( j = 0; j < getWidthGraph ( &graph ); j++ ) {
+                fprintf ( stderr, "%d", graph.graph.matrix[j][i] );
+            }
+            fprintf ( stderr, "\n" );
+        }
         updatePilots ( &myPilot, &autre2, &autre3, &graph, &referenceGraph, &dijkstra );
         t2 = clock();
         time = initTime + (float)(t2-t1)/CLOCKS_PER_SEC;

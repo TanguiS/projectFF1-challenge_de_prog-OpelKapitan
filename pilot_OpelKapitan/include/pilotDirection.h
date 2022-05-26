@@ -42,8 +42,6 @@ typedef enum {
     diagonal                /**< the straight direction to follow is a diagonal */
 } straightDirection;
 
-
-
 /**
  * @brief Declaration of a function pointer to redirect
  *        to the correct function to optimize the next action

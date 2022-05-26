@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.0.2
  * @date 29 avril 2022
  */
 
@@ -32,46 +32,14 @@
 #include "pathList.h"
 #include "list.h"
 
-
 /**
- * @brief Set result's values to reference.
+ * @brief Give the shorter path to go on the nearest finish line
  * 
- * @param reference The reference position.
- * @param result The result position.
+ * @param dijkstra The Dijkstra matrice. Juste created.
+ * @param graph The graph of the race map.
+ * @param firstNode The position of the pilot. The first node visited
+ * @return PATH_LIST The path list where is stocked the path. The first element is the pilot position and the finish line.
  */
-void mergePosition (POSITION* reference, POSITION* result );
-
-
-/**
- * @brief Initialize the dijkstra matrix. It add the max value for every lenght(to simulate the infinity)
- * 
- * @param DIJKSTRA The dijkstra matrix. Already created. 
- * @param firstNode Coordinates of the firstNode position.  
- */
-void initDijkstra(DIJKSTRA* DIJKSTRA, POSITION firstNode);
-
-
-/**
- * @brief Find the position with the fewer length for a successors of positions. 
- * 
- * @param dijkstra The dijkstra matrix. Place where are stocked position's length. 
- * @param minimalNode The position where whill be stocked the minimal coordonate. 
- * @param successors successors where the successors of already visited coordinates are stored
- */
-void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* minimalNode, LIST successors );
-
-
-
-void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode );
-
-
-void addSuccessorToList(LIST* successors, POSITION* successorNode, POSITION minimalNode,  short sizeSuccesor, DIJKSTRA* dijkstra, GRAPH* graph);
-
-
-void redirectorToProcessSuccessor(GRAPH*graph, DIJKSTRA* dijkstra ,LIST* successors, POSITION nodeToProcess );
-
-void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/ );
-
-PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/ );
+PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode );
 
 #endif /* DIJKSTRA_ALGO_HH__ */

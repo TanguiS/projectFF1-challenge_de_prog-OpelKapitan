@@ -14,21 +14,117 @@
  */
 
 /**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 1.1.4
  * @date 29 avril 2022
  */
 
 #include "../include/dijkstraAlgo.h"
 #include "pilotDirection.h"
 
+/**
+ * @brief Set result's values to reference.
+ * 
+ * @param reference The reference position.
+ * @param result The result position.
+ */
+static void mergePosition ( POSITION* reference, POSITION* result );
 
-void mergePosition (POSITION* reference, POSITION* result ) {
+
+/**
+ * @brief Initialize the dijkstra matrix. It add the max value for every lenght(to simulate the infinity)
+ * 
+ * @param dijkstra The dijkstra matrix. Already created. 
+ * @param firstNode Coordinates of the firstNode position.  
+ */
+static void initDijkstra ( DIJKSTRA* dijkstra, POSITION firstNode);
+
+
+/**
+ * @brief Find the position with the fewer length for a successors of positions. 
+ * 
+ * @param dijkstra The dijkstra matrix. Place where are stocked position's length. 
+ * @param minimalNode The position where whill be stocked the minimal coordonate. 
+ * @param successors successors where the successors of already visited coordinates are stored
+ */
+static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list );
+
+
+/**
+ * @brief Give the arc value between a node and one of this successors.
+ * 
+ * @param graph The graph of the race map. Is used the inform about the value of the arc.
+ * @param currentNode The node which is studied.
+ * @param successorNode A currentNode's successor. 
+ * @return short The value of the arc.
+ */
+static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successorNode );
+
+
+/**
+ * @brief Change a node's length thanks to the predecessor's length add whith the arc's value.
+ * The length changes if the new length is fewer.
+ * 
+ * @param dijkstra The Dijkstra matrice. Where are stokes nodes's length
+ * @param graph The graph of the race map.
+ * @param currentNode The node which is studied.
+ * @param successorNode A currentNode's successor.
+ */
+static void updateLengthNode( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode);
+
+
+/**
+ * @brief Stock in the list all successors which are not visited yet and could be visited (road or sand) of the current node
+ * 
+ * @param graph The graph of the race map. Give the type of nodes.
+ * @param dijkstra The Dijkstra matrice.
+ * @param list A list of node accissible but not visited yet.
+ * @param currentNode The node which is studied. A sand node
+ */
+static void processSuccessorsSand ( GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode );
+
+
+/**
+ * @brief Stock in the list all successors which are not visited yet and could be visited (road or sand) of the current node.
+ * 
+ * @param graph The graph of the race map. Give the type of nodes.
+ * @param dijkstra The Dijkstra matrice.
+ * @param list A list of node accissible but not visited yet.
+ * @param currentNode The node which is studied. A road node.
+ */
+static void processSuccessorRoad ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode );
+
+
+/**
+ * @brief Redirects to stock good successorsif the current node is sand or road.
+ * 
+ * @param graph The graph of the race map. Give the type of nodes.
+ * @param dijkstra The Dijkstra matrice.
+ * @param list A list of node accissible but not visited yet.
+ * @param nodeToProcess The current node.
+ */
+static void redirectorToProcessSuccessor ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess );
+
+
+/**
+ * @brief Execute the Dijkstra algorthm and fill the dijkstra matrix.
+ * 
+ * @param dijkstra The Dijkstra matrice. Juste created.
+ * @param graph The graph of the race map.
+ * @param firstNode The position of the pilot. The first node visited
+ */
+static void executeDijkstra ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode );
+
+
+static void mergePosition ( POSITION* reference, POSITION* result ) 
+{
     result->X = reference->X;
     result->Y = reference->Y;   
 }
 
-void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode/*, POSITION parentNode*/) {
+static void initDijkstra ( DIJKSTRA* dijkstra, POSITION firstNode ) 
+{
     int i;
     int j;
     POSITION tmp;
@@ -42,14 +138,12 @@ void initDijkstra(DIJKSTRA* dijkstra, POSITION firstNode/*, POSITION parentNode*
         }
     }
     setPathLength ( dijkstra, firstNode.X, firstNode.Y, 0 );
-    /*setPredecessor ( dijkstra, firstNode.X, firstNode.Y, parentNode);*/
     setFlag ( dijkstra, firstNode, gray );
 }
 
 
-
-
-void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* currentNode, LIST list ) {
+static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list ) 
+{
     short i;
     POSITION minTemp;
 
@@ -64,49 +158,34 @@ void findNodeWithMinimalLength(DIJKSTRA* dijkstra, POSITION* currentNode, LIST l
     setFlag ( dijkstra, *currentNode, black );
 }
 
-short getArcValue ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode )
+static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successorNode )
 {
-    short arcValue /*= 0*/;
-    /*POSITION parentNode;
-    getPredecessor ( dijkstra, currentNode.X, currentNode.Y, &parentNode );*/
+    short arcValue;
 
     arcValue = (short)getElementGraph ( graph, successorNode);
     arcValue += abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1 ;
-    /*  
-    if ( isSand ( graph, successorNode ) ) {
-        arcValue += 4;
-    } else if ( isAroundCar ( graph, successorNode ) ) {
-        arcValue += 3;
-    } else if ( isRoad ( graph, successorNode ) ) {
-        arcValue += 1;
-    }
-    if ( !areAligned ( parentNode, currentNode, successorNode ) ) {
-        arcValue += 1;
-    } else if ( lineToFollow ( parentNode, successorNode ) == diagonal ) {
-        arcValue += 1;
-    }*/
     return arcValue;
 }
 
-void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode) {
+static void updateLengthNode ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode )
+{
     short d1;
     short d2;
     short arcValue;
 
     d1 = getPathLength(dijkstra, currentNode.X, currentNode.Y);
     d2 = getPathLength(dijkstra, successorNode.X, successorNode.Y);
-    arcValue = getArcValue ( dijkstra, graph, currentNode, successorNode );
+    arcValue = getArcValue ( graph, currentNode, successorNode );
     if ( d2 > (d1 + arcValue) ) {
         setPathLength(dijkstra, successorNode.X, successorNode.Y, (d1 + arcValue));
         setPredecessor(dijkstra, successorNode.X, successorNode.Y, currentNode);
-        /*displayDijkstraMatrix ( dijkstra, sommet2.X, sommet2.Y );*/
         return;
     }
-   /* displayDijkstraMatrix ( dijkstra, sommet1.X, sommet1.Y );*/
 }
 
 
-void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) {
+static void processSuccessorsSand ( GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) 
+{
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -123,7 +202,6 @@ void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITIO
                 if ( dijkstra->matrix[successor.X][successor.Y].flag == white) {
                     *list = addElementList(*list, successor);
                     dijkstra->matrix[successor.X][successor.Y].flag = gray;
-                    /*displayDijkstraMatrix(dijkstra, successor.X, successor.Y);*/
                     updateLengthNode(dijkstra, graph, currentNode, successor);
                 }
             }
@@ -131,7 +209,8 @@ void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITIO
     }
 }
 
-void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) {
+static void processSuccessorRoad ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) 
+{
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -159,8 +238,8 @@ void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITIO
     }
 }
 
-void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess ) {
-    
+static void redirectorToProcessSuccessor ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess ) 
+{
     if (isSand ( graph, nodeToProcess )) {
         processSuccessorsSand(graph, dijkstra, list, nodeToProcess );
     } else {
@@ -168,9 +247,8 @@ void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, 
     }
 }
 
-
-
-void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/) {
+static void executeDijkstra ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode ) 
+{
     POSITION currentNode;
     LIST list;
     
@@ -179,7 +257,6 @@ void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POS
     currentNode.X = firstNode.X;
     currentNode.Y = firstNode.Y;
     list = addElementList(list, currentNode);
-    
 
     while (!isEmptyList(list)) {
         findNodeWithMinimalLength(dijkstra, &currentNode, list);
@@ -189,12 +266,13 @@ void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POS
     destroyList(list);
 } 
 
-PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode/*, POSITION parentNode*/ ) {
+PATH_LIST pathToFollow ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode ) 
+{
     POSITION sommet;
     PATH_LIST stack;
     POSITION finalSommet;
 
-    executeDijkstra ( dijkstra, graph, firstNode/*, parentNode*/ );
+    executeDijkstra ( dijkstra, graph, firstNode );
 
     updateClosetFinishLine ( graph, firstNode );
     getClosestFinishLine ( graph, &finalSommet );
