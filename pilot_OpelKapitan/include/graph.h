@@ -9,7 +9,7 @@
  */
 
 /**
- * @file graphMadj.h
+ * @file graph.h
  * @brief This file contains the prototypes / declarations used to process a graph.
  */
 
@@ -137,6 +137,13 @@ boolean isCar ( GRAPH* graph, POSITION coord );
  */
 boolean isWall ( GRAPH* graph, POSITION coord );
 
+/**
+ * @brief If the element is arround a car.
+ * 
+ * @param graph the graph of the race.
+ * @param coord the coordinate to test.
+ * @return boolean true if it is around a car.
+ */
 boolean isAroundCar ( GRAPH* graph, POSITION coord );
 
 /**

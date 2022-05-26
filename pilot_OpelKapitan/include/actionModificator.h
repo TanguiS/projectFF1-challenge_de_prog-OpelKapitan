@@ -83,12 +83,32 @@ void goUp ( ACCELERATION* action  );
  */
 void goDown ( ACCELERATION* action  );
 
+/**
+ * @brief Add +1 to the the horrizontal acceleration.
+ * 
+ * @param action The action determined.
+ */
 void addRight ( ACCELERATION* action );
 
+/**
+ * @brief Add -1 to the the horrizontal acceleration.
+ * 
+ * @param action The action determined.
+ */
 void addLeft ( ACCELERATION* action );
 
+/**
+ * @brief Add -1 to the the vertical acceleration.
+ * 
+ * @param action The action determined.
+ */
 void addUp ( ACCELERATION* action  );
 
+/**
+ * @brief Add +1 to the the vertical acceleration.
+ * 
+ * @param action The action determined.
+ */
 void addDown ( ACCELERATION* action  );
 
 /**
@@ -140,6 +160,12 @@ void goBoostUp ( ACCELERATION* action );
  */
 void goBoostDown ( ACCELERATION* action );
 
+/**
+ * @brief Set action to slow down thanks to directionToSlow.
+ * 
+ * @param directionToSlow the hypotthetical acceleration.
+ * @param action the action determiated.
+ */
 void slowDown ( POSITION directionToSlow, ACCELERATION* action );
 
 /**
@@ -158,8 +184,20 @@ void slowDownX ( SPEED speedToSlow, ACCELERATION* action );
  */
 void slowDownY ( SPEED speedToSlow, ACCELERATION* action );
 
+/**
+ * @brief Set action to slow down towards X.
+ * 
+ * @param speedToSlow the speed of the pilot to remove.
+ * @param action the action determined.
+ */
 void slowDownDecrementX ( SPEED speedToSlow, ACCELERATION* action );
 
+/**
+ * @brief Set action to slow down towards Y.
+ * 
+ * @param speedToSlow the speed of the pilot to remove.
+ * @param action the action determined.
+ */
 void slowDownDecrementY ( SPEED speedToSlow, ACCELERATION* action );
 
 /**
