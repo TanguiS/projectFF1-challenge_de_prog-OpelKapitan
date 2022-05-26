@@ -15,7 +15,7 @@
 
 /**
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.0
+ * @version 2.5.0
  * @date 29 avril 2022
  */
 
