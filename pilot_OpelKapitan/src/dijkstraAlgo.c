@@ -37,7 +37,7 @@ static void mergePosition ( POSITION* reference, POSITION* result );
  * @param dijkstra The dijkstra matrix. Already created. 
  * @param firstNode Coordinates of the firstNode position.  
  */
-static void initDijkstra( DIJKSTRA* dijkstra, POSITION firstNode);
+static void initDijkstra ( DIJKSTRA* dijkstra, POSITION firstNode);
 
 
 /**
@@ -47,7 +47,7 @@ static void initDijkstra( DIJKSTRA* dijkstra, POSITION firstNode);
  * @param minimalNode The position where whill be stocked the minimal coordonate. 
  * @param successors successors where the successors of already visited coordinates are stored
  */
-static void findNodeWithMinimalLength( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list );
+static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list );
 
 
 /**
@@ -70,7 +70,7 @@ static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successo
  * @param currentNode The node which is studied.
  * @param successorNode A currentNode's successor.
  */
-static void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode);
+static void updateLengthNode( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode);
 
 
 /**
@@ -81,7 +81,7 @@ static void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentN
  * @param list A list of node accissible but not visited yet.
  * @param currentNode The node which is studied. A sand node
  */
-static void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode );
+static void processSuccessorsSand ( GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode );
 
 
 /**
@@ -92,7 +92,7 @@ static void processSuccessorsSand (GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list, 
  * @param list A list of node accissible but not visited yet.
  * @param currentNode The node which is studied. A road node.
  */
-static void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode );
+static void processSuccessorRoad ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode );
 
 
 /**
@@ -103,7 +103,7 @@ static void processSuccessorRoad (GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, 
  * @param list A list of node accissible but not visited yet.
  * @param nodeToProcess The current node.
  */
-static void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess );
+static void redirectorToProcessSuccessor ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess );
 
 
 /**
@@ -113,7 +113,7 @@ static void redirectorToProcessSuccessor(GRAPH* graph, DIJKSTRA* dijkstra ,LIST*
  * @param graph The graph of the race map.
  * @param firstNode The position of the pilot. The first node visited
  */
-static void executeDijkstra(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode );
+static void executeDijkstra ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode );
 
 
 static void mergePosition ( POSITION* reference, POSITION* result ) 
@@ -122,7 +122,7 @@ static void mergePosition ( POSITION* reference, POSITION* result )
     result->Y = reference->Y;   
 }
 
-static void initDijkstra( DIJKSTRA* dijkstra, POSITION firstNode) 
+static void initDijkstra ( DIJKSTRA* dijkstra, POSITION firstNode ) 
 {
     int i;
     int j;
@@ -141,7 +141,7 @@ static void initDijkstra( DIJKSTRA* dijkstra, POSITION firstNode)
 }
 
 
-static void findNodeWithMinimalLength( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list ) 
+static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list ) 
 {
     short i;
     POSITION minTemp;
@@ -166,7 +166,7 @@ static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successo
     return arcValue;
 }
 
-static void updateLengthNode(DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode) 
+static void updateLengthNode ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION currentNode, POSITION successorNode  
 {
     short d1;
     short d2;
@@ -208,7 +208,8 @@ static void processSuccessorsSand ( GRAPH*graph, DIJKSTRA* dijkstra ,LIST* list,
     }
 }
 
-static void processSuccessorRoad ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) {
+static void processSuccessorRoad ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION currentNode ) 
+{
     POSITION successor;
     int i;
     static POSITION tab[] ={
@@ -236,7 +237,7 @@ static void processSuccessorRoad ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list,
     }
 }
 
-static void redirectorToProcessSuccessor( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess ) 
+static void redirectorToProcessSuccessor ( GRAPH* graph, DIJKSTRA* dijkstra ,LIST* list, POSITION nodeToProcess ) 
 {
     
     if (isSand ( graph, nodeToProcess )) {
@@ -268,7 +269,7 @@ static void executeDijkstra ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNo
     destroyList(list);
 } 
 
-PATH_LIST pathToFollow(DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode ) 
+PATH_LIST pathToFollow ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION firstNode ) 
 {
     POSITION sommet;
     PATH_LIST stack;
