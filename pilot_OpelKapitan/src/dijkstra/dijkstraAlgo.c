@@ -17,8 +17,8 @@
  * @date 29 avril 2022
  */
 
-#include "../include/dijkstraAlgo.h"
-#include "pilotDirection.h"
+#include "../../include/dijkstra/dijkstraAlgo.h"
+#include "../../include/direction/pilotDirection.h"
 
 /**
  * @brief Set result's values to reference.

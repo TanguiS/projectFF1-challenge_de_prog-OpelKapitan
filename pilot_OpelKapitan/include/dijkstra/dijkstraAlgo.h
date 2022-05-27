@@ -23,12 +23,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "graph.h"
-#include "pilotManagement.h"
-#include "util.h"
-#include "dijkstraMatrix.h"
-#include "pathList.h"
-#include "list.h"
+#include "../race/graph.h"
+#include "../direction/pilotManagement.h"
+#include "../tools/util.h"
+#include "./dijkstraMatrix.h"
+#include "../tools/pathList.h"
+#include "../tools/list.h"
 
 /**
  * @brief Give the shorter path to go on the nearest finish line

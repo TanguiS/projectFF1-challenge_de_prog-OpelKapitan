@@ -17,7 +17,7 @@
  * @date 22 janvier 2022
  */
 
-#include "pathList.h"
+#include "../../include/tools/pathList.h"
 
 /**
  * @brief Create a Cell object

@@ -16,7 +16,7 @@
  * @date 01 janvier 2022
  */
 
-#include "follow_line.h"
+#include "../../include/direction/follow_line.h"
 
 void initLine(int x1, int y1, int x2, int y2, InfoLine * infoLine)
 {

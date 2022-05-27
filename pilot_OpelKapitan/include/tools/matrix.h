@@ -20,8 +20,7 @@
 #ifndef __MATRIX_HH__
 #define __MATRIX_HH__
 
-#include "matrix.h"
-#include "util.h"
+#include "./util.h"
 #include <stdio.h>
 #include <stdlib.h>
 

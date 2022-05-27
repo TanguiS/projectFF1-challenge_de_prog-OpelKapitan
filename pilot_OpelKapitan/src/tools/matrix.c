@@ -16,7 +16,7 @@
  * @date 06 mai 2022
  */
 
-#include "matrix.h"
+#include "../../include/tools/matrix.h"
 
 /**
  * @brief Initialise a Matrix object

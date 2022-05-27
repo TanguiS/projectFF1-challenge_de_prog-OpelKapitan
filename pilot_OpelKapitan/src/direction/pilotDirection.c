@@ -17,7 +17,7 @@
  * @date 15 avril 2022
  */
 
-#include "pilotDirection.h"
+#include "../../include/direction/pilotDirection.h"
 
 /**
  * @brief Determine the hypotetical next position according to current data

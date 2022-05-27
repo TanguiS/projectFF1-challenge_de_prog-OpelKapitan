@@ -23,12 +23,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "pilotManagement.h"
-#include "actionModificator.h"
-#include "util.h"
-#include "pathList.h"
-#include "graph.h"
-#include "follow_line.h"
+#include "./pilotManagement.h"
+#include "./actionModificator.h"
+#include "../tools/util.h"
+#include "../tools/pathList.h"
+#include "../race/graph.h"
+#include "./follow_line.h"
 
 /**
  * @brief Enumeration of a straight direction type

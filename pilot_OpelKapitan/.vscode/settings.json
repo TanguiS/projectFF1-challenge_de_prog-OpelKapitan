@@ -40,7 +40,8 @@
     "pathlist.h": "c",
     "readmap.h": "c",
     "debugmode.h": "c",
-    "communicatorwithgdc.h": "c"
+    "communicatorwithgdc.h": "c",
+    "stdlib.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled",
   "C_Cpp_Runner.useMsvc": false

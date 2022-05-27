@@ -25,12 +25,12 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <math.h>
-#include "util.h"
-#include "communicatorWithGDC.h"
-#include "pathList.h"
-#include "list.h"
-#include "dijkstraAlgo.h"
-#include "dijkstraMatrix.h"
+#include "./tools/util.h"
+#include "../race/communicatorWithGDC.h"
+#include "./tools/pathList.h"
+#include "./tools/list.h"
+#include "../dijkstra/dijkstraAlgo.h"
+#include "../dijkstra/dijkstraMatrix.h"
 
 /**
  * @brief Declaration of a structure for a pilot object 

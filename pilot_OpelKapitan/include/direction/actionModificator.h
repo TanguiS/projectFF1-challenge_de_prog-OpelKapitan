@@ -20,7 +20,7 @@
 #ifndef __ACTION_MODIFICATOR_HH__
 #define __ACTION_MODIFICATOR_HH__
 
-#include "util.h"
+#include "../tools/util.h"
 
 #define NUMBER_DIRECTION 8  /**< the number of basic directions */
 #define ACTION 1            /**< the classic Action value */

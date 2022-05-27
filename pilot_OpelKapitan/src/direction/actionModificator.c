@@ -17,7 +17,7 @@
  * @date 15 avril 2022
  */
 
-#include "../include/actionModificator.h"
+#include "../../include/direction/actionModificator.h"
 
 void goRight ( ACCELERATION* action ) {
     action->X = STRAIGHT_ACTION + ACTION;

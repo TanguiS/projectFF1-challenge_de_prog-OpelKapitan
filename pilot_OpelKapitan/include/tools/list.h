@@ -22,7 +22,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "util.h"
+#include "./util.h"
 
 /**
  * @brief listElement type declaration 

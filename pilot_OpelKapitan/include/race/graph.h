@@ -25,9 +25,9 @@
 #include <assert.h>
 #include <limits.h>
 #include <math.h>
-#include "matrix.h"
-#include "util.h"
-#include "list.h"
+#include "./tools/matrix.h"
+#include "./tools/util.h"
+#include "./tools/list.h"
 
 #define SIZE_TAB_FINISH_LINE 100                            /**< the size of the finish line tab */
 

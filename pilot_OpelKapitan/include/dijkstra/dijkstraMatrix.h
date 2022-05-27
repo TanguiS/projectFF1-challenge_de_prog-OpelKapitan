@@ -22,9 +22,8 @@
 
 #include <limits.h>
 
-#include "dijkstraMatrix.h"
-#include "util.h"
-#include "graph.h"
+#include "../tools/util.h"
+#include "../race/graph.h"
 #include <stdio.h>
 #include <stdlib.h>
 

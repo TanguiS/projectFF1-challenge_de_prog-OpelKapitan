@@ -17,7 +17,7 @@
  * @date 19 avril 2022
  */
 
-#include "../include/graph.h"
+#include "../../include/race/graph.h"
 
 #define INIT_SIZE 0     /**< the value to init */
 

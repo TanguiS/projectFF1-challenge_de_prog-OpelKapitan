@@ -20,10 +20,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "communicatorWithGDC.h"
-#include "pilotManagement.h"
-#include "dijkstraAlgo.h"
-#include "dijkstraMatrix.h"
+#include "../include/race/communicatorWithGDC.h"
+#include "../include/direction/pilotManagement.h"
+#include "../include/dijkstra/dijkstraAlgo.h"
+#include "../include/dijkstra/dijkstraMatrix.h"
 
 int main ( void )
 {

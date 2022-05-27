@@ -18,7 +18,7 @@
  */
 
 
-#include "dijkstraMatrix.h"
+#include "../../include/dijkstra/dijkstraMatrix.h"
 
 
 short getWidthDijkstra(DIJKSTRA* dijkstra) {

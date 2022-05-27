@@ -23,8 +23,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "util.h"
-#include "graph.h"
+#include "../tools/util.h"
+#include "./graph.h"
 
 /**
  * @brief Enumeration of the values of a map 
