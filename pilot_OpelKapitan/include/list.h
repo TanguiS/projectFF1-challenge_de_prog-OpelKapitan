@@ -46,7 +46,6 @@ typedef struct _list {
     int size;
     LIST_CELL head;                      /**< the head of the list */
     LIST_CELL tail;                      /**< the tail of the list */
-    /*int size;*/                             /**< the size of the list */
 } _list; 
 /**
  * @brief Lifo object declaration 

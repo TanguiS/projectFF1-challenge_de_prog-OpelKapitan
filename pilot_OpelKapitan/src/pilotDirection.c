@@ -30,16 +30,12 @@
  * @param currentSpeed The current speed of a pilot
  * @return POSITION The next position
  */
-static POSITION hypotheticalNextPosition ( 
+static POSITION hypotheticalNextPosition( 
                                             POSITION nextPosition, 
                                             POSITION currentPosition, 
                                             SPEED currentSpeed 
-                                         )
-{
-    nextPosition.X =  nextPosition.X - currentPosition.X - currentSpeed.X;
-    nextPosition.Y =  nextPosition.Y - currentPosition.Y - currentSpeed.Y;
-    return nextPosition;
-}
+                                         );
+
 
 /**
  * @brief Determine the correct action for a step by step movement 
@@ -55,15 +51,7 @@ static PATH_LIST nextActionForNextPosition (
                                             POSITION pilotPosition, 
                                             SPEED pilotSpeed, 
                                             ACCELERATION* nextAction 
-                                           )
-{
-    path_list_element nextPosition;
-    POSITION positionToGo;
-    nextPosition = examineHeadPathList ( path );
-    positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
-    basicNextAction ( positionToGo, nextAction );
-    return path;
-}
+                                           );
 
 /**
  * @brief Determine the correct action for a step by step movement with a boost
@@ -74,6 +62,172 @@ static PATH_LIST nextActionForNextPosition (
  * @param nextAction the determined next action
  * @return PATH_LIST the updated list
  */
+static PATH_LIST nextActionBoostedForNextPosition ( 
+                                                    PATH_LIST path, 
+                                                    POSITION pilotPosition, 
+                                                    SPEED pilotSpeed, 
+                                                    ACCELERATION* nextAction 
+                                                  );
+
+
+/**
+ * @brief Update the path to follow if the path is straight
+ * 
+ * @param path the path to follow
+ * @param currentPosition the current position of a pilot
+ * @param graph the race graph
+ * @return boolean true if the path has been updated
+ */
+static boolean updatePathListIfstraightLine ( 
+                                                PATH_LIST* path, 
+                                                POSITION currentPosition, 
+                                                GRAPH* graph 
+                                            );
+
+
+/**
+ * @brief Informs if node between start and stop can be crossed
+ * 
+ * @param graph the path to follow
+ * @param start the position of the beginning
+ * @param stop the position of the end
+ * @param goalPosition position where is stoked the second node between start and stop
+ * @return boolean 
+ */
+static boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POSITION* goalPosition );
+
+
+/**
+ * @brief Adapts the boost if there is a car on the next node
+ * 
+ * @param graph the path to follow
+ * @param path the path to follow
+ * @param pilotPosition the pilot position
+ * @param goalPosition the position to go 
+ * @param nextAction the next acceleration
+ * @param pilotSpeed the pilot speed
+ */
+static void adaptPilot (
+                GRAPH* graph, PATH_LIST path,
+                POSITION pilotPosition,
+                POSITION goalPosition,
+                ACCELERATION* nextAction,
+                SPEED pilotSpeed );
+
+/**
+ * @brief Adapts the boost for the next position.
+ * 
+ * @param graph 
+ * @param path 
+ * @param pilotPosition 
+ * @param pilotSpeed 
+ * @param nextAction 
+ * @return PATH_LIST 
+ */
+static PATH_LIST BetterBoostForNextPosition ( 
+                                        GRAPH* graph,   
+                                        PATH_LIST path,
+                                        POSITION pilotPosition,
+                                        SPEED pilotSpeed,
+                                        ACCELERATION* nextAction
+                                        );
+
+/**
+ * @brief vector between two positions
+ * 
+ * @param finalPosition the final position
+ * @param startPosition  the first position
+ * @return POSITION the vector
+ */
+static POSITION positionVector ( POSITION finalPosition, POSITION startPosition );
+
+
+/**
+ * @brief Add action to a queue if the direction is straight
+ * 
+ * @param length the length to travel
+ * @param currentSpeed the current speed of a pilot
+ * @param startingIndex the starting index to add actions
+ * @param startPosition the current position
+ * @param finalPosition the final position of the straight line
+ * @param actions a group of action to follow
+ * @return short the length 
+ */
+static void addActionToGroup ( 
+                            short length, short currentSpeed, 
+                            short startingIndex, POSITION startPosition, 
+                            POSITION finalPosition, ACCELERATION* actions 
+                              );
+
+
+/**
+ * @brief Redirect to the correct function to determine a group of action if the path if straight
+ * 
+ * @param path the path to follow
+ * @param pilotPosition the current pilot position
+ * @param pilotSpeed the current pilot speed
+ * @param nextAction the group of action
+ * @return PATH_LIST the updated path list
+ */
+static PATH_LIST groupNextAction ( 
+                                    PATH_LIST path, POSITION pilotPosition, 
+                                    SPEED pilotSpeed, ACCELERATION* nextAction 
+                                 );
+
+
+/**
+ * @brief if the speed is null
+ * 
+ * @param pilotSpeed the current pilot speed
+ * @return boolean true if speed is null
+ */
+static boolean speedIsNull ( SPEED pilotSpeed );
+
+
+/**
+ * @brief Correct the action in case off the trajectory is impossible
+ * 
+ * @param graph the graph of the race
+ * @param pilotPosition the current pilot position
+ * @param nextPosition the next position in the path to follow
+ * @param pilotSpeed the current pilot speed
+ * @param nextAction the next action
+ */
+static void trajectoryCorrection ( 
+                                    GRAPH* graph, POSITION pilotPosition, 
+                                    POSITION nextPosition, SPEED pilotSpeed, 
+                                    ACCELERATION* nextAction 
+                                  );
+
+
+static POSITION hypotheticalNextPosition ( 
+                                            POSITION nextPosition, 
+                                            POSITION currentPosition, 
+                                            SPEED currentSpeed 
+                                         )
+{
+    nextPosition.X =  nextPosition.X - currentPosition.X - currentSpeed.X;
+    nextPosition.Y =  nextPosition.Y - currentPosition.Y - currentSpeed.Y;
+    return nextPosition;
+}
+
+
+static PATH_LIST nextActionForNextPosition ( 
+                                            PATH_LIST path, 
+                                            POSITION pilotPosition, 
+                                            SPEED pilotSpeed, 
+                                            ACCELERATION* nextAction 
+                                           )
+{
+    path_list_element nextPosition;
+    POSITION positionToGo;
+    nextPosition = examineHeadPathList ( path );
+    positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
+    basicNextAction ( positionToGo, nextAction );
+    return path;
+}
+
+
 static PATH_LIST nextActionBoostedForNextPosition ( 
                                                     PATH_LIST path, 
                                                     POSITION pilotPosition, 
@@ -93,14 +247,6 @@ static PATH_LIST nextActionBoostedForNextPosition (
     return path;
 }
 
-/**
- * @brief Update the path to follow if the path is straight
- * 
- * @param path the path to follow
- * @param currentPosition the current position of a pilot
- * @param graph the race graph
- * @return boolean true if the path has been updated
- */
 static boolean updatePathListIfstraightLine ( 
                                                 PATH_LIST* path, 
                                                 POSITION currentPosition, 
@@ -171,7 +317,7 @@ static boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POS
   return true;
 }
 
-void adaptPilot (
+static void adaptPilot (
                 GRAPH* graph, PATH_LIST path,
                 POSITION pilotPosition,
                 POSITION goalPosition,
@@ -209,7 +355,8 @@ void adaptPilot (
     }
 }
 
-PATH_LIST BetterBoostForNextPosition ( 
+
+static PATH_LIST BetterBoostForNextPosition ( 
                                         GRAPH* graph,   
                                         PATH_LIST path,
                                         POSITION pilotPosition,
@@ -237,13 +384,7 @@ PATH_LIST BetterBoostForNextPosition (
     return path;
 }
 
-/**
- * @brief vector between two positions
- * 
- * @param finalPosition the final position
- * @param startPosition  the first position
- * @return POSITION the vector
- */
+
 static POSITION positionVector ( POSITION finalPosition, POSITION startPosition )
 {
     finalPosition.X = finalPosition.X - startPosition.X;
@@ -251,17 +392,7 @@ static POSITION positionVector ( POSITION finalPosition, POSITION startPosition 
     return finalPosition;
 }
 
-/**
- * @brief Add action to a queue if the direction is straight
- * 
- * @param length the length to travel
- * @param currentSpeed the current speed of a pilot
- * @param startingIndex the starting index to add actions
- * @param startPosition the current position
- * @param finalPosition the final position of the straight line
- * @param actions a group of action to follow
- * @return short the length 
- */
+
 static void addActionToGroup ( 
                             short length, short currentSpeed, 
                             short startingIndex, POSITION startPosition, 
@@ -331,17 +462,6 @@ static void addActionToGroup (
     actions[0].Y = 0;
 }
 
-/**
- * @brief Add action to a queue if the direction is straight
- * 
- * @param length the length to travel
- * @param currentSpeed the current speed of a pilot
- * @param startingIndex the starting index to add actions
- * @param startPosition the current position
- * @param finalPosition the final position of the straight line
- * @param actions a group of action to follow
- * @return short the length 
- */
 static void addActionToGroupDiagonal ( 
                             short length, short currentSpeed, 
                             short startingIndex, POSITION startPosition, 
@@ -518,26 +638,13 @@ static PATH_LIST groupNextAction (
     return path;
 }
 
-/**
- * @brief if the speed is null
- * 
- * @param pilotSpeed the current pilot speed
- * @return boolean true if speed is null
- */
+
 static boolean speedIsNull ( SPEED pilotSpeed )
 {
     return ( pilotSpeed.X == 0 && pilotSpeed.Y == 0 );
 }
 
-/**
- * @brief Correct the action in case off the trajectory is impossible
- * 
- * @param graph the graph of the race
- * @param pilotPosition the current pilot position
- * @param nextPosition the next position in the path to follow
- * @param pilotSpeed the current pilot speed
- * @param nextAction the next action
- */
+
 static void trajectoryCorrection ( 
                                     GRAPH* graph, POSITION pilotPosition, 
                                     POSITION nextPosition, SPEED pilotSpeed, 

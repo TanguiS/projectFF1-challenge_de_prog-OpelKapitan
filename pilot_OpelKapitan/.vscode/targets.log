@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 26 14:21:14 2022
+# Make data base, printed on Fri May 27 14:37:53 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ SNAP_DATA = /var/snap/code/97
 # environment
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:39095
+JOURNAL_STREAM = 8:39208
 # makefile (from 'Makefile', line 10)
 CFLAGS = -Wall -Wextra -ansi -pedantic -O3
 # environment
@@ -83,7 +83,7 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 11)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
-MANAGERPID = 1372
+MANAGERPID = 1360
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -97,7 +97,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1605,unix/tanguistei:/tmp/.ICE-unix/1605
+SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1600,unix/tanguistei:/tmp/.ICE-unix/1600
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -117,7 +117,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 140be5581bac4e6e9d580b3f8c09b81e
+INVOCATION_ID = 4fa10cf5c14641d19fe79c58538ce2ae
 # makefile (from 'Makefile', line 12)
 LDFLAGS = -lm
 # environment
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2312
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2034
 # automatic
 %F = $(notdir $%)
 # environment
@@ -147,7 +147,7 @@ PWD = /home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1543
+SSH_AGENT_PID = 1537
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -199,7 +199,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87102a00-a27a-4899-be6c-663753ccd472.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c433a114-1f82-41f5-86d4-5f4285af81f0.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -275,9 +275,10 @@ INC_PATH = ./include
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2487
+VSCODE_PID = 2108
 # variable set hash-table stats:
 # Load=132/1024=13%, Rehash=0, Collisions=28/217=13%
+ 
 
 # Pattern-specific Variable Values
 
@@ -285,9 +286,9 @@ VSCODE_PID = 2487
 
 # Directories
 
-# . (device 2053, inode 4325663): 9 files, no impossibilities.
+# . (device 2053, inode 4325663): 11 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -358,7 +359,6 @@ obj/actionModificator.o: src/actionModificator.c include/actionModificator.h
 include/dijkstraMatrix.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 distclean: ../drivers
@@ -573,6 +573,7 @@ obj/pathList.o: src/pathList.c include/pathList.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/dijkstraMatrix.o: src/dijkstraMatrix.c include/dijkstraAlgo.h
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -599,13 +600,12 @@ install: ../drivers/OpelKapitan
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 56 / storage = 863 B / avg = 15 B
-# current buf: size = 8162 B / used = 863 B / count = 56 / avg = 15 B
+# strcache buffers: 1 (0) / strings = 58 / storage = 876 B / avg = 15 B
+# current buf: size = 8162 B / used = 876 B / count = 58 / avg = 15 B
 
-# strcache performance: lookups = 96 / hit rate = 41%
+# strcache performance: lookups = 98 / hit rate = 40%
 # hash-table stats:
- 
-# Load=56/8192=1%, Rehash=0, Collisions=1/96=1%
-# Finished Make data base on Thu May 26 14:21:14 2022
+# Load=58/8192=1%, Rehash=0, Collisions=1/98=1%
+# Finished Make data base on Fri May 27 14:37:53 2022
 
  
