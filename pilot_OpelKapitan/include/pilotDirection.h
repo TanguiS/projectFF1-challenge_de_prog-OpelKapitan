@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file pilotDirection.h
  * @brief This file contains the prototypes / declarations used to choose the pilot's direction.
- */
-
-/**
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <tangui.steimetz@ecole.ensicaen.fr>
  * @version 1.1.8

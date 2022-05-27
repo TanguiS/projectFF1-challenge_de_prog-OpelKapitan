@@ -11,9 +11,7 @@
 /**
  * @list list.c
  * @brief This list  contains all the functions of the lisalgo.
- */
-
-/**
+ * @author PICQUE kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.2
  * @date 22 janvier 2022

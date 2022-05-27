@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file dijkstraAlgo.c
  * @brief This file contains the functions to implement the Dijstra's algo.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 2.5.0
@@ -59,7 +56,7 @@ static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNod
  * @param successorNode A currentNode's successor. 
  * @return short The value of the arc.
  */
-static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successorNode );
+static short getArcValue ( GRAPH* graph, DIJKSTRA* dijkstra,POSITION currentNode, POSITION successorNode );
 
 
 /**
@@ -138,6 +135,7 @@ static void initDijkstra ( DIJKSTRA* dijkstra, POSITION firstNode )
         }
     }
     setPathLength ( dijkstra, firstNode.X, firstNode.Y, 0 );
+    setPredecessor ( dijkstra, firstNode.X, firstNode.Y, firstNode );
     setFlag ( dijkstra, firstNode, gray );
 }
 
@@ -158,12 +156,20 @@ static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNod
     setFlag ( dijkstra, *currentNode, black );
 }
 
-static short getArcValue ( GRAPH* graph, POSITION currentNode, POSITION successorNode )
+static short getArcValue ( GRAPH* graph, DIJKSTRA* dijkstra,POSITION currentNode, POSITION successorNode )
 {
     short arcValue;
+    POSITION pred;
 
+    getPredecessor ( dijkstra, currentNode.X, currentNode.Y, &pred );
     arcValue = (short)getElementGraph ( graph, successorNode);
-    arcValue += abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y)) - 1 ;
+    if ( isSand ( graph, successorNode ) ) {
+        arcValue += 1;
+    }
+    if ( !areAligned ( currentNode, pred, successorNode ) ) {
+        arcValue += 1;
+    }
+    arcValue += abs((currentNode.X - successorNode.X)) + abs((currentNode.Y - successorNode.Y));
     return arcValue;
 }
 
@@ -175,7 +181,7 @@ static void updateLengthNode ( DIJKSTRA* dijkstra, GRAPH* graph, POSITION curren
 
     d1 = getPathLength(dijkstra, currentNode.X, currentNode.Y);
     d2 = getPathLength(dijkstra, successorNode.X, successorNode.Y);
-    arcValue = getArcValue ( graph, currentNode, successorNode );
+    arcValue = getArcValue ( graph, dijkstra, currentNode, successorNode );
     if ( d2 > (d1 + arcValue) ) {
         setPathLength(dijkstra, successorNode.X, successorNode.Y, (d1 + arcValue));
         setPredecessor(dijkstra, successorNode.X, successorNode.Y, currentNode);

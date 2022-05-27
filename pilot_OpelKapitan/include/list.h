@@ -11,9 +11,7 @@
 /**
  * @file list.h
  * @brief This file contains all the prototype of the liste algo.
- */
-
-/**
+ * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.1
  * @date 22 janvier 2022
@@ -35,17 +33,17 @@ typedef POSITION listElement;
  * @brief A structure to represent a cell object 
  */
 typedef struct _list_cell {
-    listElement contents;                 /**< the element that the cell contains */
-    struct _list_cell* followingCell;     /**< the following cell */
+    listElement contents;                   /**< the element that the cell contains */
+    struct _list_cell* followingCell;       /**< the following cell */
 } *LIST_CELL;
 
 /**
  * @brief A structure to represent a lifo object 
  */
 typedef struct _list {
-    int size;
-    LIST_CELL head;                      /**< the head of the list */
-    LIST_CELL tail;                      /**< the tail of the list */
+    int size;                               /**< the size of the list */
+    LIST_CELL head;                         /**< the head of the list */
+    LIST_CELL tail;                         /**< the tail of the list */
 } _list; 
 /**
  * @brief Lifo object declaration 

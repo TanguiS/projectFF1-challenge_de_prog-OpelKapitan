@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file communicatorWithGDC.c
  * @brief This file is used to communicate with the GDC.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.Fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.3

@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file pilotDirection.c
  * @brief This file contains the functions used to choose the pilot's direction/action.
- */
-
-/**
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <tangui.steimetz@ecole.ensicaen.fr>
  * @version 1.1.11
@@ -199,6 +196,51 @@ static void trajectoryCorrection (
                                     ACCELERATION* nextAction 
                                   );
 
+/**
+ * @brief Equilibrate the speed of the pilote to enter properly in a diagonal
+ * 
+ * @param path : the path to follow
+ * @param pilotPosition : the current postion of the pilot
+ * @param pilotSpeed : the current pilot speed
+ * @param nextAction : the action to determine
+ * @return PATH_LIST : the updated path
+ */
+static PATH_LIST equilibrateSpeedForStraightLine ( 
+                                                    PATH_LIST path, 
+                                                    POSITION pilotPosition, 
+                                                    SPEED pilotSpeed, 
+                                                    ACCELERATION* nextAction 
+                                                  );
+
+/**
+ * @brief Equilibrate the X-speed of a pilot
+ * 
+ * @param pilotPositionX : the X-position of a pilot
+ * @param nextPositionX : the X-next position of the path
+ * @param positionToGoX : the X-position to go
+ * @param pilotSpeedX : the X-speed of a pilot
+ * @param nextAction : the next action to determine
+ */
+static void equilibrateSpeedX ( 
+                                short pilotPositionX, short nextPositionX, 
+                                short positionToGoX, short pilotSpeedX, 
+                                ACCELERATION* nextAction 
+                              );
+
+/**
+ * @brief Equilibrate the Y-speed of a pilot
+ * 
+ * @param positionPilotY : the Y-position of a pilot
+ * @param nextPositionY : the Y-next position of the path
+ * @param positionToGoY : the Y-position to go
+ * @param pilotSpeedY : the Y-speed of a pilot
+ * @param nextAction : the next action to determine
+ */
+static void equilibrateSpeedY ( 
+                                short positionPilotY, short nextPositionY, 
+                                short positionToGoY, short pilotSpeedY, 
+                                ACCELERATION* nextAction 
+                              );
 
 static POSITION hypotheticalNextPosition ( 
                                             POSITION nextPosition, 
@@ -222,7 +264,11 @@ static PATH_LIST nextActionForNextPosition (
     path_list_element nextPosition;
     POSITION positionToGo;
     nextPosition = examineHeadPathList ( path );
-    positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
+    positionToGo = hypotheticalNextPosition ( 
+                                                nextPosition, 
+                                                pilotPosition, 
+                                                pilotSpeed 
+                                            );
     basicNextAction ( positionToGo, nextAction );
     return path;
 }
@@ -287,7 +333,10 @@ static boolean updatePathListIfstraightLine (
     return areAligned ( currentPosition, nextPosition, previousGoalPosition );
 }
 
-static boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POSITION* goalPosition )
+static boolean isApprochable ( 
+                                GRAPH* graph, POSITION start,  
+                                POSITION stop, POSITION* goalPosition 
+                             )
 {
   POSITION transition;
   InfoLine vline;
@@ -531,7 +580,11 @@ static void addActionToGroupDiagonal (
     actions[0].Y = 0;
 }
 
-void equilibrateSpeedX ( short pilotPositionX, short nextPositionX, short positionToGoX, short pilotSpeedX, ACCELERATION* nextAction )
+static void equilibrateSpeedX ( 
+                                short pilotPositionX, short nextPositionX, 
+                                short positionToGoX, short pilotSpeedX, 
+                                ACCELERATION* nextAction 
+                              )
 {
     if ( pilotPositionX + pilotSpeedX != nextPositionX ) {
         if ( positionToGoX > 0 ) {
@@ -546,7 +599,11 @@ void equilibrateSpeedX ( short pilotPositionX, short nextPositionX, short positi
     }
 }
 
-void equilibrateSpeedY ( short positionPilotY, short nextPositionY, short positionToGoY, short pilotSpeedY, ACCELERATION* nextAction )
+static void equilibrateSpeedY ( 
+                                short positionPilotY, short nextPositionY, 
+                                short positionToGoY, short pilotSpeedY, 
+                                ACCELERATION* nextAction 
+                              )
 {
     if ( positionPilotY + pilotSpeedY != nextPositionY ) {
         if ( positionToGoY > 0 ) {
@@ -561,7 +618,12 @@ void equilibrateSpeedY ( short positionPilotY, short nextPositionY, short positi
     }
 }
 
-PATH_LIST equilibrateSpeedForStraightLine ( PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION* nextAction )
+static PATH_LIST equilibrateSpeedForStraightLine ( 
+                                                    PATH_LIST path, 
+                                                    POSITION pilotPosition, 
+                                                    SPEED pilotSpeed, 
+                                                    ACCELERATION* nextAction 
+                                                  )
 {
     path_list_element nextPosition;
     POSITION positionToGo;
@@ -569,22 +631,12 @@ PATH_LIST equilibrateSpeedForStraightLine ( PATH_LIST path, POSITION pilotPositi
         path = moveCurrentPathList ( path );
     }
     nextPosition = examineHeadPathList ( path );
-    fprintf ( stderr, "> NEXT_ACTION_BASIC, nextPosition : (%hd, %hd)\n", nextPosition.X, nextPosition.Y );
     positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
     equilibrateSpeedX ( pilotPosition.X, nextPosition.X, positionToGo.X, pilotSpeed.X, nextAction );
     equilibrateSpeedY ( pilotPosition.X, nextPosition.Y, positionToGo.Y, pilotSpeed.Y, nextAction );
     return path;
 }
 
-/**
- * @brief Redirect to the correct function to determine a group of action if the path if straight
- * 
- * @param path the path to follow
- * @param pilotPosition the current pilot position
- * @param pilotSpeed the current pilot speed
- * @param nextAction the group of action
- * @return PATH_LIST the updated path list
- */
 static PATH_LIST groupNextAction ( 
                                     PATH_LIST path, POSITION pilotPosition, 
                                     SPEED pilotSpeed, ACCELERATION* nextAction 
@@ -742,11 +794,11 @@ PATH_LIST choiceNextAction (
                 path = redirectTab[2]( path, pilotPosition, pilotSpeed, actionTab );
             } else {
                 path = redirectTab[1]( path, pilotPosition, pilotSpeed, actionTab );
-                if ( !isEmptyPathList ( path ) ) {
-                    trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
-                }
                 return path;
             }
+        }
+        if ( !isEmptyPathList ( path ) ) {
+            trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
         }
         nextAction->X = actionTab->X;
         nextAction->Y = actionTab->Y;
