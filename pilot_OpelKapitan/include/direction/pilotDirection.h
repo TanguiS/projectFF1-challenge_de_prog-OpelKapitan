@@ -29,6 +29,7 @@
 #include "../tools/pathList.h"
 #include "../race/graph.h"
 #include "./follow_line.h"
+#include "./diagonalAction.h"
 
 /**
  * @brief Enumeration of a straight direction type

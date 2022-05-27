@@ -19,19 +19,6 @@
 
 #include "../../include/direction/pilotDirection.h"
 
-/**
- * @brief Determine the hypotetical next position according to current data
- * 
- * @param nextPosition The next position to follow
- * @param currentPosition the current position of a pilot
- * @param currentSpeed The current speed of a pilot
- * @return POSITION The next position
- */
-static POSITION hypotheticalNextPosition( 
-                                            POSITION nextPosition, 
-                                            POSITION currentPosition, 
-                                            SPEED currentSpeed 
-                                         );
 
 
 /**
@@ -129,15 +116,6 @@ static PATH_LIST BetterBoostForNextPosition (
                                         ACCELERATION* nextAction
                                         );
 
-/**
- * @brief vector between two positions
- * 
- * @param finalPosition the final position
- * @param startPosition  the first position
- * @return POSITION the vector
- */
-static POSITION positionVector ( POSITION finalPosition, POSITION startPosition );
-
 
 /**
  * @brief Add action to a queue if the direction is straight
@@ -195,63 +173,6 @@ static void trajectoryCorrection (
                                     POSITION nextPosition, SPEED pilotSpeed, 
                                     ACCELERATION* nextAction 
                                   );
-
-/**
- * @brief Equilibrate the speed of the pilote to enter properly in a diagonal
- * 
- * @param path : the path to follow
- * @param pilotPosition : the current postion of the pilot
- * @param pilotSpeed : the current pilot speed
- * @param nextAction : the action to determine
- * @return PATH_LIST : the updated path
- */
-static PATH_LIST equilibrateSpeedForStraightLine ( 
-                                                    PATH_LIST path, 
-                                                    POSITION pilotPosition, 
-                                                    SPEED pilotSpeed, 
-                                                    ACCELERATION* nextAction 
-                                                  );
-
-/**
- * @brief Equilibrate the X-speed of a pilot
- * 
- * @param pilotPositionX : the X-position of a pilot
- * @param nextPositionX : the X-next position of the path
- * @param positionToGoX : the X-position to go
- * @param pilotSpeedX : the X-speed of a pilot
- * @param nextAction : the next action to determine
- */
-static void equilibrateSpeedX ( 
-                                short pilotPositionX, short nextPositionX, 
-                                short positionToGoX, short pilotSpeedX, 
-                                ACCELERATION* nextAction 
-                              );
-
-/**
- * @brief Equilibrate the Y-speed of a pilot
- * 
- * @param positionPilotY : the Y-position of a pilot
- * @param nextPositionY : the Y-next position of the path
- * @param positionToGoY : the Y-position to go
- * @param pilotSpeedY : the Y-speed of a pilot
- * @param nextAction : the next action to determine
- */
-static void equilibrateSpeedY ( 
-                                short positionPilotY, short nextPositionY, 
-                                short positionToGoY, short pilotSpeedY, 
-                                ACCELERATION* nextAction 
-                              );
-
-static POSITION hypotheticalNextPosition ( 
-                                            POSITION nextPosition, 
-                                            POSITION currentPosition, 
-                                            SPEED currentSpeed 
-                                         )
-{
-    nextPosition.X =  nextPosition.X - currentPosition.X - currentSpeed.X;
-    nextPosition.Y =  nextPosition.Y - currentPosition.Y - currentSpeed.Y;
-    return nextPosition;
-}
 
 
 static PATH_LIST nextActionForNextPosition ( 
@@ -434,14 +355,6 @@ static PATH_LIST BetterBoostForNextPosition (
 }
 
 
-static POSITION positionVector ( POSITION finalPosition, POSITION startPosition )
-{
-    finalPosition.X = finalPosition.X - startPosition.X;
-    finalPosition.Y = finalPosition.Y - startPosition.Y;
-    return finalPosition;
-}
-
-
 static void addActionToGroup ( 
                             short length, short currentSpeed, 
                             short startingIndex, POSITION startPosition, 
@@ -509,132 +422,6 @@ static void addActionToGroup (
     }
     actions[0].X = startingIndex;
     actions[0].Y = 0;
-}
-
-static void addActionToGroupDiagonal ( 
-                            short length, short currentSpeed, 
-                            short startingIndex, POSITION startPosition, 
-                            POSITION finalPosition, ACCELERATION* actions 
-                              )
-{
-    int i;
-    short decelerationPosition;
-    short nextHypoteticalPosition = 0;
-    short hypoteticalSpeed = abs ( currentSpeed );
-    short remainingDistance;
-    short numberStraightAction;
-    short distanceHypoteticalyDriven;
-
-    if ( hypoteticalSpeed == 0 ) {
-        decelerationPosition = 0;
-    } else {
-        decelerationPosition = hypoteticalSpeed - 1;
-    }
-    distanceHypoteticalyDriven = decelerationPosition + nextHypoteticalPosition 
-                                    + hypoteticalSpeed;
-    while ( (distanceHypoteticalyDriven < length - distanceHypoteticalyDriven ) 
-                                        && ( hypoteticalSpeed != MAX_SPEED_DIA ) ) {
-        hypoteticalSpeed++;
-        nextHypoteticalPosition += hypoteticalSpeed;
-        decelerationPosition += hypoteticalSpeed - 1;
-        distanceHypoteticalyDriven = decelerationPosition 
-                                        + nextHypoteticalPosition 
-                                        + hypoteticalSpeed;
-        accelerate ( 
-                    positionVector ( finalPosition, startPosition ), 
-                    &actions[startingIndex] 
-                   );
-        startingIndex++;
-    }
-    remainingDistance = length - distanceHypoteticalyDriven;
-    if ( remainingDistance >= hypoteticalSpeed ) {
-        numberStraightAction = 
-            (short) ( (float) ( remainingDistance ) / (float)(hypoteticalSpeed) );
-        for ( i = 0; i < numberStraightAction; i++ ) {
-            goStraight ( &actions[startingIndex] );
-            startingIndex++;
-        }
-        remainingDistance -= hypoteticalSpeed * numberStraightAction;
-        nextHypoteticalPosition += hypoteticalSpeed * numberStraightAction;
-    }
-    for ( i = 1; i < hypoteticalSpeed; i++ ) {
-        if ( remainingDistance == hypoteticalSpeed - i ) {
-            nextHypoteticalPosition += 2 * (hypoteticalSpeed - i);
-            slowDown ( 
-                        positionVector ( finalPosition, startPosition ), 
-                        &actions[startingIndex] 
-                     );
-            startingIndex++;
-            goStraight ( &actions[startingIndex] );
-            startingIndex++;
-        } else {
-            slowDown ( 
-                        positionVector ( finalPosition, startPosition ), 
-                        &actions[startingIndex] 
-                     );
-            startingIndex++;
-            nextHypoteticalPosition += hypoteticalSpeed - i;
-        }
-    }
-    actions[0].X = startingIndex;
-    actions[0].Y = 0;
-}
-
-static void equilibrateSpeedX ( 
-                                short pilotPositionX, short nextPositionX, 
-                                short positionToGoX, short pilotSpeedX, 
-                                ACCELERATION* nextAction 
-                              )
-{
-    if ( pilotPositionX + pilotSpeedX != nextPositionX ) {
-        if ( positionToGoX > 0 ) {
-            choiceDirection ( right, nextAction );
-        } else if ( positionToGoX == 0 ) {
-            goStraightX ( nextAction );
-        } else {
-            choiceDirection ( left, nextAction );
-        }
-    } else {
-        goStraightX ( nextAction );
-    }
-}
-
-static void equilibrateSpeedY ( 
-                                short positionPilotY, short nextPositionY, 
-                                short positionToGoY, short pilotSpeedY, 
-                                ACCELERATION* nextAction 
-                              )
-{
-    if ( positionPilotY + pilotSpeedY != nextPositionY ) {
-        if ( positionToGoY > 0 ) {
-            choiceDirection ( down, nextAction );
-        } else if ( positionToGoY == 0 ) {
-            goStraightY ( nextAction );
-        } else {
-            choiceDirection ( up, nextAction );
-        }
-    } else {
-        goStraightY ( nextAction );
-    }
-}
-
-static PATH_LIST equilibrateSpeedForStraightLine ( 
-                                                    PATH_LIST path, 
-                                                    POSITION pilotPosition, 
-                                                    SPEED pilotSpeed, 
-                                                    ACCELERATION* nextAction 
-                                                  )
-{
-    path_list_element nextPosition;
-    POSITION positionToGo;
-    if ( currentEqualsHead ( path ) ) {
-        path = moveCurrentPathList ( path );
-    }
-    nextPosition = examineHeadPathList ( path );
-    positionToGo = hypotheticalNextPosition ( nextPosition, pilotPosition, pilotSpeed );
-    equilibrateSpeedX ( pilotPosition.X, nextPosition.X, positionToGo.X, pilotSpeed.X, nextAction );
-    equilibrateSpeedY ( pilotPosition.X, nextPosition.Y, positionToGo.Y, pilotSpeed.Y, nextAction );
-    return path;
 }
 
 static PATH_LIST groupNextAction ( 
