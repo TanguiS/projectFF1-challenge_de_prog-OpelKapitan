@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,13 +11,10 @@
 /**
  * @file pilotManagement.h
  * @brief This file contains the prototypes / declarations used to manage a pilot.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.1
- * @date 06 avril 2022
+ * @version 1.0.2
+ * @date 07 avril 2022
  */
 
 #ifndef __PILOT_MANAGEMENT_HH__

@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file dijkstraAlgo.h
  * @brief This file contains the prototypes / declarations to implement the Dijstra's algo.
- */
-
-/**
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 2.5.0

@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file pilotManagement.h
  * @brief This file contains the functions used to manage a pilot.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.2
@@ -308,9 +305,7 @@ void updatePilots (
     static int round = 0;
     POSITION myPosition, secondPosition, thirdPosition;
     POSITION trash;
-    /*POSITION previousPosition;*/
     ACCELERATION nextAction;
-    SPEED speed;
     static POSITION previousSecound[5] = {
                                         {-1, -1}, {-1, -1}, 
                                         {-1, -1}, 
@@ -322,24 +317,12 @@ void updatePilots (
                                         {-1, -1}, {-1, -1}
                                        };
     PATH_LIST path = createPathList();
-
     round++;
-
-    /* faire un reverse graph pour remettre à un les ancienne position des pilote */
-
     reverseGraph ( graph, referenceGraph, previousSecound, previousThird );
-    
-    /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( &myPosition, &secondPosition, &thirdPosition );
     if ( isErrorFromPilot ( myPilot, myPosition ) ) {
         resetSpeed ( myPilot );
     }
-    /*
-    if ( round == 1 ) {
-        previousPosition = myPosition;
-    } else {
-        previousPosition = getPositionPilot ( myPilot );
-    }*/
     updatePositionPilot ( 
                             myPosition, secondPosition, thirdPosition, 
                             myPilot, secondPilot, thirdPilot 
@@ -349,9 +332,7 @@ void updatePilots (
                     previousSecound, previousThird 
                 );
 
-    /* 1ere etape : choisir une action */
     path = pathToFollow ( dijkstra, graph, myPosition/*, previousPosition*/ );
-    /*fprintf ( stderr, "Parent de la position courante : %d %d\n\n", previousPosition.X, previousPosition.Y );*/
 
     if ( areEqualsPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
@@ -366,16 +347,9 @@ void updatePilots (
                                 round 
                             );
     destroyPathList ( path );
-
-    /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
     updateGasPilot ( myPilot, graph );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
-
-    speed = getSpeedPilot ( myPilot );
-
-    fprintf ( stderr, "                 Speed venant de updateSpeed : %d %d\n", speed.X, speed.Y );
-    /* 3e etape : on transmet l'action au GDP */
     deliverAction ( nextAction );
 }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['action_435',['ACTION',['../actionModificator_8h.html#abeb73dfe8d6e8c280ebce28d84190c7e',1,'actionModificator.h']]]
+  ['boosted_5faction_434',['BOOSTED_ACTION',['../actionModificator_8h.html#a6b5b608d99e5478c362e257492949547',1,'actionModificator.h']]],
+  ['boosts_5fat_5fstart_435',['BOOSTS_AT_START',['../util_8h.html#aabd0ebf94c6b4cdc0246615268d7a7d1',1,'util.h']]]
 ];

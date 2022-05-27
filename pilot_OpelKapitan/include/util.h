@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file util.h
  * @brief This file is for util type declaration.
- */
-
-/**
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.1

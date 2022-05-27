@@ -11,9 +11,6 @@
 /**
  * @file pathList.c
  * @brief This file contains all the functions of the path list algo.
- */
-
-/**
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 2.0.2
@@ -120,11 +117,6 @@ path_list_element getNextCurrentPathList ( PATH_LIST list )
 boolean currentEqualsHead ( PATH_LIST list )
 {
     return list.current == list.head;
-}
-
-boolean nextCurrentEqualsHead ( PATH_LIST list )
-{
-    return list.current->followingCell == list.head;
 }
 
 path_list_element examineHeadPathList ( PATH_LIST list )

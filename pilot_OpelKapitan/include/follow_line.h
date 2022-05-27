@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -10,10 +10,7 @@
 
 /**
  * @file follow_line.h
- * @brief This file contains the functions used to move a point in a 2 diemsions.
- */
-
-/**
+ * @brief This file contains the functions used to move a point in a 2 dimensions.
  * @author Gestionnaire de Course
  * @version 0.0.0
  * @date 01 janvier 2022

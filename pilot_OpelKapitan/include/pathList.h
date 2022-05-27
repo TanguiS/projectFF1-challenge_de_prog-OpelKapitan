@@ -11,9 +11,6 @@
 /**
  * @file pathList.h
  * @brief This file contains all the prototype of the pathList algo.
- */
-
-/**
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 2.0.2
