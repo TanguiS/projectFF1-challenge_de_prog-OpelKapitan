@@ -69,36 +69,38 @@ $(function() {
 <div class="title">follow_line.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef FOLLOW_LINE_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define FOLLOW_LINE_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structPos2Dfloat.html">   10</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">float</span> X;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">float</span> Y;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;} <a class="code" href="structPos2Dfloat.html">Pos2Dfloat</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structInfoLine.html">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="struct__position.html">POSITION</a> start;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="struct__position.html">POSITION</a> end;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="structPos2Dfloat.html">Pos2Dfloat</a> currentPosition;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="structPos2Dfloat.html">Pos2Dfloat</a> delta; <span class="comment">/*&lt; Shift vector */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">int</span> len;          <span class="comment">/*&lt; Length along the main axis */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">int</span> pos;          <span class="comment">/*&lt; Reference position on the line */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;} <a class="code" href="structInfoLine.html">InfoLine</a>;</div>
+<a href="follow__line_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef FOLLOW_LINE_H</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define FOLLOW_LINE_H</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> initLine(<span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2, <a class="code" href="structInfoLine.html">InfoLine</a> * infoLine);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">int</span> nextPoint(<a class="code" href="structInfoLine.html">InfoLine</a> * infoLine, <a class="code" href="struct__position.html">POSITION</a> * point, <span class="keywordtype">int</span> <a class="code" href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structPos2Dfloat.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">float</span> X;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">float</span> Y;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <a class="code" href="structPos2Dfloat.html">Pos2Dfloat</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structInfoLine.html">   38</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="struct__position.html">POSITION</a> start;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="struct__position.html">POSITION</a> end;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="structPos2Dfloat.html">Pos2Dfloat</a> currentPosition;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="structPos2Dfloat.html">Pos2Dfloat</a> delta; <span class="comment">/*&lt; Shift vector */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> len;          <span class="comment">/*&lt; Length along the main axis */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">int</span> pos;          <span class="comment">/*&lt; Reference position on the line */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <a class="code" href="structInfoLine.html">InfoLine</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="follow__line_8h.html#a7bd24f9d4bdfe6e74ce3d2955c27c763">initLine</a>(<span class="keywordtype">int</span> x1, <span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2, <a class="code" href="structInfoLine.html">InfoLine</a> * infoLine);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">int</span> <a class="code" href="follow__line_8h.html#a77cf2be6af68c10f49c183cbbc76b807">nextPoint</a>(<a class="code" href="structInfoLine.html">InfoLine</a> * infoLine, <a class="code" href="struct__position.html">POSITION</a> * point, <span class="keywordtype">int</span> <a class="code" href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructInfoLine_html"><div class="ttname"><a href="structInfoLine.html">InfoLine</a></div><div class="ttdef"><b>Definition:</b> follow_line.h:18</div></div>
-<div class="ttc" id="aactionModificator_8h_html_a99f26e6ee9fcd62f75203b5402df8098"><div class="ttname"><a href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a></div><div class="ttdeci">direction</div><div class="ttdoc">Enumeration of a direction type.</div><div class="ttdef"><b>Definition:</b> actionModificator.h:37</div></div>
+<div class="ttc" id="astructInfoLine_html"><div class="ttname"><a href="structInfoLine.html">InfoLine</a></div><div class="ttdef"><b>Definition:</b> follow_line.h:38</div></div>
+<div class="ttc" id="aactionModificator_8h_html_a99f26e6ee9fcd62f75203b5402df8098"><div class="ttname"><a href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a></div><div class="ttdeci">direction</div><div class="ttdoc">Enumeration of a direction type.</div><div class="ttdef"><b>Definition:</b> actionModificator.h:38</div></div>
 <div class="ttc" id="astruct__position_html"><div class="ttname"><a href="struct__position.html">_position</a></div><div class="ttdoc">A structure to represent the position.</div><div class="ttdef"><b>Definition:</b> util.h:41</div></div>
-<div class="ttc" id="astructPos2Dfloat_html"><div class="ttname"><a href="structPos2Dfloat.html">Pos2Dfloat</a></div><div class="ttdef"><b>Definition:</b> follow_line.h:10</div></div>
+<div class="ttc" id="astructPos2Dfloat_html"><div class="ttname"><a href="structPos2Dfloat.html">Pos2Dfloat</a></div><div class="ttdef"><b>Definition:</b> follow_line.h:30</div></div>
+<div class="ttc" id="afollow__line_8h_html_a7bd24f9d4bdfe6e74ce3d2955c27c763"><div class="ttname"><a href="follow__line_8h.html#a7bd24f9d4bdfe6e74ce3d2955c27c763">initLine</a></div><div class="ttdeci">void initLine(int x1, int y1, int x2, int y2, InfoLine *infoLine)</div><div class="ttdef"><b>Definition:</b> follow_line.c:24</div></div>
+<div class="ttc" id="afollow__line_8h_html_a77cf2be6af68c10f49c183cbbc76b807"><div class="ttname"><a href="follow__line_8h.html#a77cf2be6af68c10f49c183cbbc76b807">nextPoint</a></div><div class="ttdeci">int nextPoint(InfoLine *infoLine, POSITION *point, int direction)</div><div class="ttdoc">nextPoint Move a point along a line in one direction</div><div class="ttdef"><b>Definition:</b> follow_line.c:51</div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div><div class="ttdoc">This file is for util type declaration.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

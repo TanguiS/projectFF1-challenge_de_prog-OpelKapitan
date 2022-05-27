@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pathtofollow_301',['pathToFollow',['../dijkstraAlgo_8c.html#ab94be4f3947aa90f7ffccd783ce21961',1,'pathToFollow(DIJKSTRA *dijkstra, GRAPH *graph, POSITION firstNode):&#160;dijkstraAlgo.c'],['../dijkstraAlgo_8h.html#ab94be4f3947aa90f7ffccd783ce21961',1,'pathToFollow(DIJKSTRA *dijkstra, GRAPH *graph, POSITION firstNode):&#160;dijkstraAlgo.c']]]
+  ['nextpoint_330',['nextPoint',['../follow__line_8c.html#a77cf2be6af68c10f49c183cbbc76b807',1,'nextPoint(InfoLine *infoLine, POSITION *point, int direction):&#160;follow_line.c'],['../follow__line_8h.html#a77cf2be6af68c10f49c183cbbc76b807',1,'nextPoint(InfoLine *infoLine, POSITION *point, int direction):&#160;follow_line.c']]]
 ];

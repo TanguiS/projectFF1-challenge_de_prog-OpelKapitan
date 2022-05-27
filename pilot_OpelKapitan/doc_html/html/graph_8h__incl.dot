@@ -23,7 +23,7 @@ digraph "include/graph.h"
   Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="list.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$list_8h_source.html",tooltip=" "];
+  Node9 [label="list.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$list_8h.html",tooltip="This file contains all the prototype of the liste algo."];
   Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -1,5 +1,25 @@
-#include "follow_line.h"
+/**
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ *
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written permission of the authors.
+ */
 
+/**
+ * @file follow_line.c
+ * @brief This file contains the functions used to move a point in a 2 diemsions.
+ */
+
+/**
+ * @author Gestionnaire de Course
+ * @version 0.0.0
+ * @date 01 janvier 2022
+ */
+
+#include "follow_line.h"
 
 void initLine(int x1, int y1, int x2, int y2, InfoLine * infoLine)
 {

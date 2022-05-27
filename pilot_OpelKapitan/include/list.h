@@ -9,7 +9,7 @@
  */
 
 /**
- * @file liste.h
+ * @file list.h
  * @brief This file contains all the prototype of the liste algo.
  */
 
@@ -67,7 +67,13 @@ LIST createList ();
  */
 boolean isEmptyList ( LIST list );
 
-
+/**
+ * @brief Compare two list elements. 
+ * 
+ * @param element1 
+ * @param element2 
+ * @return boolean 
+ */
 boolean compareElement(listElement* element1, listElement* element2);
 
 /**
@@ -80,14 +86,21 @@ boolean compareElement(listElement* element1, listElement* element2);
 LIST addElementList ( LIST list, listElement x );
 
 
-
+/**
+ * @brief remove removeCoord from the list.  
+ * 
+ * @param list the liste
+ * @param result stock the removed element 
+ * @param removeCoord the position of the element to remove
+ * @return LIST 
+ */
 LIST removeElementListCoord ( LIST list, listElement* result , POSITION* removeCoord);
 
 
 /**
- * @brief Remove a lifo element from the lifo
+ * @brief Remove the first list element from the list
  * 
- * @param file 
+ * @param list 
  * @param result : the removed element
  * @return LIST 
  */
@@ -97,19 +110,30 @@ LIST removeElementList ( LIST list, listElement* result );
 /**
  * @brief Destroy a Lifo Object
  * 
- * @param file 
+ * @param list 
  */
 void destroyList ( LIST list );
 
 
-
-
+/**
+ * @brief Get the Element List object
+ * 
+ * @param list 
+ * @param result stock the removed element 
+ * @param position the ranking of the element
+ * @return boolean if the ranking is greater than the list length
+ */
 boolean getElementList ( LIST list, listElement* result, int position);
 
+/**
+ * @brief Get the Next Element List object from the reference element
+ * 
+ * @param list 
+ * @param result stock the removed element
+ * @param refElement reference element
+ * @return boolean if the next element or the reference element exist
+ */
 boolean getNextElementList ( LIST list, listElement* result, listElement* refElement);
 
-#ifndef DEBUG
-void displaylist (LIST list);
-#endif
 
 #endif /* __LISTE_H__ */
