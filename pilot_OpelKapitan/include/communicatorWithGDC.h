@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,9 +11,6 @@
 /**
  * @file communicatorWithGDC.h
  * @brief This file is the prototypes used by communicatorWithGDC.c functions.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.3
@@ -26,8 +23,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "util.h"
-#include "graph.h"
+#include "./tools/util.h"
+#include "./graph.h"
 
 /**
  * @brief Enumeration of the values of a map 
@@ -44,6 +41,7 @@ typedef enum {
  * 
  * @param fuelLevel : the gas level sent by the GDC
  * @param graph : the Graph object initialized
+ * @param referenceGraph : the Graph object initialized
  * @return 
  */
 void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph );

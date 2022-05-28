@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,21 +11,18 @@
 /**
  * @file communicatorWithGDC.c
  * @brief This file is used to communicate with the GDC.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.Fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.3
  * @date 05 avril 2022
  */
 
-#include "communicatorWithGDC.h"
+#include "../include/communicatorWithGDC.h"
 
 /**
  * @brief Writes the data provided from the arguments in the matrix of the graph
  * 
- * @param map : The DATA_MAP to initialize with the data provided
+ * @param graph : The GRAPH to initialize with the data provided
  * @param data : A line of data that need to be written int the map's matrix
  * @param row : the column to which this line of data belongs
  */

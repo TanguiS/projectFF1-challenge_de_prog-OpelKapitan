@@ -1,0 +1,17 @@
+<map id="include/dijkstra/dijkstraMatrix.h" name="include/dijkstra/dijkstraMatrix.h">
+<area shape="rect" id="node1" title="This file contains prototypes and declarations to manage a Dijkstra&#39;s matrix." alt="" coords="1079,5,1254,47"/>
+<area shape="rect" id="node2" href="$pilotManagement_8h.html" title="This file contains the prototypes / declarations used to manage a pilot." alt="" coords="797,95,997,121"/>
+<area shape="rect" id="node13" href="$dijkstraAlgo_8h.html" title="This file contains the prototypes / declarations to implement the Dijstra&#39;s algo." alt="" coords="986,169,1161,211"/>
+<area shape="rect" id="node14" href="$main_8c.html" title="This file the main function to test a program." alt="" coords="1083,266,1173,293"/>
+<area shape="rect" id="node15" href="$dijkstraMatrix_8c.html" title="This file contains prototypes and declarations to manage a Dijkstra&#39;s matrix." alt="" coords="1236,95,1436,121"/>
+<area shape="rect" id="node3" href="$boostAction_8h.html" title="This file contains the prototypes / declarations used to apply boost." alt="" coords="786,266,1009,293"/>
+<area shape="rect" id="node5" href="$pilotDirection_8h.html" title="This file contains the prototypes / declarations used to choose the pilot&#39;s direction." alt="" coords="477,348,712,375"/>
+<area shape="rect" id="node10" href="$pilotManagement_8c.html" title="This file contains the functions used to manage a pilot." alt="" coords="5,423,176,449"/>
+<area shape="rect" id="node11" href="$straightAction_8h.html" title="This file contains the functions&#39;s prototype used to determine action for a straight line." alt="" coords="676,169,860,211"/>
+<area shape="rect" id="node12" href="$simpleAction_8h.html" title="This file contains the prototypes / declarations used to do simple pilot actions." alt="" coords="423,259,601,300"/>
+<area shape="rect" id="node4" href="$boostAction_8c.html" title="This file contains the functions used to apply boost." alt="" coords="888,423,1083,449"/>
+<area shape="rect" id="node6" href="$simpleAction_8c.html" title="This file contains the functions used to do simple pilot actions." alt="" coords="200,423,403,449"/>
+<area shape="rect" id="node7" href="$straightAction_8c.html" title="This file contains the functions used to modify determine the action for a straight line." alt="" coords="656,423,864,449"/>
+<area shape="rect" id="node8" href="$dijkstraAlgo_8c.html" title="This file contains the functions to implement the Dijstra&#39;s algo." alt="" coords="1107,423,1293,449"/>
+<area shape="rect" id="node9" href="$pilotDirection_8c.html" title="This file contains the functions used to choose the pilot&#39;s direction/action." alt="" coords="427,423,632,449"/>
+</map>

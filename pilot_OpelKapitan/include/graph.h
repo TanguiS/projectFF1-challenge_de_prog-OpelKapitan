@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -9,11 +9,8 @@
  */
 
 /**
- * @file graphMadj.h
+ * @file graph.h
  * @brief This file contains the prototypes / declarations used to process a graph.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.2
@@ -28,9 +25,9 @@
 #include <assert.h>
 #include <limits.h>
 #include <math.h>
-#include "matrix.h"
-#include "util.h"
-#include "list.h"
+#include "./tools/matrix.h"
+#include "./tools/util.h"
+#include "./tools/list.h"
 
 #define SIZE_TAB_FINISH_LINE 100                            /**< the size of the finish line tab */
 
@@ -137,6 +134,13 @@ boolean isCar ( GRAPH* graph, POSITION coord );
  */
 boolean isWall ( GRAPH* graph, POSITION coord );
 
+/**
+ * @brief If the element is arround a car.
+ * 
+ * @param graph the graph of the race.
+ * @param coord the coordinate to test.
+ * @return boolean true if it is around a car.
+ */
 boolean isAroundCar ( GRAPH* graph, POSITION coord );
 
 /**

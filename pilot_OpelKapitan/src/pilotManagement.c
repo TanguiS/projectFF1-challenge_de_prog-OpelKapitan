@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -9,43 +9,43 @@
  */
 
 /**
- * @file pilotManagement.h
+ * @file pilotManagement.c
  * @brief This file contains the functions used to manage a pilot.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.2
  * @date 07 avril 2022
  */
 
-#include "pilotManagement.h"
-#include "pilotDirection.h"
+#include "../include/pilotManagement.h"
+#include "../include/direction/pilotDirection.h"
 
 #define FUEL_SAFETY 10              /**< safety operation */
 
 /**
  * @brief Set the Position Pilot object
  * 
- * @param pilot 
- * @param position 
+ * @param pilot the pilote to update 
+ * @param x the X-coordinate to set
+ * @param y the Y-coordinate to set
  */
 static void setPositionPilot ( PILOT* pilot, short x, short y );
 
 /**
  * @brief Set the Speed Pilot object
  * 
- * @param pilot 
- * @param speed 
+ * @param pilot the pilote to update
+ * @param x the X-coordinate to set
+ * @param y the Y-coordinate to set
  */
 static void setSpeedPilot ( PILOT* pilot, short x, short y );
 
 /**
  * @brief Set the Action Pilot object
  * 
- * @param pilot 
- * @param action 
+ * @param pilot the pilot to update 
+ * @param x the new X-coordinate to set
+ * @param y the new Y-coordinate to set
  */
 static void setActionPilot ( PILOT* pilot, short x, short y );
 
@@ -80,6 +80,22 @@ static void initNewPilot ( PILOT* pilot );
 static void updateSpeedPilot ( PILOT* pilot );
 
 /**
+ * @brief Update the position to the correct pilot's object
+ * 
+ * @param myPosition the position of our pilot
+ * @param secoundPosition the position of the second pilot
+ * @param thirdPosition the position of the third pilot
+ * @param myPilot our pilot
+ * @param secondPilot the second pilot
+ * @param thirdPilot the third pilot
+ */
+static void updatePositionPilot ( 
+                                POSITION myPosition, POSITION secoundPosition, 
+                                POSITION thirdPosition, PILOT* myPilot, 
+                                PILOT* secondPilot, PILOT* thirdPilot 
+                                );
+
+/**
  * @brief If the action is boosted
  * 
  * @param action the action to test
@@ -105,6 +121,7 @@ static short fuelConsumption (
  * @brief Update the gas remaining of our pilot
  * 
  * @param pilot : the PILOT object
+ * @param graph : the graph of the race.
  */
 static void updateGasPilot ( PILOT* pilot, GRAPH* graph );
 
@@ -161,9 +178,6 @@ static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
 
 static void initNewPilot ( PILOT* pilot )
 {
-    /* 
-    on pourrait tenter une fonctions pour partir avec un boost dans la bonne direction directement 
-    */
     setPositionPilot ( pilot, 0, 0 );
     setSpeedPilot ( pilot, 0, 0 );
     setActionPilot ( pilot, 0, 0 );
@@ -178,7 +192,7 @@ static void updateSpeedPilot ( PILOT* pilot )
                            speed.Y + acc.Y );
 }
 
-void updatePositionPilot ( 
+static void updatePositionPilot ( 
                             POSITION myPosition, POSITION secoundPosition, 
                             POSITION thirdPosition, PILOT* myPilot, 
                             PILOT* secondPilot, PILOT* thirdPilot 
@@ -308,9 +322,7 @@ void updatePilots (
     static int round = 0;
     POSITION myPosition, secondPosition, thirdPosition;
     POSITION trash;
-    /*POSITION previousPosition;*/
     ACCELERATION nextAction;
-    SPEED speed;
     static POSITION previousSecound[5] = {
                                         {-1, -1}, {-1, -1}, 
                                         {-1, -1}, 
@@ -322,24 +334,12 @@ void updatePilots (
                                         {-1, -1}, {-1, -1}
                                        };
     PATH_LIST path = createPathList();
-
     round++;
-
-    /* faire un reverse graph pour remettre à un les ancienne position des pilote */
-
     reverseGraph ( graph, referenceGraph, previousSecound, previousThird );
-    
-    /* nouvelle 1ere action, mettre a jour le graph on doit avoir les position au depart */
     updatePositionPilotFromGDC ( &myPosition, &secondPosition, &thirdPosition );
     if ( isErrorFromPilot ( myPilot, myPosition ) ) {
         resetSpeed ( myPilot );
     }
-    /*
-    if ( round == 1 ) {
-        previousPosition = myPosition;
-    } else {
-        previousPosition = getPositionPilot ( myPilot );
-    }*/
     updatePositionPilot ( 
                             myPosition, secondPosition, thirdPosition, 
                             myPilot, secondPilot, thirdPilot 
@@ -349,9 +349,7 @@ void updatePilots (
                     previousSecound, previousThird 
                 );
 
-    /* 1ere etape : choisir une action */
-    path = pathToFollow ( dijkstra, graph, myPosition/*, previousPosition*/ );
-    /*fprintf ( stderr, "Parent de la position courante : %d %d\n\n", previousPosition.X, previousPosition.Y );*/
+    path = pathToFollow ( dijkstra, graph, myPosition );
 
     if ( areEqualsPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );
@@ -362,19 +360,13 @@ void updatePilots (
                                 getSpeedPilot ( myPilot ), 
                                 &nextAction, 
                                 graph, 
-                                getGasLvlPilot ( myPilot ) 
+                                getGasLvlPilot ( myPilot ),
+                                round 
                             );
     destroyPathList ( path );
-
-    /* 2e etape : mettre a jour les donnees dans cet ordre : acc -> speed -> position */
     setActionPilot ( myPilot, nextAction.X, nextAction.Y );
     updateGasPilot ( myPilot, graph );
     updateBoostsPilot ( myPilot );
     updateSpeedPilot ( myPilot );
-
-    speed = getSpeedPilot ( myPilot );
-
-    fprintf ( stderr, "                 Speed venant de updateSpeed : %d %d\n", speed.X, speed.Y );
-    /* 3e etape : on transmet l'action au GDP */
     deliverAction ( nextAction );
 }

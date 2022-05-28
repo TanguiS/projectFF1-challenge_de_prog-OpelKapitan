@@ -1,4 +1,4 @@
-/**
+/*
  * ENSICAEN
  * 6 Boulevard Marechal Juin
  * F-14050 Caen Cedex
@@ -11,13 +11,10 @@
 /**
  * @file pilotManagement.h
  * @brief This file contains the prototypes / declarations used to manage a pilot.
- */
-
-/**
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
- * @version 1.0.1
- * @date 06 avril 2022
+ * @version 1.0.2
+ * @date 07 avril 2022
  */
 
 #ifndef __PILOT_MANAGEMENT_HH__
@@ -28,12 +25,12 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <math.h>
-#include "util.h"
-#include "communicatorWithGDC.h"
-#include "pathList.h"
-#include "list.h"
-#include "dijkstraAlgo.h"
-#include "dijkstraMatrix.h"
+#include "./tools/util.h"
+#include "./communicatorWithGDC.h"
+#include "./tools/pathList.h"
+#include "./tools/list.h"
+#include "./dijkstra/dijkstraAlgo.h"
+#include "./dijkstra/dijkstraMatrix.h"
 
 /**
  * @brief Declaration of a structure for a pilot object 
@@ -99,11 +96,14 @@ short getBoostsRemainingPilot ( PILOT* pilot );
 PILOT createPilot ( short fuelLevel );
 
 /**
- * @brief Updates the data from the tree pilots
+ * @brief Updates the data from the tree pilots.
  * 
- * @param myPilot : Our pilot
- * @param secondPilot : the second pilot 
- * @param thirdPilot : the third pilot
+ * @param myPilot : Our pilot.
+ * @param secondPilot : The second pilot. 
+ * @param thirdPilot : The third pilot.
+ * @param graph : The graph of the race.
+ * @param referenceGraph : The graph of the beginnig of the race.
+ * @param dijkstra : The dijkstra matrix.
  */
 void updatePilots ( 
                     PILOT* myPilot, PILOT* secondPilot, PILOT* thirdPilot, 

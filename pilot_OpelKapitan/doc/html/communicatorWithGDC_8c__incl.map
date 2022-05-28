@@ -1,0 +1,13 @@
+<map id="src/communicatorWithGDC.c" name="src/communicatorWithGDC.c">
+<area shape="rect" id="node1" title="This file is used to communicate with the GDC." alt="" coords="256,5,465,32"/>
+<area shape="rect" id="node2" href="$communicatorWithGDC_8h.html" title="This file is the prototypes used by communicatorWithGDC.c functions." alt="" coords="256,80,465,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="414,319,481,345"/>
+<area shape="rect" id="node4" title=" " alt="" coords="232,319,303,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="26,244,101,271"/>
+<area shape="rect" id="node6" href="$util_8h.html" title="This file is for util type declaration." alt="" coords="598,319,697,345"/>
+<area shape="rect" id="node7" href="$graph_8h.html" title="This file contains the prototypes / declarations used to process a graph." alt="" coords="321,169,400,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="443,244,513,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="176,244,244,271"/>
+<area shape="rect" id="node10" href="$matrix_8h.html" title="This file contains prototypes and declarations to manage a matrix." alt="" coords="537,244,659,271"/>
+<area shape="rect" id="node11" href="$list_8h.html" title="This file contains all the prototype of the liste algo." alt="" coords="269,244,367,271"/>
+</map>
