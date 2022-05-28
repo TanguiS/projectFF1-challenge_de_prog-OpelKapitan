@@ -49,18 +49,5 @@ PATH_LIST nextActionForNextPosition (
                                             ACCELERATION* nextAction 
                                            );
 
-/**
- * @brief Redirect to the correct function to determine a group of action if the path if straight
- * 
- * @param path the path to follow
- * @param pilotPosition the current pilot position
- * @param pilotSpeed the current pilot speed
- * @param nextAction the group of action
- * @return PATH_LIST the updated path list
- */
-PATH_LIST groupNextAction ( 
-                                    PATH_LIST path, POSITION pilotPosition, 
-                                    SPEED pilotSpeed, ACCELERATION* nextAction 
-                                 );
 
 #endif 

@@ -62,6 +62,51 @@ typedef PATH_LIST actionDeterminator (
 boolean areEqualsPosition ( POSITION A, POSITION B );
 
 /**
+ * @brief vector between two positions
+ * 
+ * @param finalPosition the final position
+ * @param startPosition  the first position
+ * @return POSITION the vector
+ */
+POSITION positionVector ( POSITION finalPosition, POSITION startPosition );
+
+/**
+ * @brief If the positions A, B and C are aligned
+ * 
+ * @param A a postion
+ * @param B another position
+ * @param C and another one
+ * @return boolean true if are aligned
+ */
+boolean areAligned ( POSITION A, POSITION B, POSITION C );
+
+/**
+ * @brief Which direction is the straight line
+ * 
+ * @param startPosition the current position
+ * @param goalPosition the position to arrive
+ * @return straightDirection the line that will be followed
+ */
+straightDirection lineToFollow ( 
+                                POSITION startPosition, 
+                                POSITION goalPosition 
+                                );
+
+/**
+ * @brief Determine the hypotetical next position according to current data
+ * 
+ * @param nextPosition The next position to follow
+ * @param currentPosition the current position of a pilot
+ * @param currentSpeed The current speed of a pilot
+ * @return POSITION The next position
+ */
+POSITION hypotheticalNextPosition( 
+                                            POSITION nextPosition, 
+                                            POSITION currentPosition, 
+                                            SPEED currentSpeed 
+                                         );
+
+/**
  * @brief Finds the theoretical next action for the information it receives.
  * 
  * @param path the path to follow for a pilot
