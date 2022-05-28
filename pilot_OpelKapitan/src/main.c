@@ -20,8 +20,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "../include/race/communicatorWithGDC.h"
-#include "../include/direction/pilotManagement.h"
+#include "../include/communicatorWithGDC.h"
+#include "../include/pilotManagement.h"
 #include "../include/dijkstra/dijkstraAlgo.h"
 #include "../include/dijkstra/dijkstraMatrix.h"
 

@@ -23,7 +23,7 @@
 #include <limits.h>
 
 #include "../tools/util.h"
-#include "../race/graph.h"
+#include "../graph.h"
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -8,7 +8,6 @@ LIB_PATH = ./lib
 DIJ = /dijkstra
 DIRECT = /direction
 TOOLS = /tools
-RACE = /race
 
 CC = gcc
 CFLAGS = -Wall -Wextra -ansi -pedantic -O3
@@ -23,7 +22,7 @@ ifeq ($(DEBUG),off)
 CFLAGS += -D'DEBUG'
 endif
 
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/diagonalAction.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/straightAction.o
 
 install: $(BIN_PATH)/$(PILOT_NAME)
 
@@ -33,7 +32,7 @@ try: install
 $(OBJ_PATH)/main.o: $(SRC_PATH)/main.c $(INC_PATH)$(RACE)/communicatorWithGDC.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-$(OBJ_PATH)/communicatorWithGDC.o: $(SRC_PATH)$(RACE)/communicatorWithGDC.c $(INC_PATH)$(RACE)/communicatorWithGDC.h 
+$(OBJ_PATH)/communicatorWithGDC.o: $(SRC_PATH)/communicatorWithGDC.c $(INC_PATH)/communicatorWithGDC.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/matrix.o: $(SRC_PATH)$(TOOLS)/matrix.c $(INC_PATH)$(TOOLS)/matrix.h 
@@ -45,7 +44,7 @@ $(OBJ_PATH)/matrixDij.o: $(SRC_PATH)$(DIJ)/dijkstraMatrix.c $(INC_PATH)$(DIJ)/di
 $(OBJ_PATH)/pathList.o: $(SRC_PATH)$(TOOLS)/pathList.c $(INC_PATH)$(TOOLS)/pathList.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-$(OBJ_PATH)/pilotManagement.o: $(SRC_PATH)$(DIRECT)/pilotManagement.c $(INC_PATH)$(DIRECT)/pilotManagement.h 
+$(OBJ_PATH)/pilotManagement.o: $(SRC_PATH)/pilotManagement.c $(INC_PATH)/pilotManagement.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/actionModificator.o: $(SRC_PATH)$(DIRECT)/actionModificator.c $(INC_PATH)$(DIRECT)/actionModificator.h 
@@ -54,10 +53,10 @@ $(OBJ_PATH)/actionModificator.o: $(SRC_PATH)$(DIRECT)/actionModificator.c $(INC_
 $(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)$(DIRECT)/pilotDirection.c $(INC_PATH)$(DIRECT)/pilotDirection.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-$(OBJ_PATH)/diagonalAction.o: $(SRC_PATH)$(DIRECT)/diagonalAction.c $(INC_PATH)$(DIRECT)/diagonalAction.h 
+$(OBJ_PATH)/straightAction.o: $(SRC_PATH)$(DIRECT)/straightAction.c $(INC_PATH)$(DIRECT)/straightAction.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-$(OBJ_PATH)/graph.o: $(SRC_PATH)$(RACE)/graph.c $(INC_PATH)$(RACE)/graph.h
+$(OBJ_PATH)/graph.o: $(SRC_PATH)/graph.c $(INC_PATH)/graph.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/dijkstraAlgo.o: $(SRC_PATH)$(DIJ)/dijkstraAlgo.c $(INC_PATH)$(DIJ)/dijkstraAlgo.h

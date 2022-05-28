@@ -1,756 +1,756 @@
 === ROUND 1
-===> temps exec = 0.003034
+===> temps exec = 0.006843
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003034 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 2
-===> temps exec = 0.003316
+===> temps exec = 0.002390
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 3
 diagonal
-===> temps exec = 0.002857
+===> temps exec = 0.002320
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 4
-===> temps exec = 0.002916
+diagonal
+===> temps exec = 0.002368
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 5
-===> temps exec = 0.002785
+===> temps exec = 0.002364
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 6
-diagonal
-to equilibrate
-===> temps exec = 0.002943
+===> temps exec = 0.002467
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 7
 diagonal
-===> temps exec = 0.002930
+to equilibrate
+===> temps exec = 0.002593
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 8
 diagonal
-===> temps exec = 0.002920
+===> temps exec = 0.002385
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 9
 diagonal
-===> temps exec = 0.002966
+===> temps exec = 0.002557
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 10
 diagonal
-===> temps exec = 0.002928
+===> temps exec = 0.002527
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 11
-===> temps exec = 0.003161
+===> temps exec = 0.002533
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 12
-===> temps exec = 0.003089
+===> temps exec = 0.003517
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 13
-===> temps exec = 0.003090
+===> temps exec = 0.002519
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 14
 diagonal
 to equilibrate
-===> temps exec = 0.003204
+===> temps exec = 0.002534
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 15
 diagonal
-===> temps exec = 0.003210
+===> temps exec = 0.002613
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003316 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 16
 diagonal
-===> temps exec = 0.003348
+===> temps exec = 0.002792
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 17
-===> temps exec = 0.003303
+===> temps exec = 0.002661
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 18
 diagonal
-===> temps exec = 0.003227
+===> temps exec = 0.003047
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 19
-===> temps exec = 0.003184
+===> temps exec = 0.003081
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 20
-===> temps exec = 0.003058
+===> temps exec = 0.003077
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 21
-===> temps exec = 0.003124
+===> temps exec = 0.003023
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 22
-===> temps exec = 0.003297
+===> temps exec = 0.002779
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 23
-===> temps exec = 0.003188
+===> temps exec = 0.002734
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 24
-===> temps exec = 0.003254
+===> temps exec = 0.002834
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 25
-===> temps exec = 0.003275
+===> temps exec = 0.002857
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003348 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 26
-===> temps exec = 0.003396
+===> temps exec = 0.002766
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003396 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 27
-===> temps exec = 0.003378
+===> temps exec = 0.002829
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003396 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 28
-===> temps exec = 0.003418
+===> temps exec = 0.002819
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003418 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 29
-===> temps exec = 0.003437
+===> temps exec = 0.003234
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003437 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 30
-===> temps exec = 0.003524
+===> temps exec = 0.002909
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003524 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 31
-===> temps exec = 0.003556
+===> temps exec = 0.002810
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003556 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 32
-===> temps exec = 0.003641
+===> temps exec = 0.002883
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003641 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 33
-===> temps exec = 0.003495
+===> temps exec = 0.003512
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003641 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 34
-===> temps exec = 0.003514
+===> temps exec = 0.003139
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003641 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 35
-===> temps exec = 0.003688
+===> temps exec = 0.003251
 
 
->>>> CONCLUSION : temps max d'un tour : 0.003688 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 36
 diagonal
 to equilibrate
-===> temps exec = 0.004118
+===> temps exec = 0.002963
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004118 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 37
 diagonal
-===> temps exec = 0.004234
+===> temps exec = 0.002884
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 38
 diagonal
-===> temps exec = 0.004155
+===> temps exec = 0.002943
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 39
-===> temps exec = 0.004185
+===> temps exec = 0.002935
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 40
-===> temps exec = 0.003710
+===> temps exec = 0.002835
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 41
-===> temps exec = 0.004055
+===> temps exec = 0.002952
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 42
 diagonal
 to equilibrate
-===> temps exec = 0.003766
+===> temps exec = 0.003019
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 43
 diagonal
-===> temps exec = 0.003709
+===> temps exec = 0.002996
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 44
 diagonal
-===> temps exec = 0.003706
+===> temps exec = 0.003065
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 45
 diagonal
-===> temps exec = 0.003724
+===> temps exec = 0.003172
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 46
-===> temps exec = 0.004012
+===> temps exec = 0.003065
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 47
-===> temps exec = 0.003820
+===> temps exec = 0.003117
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 48
-===> temps exec = 0.003694
+===> temps exec = 0.003044
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 49
-===> temps exec = 0.003791
+===> temps exec = 0.003019
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 50
-===> temps exec = 0.003776
+===> temps exec = 0.003154
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 51
-===> temps exec = 0.003745
+===> temps exec = 0.003121
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 52
 diagonal
 to equilibrate
-===> temps exec = 0.004021
+===> temps exec = 0.003157
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 53
 diagonal
-===> temps exec = 0.003897
+===> temps exec = 0.003914
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 54
 diagonal
-===> temps exec = 0.004044
+===> temps exec = 0.003552
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 55
-===> temps exec = 0.004098
+===> temps exec = 0.003129
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 56
-===> temps exec = 0.004023
+===> temps exec = 0.003260
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 57
-===> temps exec = 0.004093
+===> temps exec = 0.003098
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 58
-===> temps exec = 0.004005
+===> temps exec = 0.003314
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 59
-===> temps exec = 0.004035
+===> temps exec = 0.003219
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 60
-===> temps exec = 0.004144
+===> temps exec = 0.003550
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 61
 diagonal
 to equilibrate
-===> temps exec = 0.004146
+===> temps exec = 0.003157
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 62
 diagonal
-===> temps exec = 0.004000
+===> temps exec = 0.003238
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 63
 diagonal
-===> temps exec = 0.003986
+===> temps exec = 0.003146
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 64
 diagonal
-===> temps exec = 0.003881
+===> temps exec = 0.003052
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 65
 diagonal
-===> temps exec = 0.003824
+===> temps exec = 0.003046
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 66
-===> temps exec = 0.003845
+===> temps exec = 0.003060
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 67
-===> temps exec = 0.003843
+===> temps exec = 0.003164
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 68
-===> temps exec = 0.003858
+===> temps exec = 0.003168
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 69
 diagonal
-===> temps exec = 0.003926
+===> temps exec = 0.003044
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 70
-===> temps exec = 0.003900
+===> temps exec = 0.003025
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 71
-===> temps exec = 0.003858
+===> temps exec = 0.002927
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 72
-===> temps exec = 0.003823
+===> temps exec = 0.002970
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004234 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 73
-===> temps exec = 0.004541
+===> temps exec = 0.002986
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 74
-===> temps exec = 0.004361
+===> temps exec = 0.003215
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 75
-===> temps exec = 0.004326
+===> temps exec = 0.003382
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 76
-===> temps exec = 0.003889
+===> temps exec = 0.002917
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 77
-===> temps exec = 0.003853
+===> temps exec = 0.002917
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 78
-===> temps exec = 0.003678
+===> temps exec = 0.002917
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 79
-===> temps exec = 0.003956
+===> temps exec = 0.003038
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 80
 diagonal
 to equilibrate
-===> temps exec = 0.003769
+===> temps exec = 0.003026
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 81
 diagonal
-===> temps exec = 0.003631
+===> temps exec = 0.002881
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 82
 diagonal
-===> temps exec = 0.003544
+===> temps exec = 0.002968
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 83
 diagonal
-===> temps exec = 0.003665
+===> temps exec = 0.002840
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 84
 diagonal
-===> temps exec = 0.003503
+===> temps exec = 0.003066
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 85
-===> temps exec = 0.003537
+===> temps exec = 0.002751
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 86
-===> temps exec = 0.003491
+===> temps exec = 0.002747
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 87
-===> temps exec = 0.003372
+===> temps exec = 0.002732
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 88
 diagonal
 to equilibrate
-===> temps exec = 0.003389
+===> temps exec = 0.002776
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 89
-===> temps exec = 0.003426
+===> temps exec = 0.002809
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 90
 diagonal
 to equilibrate
-===> temps exec = 0.003443
+===> temps exec = 0.002810
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 91
 diagonal
-===> temps exec = 0.003388
+===> temps exec = 0.002708
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 92
 diagonal
-===> temps exec = 0.003569
+===> temps exec = 0.002734
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 93
 diagonal
-===> temps exec = 0.003339
+===> temps exec = 0.002781
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 94
 diagonal
-===> temps exec = 0.003427
+===> temps exec = 0.002760
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 95
-===> temps exec = 0.003417
+===> temps exec = 0.002719
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 96
-===> temps exec = 0.003401
+===> temps exec = 0.002690
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 97
-===> temps exec = 0.003357
+===> temps exec = 0.002699
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 98
-===> temps exec = 0.003403
+===> temps exec = 0.002756
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 99
-===> temps exec = 0.003435
+===> temps exec = 0.002687
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 100
-===> temps exec = 0.003450
+===> temps exec = 0.002709
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 101
-===> temps exec = 0.003276
+===> temps exec = 0.002769
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 102
-===> temps exec = 0.003772
+===> temps exec = 0.002631
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 103
 diagonal
 to equilibrate
-===> temps exec = 0.003945
+===> temps exec = 0.002634
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 104
 diagonal
-===> temps exec = 0.003692
+===> temps exec = 0.002726
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 105
 diagonal
-===> temps exec = 0.003578
+===> temps exec = 0.002586
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 106
 diagonal
-===> temps exec = 0.003579
+===> temps exec = 0.002661
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 107
-===> temps exec = 0.003834
+===> temps exec = 0.002622
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 108
-===> temps exec = 0.003667
+===> temps exec = 0.002504
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 109
 diagonal
 to equilibrate
-===> temps exec = 0.003061
+===> temps exec = 0.002566
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 110
-===> temps exec = 0.003002
+===> temps exec = 0.002541
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 111
-===> temps exec = 0.003064
+===> temps exec = 0.002718
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 112
-===> temps exec = 0.003477
+===> temps exec = 0.002449
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 113
-===> temps exec = 0.002941
+===> temps exec = 0.002432
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 114
-===> temps exec = 0.002769
+===> temps exec = 0.002517
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 115
-===> temps exec = 0.002775
+===> temps exec = 0.002425
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 116
-===> temps exec = 0.002751
+===> temps exec = 0.002307
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 117
-===> temps exec = 0.002885
+===> temps exec = 0.002358
 
 
->>>> CONCLUSION : temps max d'un tour : 0.004541 <<<<<<<
+>>>> CONCLUSION : temps max d'un tour : 0.006843 <<<<<<<
 
 === ROUND 118

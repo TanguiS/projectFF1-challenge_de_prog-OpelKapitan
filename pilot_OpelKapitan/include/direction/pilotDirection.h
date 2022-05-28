@@ -27,9 +27,9 @@
 #include "./actionModificator.h"
 #include "../tools/util.h"
 #include "../tools/pathList.h"
-#include "../race/graph.h"
+#include "../graph.h"
 #include "./follow_line.h"
-#include "./diagonalAction.h"
+#include "./straightAction.h"
 
 /**
  * @brief Enumeration of a straight direction type
@@ -56,16 +56,6 @@ typedef PATH_LIST actionDeterminator (
                                         SPEED pilotSpeed, 
                                         ACCELERATION* nextAction 
                                       );
-
-/**
- * @brief If the positions A, B and C are aligned
- * 
- * @param A a postion
- * @param B another position
- * @param C and another one
- * @return boolean true if are aligned
- */
-boolean areAligned ( POSITION A, POSITION B, POSITION C );
 
 /**
  * @brief Which direction is the straight line

@@ -23,8 +23,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-#include "../race/graph.h"
-#include "../direction/pilotManagement.h"
+#include "../graph.h"
+#include "../pilotManagement.h"
 #include "../tools/util.h"
 #include "./dijkstraMatrix.h"
 #include "../tools/pathList.h"

@@ -17,7 +17,7 @@
  * @date 05 avril 2022
  */
 
-#include "../../include/race/communicatorWithGDC.h"
+#include "../include/communicatorWithGDC.h"
 
 /**
  * @brief Writes the data provided from the arguments in the matrix of the graph

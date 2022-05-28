@@ -17,8 +17,8 @@
  * @date 07 avril 2022
  */
 
-#include "../../include/direction/pilotManagement.h"
-#include "../../include/direction/pilotDirection.h"
+#include "../include/pilotManagement.h"
+#include "../include/direction/pilotDirection.h"
 
 #define FUEL_SAFETY 10              /**< safety operation */
 

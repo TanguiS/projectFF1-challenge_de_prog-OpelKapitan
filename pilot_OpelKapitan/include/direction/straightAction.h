@@ -27,7 +27,7 @@
 #include "./actionModificator.h"
 #include "../tools/util.h"
 #include "../tools/pathList.h"
-#include "../race/graph.h"
+#include "../graph.h"
 #include "./follow_line.h"
 
 
@@ -39,6 +39,16 @@
  * @return POSITION the vector
  */
 POSITION positionVector ( POSITION finalPosition, POSITION startPosition );
+
+/**
+ * @brief If the positions A, B and C are aligned
+ * 
+ * @param A a postion
+ * @param B another position
+ * @param C and another one
+ * @return boolean true if are aligned
+ */
+boolean areAligned ( POSITION A, POSITION B, POSITION C );
 
 /**
  * @brief Determine the hypotetical next position according to current data
@@ -98,6 +108,37 @@ PATH_LIST equilibrateSpeedForStraightLine (
                                                     SPEED pilotSpeed, 
                                                     ACCELERATION* nextAction 
                                                   );
+
+/**
+ * @brief Update the path to follow if the path is straight
+ * 
+ * @param path the path to follow
+ * @param currentPosition the current position of a pilot
+ * @param graph the race graph
+ * @return boolean true if the path has been updated
+ */
+boolean updatePathListIfstraightLine ( 
+                                                PATH_LIST* path, 
+                                                POSITION currentPosition, 
+                                                GRAPH* graph 
+                                            );
+
+/**
+ * @brief Add action to a queue if the direction is straight
+ * 
+ * @param length the length to travel
+ * @param currentSpeed the current speed of a pilot
+ * @param startingIndex the starting index to add actions
+ * @param startPosition the current position
+ * @param finalPosition the final position of the straight line
+ * @param actions a group of action to follow
+ * @return short the length 
+ */
+void addActionToGroup ( 
+                            short length, short currentSpeed, 
+                            short startingIndex, POSITION startPosition, 
+                            POSITION finalPosition, ACCELERATION* actions 
+                              );
 
 
 /**

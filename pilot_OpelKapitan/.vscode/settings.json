@@ -41,7 +41,8 @@
     "readmap.h": "c",
     "debugmode.h": "c",
     "communicatorwithgdc.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "straightaction.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled",
   "C_Cpp_Runner.useMsvc": false
