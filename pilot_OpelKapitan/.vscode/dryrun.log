@@ -13,6 +13,8 @@ gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/tools/list.c -o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/follow_line.c -o obj/follow_line.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/actionModificator.c -o obj/actionModificator.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/straightAction.c -o obj/straightAction.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graph.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o obj/follow_line.o obj/actionModificator.o obj/straightAction.o -o ../drivers/OpelKapitan -lm
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/boostAction.c -o obj/boostAction.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/simpleAction.c -o obj/simpleAction.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graph.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o obj/follow_line.o obj/actionModificator.o obj/straightAction.o obj/boostAction.o obj/simpleAction.o -o ../drivers/OpelKapitan -lm
 make: Leaving directory '/home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
  

@@ -18,6 +18,7 @@
  */
 
 #include "../../include/direction/boostAction.h"
+#include "../../include/direction/pilotDirection.h"
 
 
 PATH_LIST nextActionBoostedForNextPosition ( 

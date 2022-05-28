@@ -19,46 +19,7 @@
 
 
 #include "../../include/direction/straightAction.h"
-
-
-POSITION positionVector ( POSITION finalPosition, POSITION startPosition )
-{
-    finalPosition.X = finalPosition.X - startPosition.X;
-    finalPosition.Y = finalPosition.Y - startPosition.Y;
-    return finalPosition;
-}
-
-straightDirection lineToFollow ( 
-                                POSITION startPosition, 
-                                POSITION goalPosition 
-                                )
-{
-    POSITION line;
-    line = positionVector ( goalPosition, startPosition );
-    if ( line.X == 0 ) {
-        return towardsY;
-    }
-    if ( line.Y == 0 ) {
-        return towardsX;
-    }
-    return diagonal;
-}
-
-boolean areAligned ( POSITION A, POSITION B, POSITION C ) 
-{
-    return  (C.Y - A.Y) * (B.X - A.X) - (B.Y - A.Y) * (C.X - A.X ) == 0; 
-}
-
-POSITION hypotheticalNextPosition ( 
-                                            POSITION nextPosition, 
-                                            POSITION currentPosition, 
-                                            SPEED currentSpeed 
-                                         )
-{
-    nextPosition.X =  nextPosition.X - currentPosition.X - currentSpeed.X;
-    nextPosition.Y =  nextPosition.Y - currentPosition.Y - currentSpeed.Y;
-    return nextPosition;
-}
+#include "../../include/direction/pilotDirection.h"
 
 void equilibrateSpeedX ( 
                                 short pilotPositionX, short nextPositionX, 
@@ -158,6 +119,52 @@ boolean updatePathListIfstraightLine (
     return areAligned ( currentPosition, nextPosition, previousGoalPosition );
 }
 
+PATH_LIST groupNextAction ( 
+                                    PATH_LIST path, POSITION pilotPosition, 
+                                    SPEED pilotSpeed, ACCELERATION* nextAction 
+                                 )
+{
+    POSITION goalPosition;
+    straightDirection directionLine;
+
+    goalPosition = getCurrentPathListElement ( path );
+    directionLine = lineToFollow ( pilotPosition, goalPosition );
+    if ( directionLine == towardsX ) {
+        addActionToGroup ( 
+                        abs ( positionVector ( goalPosition, pilotPosition ).X ), 
+                        pilotSpeed.X, 
+                        1, 
+                        pilotPosition, 
+                        goalPosition, 
+                        nextAction 
+                            );
+        if ( pilotSpeed.Y != 0 ) {
+            slowDownY ( pilotSpeed, &nextAction[1] );
+        }
+    } else if ( directionLine == towardsY ) {
+        addActionToGroup ( 
+                        abs ( positionVector ( goalPosition, pilotPosition ).Y ), 
+                        pilotSpeed.Y, 
+                        1, 
+                        pilotPosition, 
+                        goalPosition, 
+                        nextAction 
+                            );
+        if ( pilotSpeed.X != 0 ) {
+            slowDownX ( pilotSpeed, &nextAction[1] );
+        }
+    } else { /* c'est une diagonale */
+        fprintf ( stderr, "diagonal\n" );
+        if ( abs ( pilotSpeed.X ) != abs ( pilotSpeed.Y ) ) {
+            fprintf ( stderr, "to equilibrate\n" );
+
+            path = equilibrateSpeedForStraightLine ( path, pilotPosition, pilotSpeed, &nextAction[1] );
+            return path;
+        }
+        addActionToGroupDiagonal ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 1, pilotPosition, goalPosition, nextAction );
+    }
+    return path;
+}
 
 void addActionToGroup ( 
                             short length, short currentSpeed, 

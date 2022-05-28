@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 28 13:18:14 2022
+# Make data base, printed on Sat May 28 14:55:47 2022
 
 # Variables
 
@@ -137,7 +137,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # makefile (from 'Makefile', line 25)
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/straightAction.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/straightAction.o $(OBJ_PATH)/boostAction.o $(OBJ_PATH)/simpleAction.o
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -201,7 +201,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-28eda942-9588-4f7c-b41c-71805b8a61d1.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cc0e664f-1733-4b6d-aef1-015da2fc02ac.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -277,14 +277,11 @@ GJS_DEBUG_OUTPUT = stderr
 # makefile (from 'Makefile', line 4)
 INC_PATH = ./include
 # environment
- 
-make: *** No rule to make target 'all'.  Stop.
-
 LANG = C
 # environment
 VSCODE_PID = 2108
 # variable set hash-table stats:
-# Load=135/1024=13%, Rehash=0, Collisions=35/245=14%
+# Load=135/1024=13%, Rehash=0, Collisions=35/257=14%
 
 # Pattern-specific Variable Values
 
@@ -292,9 +289,12 @@ VSCODE_PID = 2108
 
 # Directories
 
-# . (device 2053, inode 4325663): 11 files, no impossibilities.
+# . (device 2053, inode 4325663): 10 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 
 # Implicit Rules
 
@@ -325,7 +325,14 @@ obj/graph.o: src/graph.c include/graph.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 60):
+#  recipe to execute (from 'Makefile', line 66):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+obj/simpleAction.o: src/direction/simpleAction.c include/direction/simpleAction.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 63):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/pilotManagement.o: src/pilotManagement.c include/pilotManagement.h
@@ -339,7 +346,7 @@ obj/list.o: src/tools/list.c include/tools/list.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 69):
+#  recipe to execute (from 'Makefile', line 75):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 obj/actionModificator.o: src/direction/actionModificator.c include/direction/actionModificator.h
@@ -353,7 +360,7 @@ distclean: ../drivers
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 80):
+#  recipe to execute (from 'Makefile', line 86):
 	make clean
 	rm $(BIN_PATH)/$(PILOT_NAME)
 
@@ -380,13 +387,13 @@ obj/dijkstraAlgo.o: src/dijkstra/dijkstraAlgo.c include/dijkstra/dijkstraAlgo.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 63):
+#  recipe to execute (from 'Makefile', line 69):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-27 19:58:42.259903435
+#  Last modified 2022-05-28 14:35:59.957929602
 #  File has been updated.
 #  Successfully updated.
 
@@ -427,6 +434,18 @@ src/pilotManagement.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+include/direction/simpleAction.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/direction/simpleAction.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/pilotDirection.o: src/direction/pilotDirection.c include/direction/pilotDirection.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -434,11 +453,11 @@ obj/pilotDirection.o: src/direction/pilotDirection.c include/direction/pilotDire
 #  recipe to execute (from 'Makefile', line 54):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
-../drivers/OpelKapitan: obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graph.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o obj/follow_line.o obj/actionModificator.o obj/straightAction.o
+../drivers/OpelKapitan: obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graph.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o obj/follow_line.o obj/actionModificator.o obj/straightAction.o obj/boostAction.o obj/simpleAction.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 75):
+#  recipe to execute (from 'Makefile', line 81):
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
 
 # Not a target:
@@ -503,11 +522,18 @@ obj/straightAction.o: src/direction/straightAction.c include/direction/straightA
 #  recipe to execute (from 'Makefile', line 57):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
+obj/boostAction.o: src/direction/boostAction.c include/direction/boostAction.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 60):
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
 clean: obj
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 78):
+#  recipe to execute (from 'Makefile', line 84):
 	rm $</*.o
 
 # Not a target:
@@ -544,8 +570,9 @@ obj/follow_line.o: src/direction/follow_line.c include/direction/follow_line.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 72):
+#  recipe to execute (from 'Makefile', line 78):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+ 
 
 # Not a target:
 include/tools/matrix.h:
@@ -558,7 +585,6 @@ src/tools/matrix.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 obj/matrixDij.o: src/dijkstra/dijkstraMatrix.c include/dijkstra/dijkstraMatrix.h
 #  Implicit rule search has not been done.
@@ -584,11 +610,23 @@ obj/dijkstraMatrix.o: src/dijkstra/dijkstraMatrix.c include/dijkstra/dijkstraAlg
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 66):
+#  recipe to execute (from 'Makefile', line 72):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # Not a target:
 src/direction/straightAction.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/direction/boostAction.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/direction/boostAction.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -618,19 +656,19 @@ src/tools/list.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=50/1024=5%, Rehash=0, Collisions=2/106=2%
+# Load=56/1024=5%, Rehash=0, Collisions=2/118=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 61 / storage = 1095 B / avg = 17 B
-# current buf: size = 8162 B / used = 1095 B / count = 61 / avg = 17 B
+# strcache buffers: 1 (0) / strings = 66 / storage = 1242 B / avg = 18 B
+# current buf: size = 8162 B / used = 1242 B / count = 66 / avg = 18 B
 
-# strcache performance: lookups = 103 / hit rate = 40%
+# strcache performance: lookups = 112 / hit rate = 41%
 # hash-table stats:
-# Load=61/8192=1%, Rehash=0, Collisions=2/103=2%
-# Finished Make data base on Sat May 28 13:18:14 2022
+# Load=66/8192=1%, Rehash=0, Collisions=2/112=2%
+# Finished Make data base on Sat May 28 14:55:47 2022
 
  

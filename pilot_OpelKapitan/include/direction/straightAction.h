@@ -17,8 +17,8 @@
  * @date 28 mai 2022
  */
 
-#ifndef __DIAGONAL_ACTION__
-#define __DIAGONAL_ACTION__
+#ifndef __STRAIGHT_ACTION_HH__
+#define __STRAIGHT_ACTION_HH__
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -30,7 +30,6 @@
 #include "../graph.h"
 #include "./follow_line.h"
 
-
 /**
  * @brief Enumeration of a straight direction type
  */
@@ -40,50 +39,6 @@ typedef enum {
     diagonal                /**< the straight direction to follow is a diagonal */
 } straightDirection;
 
-/**
- * @brief vector between two positions
- * 
- * @param finalPosition the final position
- * @param startPosition  the first position
- * @return POSITION the vector
- */
-POSITION positionVector ( POSITION finalPosition, POSITION startPosition );
-
-/**
- * @brief If the positions A, B and C are aligned
- * 
- * @param A a postion
- * @param B another position
- * @param C and another one
- * @return boolean true if are aligned
- */
-boolean areAligned ( POSITION A, POSITION B, POSITION C );
-
-/**
- * @brief Which direction is the straight line
- * 
- * @param startPosition the current position
- * @param goalPosition the position to arrive
- * @return straightDirection the line that will be followed
- */
-straightDirection lineToFollow ( 
-                                POSITION startPosition, 
-                                POSITION goalPosition 
-                                );
-
-/**
- * @brief Determine the hypotetical next position according to current data
- * 
- * @param nextPosition The next position to follow
- * @param currentPosition the current position of a pilot
- * @param currentSpeed The current speed of a pilot
- * @return POSITION The next position
- */
-POSITION hypotheticalNextPosition( 
-                                            POSITION nextPosition, 
-                                            POSITION currentPosition, 
-                                            SPEED currentSpeed 
-                                         );
 /**
  * @brief Equilibrate the X-speed of a pilot
  * 
@@ -145,6 +100,20 @@ boolean updatePathListIfstraightLine (
                                             );
 
 /**
+ * @brief Redirect to the correct function to determine a group of action if the path if straight
+ * 
+ * @param path the path to follow
+ * @param pilotPosition the current pilot position
+ * @param pilotSpeed the current pilot speed
+ * @param nextAction the group of action
+ * @return PATH_LIST the updated path list
+ */
+PATH_LIST groupNextAction ( 
+                                    PATH_LIST path, POSITION pilotPosition, 
+                                    SPEED pilotSpeed, ACCELERATION* nextAction 
+                                 );
+
+/**
  * @brief Add action to a queue if the direction is straight
  * 
  * @param length the length to travel
@@ -178,8 +147,4 @@ void addActionToGroupDiagonal (
                             POSITION finalPosition, ACCELERATION* actions 
                               );
 
-
-
-
-
-#endif /* __DIAGONAL_ACTION__ */
+#endif /* __STRAIGHT_ACTION_HH__ */
