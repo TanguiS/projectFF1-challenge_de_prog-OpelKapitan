@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pilote GrandPrix - Opel Kapïtan: include/list.h File Reference</title>
+<title>Pilote GrandPrix - Opel Kapïtan: include/tools/list.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_db22b1395f615d1428e10e22469fe87b.html">tools</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -78,16 +78,41 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="util_8h_source.html">./util.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for list.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="list_8h__incl.png" border="0" usemap="#include_2list_8h" alt=""/></div>
+<div class="center"><img src="list_8h__incl.png" border="0" usemap="#include_2tools_2list_8h" alt=""/></div>
+<map name="include_2tools_2list_8h" id="include_2tools_2list_8h">
+<area shape="rect" title="This file contains all the prototype of the liste algo." alt="" coords="63,5,205,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
+<area shape="rect" title=" " alt="" coords="101,80,167,107"/>
+<area shape="rect" href="util_8h.html" title="This file is for util type declaration." alt="" coords="192,80,255,107"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="list_8h__dep__incl.png" border="0" usemap="#include_2list_8hdep" alt=""/></div>
+<div class="center"><img src="list_8h__dep__incl.png" border="0" usemap="#include_2tools_2list_8hdep" alt=""/></div>
+<map name="include_2tools_2list_8hdep" id="include_2tools_2list_8hdep">
+<area shape="rect" title="This file contains all the prototype of the liste algo." alt="" coords="403,5,545,32"/>
+<area shape="rect" href="graph_8h.html" title="This file contains the prototypes / declarations used to process a graph." alt="" coords="481,80,603,107"/>
+<area shape="rect" href="pilotManagement_8h.html" title="This file contains the prototypes / declarations used to manage a pilot." alt="" coords="325,244,525,271"/>
+<area shape="rect" href="dijkstraAlgo_8h.html" title="This file contains the prototypes / declarations to implement the Dijstra&#39;s algo." alt="" coords="75,319,249,360"/>
+<area shape="rect" href="list_8c.html" title="This list contains all the functions of the lisalgo." alt="" coords="627,80,739,107"/>
+<area shape="rect" href="communicatorWithGDC_8h.html" title="This file is the prototypes used by communicatorWithGDC.c functions." alt="" coords="462,155,659,196"/>
+<area shape="rect" href="pilotDirection_8h.html" title="This file contains the prototypes / declarations used to choose the pilot&#39;s direction." alt="" coords="513,408,747,435"/>
+<area shape="rect" href="straightAction_8h.html" title="This file contains the functions&#39;s prototype used to determine action for a straight line." alt="" coords="865,319,1049,360"/>
+<area shape="rect" href="dijkstraMatrix_8h.html" title="This file contains prototypes and declarations to manage a Dijkstra&#39;s matrix." alt="" coords="200,155,375,196"/>
+<area shape="rect" href="graph_8c.html" title="This file contains the prototypes / declarations used to process a graph." alt="" coords="683,162,777,189"/>
+<area shape="rect" href="communicatorWithGDC_8c.html" title="This file is used to communicate with the GDC." alt="" coords="600,244,809,271"/>
+<area shape="rect" href="main_8c.html" title="This file the main function to test a program." alt="" coords="257,408,347,435"/>
+<area shape="rect" href="pilotManagement_8c.html" title="This file contains the functions used to manage a pilot." alt="" coords="339,483,510,509"/>
+<area shape="rect" href="dijkstraAlgo_8c.html" title="This file contains the functions to implement the Dijstra&#39;s algo." alt="" coords="121,483,307,509"/>
+<area shape="rect" href="pilotDirection_8c.html" title="This file contains the functions used to choose the pilot&#39;s direction/action." alt="" coords="534,483,739,509"/>
+<area shape="rect" href="straightAction_8c.html" title="This file contains the functions used to modify determine the action for a straight line." alt="" coords="853,408,1061,435"/>
+<area shape="rect" href="dijkstraMatrix_8c.html" title="This file contains prototypes and declarations to manage a Dijkstra&#39;s matrix." alt="" coords="50,244,250,271"/>
+</map>
 </div>
 </div>
 <p><a href="list_8h_source.html">Go to the source code of this file.</a></p>
@@ -188,12 +213,12 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Add a lifo element int the lifo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td></td></tr>
+    <tr><td class="paramname">list</td><td>: the list to modify </td></tr>
     <tr><td class="paramname">x</td><td>: the element to add </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>LIST </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LIST : the updated list </dd></dl>
 
 </div>
 </div>
@@ -226,12 +251,12 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Compare two list elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">element1</td><td></td></tr>
-    <tr><td class="paramname">element2</td><td></td></tr>
+    <tr><td class="paramname">element1</td><td>: the first element to compare </td></tr>
+    <tr><td class="paramname">element2</td><td>: the second element to compare </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>boolean </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean : true if are equals </dd></dl>
 
 </div>
 </div>
@@ -251,7 +276,7 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 </div><div class="memdoc">
 
 <p>Create a Lifo object. </p>
-<dl class="section return"><dt>Returns</dt><dd>LIST </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LIST the created list </dd></dl>
 
 </div>
 </div>
@@ -274,7 +299,7 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Destroy a Lifo Object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td></td></tr>
+    <tr><td class="paramname">list</td><td>the list to destroy </td></tr>
   </table>
   </dd>
 </dl>
@@ -316,7 +341,7 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Get the Element List object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td></td></tr>
+    <tr><td class="paramname">list</td><td>the list to examine </td></tr>
     <tr><td class="paramname">result</td><td>stock the removed element </td></tr>
     <tr><td class="paramname">position</td><td>the ranking of the element </td></tr>
   </table>
@@ -361,7 +386,7 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Get the Next Element List object from the reference element. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td></td></tr>
+    <tr><td class="paramname">list</td><td>the list to examine </td></tr>
     <tr><td class="paramname">result</td><td>stock the removed element </td></tr>
     <tr><td class="paramname">refElement</td><td>reference element </td></tr>
   </table>
@@ -390,11 +415,11 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>If the lifo is empty. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lifo</td><td></td></tr>
+    <tr><td class="paramname">list</td><td>the list to test </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>boolean </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean : true if the list is empty </dd></dl>
 
 </div>
 </div>
@@ -427,12 +452,12 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 <p>Remove the first list element from the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td></td></tr>
+    <tr><td class="paramname">list</td><td>the list to modify </td></tr>
     <tr><td class="paramname">result</td><td>: the removed element </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>LIST </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LIST the updated list </dd></dl>
 
 </div>
 </div>
@@ -472,13 +497,13 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>the liste </td></tr>
+    <tr><td class="paramname">list</td><td>the list to modify </td></tr>
     <tr><td class="paramname">result</td><td>stock the removed element </td></tr>
     <tr><td class="paramname">removeCoord</td><td>the position of the element to remove </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>LIST </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>LIST : the updated list </dd></dl>
 
 </div>
 </div>

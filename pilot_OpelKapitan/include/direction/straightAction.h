@@ -9,8 +9,8 @@
  */
 
 /**
- * @file diagonalAction.h
- * @brief This file contains the functions's prototype used to modify the diagonal action.
+ * @file straightAction.h
+ * @brief This file contains the functions's prototype used to determine action for a straight line.
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <tangui.steimetz@ecole.ensicaen.fr>
  * @version 1.0.0

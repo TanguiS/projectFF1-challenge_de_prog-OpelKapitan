@@ -9,7 +9,7 @@
  */
 
 /**
- * @list list.c
+ * @file list.c
  * @brief This list  contains all the functions of the lisalgo.
  * @author PICQUE kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>

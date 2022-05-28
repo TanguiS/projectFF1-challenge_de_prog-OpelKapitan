@@ -1,0 +1,13 @@
+<map id="include/communicatorWithGDC.h" name="include/communicatorWithGDC.h">
+<area shape="rect" id="node1" title="This file is the prototypes used by communicatorWithGDC.c functions." alt="" coords="488,5,685,47"/>
+<area shape="rect" id="node2" href="$communicatorWithGDC_8c.html" title="This file is used to communicate with the GDC." alt="" coords="253,95,462,121"/>
+<area shape="rect" id="node3" href="$pilotManagement_8h.html" title="This file contains the prototypes / declarations used to manage a pilot." alt="" coords="487,95,687,121"/>
+<area shape="rect" id="node6" href="$main_8c.html" title="This file the main function to test a program." alt="" coords="670,259,759,285"/>
+<area shape="rect" id="node4" href="$dijkstraAlgo_8h.html" title="This file contains the prototypes / declarations to implement the Dijstra&#39;s algo." alt="" coords="499,169,674,211"/>
+<area shape="rect" id="node7" href="$pilotDirection_8h.html" title="This file contains the prototypes / declarations used to choose the pilot&#39;s direction." alt="" coords="128,259,363,285"/>
+<area shape="rect" id="node9" href="$pilotManagement_8c.html" title="This file contains the functions used to manage a pilot." alt="" coords="5,333,176,360"/>
+<area shape="rect" id="node10" href="$straightAction_8h.html" title="This file contains the functions&#39;s prototype used to determine action for a straight line." alt="" coords="291,169,475,211"/>
+<area shape="rect" id="node5" href="$dijkstraAlgo_8c.html" title="This file contains the functions to implement the Dijstra&#39;s algo." alt="" coords="484,333,671,360"/>
+<area shape="rect" id="node8" href="$pilotDirection_8c.html" title="This file contains the functions used to choose the pilot&#39;s direction/action." alt="" coords="200,333,405,360"/>
+<area shape="rect" id="node11" href="$straightAction_8c.html" title="This file contains the functions used to modify determine the action for a straight line." alt="" coords="387,259,595,285"/>
+</map>

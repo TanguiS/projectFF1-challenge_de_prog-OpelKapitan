@@ -25,6 +25,11 @@
 #include "../include/dijkstra/dijkstraAlgo.h"
 #include "../include/dijkstra/dijkstraMatrix.h"
 
+/**
+ * @brief execute the pilot 
+ * 
+ * @return int EXIT_SUCCESS
+ */
 int main ( void )
 {
     int round = 0;

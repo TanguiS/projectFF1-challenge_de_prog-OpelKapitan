@@ -22,27 +22,33 @@
 #define FOLLOW_LINE_H
 
 /**
- * Position with floating point coordinates
+ * @brief Position with floating point coordinates
  */
 typedef struct {
-  float X;
-  float Y;
+  float X;                      /**< X-coordinate point */
+  float Y;                      /**< X-coordinate point */
 } Pos2Dfloat;
 
 /**
- * Dicrete line traversal information
+ * @brief Dicrete line traversal information
  */
 typedef struct {
-  POSITION start;
-  POSITION end;
-  Pos2Dfloat currentPosition;
-  Pos2Dfloat delta; /*< Shift vector */
-  int len;          /*< Length along the main axis */
-  int pos;          /*< Reference position on the line */
+  POSITION start;               /**< Strating point */
+  POSITION end;                 /**< Ending point */
+  Pos2Dfloat currentPosition;   /**< Current point */
+  Pos2Dfloat delta;             /**< Shift vector */
+  int len;                      /**< Length along the main axis */
+  int pos;                      /**< Reference position on the line */
 } InfoLine;
 
 /**
- * Initialize an InfoLine data structure
+ * @brief Initialize an InfoLine data structure
+ * 
+ * @param x1 the X-coordinate of the starting point
+ * @param y1 the Y-coordinate of the starting point
+ * @param x2 the X-coordinate of the ending point
+ * @param y2 the Y-coordinate of the ending point
+ * @param infoLine the unitialized infoLine object
  */
 void initLine(int x1, int y1, int x2, int y2, InfoLine * infoLine);
 

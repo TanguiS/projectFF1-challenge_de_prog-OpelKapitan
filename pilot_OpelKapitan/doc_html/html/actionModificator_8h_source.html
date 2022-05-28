@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pilote GrandPrix - Opel Kapïtan: include/actionModificator.h Source File</title>
+<title>Pilote GrandPrix - Opel Kapïtan: include/direction/actionModificator.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_3755f9450e9e63bdb3971c374664995b.html">direction</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,7 +82,7 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef __ACTION_MODIFICATOR_HH__</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define __ACTION_MODIFICATOR_HH__</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../tools/util.h&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="actionModificator_8h.html#a650119f313856a53cc0d6841f9fa93a5">   25</a></span>&#160;<span class="preprocessor">#define NUMBER_DIRECTION 8  </span></div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="actionModificator_8h.html#abeb73dfe8d6e8c280ebce28d84190c7e">   26</a></span>&#160;<span class="preprocessor">#define ACTION 1            </span></div>
@@ -185,7 +185,6 @@ $(function() {
 <div class="ttc" id="aactionModificator_8h_html_ae615bbfc5c111d3f5b703a6fbf0bbdec"><div class="ttname"><a href="actionModificator_8h.html#ae615bbfc5c111d3f5b703a6fbf0bbdec">goLeft</a></div><div class="ttdeci">void goLeft(ACCELERATION *action)</div><div class="ttdoc">Set action to left.</div><div class="ttdef"><b>Definition:</b> actionModificator.c:26</div></div>
 <div class="ttc" id="aactionModificator_8h_html_adc371f7090796d0e12cfef4d4410010b"><div class="ttname"><a href="actionModificator_8h.html#adc371f7090796d0e12cfef4d4410010b">goStraightY</a></div><div class="ttdeci">void goStraightY(ACCELERATION *action)</div><div class="ttdoc">Set action to straight towards Y.</div><div class="ttdef"><b>Definition:</b> actionModificator.c:63</div></div>
 <div class="ttc" id="aactionModificator_8h_html_ae74d280c6bf0d9e38e0bb503af4a0591"><div class="ttname"><a href="actionModificator_8h.html#ae74d280c6bf0d9e38e0bb503af4a0591">slowDownDecrementX</a></div><div class="ttdeci">void slowDownDecrementX(SPEED speedToSlow, ACCELERATION *action)</div><div class="ttdoc">Set action to slow down towards X.</div><div class="ttdef"><b>Definition:</b> actionModificator.c:119</div></div>
-<div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div><div class="ttdoc">This file is for util type declaration.</div></div>
 <div class="ttc" id="aactionModificator_8h_html_a99f26e6ee9fcd62f75203b5402df8098a23f754b7e18b5a09d0e9bf347500870d"><div class="ttname"><a href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098a23f754b7e18b5a09d0e9bf347500870d">boostRight</a></div><div class="ttdeci">@ boostRight</div><div class="ttdef"><b>Definition:</b> actionModificator.h:41</div></div>
 <div class="ttc" id="astruct__speed_html"><div class="ttname"><a href="struct__speed.html">_speed</a></div><div class="ttdoc">A structure to represent the speed.</div><div class="ttdef"><b>Definition:</b> util.h:50</div></div>
 <div class="ttc" id="aactionModificator_8h_html_af5631346289816b1b9548a2fb1fcc1f4"><div class="ttname"><a href="actionModificator_8h.html#af5631346289816b1b9548a2fb1fcc1f4">slowDownY</a></div><div class="ttdeci">void slowDownY(SPEED speedToSlow, ACCELERATION *action)</div><div class="ttdoc">Set action to slow down towards Y.</div><div class="ttdef"><b>Definition:</b> actionModificator.c:110</div></div>

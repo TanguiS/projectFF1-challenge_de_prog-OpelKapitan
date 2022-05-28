@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pilote GrandPrix - Opel Kapïtan: include/matrix.h Source File</title>
+<title>Pilote GrandPrix - Opel Kapïtan: include/tools/matrix.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_db22b1395f615d1428e10e22469fe87b.html">tools</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,38 +82,36 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef __MATRIX_HH__</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define __MATRIX_HH__</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8h.html">matrix.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct__matrix.html">   31</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__matrix.html">_matrix</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">   33</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">width</a>;            </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">   34</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">height</a>;           </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">   35</a></span>&#160;    <a class="code" href="util_8h.html#aaac725d8f769ad9504c548cd1f0b4469">element</a>** <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a>;       </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}<a class="code" href="matrix_8h.html#a12bcc201891f53ba440d38556e9d62e2">_matrix</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="matrix_8h.html#a04a42b19ef165e0b6a0d129b61263797">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__matrix.html">_matrix</a> <a class="code" href="struct__matrix.html">MATRIX</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">short</span> <a class="code" href="matrix_8h.html#a9eb3f215537e3ddcf44408bf954337eb">getWidthMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a> );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">short</span> <a class="code" href="matrix_8h.html#a534951f5a032a35101ac990db315b027">getHeightMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a> );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="util_8h.html#aaac725d8f769ad9504c548cd1f0b4469">element</a> <a class="code" href="matrix_8h.html#a1915f60c1abef702cff1917a755e19db">getElementMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a>, <span class="keywordtype">short</span> x, <span class="keywordtype">short</span> y );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> <a class="code" href="matrix_8h.html#a9b2a07a599ca1fd53be7f1bd37d1fe79">setElementMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a>, <span class="keywordtype">short</span> x, <span class="keywordtype">short</span> y, <a class="code" href="util_8h.html#aaac725d8f769ad9504c548cd1f0b4469">element</a> value );</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="struct__matrix.html">MATRIX</a> <a class="code" href="matrix_8h.html#aadf147917daa1b9ba5b8f0e145963d30">createMatrix</a> ( <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">width</a>, <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">height</a> );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="matrix_8h.html#a7a41927cef4145caa75052d71ac776b4">destroyMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a> matrixToDestroy );</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __MATRIX_HH__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">./util.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct__matrix.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__matrix.html">_matrix</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">   32</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">width</a>;            </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">   33</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">height</a>;           </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">   34</a></span>&#160;    <a class="code" href="util_8h.html#aaac725d8f769ad9504c548cd1f0b4469">element</a>** <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a>;       </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}<a class="code" href="matrix_8h.html#a12bcc201891f53ba440d38556e9d62e2">_matrix</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="matrix_8h.html#a04a42b19ef165e0b6a0d129b61263797">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__matrix.html">_matrix</a> <a class="code" href="struct__matrix.html">MATRIX</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">short</span> <a class="code" href="matrix_8h.html#a9eb3f215537e3ddcf44408bf954337eb">getWidthMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a> );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">short</span> <a class="code" href="matrix_8h.html#a534951f5a032a35101ac990db315b027">getHeightMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a> );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="util_8h.html#aaac725d8f769ad9504c548cd1f0b4469">element</a> <a class="code" href="matrix_8h.html#a1915f60c1abef702cff1917a755e19db">getElementMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a>, <span class="keywordtype">short</span> x, <span class="keywordtype">short</span> y );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">void</span> <a class="code" href="matrix_8h.html#a9b2a07a599ca1fd53be7f1bd37d1fe79">setElementMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a>* <a class="code" href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">matrix</a>, <span class="keywordtype">short</span> x, <span class="keywordtype">short</span> y, <a class="code" href="util_8h.html#aaac725d8f769ad9504c548cd1f0b4469">element</a> value );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<a class="code" href="struct__matrix.html">MATRIX</a> <a class="code" href="matrix_8h.html#aadf147917daa1b9ba5b8f0e145963d30">createMatrix</a> ( <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">width</a>, <span class="keywordtype">short</span> <a class="code" href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">height</a> );</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">void</span> <a class="code" href="matrix_8h.html#a7a41927cef4145caa75052d71ac776b4">destroyMatrix</a> ( <a class="code" href="struct__matrix.html">MATRIX</a> matrixToDestroy );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __MATRIX_HH__ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct__matrix_html"><div class="ttname"><a href="struct__matrix.html">_matrix</a></div><div class="ttdoc">A structure to represent a matrix object.</div><div class="ttdef"><b>Definition:</b> matrix.h:31</div></div>
+<div class="ttc" id="astruct__matrix_html"><div class="ttname"><a href="struct__matrix.html">_matrix</a></div><div class="ttdoc">A structure to represent a matrix object.</div><div class="ttdef"><b>Definition:</b> matrix.h:30</div></div>
 <div class="ttc" id="amatrix_8h_html_a1915f60c1abef702cff1917a755e19db"><div class="ttname"><a href="matrix_8h.html#a1915f60c1abef702cff1917a755e19db">getElementMatrix</a></div><div class="ttdeci">element getElementMatrix(MATRIX *matrix, short x, short y)</div><div class="ttdoc">Get the Element Matrix object.</div><div class="ttdef"><b>Definition:</b> matrix.c:73</div></div>
-<div class="ttc" id="astruct__matrix_html_a8797bba507dad35fa1d25a4471cedbd1"><div class="ttname"><a href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">_matrix::height</a></div><div class="ttdeci">short height</div><div class="ttdef"><b>Definition:</b> matrix.h:34</div></div>
-<div class="ttc" id="amatrix_8h_html"><div class="ttname"><a href="matrix_8h.html">matrix.h</a></div><div class="ttdoc">This file contains prototypes and declarations to manage a matrix.</div></div>
-<div class="ttc" id="astruct__matrix_html_a42b076ef341d4f53672b411f582af81e"><div class="ttname"><a href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">_matrix::matrix</a></div><div class="ttdeci">element ** matrix</div><div class="ttdef"><b>Definition:</b> matrix.h:35</div></div>
-<div class="ttc" id="astruct__matrix_html_a5e5b78e5564f9994526981fcea5206a2"><div class="ttname"><a href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">_matrix::width</a></div><div class="ttdeci">short width</div><div class="ttdef"><b>Definition:</b> matrix.h:33</div></div>
+<div class="ttc" id="astruct__matrix_html_a8797bba507dad35fa1d25a4471cedbd1"><div class="ttname"><a href="struct__matrix.html#a8797bba507dad35fa1d25a4471cedbd1">_matrix::height</a></div><div class="ttdeci">short height</div><div class="ttdef"><b>Definition:</b> matrix.h:33</div></div>
+<div class="ttc" id="astruct__matrix_html_a42b076ef341d4f53672b411f582af81e"><div class="ttname"><a href="struct__matrix.html#a42b076ef341d4f53672b411f582af81e">_matrix::matrix</a></div><div class="ttdeci">element ** matrix</div><div class="ttdef"><b>Definition:</b> matrix.h:34</div></div>
+<div class="ttc" id="astruct__matrix_html_a5e5b78e5564f9994526981fcea5206a2"><div class="ttname"><a href="struct__matrix.html#a5e5b78e5564f9994526981fcea5206a2">_matrix::width</a></div><div class="ttdeci">short width</div><div class="ttdef"><b>Definition:</b> matrix.h:32</div></div>
 <div class="ttc" id="amatrix_8h_html_a12bcc201891f53ba440d38556e9d62e2"><div class="ttname"><a href="matrix_8h.html#a12bcc201891f53ba440d38556e9d62e2">_matrix</a></div><div class="ttdeci">struct _matrix _matrix</div><div class="ttdoc">A structure to represent a matrix object.</div></div>
 <div class="ttc" id="amatrix_8h_html_a7a41927cef4145caa75052d71ac776b4"><div class="ttname"><a href="matrix_8h.html#a7a41927cef4145caa75052d71ac776b4">destroyMatrix</a></div><div class="ttdeci">void destroyMatrix(MATRIX matrixToDestroy)</div><div class="ttdoc">Destroy a Matrix object.</div><div class="ttdef"><b>Definition:</b> matrix.c:95</div></div>
 <div class="ttc" id="amatrix_8h_html_a534951f5a032a35101ac990db315b027"><div class="ttname"><a href="matrix_8h.html#a534951f5a032a35101ac990db315b027">getHeightMatrix</a></div><div class="ttdeci">short getHeightMatrix(MATRIX *matrix)</div><div class="ttdoc">Get the Height Matrix object.</div><div class="ttdef"><b>Definition:</b> matrix.c:68</div></div>
