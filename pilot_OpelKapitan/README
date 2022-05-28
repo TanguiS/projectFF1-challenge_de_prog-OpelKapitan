@@ -8,6 +8,10 @@ _  / __ __  ___/  __ `/_  __ \  __  /    __  /_/ /_  ___/_  /__  |/_/
                   ---> Gestionnaire de course <---
                      -> Pilot - Opel_Kapïtan <-
 
+# Emplacement du sous dossier ```pilot_OpelKapitan``` :
+
+Placer le sous-dossier dans le dossier GrandPrix, même emplacement que pour ```test_pilot```.
+
 # Compilation / Lancement
 
 Compilation du pilote : 
@@ -17,4 +21,4 @@ command : ```$ make SANITIZE=off DEBUG=off install```;
 # Auteurs
 
     STEIMETZ Tangui,
-    PICQUE Kylian
+    PICQUE Kylian.
