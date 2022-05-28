@@ -12,8 +12,8 @@ _  / __ __  ___/  __ `/_  __ \  __  /    __  /_/ /_  ___/_  /__  |/_/
 #########################
 
 Compilation du pilote : 
-command : ```$ make SANITIZE=off DEBUG=off install```
-Compiler d'abord le gestionnaire de course :
+command : ```$ make SANITIZE=off DEBUG=off install```;
+
 
 # Auteurs
 #########
