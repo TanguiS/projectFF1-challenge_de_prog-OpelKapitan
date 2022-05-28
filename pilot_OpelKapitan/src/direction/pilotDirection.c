@@ -19,8 +19,6 @@
 
 #include "../../include/direction/pilotDirection.h"
 
-
-
 /**
  * @brief Determine the correct action for a step by step movement 
  * 
@@ -251,7 +249,6 @@ static void adaptPilot (
     }
 }
 
-
 static PATH_LIST BetterBoostForNextPosition ( 
                                         GRAPH* graph,   
                                         PATH_LIST path,
@@ -279,7 +276,6 @@ static PATH_LIST BetterBoostForNextPosition (
     adaptPilot ( graph, path, pilotPosition, goalPosition, nextAction, pilotSpeed );
     return path;
 }
-
 
 static PATH_LIST groupNextAction ( 
                                     PATH_LIST path, POSITION pilotPosition, 
@@ -324,12 +320,6 @@ static PATH_LIST groupNextAction (
             return path;
         }
         addActionToGroupDiagonal ( abs ( positionVector ( goalPosition, pilotPosition ).X ), pilotSpeed.X, 1, pilotPosition, goalPosition, nextAction );
-        /* path = nextActionForNextPosition ( 
-                                        path, 
-                                        pilotPosition, 
-                                        pilotSpeed, 
-                                        &nextAction[1] 
-                                        ); */
     }
     return path;
 }
@@ -339,7 +329,6 @@ static boolean speedIsNull ( SPEED pilotSpeed )
 {
     return ( pilotSpeed.X == 0 && pilotSpeed.Y == 0 );
 }
-
 
 static void trajectoryCorrection ( 
                                     GRAPH* graph, POSITION pilotPosition, 
