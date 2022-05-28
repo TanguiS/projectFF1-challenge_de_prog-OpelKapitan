@@ -9,14 +9,12 @@ _  / __ __  ___/  __ `/_  __ \  __  /    __  /_/ /_  ___/_  /__  |/_/
                      -> Pilot - Opel_Kapïtan <-
 
 # Compilation / Lancement
-#########################
 
 Compilation du pilote : 
 command : ```$ make SANITIZE=off DEBUG=off install```;
 
 
 # Auteurs
-#########
 
     STEIMETZ Tangui,
     PICQUE Kylian
