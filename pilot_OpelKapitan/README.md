@@ -1,2 +1,22 @@
-compil command for debug :
-$ make SANITIZE=on DEBUG=on install
+_________                    _________   ________       _____
+__  ____/____________ _____________  /   ___  __ \_________(_)___  __
+_  / __ __  ___/  __ `/_  __ \  __  /    __  /_/ /_  ___/_  /__  |/_/
+/ /_/ / _  /   / /_/ /_  / / / /_/ /     _  ____/_  /   _  / __>  <
+\____/  /_/    \__,_/ /_/ /_/\__,_/      /_/     /_/    /_/  /_/|_|
+
+
+                  ---> Gestionnaire de course <---
+                     -> Pilot - Opel_Kapïtan <-
+
+# Compilation / Lancement
+#########################
+
+Compilation du pilote : 
+command : ```$ make SANITIZE=off DEBUG=off install```
+Compiler d'abord le gestionnaire de course :
+
+# Auteurs
+#########
+
+    STEIMETZ Tangui,
+    PICQUE Kylian
