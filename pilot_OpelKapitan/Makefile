@@ -22,7 +22,7 @@ ifeq ($(DEBUG),off)
 CFLAGS += -D'DEBUG'
 endif
 
-OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/straightAction.o
+OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/straightAction.o $(OBJ_PATH)/boostAction.o $(OBJ_PATH)/simpleAction.o
 
 install: $(BIN_PATH)/$(PILOT_NAME)
 
@@ -54,6 +54,12 @@ $(OBJ_PATH)/pilotDirection.o: $(SRC_PATH)$(DIRECT)/pilotDirection.c $(INC_PATH)$
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/straightAction.o: $(SRC_PATH)$(DIRECT)/straightAction.c $(INC_PATH)$(DIRECT)/straightAction.h 
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH)/boostAction.o: $(SRC_PATH)$(DIRECT)/boostAction.c $(INC_PATH)$(DIRECT)/boostAction.h 
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH)/simpleAction.o: $(SRC_PATH)$(DIRECT)/simpleAction.c $(INC_PATH)$(DIRECT)/simpleAction.h 
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 $(OBJ_PATH)/graph.o: $(SRC_PATH)/graph.c $(INC_PATH)/graph.h

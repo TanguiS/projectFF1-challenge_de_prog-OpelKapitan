@@ -32,6 +32,15 @@
 
 
 /**
+ * @brief Enumeration of a straight direction type
+ */
+typedef enum {
+    towardsX,               /**< the straight direction to follow is towards X */
+    towardsY,               /**< the straight direction to follow is towards Y */
+    diagonal                /**< the straight direction to follow is a diagonal */
+} straightDirection;
+
+/**
  * @brief vector between two positions
  * 
  * @param finalPosition the final position
@@ -49,6 +58,18 @@ POSITION positionVector ( POSITION finalPosition, POSITION startPosition );
  * @return boolean true if are aligned
  */
 boolean areAligned ( POSITION A, POSITION B, POSITION C );
+
+/**
+ * @brief Which direction is the straight line
+ * 
+ * @param startPosition the current position
+ * @param goalPosition the position to arrive
+ * @return straightDirection the line that will be followed
+ */
+straightDirection lineToFollow ( 
+                                POSITION startPosition, 
+                                POSITION goalPosition 
+                                );
 
 /**
  * @brief Determine the hypotetical next position according to current data

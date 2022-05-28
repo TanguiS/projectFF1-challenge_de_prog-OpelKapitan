@@ -19,6 +19,7 @@
 
 #include "../../include/dijkstra/dijkstraAlgo.h"
 #include "../../include/direction/pilotDirection.h"
+#include "../../include/direction/straightAction.h"
 
 /**
  * @brief Set result's values to reference.

@@ -153,7 +153,7 @@ LIST removeElementList ( LIST list,  listElement* result )
     result->Y = list.head->contents.Y;
 
     previousHead = list.head;
-    if(list.tail==list.head) {/*if there is only one elmt in the list*/
+    if(list.tail==list.head) {      /*if there is only one elmt in the list*/
         list.head = NULL;
         list.tail = NULL;
     } else {
@@ -205,7 +205,7 @@ boolean getElementList ( LIST list,  listElement* result, int position) {
 boolean getNextElementList ( LIST list,  listElement* result, listElement* refElement) {
     LIST_CELL current;
 
-    if (isEmptyList(list) || list.head == list.tail) {/*if there is only 0 or 1 elmt in the list*/
+    if (isEmptyList(list) || list.head == list.tail) {  /*if there is only 0 or 1 elmt in the list*/
         return false;
     }
 

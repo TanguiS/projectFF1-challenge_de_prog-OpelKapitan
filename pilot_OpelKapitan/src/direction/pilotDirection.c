@@ -19,6 +19,8 @@
 
 #include "../../include/direction/pilotDirection.h"
 
+<<<<<<< HEAD
+=======
 /**
  * @brief Determine the correct action for a step by step movement 
  * 
@@ -113,6 +115,7 @@ static PATH_LIST groupNextAction (
                                  );
 
 
+>>>>>>> 612b166662636702662e35c9ed19e0392b243e85
 /**
  * @brief if the speed is null
  * 
@@ -138,6 +141,8 @@ static void trajectoryCorrection (
                                   );
 
 
+<<<<<<< HEAD
+=======
 static PATH_LIST nextActionForNextPosition ( 
                                             PATH_LIST path, 
                                             POSITION pilotPosition, 
@@ -325,6 +330,7 @@ static PATH_LIST groupNextAction (
 }
 
 
+>>>>>>> 612b166662636702662e35c9ed19e0392b243e85
 static boolean speedIsNull ( SPEED pilotSpeed )
 {
     return ( pilotSpeed.X == 0 && pilotSpeed.Y == 0 );
@@ -356,21 +362,6 @@ static void trajectoryCorrection (
     }
 }
 
-straightDirection lineToFollow ( 
-                                POSITION startPosition, 
-                                POSITION goalPosition 
-                                )
-{
-    POSITION line;
-    line = positionVector ( goalPosition, startPosition );
-    if ( line.X == 0 ) {
-        return towardsY;
-    }
-    if ( line.Y == 0 ) {
-        return towardsX;
-    }
-    return diagonal;
-}
 
 boolean areEqualsPosition ( POSITION A, POSITION B )
 {
