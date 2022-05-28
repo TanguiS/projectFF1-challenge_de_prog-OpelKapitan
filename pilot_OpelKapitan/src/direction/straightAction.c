@@ -28,6 +28,22 @@ POSITION positionVector ( POSITION finalPosition, POSITION startPosition )
     return finalPosition;
 }
 
+straightDirection lineToFollow ( 
+                                POSITION startPosition, 
+                                POSITION goalPosition 
+                                )
+{
+    POSITION line;
+    line = positionVector ( goalPosition, startPosition );
+    if ( line.X == 0 ) {
+        return towardsY;
+    }
+    if ( line.Y == 0 ) {
+        return towardsX;
+    }
+    return diagonal;
+}
+
 boolean areAligned ( POSITION A, POSITION B, POSITION C ) 
 {
     return  (C.Y - A.Y) * (B.X - A.X) - (B.Y - A.Y) * (C.X - A.X ) == 0; 

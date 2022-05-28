@@ -158,9 +158,6 @@ static void setBoostsRemainingPilot ( PILOT* pilot, short boostsRemaining )
 
 static void initNewPilot ( PILOT* pilot )
 {
-    /* 
-    on pourrait tenter une fonctions pour partir avec un boost dans la bonne direction directement 
-    */
     setPositionPilot ( pilot, 0, 0 );
     setSpeedPilot ( pilot, 0, 0 );
     setActionPilot ( pilot, 0, 0 );
@@ -332,7 +329,7 @@ void updatePilots (
                     previousSecound, previousThird 
                 );
 
-    path = pathToFollow ( dijkstra, graph, myPosition/*, previousPosition*/ );
+    path = pathToFollow ( dijkstra, graph, myPosition );
 
     if ( areEqualsPosition ( examineHeadPathList ( path ), myPosition ) ) {
         fprintf ( stderr, "\n\n> EQUALS POSITION\n\n" );

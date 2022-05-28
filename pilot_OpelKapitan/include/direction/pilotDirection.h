@@ -30,15 +30,10 @@
 #include "../graph.h"
 #include "./follow_line.h"
 #include "./straightAction.h"
+#include "./boostAction.h"
+#include "./simpleAction.h"
 
-/**
- * @brief Enumeration of a straight direction type
- */
-typedef enum {
-    towardsX,               /**< the straight direction to follow is towards X */
-    towardsY,               /**< the straight direction to follow is towards Y */
-    diagonal                /**< the straight direction to follow is a diagonal */
-} straightDirection;
+
 
 /**
  * @brief Declaration of a function pointer to redirect
@@ -56,18 +51,6 @@ typedef PATH_LIST actionDeterminator (
                                         SPEED pilotSpeed, 
                                         ACCELERATION* nextAction 
                                       );
-
-/**
- * @brief Which direction is the straight line
- * 
- * @param startPosition the current position
- * @param goalPosition the position to arrive
- * @return straightDirection the line that will be followed
- */
-straightDirection lineToFollow ( 
-                                POSITION startPosition, 
-                                POSITION goalPosition 
-                                );
 
 /**
  * @brief If position A is equal to position B
