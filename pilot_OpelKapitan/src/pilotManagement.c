@@ -77,6 +77,22 @@ static void initNewPilot ( PILOT* pilot );
 static void updateSpeedPilot ( PILOT* pilot );
 
 /**
+ * @brief Update the position to the correct pilot's object
+ * 
+ * @param myPosition the position of our pilot
+ * @param secoundPosition the position of the second pilot
+ * @param thirdPosition the position of the third pilot
+ * @param myPilot our pilot
+ * @param secondPilot the second pilot
+ * @param thirdPilot the third pilot
+ */
+static void updatePositionPilot ( 
+                                POSITION myPosition, POSITION secoundPosition, 
+                                POSITION thirdPosition, PILOT* myPilot, 
+                                PILOT* secondPilot, PILOT* thirdPilot 
+                                );
+
+/**
  * @brief If the action is boosted
  * 
  * @param action the action to test
@@ -172,7 +188,7 @@ static void updateSpeedPilot ( PILOT* pilot )
                            speed.Y + acc.Y );
 }
 
-void updatePositionPilot ( 
+static void updatePositionPilot ( 
                             POSITION myPosition, POSITION secoundPosition, 
                             POSITION thirdPosition, PILOT* myPilot, 
                             PILOT* secondPilot, PILOT* thirdPilot 
