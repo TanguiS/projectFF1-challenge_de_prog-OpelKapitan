@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['size_5ftab_5ffinish_5fline_442',['SIZE_TAB_FINISH_LINE',['../graph_8h.html#a8cc0eeef963b25db30935578edee64cd',1,'graph.h']]],
-  ['straight_5faction_443',['STRAIGHT_ACTION',['../actionModificator_8h.html#aa82dba3d7c5ed96e3af1ec977b2a19f7',1,'actionModificator.h']]]
+  ['number_5fcases_5faround_484',['NUMBER_CASES_AROUND',['../util_8h.html#a2b9736073280bc111897168ed7899c1b',1,'util.h']]],
+  ['number_5fdirection_485',['NUMBER_DIRECTION',['../actionModificator_8h.html#a650119f313856a53cc0d6841f9fa93a5',1,'actionModificator.h']]]
 ];

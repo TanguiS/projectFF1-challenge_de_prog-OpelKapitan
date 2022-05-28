@@ -9,7 +9,7 @@
  */
 
 /**
- * @file matrix.h
+ * @file matrix.c
  * @brief This file contains functions to manage a matrix.
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>
  * @version 1.0.0

@@ -9,7 +9,7 @@
  */
 
 /**
- * @file pilotManagement.h
+ * @file pilotManagement.c
  * @brief This file contains the functions used to manage a pilot.
  * @author PICQUE Kylian <picque.kylian@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <steimetz.tangui@ecole.ensicaen.fr>

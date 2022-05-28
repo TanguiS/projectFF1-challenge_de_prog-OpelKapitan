@@ -1,0 +1,10 @@
+<map id="include/direction/actionModificator.h" name="include/direction/actionModificator.h">
+<area shape="rect" id="node1" title="This file contains the prototypes used to modify the action." alt="" coords="231,5,406,47"/>
+<area shape="rect" id="node2" href="$actionModificator_8c.html" title="This file contains the functions used to modify the action." alt="" coords="52,102,281,129"/>
+<area shape="rect" id="node3" href="$pilotDirection_8h.html" title="This file contains the prototypes / declarations used to choose the pilot&#39;s direction." alt="" coords="201,184,436,211"/>
+<area shape="rect" id="node7" href="$straightAction_8h.html" title="This file contains the functions&#39;s prototype used to determine action for a straight line." alt="" coords="356,95,540,136"/>
+<area shape="rect" id="node4" href="$dijkstraAlgo_8c.html" title="This file contains the functions to implement the Dijstra&#39;s algo." alt="" coords="5,259,192,285"/>
+<area shape="rect" id="node5" href="$pilotDirection_8c.html" title="This file contains the functions used to choose the pilot&#39;s direction/action." alt="" coords="216,259,421,285"/>
+<area shape="rect" id="node6" href="$pilotManagement_8c.html" title="This file contains the functions used to manage a pilot." alt="" coords="445,259,616,285"/>
+<area shape="rect" id="node8" href="$straightAction_8c.html" title="This file contains the functions used to modify determine the action for a straight line." alt="" coords="460,184,668,211"/>
+</map>

@@ -9,8 +9,8 @@
  */
 
 /**
- * @file diagonalAction.c
- * @brief This file contains the functions used to modify the diagonal action.
+ * @file straightAction.c
+ * @brief This file contains the functions used to modify determine the action for a straight line.
  * @author PICQUE Kylian <kylian.picque@ecole.ensicaen.fr>
  * @author STEIMETZ Tangui <tangui.steimetz@ecole.ensicaen.fr>
  * @version 1.0.0

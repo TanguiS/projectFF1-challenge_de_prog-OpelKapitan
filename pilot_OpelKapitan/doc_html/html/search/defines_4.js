@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['number_5fcases_5faround_440',['NUMBER_CASES_AROUND',['../util_8h.html#a2b9736073280bc111897168ed7899c1b',1,'util.h']]],
-  ['number_5fdirection_441',['NUMBER_DIRECTION',['../actionModificator_8h.html#a650119f313856a53cc0d6841f9fa93a5',1,'actionModificator.h']]]
+  ['max_5fline_5flength_481',['MAX_LINE_LENGTH',['../util_8h.html#af0f2173e3b202ddf5756531b4471dcb2',1,'util.h']]],
+  ['max_5fspeed_482',['MAX_SPEED',['../actionModificator_8h.html#ac2cd96d53dd3ba6407db6766c3d92b26',1,'actionModificator.h']]],
+  ['max_5fspeed_5fdia_483',['MAX_SPEED_DIA',['../actionModificator_8h.html#ad39b2011f0c29b408abe5804c0bdd44b',1,'actionModificator.h']]]
 ];

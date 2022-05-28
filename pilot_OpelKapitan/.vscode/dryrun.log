@@ -3,15 +3,16 @@ make: Entering directory '/home/tangui-stei/Documents/projectFF1-challenge_de_pr
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/main.c -o obj/main.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/communicatorWithGDC.c -o obj/communicatorWithGDC.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/pilotManagement.c -o obj/pilotManagement.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/pilotDirection.c -o obj/pilotDirection.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/pilotDirection.c -o obj/pilotDirection.o
 gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/graph.c -o obj/graph.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/matrix.c -o obj/matrix.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/pathList.c -o obj/pathList.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/dijkstraAlgo.c -o obj/dijkstraAlgo.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/dijkstraMatrix.c -o obj/dijkstraMatrix.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/list.c -o obj/list.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/follow_line.c -o obj/follow_line.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/actionModificator.c -o obj/actionModificator.o
-gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graph.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o obj/follow_line.o obj/actionModificator.o -o ../drivers/OpelKapitan -lm
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/tools/matrix.c -o obj/matrix.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/tools/pathList.c -o obj/pathList.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/dijkstra/dijkstraAlgo.c -o obj/dijkstraAlgo.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/dijkstra/dijkstraMatrix.c -o obj/dijkstraMatrix.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/tools/list.c -o obj/list.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/follow_line.c -o obj/follow_line.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/actionModificator.c -o obj/actionModificator.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 -c src/direction/straightAction.c -o obj/straightAction.o
+gcc -I./include -L./lib -Wall -Wextra -ansi -pedantic -O3 obj/main.o obj/communicatorWithGDC.o obj/pilotManagement.o obj/pilotDirection.o obj/graph.o obj/matrix.o obj/pathList.o obj/dijkstraAlgo.o obj/dijkstraMatrix.o obj/list.o obj/follow_line.o obj/actionModificator.o obj/straightAction.o -o ../drivers/OpelKapitan -lm
 make: Leaving directory '/home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan'
  

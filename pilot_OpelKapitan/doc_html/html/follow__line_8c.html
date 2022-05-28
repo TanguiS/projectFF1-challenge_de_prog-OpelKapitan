@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pilote GrandPrix - Opel Kapïtan: src/follow_line.c File Reference</title>
+<title>Pilote GrandPrix - Opel Kapïtan: src/direction/follow_line.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e5e6b0c9a9898406be2e596e9eb9908d.html">direction</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,16 +74,22 @@ $(function() {
 
 <p>This file contains the functions used to move a point in a 2 diemsions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="follow__line_8h_source.html">follow_line.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="follow__line_8h_source.html">../../include/direction/follow_line.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for follow_line.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="follow__line_8c__incl.png" border="0" usemap="#src_2follow__line_8c" alt=""/></div>
+<div class="center"><img src="follow__line_8c__incl.png" border="0" usemap="#src_2direction_2follow__line_8c" alt=""/></div>
+<map name="src_2direction_2follow__line_8c" id="src_2direction_2follow__line_8c">
+<area shape="rect" title="This file contains the functions used to move a point in a 2 diemsions." alt="" coords="9,5,156,47"/>
+<area shape="rect" href="follow__line_8h.html" title="This file contains the functions used to move a point in a 2 dimensions." alt="" coords="5,95,160,136"/>
+<area shape="rect" href="util_8h.html" title="This file is for util type declaration." alt="" coords="31,184,134,211"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7bd24f9d4bdfe6e74ce3d2955c27c763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="follow__line_8c.html#a7bd24f9d4bdfe6e74ce3d2955c27c763">initLine</a> (int x1, int y1, int x2, int y2, <a class="el" href="structInfoLine.html">InfoLine</a> *infoLine)</td></tr>
+<tr class="memdesc:a7bd24f9d4bdfe6e74ce3d2955c27c763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="structInfoLine.html" title="Dicrete line traversal information.">InfoLine</a> data structure.  <a href="follow__line_8c.html#a7bd24f9d4bdfe6e74ce3d2955c27c763">More...</a><br /></td></tr>
 <tr class="separator:a7bd24f9d4bdfe6e74ce3d2955c27c763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77cf2be6af68c10f49c183cbbc76b807"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="follow__line_8c.html#a77cf2be6af68c10f49c183cbbc76b807">nextPoint</a> (<a class="el" href="structInfoLine.html">InfoLine</a> *infoLine, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> *point, int <a class="el" href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a>)</td></tr>
 <tr class="memdesc:a77cf2be6af68c10f49c183cbbc76b807"><td class="mdescLeft">&#160;</td><td class="mdescRight">nextPoint Move a point along a line in one direction  <a href="follow__line_8c.html#a77cf2be6af68c10f49c183cbbc76b807">More...</a><br /></td></tr>
@@ -138,7 +144,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialize an <a class="el" href="structInfoLine.html">InfoLine</a> data structure </p>
+
+<p>Initialize an <a class="el" href="structInfoLine.html" title="Dicrete line traversal information.">InfoLine</a> data structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>the X-coordinate of the starting point </td></tr>
+    <tr><td class="paramname">y1</td><td>the Y-coordinate of the starting point </td></tr>
+    <tr><td class="paramname">x2</td><td>the X-coordinate of the ending point </td></tr>
+    <tr><td class="paramname">y2</td><td>the Y-coordinate of the ending point </td></tr>
+    <tr><td class="paramname">infoLine</td><td>the unitialized infoLine object </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

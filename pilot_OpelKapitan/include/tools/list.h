@@ -53,33 +53,33 @@ typedef struct _list LIST;
 /**
  * @brief Create a Lifo object
  * 
- * @return LIST 
+ * @return LIST the created list
  */
 LIST createList ();
 
 /**
  * @brief If the lifo is empty
  * 
- * @param lifo 
- * @return boolean 
+ * @param list the list to test
+ * @return boolean : true if the list is empty
  */
 boolean isEmptyList ( LIST list );
 
 /**
  * @brief Compare two list elements. 
  * 
- * @param element1 
- * @param element2 
- * @return boolean 
+ * @param element1 : the first element to compare
+ * @param element2 : the second element to compare
+ * @return boolean : true if are equals
  */
 boolean compareElement(listElement* element1, listElement* element2);
 
 /**
  * @brief Add a lifo element int the lifo
  * 
- * @param file 
+ * @param list : the list to modify
  * @param x : the element to add
- * @return LIST 
+ * @return LIST : the updated list
  */
 LIST addElementList ( LIST list, listElement x );
 
@@ -87,10 +87,10 @@ LIST addElementList ( LIST list, listElement x );
 /**
  * @brief remove removeCoord from the list.  
  * 
- * @param list the liste
+ * @param list the list to modify
  * @param result stock the removed element 
  * @param removeCoord the position of the element to remove
- * @return LIST 
+ * @return LIST : the updated list
  */
 LIST removeElementListCoord ( LIST list, listElement* result , POSITION* removeCoord);
 
@@ -98,9 +98,9 @@ LIST removeElementListCoord ( LIST list, listElement* result , POSITION* removeC
 /**
  * @brief Remove the first list element from the list
  * 
- * @param list 
+ * @param list the list to modify
  * @param result : the removed element
- * @return LIST 
+ * @return LIST the updated list
  */
 LIST removeElementList ( LIST list, listElement* result );
 
@@ -108,7 +108,7 @@ LIST removeElementList ( LIST list, listElement* result );
 /**
  * @brief Destroy a Lifo Object
  * 
- * @param list 
+ * @param list the list to destroy
  */
 void destroyList ( LIST list );
 
@@ -116,7 +116,7 @@ void destroyList ( LIST list );
 /**
  * @brief Get the Element List object
  * 
- * @param list 
+ * @param list the list to examine
  * @param result stock the removed element 
  * @param position the ranking of the element
  * @return boolean if the ranking is greater than the list length
@@ -126,12 +126,11 @@ boolean getElementList ( LIST list, listElement* result, int position);
 /**
  * @brief Get the Next Element List object from the reference element
  * 
- * @param list 
+ * @param list the list to examine
  * @param result stock the removed element
  * @param refElement reference element
  * @return boolean if the next element or the reference element exist
  */
 boolean getNextElementList ( LIST list, listElement* result, listElement* refElement);
-
 
 #endif /* __LISTE_H__ */
