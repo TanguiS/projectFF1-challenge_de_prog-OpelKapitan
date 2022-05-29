@@ -22,7 +22,7 @@
 /**
  * @brief Writes the data provided from the arguments in the matrix of the graph
  * 
- * @param map : The DATA_MAP to initialize with the data provided
+ * @param graph : The GRAPH to initialize with the data provided
  * @param data : A line of data that need to be written int the map's matrix
  * @param row : the column to which this line of data belongs
  */
@@ -51,7 +51,6 @@ static void setDataGraph ( GRAPH* graph, char* data, int row )
         }
     }
 }
-
 
 void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph )
 {

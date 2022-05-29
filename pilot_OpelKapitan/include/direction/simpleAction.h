@@ -31,6 +31,21 @@
 #include "./follow_line.h"
 #include "./straightAction.h"
 
+/**
+ * @brief Finds the theoretical next action for the information it receives.
+ * 
+ * @param path the path to follow for a pilot
+ * @param pilotPosition the pilot position
+ * @param pilotSpeed the speed pilot
+ * @param nextAction the theoretical next action to determined
+ * @return PATH_LIST the updated path list
+ */
+PATH_LIST examineNextPosition ( 
+                                PATH_LIST path, 
+                                POSITION pilotPosition, 
+                                SPEED pilotSpeed, 
+                                ACCELERATION* nextAction 
+                              );
 
 /**
  * @brief Determine the correct action for a step by step movement 

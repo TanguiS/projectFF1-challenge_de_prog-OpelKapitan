@@ -27,7 +27,6 @@
  */
 static boolean speedIsNull ( SPEED pilotSpeed );
 
-
 /**
  * @brief Correct the action in case off the trajectory is impossible
  * 
@@ -75,6 +74,16 @@ static void trajectoryCorrection (
     }
 }
 
+void choiceDirection ( direction choice, ACCELERATION* action )
+{
+    directionFunction* directionTab[NUMBER_DIRECTION] = 
+    {
+        goRight, goLeft, goUp, goDown,
+        goBoostRight, goBoostLeft, goBoostUp, goBoostDown
+    };
+    directionTab[choice]( action );
+}
+
 POSITION positionVector ( POSITION finalPosition, POSITION startPosition )
 {
     finalPosition.X = finalPosition.X - startPosition.X;
@@ -119,24 +128,6 @@ boolean areEqualsPosition ( POSITION A, POSITION B )
     return A.X == B.X && A.Y == B.Y;
 }
 
-PATH_LIST examineNextPosition ( 
-                                PATH_LIST path, POSITION pilotPosition, 
-                                SPEED pilotSpeed, ACCELERATION* nextAction 
-                              )
-{
-    path_list_element nextPosition;
-    POSITION positionToGo;
-    nextPosition = getCurrentPathListElement ( path );
-    path = moveCurrentPathList ( path );
-    positionToGo = hypotheticalNextPosition ( 
-                                                nextPosition, 
-                                                pilotPosition, 
-                                                pilotSpeed 
-                                            );
-    basicNextAction ( positionToGo, nextAction );
-    return path;
-}
-
 PATH_LIST choiceNextAction ( 
                             PATH_LIST path, POSITION pilotPosition, 
                             SPEED pilotSpeed, ACCELERATION* nextAction, 
@@ -170,8 +161,7 @@ PATH_LIST choiceNextAction (
         if ( !isEmptyPathList ( path ) ) {
             trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
         }
-        nextAction->X = actionTab->X;
-        nextAction->Y = actionTab->Y;
+        *nextAction = *actionTab;
         return path;
     } 
     if ( !isEnoughFuel ( graph, remainingFuel, pilotPosition, pilotSpeed, path ) ) {
@@ -181,15 +171,13 @@ PATH_LIST choiceNextAction (
         path = redirectTab[flag](path, pilotPosition, pilotSpeed, actionTab ); 
     }
     if ( flag ) {
-        nextAction->X = actionTab[countAction].X;   
-        nextAction->Y = actionTab[countAction].Y;
+        *nextAction = actionTab[countAction];
         if ( !isEmptyPathList ( path ) ) {
             trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
         }
         return path;
     }
-    nextAction->X = actionTab->X;
-    nextAction->Y = actionTab->Y;
+    *nextAction = *actionTab;
     if ( !isEmptyPathList ( path ) ) {
         trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
     }

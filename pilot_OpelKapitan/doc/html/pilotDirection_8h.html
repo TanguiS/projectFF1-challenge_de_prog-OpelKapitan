@@ -156,9 +156,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aac4851858d1790c40144d569880fe428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotDirection_8h.html#aac4851858d1790c40144d569880fe428">hypotheticalNextPosition</a> (<a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> nextPosition, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> currentPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> currentSpeed)</td></tr>
 <tr class="memdesc:aac4851858d1790c40144d569880fe428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the hypotetical next position according to current data.  <a href="pilotDirection_8h.html#aac4851858d1790c40144d569880fe428">More...</a><br /></td></tr>
 <tr class="separator:aac4851858d1790c40144d569880fe428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e2c43119062cfd59147893407f680d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotDirection_8h.html#a2e2c43119062cfd59147893407f680d1">examineNextPosition</a> (<a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
-<tr class="memdesc:a2e2c43119062cfd59147893407f680d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the theoretical next action for the information it receives.  <a href="pilotDirection_8h.html#a2e2c43119062cfd59147893407f680d1">More...</a><br /></td></tr>
-<tr class="separator:a2e2c43119062cfd59147893407f680d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad186be88be99f754fd543b70d2748f04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotDirection_8h.html#ad186be88be99f754fd543b70d2748f04">choiceDirection</a> (<a class="el" href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> choice, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *action)</td></tr>
+<tr class="memdesc:ad186be88be99f754fd543b70d2748f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the correct function to set the action.  <a href="pilotDirection_8h.html#ad186be88be99f754fd543b70d2748f04">More...</a><br /></td></tr>
+<tr class="separator:ad186be88be99f754fd543b70d2748f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a4ace58a2c56df25283fc2f8284235"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pilotDirection_8h.html#a88a4ace58a2c56df25283fc2f8284235">choiceNextAction</a> (<a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> positionPilot, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> speedPilot, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction, <a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, short remainingFuel, int round)</td></tr>
 <tr class="memdesc:a88a4ace58a2c56df25283fc2f8284235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choices the assumed best action for the next round.  <a href="pilotDirection_8h.html#a88a4ace58a2c56df25283fc2f8284235">More...</a><br /></td></tr>
 <tr class="separator:a88a4ace58a2c56df25283fc2f8284235"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,6 +281,43 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
 
 </div>
 </div>
+<a id="ad186be88be99f754fd543b70d2748f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad186be88be99f754fd543b70d2748f04">&#9670;&nbsp;</a></span>choiceDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void choiceDirection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="actionModificator_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a>&#160;</td>
+          <td class="paramname"><em>choice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *&#160;</td>
+          <td class="paramname"><em>action</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine the correct function to set the action. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choice</td><td>the direction wanted </td></tr>
+    <tr><td class="paramname">action</td><td>the action determined </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a88a4ace58a2c56df25283fc2f8284235"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88a4ace58a2c56df25283fc2f8284235">&#9670;&nbsp;</a></span>choiceNextAction()</h2>
 
@@ -347,58 +384,6 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
     <tr><td class="paramname">graph</td><td>the graph of the race map </td></tr>
     <tr><td class="paramname">remainingFuel</td><td>the remaining fuel of a pilot </td></tr>
     <tr><td class="paramname">round</td><td>the round number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>PATH_LIST the updated path list </dd></dl>
-
-</div>
-</div>
-<a id="a2e2c43119062cfd59147893407f680d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e2c43119062cfd59147893407f680d1">&#9670;&nbsp;</a></span>examineNextPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> examineNextPosition </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a>&#160;</td>
-          <td class="paramname"><em>pilotPosition</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a>&#160;</td>
-          <td class="paramname"><em>pilotSpeed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *&#160;</td>
-          <td class="paramname"><em>nextAction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Finds the theoretical next action for the information it receives. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>the path to follow for a pilot </td></tr>
-    <tr><td class="paramname">pilotPosition</td><td>the pilot position </td></tr>
-    <tr><td class="paramname">pilotSpeed</td><td>the speed pilot </td></tr>
-    <tr><td class="paramname">nextAction</td><td>the theoretical next action to determined </td></tr>
   </table>
   </dd>
 </dl>

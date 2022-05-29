@@ -108,15 +108,18 @@ Include dependency graph for boostAction.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aaf87a2acd8ae34df39eb31f3f58d97be"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#aaf87a2acd8ae34df39eb31f3f58d97be">isApprochable</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> start, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> stop, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> *goalPosition)</td></tr>
+<tr class="memdesc:aaf87a2acd8ae34df39eb31f3f58d97be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informs if node between start and stop can be crossed.  <a href="boostAction_8c.html#aaf87a2acd8ae34df39eb31f3f58d97be">More...</a><br /></td></tr>
+<tr class="separator:aaf87a2acd8ae34df39eb31f3f58d97be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e61f4c731740e1b1434c5392718a0e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#a71e61f4c731740e1b1434c5392718a0e">boostNextAction</a> (<a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> positionToGo, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
+<tr class="memdesc:a71e61f4c731740e1b1434c5392718a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the correct action with a boost to go to the wanted position.  <a href="boostAction_8c.html#a71e61f4c731740e1b1434c5392718a0e">More...</a><br /></td></tr>
+<tr class="separator:a71e61f4c731740e1b1434c5392718a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695698b17220b8acaf8f32f6ceaac491"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#a695698b17220b8acaf8f32f6ceaac491">adaptPilot</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> goalPosition, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed)</td></tr>
+<tr class="memdesc:a695698b17220b8acaf8f32f6ceaac491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adapts the boost if there is a car on the next node.  <a href="boostAction_8c.html#a695698b17220b8acaf8f32f6ceaac491">More...</a><br /></td></tr>
+<tr class="separator:a695698b17220b8acaf8f32f6ceaac491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2429a36abc8cb4e79901d2531a7bcf22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#a2429a36abc8cb4e79901d2531a7bcf22">nextActionBoostedForNextPosition</a> (<a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
 <tr class="memdesc:a2429a36abc8cb4e79901d2531a7bcf22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the correct action for a step by step movement with a boost.  <a href="boostAction_8c.html#a2429a36abc8cb4e79901d2531a7bcf22">More...</a><br /></td></tr>
 <tr class="separator:a2429a36abc8cb4e79901d2531a7bcf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73c908b556692e20f4ed936870084595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#a73c908b556692e20f4ed936870084595">isApprochable</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> start, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> stop, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> *goalPosition)</td></tr>
-<tr class="memdesc:a73c908b556692e20f4ed936870084595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informs if node between start and stop can be crossed.  <a href="boostAction_8c.html#a73c908b556692e20f4ed936870084595">More...</a><br /></td></tr>
-<tr class="separator:a73c908b556692e20f4ed936870084595"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabdb34eba81e0ea9d461eaf2db814ba3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#aabdb34eba81e0ea9d461eaf2db814ba3">adaptPilot</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> goalPosition, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed)</td></tr>
-<tr class="memdesc:aabdb34eba81e0ea9d461eaf2db814ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adapts the boost if there is a car on the next node.  <a href="boostAction_8c.html#aabdb34eba81e0ea9d461eaf2db814ba3">More...</a><br /></td></tr>
-<tr class="separator:aabdb34eba81e0ea9d461eaf2db814ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2707ebd66f8f89ba281225d3bbc6635e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boostAction_8c.html#a2707ebd66f8f89ba281225d3bbc6635e">BetterBoostForNextPosition</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
 <tr class="memdesc:a2707ebd66f8f89ba281225d3bbc6635e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adapts the boost for the next position.  <a href="boostAction_8c.html#a2707ebd66f8f89ba281225d3bbc6635e">More...</a><br /></td></tr>
 <tr class="separator:a2707ebd66f8f89ba281225d3bbc6635e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,14 +132,17 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
 <dl class="section version"><dt>Version</dt><dd>1.1.8 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>28 mai 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aabdb34eba81e0ea9d461eaf2db814ba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabdb34eba81e0ea9d461eaf2db814ba3">&#9670;&nbsp;</a></span>adaptPilot()</h2>
+<a id="a695698b17220b8acaf8f32f6ceaac491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695698b17220b8acaf8f32f6ceaac491">&#9670;&nbsp;</a></span>adaptPilot()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void adaptPilot </td>
+          <td class="memname">static void adaptPilot </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -177,6 +183,11 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Adapts the boost if there is a car on the next node. </p>
@@ -253,14 +264,62 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
 
 </div>
 </div>
-<a id="a73c908b556692e20f4ed936870084595"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73c908b556692e20f4ed936870084595">&#9670;&nbsp;</a></span>isApprochable()</h2>
+<a id="a71e61f4c731740e1b1434c5392718a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e61f4c731740e1b1434c5392718a0e">&#9670;&nbsp;</a></span>boostNextAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a> isApprochable </td>
+          <td class="memname">static void boostNextAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a>&#160;</td>
+          <td class="paramname"><em>positionToGo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *&#160;</td>
+          <td class="paramname"><em>nextAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the correct action with a boost to go to the wanted position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positionToGo</td><td>the wanted position </td></tr>
+    <tr><td class="paramname">nextAction</td><td>the determined action </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf87a2acd8ae34df39eb31f3f58d97be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf87a2acd8ae34df39eb31f3f58d97be">&#9670;&nbsp;</a></span>isApprochable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a> isApprochable </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -289,6 +348,11 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Informs if node between start and stop can be crossed. </p>

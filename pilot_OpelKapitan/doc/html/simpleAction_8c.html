@@ -108,6 +108,12 @@ Include dependency graph for simpleAction.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a26ed4947afa06dcced6b5098637c18a3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simpleAction_8c.html#a26ed4947afa06dcced6b5098637c18a3">basicNextAction</a> (<a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> positionToGo, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
+<tr class="memdesc:a26ed4947afa06dcced6b5098637c18a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the correct action to go to the wanted position.  <a href="simpleAction_8c.html#a26ed4947afa06dcced6b5098637c18a3">More...</a><br /></td></tr>
+<tr class="separator:a26ed4947afa06dcced6b5098637c18a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2c43119062cfd59147893407f680d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simpleAction_8c.html#a2e2c43119062cfd59147893407f680d1">examineNextPosition</a> (<a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
+<tr class="memdesc:a2e2c43119062cfd59147893407f680d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the theoretical next action for the information it receives.  <a href="simpleAction_8c.html#a2e2c43119062cfd59147893407f680d1">More...</a><br /></td></tr>
+<tr class="separator:a2e2c43119062cfd59147893407f680d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af646f8d8f66e4a6777d1908100577bfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="simpleAction_8c.html#af646f8d8f66e4a6777d1908100577bfd">nextActionForNextPosition</a> (<a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> path, <a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a> pilotPosition, <a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a> pilotSpeed, <a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *nextAction)</td></tr>
 <tr class="memdesc:af646f8d8f66e4a6777d1908100577bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the correct action for a step by step movement.  <a href="simpleAction_8c.html#af646f8d8f66e4a6777d1908100577bfd">More...</a><br /></td></tr>
 <tr class="separator:af646f8d8f66e4a6777d1908100577bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,6 +126,103 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'tan'+'gu'+'i.s'
 <dl class="section version"><dt>Version</dt><dd>1.1.8 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>28 mai 2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a26ed4947afa06dcced6b5098637c18a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ed4947afa06dcced6b5098637c18a3">&#9670;&nbsp;</a></span>basicNextAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void basicNextAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a>&#160;</td>
+          <td class="paramname"><em>positionToGo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *&#160;</td>
+          <td class="paramname"><em>nextAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the correct action to go to the wanted position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">positionToGo</td><td>the wanted position </td></tr>
+    <tr><td class="paramname">nextAction</td><td>the determined action </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e2c43119062cfd59147893407f680d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2c43119062cfd59147893407f680d1">&#9670;&nbsp;</a></span>examineNextPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a> examineNextPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pathList_8h.html#aecc25f52486516f083f8d4706d73c0bd">PATH_LIST</a>&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a090c37e3e048ffb02537750a337d34ca">POSITION</a>&#160;</td>
+          <td class="paramname"><em>pilotPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a51b9a149e4659b6c14d5fe93040ef2a9">SPEED</a>&#160;</td>
+          <td class="paramname"><em>pilotSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="util_8h.html#a5a6833f1248215387242d3e96687c112">ACCELERATION</a> *&#160;</td>
+          <td class="paramname"><em>nextAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the theoretical next action for the information it receives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>the path to follow for a pilot </td></tr>
+    <tr><td class="paramname">pilotPosition</td><td>the pilot position </td></tr>
+    <tr><td class="paramname">pilotSpeed</td><td>the speed pilot </td></tr>
+    <tr><td class="paramname">nextAction</td><td>the theoretical next action to determined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>PATH_LIST the updated path list </dd></dl>
+
+</div>
+</div>
 <a id="af646f8d8f66e4a6777d1908100577bfd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af646f8d8f66e4a6777d1908100577bfd">&#9670;&nbsp;</a></span>nextActionForNextPosition()</h2>
 

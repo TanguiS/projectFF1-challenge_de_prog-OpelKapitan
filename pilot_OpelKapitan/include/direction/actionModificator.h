@@ -206,28 +206,4 @@ void slowDownDecrementY ( SPEED speedToSlow, ACCELERATION* action );
  */
 void accelerate ( POSITION directionToAccelerate, ACCELERATION* action );
 
-/**
- * @brief Determine the correct function to set the action
- * 
- * @param choice the direction wanted
- * @param action the action determined
- */
-void choiceDirection ( direction choice, ACCELERATION* action );
-
-/**
- * @brief Set the correct action to go to the wanted position
- * 
- * @param positionToGo the wanted position
- * @param nextAction the determined action
- */
-void basicNextAction ( POSITION positionToGo, ACCELERATION* nextAction );
-
-/**
- * @brief Set the correct action with a boost to go to the wanted position
- * 
- * @param positionToGo the wanted position
- * @param nextAction the determined action
- */
-void boostNextAction ( POSITION positionToGo, ACCELERATION* nextAction );
-
 #endif /* __ACTION_MODIFICATOR_HH__ */

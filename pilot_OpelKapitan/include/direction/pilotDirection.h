@@ -105,20 +105,12 @@ POSITION hypotheticalNextPosition(
                                          );
 
 /**
- * @brief Finds the theoretical next action for the information it receives.
+ * @brief Determine the correct function to set the action
  * 
- * @param path the path to follow for a pilot
- * @param pilotPosition the pilot position
- * @param pilotSpeed the speed pilot
- * @param nextAction the theoretical next action to determined
- * @return PATH_LIST the updated path list
+ * @param choice the direction wanted
+ * @param action the action determined
  */
-PATH_LIST examineNextPosition ( 
-                                PATH_LIST path, 
-                                POSITION pilotPosition, 
-                                SPEED pilotSpeed, 
-                                ACCELERATION* nextAction 
-                              );
+void choiceDirection ( direction choice, ACCELERATION* action );
 
 /**
  * @brief Choices the assumed best action for the next round

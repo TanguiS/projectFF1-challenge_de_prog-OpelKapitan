@@ -43,8 +43,8 @@ static void initDijkstra ( DIJKSTRA* dijkstra, POSITION firstNode);
  * @brief Find the position with the fewer length for a successors of positions. 
  * 
  * @param dijkstra The dijkstra matrix. Place where are stocked position's length. 
- * @param minimalNode The position where whill be stocked the minimal coordonate. 
- * @param successors successors where the successors of already visited coordinates are stored
+ * @param currentNode The current node to test. 
+ * @param list the list of successor.
  */
 static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNode, LIST list );
 
@@ -53,6 +53,7 @@ static void findNodeWithMinimalLength ( DIJKSTRA* dijkstra, POSITION* currentNod
  * @brief Give the arc value between a node and one of this successors.
  * 
  * @param graph The graph of the race map. Is used the inform about the value of the arc.
+ * @param dijkstra The DIJKSTRA object.
  * @param currentNode The node which is studied.
  * @param successorNode A currentNode's successor. 
  * @return short The value of the arc.

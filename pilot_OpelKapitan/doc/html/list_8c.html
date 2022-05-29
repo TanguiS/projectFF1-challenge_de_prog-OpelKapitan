@@ -90,6 +90,12 @@ Include dependency graph for list.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a691172a1e9472c25b1f0f37822f186f7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="list_8h.html#a5450cb3cbe19f614edef2645115286fc">LIST_CELL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8c.html#a691172a1e9472c25b1f0f37822f186f7">createCell</a> (<a class="el" href="list_8h.html#a54ebee3865846e81c57743a787540c13">listElement</a> x)</td></tr>
+<tr class="memdesc:a691172a1e9472c25b1f0f37822f186f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Cell object.  <a href="list_8c.html#a691172a1e9472c25b1f0f37822f186f7">More...</a><br /></td></tr>
+<tr class="separator:a691172a1e9472c25b1f0f37822f186f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8825ed40de2831ff0ef66a6584e44a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8c.html#ac8825ed40de2831ff0ef66a6584e44a5">destroyCell</a> (<a class="el" href="list_8h.html#a5450cb3cbe19f614edef2645115286fc">LIST_CELL</a> cell)</td></tr>
+<tr class="memdesc:ac8825ed40de2831ff0ef66a6584e44a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a Cell object.  <a href="list_8c.html#ac8825ed40de2831ff0ef66a6584e44a5">More...</a><br /></td></tr>
+<tr class="separator:ac8825ed40de2831ff0ef66a6584e44a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec984070eb6605e40668c30f2de981fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8c.html#aec984070eb6605e40668c30f2de981fa">compareElement</a> (<a class="el" href="list_8h.html#a54ebee3865846e81c57743a787540c13">listElement</a> *element1, <a class="el" href="list_8h.html#a54ebee3865846e81c57743a787540c13">listElement</a> *element2)</td></tr>
 <tr class="memdesc:aec984070eb6605e40668c30f2de981fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two list elements.  <a href="list_8c.html#aec984070eb6605e40668c30f2de981fa">More...</a><br /></td></tr>
 <tr class="separator:aec984070eb6605e40668c30f2de981fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,6 +209,41 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 
 </div>
 </div>
+<a id="a691172a1e9472c25b1f0f37822f186f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691172a1e9472c25b1f0f37822f186f7">&#9670;&nbsp;</a></span>createCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="list_8h.html#a5450cb3cbe19f614edef2645115286fc">LIST_CELL</a> createCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="list_8h.html#a54ebee3865846e81c57743a787540c13">listElement</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a Cell object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>: the new element </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>LISTE_CELL </dd></dl>
+
+</div>
+</div>
 <a id="ab299a25065c69b7d241f394e069c12db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab299a25065c69b7d241f394e069c12db">&#9670;&nbsp;</a></span>createList()</h2>
 
@@ -220,6 +261,41 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
 
 <p>Create a Lifo object. </p>
 <dl class="section return"><dt>Returns</dt><dd>LIST the created list </dd></dl>
+
+</div>
+</div>
+<a id="ac8825ed40de2831ff0ef66a6584e44a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8825ed40de2831ff0ef66a6584e44a5">&#9670;&nbsp;</a></span>destroyCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="util_8h.html#a7c6368b321bd9acd0149b030bb8275ed">boolean</a> destroyCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="list_8h.html#a5450cb3cbe19f614edef2645115286fc">LIST_CELL</a>&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy a Cell object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>: the cell to destroy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean </dd></dl>
 
 </div>
 </div>

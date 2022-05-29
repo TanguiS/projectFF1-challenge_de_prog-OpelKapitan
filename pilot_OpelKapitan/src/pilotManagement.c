@@ -20,29 +20,32 @@
 #include "../include/pilotManagement.h"
 #include "../include/direction/pilotDirection.h"
 
-#define FUEL_SAFETY 10              /**< safety operation */
+#define FUEL_SAFETY 13              /**< safety operation */
 
 /**
  * @brief Set the Position Pilot object
  * 
- * @param pilot 
- * @param position 
+ * @param pilot the pilote to update 
+ * @param x the X-coordinate to set
+ * @param y the Y-coordinate to set
  */
 static void setPositionPilot ( PILOT* pilot, short x, short y );
 
 /**
  * @brief Set the Speed Pilot object
  * 
- * @param pilot 
- * @param speed 
+ * @param pilot the pilote to update
+ * @param x the X-coordinate to set
+ * @param y the Y-coordinate to set
  */
 static void setSpeedPilot ( PILOT* pilot, short x, short y );
 
 /**
  * @brief Set the Action Pilot object
  * 
- * @param pilot 
- * @param action 
+ * @param pilot the pilot to update 
+ * @param x the new X-coordinate to set
+ * @param y the new Y-coordinate to set
  */
 static void setActionPilot ( PILOT* pilot, short x, short y );
 
@@ -118,6 +121,7 @@ static short fuelConsumption (
  * @brief Update the gas remaining of our pilot
  * 
  * @param pilot : the PILOT object
+ * @param graph : the graph of the race.
  */
 static void updateGasPilot ( PILOT* pilot, GRAPH* graph );
 

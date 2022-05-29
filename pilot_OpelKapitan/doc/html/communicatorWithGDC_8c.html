@@ -96,6 +96,9 @@ Include dependency graph for communicatorWithGDC.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a65a4c75357f00a3a252b967707cb59a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="communicatorWithGDC_8c.html#a65a4c75357f00a3a252b967707cb59a5">setDataGraph</a> (<a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, char *data, int row)</td></tr>
+<tr class="memdesc:a65a4c75357f00a3a252b967707cb59a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the data provided from the arguments in the matrix of the graph.  <a href="communicatorWithGDC_8c.html#a65a4c75357f00a3a252b967707cb59a5">More...</a><br /></td></tr>
+<tr class="separator:a65a4c75357f00a3a252b967707cb59a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2707e0b711c226d7e86bc77ebbf01eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="communicatorWithGDC_8c.html#a2707e0b711c226d7e86bc77ebbf01eac">readDataFromGDC</a> (short *fuelLevel, <a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *graph, <a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *referenceGraph)</td></tr>
 <tr class="memdesc:a2707e0b711c226d7e86bc77ebbf01eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the data sent by the GDC.  <a href="communicatorWithGDC_8c.html#a2707e0b711c226d7e86bc77ebbf01eac">More...</a><br /></td></tr>
 <tr class="separator:a2707e0b711c226d7e86bc77ebbf01eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +185,58 @@ STEIMETZ Tangui <a href="#" onclick="location.href='mai'+'lto:'+'ste'+'im'+'etz'
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a65a4c75357f00a3a252b967707cb59a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a4c75357f00a3a252b967707cb59a5">&#9670;&nbsp;</a></span>setDataGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void setDataGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a9d75109e3230e9aecce2d9c94af874dd">GRAPH</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the data provided from the arguments in the matrix of the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>: The GRAPH to initialize with the data provided </td></tr>
+    <tr><td class="paramname">data</td><td>: A line of data that need to be written int the map's matrix </td></tr>
+    <tr><td class="paramname">row</td><td>: the column to which this line of data belongs </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

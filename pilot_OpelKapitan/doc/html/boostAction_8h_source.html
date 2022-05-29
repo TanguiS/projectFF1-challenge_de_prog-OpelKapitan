@@ -94,44 +94,38 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="straightAction_8h.html">./straightAction.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="struct__pathList.html">PATH_LIST</a> <a class="code" href="boostAction_8h.html#a2429a36abc8cb4e79901d2531a7bcf22">nextActionBoostedForNextPosition</a> ( </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                    <a class="code" href="struct__pathList.html">PATH_LIST</a> path, </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                    <a class="code" href="struct__position.html">POSITION</a> pilotPosition, </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                    <a class="code" href="struct__speed.html">SPEED</a> pilotSpeed, </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                    <a class="code" href="struct__acceleration.html">ACCELERATION</a>* nextAction </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                  );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">boolean</span> <a class="code" href="boostAction_8h.html#a73c908b556692e20f4ed936870084595">isApprochable</a> ( <a class="code" href="struct__mAdj.html">GRAPH</a>* graph, <a class="code" href="struct__position.html">POSITION</a> start,  <a class="code" href="struct__position.html">POSITION</a> stop, <a class="code" href="struct__position.html">POSITION</a>* goalPosition );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> <a class="code" href="boostAction_8h.html#aabdb34eba81e0ea9d461eaf2db814ba3">adaptPilot</a> (</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="struct__mAdj.html">GRAPH</a>* graph, <a class="code" href="struct__pathList.html">PATH_LIST</a> path,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="struct__position.html">POSITION</a> pilotPosition,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="struct__position.html">POSITION</a> goalPosition,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="struct__acceleration.html">ACCELERATION</a>* nextAction,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="struct__speed.html">SPEED</a> pilotSpeed );</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="struct__pathList.html">PATH_LIST</a> <a class="code" href="boostAction_8h.html#a2707ebd66f8f89ba281225d3bbc6635e">BetterBoostForNextPosition</a> ( </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                        <a class="code" href="struct__mAdj.html">GRAPH</a>* graph,   </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                        <a class="code" href="struct__pathList.html">PATH_LIST</a> path,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                        <a class="code" href="struct__position.html">POSITION</a> pilotPosition,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                        <a class="code" href="struct__speed.html">SPEED</a> pilotSpeed,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                        <a class="code" href="struct__acceleration.html">ACCELERATION</a>* nextAction</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                        );</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="struct__pathList.html">PATH_LIST</a> <a class="code" href="boostAction_8h.html#a2429a36abc8cb4e79901d2531a7bcf22">nextActionBoostedForNextPosition</a> ( </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                    <a class="code" href="struct__pathList.html">PATH_LIST</a> path, </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                    <a class="code" href="struct__position.html">POSITION</a> pilotPosition, </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                    <a class="code" href="struct__speed.html">SPEED</a> pilotSpeed, </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                    <a class="code" href="struct__acceleration.html">ACCELERATION</a>* nextAction </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                  );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="struct__pathList.html">PATH_LIST</a> <a class="code" href="boostAction_8h.html#a2707ebd66f8f89ba281225d3bbc6635e">BetterBoostForNextPosition</a> ( </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        <a class="code" href="struct__mAdj.html">GRAPH</a>* graph,   </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                        <a class="code" href="struct__pathList.html">PATH_LIST</a> path,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                        <a class="code" href="struct__position.html">POSITION</a> pilotPosition,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                        <a class="code" href="struct__speed.html">SPEED</a> pilotSpeed,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                        <a class="code" href="struct__acceleration.html">ACCELERATION</a>* nextAction</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                        );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif </span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aactionModificator_8h_html"><div class="ttname"><a href="actionModificator_8h.html">actionModificator.h</a></div><div class="ttdoc">This file contains the prototypes used to modify the action.</div></div>
 <div class="ttc" id="astraightAction_8h_html"><div class="ttname"><a href="straightAction_8h.html">straightAction.h</a></div><div class="ttdoc">This file contains the functions's prototype used to determine action for a straight line.</div></div>
 <div class="ttc" id="astruct__pathList_html"><div class="ttname"><a href="struct__pathList.html">_pathList</a></div><div class="ttdoc">A structure to represent a pathList object.</div><div class="ttdef"><b>Definition:</b> pathList.h:47</div></div>
-<div class="ttc" id="aboostAction_8h_html_a2707ebd66f8f89ba281225d3bbc6635e"><div class="ttname"><a href="boostAction_8h.html#a2707ebd66f8f89ba281225d3bbc6635e">BetterBoostForNextPosition</a></div><div class="ttdeci">PATH_LIST BetterBoostForNextPosition(GRAPH *graph, PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION *nextAction)</div><div class="ttdoc">Adapts the boost for the next position.</div><div class="ttdef"><b>Definition:</b> boostAction.c:114</div></div>
-<div class="ttc" id="aboostAction_8h_html_aabdb34eba81e0ea9d461eaf2db814ba3"><div class="ttname"><a href="boostAction_8h.html#aabdb34eba81e0ea9d461eaf2db814ba3">adaptPilot</a></div><div class="ttdeci">void adaptPilot(GRAPH *graph, PATH_LIST path, POSITION pilotPosition, POSITION goalPosition, ACCELERATION *nextAction, SPEED pilotSpeed)</div><div class="ttdoc">Adapts the boost if there is a car on the next node.</div><div class="ttdef"><b>Definition:</b> boostAction.c:76</div></div>
+<div class="ttc" id="aboostAction_8h_html_a2707ebd66f8f89ba281225d3bbc6635e"><div class="ttname"><a href="boostAction_8h.html#a2707ebd66f8f89ba281225d3bbc6635e">BetterBoostForNextPosition</a></div><div class="ttdeci">PATH_LIST BetterBoostForNextPosition(GRAPH *graph, PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION *nextAction)</div><div class="ttdoc">Adapts the boost for the next position.</div><div class="ttdef"><b>Definition:</b> boostAction.c:180</div></div>
 <div class="ttc" id="apilotManagement_8h_html"><div class="ttname"><a href="pilotManagement_8h.html">pilotManagement.h</a></div><div class="ttdoc">This file contains the prototypes / declarations used to manage a pilot.</div></div>
 <div class="ttc" id="astruct__acceleration_html"><div class="ttname"><a href="struct__acceleration.html">_acceleration</a></div><div class="ttdoc">A structure to represent the acceleration.</div><div class="ttdef"><b>Definition:</b> util.h:62</div></div>
 <div class="ttc" id="astruct__position_html"><div class="ttname"><a href="struct__position.html">_position</a></div><div class="ttdoc">A structure to represent the position.</div><div class="ttdef"><b>Definition:</b> util.h:38</div></div>
-<div class="ttc" id="aboostAction_8h_html_a2429a36abc8cb4e79901d2531a7bcf22"><div class="ttname"><a href="boostAction_8h.html#a2429a36abc8cb4e79901d2531a7bcf22">nextActionBoostedForNextPosition</a></div><div class="ttdeci">PATH_LIST nextActionBoostedForNextPosition(PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION *nextAction)</div><div class="ttdoc">Determine the correct action for a step by step movement with a boost.</div><div class="ttdef"><b>Definition:</b> boostAction.c:24</div></div>
+<div class="ttc" id="aboostAction_8h_html_a2429a36abc8cb4e79901d2531a7bcf22"><div class="ttname"><a href="boostAction_8h.html#a2429a36abc8cb4e79901d2531a7bcf22">nextActionBoostedForNextPosition</a></div><div class="ttdeci">PATH_LIST nextActionBoostedForNextPosition(PATH_LIST path, POSITION pilotPosition, SPEED pilotSpeed, ACCELERATION *nextAction)</div><div class="ttdoc">Determine the correct action for a step by step movement with a boost.</div><div class="ttdef"><b>Definition:</b> boostAction.c:161</div></div>
 <div class="ttc" id="astruct__mAdj_html"><div class="ttname"><a href="struct__mAdj.html">_mAdj</a></div><div class="ttdoc">Declaration of a structure for a graph object.</div><div class="ttdef"><b>Definition:</b> graph.h:49</div></div>
-<div class="ttc" id="aboostAction_8h_html_a73c908b556692e20f4ed936870084595"><div class="ttname"><a href="boostAction_8h.html#a73c908b556692e20f4ed936870084595">isApprochable</a></div><div class="ttdeci">boolean isApprochable(GRAPH *graph, POSITION start, POSITION stop, POSITION *goalPosition)</div><div class="ttdoc">Informs if node between start and stop can be crossed.</div><div class="ttdef"><b>Definition:</b> boostAction.c:43</div></div>
 <div class="ttc" id="astruct__speed_html"><div class="ttname"><a href="struct__speed.html">_speed</a></div><div class="ttdoc">A structure to represent the speed.</div><div class="ttdef"><b>Definition:</b> util.h:50</div></div>
 <div class="ttc" id="afollow__line_8h_html"><div class="ttname"><a href="follow__line_8h.html">follow_line.h</a></div><div class="ttdoc">This file contains the functions used to move a point in a 2 dimensions.</div></div>
 <!-- start footer part -->

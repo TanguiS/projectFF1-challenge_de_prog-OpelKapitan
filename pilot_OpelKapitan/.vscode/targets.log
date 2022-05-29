@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 28 14:55:47 2022
+# Make data base, printed on Sun May 29 10:23:50 2022
 
 # Variables
 
@@ -163,7 +165,7 @@ VSCODE_CODE_CACHE_PATH = /home/tangui-stei/.config/Code/CachedData/c3511e6c69bb3
 # environment
 LOGNAME = tangui-stei
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -201,7 +203,7 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cc0e664f-1733-4b6d-aef1-015da2fc02ac.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b16fd3c0-9c9d-4df1-a056-d02993cb5142.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -276,6 +278,7 @@ GJS_DEBUG_OUTPUT = stderr
 .RECIPEPREFIX := 
 # makefile (from 'Makefile', line 4)
 INC_PATH = ./include
+ 
 # environment
 LANG = C
 # environment
@@ -292,9 +295,6 @@ VSCODE_PID = 2108
 # . (device 2053, inode 4325663): 10 files, no impossibilities.
 
 # 10 files, no impossibilities in 1 directories.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 
 # Implicit Rules
 
@@ -393,7 +393,7 @@ obj/dijkstraAlgo.o: src/dijkstra/dijkstraAlgo.c include/dijkstra/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-28 14:35:59.957929602
+#  Last modified 2022-05-29 10:22:50.999635124
 #  File has been updated.
 #  Successfully updated.
 
@@ -557,6 +557,7 @@ include/tools/pathList.h:
 # Not a target:
 src/tools/pathList.c:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -572,7 +573,6 @@ obj/follow_line.o: src/direction/follow_line.c include/direction/follow_line.h
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 78):
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
- 
 
 # Not a target:
 include/tools/matrix.h:
@@ -669,6 +669,6 @@ src/tools/list.c:
 # strcache performance: lookups = 112 / hit rate = 41%
 # hash-table stats:
 # Load=66/8192=1%, Rehash=0, Collisions=2/112=2%
-# Finished Make data base on Sat May 28 14:55:47 2022
+# Finished Make data base on Sun May 29 10:23:50 2022
 
  

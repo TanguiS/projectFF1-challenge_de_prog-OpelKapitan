@@ -43,7 +43,8 @@
     "communicatorwithgdc.h": "c",
     "stdlib.h": "c",
     "straightaction.h": "c",
-    "boostaction.h": "c"
+    "boostaction.h": "c",
+    "actionmodificator.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled",
   "C_Cpp_Runner.useMsvc": false

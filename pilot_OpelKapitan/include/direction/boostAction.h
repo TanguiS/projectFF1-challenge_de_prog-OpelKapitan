@@ -32,6 +32,7 @@
 #include "./straightAction.h"
 
 
+
 /**
  * @brief Determine the correct action for a step by step movement with a boost
  * 
@@ -48,34 +49,10 @@ PATH_LIST nextActionBoostedForNextPosition (
                                                     ACCELERATION* nextAction 
                                                   );
 
-/**
- * @brief Informs if node between start and stop can be crossed
- * 
- * @param graph the path to follow
- * @param start the position of the beginning
- * @param stop the position of the end
- * @param goalPosition position where is stoked the second node between start and stop
- * @return boolean 
- */
-boolean isApprochable ( GRAPH* graph, POSITION start,  POSITION stop, POSITION* goalPosition );
 
 
-/**
- * @brief Adapts the boost if there is a car on the next node
- * 
- * @param graph the path to follow
- * @param path the path to follow
- * @param pilotPosition the pilot position
- * @param goalPosition the position to go 
- * @param nextAction the next acceleration
- * @param pilotSpeed the pilot speed
- */
-void adaptPilot (
-                GRAPH* graph, PATH_LIST path,
-                POSITION pilotPosition,
-                POSITION goalPosition,
-                ACCELERATION* nextAction,
-                SPEED pilotSpeed );
+
+
 
 /**
  * @brief Adapts the boost for the next position.
