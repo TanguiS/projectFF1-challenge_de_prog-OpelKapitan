@@ -151,11 +151,14 @@ PATH_LIST choiceNextAction (
         if ( round == 1 ) {
             path = BetterBoostForNextPosition( graph, path, pilotPosition, pilotSpeed, actionTab );
         } else {
-            if ( !isSand ( graph, pilotPosition ) ) {
-                path = redirectTab[2]( path, pilotPosition, pilotSpeed, actionTab );
-            } else {
+            if ( isSand ( graph, pilotPosition ) ) {
                 path = redirectTab[1]( path, pilotPosition, pilotSpeed, actionTab );
+                if ( !isEmptyPathList ( path ) ) {
+                    trajectoryCorrection ( graph, pilotPosition, examineHeadPathList ( path ), pilotSpeed, nextAction );
+                }
                 return path;
+            } else {
+                path = redirectTab[2]( path, pilotPosition, pilotSpeed, actionTab );
             }
         }
         if ( !isEmptyPathList ( path ) ) {

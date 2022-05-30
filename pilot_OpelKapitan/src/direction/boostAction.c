@@ -135,7 +135,7 @@ static void adaptPilot (
     pilotSpeed.Y += nextAction->Y;
     if ( lineToFollow ( pilotPosition, nextPosition ) == towardsX ) {
         if ( pilotSpeed.Y != 0 ) {
-            while ( isCar( graph, goalPosition ) ) {
+            while ( isCar( graph, goalPosition ) || isSand ( graph, goalPosition ) ) {
             slowDownDecrementY ( pilotSpeed, nextAction );
             goalPosition.X = pilotPosition.X + nextAction->X;
             goalPosition.Y = pilotPosition.Y + nextAction->Y;
@@ -145,7 +145,7 @@ static void adaptPilot (
         }
     } else if ( lineToFollow ( pilotPosition, nextPosition ) == towardsY ) {
         if ( pilotSpeed.X != 0) {
-            while ( isCar ( graph, goalPosition ) ) {
+            while ( isCar ( graph, goalPosition ) || isSand ( graph, goalPosition) ) {
                 slowDownDecrementX ( pilotSpeed, nextAction ); 
                 goalPosition.X = pilotPosition.X + nextAction->X;
                 goalPosition.Y = pilotPosition.Y + nextAction->Y;
