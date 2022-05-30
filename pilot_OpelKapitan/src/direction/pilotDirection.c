@@ -64,12 +64,6 @@ static void trajectoryCorrection (
             } else {
                 slowDownDecrementX ( pilotSpeed, nextAction);
             }
-        } else if ( isSand ( graph, goalPosition ) ) {
-            if ( lineToFollow ( pilotPosition, goalPosition ) == towardsX ) {
-                fprintf ( stderr, "pb sand x\n" );
-            } else {
-                fprintf ( stderr, "pb sable y\n" );
-            }
         }
     }
 }
