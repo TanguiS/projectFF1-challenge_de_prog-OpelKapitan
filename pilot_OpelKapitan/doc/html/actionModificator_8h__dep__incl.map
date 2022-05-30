@@ -1,0 +1,14 @@
+<map id="include/direction/actionModificator.h" name="include/direction/actionModificator.h">
+<area shape="rect" id="node1" title="This file contains the prototypes used to modify the action." alt="" coords="606,5,781,47"/>
+<area shape="rect" id="node2" href="$actionModificator_8c.html" title="This file contains the functions used to modify the action." alt="" coords="376,102,605,129"/>
+<area shape="rect" id="node3" href="$boostAction_8h.html" title="This file contains the prototypes / declarations used to apply boost." alt="" coords="434,191,657,218"/>
+<area shape="rect" id="node5" href="$pilotDirection_8h.html" title="This file contains the prototypes / declarations used to choose the pilot&#39;s direction." alt="" coords="537,273,772,300"/>
+<area shape="rect" id="node11" href="$straightAction_8h.html" title="This file contains the functions&#39;s prototype used to determine action for a straight line." alt="" coords="731,95,915,136"/>
+<area shape="rect" id="node12" href="$simpleAction_8h.html" title="This file contains the prototypes / declarations used to do simple pilot actions." alt="" coords="897,184,1076,225"/>
+<area shape="rect" id="node4" href="$boostAction_8c.html" title="This file contains the functions used to apply boost." alt="" coords="5,348,200,375"/>
+<area shape="rect" id="node6" href="$simpleAction_8c.html" title="This file contains the functions used to do simple pilot actions." alt="" coords="1091,348,1293,375"/>
+<area shape="rect" id="node7" href="$straightAction_8c.html" title="This file contains the functions used to modify determine the action for a straight line." alt="" coords="859,348,1067,375"/>
+<area shape="rect" id="node8" href="$dijkstraAlgo_8c.html" title="This file contains the functions to implement the Dijstra&#39;s algo." alt="" coords="648,348,835,375"/>
+<area shape="rect" id="node9" href="$pilotDirection_8c.html" title="This file contains the functions used to choose the pilot&#39;s direction/action." alt="" coords="224,348,429,375"/>
+<area shape="rect" id="node10" href="$pilotManagement_8c.html" title="This file contains the functions used to manage a pilot." alt="" coords="453,348,624,375"/>
+</map>

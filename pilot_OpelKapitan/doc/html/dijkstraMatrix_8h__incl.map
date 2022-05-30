@@ -1,0 +1,12 @@
+<map id="include/dijkstra/dijkstraMatrix.h" name="include/dijkstra/dijkstraMatrix.h">
+<area shape="rect" id="node1" title="This file contains prototypes and declarations to manage a Dijkstra&#39;s matrix." alt="" coords="274,5,449,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="35,169,106,196"/>
+<area shape="rect" id="node3" href="$util_8h.html" title="This file is for util type declaration." alt="" coords="325,244,427,271"/>
+<area shape="rect" id="node4" href="$graph_8h.html" title="This file contains the prototypes / declarations used to process a graph." alt="" coords="320,95,403,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="472,244,539,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="627,244,698,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="131,169,205,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="230,169,298,196"/>
+<area shape="rect" id="node9" href="$matrix_8h.html" title="This file contains prototypes and declarations to manage a matrix." alt="" coords="425,169,546,196"/>
+<area shape="rect" id="node10" href="$list_8h.html" title="This file contains all the prototype of the liste algo." alt="" coords="571,169,669,196"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="_dataPilot" name="_dataPilot">
+<area shape="rect" id="node1" title="Declaration of a structure for a pilot object." alt="" coords="101,95,188,121"/>
+<area shape="rect" id="node2" href="$struct__position.html" title="A structure to represent the position." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node3" href="$struct__speed.html" title="A structure to represent the speed." alt="" coords="111,5,179,32"/>
+<area shape="rect" id="node4" href="$struct__acceleration.html" title="A structure to represent the acceleration." alt="" coords="203,5,313,32"/>
+</map>

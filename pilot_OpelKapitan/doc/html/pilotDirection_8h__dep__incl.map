@@ -1,0 +1,9 @@
+<map id="include/direction/pilotDirection.h" name="include/direction/pilotDirection.h">
+<area shape="rect" id="node1" title="This file contains the prototypes / declarations used to choose the pilot&#39;s direction." alt="" coords="548,5,783,32"/>
+<area shape="rect" id="node2" href="$boostAction_8c.html" title="This file contains the functions used to apply boost." alt="" coords="5,80,200,107"/>
+<area shape="rect" id="node3" href="$simpleAction_8c.html" title="This file contains the functions used to do simple pilot actions." alt="" coords="224,80,427,107"/>
+<area shape="rect" id="node4" href="$straightAction_8c.html" title="This file contains the functions used to modify determine the action for a straight line." alt="" coords="451,80,659,107"/>
+<area shape="rect" id="node5" href="$dijkstraAlgo_8c.html" title="This file contains the functions to implement the Dijstra&#39;s algo." alt="" coords="683,80,869,107"/>
+<area shape="rect" id="node6" href="$pilotDirection_8c.html" title="This file contains the functions used to choose the pilot&#39;s direction/action." alt="" coords="893,80,1099,107"/>
+<area shape="rect" id="node7" href="$pilotManagement_8c.html" title="This file contains the functions used to manage a pilot." alt="" coords="1123,80,1293,107"/>
+</map>
