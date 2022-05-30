@@ -20,7 +20,7 @@
 #include "../include/pilotManagement.h"
 #include "../include/direction/pilotDirection.h"
 
-#define FUEL_SAFETY 10              /**< safety operation */
+#define FUEL_SAFETY 13              /**< safety operation */
 
 /**
  * @brief Set the Position Pilot object

@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
+<<<<<<< HEAD
 # Make data base, printed on Sun May 29 00:37:06 2022
+=======
+# Make data base, printed on Sun May 29 10:23:50 2022
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 
 # Variables
 
@@ -41,15 +47,19 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
+CURDIR := /home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
 # makefile
 SHELL = /bin/sh
 # environment
 SNAP_DATA = /var/snap/code/97
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/tangui/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/tangui/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/tangui/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tangui/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/tangui-stei/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
 # environment
+<<<<<<< HEAD
 JOURNAL_STREAM = 8:28120
+=======
+JOURNAL_STREAM = 8:39208
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # makefile (from 'Makefile', line 13)
 CFLAGS = -Wall -Wextra -ansi -pedantic -O3
 # environment
@@ -65,9 +75,7 @@ MAKEFILE_LIST :=  Makefile
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-USERNAME = tangui
-# environment
-MAKELEVEL := 0
+USERNAME = tangui-stei
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
@@ -83,13 +91,15 @@ BIN_PATH = ../drivers
 # makefile (from 'Makefile', line 14)
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 # environment
+<<<<<<< HEAD
 MANAGERPID = 944
+=======
+MANAGERPID = 1360
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
-LC_NAME = fr_FR.UTF-8
-# environment
-VSCODE_CWD = /home/tangui
+VSCODE_CWD = /home/tangui-stei
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
 # default
@@ -99,11 +109,15 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
+<<<<<<< HEAD
 SESSION_MANAGER = local/st:@/tmp/.ICE-unix/1256,unix/st:/tmp/.ICE-unix/1256
+=======
+SESSION_MANAGER = local/tanguistei:@/tmp/.ICE-unix/1600,unix/tanguistei:/tmp/.ICE-unix/1600
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-GDK_PIXBUF_MODULE_FILE = /home/tangui/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+GDK_PIXBUF_MODULE_FILE = /home/tangui-stei/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
 SNAP = /snap/code/97
 # makefile (from 'Makefile', line 3)
@@ -119,7 +133,11 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
+<<<<<<< HEAD
 INVOCATION_ID = de8b8ffc4bfa4719a9ed7d9845e21f7c
+=======
+INVOCATION_ID = 4fa10cf5c14641d19fe79c58538ce2ae
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # makefile (from 'Makefile', line 15)
 LDFLAGS = -lm
 # environment
@@ -133,7 +151,11 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
+<<<<<<< HEAD
 GIO_LAUNCHED_DESKTOP_FILE_PID = 1998
+=======
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2034
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # automatic
 %F = $(notdir $%)
 # environment
@@ -145,11 +167,15 @@ OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotMan
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/tangui/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
+PWD = /home/tangui-stei/Documents/projectFF1-challenge_de_prog-OpelKapitan/pilot_OpelKapitan
 # default
 .LOADED := 
 # environment
+<<<<<<< HEAD
 SSH_AGENT_PID = 1158
+=======
+SSH_AGENT_PID = 1537
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -157,29 +183,33 @@ GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/tangui
+HOME = /home/tangui-stei
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/tangui/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/tangui-stei/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
-LOGNAME = tangui
+LOGNAME = tangui-stei
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
+<<<<<<< HEAD
 SNAP_CONTEXT = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
 # automatic
 +F = $(notdir $+)
+=======
+SNAP_CONTEXT = gXto1HJ5DY436SuvVjORWqLwl52u7qkSi1UTHV0anbNhC7RiUM8B
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # makefile (from 'Makefile', line 9)
 DIRECT = /direction
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SNAP_USER_COMMON = /home/tangui/snap/code/common
+SNAP_USER_COMMON = /home/tangui-stei/snap/code/common
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -187,9 +217,9 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
-LC_TIME = fr_FR.UTF-8
+MAKELEVEL := 0
 # environment
-SNAP_REAL_HOME = /home/tangui
+SNAP_REAL_HOME = /home/tangui-stei
 # default
 MAKE = $(MAKE_COMMAND)
 # makefile (from 'Makefile', line 8)
@@ -199,7 +229,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/tangui/snap/code/97
+SNAP_USER_DATA = /home/tangui-stei/snap/code/97
 # environment
 SHLVL = 0
 # makefile (from 'Makefile', line 12)
@@ -207,15 +237,17 @@ CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
+<<<<<<< HEAD
 VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-072e0583-04a0-4f78-ae8a-d6f7a1b7148d.sock
+=======
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b16fd3c0-9c9d-4df1-a056-d02993cb5142.sock
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 # default
 MAKE_VERSION := 4.2.1
 # environment
-USER = tangui
+USER = tangui-stei
 # environment
 SNAP_REVISION = 97
-# environment
-LC_MONETARY = fr_FR.UTF-8
 # makefile
 .DEFAULT_GOAL := install
 # environment
@@ -224,8 +256,6 @@ XDG_CURRENT_DESKTOP = Unity
 OBJ_PATH = ./obj
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# environment
-LC_TELEPHONE = fr_FR.UTF-8
 # default
 MAKE_COMMAND := make
 # makefile (from 'Makefile', line 10)
@@ -235,7 +265,7 @@ TOOLS = /tools
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-ea33c1ff-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-b1d59732-1.67.2-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
@@ -250,22 +280,16 @@ MFLAGS = -pqrR
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
-# environment
-LC_PAPER = fr_FR.UTF-8
-# environment
-LC_IDENTIFICATION = fr_FR.UTF-8
+# automatic
++F = $(notdir $+)
 # environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
 # environment
-SNAP_COOKIE = kRUDFUD_SAbJXdsho1M4wTXHr-SbQuPf25ffWHB30nTu1OzQ6Ti-
-# environment
-LC_NUMERIC = fr_FR.UTF-8
+SNAP_COOKIE = gXto1HJ5DY436SuvVjORWqLwl52u7qkSi1UTHV0anbNhC7RiUM8B
 # automatic
 <F = $(notdir $<)
-# environment
-LC_MEASUREMENT = fr_FR.UTF-8
 # environment
 SNAP_NAME = code
 # environment
@@ -295,14 +319,19 @@ GJS_DEBUG_OUTPUT = stderr
 .RECIPEPREFIX := 
 # makefile (from 'Makefile', line 4)
 INC_PATH = ./include
-# environment
-LC_ADDRESS = fr_FR.UTF-8
+ 
 # environment
 LANG = C
 # environment
+<<<<<<< HEAD
 VSCODE_PID = 2078
 # variable set hash-table stats:
 # Load=144/1024=14%, Rehash=0, Collisions=40/266=15%
+=======
+VSCODE_PID = 2108
+# variable set hash-table stats:
+# Load=135/1024=13%, Rehash=0, Collisions=35/257=14%
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 
 # Pattern-specific Variable Values
 
@@ -310,7 +339,11 @@ VSCODE_PID = 2078
 
 # Directories
 
+<<<<<<< HEAD
 # . (device 2053, inode 1050608): 10 files, no impossibilities.
+=======
+# . (device 2053, inode 4325663): 10 files, no impossibilities.
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 
 # 10 files, no impossibilities in 1 directories.
 
@@ -411,7 +444,11 @@ obj/dijkstraAlgo.o: src/dijkstra/dijkstraAlgo.c include/dijkstra/dijkstraAlgo.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+<<<<<<< HEAD
 #  Last modified 2022-05-28 23:13:10.498222869
+=======
+#  Last modified 2022-05-29 10:22:50.999635124
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 #  File has been updated.
 #  Successfully updated.
 
@@ -576,6 +613,7 @@ include/tools/pathList.h:
 # Not a target:
 src/tools/pathList.c:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -687,6 +725,10 @@ src/tools/list.c:
 # strcache performance: lookups = 112 / hit rate = 41%
 # hash-table stats:
 # Load=66/8192=1%, Rehash=0, Collisions=2/112=2%
+<<<<<<< HEAD
 # Finished Make data base on Sun May 29 00:37:06 2022
+=======
+# Finished Make data base on Sun May 29 10:23:50 2022
+>>>>>>> 2424f25fb78676ba8a2dd3c86efb2c10edbda3af
 
  

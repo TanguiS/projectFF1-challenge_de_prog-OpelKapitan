@@ -24,7 +24,9 @@ endif
 
 OBJS = $(OBJ_PATH)/main.o $(OBJ_PATH)/communicatorWithGDC.o $(OBJ_PATH)/pilotManagement.o $(OBJ_PATH)/pilotDirection.o $(OBJ_PATH)/graph.o $(OBJ_PATH)/matrix.o $(OBJ_PATH)/pathList.o $(OBJ_PATH)/dijkstraAlgo.o $(OBJ_PATH)/dijkstraMatrix.o $(OBJ_PATH)/list.o $(OBJ_PATH)/follow_line.o $(OBJ_PATH)/actionModificator.o $(OBJ_PATH)/straightAction.o $(OBJ_PATH)/boostAction.o $(OBJ_PATH)/simpleAction.o
 
-install: $(BIN_PATH)/$(PILOT_NAME)
+all: obj install
+
+install: $(BIN_PATH)/$(PILOT_NAME) 
 
 try: install
 	cd .. ; ./GrandPrix
@@ -80,6 +82,8 @@ $(OBJ_PATH)/follow_line.o: $(SRC_PATH)$(DIRECT)/follow_line.c $(INC_PATH)$(DIREC
 $(BIN_PATH)/$(PILOT_NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $^ -o $(BIN_PATH)/$(PILOT_NAME) $(LDFLAGS)
 
+obj: $(OBJ_PATH)
+	mkdir $(OBJ_PATH)
 clean: $(OBJ_PATH) #Détruire les fichiers temporaires
 	rm $</*.o
 distclean: $(BIN_PATH)

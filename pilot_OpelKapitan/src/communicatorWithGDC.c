@@ -52,7 +52,6 @@ static void setDataGraph ( GRAPH* graph, char* data, int row )
     }
 }
 
-
 void readDataFromGDC ( short* fuelLevel, GRAPH* graph, GRAPH* referenceGraph )
 {
     int i;
