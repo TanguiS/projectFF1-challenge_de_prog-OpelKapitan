@@ -16,6 +16,8 @@ Placer le sous-dossier dans le dossier GrandPrix, même emplacement que pour ```
 
 Compilation du pilote : 
 command : ```$ make SANITIZE=off DEBUG=off install```;
+or
+command : ```$ make```;
 
 
 # Auteurs
